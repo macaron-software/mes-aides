@@ -1,0 +1,114 @@
+/* ============================================================
+   DESIGN TOKENS — aides.macaron-software.com
+   All values expressed as CSS custom properties.
+   No framework dependency. Change tokens here, everything updates.
+   ============================================================ */
+
+:root {
+  /* ── Color — Brand ─────────────────────────────────────────── */
+  --c-primary:          #0B6E4F;
+  --c-primary-light:    #E8F5F0;
+  --c-primary-hover:    #095C42;
+  --c-primary-dark:     #063D2C;
+  --c-primary-rgb:      11, 110, 79;
+
+  --c-accent:           #D97706;
+  --c-accent-light:     #FEF3C7;
+  --c-accent-hover:     #B45309;
+
+  /* ── Color — Semantic ──────────────────────────────────────── */
+  --c-success:          #15803D;
+  --c-success-light:    #DCFCE7;
+  --c-warning:          #D97706;
+  --c-warning-light:    #FEF9C3;
+  --c-danger:           #DC2626;
+  --c-danger-light:     #FEE2E2;
+  --c-info:             #0369A1;
+  --c-info-light:       #E0F2FE;
+
+  /* ── Color — Neutral ───────────────────────────────────────── */
+  --c-bg:               #F7FAF9;
+  --c-surface:          #FFFFFF;
+  --c-surface-raised:   #F0F7F4;
+  --c-border:           #D1D9D5;
+  --c-border-strong:    #9BB3A8;
+
+  --c-text:             #1A2E25;
+  --c-text-muted:       #4D6B5C;
+  --c-text-subtle:      #7A9989;
+  --c-text-inverse:     #FFFFFF;
+
+  /* ── Typography ─────────────────────────────────────────────── */
+  --font:               system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:          'Cascadia Code', 'Fira Code', 'SF Mono', monospace;
+
+  --text-xs:            0.75rem;    /* 12px */
+  --text-sm:            0.875rem;   /* 14px */
+  --text-base:          1rem;       /* 16px */
+  --text-lg:            1.125rem;   /* 18px */
+  --text-xl:            1.25rem;    /* 20px */
+  --text-2xl:           1.5rem;     /* 24px */
+  --text-3xl:           1.875rem;   /* 30px */
+  --text-4xl:           2.25rem;    /* 36px */
+  --text-5xl:           3rem;       /* 48px */
+
+  --fw-normal:          400;
+  --fw-medium:          500;
+  --fw-semibold:        600;
+  --fw-bold:            700;
+  --fw-extrabold:       800;
+
+  --lh-tight:           1.25;
+  --lh-snug:            1.375;
+  --lh-normal:          1.5;
+  --lh-relaxed:         1.625;
+
+  /* ── Spacing ────────────────────────────────────────────────── */
+  --sp-1:   0.25rem;   /* 4px  */
+  --sp-2:   0.5rem;    /* 8px  */
+  --sp-3:   0.75rem;   /* 12px */
+  --sp-4:   1rem;      /* 16px */
+  --sp-5:   1.25rem;   /* 20px */
+  --sp-6:   1.5rem;    /* 24px */
+  --sp-8:   2rem;      /* 32px */
+  --sp-10:  2.5rem;    /* 40px */
+  --sp-12:  3rem;      /* 48px */
+  --sp-16:  4rem;      /* 64px */
+  --sp-20:  5rem;      /* 80px */
+  --sp-24:  6rem;      /* 96px */
+
+  /* ── Border radius ──────────────────────────────────────────── */
+  --r-sm:   0.25rem;   /* 4px  */
+  --r-md:   0.5rem;    /* 8px  */
+  --r-lg:   0.75rem;   /* 12px */
+  --r-xl:   1rem;      /* 16px */
+  --r-2xl:  1.5rem;    /* 24px */
+  --r-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────────────── */
+  --sh-xs:  0 1px 2px  rgb(0 0 0 / .04);
+  --sh-sm:  0 1px 3px  rgb(0 0 0 / .06), 0 1px 2px rgb(0 0 0 / .04);
+  --sh-md:  0 4px 6px  rgb(0 0 0 / .05), 0 2px 4px rgb(0 0 0 / .04);
+  --sh-lg:  0 10px 15px rgb(0 0 0 / .06), 0 4px 6px rgb(0 0 0 / .03);
+  --sh-xl:  0 20px 25px rgb(0 0 0 / .07), 0 8px 10px rgb(0 0 0 / .03);
+
+  /* ── Transitions ────────────────────────────────────────────── */
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:     120ms var(--ease);
+  --t-normal:   200ms var(--ease);
+  --t-slow:     300ms var(--ease);
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  --max-w:         72rem;    /* 1152px — page max-width */
+  --max-w-content: 48rem;    /* 768px  — prose/form width */
+  --max-w-sm:      36rem;    /* 576px  — narrow card */
+
+  /* ── Z-index ────────────────────────────────────────────────── */
+  --z-base:     0;
+  --z-raised:   1;
+  --z-dropdown: 10;
+  --z-sticky:   20;
+  --z-overlay:  40;
+  --z-modal:    50;
+  --z-toast:    100;
+}
