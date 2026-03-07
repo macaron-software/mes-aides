@@ -1,0 +1,195 @@
+{
+  "site": {
+    "name": "My Benefits",
+    "tagline": "Simulate your social benefit entitlements in 3 minutes"
+  },
+
+  "nav": {
+    "home": "Home",
+    "simulator": "Simulator",
+    "aids": "Benefits",
+    "guides": "Guides",
+    "cta": "Check my eligibility"
+  },
+
+  "home": {
+    "hero_title": "Discover all the benefits you are entitled to",
+    "hero_sub": "Free simulation, 3 minutes, 71 verified benefits.",
+    "cta_primary": "Check my eligibility",
+    "how_it_works": "How it works",
+    "step1": "I answer the questionnaire",
+    "step2": "The algorithm analyses my situation",
+    "step3": "I receive my personalised action plan"
+  },
+
+  "simulator": {
+    "page_title": "Social Benefits Simulator — My Benefits",
+    "step_of": "Step {n} of {total}",
+    "see_results": "View my results",
+    "progress_label": "Simulation progress"
+  },
+
+  "step1": {
+    "title": "Your personal situation",
+    "subtitle": "This information helps us determine the benefits you may be eligible for.",
+    "q_age": "How old are you?",
+    "q_situation": "What is your family situation?",
+    "celibataire": "Single",
+    "en_couple": "In a relationship",
+    "marie": "Married / Civil union",
+    "parent_isole": "Single parent",
+    "q_enfants": "How many dependent children do you have?",
+    "q_handicap": "Do you have an officially recognised disability?"
+  },
+
+  "step2": {
+    "title": "Your housing situation",
+    "subtitle": "Your housing situation affects several benefits, including housing allowance and energy assistance.",
+    "q_statut": "What is your housing status?",
+    "locataire": "Tenant",
+    "proprietaire": "Homeowner",
+    "heberge": "Staying with someone",
+    "sans_domicile": "No fixed address",
+    "q_loyer": "What is your monthly rent (including bills)?",
+    "q_zone": "In which geographic zone do you live?",
+    "zone1": "Zone 1 (Ile-de-France)",
+    "zone2": "Zone 2 (Major cities)",
+    "zone3": "Zone 3 (Rest of France)"
+  },
+
+  "step3": {
+    "title": "Your income",
+    "subtitle": "Enter your monthly net income. This data is confidential and never shared.",
+    "q_revenu": "What is your monthly net income?",
+    "hint_revenu": "Enter the amount after social security deductions, before income tax.",
+    "q_apl_actuelle": "Do you already receive housing assistance (APL, ALS, ALF)?",
+    "q_allocations": "Do you already receive any of these benefits?",
+    "af": "Family allowances",
+    "rsa": "RSA (Active solidarity income)"
+  },
+
+  "step4": {
+    "title": "Health and disability",
+    "subtitle": "This information allows us to check your access to disability-specific and health benefits.",
+    "q_ald": "Do you have a long-term condition (ALD) recognised by the French social security system?",
+    "q_rqth": "Do you hold Recognition as a Disabled Worker (RQTH)?",
+    "q_taux_incapacite": "What is your disability rate as assessed by the MDPH?",
+    "aucun": "None / Not assessed",
+    "taux50": "50% to 79%",
+    "taux80": "80% or above",
+    "q_cmu": "Do you benefit from Complementary Health Solidarity (CSS / formerly CMU-C)?"
+  },
+
+  "step5": {
+    "title": "Employment situation",
+    "subtitle": "Your employment status determines access to several benefits such as the Activity Bonus or the ASS.",
+    "q_statut": "What is your current employment status?",
+    "cdi": "Permanent employee (CDI)",
+    "cdd": "Fixed-term employee (CDD)",
+    "chomeur": "Job seeker",
+    "etudiant": "Student",
+    "retraite": "Retired",
+    "independant": "Self-employed / Freelancer",
+    "q_anciennete": "How many months have you been in this situation?"
+  },
+
+  "results": {
+    "page_title": "Your estimated benefits — My Benefits",
+    "title": "Your estimated benefits",
+    "subtitle": "Based on your answers, here are the benefits you may be entitled to. These figures are indicative.",
+    "per_month": "€ / month",
+    "print": "Print",
+    "share": "Share",
+    "refine": "Refine my simulation",
+    "total_label": "Estimated total",
+    "disclaimer": "These results are provided for guidance only. Only the relevant authority can confirm your entitlement."
+  },
+
+  "catalog": {
+    "page_title": "All benefits — My Benefits France",
+    "title": "Benefits catalogue",
+    "hero_title": "All available benefits",
+    "hero_subtitle": "Browse 71 referenced social benefits and simulate your eligibility in 3 minutes.",
+    "search_placeholder": "Search for a benefit...",
+    "search_label": "Search for a benefit",
+    "filter_all": "All",
+    "filter_revenus": "Income",
+    "filter_logement": "Housing",
+    "filter_famille": "Family",
+    "filter_sante": "Health",
+    "filter_emploi": "Employment",
+    "filter_energie": "Energy",
+    "results_heading": "Results",
+    "result_count": "benefits available",
+    "hero_badge": "71 referenced benefits"
+  },
+
+  "guides": {
+    "page_title": "Practical guides — My Benefits France",
+    "title": "Practical guides",
+    "hero_title": "Practical guides",
+    "hero_subtitle": "Clear explanations to help you understand your rights and complete your applications.",
+    "hero_badge": "6 guides available",
+    "search_placeholder": "Search for a guide...",
+    "search_label": "Search for a guide",
+    "filter_all": "All guides",
+    "filter_revenus": "Income",
+    "filter_logement": "Housing",
+    "filter_handicap": "Disability",
+    "filter_jeunes": "Youth",
+    "filter_retraite": "Retirement",
+    "read_time_label": "min read",
+    "read_guide": "Read the guide",
+    "count": "guides available"
+  },
+
+  "cat": {
+    "revenus": "income",
+    "logement": "housing",
+    "famille": "family",
+    "sante": "health",
+    "emploi": "employment",
+    "energie": "energy",
+    "handicap": "disability",
+    "jeunes": "youth",
+    "retraite": "retirement"
+  },
+
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "next": "Next",
+    "other": "Other",
+    "none": "None",
+    "years": "years",
+    "months": "months",
+    "or_more": "or more",
+    "per_month": "€/month",
+    "test_eligibility": "Check my eligibility",
+    "see_detail": "View details"
+  },
+
+  "footer": {
+    "col_simulator": "Simulator",
+    "start_simulation": "Start the simulation",
+    "how_it_works": "How it works",
+    "faq": "Frequently asked questions",
+    "data_privacy": "Your data",
+    "col_popular": "Popular benefits",
+    "prime_activite": "Activity bonus",
+    "col_guides": "Guides",
+    "all_guides": "All guides",
+    "guide_droits": "Understanding your rights",
+    "guide_caf": "Building a CAF application",
+    "guide_non_recours": "Tackling non-take-up",
+    "col_legal": "Legal information",
+    "legal_notice": "Legal notice",
+    "privacy": "Privacy policy",
+    "accessibility": "Accessibility",
+    "contact": "Contact",
+    "copyright": "© 2025 My Benefits — Macaron Software. All rights reserved.",
+    "disclaimer": "This service is for guidance only and does not constitute an official administrative act.",
+    "legal": "Legal notice"
+  }
+}

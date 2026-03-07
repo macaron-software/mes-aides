@@ -32,12 +32,13 @@ pub struct Situation {
     /// Patrimoine estimé (pour certains plafonds)
     pub patrimoine_estime: f64,
 
-    // ── Santé ─────────────────────────────────────────────────────────────────
-    pub ald: bool,          // Affection longue durée
-    pub rqth: bool,         // Reconnu travailleur handicapé
+    // ── Sante ─────────────────────────────────────────────────────────────────
+    pub ald: bool,          // Affection longue duree
+    pub rqth: bool,         // Reconnu travailleur handicape
     pub invalidite: bool,
     pub dependance: bool,   // GIR 1-4
     pub gir: Option<u8>,    // Grade GIR (1-6)
+    pub cmu_c: bool,        // Beneficiaire CSS/CMU-C actuel
 
     // ── Emploi ───────────────────────────────────────────────────────────────
     pub emploi: EmploiStatus,
@@ -81,11 +82,19 @@ pub enum EmploiStatus {
     Salarie,
     Independant,
     Chomeur,
+    SansSituation,
     Etudiant,
     Retraite,
     SansEmploi,
     AlternantApprentissage,
     FonctionnairePublic,
+}
+
+// Alias: SansEmploi == SansSituation for compat
+impl EmploiStatus {
+    pub fn is_sans_emploi(&self) -> bool {
+        matches!(self, EmploiStatus::Chomeur | EmploiStatus::SansSituation | EmploiStatus::SansEmploi)
+    }
 }
 
 impl Situation {

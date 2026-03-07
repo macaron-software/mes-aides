@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="aid.rsa.page_title">RSA — Revenu de Solidarite Active | Mes Aides</title>
+  <meta name="description" content="Tout savoir sur le RSA : conditions d'eligibilite, montant 2026, demarches pas a pas. Simulez gratuitement votre droit au Revenu de Solidarite Active." />
+  <link rel="canonical" href="https://aides.macaron-software.com/aides/rsa.html" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* ── Page layout ── */
+    .page-wrapper {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--sp-4);
+    }
+    @media (min-width: 640px) { .page-wrapper { padding-inline: var(--sp-6); } }
+
+    /* ── Header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-sticky);
+      background: var(--c-surface);
+      border-bottom: 1px solid var(--c-border);
+      box-shadow: var(--sh-sm);
+    }
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-8);
+      padding-block: var(--sp-4);
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      text-decoration: none;
+      color: var(--c-primary);
+      font-weight: var(--fw-bold);
+      font-size: var(--text-lg);
+      white-space: nowrap;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-6);
+      margin-left: auto;
+    }
+    .site-nav a {
+      color: var(--c-text);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: var(--fw-medium);
+      transition: color var(--t-normal);
+    }
+    .site-nav a:hover { color: var(--c-primary); }
+    @media (max-width: 640px) {
+      .site-nav .nav-link { display: none; }
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-5);
+      background: var(--c-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--r-full);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-semibold);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background var(--t-normal);
+      white-space: nowrap;
+    }
+    .btn-cta:hover { background: var(--c-primary-hover); }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding-block: var(--sp-4);
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+    }
+    .breadcrumb a {
+      color: var(--c-text-muted);
+      text-decoration: none;
+      transition: color var(--t-normal);
+    }
+    .breadcrumb a:hover { color: var(--c-primary); }
+    .breadcrumb-sep { color: var(--c-border); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-bg) 70%);
+      border-bottom: 1px solid var(--c-border);
+      padding-block: var(--sp-12) var(--sp-10);
+    }
+    .hero__inner {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--sp-4);
+    }
+    @media (min-width: 640px) { .hero__inner { padding-inline: var(--sp-6); } }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-1);
+      background: var(--c-success-light);
+      color: var(--c-success);
+      font-size: var(--text-xs);
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: var(--sp-1) var(--sp-3);
+      border-radius: var(--r-full);
+      margin-bottom: var(--sp-4);
+    }
+    .hero__title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: var(--fw-extrabold);
+      color: var(--c-text);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--sp-4);
+    }
+    .hero__desc {
+      font-size: var(--text-lg);
+      color: var(--c-text-muted);
+      max-width: 44rem;
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--sp-8);
+    }
+    .hero__amount-block {
+      display: inline-flex;
+      align-items: baseline;
+      gap: var(--sp-2);
+      background: var(--c-primary);
+      color: #fff;
+      border-radius: var(--r-xl);
+      padding: var(--sp-4) var(--sp-8);
+      margin-bottom: var(--sp-8);
+    }
+    .hero__amount-value {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 900;
+      line-height: 1;
+    }
+    .hero__amount-label {
+      font-size: var(--text-base);
+      opacity: 0.85;
+    }
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      background: var(--c-accent);
+      color: #fff;
+      padding: var(--sp-4) var(--sp-8);
+      border-radius: var(--r-full);
+      font-size: var(--text-base);
+      font-weight: var(--fw-semibold);
+      text-decoration: none;
+      transition: background var(--t-normal);
+    }
+    .hero__cta:hover { background: var(--c-accent-hover); }
+
+    /* ── Info grid ── */
+    .info-section {
+      padding-block: var(--sp-12);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-6);
+      margin-bottom: var(--sp-10);
+    }
+    @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: var(--c-surface);
+      border-radius: var(--r-xl);
+      box-shadow: var(--sh-md);
+      padding: var(--sp-8);
+    }
+    .info-card__title {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      font-size: var(--text-lg);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+      margin-bottom: var(--sp-6);
+      padding-bottom: var(--sp-4);
+      border-bottom: 2px solid var(--c-primary-light);
+    }
+    .info-card__title svg { color: var(--c-primary); flex-shrink: 0; }
+    .criteria-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .criteria-list li {
+      display: flex;
+      gap: var(--sp-3);
+      align-items: flex-start;
+      font-size: var(--text-sm);
+      color: var(--c-text);
+      line-height: var(--lh-relaxed);
+    }
+    .criteria-list li::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c-primary);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .amount-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+    }
+    .amount-table th {
+      background: var(--c-primary-light);
+      color: var(--c-primary);
+      font-weight: var(--fw-semibold);
+      padding: var(--sp-3) var(--sp-4);
+      text-align: left;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .amount-table td {
+      padding: var(--sp-3) var(--sp-4);
+      border-bottom: 1px solid var(--c-border);
+      color: var(--c-text);
+      line-height: var(--lh-normal);
+    }
+    .amount-table tr:last-child td { border-bottom: none; }
+    .amount-table .amount-value {
+      font-weight: var(--fw-bold);
+      color: var(--c-primary);
+      white-space: nowrap;
+    }
+    .info-note {
+      margin-top: var(--sp-5);
+      padding: var(--sp-4);
+      background: var(--c-primary-light);
+      border-left: 3px solid var(--c-primary);
+      border-radius: var(--r-md);
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* ── Steps / Demarche ── */
+    .demarche-section {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+      padding-block: var(--sp-12);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      margin-bottom: var(--sp-8);
+    }
+    .section-header__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--c-primary-light);
+      color: var(--c-primary);
+      border-radius: var(--r-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-header__title {
+      font-size: var(--text-2xl);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+    }
+    .section-header__subtitle {
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      margin-top: var(--sp-1);
+    }
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 48rem;
+    }
+    .step {
+      display: flex;
+      gap: var(--sp-5);
+      position: relative;
+      padding-bottom: var(--sp-8);
+    }
+    .step:last-child { padding-bottom: 0; }
+    .step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: var(--c-border);
+    }
+    .step__num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--c-primary);
+      color: #fff;
+      font-size: var(--text-sm);
+      font-weight: var(--fw-bold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: var(--sh-md);
+    }
+    .step__body { flex: 1; padding-top: var(--sp-2); }
+    .step__title {
+      font-size: var(--text-base);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+      margin-bottom: var(--sp-2);
+    }
+    .step__desc {
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--sp-3);
+    }
+    .step__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-1);
+      font-size: var(--text-sm);
+      color: var(--c-primary);
+      font-weight: var(--fw-semibold);
+      text-decoration: none;
+      transition: text-decoration var(--t-normal);
+    }
+    .step__link:hover { text-decoration: underline; }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding-block: var(--sp-12);
+    }
+    .faq-list {
+      max-width: 52rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      margin-top: var(--sp-8);
+    }
+    .faq-item {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+      transition: box-shadow var(--t-normal);
+    }
+    .faq-item:hover { box-shadow: var(--sh-md); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      padding: var(--sp-5) var(--sp-6);
+      cursor: pointer;
+      list-style: none;
+      font-size: var(--text-base);
+      font-weight: var(--fw-semibold);
+      color: var(--c-text);
+      transition: background var(--t-normal);
+    }
+    .faq-question:hover { background: var(--c-bg); }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-icon {
+      color: var(--c-primary);
+      flex-shrink: 0;
+      transition: transform 300ms ease;
+    }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 var(--sp-6) var(--sp-6);
+      font-size: var(--text-sm);
+      color: var(--c-text-muted);
+      line-height: var(--lh-relaxed);
+      border-top: 1px solid var(--c-border);
+    }
+    .faq-answer p + p { margin-top: var(--sp-3); }
+
+    /* ── CTA section ── */
+    .cta-section {
+      background: var(--c-primary);
+      padding-block: var(--sp-16);
+      text-align: center;
+    }
+    .cta-section__title {
+      font-size: var(--text-3xl);
+      font-weight: var(--fw-extrabold);
+      color: #fff;
+      margin-bottom: var(--sp-4);
+    }
+    .cta-section__subtitle {
+      font-size: var(--text-lg);
+      color: rgba(255,255,255,0.85);
+      max-width: 36rem;
+      margin-inline: auto;
+      margin-bottom: var(--sp-8);
+      line-height: var(--lh-relaxed);
+    }
+    .cta-section__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      background: #fff;
+      color: var(--c-primary);
+      padding: var(--sp-4) var(--sp-10);
+      border-radius: var(--r-full);
+      font-size: var(--text-lg);
+      font-weight: var(--fw-bold);
+      text-decoration: none;
+      transition: opacity var(--t-normal);
+      box-shadow: var(--sh-lg);
+    }
+    .cta-section__btn:hover { opacity: 0.9; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--c-text);
+      color: rgba(255,255,255,0.75);
+      padding-block: var(--sp-12) var(--sp-8);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-8);
+      margin-bottom: var(--sp-10);
+    }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col__title {
+      font-size: var(--text-xs);
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: var(--sp-4);
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: var(--sp-3); }
+    .footer-col a {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color var(--t-normal);
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: var(--sp-6);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-4);
+      justify-content: space-between;
+    }
+    .footer-bottom p {
+      font-size: var(--text-xs);
+      color: rgba(255,255,255,0.45);
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link -->
+  <a href="#main-content" class="sr-only" data-i18n="nav.skip_to_content">Aller au contenu principal</a>
+
+  <!-- ══════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="page-wrapper">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Mes Aides — Accueil">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Mes Aides</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="/simulateur.html" class="nav-link" data-i18n="nav.simulator">Simulateur</a>
+          <a href="/aides.html" class="nav-link" aria-current="page" data-i18n="nav.aids">Aides</a>
+          <a href="/guides.html" class="nav-link" data-i18n="nav.guides">Guides</a>
+          <a href="/simulateur.html" class="btn-cta" data-i18n="nav.test_eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Tester mon eligibilite
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       BREADCRUMB
+  ══════════════════════════════════════════ -->
+  <nav aria-label="Fil d'ariane">
+    <div class="page-wrapper">
+      <ol class="breadcrumb">
+        <li><a href="/" data-i18n="breadcrumb.home">Accueil</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </li>
+        <li><a href="/aides.html" data-i18n="breadcrumb.aids">Aides</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </li>
+        <li aria-current="page">RSA</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="hero__badge" role="img" aria-label="Categorie : Revenus">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span data-i18n="cat.revenus">Revenus</span>
+      </div>
+      <h1 id="hero-title" class="hero__title" data-i18n="aid.rsa.name">
+        Revenu de Solidarite Active (RSA)
+      </h1>
+      <p class="hero__desc" data-i18n="aid.rsa.hero_desc">
+        Le RSA garantit un revenu minimum aux personnes sans emploi ou aux revenus tres faibles. Il remplace le RMI et l'API depuis 2009 et constitue le filet de securite essentiel du systeme de protection sociale francais.
+      </p>
+      <div class="hero__amount-block" role="img" aria-label="Montant jusqu'a 635,71 euros par mois">
+        <span class="hero__amount-value">635,71 €</span>
+        <span class="hero__amount-label" data-i18n="common.per_month">/mois</span>
+      </div>
+      <p style="font-size:var(--text-xs);color:var(--c-text-muted);margin-bottom:var(--sp-6);">
+        Montant de base 2026 — personne seule sans enfant
+      </p>
+      <a href="/simulateur.html" class="hero__cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <span data-i18n="aid.simulate_eligibility">Simuler mon eligibilite</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       MAIN
+  ══════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- Info grid -->
+    <section class="info-section" aria-labelledby="info-conditions-title">
+      <div class="page-wrapper">
+        <div class="info-grid">
+
+          <!-- Conditions d'eligibilite -->
+          <div class="info-card">
+            <h2 class="info-card__title" id="info-conditions-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span data-i18n="aid.conditions_title">Conditions d'eligibilite</span>
+            </h2>
+            <ul class="criteria-list" aria-label="Liste des conditions d'eligibilite au RSA">
+              <li>
+                <span><strong>Age :</strong> avoir au moins 25 ans, OU avoir moins de 25 ans avec un ou plusieurs enfants a charge (nés ou a naitre).</span>
+              </li>
+              <li>
+                <span><strong>Ressources :</strong> vos revenus (et ceux de votre foyer) doivent etre inférieurs au plafond RSA. Pour une personne seule, ce plafond est d'environ 635,71 €/mois de revenus nets.</span>
+              </li>
+              <li>
+                <span><strong>Residence :</strong> résider en France de maniere stable et effective. Les ressortissants étrangers hors Union européenne doivent justifier de 5 années de séjour régulier en France.</span>
+              </li>
+              <li>
+                <span><strong>Non-étudiant :</strong> ne pas être étudiant ni stagiaire de formation professionnelle, sauf si vous avez un enfant à charge.</span>
+              </li>
+              <li>
+                <span><strong>Non-cumulable :</strong> ne pas être en congé parental, sabbatique ou sans solde à taux plein.</span>
+              </li>
+              <li>
+                <span><strong>Inscription obligatoire :</strong> être inscrit comme demandeur d'emploi ou disposer d'un projet d'insertion professionnelle validé avec un conseiller France Travail.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Montant -->
+          <div class="info-card">
+            <h2 class="info-card__title" id="info-amount-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span data-i18n="aid.amount_title">Montant</span>
+            </h2>
+            <table class="amount-table" aria-label="Montants du RSA selon la composition du foyer">
+              <thead>
+                <tr>
+                  <th scope="col">Composition du foyer</th>
+                  <th scope="col">Montant forfaitaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Personne seule</td>
+                  <td class="amount-value">635,71 €/mois</td>
+                </tr>
+                <tr>
+                  <td>Couple sans enfant</td>
+                  <td class="amount-value">952,06 €/mois</td>
+                </tr>
+                <tr>
+                  <td>Personne seule + 1 enfant</td>
+                  <td class="amount-value">952,06 €/mois</td>
+                </tr>
+                <tr>
+                  <td>Personne seule + 2 enfants</td>
+                  <td class="amount-value">1 142,27 €/mois</td>
+                </tr>
+                <tr>
+                  <td>Couple + 1 enfant</td>
+                  <td class="amount-value">1 142,27 €/mois</td>
+                </tr>
+                <tr>
+                  <td>Par enfant supplementaire</td>
+                  <td class="amount-value">+ 190,12 €/mois</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="info-note">
+              <strong>Comment est calcule le RSA ?</strong> Le montant verse est egal au montant forfaitaire moins 62 % de vos revenus d'activite. Autrement dit : RSA verse = Forfait &minus; (0,62 × revenus nets). Cela permet de cumuler partiellement RSA et salaire.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Demarche -->
+    <section class="demarche-section" aria-labelledby="demarche-title">
+      <div class="page-wrapper">
+        <div class="section-header">
+          <div class="section-header__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div>
+            <h2 class="section-header__title" id="demarche-title" data-i18n="aid.steps_title">Guide de demarche</h2>
+            <p class="section-header__subtitle">5 etapes pour faire votre demande de RSA</p>
+          </div>
+        </div>
+
+        <ol class="steps-list" aria-label="Etapes pour demander le RSA">
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 1">1</div>
+            <div class="step__body">
+              <h3 class="step__title">Verifier votre eligibilite</h3>
+              <p class="step__desc">Etes-vous age de plus de 25 ans (ou moins de 25 ans avec enfant a charge) ? Residez-vous en France de maniere stable ? Si vous etes ressortissant hors UE, avez-vous 5 ans de sejour regulier ? Verifiez ces points avant de commencer.</p>
+              <a href="https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/solidarite/le-revenu-de-solidarite-active-rsa" target="_blank" rel="noopener noreferrer" class="step__link">
+                Simuler sur CAF.fr
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 2">2</div>
+            <div class="step__body">
+              <h3 class="step__title">Rassembler les justificatifs</h3>
+              <p class="step__desc">Reunissez : carte nationale d'identite ou titre de sejour en cours de validite, RIB a votre nom, justificatifs de revenus des 3 derniers mois (bulletins de salaire, avis de versement, etc.), justificatif de domicile de moins de 3 mois, et si applicable, acte de naissance des enfants a charge.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 3">3</div>
+            <div class="step__body">
+              <h3 class="step__title">Faire la demande en ligne sur CAF.fr</h3>
+              <p class="step__desc">Connectez-vous a votre espace CAF (ou creez-en un gratuitement avec votre numero de Securite sociale). Allez dans Mon compte > Faire une demande > RSA. Le formulaire est guide et prend environ 15 minutes. La demande peut aussi se faire en mairie ou dans un centre social.</p>
+              <a href="https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faire-une-demande-de-prestation" target="_blank" rel="noopener noreferrer" class="step__link">
+                Demande RSA sur CAF.fr
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 4">4</div>
+            <div class="step__body">
+              <h3 class="step__title">Signer le contrat d'engagement</h3>
+              <p class="step__desc">Dans les 2 mois suivant l'accord de la CAF, vous etes convoque par France Travail (ex-Pole emploi) pour signer un contrat d'engagement reciproque (CER). Ce contrat definit votre projet d'insertion professionnelle ou sociale. Le respect de ce contrat est necessaire pour continuer a percevoir le RSA.</p>
+              <a href="https://www.francetravail.fr" target="_blank" rel="noopener noreferrer" class="step__link">
+                France Travail
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 5">5</div>
+            <div class="step__body">
+              <h3 class="step__title">Percevoir le RSA chaque mois</h3>
+              <p class="step__desc">Le RSA est verse le 5 de chaque mois directement sur votre compte bancaire. Le premier versement intervient generalement dans les 2 semaines apres la notification d'accord. Pensez a declarer trimestriellement vos ressources a la CAF pour que le montant reste correct.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="page-wrapper">
+        <div class="section-header">
+          <div class="section-header__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <h2 class="section-header__title" id="faq-title" data-i18n="aid.faq_title">Questions frequentes</h2>
+            <p class="section-header__subtitle">Les reponses aux questions les plus posees sur le RSA</p>
+          </div>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Qu'est-ce que le RSA exactement ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Le Revenu de Solidarite Active (RSA) est une aide sociale versee par la Caisse d'allocations familiales (CAF) ou la MSA pour les agriculteurs. Il garantit un revenu minimum aux personnes sans emploi ou dont les revenus professionnels sont tres faibles.</p>
+              <p>Cree en 2009 par la loi du 1er decembre 2008, il remplace le Revenu minimum d'insertion (RMI) et l'Allocation de parent isole (API). Son objectif est double : assurer un minimum vital et inciter a reprendre une activite professionnelle grace au mecanisme de cumul RSA-revenus du travail.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Peut-on cumuler RSA et revenus du travail ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Oui, c'est meme un des principes fondateurs du RSA. Si vous retrouvez un emploi ou augmentez votre activite, le RSA est progressivement reduit mais pas supprime immediatement. La formule est : RSA verse = Montant forfaitaire &minus; (62 % &times; revenus nets d'activite).</p>
+              <p>Par exemple, si vous etes celibataire sans enfant et gagnez 500 €/mois, vous percevrez : 635,71 &minus; (0,62 &times; 500) = 635,71 &minus; 310 = 325,71 €/mois de RSA. Cela encourage la reprise d'emploi sans risque de perte brutale de revenus.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Combien de temps dure le droit au RSA ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Le RSA n'est pas limite dans le temps. Vous pouvez le percevoir tant que vous remplissez les conditions d'eligibilite. En revanche, vous devez declarer vos ressources trimestriellement sur votre espace CAF. A chaque declaration, la CAF recalcule le montant sur la base des revenus des 3 derniers mois.</p>
+              <p>Si vos revenus augmentent au-dessus du plafond, le RSA est automatiquement suspendu. Il peut etre retabli des que votre situation le justifie a nouveau.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Que se passe-t-il si mes revenus augmentent ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Si vos revenus d'activite augmentent, le montant du RSA verse diminue progressivement (62 centimes de moins par euro de revenu supplementaire). Au-dela d'un certain seuil, le RSA tombe a zero mais vous devez quand meme continuer a declarer vos revenus chaque trimestre.</p>
+              <p>En cas de hausse importante et durable, la CAF peut clore definitivement votre droit. Vous pouvez en faire une nouvelle demande si votre situation se degrade a nouveau. Il est toujours preferable de signaler tout changement sans attendre pour eviter des trop-perçus a rembourser.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="page-wrapper">
+        <h2 class="cta-section__title" id="cta-title" data-i18n="aid.cta_title">Verifiez votre eligibilite au RSA</h2>
+        <p class="cta-section__subtitle" data-i18n="aid.cta_subtitle">Notre simulateur analyse votre situation en 3 minutes et vous indique le montant auquel vous pouvez pretendre.</p>
+        <a href="/simulateur.html" class="cta-section__btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span data-i18n="aid.cta_btn">Simuler mon eligibilite gratuitement</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="page-wrapper">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_simulator">Simulateur</p>
+          <ul>
+            <li><a href="/simulateur.html" data-i18n="footer.start_simulation">Demarrer la simulation</a></li>
+            <li><a href="/simulateur.html#comment" data-i18n="footer.how_it_works">Comment ca fonctionne</a></li>
+            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions frequentes</a></li>
+            <li><a href="/simulateur.html#donnees" data-i18n="footer.data_privacy">Vos donnees</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_popular">Aides populaires</p>
+          <ul>
+            <li><a href="/aides/rsa.html">RSA</a></li>
+            <li><a href="/aides/apl.html">APL</a></li>
+            <li><a href="/aides/prime-activite.html" data-i18n="footer.prime_activite">Prime d'activite</a></li>
+            <li><a href="/aides/aah.html">AAH</a></li>
+            <li><a href="/aides/cheque-energie.html" data-i18n="footer.cheque_energie">Cheque Energie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_guides">Guides</p>
+          <ul>
+            <li><a href="/guides.html" data-i18n="footer.all_guides">Tous les guides</a></li>
+            <li><a href="/guides/droits-sociaux.html" data-i18n="footer.guide_droits">Comprendre vos droits</a></li>
+            <li><a href="/guides/dossier-caf.html" data-i18n="footer.guide_caf">Constituer un dossier CAF</a></li>
+            <li><a href="/guides/non-recours.html" data-i18n="footer.guide_non_recours">Lutter contre le non-recours</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_legal">Informations legales</p>
+          <ul>
+            <li><a href="/mentions-legales.html" data-i18n="footer.legal_notice">Mentions legales</a></li>
+            <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialite</a></li>
+            <li><a href="/accessibilite.html" data-i18n="footer.accessibility">Accessibilite</a></li>
+            <li><a href="/contact.html" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2025 Mes Aides — Macaron Software. Tous droits reserves.</p>
+        <p data-i18n="footer.disclaimer">Ce service est indicatif et ne constitue pas un acte administratif officiel.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

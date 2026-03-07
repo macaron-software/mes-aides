@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="aid.aah.page_title">AAH — Allocation aux Adultes Handicapes | Mes Aides</title>
+  <meta name="description" content="Tout savoir sur l'AAH 2026 : conditions (taux d'incapacite, restriction emploi), montant 1016,85 euros/mois, dossier MDPH. Simulez votre eligibilite." />
+  <link rel="canonical" href="https://aides.macaron-software.com/aides/aah.html" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .page-wrapper { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--sp-4); }
+    @media (min-width: 640px) { .page-wrapper { padding-inline: var(--sp-6); } }
+
+    .site-header { position: sticky; top: 0; z-index: var(--z-sticky); background: var(--c-surface); border-bottom: 1px solid var(--c-border); box-shadow: var(--sh-sm); }
+    .site-header__inner { display: flex; align-items: center; gap: var(--sp-8); padding-block: var(--sp-4); }
+    .site-logo { display: flex; align-items: center; gap: var(--sp-2); text-decoration: none; color: var(--c-primary); font-weight: var(--fw-bold); font-size: var(--text-lg); white-space: nowrap; }
+    .site-nav { display: flex; align-items: center; gap: var(--sp-6); margin-left: auto; }
+    .site-nav a { color: var(--c-text); text-decoration: none; font-size: var(--text-sm); font-weight: var(--fw-medium); transition: color var(--t-normal); }
+    .site-nav a:hover { color: var(--c-primary); }
+    @media (max-width: 640px) { .site-nav .nav-link { display: none; } }
+    .btn-cta { display: inline-flex; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-5); background: var(--c-primary); color: #fff; border: none; border-radius: var(--r-full); font-size: var(--text-sm); font-weight: var(--fw-semibold); text-decoration: none; cursor: pointer; transition: background var(--t-normal); white-space: nowrap; }
+    .btn-cta:hover { background: var(--c-primary-hover); }
+
+    .breadcrumb { display: flex; align-items: center; gap: var(--sp-2); padding-block: var(--sp-4); font-size: var(--text-sm); color: var(--c-text-muted); }
+    .breadcrumb a { color: var(--c-text-muted); text-decoration: none; transition: color var(--t-normal); }
+    .breadcrumb a:hover { color: var(--c-primary); }
+    .breadcrumb-sep { color: var(--c-border); }
+
+    .hero { background: linear-gradient(135deg, var(--c-warning-light) 0%, var(--c-bg) 70%); border-bottom: 1px solid var(--c-border); padding-block: var(--sp-12) var(--sp-10); }
+    .hero__inner { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--sp-4); }
+    @media (min-width: 640px) { .hero__inner { padding-inline: var(--sp-6); } }
+    .hero__badge { display: inline-flex; align-items: center; gap: var(--sp-1); background: var(--c-warning-light); color: var(--c-warning); font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.06em; padding: var(--sp-1) var(--sp-3); border-radius: var(--r-full); margin-bottom: var(--sp-4); }
+    .hero__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: var(--fw-extrabold); color: var(--c-text); line-height: var(--lh-tight); margin-bottom: var(--sp-4); }
+    .hero__desc { font-size: var(--text-lg); color: var(--c-text-muted); max-width: 44rem; line-height: var(--lh-relaxed); margin-bottom: var(--sp-8); }
+    .hero__amount-block { display: inline-flex; align-items: baseline; gap: var(--sp-2); background: var(--c-warning); color: #fff; border-radius: var(--r-xl); padding: var(--sp-4) var(--sp-8); margin-bottom: var(--sp-8); }
+    .hero__amount-value { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 900; line-height: 1; }
+    .hero__amount-label { font-size: var(--text-base); opacity: 0.85; }
+    .hero__cta { display: inline-flex; align-items: center; gap: var(--sp-2); background: var(--c-primary); color: #fff; padding: var(--sp-4) var(--sp-8); border-radius: var(--r-full); font-size: var(--text-base); font-weight: var(--fw-semibold); text-decoration: none; transition: background var(--t-normal); }
+    .hero__cta:hover { background: var(--c-primary-hover); }
+
+    .info-section { padding-block: var(--sp-12); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); margin-bottom: var(--sp-10); }
+    @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card { background: var(--c-surface); border-radius: var(--r-xl); box-shadow: var(--sh-md); padding: var(--sp-8); }
+    .info-card__title { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--c-text); margin-bottom: var(--sp-6); padding-bottom: var(--sp-4); border-bottom: 2px solid var(--c-warning-light); }
+    .info-card__title svg { color: var(--c-warning); flex-shrink: 0; }
+    .criteria-list { list-style: none; display: flex; flex-direction: column; gap: var(--sp-4); }
+    .criteria-list li { display: flex; gap: var(--sp-3); align-items: flex-start; font-size: var(--text-sm); color: var(--c-text); line-height: var(--lh-relaxed); }
+    .criteria-list li::before { content: ''; display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--c-warning); flex-shrink: 0; margin-top: 6px; }
+    .incap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-bottom: var(--sp-5); }
+    @media (max-width: 480px) { .incap-grid { grid-template-columns: 1fr; } }
+    .incap-card { background: var(--c-bg); border-radius: var(--r-lg); padding: var(--sp-5); border: 1px solid var(--c-border); }
+    .incap-card__rate { font-size: var(--text-2xl); font-weight: var(--fw-extrabold); color: var(--c-warning); margin-bottom: var(--sp-2); }
+    .incap-card__label { font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--c-text); margin-bottom: var(--sp-2); }
+    .incap-card__desc { font-size: var(--text-xs); color: var(--c-text-muted); line-height: var(--lh-relaxed); }
+    .amount-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+    .amount-table th { background: var(--c-warning-light); color: var(--c-warning); font-weight: var(--fw-semibold); padding: var(--sp-3) var(--sp-4); text-align: left; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+    .amount-table td { padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--c-border); color: var(--c-text); line-height: var(--lh-normal); }
+    .amount-table tr:last-child td { border-bottom: none; }
+    .amount-table .amount-value { font-weight: var(--fw-bold); color: var(--c-warning); white-space: nowrap; }
+    .info-note { margin-top: var(--sp-5); padding: var(--sp-4); background: var(--c-warning-light); border-left: 3px solid var(--c-warning); border-radius: var(--r-md); font-size: var(--text-sm); color: var(--c-text-muted); line-height: var(--lh-relaxed); }
+
+    .demarche-section { background: var(--c-surface); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); padding-block: var(--sp-12); }
+    .section-header { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-8); }
+    .section-header__icon { width: 44px; height: 44px; background: var(--c-warning-light); color: var(--c-warning); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .section-header__title { font-size: var(--text-2xl); font-weight: var(--fw-bold); color: var(--c-text); }
+    .section-header__subtitle { font-size: var(--text-sm); color: var(--c-text-muted); margin-top: var(--sp-1); }
+    .steps-list { display: flex; flex-direction: column; gap: 0; max-width: 48rem; }
+    .step { display: flex; gap: var(--sp-5); position: relative; padding-bottom: var(--sp-8); }
+    .step:last-child { padding-bottom: 0; }
+    .step:not(:last-child)::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--c-border); }
+    .step__num { width: 40px; height: 40px; border-radius: 50%; background: var(--c-warning); color: #fff; font-size: var(--text-sm); font-weight: var(--fw-bold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; box-shadow: var(--sh-md); }
+    .step__body { flex: 1; padding-top: var(--sp-2); }
+    .step__title { font-size: var(--text-base); font-weight: var(--fw-bold); color: var(--c-text); margin-bottom: var(--sp-2); }
+    .step__desc { font-size: var(--text-sm); color: var(--c-text-muted); line-height: var(--lh-relaxed); margin-bottom: var(--sp-3); }
+    .step__link { display: inline-flex; align-items: center; gap: var(--sp-1); font-size: var(--text-sm); color: var(--c-warning); font-weight: var(--fw-semibold); text-decoration: none; transition: text-decoration var(--t-normal); }
+    .step__link:hover { text-decoration: underline; }
+
+    .faq-section { padding-block: var(--sp-12); }
+    .faq-list { max-width: 52rem; display: flex; flex-direction: column; gap: var(--sp-3); margin-top: var(--sp-8); }
+    .faq-item { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-sm); transition: box-shadow var(--t-normal); }
+    .faq-item:hover { box-shadow: var(--sh-md); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); padding: var(--sp-5) var(--sp-6); cursor: pointer; list-style: none; font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--c-text); transition: background var(--t-normal); }
+    .faq-question:hover { background: var(--c-bg); }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-icon { color: var(--c-warning); flex-shrink: 0; transition: transform 300ms ease; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { padding: 0 var(--sp-6) var(--sp-6); font-size: var(--text-sm); color: var(--c-text-muted); line-height: var(--lh-relaxed); border-top: 1px solid var(--c-border); }
+    .faq-answer p + p { margin-top: var(--sp-3); }
+
+    .cta-section { background: var(--c-warning); padding-block: var(--sp-16); text-align: center; }
+    .cta-section__title { font-size: var(--text-3xl); font-weight: var(--fw-extrabold); color: #fff; margin-bottom: var(--sp-4); }
+    .cta-section__subtitle { font-size: var(--text-lg); color: rgba(255,255,255,0.9); max-width: 36rem; margin-inline: auto; margin-bottom: var(--sp-8); line-height: var(--lh-relaxed); }
+    .cta-section__btn { display: inline-flex; align-items: center; gap: var(--sp-2); background: #fff; color: var(--c-warning); padding: var(--sp-4) var(--sp-10); border-radius: var(--r-full); font-size: var(--text-lg); font-weight: var(--fw-bold); text-decoration: none; transition: opacity var(--t-normal); box-shadow: var(--sh-lg); }
+    .cta-section__btn:hover { opacity: 0.9; }
+
+    .site-footer { background: var(--c-text); color: rgba(255,255,255,0.75); padding-block: var(--sp-12) var(--sp-8); }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-8); margin-bottom: var(--sp-10); }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col__title { font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: var(--sp-4); }
+    .footer-col ul { display: flex; flex-direction: column; gap: var(--sp-3); }
+    .footer-col a { font-size: var(--text-sm); color: rgba(255,255,255,0.65); text-decoration: none; transition: color var(--t-normal); }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: var(--sp-6); display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: space-between; }
+    .footer-bottom p { font-size: var(--text-xs); color: rgba(255,255,255,0.45); }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="sr-only" data-i18n="nav.skip_to_content">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="page-wrapper">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Mes Aides — Accueil">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Mes Aides</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="/simulateur.html" class="nav-link" data-i18n="nav.simulator">Simulateur</a>
+          <a href="/aides.html" class="nav-link" aria-current="page" data-i18n="nav.aids">Aides</a>
+          <a href="/guides.html" class="nav-link" data-i18n="nav.guides">Guides</a>
+          <a href="/simulateur.html" class="btn-cta" data-i18n="nav.test_eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Tester mon eligibilite
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Fil d'ariane">
+    <div class="page-wrapper">
+      <ol class="breadcrumb">
+        <li><a href="/" data-i18n="breadcrumb.home">Accueil</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
+        <li><a href="/aides.html" data-i18n="breadcrumb.aids">Aides</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
+        <li aria-current="page">AAH</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="hero__badge" role="img" aria-label="Categorie : Handicap">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M10 22v-6h4v6"/><path d="M8 12l2-2 4 0 2 2"/><line x1="7" y1="15" x2="17" y2="15"/></svg>
+        <span data-i18n="cat.handicap">Handicap</span>
+      </div>
+      <h1 id="hero-title" class="hero__title" data-i18n="aid.aah.name">
+        Allocation aux Adultes Handicapes (AAH)
+      </h1>
+      <p class="hero__desc" data-i18n="aid.aah.hero_desc">
+        L'AAH garantit un revenu minimum aux personnes en situation de handicap qui sont dans l'incapacite partielle ou totale de travailler. C'est la prestation de solidarite la plus importante pour les adultes handicapes en France.
+      </p>
+      <div class="hero__amount-block" role="img" aria-label="Montant de 1016,85 euros par mois">
+        <span class="hero__amount-value">1 016,85 €</span>
+        <span class="hero__amount-label">/mois</span>
+      </div>
+      <p style="font-size:var(--text-xs);color:var(--c-text-muted);margin-bottom:var(--sp-6);">
+        Montant plein 2026 — sous conditions de ressources
+      </p>
+      <a href="/simulateur.html" class="hero__cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <span data-i18n="aid.simulate_eligibility">Simuler mon eligibilite</span>
+      </a>
+    </div>
+  </section>
+
+  <main id="main-content">
+
+    <section class="info-section" aria-labelledby="info-conditions-title">
+      <div class="page-wrapper">
+        <div class="info-grid">
+
+          <div class="info-card">
+            <h2 class="info-card__title" id="info-conditions-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span data-i18n="aid.conditions_title">Conditions d'eligibilite</span>
+            </h2>
+
+            <div class="incap-grid" role="list" aria-label="Conditions de taux d'incapacite pour l'AAH">
+              <div class="incap-card" role="listitem">
+                <div class="incap-card__rate">80 %</div>
+                <div class="incap-card__label">Taux d'incapacite</div>
+                <div class="incap-card__desc">AAH taux plein — accordee sans condition supplementaire d'inaptitude au travail.</div>
+              </div>
+              <div class="incap-card" role="listitem">
+                <div class="incap-card__rate">50–79 %</div>
+                <div class="incap-card__label">Taux d'incapacite</div>
+                <div class="incap-card__desc">AAH accordee si la MDPH reconnaît egalement une Restriction Substantielle et Durable pour l'Emploi (RSDAE).</div>
+              </div>
+            </div>
+
+            <ul class="criteria-list" aria-label="Autres conditions d'eligibilite a l'AAH">
+              <li>
+                <span><strong>Age :</strong> etre age d'au moins 20 ans (ou 16 ans si l'on n'est plus a la charge de ses parents). L'AAH prend fin a 60 ans si la personne peut beneficier d'une retraite pour inaptitude, sinon elle peut etre maintenue.</span>
+              </li>
+              <li>
+                <span><strong>Ressources sous plafond :</strong> vos revenus (et ceux de votre conjoint/concubin) doivent etre inferieurs au plafond annuel AAH. Pour une personne seule, ce plafond est de 12 202,20 € annuels (soit le montant de l'AAH × 12). Pour un couple, le plafond est double.</span>
+              </li>
+              <li>
+                <span><strong>Residence en France :</strong> resider en France metropolitaine ou dans un DOM de maniere stable et effective. Les ressortissants etrangers doivent avoir un titre de sejour valide.</span>
+              </li>
+              <li>
+                <span><strong>Decision MDPH obligatoire :</strong> le taux d'incapacite doit etre reconnu par la Commission des Droits et de l'Autonomie des Personnes Handicapees (CDAPH), commission dependant de la MDPH de votre departement.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h2 class="info-card__title" id="info-amount-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span data-i18n="aid.amount_title">Montant</span>
+            </h2>
+            <table class="amount-table" aria-label="Montants de l'AAH selon la situation">
+              <thead>
+                <tr>
+                  <th scope="col">Situation</th>
+                  <th scope="col">Montant mensuel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AAH taux plein (incapacite &ge; 80 %)</td>
+                  <td class="amount-value">1 016,85 €</td>
+                </tr>
+                <tr>
+                  <td>AAH taux plein (50-79 % + RSDAE)</td>
+                  <td class="amount-value">1 016,85 €</td>
+                </tr>
+                <tr>
+                  <td>AAH reduite (revenus d'activite partiels)</td>
+                  <td class="amount-value">Variable</td>
+                </tr>
+                <tr>
+                  <td>Complement de ressources (si logement indep.)</td>
+                  <td class="amount-value">+ 179,31 €</td>
+                </tr>
+                <tr>
+                  <td>Majoration pour vie autonome (si loyer)</td>
+                  <td class="amount-value">+ 104,77 €</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="info-note">
+              <strong>Depuis le 1er octobre 2023 :</strong> la deconjugalisation de l'AAH est effective. Les revenus du conjoint ne sont plus pris en compte dans le calcul de l'AAH, ce qui permet a de nombreuses personnes en couple de percevoir davantage. Les beneficiaires existants ont pu opter pour le nouveau mode de calcul.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="demarche-section" aria-labelledby="demarche-title">
+      <div class="page-wrapper">
+        <div class="section-header">
+          <div class="section-header__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div>
+            <h2 class="section-header__title" id="demarche-title" data-i18n="aid.steps_title">Guide de demarche</h2>
+            <p class="section-header__subtitle">6 etapes pour obtenir l'AAH — comptez 4 a 6 mois</p>
+          </div>
+        </div>
+
+        <ol class="steps-list" aria-label="Etapes pour demander l'AAH">
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 1">1</div>
+            <div class="step__body">
+              <h3 class="step__title">Constituer le dossier MDPH</h3>
+              <p class="step__desc">Remplir le formulaire Cerfa 15692*01 (demande aupres de la MDPH) et le certificat medical Cerfa 13878*01 (a faire remplir par votre medecin). Rassemblez egalement : copie de la CNI ou titre de sejour, justificatif de domicile, RIB, et si applicable, jugement de tutelle ou curatelle.</p>
+              <a href="https://www.service-public.fr/particuliers/vosdroits/R19993" target="_blank" rel="noopener noreferrer" class="step__link">
+                Telecharger le formulaire Cerfa MDPH
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 2">2</div>
+            <div class="step__body">
+              <h3 class="step__title">Deposer le dossier a votre MDPH</h3>
+              <p class="step__desc">Envoyez votre dossier complet par lettre recommandee avec accusé de reception a la MDPH de votre departement, ou deposez-le directement au guichet. Une fois le dossier recu, la MDPH vous envoie un accuse de reception avec un numero de suivi. Conservez tous vos justificatifs.</p>
+              <a href="https://www.mdph.fr" target="_blank" rel="noopener noreferrer" class="step__link">
+                Trouver votre MDPH
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 3">3</div>
+            <div class="step__body">
+              <h3 class="step__title">Evaluation par l'equipe pluridisciplinaire</h3>
+              <p class="step__desc">Une equipe pluridisciplinaire de la MDPH (medecins, travailleurs sociaux, psychologues) evalue votre dossier. Selon la complexite, une visite a domicile ou une convocation peut etre demandee. Ce processus peut prendre 2 a 4 mois. La MDPH peut vous contacter pour des pieces complementaires.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 4">4</div>
+            <div class="step__body">
+              <h3 class="step__title">Decision de la CDAPH</h3>
+              <p class="step__desc">La Commission des Droits et de l'Autonomie des Personnes Handicapees (CDAPH) se reunit et prend une decision sur votre taux d'incapacite. Elle vous notifie sa decision par courrier. En cas de refus ou de taux insuffisant, vous avez 2 mois pour exercer un recours gracieux (aupres de la MDPH) ou un recours contentieux (aupres du tribunal judiciaire).</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 5">5</div>
+            <div class="step__body">
+              <h3 class="step__title">Faire la demande d'AAH aupres de la CAF ou MSA</h3>
+              <p class="step__desc">Apres reception de la notification MDPH favorable, connectez-vous a votre espace CAF (ou MSA si vous etes salarie agricole) et faites la demande d'AAH. Joignez la notification de decision MDPH. Si vous n'etes pas encore allocataire CAF, creez un compte avec votre numero de Securite sociale.</p>
+              <a href="https://wwwd.caf.fr" target="_blank" rel="noopener noreferrer" class="step__link">
+                Faire la demande AAH sur CAF.fr
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 6">6</div>
+            <div class="step__body">
+              <h3 class="step__title">Percevoir l'AAH et penser au renouvellement</h3>
+              <p class="step__desc">L'AAH est versee le 5 de chaque mois. Elle est attribuee pour une duree limitee de 1 a 5 ans (parfois de maniere indefinie si le handicap est irreversible) et doit donc etre renouvelee avant l'echeance. Pensez a initier le renouvellement au moins 6 mois avant la date d'expiration.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="page-wrapper">
+        <div class="section-header">
+          <div class="section-header__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <h2 class="section-header__title" id="faq-title" data-i18n="aid.faq_title">Questions frequentes</h2>
+            <p class="section-header__subtitle">Les reponses aux questions les plus posees sur l'AAH</p>
+          </div>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Peut-on cumuler AAH et revenus du travail ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Oui, l'AAH est partiellement cumulable avec des revenus d'activite professionnelle. Un mecanisme de franchises (exemptions de revenus) permet de conserver une partie de l'AAH lors de la reprise d'une activite. En milieu ordinaire de travail, les 4 premiers mois d'activite sont totalement neutres sur l'AAH.</p>
+              <p>Au-dela, un abattement de 80 % sur les 4 premiers mois puis de 40 % ensuite s'applique sur les revenus d'activite pour le calcul de l'AAH. En ESAT (milieu protege), les regles sont differentes et la remuneration garantie est dissociee de l'AAH.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>L'AAH est-elle supprimee a 60 ans ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>A 60 ans, vous basculez en principe vers l'Allocation de Solidarite aux Personnes Agees (ASPA) ou la retraite pour inaptitude. Cependant, si votre taux d'incapacite est d'au moins 80 % et si la retraite serait moins avantageuse, vous pouvez demander le maintien de l'AAH au-dela de 60 ans.</p>
+              <p>Cette option doit etre demandee expressement aupres de la CAF et de la MDPH. La CAF compare les montants et applique la solution la plus favorable pour vous. Il est conseille de se faire accompagner par un conseiller CAF ou une association specialisee pour optimiser ce choix.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Que signifie la deconjugalisation de l'AAH ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Depuis le 1er octobre 2023, les revenus du conjoint ou concubin ne sont plus pris en compte dans le calcul de l'AAH. Auparavant, si votre partenaire avait des revenus importants, votre AAH etait reduite, voire supprimee, ce qui creait une dependance financiere.</p>
+              <p>Desormais, l'AAH est calculee uniquement sur la base de vos propres revenus, independamment de la situation financiere de votre partenaire. Les beneficiaires de l'AAH qui le souhaitaient ont pu opter pour ce nouveau mode de calcul retroactivement au 1er octobre 2023.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Combien de temps faut-il pour obtenir l'AAH ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Le delai legal de traitement par la MDPH est de 4 mois a compter de la reception du dossier complet. En pratique, les delais varient selon les departements et la complexite du dossier : il faut compter en moyenne 4 a 6 mois entre le depot du dossier MDPH et le premier versement de l'AAH par la CAF.</p>
+              <p>Important : l'AAH peut etre versee retroactivement au mois de depot de la demande MDPH, et non pas au mois de la decision. Deposez donc votre dossier le plus tot possible, meme si vous anticipez un delai de traitement long.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="page-wrapper">
+        <h2 class="cta-section__title" id="cta-title">Verifiez votre eligibilite a l'AAH</h2>
+        <p class="cta-section__subtitle">Notre simulateur evalue votre situation en quelques minutes. En cas d'eligibilite, nous vous guidons vers les demarches MDPH adaptees.</p>
+        <a href="/simulateur.html" class="cta-section__btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span data-i18n="aid.cta_btn">Simuler mon eligibilite gratuitement</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="page-wrapper">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_simulator">Simulateur</p>
+          <ul>
+            <li><a href="/simulateur.html" data-i18n="footer.start_simulation">Demarrer la simulation</a></li>
+            <li><a href="/simulateur.html#comment" data-i18n="footer.how_it_works">Comment ca fonctionne</a></li>
+            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions frequentes</a></li>
+            <li><a href="/simulateur.html#donnees" data-i18n="footer.data_privacy">Vos donnees</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_popular">Aides populaires</p>
+          <ul>
+            <li><a href="/aides/rsa.html">RSA</a></li>
+            <li><a href="/aides/apl.html">APL</a></li>
+            <li><a href="/aides/prime-activite.html" data-i18n="footer.prime_activite">Prime d'activite</a></li>
+            <li><a href="/aides/aah.html">AAH</a></li>
+            <li><a href="/aides/cheque-energie.html" data-i18n="footer.cheque_energie">Cheque Energie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_guides">Guides</p>
+          <ul>
+            <li><a href="/guides.html" data-i18n="footer.all_guides">Tous les guides</a></li>
+            <li><a href="/guides/droits-sociaux.html" data-i18n="footer.guide_droits">Comprendre vos droits</a></li>
+            <li><a href="/guides/dossier-caf.html" data-i18n="footer.guide_caf">Constituer un dossier CAF</a></li>
+            <li><a href="/guides/non-recours.html" data-i18n="footer.guide_non_recours">Lutter contre le non-recours</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_legal">Informations legales</p>
+          <ul>
+            <li><a href="/mentions-legales.html" data-i18n="footer.legal_notice">Mentions legales</a></li>
+            <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialite</a></li>
+            <li><a href="/accessibilite.html" data-i18n="footer.accessibility">Accessibilite</a></li>
+            <li><a href="/contact.html" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2025 Mes Aides — Macaron Software. Tous droits reserves.</p>
+        <p data-i18n="footer.disclaimer">Ce service est indicatif et ne constitue pas un acte administratif officiel.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

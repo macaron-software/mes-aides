@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="aid.prime-activite.page_title">Prime d'Activite — Complement de revenus | Mes Aides</title>
+  <meta name="description" content="Tout savoir sur la Prime d'activite 2026 : conditions, montant jusqu'a 330 euros par mois, demarche CAF. Simulez gratuitement votre droit." />
+  <link rel="canonical" href="https://aides.macaron-software.com/aides/prime-activite.html" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .page-wrapper { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--sp-4); }
+    @media (min-width: 640px) { .page-wrapper { padding-inline: var(--sp-6); } }
+
+    .site-header { position: sticky; top: 0; z-index: var(--z-sticky); background: var(--c-surface); border-bottom: 1px solid var(--c-border); box-shadow: var(--sh-sm); }
+    .site-header__inner { display: flex; align-items: center; gap: var(--sp-8); padding-block: var(--sp-4); }
+    .site-logo { display: flex; align-items: center; gap: var(--sp-2); text-decoration: none; color: var(--c-primary); font-weight: var(--fw-bold); font-size: var(--text-lg); white-space: nowrap; }
+    .site-nav { display: flex; align-items: center; gap: var(--sp-6); margin-left: auto; }
+    .site-nav a { color: var(--c-text); text-decoration: none; font-size: var(--text-sm); font-weight: var(--fw-medium); transition: color var(--t-normal); }
+    .site-nav a:hover { color: var(--c-primary); }
+    @media (max-width: 640px) { .site-nav .nav-link { display: none; } }
+    .btn-cta { display: inline-flex; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-5); background: var(--c-primary); color: #fff; border: none; border-radius: var(--r-full); font-size: var(--text-sm); font-weight: var(--fw-semibold); text-decoration: none; cursor: pointer; transition: background var(--t-normal); white-space: nowrap; }
+    .btn-cta:hover { background: var(--c-primary-hover); }
+
+    .breadcrumb { display: flex; align-items: center; gap: var(--sp-2); padding-block: var(--sp-4); font-size: var(--text-sm); color: var(--c-text-muted); }
+    .breadcrumb a { color: var(--c-text-muted); text-decoration: none; transition: color var(--t-normal); }
+    .breadcrumb a:hover { color: var(--c-primary); }
+    .breadcrumb-sep { color: var(--c-border); }
+
+    .hero { background: linear-gradient(135deg, var(--c-success-light) 0%, var(--c-bg) 70%); border-bottom: 1px solid var(--c-border); padding-block: var(--sp-12) var(--sp-10); }
+    .hero__inner { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--sp-4); }
+    @media (min-width: 640px) { .hero__inner { padding-inline: var(--sp-6); } }
+    .hero__badge { display: inline-flex; align-items: center; gap: var(--sp-1); background: var(--c-success-light); color: var(--c-success); font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.06em; padding: var(--sp-1) var(--sp-3); border-radius: var(--r-full); margin-bottom: var(--sp-4); }
+    .hero__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: var(--fw-extrabold); color: var(--c-text); line-height: var(--lh-tight); margin-bottom: var(--sp-4); }
+    .hero__desc { font-size: var(--text-lg); color: var(--c-text-muted); max-width: 44rem; line-height: var(--lh-relaxed); margin-bottom: var(--sp-8); }
+    .hero__amount-block { display: inline-flex; align-items: baseline; gap: var(--sp-2); background: var(--c-success); color: #fff; border-radius: var(--r-xl); padding: var(--sp-4) var(--sp-8); margin-bottom: var(--sp-8); }
+    .hero__amount-value { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 900; line-height: 1; }
+    .hero__amount-label { font-size: var(--text-base); opacity: 0.85; }
+    .hero__cta { display: inline-flex; align-items: center; gap: var(--sp-2); background: var(--c-accent); color: #fff; padding: var(--sp-4) var(--sp-8); border-radius: var(--r-full); font-size: var(--text-base); font-weight: var(--fw-semibold); text-decoration: none; transition: background var(--t-normal); }
+    .hero__cta:hover { background: var(--c-accent-hover); }
+
+    .info-section { padding-block: var(--sp-12); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); margin-bottom: var(--sp-10); }
+    @media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card { background: var(--c-surface); border-radius: var(--r-xl); box-shadow: var(--sh-md); padding: var(--sp-8); }
+    .info-card__title { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--c-text); margin-bottom: var(--sp-6); padding-bottom: var(--sp-4); border-bottom: 2px solid var(--c-success-light); }
+    .info-card__title svg { color: var(--c-success); flex-shrink: 0; }
+    .criteria-list { list-style: none; display: flex; flex-direction: column; gap: var(--sp-4); }
+    .criteria-list li { display: flex; gap: var(--sp-3); align-items: flex-start; font-size: var(--text-sm); color: var(--c-text); line-height: var(--lh-relaxed); }
+    .criteria-list li::before { content: ''; display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--c-success); flex-shrink: 0; margin-top: 6px; }
+    .amount-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+    .amount-table th { background: var(--c-success-light); color: var(--c-success); font-weight: var(--fw-semibold); padding: var(--sp-3) var(--sp-4); text-align: left; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; }
+    .amount-table td { padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--c-border); color: var(--c-text); line-height: var(--lh-normal); }
+    .amount-table tr:last-child td { border-bottom: none; }
+    .amount-table .amount-value { font-weight: var(--fw-bold); color: var(--c-success); white-space: nowrap; }
+    .info-note { margin-top: var(--sp-5); padding: var(--sp-4); background: var(--c-success-light); border-left: 3px solid var(--c-success); border-radius: var(--r-md); font-size: var(--text-sm); color: var(--c-text-muted); line-height: var(--lh-relaxed); }
+
+    .demarche-section { background: var(--c-surface); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); padding-block: var(--sp-12); }
+    .section-header { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-8); }
+    .section-header__icon { width: 44px; height: 44px; background: var(--c-success-light); color: var(--c-success); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .section-header__title { font-size: var(--text-2xl); font-weight: var(--fw-bold); color: var(--c-text); }
+    .section-header__subtitle { font-size: var(--text-sm); color: var(--c-text-muted); margin-top: var(--sp-1); }
+    .steps-list { display: flex; flex-direction: column; gap: 0; max-width: 48rem; }
+    .step { display: flex; gap: var(--sp-5); position: relative; padding-bottom: var(--sp-8); }
+    .step:last-child { padding-bottom: 0; }
+    .step:not(:last-child)::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--c-border); }
+    .step__num { width: 40px; height: 40px; border-radius: 50%; background: var(--c-success); color: #fff; font-size: var(--text-sm); font-weight: var(--fw-bold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; box-shadow: var(--sh-md); }
+    .step__body { flex: 1; padding-top: var(--sp-2); }
+    .step__title { font-size: var(--text-base); font-weight: var(--fw-bold); color: var(--c-text); margin-bottom: var(--sp-2); }
+    .step__desc { font-size: var(--text-sm); color: var(--c-text-muted); line-height: var(--lh-relaxed); margin-bottom: var(--sp-3); }
+    .step__link { display: inline-flex; align-items: center; gap: var(--sp-1); font-size: var(--text-sm); color: var(--c-success); font-weight: var(--fw-semibold); text-decoration: none; transition: text-decoration var(--t-normal); }
+    .step__link:hover { text-decoration: underline; }
+
+    .faq-section { padding-block: var(--sp-12); }
+    .faq-list { max-width: 52rem; display: flex; flex-direction: column; gap: var(--sp-3); margin-top: var(--sp-8); }
+    .faq-item { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-sm); transition: box-shadow var(--t-normal); }
+    .faq-item:hover { box-shadow: var(--sh-md); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); padding: var(--sp-5) var(--sp-6); cursor: pointer; list-style: none; font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--c-text); transition: background var(--t-normal); }
+    .faq-question:hover { background: var(--c-bg); }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-icon { color: var(--c-success); flex-shrink: 0; transition: transform 300ms ease; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-answer { padding: 0 var(--sp-6) var(--sp-6); font-size: var(--text-sm); color: var(--c-text-muted); line-height: var(--lh-relaxed); border-top: 1px solid var(--c-border); }
+    .faq-answer p + p { margin-top: var(--sp-3); }
+
+    .cta-section { background: var(--c-success); padding-block: var(--sp-16); text-align: center; }
+    .cta-section__title { font-size: var(--text-3xl); font-weight: var(--fw-extrabold); color: #fff; margin-bottom: var(--sp-4); }
+    .cta-section__subtitle { font-size: var(--text-lg); color: rgba(255,255,255,0.85); max-width: 36rem; margin-inline: auto; margin-bottom: var(--sp-8); line-height: var(--lh-relaxed); }
+    .cta-section__btn { display: inline-flex; align-items: center; gap: var(--sp-2); background: #fff; color: var(--c-success); padding: var(--sp-4) var(--sp-10); border-radius: var(--r-full); font-size: var(--text-lg); font-weight: var(--fw-bold); text-decoration: none; transition: opacity var(--t-normal); box-shadow: var(--sh-lg); }
+    .cta-section__btn:hover { opacity: 0.9; }
+
+    .site-footer { background: var(--c-text); color: rgba(255,255,255,0.75); padding-block: var(--sp-12) var(--sp-8); }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-8); margin-bottom: var(--sp-10); }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-col__title { font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: var(--sp-4); }
+    .footer-col ul { display: flex; flex-direction: column; gap: var(--sp-3); }
+    .footer-col a { font-size: var(--text-sm); color: rgba(255,255,255,0.65); text-decoration: none; transition: color var(--t-normal); }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: var(--sp-6); display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: space-between; }
+    .footer-bottom p { font-size: var(--text-xs); color: rgba(255,255,255,0.45); }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="sr-only" data-i18n="nav.skip_to_content">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="page-wrapper">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Mes Aides — Accueil">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Mes Aides</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="/simulateur.html" class="nav-link" data-i18n="nav.simulator">Simulateur</a>
+          <a href="/aides.html" class="nav-link" aria-current="page" data-i18n="nav.aids">Aides</a>
+          <a href="/guides.html" class="nav-link" data-i18n="nav.guides">Guides</a>
+          <a href="/simulateur.html" class="btn-cta" data-i18n="nav.test_eligibility">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Tester mon eligibilite
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Fil d'ariane">
+    <div class="page-wrapper">
+      <ol class="breadcrumb">
+        <li><a href="/" data-i18n="breadcrumb.home">Accueil</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
+        <li><a href="/aides.html" data-i18n="breadcrumb.aids">Aides</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
+        <li aria-current="page">Prime d'activite</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="hero__badge" role="img" aria-label="Categorie : Revenus">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span data-i18n="cat.revenus">Revenus</span>
+      </div>
+      <h1 id="hero-title" class="hero__title" data-i18n="aid.prime-activite.name">
+        Prime d'Activite
+      </h1>
+      <p class="hero__desc" data-i18n="aid.prime-activite.hero_desc">
+        La Prime d'activite est un complement de revenus verse par la CAF aux travailleurs aux revenus modestes — salaries, independants, auto-entrepreneurs. Elle incite a l'activite professionnelle en garantissant que travailler est toujours plus avantageux que de rester sans emploi.
+      </p>
+      <div class="hero__amount-block" role="img" aria-label="Montant jusqu'a 330 euros par mois">
+        <span class="hero__amount-value">Jusqu'a 330 €</span>
+        <span class="hero__amount-label">/mois</span>
+      </div>
+      <p style="font-size:var(--text-xs);color:var(--c-text-muted);margin-bottom:var(--sp-6);">
+        Montant indicatif 2026 — variable selon les revenus et la composition du foyer
+      </p>
+      <a href="/simulateur.html" class="hero__cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <span data-i18n="aid.simulate_eligibility">Simuler mon eligibilite</span>
+      </a>
+    </div>
+  </section>
+
+  <main id="main-content">
+
+    <section class="info-section" aria-labelledby="info-conditions-title">
+      <div class="page-wrapper">
+        <div class="info-grid">
+
+          <div class="info-card">
+            <h2 class="info-card__title" id="info-conditions-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span data-i18n="aid.conditions_title">Conditions d'eligibilite</span>
+            </h2>
+            <ul class="criteria-list" aria-label="Liste des conditions d'eligibilite a la Prime d'activite">
+              <li>
+                <span><strong>Exercer une activite professionnelle :</strong> etre salarie, independant, auto-entrepreneur, intermittent du spectacle ou agent public. Une activite meme a temps partiel est suffisante. Vous devez exercer l'activite au moment de la demande.</span>
+              </li>
+              <li>
+                <span><strong>Age :</strong> avoir au moins 18 ans. Il n'y a pas de condition d'age superieur. Les etudiants et apprentis qui travaillent peuvent etre eligibles si leurs revenus d'activite depassent 78 % du SMIC mensuel net.</span>
+              </li>
+              <li>
+                <span><strong>Revenus sous plafond :</strong> vos revenus d'activite professionnelle (et ceux de votre foyer) doivent etre inferieurs a environ 1 800 €/mois nets pour une personne seule. Le plafond varie selon la composition du foyer.</span>
+              </li>
+              <li>
+                <span><strong>Residence en France :</strong> resider en France de maniere stable et effective. Les ressortissants etrangers hors Union europeenne doivent justifier d'un titre de sejour autorisant le travail.</span>
+              </li>
+              <li>
+                <span><strong>Non-cumul avec le RSA :</strong> la Prime d'activite ne peut pas etre cumulee avec le RSA pour les memes revenus. Elle prend le relai du RSA quand vos revenus d'activite augmentent.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h2 class="info-card__title" id="info-amount-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span data-i18n="aid.amount_title">Montant</span>
+            </h2>
+            <table class="amount-table" aria-label="Exemples de montants de Prime d'activite selon revenus">
+              <thead>
+                <tr>
+                  <th scope="col">Revenus d'activite nets (personne seule)</th>
+                  <th scope="col">Prime d'activite estimee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SMIC complet (~1 430 €)</td>
+                  <td class="amount-value">~261 €/mois</td>
+                </tr>
+                <tr>
+                  <td>800 € (mi-temps)</td>
+                  <td class="amount-value">~310 €/mois</td>
+                </tr>
+                <tr>
+                  <td>1 100 € (80 %)</td>
+                  <td class="amount-value">~290 €/mois</td>
+                </tr>
+                <tr>
+                  <td>1 600 €</td>
+                  <td class="amount-value">~90 €/mois</td>
+                </tr>
+                <tr>
+                  <td>Au-dessus de ~1 800 €</td>
+                  <td class="amount-value">0 €/mois</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="info-note">
+              <strong>La formule de calcul :</strong> Prime d'activite = Montant forfaitaire (635,71 €) + 61 % des revenus d'activite &minus; ressources du foyer &minus; forfait logement. Le montant est recalcule chaque trimestre sur la base des 3 derniers mois de revenus declares.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="demarche-section" aria-labelledby="demarche-title">
+      <div class="page-wrapper">
+        <div class="section-header">
+          <div class="section-header__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div>
+            <h2 class="section-header__title" id="demarche-title" data-i18n="aid.steps_title">Guide de demarche</h2>
+            <p class="section-header__subtitle">3 etapes pour faire votre demande de Prime d'activite</p>
+          </div>
+        </div>
+
+        <ol class="steps-list" aria-label="Etapes pour demander la Prime d'activite">
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 1">1</div>
+            <div class="step__body">
+              <h3 class="step__title">Verifier votre eligibilite et simuler le montant</h3>
+              <p class="step__desc">Avant tout, utilisez le simulateur de la CAF pour estimer votre Prime d'activite. Il suffit de renseigner vos revenus d'activite des 3 derniers mois, votre situation familiale et votre logement. La simulation est instantanee et sans engagement.</p>
+              <a href="https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/estimervosdroits/prime-d-activite" target="_blank" rel="noopener noreferrer" class="step__link">
+                Simulateur Prime d'activite CAF
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 2">2</div>
+            <div class="step__body">
+              <h3 class="step__title">Mettre a jour vos revenus dans votre espace CAF</h3>
+              <p class="step__desc">Si vous etes deja allocataire CAF, verifiez que vos revenus d'activite sont bien a jour dans votre dossier. La CAF utilise les informations transmises par l'administration fiscale (DGFiP) mais il peut y avoir des decalages. Connectez-vous a Mon compte CAF et verifiez la rubrique "Mes revenus".</p>
+              <a href="https://wwwd.caf.fr" target="_blank" rel="noopener noreferrer" class="step__link">
+                Mon compte CAF
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__num" aria-label="Etape 3">3</div>
+            <div class="step__body">
+              <h3 class="step__title">Faire la demande en ligne et declarer chaque trimestre</h3>
+              <p class="step__desc">Dans votre espace CAF : Mon compte > Faire une demande > Prime d'activite. Le formulaire prend environ 10 minutes. Une fois la demande validee, vous devez declarer vos revenus chaque trimestre (en janvier, avril, juillet et octobre) pour que le montant reste recalcule correctement. Le paiement intervient le 5 du mois suivant.</p>
+              <a href="https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/faire-une-demande-de-prestation" target="_blank" rel="noopener noreferrer" class="step__link">
+                Faire la demande sur CAF.fr
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="page-wrapper">
+        <div class="section-header">
+          <div class="section-header__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <h2 class="section-header__title" id="faq-title" data-i18n="aid.faq_title">Questions frequentes</h2>
+            <p class="section-header__subtitle">Les reponses aux questions les plus posees sur la Prime d'activite</p>
+          </div>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>La Prime d'activite concerne-t-elle aussi les independants et auto-entrepreneurs ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Oui, la Prime d'activite est ouverte a tous les travailleurs independants — artisans, commercants, professions liberales, auto-entrepreneurs — des lors que leurs revenus professionnels sont modestes. Le montant pris en compte est le benefice net apres deduction des charges professionnelles.</p>
+              <p>Pour les auto-entrepreneurs, la CAF applique un abattement forfaitaire sur le chiffre d'affaires declare (71 % pour la vente, 50 % pour les services) afin d'estimer le revenu net. La declaration trimestrielle reste obligatoire.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Que se passe-t-il si j'oublie de declarer mes revenus ce trimestre ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>En cas de non-declaration trimestrielle, la CAF suspend automatiquement le versement de la Prime d'activite jusqu'a regularisation. Vous pouvez effectuer la declaration en retard sans perdre definititivement vos droits, mais les mois manques ne sont generalement pas recuperables.</p>
+              <p>La CAF envoie des rappels par email et SMS avant la date limite de declaration. Configurez des alertes sur votre espace CAF pour ne pas manquer les echeances (debut janvier, avril, juillet, octobre).</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>La Prime d'activite est-elle imposable ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Non. La Prime d'activite est entierement exoneree d'impot sur le revenu. Vous n'avez pas a la declarer dans votre declaration annuelle de revenus. Elle n'entre pas non plus dans le calcul du revenu fiscal de reference.</p>
+              <p>En revanche, les montants verses par la CAF sont transmis a l'administration fiscale a titre informatif, ce qui peut parfois creer de la confusion lors du pre-remplissage de la declaration. Si c'est le cas, vous pouvez le corriger sans penalite.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Peut-on cumuler Prime d'activite et conge parental ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Le conge parental a temps plein suspend le droit a la Prime d'activite car vous n'exercez plus d'activite professionnelle. En conge parental partiel (maintien d'une activite a temps partiel), vous pouvez continuer a percevoir la Prime d'activite proportionnellement a vos revenus conserves.</p>
+              <p>Si vous percevez la PreParE (Prestation Partagee d'Education de l'Enfant), elle entre dans le calcul des ressources du foyer et peut reduire le montant de la Prime d'activite. Le simulateur CAF calcule automatiquement la situation la plus avantageuse.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              <span>Quel est le delai entre la demande et le premier versement ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Une fois la demande valide sur votre espace CAF, la CAF dispose d'un mois pour traiter votre dossier. Si la demande est acceptee, le premier versement intervient le 5 du mois suivant la decision.</p>
+              <p>Concretement, si vous faites votre demande en janvier et qu'elle est validee fin janvier, vous percevrez la premiere Prime d'activite le 5 fevrier. La Prime ne peut pas etre versee retroactivement avant la date de demande, il est donc conseille de faire la demande le plus tot possible.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="page-wrapper">
+        <h2 class="cta-section__title" id="cta-title">Verifiez votre droit a la Prime d'activite</h2>
+        <p class="cta-section__subtitle">Renseignez vos revenus d'activite en 3 minutes et decouvrez si vous pouvez beneficier de ce complement de revenus.</p>
+        <a href="/simulateur.html" class="cta-section__btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span data-i18n="aid.cta_btn">Simuler mon eligibilite gratuitement</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="page-wrapper">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_simulator">Simulateur</p>
+          <ul>
+            <li><a href="/simulateur.html" data-i18n="footer.start_simulation">Demarrer la simulation</a></li>
+            <li><a href="/simulateur.html#comment" data-i18n="footer.how_it_works">Comment ca fonctionne</a></li>
+            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions frequentes</a></li>
+            <li><a href="/simulateur.html#donnees" data-i18n="footer.data_privacy">Vos donnees</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_popular">Aides populaires</p>
+          <ul>
+            <li><a href="/aides/rsa.html">RSA</a></li>
+            <li><a href="/aides/apl.html">APL</a></li>
+            <li><a href="/aides/prime-activite.html" data-i18n="footer.prime_activite">Prime d'activite</a></li>
+            <li><a href="/aides/aah.html">AAH</a></li>
+            <li><a href="/aides/cheque-energie.html" data-i18n="footer.cheque_energie">Cheque Energie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_guides">Guides</p>
+          <ul>
+            <li><a href="/guides.html" data-i18n="footer.all_guides">Tous les guides</a></li>
+            <li><a href="/guides/droits-sociaux.html" data-i18n="footer.guide_droits">Comprendre vos droits</a></li>
+            <li><a href="/guides/dossier-caf.html" data-i18n="footer.guide_caf">Constituer un dossier CAF</a></li>
+            <li><a href="/guides/non-recours.html" data-i18n="footer.guide_non_recours">Lutter contre le non-recours</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_legal">Informations legales</p>
+          <ul>
+            <li><a href="/mentions-legales.html" data-i18n="footer.legal_notice">Mentions legales</a></li>
+            <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialite</a></li>
+            <li><a href="/accessibilite.html" data-i18n="footer.accessibility">Accessibilite</a></li>
+            <li><a href="/contact.html" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">&copy; 2025 Mes Aides — Macaron Software. Tous droits reserves.</p>
+        <p data-i18n="footer.disclaimer">Ce service est indicatif et ne constitue pas un acte administratif officiel.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+</body>
+</html>

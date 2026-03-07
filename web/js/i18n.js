@@ -1,20 +1,73 @@
-// i18n stub — full 40-lang implementation in Sprint 3
+const SUPPORTED = ['fr','en','ar','es','pt','tr','ro','pl','zh','ru','de','it','nl','fa','am',
+  'uk','sw','so','ha','bn','hi','tl','vi','ku','ps','ur','sr','hr','bg','cs',
+  'sk','hu','el','he','ko','ja','th','id','ms','yo'];
+
+const RTL_LANGS = ['ar','fa','he','ur','ps','ku'];
+
 const I18n = {
-  lang: localStorage.getItem('lang') || navigator.language?.slice(0, 2) || 'fr',
+  lang: localStorage.getItem('lang') || navigator.language?.slice(0,2) || 'fr',
   data: {},
+
   async load(lang) {
+    const l = SUPPORTED.includes(lang) ? lang : 'fr';
     try {
-      const res = await fetch(`/locales/${lang}.json`);
-      if (!res.ok) throw new Error();
+      const res = await fetch(`/locales/${l}.json`);
+      if (!res.ok) throw new Error('404');
       this.data = await res.json();
-      this.lang = lang;
-      localStorage.setItem('lang', lang);
+      this.lang = l;
+      localStorage.setItem('lang', l);
+      document.documentElement.lang = l;
+      document.documentElement.dir = RTL_LANGS.includes(l) ? 'rtl' : 'ltr';
+      this.apply();
     } catch {
-      // fallback: no translation, native HTML text
+      if (l !== 'fr') {
+        try {
+          const r2 = await fetch('/locales/fr.json');
+          if (r2.ok) {
+            this.data = await r2.json();
+            this.lang = 'fr';
+          }
+        } catch { /* use HTML defaults */ }
+      }
     }
   },
-  t(key) { return this.data[key] ?? key; },
+
+  /** Resolve dot-separated key: "step1.title" -> data.step1.title */
+  t(key, vars = {}) {
+    const parts = key.split('.');
+    let val = this.data;
+    for (const p of parts) {
+      if (val == null) return key;
+      val = val[p];
+    }
+    if (typeof val !== 'string') return key;
+    return val.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? `{${k}}`);
+  },
+
+  /** Apply translations to all [data-i18n] elements in the document */
+  apply() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const tr = this.t(key);
+      if (tr !== key) el.textContent = tr;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const tr = this.t(key);
+      if (tr !== key) el.setAttribute('placeholder', tr);
+    });
+  },
+
+  setLang(lang) {
+    this.load(lang);
+  }
 };
 
-if (I18n.lang !== 'fr') I18n.load(I18n.lang);
+// Init
+(async () => {
+  const lang = localStorage.getItem('lang') || navigator.language?.slice(0,2) || 'fr';
+  await I18n.load(lang);
+})();
+
 window.I18n = I18n;
+window.SUPPORTED_LANGS = SUPPORTED;

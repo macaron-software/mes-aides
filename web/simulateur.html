@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="simulator.page_title">Simulateur d'aides — Mes Aides France</title>
+  <meta name="description" content="Questionnaire gratuit — 3 minutes pour découvrir vos aides sociales.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    /* ── Simulator layout ── */
+    .sim-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--c-bg);
+    }
+
+    .sim-header {
+      background: var(--c-surface);
+      border-bottom: 1px solid var(--c-border);
+      padding: var(--sp-4) var(--sp-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      position: sticky;
+      top: 0;
+      z-index: var(--z-sticky);
+    }
+
+    .sim-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      text-decoration: none;
+      color: var(--c-primary);
+      font-weight: 700;
+      font-size: var(--fs-lg);
+    }
+
+    .sim-progress-bar {
+      flex: 1;
+      max-width: 480px;
+      height: 6px;
+      background: var(--c-border);
+      border-radius: var(--r-full);
+      overflow: hidden;
+    }
+
+    .sim-progress-fill {
+      height: 100%;
+      background: var(--c-primary);
+      border-radius: var(--r-full);
+      transition: width 400ms ease;
+    }
+
+    .sim-step-label {
+      font-size: var(--fs-sm);
+      color: var(--c-muted);
+      white-space: nowrap;
+    }
+
+    /* ── Step container ── */
+    .sim-body {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: var(--sp-12) var(--sp-4);
+    }
+
+    .sim-card {
+      background: var(--c-surface);
+      border-radius: var(--r-xl);
+      box-shadow: var(--sh-lg);
+      padding: var(--sp-10) var(--sp-12);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    @media (max-width: 640px) {
+      .sim-card { padding: var(--sp-6) var(--sp-5); }
+    }
+
+    .sim-step { display: none; }
+    .sim-step.active { display: block; }
+
+    .sim-step-heading {
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: var(--sp-2);
+    }
+
+    .sim-step-sub {
+      font-size: var(--fs-base);
+      color: var(--c-muted);
+      margin-bottom: var(--sp-8);
+    }
+
+    /* ── Question group ── */
+    .question-group { margin-bottom: var(--sp-6); }
+
+    .question-label {
+      display: block;
+      font-size: var(--fs-base);
+      font-weight: 600;
+      color: var(--c-text);
+      margin-bottom: var(--sp-3);
+    }
+
+    .question-hint {
+      font-size: var(--fs-sm);
+      color: var(--c-muted);
+      margin-top: var(--sp-1);
+    }
+
+    /* ── Choice grid ── */
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-3);
+    }
+
+    .choice-grid.single { grid-template-columns: 1fr; }
+
+    @media (max-width: 480px) {
+      .choice-grid { grid-template-columns: 1fr; }
+    }
+
+    .choice-btn {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      padding: var(--sp-4) var(--sp-4);
+      border: 2px solid var(--c-border);
+      border-radius: var(--r-lg);
+      background: var(--c-surface);
+      cursor: pointer;
+      transition: border-color var(--tr), background var(--tr);
+      text-align: left;
+      font-size: var(--fs-base);
+      color: var(--c-text);
+    }
+
+    .choice-btn:hover {
+      border-color: var(--c-primary);
+      background: var(--c-primary-light);
+    }
+
+    .choice-btn.selected {
+      border-color: var(--c-primary);
+      background: var(--c-primary-light);
+      color: var(--c-primary);
+      font-weight: 600;
+    }
+
+    .choice-btn svg { flex-shrink: 0; }
+
+    /* ── Slider ── */
+    .slider-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+
+    .slider-display {
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      color: var(--c-primary);
+    }
+
+    .slider-display span { font-size: var(--fs-sm); font-weight: 400; color: var(--c-muted); }
+
+    input[type=range] {
+      width: 100%;
+      accent-color: var(--c-primary);
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--fs-xs);
+      color: var(--c-muted);
+    }
+
+    /* ── Navigation ── */
+    .sim-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--sp-8);
+      padding-top: var(--sp-6);
+      border-top: 1px solid var(--c-border);
+    }
+
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-5);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      background: transparent;
+      color: var(--c-text);
+      font-size: var(--fs-base);
+      cursor: pointer;
+      transition: background var(--tr);
+    }
+
+    .btn-back:hover { background: var(--c-bg); }
+    .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    .btn-next {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-6);
+      border: none;
+      border-radius: var(--r-md);
+      background: var(--c-primary);
+      color: #fff;
+      font-size: var(--fs-base);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--tr);
+    }
+
+    .btn-next:hover { background: var(--c-primary-hover); }
+
+    /* ── Step indicators (top of card) ── */
+    .step-dots {
+      display: flex;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-6);
+    }
+
+    .step-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c-border);
+      transition: background var(--tr), transform var(--tr);
+    }
+
+    .step-dot.done { background: var(--c-primary-hover); }
+    .step-dot.active { background: var(--c-primary); transform: scale(1.3); }
+  </style>
+</head>
+<body>
+  <div class="sim-shell">
+    <!-- Header -->
+    <header class="sim-header">
+      <a href="/" class="sim-logo" aria-label="Accueil">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span data-i18n="site.name">Mes Aides</span>
+      </a>
+
+      <div class="sim-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1" id="progressbar">
+        <div class="sim-progress-fill" id="progressFill" style="width: 20%"></div>
+      </div>
+
+      <span class="sim-step-label" id="stepCounter" data-i18n-template="simulator.step_of">Etape 1 / 5</span>
+    </header>
+
+    <!-- Body -->
+    <main class="sim-body">
+      <div class="sim-card">
+        <!-- Step dots -->
+        <div class="step-dots" aria-hidden="true" id="stepDots">
+          <div class="step-dot active" data-step="1"></div>
+          <div class="step-dot" data-step="2"></div>
+          <div class="step-dot" data-step="3"></div>
+          <div class="step-dot" data-step="4"></div>
+          <div class="step-dot" data-step="5"></div>
+        </div>
+
+        <!-- ── STEP 1 — Situation personnelle ── -->
+        <div class="sim-step active" id="step-1">
+          <h1 class="sim-step-heading" data-i18n="step1.title">Votre situation</h1>
+          <p class="sim-step-sub" data-i18n="step1.subtitle">Quelques informations sur vous et votre foyer.</p>
+
+          <div class="question-group">
+            <label class="question-label" data-i18n="step1.q_age">Quel est votre age ?</label>
+            <div class="slider-wrapper">
+              <div class="slider-display" id="ageDisplay">30 <span data-i18n="common.years">ans</span></div>
+              <input type="range" id="age" name="age" min="16" max="99" value="30"
+                oninput="document.getElementById('ageDisplay').firstChild.textContent = this.value + ' '">
+              <div class="slider-labels"><span>16</span><span>99</span></div>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step1.q_situation">Situation familiale</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="situation_familiale" data-value="celibataire">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+                <span data-i18n="step1.celibataire">Celibataire</span>
+              </button>
+              <button class="choice-btn" data-field="situation_familiale" data-value="en_couple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h2m4 0h2a4 4 0 0 1 4 4v2"/></svg>
+                <span data-i18n="step1.en_couple">En couple</span>
+              </button>
+              <button class="choice-btn" data-field="situation_familiale" data-value="marie">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span data-i18n="step1.marie">Marie(e) / Pacse(e)</span>
+              </button>
+              <button class="choice-btn" data-field="situation_familiale" data-value="parent_isole">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M5.5 20H18.5M12 11v9"/></svg>
+                <span data-i18n="step1.parent_isole">Parent isole</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <label class="question-label" data-i18n="step1.q_enfants">Nombre d'enfants a charge</label>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="nb_enfants" data-value="0">0</button>
+              <button class="choice-btn" data-field="nb_enfants" data-value="1">1</button>
+              <button class="choice-btn" data-field="nb_enfants" data-value="2">2</button>
+              <button class="choice-btn" data-field="nb_enfants" data-value="3+">3 <span data-i18n="common.or_more">ou plus</span></button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step1.q_handicap">Situation de handicap ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="handicap" data-value="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span data-i18n="common.no">Non</span>
+              </button>
+              <button class="choice-btn" data-field="handicap" data-value="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M10 22v-5h4v5M7 9l2 2 4-4"/></svg>
+                <span data-i18n="common.yes">Oui</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 2 — Logement ── -->
+        <div class="sim-step" id="step-2">
+          <h2 class="sim-step-heading" data-i18n="step2.title">Votre logement</h2>
+          <p class="sim-step-sub" data-i18n="step2.subtitle">Ces informations permettent de calculer l'APL et le cheque energie.</p>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step2.q_statut">Statut de votre logement</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="statut_logement" data-value="locataire">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span data-i18n="step2.locataire">Locataire</span>
+              </button>
+              <button class="choice-btn" data-field="statut_logement" data-value="proprietaire">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M15 7l2 2"/></svg>
+                <span data-i18n="step2.proprietaire">Proprietaire</span>
+              </button>
+              <button class="choice-btn" data-field="statut_logement" data-value="heberge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span data-i18n="step2.heberge">Heberge</span>
+              </button>
+              <button class="choice-btn" data-field="statut_logement" data-value="sans_domicile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span data-i18n="step2.sans_domicile">Sans domicile</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group" id="loyer-group">
+            <label class="question-label" data-i18n="step2.q_loyer">Loyer mensuel (charges incluses)</label>
+            <div class="slider-wrapper">
+              <div class="slider-display" id="loyerDisplay">600 <span>€/mois</span></div>
+              <input type="range" id="loyer" name="loyer" min="0" max="2000" step="10" value="600"
+                oninput="document.getElementById('loyerDisplay').firstChild.textContent = this.value + ' '">
+              <div class="slider-labels"><span>0 €</span><span>2 000 €</span></div>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step2.q_zone">Zone geographique</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="zone_apl" data-value="1">
+                <span data-i18n="step2.zone1">Zone 1 (Ile-de-France)</span>
+              </button>
+              <button class="choice-btn" data-field="zone_apl" data-value="2">
+                <span data-i18n="step2.zone2">Zone 2 (Grandes villes)</span>
+              </button>
+              <button class="choice-btn" data-field="zone_apl" data-value="3">
+                <span data-i18n="step2.zone3">Zone 3 (Reste France)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 3 — Revenus ── -->
+        <div class="sim-step" id="step-3">
+          <h2 class="sim-step-heading" data-i18n="step3.title">Vos revenus</h2>
+          <p class="sim-step-sub" data-i18n="step3.subtitle">Indiquez vos revenus mensuels nets du foyer.</p>
+
+          <div class="question-group">
+            <label class="question-label" data-i18n="step3.q_revenu">Revenus mensuels nets du foyer</label>
+            <div class="slider-wrapper">
+              <div class="slider-display" id="revenuDisplay">1 200 <span>€/mois</span></div>
+              <input type="range" id="revenu" name="revenu" min="0" max="5000" step="50" value="1200"
+                oninput="updateRevenu(this.value)">
+              <div class="slider-labels"><span>0 €</span><span>5 000 €+</span></div>
+            </div>
+            <p class="question-hint" data-i18n="step3.hint_revenu">Salaires, allocations, pensions — avant deductions (hors APL).</p>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step3.q_apl_actuelle">Percevez-vous deja une APL ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="apl_actuelle" data-value="false">
+                <span data-i18n="common.no">Non</span>
+              </button>
+              <button class="choice-btn" data-field="apl_actuelle" data-value="true">
+                <span data-i18n="common.yes">Oui</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step3.q_allocations">Allocations CAF en cours ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="allocations_caf" data-value="false">
+                <span data-i18n="common.none">Aucune</span>
+              </button>
+              <button class="choice-btn" data-field="allocations_caf" data-value="af">
+                <span data-i18n="step3.af">Allocations familiales</span>
+              </button>
+              <button class="choice-btn" data-field="allocations_caf" data-value="rsa">
+                <span data-i18n="step3.rsa">RSA</span>
+              </button>
+              <button class="choice-btn" data-field="allocations_caf" data-value="other">
+                <span data-i18n="common.other">Autre</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 4 — Sante ── -->
+        <div class="sim-step" id="step-4">
+          <h2 class="sim-step-heading" data-i18n="step4.title">Sante et handicap</h2>
+          <p class="sim-step-sub" data-i18n="step4.subtitle">Ces informations ouvrent droit a des aides specifiques.</p>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step4.q_ald">Affection de longue duree (ALD) ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="ald" data-value="false">
+                <span data-i18n="common.no">Non</span>
+              </button>
+              <button class="choice-btn" data-field="ald" data-value="true">
+                <span data-i18n="common.yes">Oui</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step4.q_rqth">Reconnaissance RQTH (travailleur handicape) ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="rqth" data-value="false">
+                <span data-i18n="common.no">Non</span>
+              </button>
+              <button class="choice-btn" data-field="rqth" data-value="true">
+                <span data-i18n="common.yes">Oui</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step4.q_taux_incapacite">Taux d'incapacite reconnu ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="taux_incapacite" data-value="0">
+                <span data-i18n="step4.aucun">Aucun / Non evalue</span>
+              </button>
+              <button class="choice-btn" data-field="taux_incapacite" data-value="50">
+                <span data-i18n="step4.taux50">50% a 79%</span>
+              </button>
+              <button class="choice-btn" data-field="taux_incapacite" data-value="80">
+                <span data-i18n="step4.taux80">80% ou plus</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step4.q_cmu">Complement sante solidaire (CSS/CMU-C) ?</span>
+            <div class="choice-grid">
+              <button class="choice-btn selected" data-field="cmu_c" data-value="false">
+                <span data-i18n="common.no">Non</span>
+              </button>
+              <button class="choice-btn" data-field="cmu_c" data-value="true">
+                <span data-i18n="common.yes">Oui</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 5 — Emploi ── -->
+        <div class="sim-step" id="step-5">
+          <h2 class="sim-step-heading" data-i18n="step5.title">Situation professionnelle</h2>
+          <p class="sim-step-sub" data-i18n="step5.subtitle">Derniere etape. Vos resultats seront calcules immediatement.</p>
+
+          <div class="question-group">
+            <span class="question-label" data-i18n="step5.q_statut">Statut professionnel</span>
+            <div class="choice-grid">
+              <button class="choice-btn" data-field="statut_emploi" data-value="salarie_cdi">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span data-i18n="step5.cdi">Salarie CDI</span>
+              </button>
+              <button class="choice-btn" data-field="statut_emploi" data-value="salarie_cdd">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+                <span data-i18n="step5.cdd">Salarie CDD</span>
+              </button>
+              <button class="choice-btn selected" data-field="statut_emploi" data-value="chomeur">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                <span data-i18n="step5.chomeur">En recherche d'emploi</span>
+              </button>
+              <button class="choice-btn" data-field="statut_emploi" data-value="etudiant">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span data-i18n="step5.etudiant">Etudiant(e)</span>
+              </button>
+              <button class="choice-btn" data-field="statut_emploi" data-value="retraite">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                <span data-i18n="step5.retraite">Retraite(e)</span>
+              </button>
+              <button class="choice-btn" data-field="statut_emploi" data-value="independant">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                <span data-i18n="step5.independant">Independant / Auto-entrepreneur</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="question-group">
+            <label class="question-label" data-i18n="step5.q_anciennete">Depuis combien de temps (mois) ?</label>
+            <div class="slider-wrapper">
+              <div class="slider-display" id="ancienneteDisplay">6 <span data-i18n="common.months">mois</span></div>
+              <input type="range" id="anciennete" name="anciennete" min="0" max="60" step="1" value="6"
+                oninput="document.getElementById('ancienneteDisplay').firstChild.textContent = this.value + ' '">
+              <div class="slider-labels"><span>0</span><span>60 mois</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="sim-nav">
+          <button class="btn-back" id="btnBack" onclick="prevStep()" disabled aria-label="Etape precedente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            <span data-i18n="common.back">Retour</span>
+          </button>
+          <button class="btn-next" id="btnNext" onclick="nextStep()" aria-label="Etape suivante">
+            <span id="btnNextLabel" data-i18n="common.next">Suivant</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script>
+    const TOTAL_STEPS = 5;
+    let currentStep = 1;
+
+    // Persist answers in localStorage
+    const answers = JSON.parse(localStorage.getItem('sim_answers') || '{}');
+
+    function saveAnswers() {
+      localStorage.setItem('sim_answers', JSON.stringify(answers));
+    }
+
+    // Choice buttons
+    document.querySelectorAll('.choice-btn[data-field]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const field = btn.dataset.field;
+        const value = btn.dataset.value;
+        // Deselect siblings
+        document.querySelectorAll(`.choice-btn[data-field="${field}"]`).forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[field] = value;
+        saveAnswers();
+      });
+    });
+
+    // Sliders
+    ['age', 'loyer', 'revenu', 'anciennete'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          answers[id] = parseInt(el.value);
+          saveAnswers();
+        });
+      }
+    });
+
+    function updateRevenu(val) {
+      const n = parseInt(val);
+      document.getElementById('revenuDisplay').firstChild.textContent =
+        n.toLocaleString('fr-FR') + ' ';
+      answers.revenu = n;
+      saveAnswers();
+    }
+
+    function updateUI() {
+      // Steps visibility
+      document.querySelectorAll('.sim-step').forEach((el, i) => {
+        el.classList.toggle('active', i + 1 === currentStep);
+      });
+
+      // Progress
+      const pct = (currentStep / TOTAL_STEPS) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressbar').setAttribute('aria-valuenow', currentStep);
+      document.getElementById('stepCounter').textContent = `Etape ${currentStep} / ${TOTAL_STEPS}`;
+
+      // Dots
+      document.querySelectorAll('.step-dot').forEach((dot, i) => {
+        dot.classList.toggle('done', i + 1 < currentStep);
+        dot.classList.toggle('active', i + 1 === currentStep);
+      });
+
+      // Buttons
+      document.getElementById('btnBack').disabled = currentStep === 1;
+      const nextLabel = document.getElementById('btnNextLabel');
+      if (currentStep === TOTAL_STEPS) {
+        nextLabel.setAttribute('data-i18n', 'simulator.see_results');
+        nextLabel.textContent = 'Voir mes resultats';
+      } else {
+        nextLabel.setAttribute('data-i18n', 'common.next');
+        nextLabel.textContent = 'Suivant';
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < TOTAL_STEPS) {
+        currentStep++;
+        updateUI();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        submitSimulation();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateUI();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    async function submitSimulation() {
+      const btnNext = document.getElementById('btnNext');
+      btnNext.disabled = true;
+      btnNext.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Calcul en cours…';
+
+      // Build payload from answers
+      const payload = buildPayload();
+
+      try {
+        const resp = await fetch('/api/simulate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (resp.ok) {
+          const data = await resp.json();
+          localStorage.setItem('sim_results', JSON.stringify(data));
+          window.location.href = 'resultats.html';
+        } else {
+          throw new Error('API error');
+        }
+      } catch (e) {
+        // Offline / demo mode — generate dummy results
+        const demo = generateDemoResults(payload);
+        localStorage.setItem('sim_results', JSON.stringify(demo));
+        window.location.href = 'resultats.html';
+      }
+    }
+
+    function buildPayload() {
+      const age = parseInt(document.getElementById('age').value);
+      const revenu = parseInt(document.getElementById('revenu').value);
+      const loyer = parseInt(document.getElementById('loyer').value);
+      const anciennete = parseInt(document.getElementById('anciennete').value);
+
+      return {
+        age,
+        revenu_mensuel: revenu,
+        loyer_mensuel: loyer,
+        anciennete_emploi_mois: anciennete,
+        situation_familiale: answers.situation_familiale || 'celibataire',
+        nb_enfants: parseInt(answers.nb_enfants) || 0,
+        handicap: answers.handicap === 'true',
+        statut_logement: answers.statut_logement || 'locataire',
+        zone_apl: parseInt(answers.zone_apl) || 3,
+        apl_actuelle: answers.apl_actuelle === 'true',
+        ald: answers.ald === 'true',
+        rqth: answers.rqth === 'true',
+        taux_incapacite: parseInt(answers.taux_incapacite) || 0,
+        cmu_c: answers.cmu_c === 'true',
+        statut_emploi: answers.statut_emploi || 'chomeur',
+        allocations_caf: answers.allocations_caf || 'false'
+      };
+    }
+
+    function generateDemoResults(p) {
+      const aides = [];
+
+      // RSA
+      if (p.statut_emploi !== 'salarie_cdi' && p.revenu_mensuel < 1000) {
+        aides.push({ id: 'rsa', nom: 'Revenu de Solidarite Active (RSA)', montant_mensuel: Math.max(0, 635 - p.revenu_mensuel * 0.68), categorie: 'revenus', eligible: true, nb_etapes: 5 });
+      }
+
+      // APL
+      if (p.statut_logement === 'locataire' && p.loyer_mensuel > 0) {
+        const bases = [380, 290, 250];
+        const base = bases[p.zone_apl - 1] || 250;
+        const montant = Math.max(0, base - p.revenu_mensuel * 0.2);
+        aides.push({ id: 'apl', nom: 'Aide Personnalisee au Logement (APL)', montant_mensuel: montant, categorie: 'logement', eligible: true, nb_etapes: 4 });
+      }
+
+      // Prime activite
+      if ((p.statut_emploi === 'salarie_cdi' || p.statut_emploi === 'salarie_cdd') && p.revenu_mensuel < 1800) {
+        aides.push({ id: 'prime-activite', nom: 'Prime d\'Activite', montant_mensuel: Math.max(0, 300 - (p.revenu_mensuel - 1000) * 0.38), categorie: 'revenus', eligible: true, nb_etapes: 3 });
+      }
+
+      // AAH
+      if (p.taux_incapacite >= 80 && p.revenu_mensuel < 1016) {
+        aides.push({ id: 'aah', nom: 'Allocation aux Adultes Handicapes (AAH)', montant_mensuel: 1016.85, categorie: 'handicap', eligible: true, nb_etapes: 6 });
+      }
+
+      // Cheque energie
+      if (p.revenu_mensuel < 2500) {
+        aides.push({ id: 'cheque-energie', nom: 'Cheque Energie', montant_mensuel: Math.round(200 / 12), categorie: 'energie', eligible: true, nb_etapes: 1 });
+      }
+
+      aides.sort((a, b) => b.montant_mensuel - a.montant_mensuel);
+
+      return {
+        aides,
+        total_mensuel: aides.reduce((s, a) => s + a.montant_mensuel, 0),
+        nb_aides: aides.length,
+        situation: p
+      };
+    }
+
+    // Restore saved answers
+    Object.entries(answers).forEach(([field, value]) => {
+      const btn = document.querySelector(`.choice-btn[data-field="${field}"][data-value="${value}"]`);
+      if (btn) {
+        document.querySelectorAll(`.choice-btn[data-field="${field}"]`).forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      }
+      const slider = document.getElementById(field);
+      if (slider) {
+        slider.value = value;
+        slider.dispatchEvent(new Event('input'));
+      }
+    });
+
+    updateUI();
+  </script>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spin { animation: spin 1s linear infinite; }
+  </style>
+</body>
+</html>

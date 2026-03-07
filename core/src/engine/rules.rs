@@ -10,10 +10,10 @@ pub struct Baremes {
     pub rsa_base_personne_seule: f64,
     pub rsa_majoration_parent_isole: f64,
     pub rsa_plafond_par_enfant: f64,
-    // Prime d'activité
+    // Prime d'activite
     pub pa_montant_forfaitaire: f64,
     pub pa_seuil_revenu_max: f64,
-    // APL (simplifiée — calcul réel très complexe)
+    // APL (simplifiee)
     pub apl_montant_base_zone1: f64,
     pub apl_montant_base_zone2: f64,
     pub apl_montant_base_zone3: f64,
@@ -34,6 +34,18 @@ pub struct Baremes {
     // Complement familial
     pub cf_montant_base: f64,
     pub cf_plafond_revenu: f64,
+    // CSS (Complement Sante Solidaire)
+    pub css_plafond_revenu_seul: f64,
+    pub css_plafond_revenu_couple: f64,
+    // CEJ (Contrat Engagement Jeune)
+    pub cej_montant_max: f64,
+    // ASPA (Allocation Solidarite Personnes Agees)
+    pub aspa_montant_seul: f64,
+    pub aspa_montant_couple: f64,
+    // Prime de Noel RSA
+    pub prime_noel_seul: f64,
+    pub prime_noel_couple: f64,
+    pub prime_noel_par_enfant: f64,
 }
 
 impl Baremes {
@@ -62,6 +74,14 @@ impl Baremes {
             af_montant_par_enfant_sup: 180.01,
             cf_montant_base: 220.12,
             cf_plafond_revenu: 3400.0,
+            css_plafond_revenu_seul: 9600.0,
+            css_plafond_revenu_couple: 14400.0,
+            cej_montant_max: 528.60,
+            aspa_montant_seul: 961.08,
+            aspa_montant_couple: 1492.08,
+            prime_noel_seul: 152.45,
+            prime_noel_couple: 228.67,
+            prime_noel_par_enfant: 60.98,
         }
     }
 }
@@ -72,7 +92,6 @@ pub fn calc_rsa(s: &Situation, b: &Baremes) -> AideResult {
     let mut raisons = Vec::new();
     let mut raisons_ko = Vec::new();
 
-    // Eligibility conditions
     let age_ok = s.age >= 25
         || (s.nb_enfants > 0)
         || matches!(s.emploi, EmploiStatus::AlternantApprentissage);
@@ -108,7 +127,7 @@ pub fn calc_rsa(s: &Situation, b: &Baremes) -> AideResult {
         score: if eligible { 0.95 } else { 0.0 },
         raisons,
         raisons_ineligible: raisons_ko,
-        nb_etapes: 3,
+        nb_etapes: 5,
     }
 }
 
@@ -130,7 +149,6 @@ pub fn calc_apl(s: &Situation, b: &Baremes) -> AideResult {
     };
 
     let loyer_retenu = s.loyer_mensuel.min(plafond_loyer);
-    // Simplified: APL ~ base * (loyer_retenu/plafond) * (1 - revenu_foyer/plafond_revenu)
     let plafond_revenu = 2000.0 + (s.nb_enfants as f64 * 300.0);
     let taux_revenu = (1.0 - (s.revenu_foyer() / plafond_revenu)).max(0.0).min(1.0);
     let montant = (base * (loyer_retenu / plafond_loyer) * taux_revenu).round();
@@ -150,7 +168,7 @@ pub fn calc_apl(s: &Situation, b: &Baremes) -> AideResult {
         score: if eligible { 0.85 } else { 0.0 },
         raisons,
         raisons_ineligible: raisons_ko,
-        nb_etapes: 2,
+        nb_etapes: 4,
     }
 }
 
@@ -168,7 +186,6 @@ pub fn calc_prime_activite(s: &Situation, b: &Baremes) -> AideResult {
     let revenu = s.revenu_foyer();
     let revenu_ok = revenu > 0.0 && revenu < b.pa_seuil_revenu_max;
 
-    // Bonus individuel = montant_forfaitaire * min(revenu/smic, 1) * 0.61
     let smic_net_mensuel = 1398.69;
     let bonus = b.pa_montant_forfaitaire * (revenu / smic_net_mensuel).min(1.0) * 0.61;
     let montant = (b.pa_montant_forfaitaire + bonus - revenu * 0.38).max(0.0).round();
@@ -190,7 +207,7 @@ pub fn calc_prime_activite(s: &Situation, b: &Baremes) -> AideResult {
         score: if eligible { 0.9 } else { 0.0 },
         raisons,
         raisons_ineligible: raisons_ko,
-        nb_etapes: 2,
+        nb_etapes: 3,
     }
 }
 
@@ -227,7 +244,7 @@ pub fn calc_aah(s: &Situation, b: &Baremes) -> AideResult {
         score: if eligible { 0.9 } else { 0.0 },
         raisons,
         raisons_ineligible: raisons_ko,
-        nb_etapes: 5,
+        nb_etapes: 6,
     }
 }
 
@@ -239,11 +256,9 @@ pub fn calc_cheque_energie(s: &Situation, b: &Baremes) -> AideResult {
     let revenu_annuel = s.revenu_foyer() * 12.0;
     let eligible = revenu_annuel <= b.cheque_energie_plafond_revenu;
 
-    // Montant varie selon revenus et composition foyer
     let montant = if eligible {
         let taux = 1.0 - (revenu_annuel / b.cheque_energie_plafond_revenu);
         let base = b.cheque_energie_min + taux * (b.cheque_energie_max - b.cheque_energie_min);
-        // Majoration foyers nombreux
         let majoration = s.nb_enfants as f64 * 20.0;
         (base + majoration).min(b.cheque_energie_max).round()
     } else {
@@ -252,12 +267,11 @@ pub fn calc_cheque_energie(s: &Situation, b: &Baremes) -> AideResult {
 
     if eligible {
         raisons.push(format!("Revenus annuels ({revenu_annuel:.0}€) <= {:.0}€", b.cheque_energie_plafond_revenu));
-        raisons.push(format!("Montant annuel estime: {montant:.0}€"));
+        raisons.push("Attribution automatique via la DGFiP".to_string());
     } else {
         raisons_ko.push(format!("Revenus annuels ({revenu_annuel:.0}€) > plafond ({:.0}€)", b.cheque_energie_plafond_revenu));
     }
 
-    // Note: cheque energie verse annuellement, on met montant_mensuel = None, annuel = montant
     AideResult {
         aide_id: AideId::ChequeEnergie,
         eligible,
@@ -266,6 +280,170 @@ pub fn calc_cheque_energie(s: &Situation, b: &Baremes) -> AideResult {
         score: if eligible { 0.95 } else { 0.0 },
         raisons,
         raisons_ineligible: raisons_ko,
-        nb_etapes: 1, // Automatique via impots
+        nb_etapes: 1,
     }
 }
+
+/// Compute allocations familiales
+pub fn calc_allocations_familiales(s: &Situation, b: &Baremes) -> AideResult {
+    let mut raisons = Vec::new();
+    let mut raisons_ko = Vec::new();
+
+    let eligible = s.nb_enfants >= 2;
+    let montant = if eligible {
+        b.af_montant_2_enfants + ((s.nb_enfants as i32 - 2).max(0) as f64 * b.af_montant_par_enfant_sup)
+    } else {
+        0.0
+    };
+
+    if eligible {
+        raisons.push(format!("{} enfants a charge (>= 2 requis)", s.nb_enfants));
+    } else {
+        raisons_ko.push(format!("{} enfant a charge (2 requis minimum)", s.nb_enfants));
+    }
+
+    AideResult {
+        aide_id: AideId::AllocationsFamiliales,
+        eligible,
+        montant_mensuel: if eligible { Some(montant.round()) } else { None },
+        montant_annuel: if eligible { Some((montant * 12.0).round()) } else { None },
+        score: if eligible { 1.0 } else { 0.0 },
+        raisons,
+        raisons_ineligible: raisons_ko,
+        nb_etapes: 2,
+    }
+}
+
+/// Compute CSS (Complement Sante Solidaire)
+pub fn calc_css(s: &Situation, b: &Baremes) -> AideResult {
+    use crate::engine::types::FamilleStatus;
+    let mut raisons = Vec::new();
+    let mut raisons_ko = Vec::new();
+
+    let plafond = match s.situation_familiale {
+        FamilleStatus::Couple => b.css_plafond_revenu_couple,
+        _ => b.css_plafond_revenu_seul,
+    };
+    let revenu_annuel = s.revenu_foyer() * 12.0;
+    let eligible = revenu_annuel <= plafond && !s.cmu_c;
+
+    if eligible {
+        raisons.push(format!("Revenus annuels ({revenu_annuel:.0}€) <= plafond ({plafond:.0}€)"));
+        raisons.push("Pas de CSS en cours".to_string());
+    } else if s.cmu_c {
+        raisons_ko.push("Deja beneficiaire CSS/CMU-C".to_string());
+    } else {
+        raisons_ko.push(format!("Revenus annuels ({revenu_annuel:.0}€) > plafond ({plafond:.0}€)"));
+    }
+
+    AideResult {
+        aide_id: AideId::Css,
+        eligible,
+        montant_mensuel: None,
+        montant_annuel: if eligible { Some(600.0) } else { None },
+        score: if eligible { 0.85 } else { 0.0 },
+        raisons,
+        raisons_ineligible: raisons_ko,
+        nb_etapes: 3,
+    }
+}
+
+/// Compute CEJ (Contrat Engagement Jeune)
+pub fn calc_cej(s: &Situation, b: &Baremes) -> AideResult {
+    use crate::engine::types::EmploiStatus;
+    let mut raisons = Vec::new();
+    let mut raisons_ko = Vec::new();
+
+    let age_ok = s.age >= 16 && s.age < 26;
+    let not_employed = matches!(s.emploi, EmploiStatus::SansSituation | EmploiStatus::Chomeur);
+    let eligible = age_ok && not_employed;
+
+    if age_ok { raisons.push(format!("Age {} ans (16-25 requis)", s.age)); }
+    else { raisons_ko.push(format!("Age {} hors plage 16-25 ans", s.age)); }
+    if not_employed { raisons.push("Pas en emploi ni en formation".to_string()); }
+    else { raisons_ko.push("En emploi ou formation (CEJ pour jeunes eloignes de l'emploi)".to_string()); }
+
+    AideResult {
+        aide_id: AideId::Cej,
+        eligible,
+        montant_mensuel: if eligible { Some(b.cej_montant_max) } else { None },
+        montant_annuel: if eligible { Some(b.cej_montant_max * 12.0) } else { None },
+        score: if eligible { 0.75 } else { 0.0 },
+        raisons,
+        raisons_ineligible: raisons_ko,
+        nb_etapes: 3,
+    }
+}
+
+/// Compute ASPA (Allocation Solidarite Personnes Agees)
+pub fn calc_aspa(s: &Situation, b: &Baremes) -> AideResult {
+    use crate::engine::types::{EmploiStatus, FamilleStatus};
+    let mut raisons = Vec::new();
+    let mut raisons_ko = Vec::new();
+
+    let age_ok = s.age >= 65
+        || (matches!(s.emploi, EmploiStatus::Retraite) && s.age >= 62);
+    let (plafond, montant_brut) = match s.situation_familiale {
+        FamilleStatus::Couple => (b.aspa_montant_couple, b.aspa_montant_couple),
+        _ => (b.aspa_montant_seul, b.aspa_montant_seul),
+    };
+    let revenu = s.revenu_foyer();
+    let montant = (montant_brut - revenu).max(0.0).round();
+    let eligible = age_ok && montant > 0.0;
+
+    if age_ok { raisons.push(format!("Age {} ans (>= 65 ou retraite >= 62)", s.age)); }
+    else { raisons_ko.push(format!("Age {} hors plage (>= 65 ans requis)", s.age)); }
+    if eligible { raisons.push(format!("Revenus ({revenu:.0}€) < plafond ({plafond:.0}€)")); }
+    else if age_ok { raisons_ko.push(format!("Revenus ({revenu:.0}€) >= plafond ({plafond:.0}€)")); }
+
+    AideResult {
+        aide_id: AideId::Aspa,
+        eligible,
+        montant_mensuel: if eligible { Some(montant) } else { None },
+        montant_annuel: if eligible { Some(montant * 12.0) } else { None },
+        score: if eligible { 0.9 } else { 0.0 },
+        raisons,
+        raisons_ineligible: raisons_ko,
+        nb_etapes: 4,
+    }
+}
+
+/// Compute prime de Noel RSA
+pub fn calc_prime_noel(s: &Situation, b: &Baremes) -> AideResult {
+    use crate::engine::types::FamilleStatus;
+    let mut raisons = Vec::new();
+    let mut raisons_ko = Vec::new();
+
+    // Prime Noel: beneficiaires RSA ou ASS en novembre
+    let rsa_result = calc_rsa(s, &Baremes::current());
+    let eligible = rsa_result.eligible;
+
+    let montant = if eligible {
+        let base = match s.situation_familiale {
+            FamilleStatus::Couple => b.prime_noel_couple,
+            _ => b.prime_noel_seul,
+        };
+        base + (s.nb_enfants as f64 * b.prime_noel_par_enfant)
+    } else {
+        0.0
+    };
+
+    if eligible {
+        raisons.push("Beneficiaire RSA eligible".to_string());
+        raisons.push("Versement automatique en decembre".to_string());
+    } else {
+        raisons_ko.push("Non beneficiaire du RSA (requis pour prime de Noel)".to_string());
+    }
+
+    AideResult {
+        aide_id: AideId::PrimeNoel,
+        eligible,
+        montant_mensuel: None,
+        montant_annuel: if eligible { Some(montant.round()) } else { None },
+        score: if eligible { 0.95 } else { 0.0 },
+        raisons,
+        raisons_ineligible: raisons_ko,
+        nb_etapes: 1,
+    }
+}
+

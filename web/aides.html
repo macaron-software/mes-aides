@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="catalog.page_title">Catalogue des aides — Mes Aides</title>
+  <meta name="description" content="Decouvrez toutes les aides sociales disponibles en France : RSA, APL, Prime d'activite, AAH et bien plus. Simulez votre eligibilite gratuitement." />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ── Layout helpers ── */
+    .container {
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: var(--sp-6);
+    }
+
+    /* ── Header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-sticky);
+      background: var(--c-surface);
+      border-bottom: 1px solid var(--c-border);
+      box-shadow: var(--sh-sm);
+    }
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-8);
+      padding-block: var(--sp-4);
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      text-decoration: none;
+      color: var(--c-primary);
+      font-weight: 700;
+      font-size: var(--fs-lg);
+      white-space: nowrap;
+    }
+    .site-logo svg {
+      flex-shrink: 0;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-6);
+      margin-left: auto;
+    }
+    .site-nav a {
+      color: var(--c-text);
+      text-decoration: none;
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      transition: color var(--tr);
+    }
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: var(--c-primary);
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-5);
+      background: var(--c-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--r-full);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--tr);
+      white-space: nowrap;
+    }
+    .btn-cta:hover {
+      opacity: 0.88;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #e8f5f0 0%, #f7faf9 60%);
+      border-bottom: 1px solid var(--c-border);
+      padding-block: var(--sp-16) var(--sp-12);
+    }
+    .hero__title {
+      font-size: var(--fs-4xl);
+      font-weight: 800;
+      color: var(--c-text);
+      margin: 0 0 var(--sp-3);
+      line-height: 1.15;
+    }
+    .hero__subtitle {
+      font-size: var(--fs-lg);
+      color: var(--c-muted);
+      margin: 0 0 var(--sp-8);
+      max-width: var(--max-content);
+    }
+    .hero__search {
+      display: flex;
+      max-width: 36rem;
+      gap: var(--sp-3);
+      margin-bottom: var(--sp-10);
+    }
+    .hero__search-input {
+      flex: 1;
+      padding: var(--sp-3) var(--sp-4);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-full);
+      font-size: var(--fs-sm);
+      color: var(--c-text);
+      background: var(--c-surface);
+      box-shadow: var(--sh-sm);
+      transition: border-color var(--tr), box-shadow var(--tr);
+    }
+    .hero__search-input:focus {
+      outline: none;
+      border-color: var(--c-primary);
+      box-shadow: 0 0 0 3px rgba(11, 110, 79, 0.15);
+    }
+    .hero__search-input::placeholder {
+      color: var(--c-muted);
+    }
+
+    /* ── Category filters ── */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+    }
+    .filter-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-4);
+      border: 1.5px solid var(--c-border);
+      border-radius: var(--r-full);
+      background: var(--c-surface);
+      color: var(--c-text);
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background var(--tr), border-color var(--tr), color var(--tr);
+    }
+    .filter-tab:hover {
+      border-color: var(--c-primary);
+      color: var(--c-primary);
+    }
+    .filter-tab.active,
+    .filter-tab[aria-pressed="true"] {
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+      color: #fff;
+    }
+
+    /* ── Cards grid ── */
+    .catalog {
+      padding-block: var(--sp-12);
+    }
+    .catalog__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: var(--sp-8);
+    }
+    .catalog__count {
+      font-size: var(--fs-sm);
+      color: var(--c-muted);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-6);
+    }
+
+    /* ── Aid card ── */
+    .aid-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      box-shadow: var(--sh-sm);
+      display: flex;
+      flex-direction: column;
+      padding: var(--sp-6);
+      gap: var(--sp-4);
+      transition: box-shadow var(--tr), transform var(--tr);
+    }
+    .aid-card:hover {
+      box-shadow: var(--sh-md);
+      transform: translateY(-2px);
+    }
+    .aid-card[hidden] {
+      display: none;
+    }
+    .aid-card__top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--sp-3);
+    }
+    .aid-card__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: var(--r-md);
+      background: #e8f5f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-primary);
+      flex-shrink: 0;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--sp-1) var(--sp-3);
+      border-radius: var(--r-full);
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+    .badge--revenus   { background: #fef3c7; color: #92400e; }
+    .badge--logement  { background: #dbeafe; color: #1e40af; }
+    .badge--famille   { background: #fce7f3; color: #9d174d; }
+    .badge--sante     { background: #d1fae5; color: #065f46; }
+    .badge--emploi    { background: #ede9fe; color: #5b21b6; }
+    .badge--energie   { background: #ffedd5; color: #9a3412; }
+    .badge--handicap  { background: #e0f2fe; color: #0c4a6e; }
+    .badge--jeunes    { background: #fef9c3; color: #713f12; }
+    .badge--retraite  { background: #f0fdf4; color: #14532d; }
+    .aid-card__name {
+      font-size: var(--fs-base);
+      font-weight: 700;
+      color: var(--c-text);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .aid-card__fullname {
+      font-size: var(--fs-xs);
+      color: var(--c-muted);
+      margin: 0;
+    }
+    .aid-card__amount {
+      font-size: var(--fs-2xl);
+      font-weight: 800;
+      color: var(--c-primary);
+      margin: 0;
+      line-height: 1;
+    }
+    .aid-card__amount-label {
+      font-size: var(--fs-xs);
+      color: var(--c-muted);
+      font-weight: 400;
+    }
+    .aid-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--c-muted);
+      margin: 0;
+      flex: 1;
+      line-height: 1.55;
+    }
+    .aid-card__actions {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      margin-top: auto;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-4);
+      background: var(--c-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--r-sm);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity var(--tr);
+      text-align: center;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-4);
+      background: transparent;
+      color: var(--c-primary);
+      border: 1.5px solid var(--c-primary);
+      border-radius: var(--r-sm);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background var(--tr), color var(--tr);
+      text-align: center;
+    }
+    .btn-ghost:hover {
+      background: var(--c-primary);
+      color: #fff;
+    }
+
+    /* ── Empty state ── */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding-block: var(--sp-16);
+      color: var(--c-muted);
+    }
+    .empty-state svg {
+      margin-bottom: var(--sp-4);
+      opacity: 0.35;
+    }
+    .empty-state p {
+      font-size: var(--fs-base);
+      margin: 0;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--c-text);
+      color: #b2c9be;
+      padding-block: var(--sp-12) var(--sp-8);
+      margin-top: var(--sp-16);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-8);
+      margin-bottom: var(--sp-10);
+    }
+    .footer-col__title {
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 var(--sp-4);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .footer-col ul li a {
+      color: #b2c9be;
+      text-decoration: none;
+      font-size: var(--fs-sm);
+      transition: color var(--tr);
+    }
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: var(--sp-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .footer-bottom p {
+      font-size: var(--fs-xs);
+      color: #7a9e8e;
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 64rem) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 40rem) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero__title {
+        font-size: var(--fs-3xl);
+      }
+      .site-nav {
+        display: none;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container site-header__inner">
+
+      <!-- Logo -->
+      <a href="/" class="site-logo" aria-label="Mes Aides — page d'accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span data-i18n="site.name">Mes Aides</span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/" data-i18n="nav.home">Accueil</a>
+        <a href="/aides.html" aria-current="page" data-i18n="nav.aids">Aides</a>
+        <a href="/guides.html" data-i18n="nav.guides">Guides</a>
+      </nav>
+
+      <!-- CTA -->
+      <a href="/simulateur.html" class="btn-cta" data-i18n="nav.cta">
+        Tester mon eligibilite
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ════════════════════════════════════════
+       HERO — Search + Filters
+  ════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+
+      <h1 id="hero-title" class="hero__title" data-i18n="catalog.hero_title">
+        Toutes les aides disponibles
+      </h1>
+      <p class="hero__subtitle" data-i18n="catalog.hero_subtitle">
+        Parcourez les dispositifs d'aide sociale en France et decouvrez en quelques
+        secondes si vous etes eligible.
+      </p>
+
+      <!-- Search -->
+      <div class="hero__search" role="search">
+        <label for="search-aids" class="sr-only" data-i18n="catalog.search_label">
+          Rechercher une aide
+        </label>
+        <input
+          id="search-aids"
+          type="search"
+          class="hero__search-input"
+          placeholder="Rechercher une aide..."
+          aria-label="Rechercher une aide"
+          autocomplete="off"
+          data-i18n-placeholder="catalog.search_placeholder"
+        />
+      </div>
+
+      <!-- Category filters -->
+      <div class="filters" role="group" aria-label="Filtrer par categorie" id="category-filters">
+        <button class="filter-tab active" data-filter="all" aria-pressed="true" data-i18n="catalog.filter_all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/>
+            <line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          Tous
+        </button>
+        <button class="filter-tab" data-filter="revenus" aria-pressed="false" data-i18n="catalog.filter_revenus">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          Revenus
+        </button>
+        <button class="filter-tab" data-filter="logement" aria-pressed="false" data-i18n="catalog.filter_logement">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          Logement
+        </button>
+        <button class="filter-tab" data-filter="famille" aria-pressed="false" data-i18n="catalog.filter_famille">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Famille
+        </button>
+        <button class="filter-tab" data-filter="sante" aria-pressed="false" data-i18n="catalog.filter_sante">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          Sante
+        </button>
+        <button class="filter-tab" data-filter="emploi" aria-pressed="false" data-i18n="catalog.filter_emploi">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          Emploi
+        </button>
+        <button class="filter-tab" data-filter="energie" aria-pressed="false" data-i18n="catalog.filter_energie">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          Energie
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       CATALOG — Cards grid
+  ════════════════════════════════════════ -->
+  <main id="main-content" class="catalog" aria-labelledby="catalog-heading">
+    <div class="container">
+
+      <div class="catalog__header">
+        <h2 id="catalog-heading" class="sr-only" data-i18n="catalog.results_heading">
+          Resultats du catalogue
+        </h2>
+        <p class="catalog__count" aria-live="polite" aria-atomic="true" id="result-count" data-i18n="catalog.result_count">
+          10 aides disponibles
+        </p>
+      </div>
+
+      <div class="cards-grid" id="cards-grid" role="list">
+
+        <!-- ── RSA ── -->
+        <article class="aid-card" data-cat="revenus" role="listitem" aria-label="RSA — Revenu de Solidarite Active">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <span class="badge badge--revenus" data-i18n="cat.revenus">revenus</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.rsa.name">RSA</h3>
+            <p class="aid-card__fullname" data-i18n="aid.rsa.fullname">Revenu de Solidarite Active</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 635 euros par mois">
+            635 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.rsa.desc">
+            Garantit un revenu minimum aux personnes sans ressources ou disposant de
+            faibles revenus, sous conditions de nationalite et de residence.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/rsa.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── APL ── -->
+        <article class="aid-card" data-cat="logement" role="listitem" aria-label="APL — Aide Personnalisee au Logement">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <span class="badge badge--logement" data-i18n="cat.logement">logement</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.apl.name">APL</h3>
+            <p class="aid-card__fullname" data-i18n="aid.apl.fullname">Aide Personnalisee au Logement</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 180 euros par mois">
+            180 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.apl.desc">
+            Aide versee par la CAF pour reduire le montant du loyer ou des mensualites
+            d'un pret immobilier, selon les revenus et la composition du foyer.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/apl.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Prime d'activite ── -->
+        <article class="aid-card" data-cat="revenus" role="listitem" aria-label="Prime d'activite">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <span class="badge badge--revenus" data-i18n="cat.revenus">revenus</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.prime-activite.name">Prime d'activite</h3>
+            <p class="aid-card__fullname" data-i18n="aid.prime-activite.fullname">Prime d'activite</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 180 euros par mois">
+            180 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.prime-activite.desc">
+            Complement de revenus verse aux travailleurs a faibles salaires pour
+            encourager l'activite professionnelle et ameliorer le pouvoir d'achat.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/prime-activite.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── AAH ── -->
+        <article class="aid-card" data-cat="handicap" role="listitem" aria-label="AAH — Allocation Adultes Handicapes">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4"/>
+                <path d="M12 16h.01"/>
+              </svg>
+            </div>
+            <span class="badge badge--handicap" data-i18n="cat.handicap">handicap</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.aah.name">AAH</h3>
+            <p class="aid-card__fullname" data-i18n="aid.aah.fullname">Allocation Adultes Handicapes</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 1017 euros par mois">
+            1 017 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.aah.desc">
+            Assure un minimum de ressources aux personnes en situation de handicap
+            dont le taux d'incapacite est reconnu par la MDPH.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/aah.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Cheque energie ── -->
+        <article class="aid-card" data-cat="energie" role="listitem" aria-label="Cheque energie">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <span class="badge badge--energie" data-i18n="cat.energie">energie</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.cheque-energie.name">Cheque energie</h3>
+            <p class="aid-card__fullname" data-i18n="aid.cheque-energie.fullname">Cheque energie</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 17 euros par mois soit 200 euros par an">
+            17 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+            <br /><small style="font-size:var(--fs-xs);color:var(--c-muted);font-weight:400;" data-i18n="aid.cheque-energie.alt_amount">200 €/an</small>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.cheque-energie.desc">
+            Aide automatiquement attribuee aux menages a revenus modestes pour payer
+            leurs factures d'energie ou financer des travaux de renovation.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/cheque-energie.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Allocation familiale ── -->
+        <article class="aid-card" data-cat="famille" role="listitem" aria-label="Allocations familiales">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <span class="badge badge--famille" data-i18n="cat.famille">famille</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.af.name">Allocations familiales</h3>
+            <p class="aid-card__fullname" data-i18n="aid.af.fullname">Allocations familiales</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 140 euros par mois">
+            140 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.af.desc">
+            Versees a partir du deuxieme enfant a charge, ces allocations soutiennent
+            les familles dans les depenses liees a l'education et a l'entretien des enfants.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/allocations-familiales.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── CSS (Complement Sante Solidaire) ── -->
+        <article class="aid-card" data-cat="sante" role="listitem" aria-label="CSS — Complement Sante Solidaire">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <span class="badge badge--sante" data-i18n="cat.sante">sante</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.css.name">CSS</h3>
+            <p class="aid-card__fullname" data-i18n="aid.css.fullname">Complement Sante Solidaire</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 30 euros par mois">
+            30 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.css.desc">
+            Mutuelle complementaire gratuite ou a faible participation permettant
+            une prise en charge integrale des frais de sante non rembourses par la Securite sociale.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/css.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Garantie Visale ── -->
+        <article class="aid-card" data-cat="logement" role="listitem" aria-label="Garantie Visale">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <span class="badge badge--logement" data-i18n="cat.logement">logement</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.visale.name">Garantie Visale</h3>
+            <p class="aid-card__fullname" data-i18n="aid.visale.fullname">Garantie Visale</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Garantie de loyer gratuite">
+            <span style="font-size:var(--fs-lg);font-weight:700;color:var(--c-primary);" data-i18n="aid.visale.amount_label">Garantie loyer</span>
+            <br /><small style="font-size:var(--fs-xs);color:var(--c-muted);font-weight:400;" data-i18n="aid.visale.amount_sub">sans frais</small>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.visale.desc">
+            Caution locative gratuite fournie par Action Logement qui se substitue
+            aux garants personnels et facilite l'acces au logement prive.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/garantie-visale.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Garantie Jeunes ── -->
+        <article class="aid-card" data-cat="jeunes" role="listitem" aria-label="Garantie Jeunes">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+              </svg>
+            </div>
+            <span class="badge badge--jeunes" data-i18n="cat.jeunes">jeunes</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.garantie-jeunes.name">Garantie Jeunes</h3>
+            <p class="aid-card__fullname" data-i18n="aid.garantie-jeunes.fullname">Garantie Jeunes</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 530 euros par mois">
+            530 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.garantie-jeunes.desc">
+            Dispositif d'insertion professionnelle pour les jeunes de 16 a 25 ans
+            en situation de grande precarite, accompagne d'une allocation et d'un suivi intensif.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/garantie-jeunes.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- ── ASPA ── -->
+        <article class="aid-card" data-cat="retraite" role="listitem" aria-label="ASPA — Allocation de Solidarite aux Personnes Agees">
+          <div class="aid-card__top">
+            <div class="aid-card__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                <line x1="12" y1="15" x2="12" y2="20"/>
+              </svg>
+            </div>
+            <span class="badge badge--retraite" data-i18n="cat.retraite">retraite</span>
+          </div>
+          <div>
+            <h3 class="aid-card__name" data-i18n="aid.aspa.name">ASPA</h3>
+            <p class="aid-card__fullname" data-i18n="aid.aspa.fullname">Allocation de Solidarite aux Personnes Agees</p>
+          </div>
+          <p class="aid-card__amount" aria-label="Montant moyen 961 euros par mois">
+            961 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
+          </p>
+          <p class="aid-card__desc" data-i18n="aid.aspa.desc">
+            Garantit un niveau de revenu minimum aux personnes retraitees
+            de 65 ans ou plus dont les ressources sont inferieures a un seuil fixe.
+          </p>
+          <div class="aid-card__actions">
+            <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
+              Tester mon eligibilite
+            </a>
+            <a href="/aides/aspa.html" class="btn-ghost" data-i18n="common.see_detail">
+              Voir le detail
+            </a>
+          </div>
+        </article>
+
+        <!-- Empty state (hidden by default) -->
+        <div class="empty-state" id="empty-state" hidden aria-live="polite">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <p data-i18n="catalog.no_result">Aucune aide ne correspond a votre recherche.</p>
+        </div>
+
+      </div><!-- /.cards-grid -->
+    </div><!-- /.container -->
+  </main>
+
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1 — Simulateur -->
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_simulator">Simulateur</p>
+          <ul>
+            <li><a href="/simulateur.html" data-i18n="footer.start_simulation">Demarrer la simulation</a></li>
+            <li><a href="/simulateur.html#comment" data-i18n="footer.how_it_works">Comment ca fonctionne</a></li>
+            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions frequentes</a></li>
+            <li><a href="/simulateur.html#donnees" data-i18n="footer.data_privacy">Vos donnees</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2 — Aides populaires -->
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_popular">Aides populaires</p>
+          <ul>
+            <li><a href="/aides/rsa.html">RSA</a></li>
+            <li><a href="/aides/apl.html">APL</a></li>
+            <li><a href="/aides/prime-activite.html" data-i18n="footer.prime_activite">Prime d'activite</a></li>
+            <li><a href="/aides/aah.html">AAH</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Guides -->
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_guides">Guides</p>
+          <ul>
+            <li><a href="/guides.html" data-i18n="footer.all_guides">Tous les guides</a></li>
+            <li><a href="/guides/droits-sociaux.html" data-i18n="footer.guide_droits">Comprendre vos droits</a></li>
+            <li><a href="/guides/dossier-caf.html" data-i18n="footer.guide_caf">Constituer un dossier CAF</a></li>
+            <li><a href="/guides/non-recours.html" data-i18n="footer.guide_non_recours">Lutter contre le non-recours</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 — Legal -->
+        <div class="footer-col">
+          <p class="footer-col__title" data-i18n="footer.col_legal">Informations legales</p>
+          <ul>
+            <li><a href="/mentions-legales.html" data-i18n="footer.legal_notice">Mentions legales</a></li>
+            <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialite</a></li>
+            <li><a href="/accessibilite.html" data-i18n="footer.accessibility">Accessibilite</a></li>
+            <li><a href="/contact.html" data-i18n="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">
+          &copy; 2025 Mes Aides — Macaron Software. Tous droits reserves.
+        </p>
+        <p data-i18n="footer.disclaimer">
+          Ce service est indicatif et ne constitue pas un acte administratif officiel.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      var cards      = Array.from(document.querySelectorAll('.aid-card'));
+      var emptyState = document.getElementById('empty-state');
+      var countEl    = document.getElementById('result-count');
+      var searchEl   = document.getElementById('search-aids');
+      var filterBtns = Array.from(document.querySelectorAll('.filter-tab'));
+
+      var activeFilter = 'all';
+      var searchQuery  = '';
+
+      function updateCount(visible) {
+        if (countEl) {
+          countEl.textContent = visible + ' aide' + (visible > 1 ? 's' : '') + ' disponible' + (visible > 1 ? 's' : '');
+        }
+      }
+
+      function applyFilters() {
+        var visible = 0;
+
+        cards.forEach(function (card) {
+          var cat     = card.getAttribute('data-cat') || '';
+          var text    = card.textContent || '';
+          var matchCat    = activeFilter === 'all' || cat === activeFilter;
+          var matchSearch = searchQuery === '' || text.toLowerCase().indexOf(searchQuery) !== -1;
+          var show = matchCat && matchSearch;
+          card.hidden = !show;
+          if (show) visible += 1;
+        });
+
+        if (emptyState) {
+          emptyState.hidden = visible > 0;
+        }
+        updateCount(visible);
+      }
+
+      // Category filter buttons
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+          activeFilter = btn.getAttribute('data-filter') || 'all';
+          applyFilters();
+        });
+      });
+
+      // Search input
+      if (searchEl) {
+        searchEl.addEventListener('input', function () {
+          searchQuery = (searchEl.value || '').trim().toLowerCase();
+          applyFilters();
+        });
+      }
+    })();
+  </script>
+
+  <script src="js/i18n.js"></script>
+</body>
+</html>

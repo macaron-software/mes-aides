@@ -1,0 +1,195 @@
+{
+  "site": {
+    "name": "Mes Aides",
+    "tagline": "Simulez vos droits aux aides sociales en 3 minutes"
+  },
+
+  "nav": {
+    "home": "Accueil",
+    "simulator": "Simulateur",
+    "aids": "Aides",
+    "guides": "Guides",
+    "cta": "Tester mon eligibilite"
+  },
+
+  "home": {
+    "hero_title": "Decouvrez toutes les aides auxquelles vous avez droit",
+    "hero_sub": "Simulation gratuite, 3 minutes, 71 aides verifiees.",
+    "cta_primary": "Tester mon eligibilite",
+    "how_it_works": "Comment ca marche",
+    "step1": "Je reponds au questionnaire",
+    "step2": "L'algorithme analyse ma situation",
+    "step3": "Je recois mon plan d'action personnalise"
+  },
+
+  "simulator": {
+    "page_title": "Simulateur d'aides sociales — Mes Aides",
+    "step_of": "Etape {n} / {total}",
+    "see_results": "Voir mes resultats",
+    "progress_label": "Progression de la simulation"
+  },
+
+  "step1": {
+    "title": "Votre situation personnelle",
+    "subtitle": "Ces informations nous permettent de determiner les aides auxquelles vous etes eligible.",
+    "q_age": "Quel est votre age ?",
+    "q_situation": "Quelle est votre situation familiale ?",
+    "celibataire": "Celibataire",
+    "en_couple": "En couple",
+    "marie": "Marie(e) / Pacse(e)",
+    "parent_isole": "Parent isole",
+    "q_enfants": "Combien d'enfants a charge avez-vous ?",
+    "q_handicap": "Etes-vous reconnu(e) en situation de handicap ?"
+  },
+
+  "step2": {
+    "title": "Votre logement",
+    "subtitle": "Votre situation de logement influence plusieurs aides, notamment l'APL et les aides a l'energie.",
+    "q_statut": "Quel est votre statut de logement ?",
+    "locataire": "Locataire",
+    "proprietaire": "Proprietaire",
+    "heberge": "Heberge(e)",
+    "sans_domicile": "Sans domicile fixe",
+    "q_loyer": "Quel est le montant de votre loyer mensuel (charges comprises) ?",
+    "q_zone": "Dans quelle zone geographique habitez-vous ?",
+    "zone1": "Zone 1 (Ile-de-France)",
+    "zone2": "Zone 2 (Grandes villes)",
+    "zone3": "Zone 3 (Reste de la France)"
+  },
+
+  "step3": {
+    "title": "Vos revenus",
+    "subtitle": "Renseignez vos revenus nets mensuels. Ces donnees restent confidentielles et ne sont jamais transmises.",
+    "q_revenu": "Quel est votre revenu net mensuel ?",
+    "hint_revenu": "Indiquez le montant apres deduction des cotisations sociales, avant impot sur le revenu.",
+    "q_apl_actuelle": "Percevez-vous deja une aide au logement (APL, ALS, ALF) ?",
+    "q_allocations": "Percevez-vous deja l'une de ces allocations ?",
+    "af": "Allocations familiales",
+    "rsa": "RSA"
+  },
+
+  "step4": {
+    "title": "Sante et handicap",
+    "subtitle": "Ces informations nous permettent de verifier votre acces aux aides specifiques au handicap et a la sante.",
+    "q_ald": "Etes-vous en affection de longue duree (ALD) reconnue par la Securite sociale ?",
+    "q_rqth": "Beneficiez-vous de la Reconnaissance de la Qualite de Travailleur Handicape (RQTH) ?",
+    "q_taux_incapacite": "Quel est votre taux d'incapacite reconnu par la MDPH ?",
+    "aucun": "Aucun / Non evalue",
+    "taux50": "50 % a 79 %",
+    "taux80": "80 % ou plus",
+    "q_cmu": "Beneficiez-vous de la Complementaire Sante Solidaire (CSS / ex-CMU-C) ?"
+  },
+
+  "step5": {
+    "title": "Situation professionnelle",
+    "subtitle": "Votre statut professionnel conditionne l'acces a plusieurs aides comme la Prime d'activite ou l'ASS.",
+    "q_statut": "Quelle est votre situation professionnelle actuelle ?",
+    "cdi": "Salarie CDI",
+    "cdd": "Salarie CDD",
+    "chomeur": "En recherche d'emploi",
+    "etudiant": "Etudiant(e)",
+    "retraite": "Retraite(e)",
+    "independant": "Independant / Auto-entrepreneur",
+    "q_anciennete": "Depuis combien de mois etes-vous dans cette situation ?"
+  },
+
+  "results": {
+    "page_title": "Vos aides estimees — Mes Aides",
+    "title": "Vos aides estimees",
+    "subtitle": "Sur la base de vos reponses, voici les aides auxquelles vous pourriez avoir droit. Ces estimations sont indicatives.",
+    "per_month": "€ / mois",
+    "print": "Imprimer",
+    "share": "Partager",
+    "refine": "Affiner ma simulation",
+    "total_label": "Total estime",
+    "disclaimer": "Ces resultats sont fournis a titre indicatif. Seul l'organisme competent peut confirmer votre droit."
+  },
+
+  "catalog": {
+    "page_title": "Toutes les aides — Mes Aides France",
+    "title": "Catalogue des aides",
+    "hero_title": "Toutes les aides disponibles",
+    "hero_subtitle": "Explorez les 71 aides sociales referencees et simulez votre eligibilite en 3 minutes.",
+    "search_placeholder": "Rechercher une aide...",
+    "search_label": "Rechercher une aide",
+    "filter_all": "Toutes",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_famille": "Famille",
+    "filter_sante": "Sante",
+    "filter_emploi": "Emploi",
+    "filter_energie": "Energie",
+    "results_heading": "Resultats",
+    "result_count": "aides disponibles",
+    "hero_badge": "71 aides referencees"
+  },
+
+  "guides": {
+    "page_title": "Guides pratiques — Mes Aides France",
+    "title": "Guides pratiques",
+    "hero_title": "Guides pratiques",
+    "hero_subtitle": "Des explications claires pour comprendre vos droits et faire vos demarches.",
+    "hero_badge": "6 guides disponibles",
+    "search_placeholder": "Rechercher un guide...",
+    "search_label": "Rechercher un guide",
+    "filter_all": "Tous les guides",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_handicap": "Handicap",
+    "filter_jeunes": "Jeunes",
+    "filter_retraite": "Retraite",
+    "read_time_label": "min de lecture",
+    "read_guide": "Lire le guide",
+    "count": "guides disponibles"
+  },
+
+  "cat": {
+    "revenus": "revenus",
+    "logement": "logement",
+    "famille": "famille",
+    "sante": "sante",
+    "emploi": "emploi",
+    "energie": "energie",
+    "handicap": "handicap",
+    "jeunes": "jeunes",
+    "retraite": "retraite"
+  },
+
+  "common": {
+    "yes": "Oui",
+    "no": "Non",
+    "back": "Retour",
+    "next": "Suivant",
+    "other": "Autre",
+    "none": "Aucune",
+    "years": "ans",
+    "months": "mois",
+    "or_more": "ou plus",
+    "per_month": "€/mois",
+    "test_eligibility": "Tester mon eligibilite",
+    "see_detail": "Voir le detail"
+  },
+
+  "footer": {
+    "col_simulator": "Simulateur",
+    "start_simulation": "Demarrer la simulation",
+    "how_it_works": "Comment ca fonctionne",
+    "faq": "Questions frequentes",
+    "data_privacy": "Vos donnees",
+    "col_popular": "Aides populaires",
+    "prime_activite": "Prime d'activite",
+    "col_guides": "Guides",
+    "all_guides": "Tous les guides",
+    "guide_droits": "Comprendre vos droits",
+    "guide_caf": "Constituer un dossier CAF",
+    "guide_non_recours": "Lutter contre le non-recours",
+    "col_legal": "Informations legales",
+    "legal_notice": "Mentions legales",
+    "privacy": "Politique de confidentialite",
+    "accessibility": "Accessibilite",
+    "contact": "Contact",
+    "copyright": "© 2025 Mes Aides — Macaron Software. Tous droits reserves.",
+    "disclaimer": "Ce service est indicatif et ne constitue pas un acte administratif officiel.",
+    "legal": "Mentions legales"
+  }
+}
