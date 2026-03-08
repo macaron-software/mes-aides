@@ -12,6 +12,9 @@
   <meta property="og:title" content="Guides aides sociales 2026 — Demarches pas-a-pas | Mes Aides">
   <meta property="og:description" content="Comment demander le RSA, l'APL, la Prime d'activite, l'AAH ? Guides detailles avec formulaires et delais. 100% gratuit.">
   <meta property="og:url" content="https://aides.macaron-software.com/guides.html">
+
+  <!-- theme anti-flash — doit être AVANT le CSS -->
+  <script src="/js/theme-init.js"></script>
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
   <meta property="og:site_name" content="Mes Aides">
@@ -896,52 +899,7 @@
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
-  <script>
-    (function () {
-      'use strict';
-
-      var cards      = Array.from(document.querySelectorAll('.guide-card'));
-      var emptyState = document.getElementById('empty-state');
-      var countEl    = document.getElementById('guides-count');
-      var filterBtns = Array.from(document.querySelectorAll('.filter-tab'));
-
-      var activeFilter = 'all';
-
-      function updateCount(visible) {
-        if (countEl) {
-          countEl.textContent = visible + ' guide' + (visible > 1 ? 's' : '') + ' disponible' + (visible > 1 ? 's' : '');
-        }
-      }
-
-      function applyFilter() {
-        var visible = 0;
-        cards.forEach(function (card) {
-          var cat  = card.getAttribute('data-cat') || '';
-          var show = activeFilter === 'all' || cat === activeFilter;
-          card.hidden = !show;
-          if (show) visible += 1;
-        });
-        if (emptyState) emptyState.hidden = visible > 0;
-        updateCount(visible);
-      }
-
-      filterBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          filterBtns.forEach(function (b) {
-            b.classList.remove('active');
-            b.setAttribute('aria-pressed', 'false');
-          });
-          btn.classList.add('active');
-          btn.setAttribute('aria-pressed', 'true');
-          activeFilter = btn.getAttribute('data-filter') || 'all';
-          applyFilter();
-        });
-      });
-
-      // Initial count
-      updateCount(cards.length);
-    })();
-  </script>
+  <script src="js/guides.js"></script>
 
   <script src="js/i18n.js"></script>
 </body>

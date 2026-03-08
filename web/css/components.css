@@ -510,3 +510,7 @@
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-12); align-items: start;
 }
 @media (max-width: 768px) { .split-layout { grid-template-columns: 1fr; gap: var(--sp-10); } }
+
+/* ── Utility animations ──────────────────────────────────────────────────── */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 1s linear infinite; }

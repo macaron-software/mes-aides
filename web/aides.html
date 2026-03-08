@@ -12,6 +12,9 @@
   <meta property="og:title" content="Les 71 aides sociales 2026 en France | Mes Aides">
   <meta property="og:description" content="Catalogue complet : APL, RSA, AAH, Prime d'activite, Cheque energie, CAF et toutes les aides sociales nationales. Montants officiels 2026.">
   <meta property="og:url" content="https://aides.macaron-software.com/aides.html">
+
+  <!-- theme anti-flash — doit être AVANT le CSS -->
+  <script src="/js/theme-init.js"></script>
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
   <meta property="og:site_name" content="Mes Aides">
@@ -1024,67 +1027,7 @@
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
-  <script>
-    (function () {
-      'use strict';
-
-      var cards      = Array.from(document.querySelectorAll('.aid-card'));
-      var emptyState = document.getElementById('empty-state');
-      var countEl    = document.getElementById('result-count');
-      var searchEl   = document.getElementById('search-aids');
-      var filterBtns = Array.from(document.querySelectorAll('.filter-tab'));
-
-      var activeFilter = 'all';
-      var searchQuery  = '';
-
-      function updateCount(visible) {
-        if (countEl) {
-          countEl.textContent = visible + ' aide' + (visible > 1 ? 's' : '') + ' disponible' + (visible > 1 ? 's' : '');
-        }
-      }
-
-      function applyFilters() {
-        var visible = 0;
-
-        cards.forEach(function (card) {
-          var cat     = card.getAttribute('data-cat') || '';
-          var text    = card.textContent || '';
-          var matchCat    = activeFilter === 'all' || cat === activeFilter;
-          var matchSearch = searchQuery === '' || text.toLowerCase().indexOf(searchQuery) !== -1;
-          var show = matchCat && matchSearch;
-          card.hidden = !show;
-          if (show) visible += 1;
-        });
-
-        if (emptyState) {
-          emptyState.hidden = visible > 0;
-        }
-        updateCount(visible);
-      }
-
-      // Category filter buttons
-      filterBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          filterBtns.forEach(function (b) {
-            b.classList.remove('active');
-            b.setAttribute('aria-pressed', 'false');
-          });
-          btn.classList.add('active');
-          btn.setAttribute('aria-pressed', 'true');
-          activeFilter = btn.getAttribute('data-filter') || 'all';
-          applyFilters();
-        });
-      });
-
-      // Search input
-      if (searchEl) {
-        searchEl.addEventListener('input', function () {
-          searchQuery = (searchEl.value || '').trim().toLowerCase();
-          applyFilters();
-        });
-      }
-    })();
-  </script>
+  <script src="js/aides.js"></script>
 
   <script src="js/i18n.js"></script>
 </body>
