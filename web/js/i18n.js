@@ -1,6 +1,10 @@
-const SUPPORTED = ['fr','en','ar','es','pt','tr','ro','pl','zh','ru','de','it','nl','fa','am',
-  'uk','sw','so','ha','bn','hi','tl','vi','ku','ps','ur','sr','hr','bg','cs',
-  'sk','hu','el','he','ko','ja','th','id','ms','yo'];
+const SUPPORTED = [
+  'fr','en','de','es','it','pt','nl','ru','ja','ko','zh','ar',
+  'hi','tr','pl','sv','da','nb','fi','cs','sk','hu','ro','el',
+  'uk','bg','hr','id','ms','th','vi','he','fa','bn','ca','am',
+  // kept from original
+  'sw','so','ha','tl','ku','ps','ur','sr','yo'
+];
 
 const RTL_LANGS = ['ar','fa','he','ur','ps','ku'];
 

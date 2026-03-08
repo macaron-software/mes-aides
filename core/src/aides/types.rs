@@ -6,12 +6,53 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq, Hash)]
 #[serde(rename_all = "snake_case")]
 pub enum AideId {
-    Rsa, Apl, Als, Alf, PrimeActivite, Are,
-    Aah, Pch, Aeeh, Css, Ald,
-    AllocationsFamiliales, Paje, Cmg, PreparE, Ars,
-    ChequeEnergie, MaPrimeRenov, PrimeNoel,
-    Cej, GarantieJeunes, BoursCrous, VisaLe, LocaPass,
-    Aspa, AideAlimentaire,
+    // Revenus minimaux
+    Rsa,
+    PrimeActivite,
+    Ass,
+    AllocationChomage,
+    // Logement
+    Apl,
+    Als,
+    Alf,
+    Visale,
+    MaPrimeRenov,
+    // Handicap / Invalidite
+    Aah,
+    Mva,
+    Pch,
+    Aeeh,
+    Asi,
+    PensionInvalidite,
+    // Famille
+    AllocationsFamiliales,
+    ComplementFamilial,
+    Paje,
+    Asf,
+    Ars,
+    AllocationRentreeScolaire,
+    // Sante
+    Css,
+    // Energie
+    ChequeEnergie,
+    // Retraite
+    Aspa,
+    MinimumRetraite,
+    // Jeunes
+    Cej,
+    BourceCrous,
+    PassCulture,
+    // Divers
+    PrimeNoel,
+    AideJuridictionnelle,
+    // Anciens variants (compat)
+    Are,
+    GarantieJeunes,
+    LocaPass,
+    AideAlimentaire,
+    Cmg,
+    PreparE,
+    Ald,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
