@@ -67,3 +67,23 @@ window.addEventListener('load', () => {
   langDropdown.querySelectorAll('.lang-dropdown__item').forEach(i => {
     i.classList.toggle('active', i.getAttribute('data-lang') === lang);
   });
+
+// ── Contrast toggle (replaces inline onclick) ─────────────────────────────
+(function() {
+  var btn = document.getElementById('contrast-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    var h = document.documentElement;
+    var cur = h.getAttribute('data-theme');
+    if (cur === 'contrast') {
+      var saved = localStorage.getItem('theme-before-contrast') || 'light';
+      h.setAttribute('data-theme', saved === 'light' ? 'light' : saved);
+      if (saved === 'light') h.removeAttribute('data-theme');
+      localStorage.removeItem('theme-before-contrast');
+    } else {
+      localStorage.setItem('theme-before-contrast', cur || 'light');
+      h.setAttribute('data-theme', 'contrast');
+      localStorage.setItem('theme', 'contrast');
+    }
+  });
+})();

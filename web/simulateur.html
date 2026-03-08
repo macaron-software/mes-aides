@@ -341,8 +341,7 @@
             <label class="question-label" data-i18n="step1.q_age">Quel est votre age ?</label>
             <div class="slider-wrapper">
               <div class="slider-display" id="ageDisplay">30 <span data-i18n="common.years">ans</span></div>
-              <input type="range" id="age" name="age" min="16" max="99" value="30"
-                oninput="document.getElementById('ageDisplay').firstChild.textContent = this.value + ' '">
+              <input type="range" id="age" name="age" min="16" max="99" value="30">
               <div class="slider-labels"><span>16</span><span>99</span></div>
             </div>
           </div>
@@ -425,8 +424,7 @@
             <label class="question-label" data-i18n="step2.q_loyer">Loyer mensuel (charges incluses)</label>
             <div class="slider-wrapper">
               <div class="slider-display" id="loyerDisplay">600 <span>€/mois</span></div>
-              <input type="range" id="loyer" name="loyer" min="0" max="2000" step="10" value="600"
-                oninput="document.getElementById('loyerDisplay').firstChild.textContent = this.value + ' '">
+              <input type="range" id="loyer" name="loyer" min="0" max="2000" step="10" value="600">
               <div class="slider-labels"><span>0 €</span><span>2 000 €</span></div>
             </div>
           </div>
@@ -456,8 +454,7 @@
             <label class="question-label" data-i18n="step3.q_revenu">Revenus mensuels nets du foyer</label>
             <div class="slider-wrapper">
               <div class="slider-display" id="revenuDisplay">1 200 <span>€/mois</span></div>
-              <input type="range" id="revenu" name="revenu" min="0" max="5000" step="50" value="1200"
-                oninput="updateRevenu(this.value)">
+              <input type="range" id="revenu" name="revenu" min="0" max="5000" step="50" value="1200">
               <div class="slider-labels"><span>0 €</span><span>5 000 €+</span></div>
             </div>
             <p class="question-hint" data-i18n="step3.hint_revenu">Salaires, allocations, pensions — avant deductions (hors APL).</p>
@@ -590,8 +587,7 @@
             <label class="question-label" data-i18n="step5.q_anciennete">Depuis combien de temps (mois) ?</label>
             <div class="slider-wrapper">
               <div class="slider-display" id="ancienneteDisplay">6 <span data-i18n="common.months">mois</span></div>
-              <input type="range" id="anciennete" name="anciennete" min="0" max="60" step="1" value="6"
-                oninput="document.getElementById('ancienneteDisplay').firstChild.textContent = this.value + ' '">
+              <input type="range" id="anciennete" name="anciennete" min="0" max="60" step="1" value="6">
               <div class="slider-labels"><span>0</span><span>60 mois</span></div>
             </div>
           </div>
@@ -599,11 +595,11 @@
 
         <!-- Navigation -->
         <div class="sim-nav">
-          <button class="btn-back" id="btnBack" onclick="prevStep()" disabled aria-label="Etape precedente">
+          <button class="btn-back" id="btnBack" disabled aria-label="Etape precedente">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
             <span data-i18n="common.back">Retour</span>
           </button>
-          <button class="btn-next" id="btnNext" onclick="nextStep()" aria-label="Etape suivante">
+          <button class="btn-next" id="btnNext" aria-label="Etape suivante">
             <span id="btnNextLabel" data-i18n="common.next">Suivant</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </button>

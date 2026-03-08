@@ -161,3 +161,12 @@
     }
 
     // La page résultats est accessible directement (guide par aide)
+
+// ── Button event listeners (replaces inline onclick) ──────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  var btnPrint = document.getElementById('btnPrint');
+  if (btnPrint) btnPrint.addEventListener('click', function() { window.print(); });
+
+  var btnShare = document.getElementById('btnShare');
+  if (btnShare) btnShare.addEventListener('click', shareResults);
+});

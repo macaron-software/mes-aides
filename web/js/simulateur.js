@@ -272,3 +272,37 @@
     })();
 
     updateUI();
+
+// ── Event listeners (replaces inline handlers) ────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  // Slider: age
+  const ageEl = document.getElementById('age');
+  if (ageEl) ageEl.addEventListener('input', function() {
+    document.getElementById('ageDisplay').firstChild.textContent = this.value + ' ';
+    answers.age = parseInt(this.value);
+  });
+
+  // Slider: loyer
+  const loyerEl = document.getElementById('loyer');
+  if (loyerEl) loyerEl.addEventListener('input', function() {
+    document.getElementById('loyerDisplay').firstChild.textContent = this.value + ' ';
+    answers.loyer = parseInt(this.value);
+  });
+
+  // Slider: anciennete
+  const ancEl = document.getElementById('anciennete');
+  if (ancEl) ancEl.addEventListener('input', function() {
+    document.getElementById('ancienneteDisplay').firstChild.textContent = this.value + ' ';
+    answers.anciennete = parseInt(this.value);
+  });
+
+  // Slider: revenu
+  const revEl = document.getElementById('revenu');
+  if (revEl) revEl.addEventListener('input', function() { updateRevenu(this.value); });
+
+  // Nav buttons
+  const btnBack = document.getElementById('btnBack');
+  const btnNext = document.getElementById('btnNext');
+  if (btnBack) btnBack.addEventListener('click', prevStep);
+  if (btnNext) btnNext.addEventListener('click', nextStep);
+});

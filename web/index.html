@@ -77,8 +77,7 @@
       </button>
 
       <!-- Contraste -->
-      <button id="contrast-toggle" class="theme-toggle" aria-label="Mode contraste elevé" title="Mode contraste elevé"
-              onclick="(function(){var h=document.documentElement;var cur=h.getAttribute('data-theme');if(cur==='contrast'){var saved=localStorage.getItem('theme-before-contrast')||'light';h.setAttribute('data-theme',saved==='light'?'light':saved);if(saved==='light')h.removeAttribute('data-theme');localStorage.removeItem('theme-before-contrast');}else{localStorage.setItem('theme-before-contrast',cur||'light');h.setAttribute('data-theme','contrast');localStorage.setItem('theme','contrast');}})()">
+      <button id="contrast-toggle" class="theme-toggle" aria-label="Mode contraste elevé" title="Mode contraste elevé">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/>
