@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan du site — Mes Aides</title>
+  <meta name="description" content="Plan du site Mes Aides : toutes les pages du simulateur d'aides sociales 2026. Accès rapide à toutes les fiches aides, guides et outils." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aides.macaron-software.com/plan-du-site.html" />
+
+  <!-- Hreflang 40 langues -->
+  <link rel="alternate" hreflang="fr" href="https://aides.macaron-software.com/plan-du-site.html" />
+  <link rel="alternate" hreflang="en" href="https://aides.macaron-software.com/plan-du-site.html?lang=en" />
+  <link rel="alternate" hreflang="de" href="https://aides.macaron-software.com/plan-du-site.html?lang=de" />
+  <link rel="alternate" hreflang="es" href="https://aides.macaron-software.com/plan-du-site.html?lang=es" />
+  <link rel="alternate" hreflang="ar" href="https://aides.macaron-software.com/plan-du-site.html?lang=ar" />
+  <link rel="alternate" hreflang="zh" href="https://aides.macaron-software.com/plan-du-site.html?lang=zh" />
+  <link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/plan-du-site.html" />
+
+  <script src="/js/theme-init.js"></script>
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <style>
+    .sitemap-section { padding-block: var(--sp-10) var(--sp-6); }
+    .sitemap-section:first-child { padding-block-start: var(--sp-12); }
+    .sitemap-section__title {
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--c-text-muted);
+      margin-block-end: var(--sp-4);
+      padding-block-end: var(--sp-2);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .sitemap-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--sp-2) var(--sp-8);
+    }
+    .sitemap-list li a {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) 0;
+      color: var(--c-text);
+      text-decoration: none;
+      font-size: var(--fs-sm);
+      border-bottom: 1px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .sitemap-list li a:hover {
+      color: var(--c-primary);
+      border-bottom-color: var(--c-primary);
+    }
+    .sitemap-list li a svg { flex-shrink: 0; color: var(--c-primary); }
+    .sitemap-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 600;
+      background: var(--c-primary-light, #e6f4ef);
+      color: var(--c-primary);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-inline-start: var(--sp-2);
+    }
+    .page-hero { padding-block: var(--sp-12) var(--sp-8); border-bottom: 1px solid var(--c-border); }
+    .page-hero__title { font-size: var(--fs-2xl); font-weight: 800; margin-block-end: var(--sp-3); }
+    .page-hero__desc { color: var(--c-text-muted); max-width: 56ch; }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: var(--sp-2);
+    }
+    .lang-grid__item {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-3);
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-sm);
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .lang-grid__item:hover { border-color: var(--c-primary); background: var(--c-primary-light, #e6f4ef); }
+    .lang-grid__code { font-size: 10px; font-weight: 700; color: var(--c-text-muted); }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo" aria-label="Mes Aides — page d'accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Mes Aides</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/" data-i18n="nav.home">Accueil</a>
+        <a href="/aides.html" data-i18n="nav.aids">Aides</a>
+        <a href="/guides.html" data-i18n="nav.guides">Guides</a>
+      </nav>
+      <a href="/simulateur.html" class="btn-cta hide-mobile">Tester mon éligibilité</a>
+      <div class="site-header__tools">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Activer le mode sombre" title="Activer le mode sombre">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <div class="lang-selector" id="lang-selector">
+          <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Changer de langue">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span id="current-lang">FR</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Langues disponibles"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Fil d'ariane">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+        <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
+        <li aria-current="page">Plan du site</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <section class="page-hero">
+        <h1 class="page-hero__title">Plan du site</h1>
+        <p class="page-hero__desc">Toutes les pages de Mes Aides — simulateur d'aides sociales 2026, disponible en 45 langues.</p>
+      </section>
+
+      <!-- Outils principaux -->
+      <section class="sitemap-section" aria-labelledby="sm-tools">
+        <h2 class="sitemap-section__title" id="sm-tools">Outils</h2>
+        <ul class="sitemap-list">
+          <li>
+            <a href="/">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Accueil
+            </a>
+          </li>
+          <li>
+            <a href="/simulateur.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              Simulateur d'aides
+              <span class="sitemap-badge">45 langues</span>
+            </a>
+          </li>
+          <li>
+            <a href="/aides.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Catalogue des 71 aides
+            </a>
+          </li>
+          <li>
+            <a href="/guides.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Guides pratiques
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Fiches aides -->
+      <section class="sitemap-section" aria-labelledby="sm-aids">
+        <h2 class="sitemap-section__title" id="sm-aids">Fiches aides détaillées</h2>
+        <ul class="sitemap-list">
+          <li><a href="/aides/rsa.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>RSA — Revenu de Solidarité Active</a></li>
+          <li><a href="/aides/apl.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>APL — Aide Personnalisée au Logement</a></li>
+          <li><a href="/aides/prime-activite.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Prime d'Activité</a></li>
+          <li><a href="/aides/aah.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>AAH — Allocation Adulte Handicapé</a></li>
+          <li><a href="/aides/cheque-energie.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Chèque Énergie</a></li>
+          <li><a href="/aides/are.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>ARE — Allocation de Retour à l'Emploi</a></li>
+          <li><a href="/aides/css.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Complémentaire Santé Solidaire (CSS)</a></li>
+          <li><a href="/aides/apa.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>APA — Allocation Personnalisée d'Autonomie</a></li>
+          <li><a href="/aides/pch.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>PCH — Prestation de Compensation du Handicap</a></li>
+          <li><a href="/aides/caf-allocations-familiales.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Allocations Familiales</a></li>
+          <li><a href="/aides/paje.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>PAJE — Prestation d'Accueil du Jeune Enfant</a></li>
+          <li><a href="/aides/ma-prime-renov.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>MaPrimeRénov'</a></li>
+          <li><a href="/aides/cej.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>CEJ — Contrat d'Engagement Jeune</a></li>
+          <li><a href="/aides/bourse-crous.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Bourse CROUS sur critères sociaux</a></li>
+          <li><a href="/aides/cheque-vacances.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19 4c-1 0-2 .5-2.8 1.3L12 9 3.8 7.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Chèques Vacances ANCV</a></li>
+        </ul>
+      </section>
+
+      <!-- Langues disponibles -->
+      <section class="sitemap-section" aria-labelledby="sm-langs">
+        <h2 class="sitemap-section__title" id="sm-langs">45 langues disponibles</h2>
+        <p style="color:var(--c-text-muted);font-size:var(--fs-sm);margin-block-end:var(--sp-4);">
+          Le simulateur et toutes les fiches sont disponibles dans ces langues. Cliquez sur une langue pour basculer immédiatement.
+        </p>
+        <div class="lang-grid" id="lang-grid-sitemap">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Pages légales -->
+      <section class="sitemap-section" aria-labelledby="sm-legal">
+        <h2 class="sitemap-section__title" id="sm-legal">Informations légales</h2>
+        <ul class="sitemap-list">
+          <li>
+            <a href="/mentions-legales.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Mentions légales
+            </a>
+          </li>
+          <li>
+            <a href="/politique-confidentialite.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Politique de confidentialité (RGPD)
+            </a>
+          </li>
+          <li>
+            <a href="/accessibilite.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Accessibilité numérique (RGAA 4.1)
+            </a>
+          </li>
+          <li>
+            <a href="/plan-du-site.html" aria-current="page">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              Plan du site (cette page)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copy">&copy; 2026 Mes Aides — Outil d'information non officiel. Données à titre indicatif.</p>
+      <nav class="site-footer__links" aria-label="Liens légaux">
+        <a href="/mentions-legales.html">Mentions légales</a>
+        <a href="/politique-confidentialite.html">Confidentialité</a>
+        <a href="/accessibilite.html">Accessibilité</a>
+        <a href="/plan-du-site.html" aria-current="page">Plan du site</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/nav.js"></script>
+  <script>
+    // Populate lang grid from LANG_NAMES (available after nav.js loads)
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('lang-grid-sitemap');
+      if (!grid || typeof LANG_NAMES === 'undefined') return;
+      const supported = window.SUPPORTED_LANGS || Object.keys(LANG_NAMES);
+      supported.forEach(code => {
+        const btn = document.createElement('button');
+        btn.className = 'lang-grid__item';
+        btn.innerHTML = `<span>${LANG_NAMES[code] || code}</span><span class="lang-grid__code">${code.toUpperCase()}</span>`;
+        btn.addEventListener('click', () => window.I18n?.setLang(code));
+        grid.appendChild(btn);
+      });
+    });
+  </script>
+</body>
+</html>
