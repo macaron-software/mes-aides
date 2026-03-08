@@ -1,0 +1,164 @@
+{
+  "site": {
+    "name": "Ajutoarele Mele",
+    "tagline": "Simulati drepturile dvs. sociale in 3 minute"
+  },
+  "nav": {
+    "home": "Acasa",
+    "simulator": "Simulator",
+    "aids": "Ajutoare",
+    "guides": "Ghiduri",
+    "cta": "Verifica eligibilitatea"
+  },
+  "home": {
+    "hero_title": "Descoperiti toate ajutoarele la care aveti dreptul",
+    "hero_sub": "Simulare gratuita, 3 minute, 71 ajutoare verificate.",
+    "cta_primary": "Verifica eligibilitatea",
+    "how_it_works": "Cum functioneaza",
+    "step1": "Raspund la chestionar",
+    "step2": "Algoritmul analizeaza situatia mea",
+    "step3": "Primesc planul meu de actiune"
+  },
+  "simulator": {
+    "page_title": "Simulator ajutoare sociale",
+    "step_of": "Pasul {n} din {total}",
+    "see_results": "Vezi rezultatele",
+    "progress_label": "Progres simulare"
+  },
+  "step1": {
+    "title": "Situatia dvs. personala",
+    "subtitle": "Aceste informatii ne ajuta sa determinam ajutoarele la care puteti fi eligibil.",
+    "q_age": "Cati ani aveti?",
+    "q_situation": "Care este situatia dvs. familiala?",
+    "celibataire": "Celibatar",
+    "en_couple": "In cuplu",
+    "marie": "Casatorit / PACS",
+    "parent_isole": "Parinte singur",
+    "q_enfants": "Cati copii aflati in intretinere aveti?",
+    "q_handicap": "Aveti un handicap recunoscut oficial?"
+  },
+  "step2": {
+    "title": "Situatia dvs. locativa",
+    "subtitle": "Situatia dvs. locativa influenteaza mai multe ajutoare.",
+    "q_statut": "Care este statutul dvs. locativ?",
+    "locataire": "Chirias",
+    "proprietaire": "Proprietar",
+    "heberge": "Gazda",
+    "sans_domicile": "Fara domiciliu fix",
+    "q_loyer": "Care este chiria dvs. lunara?",
+    "q_zone": "In ce zona geografica locuiti?",
+    "zone1": "Zona 1 (Ile-de-France)",
+    "zone2": "Zona 2 (Orase mari)",
+    "zone3": "Zona 3 (Restul Frantei)"
+  },
+  "step3": {
+    "title": "Veniturile dvs.",
+    "subtitle": "Introduceti venitul dvs. net lunar.",
+    "q_revenu": "Care este venitul dvs. net lunar?",
+    "hint_revenu": "Suma dupa deducerile sociale.",
+    "q_apl_actuelle": "Primiti deja ajutor pentru locuinta?",
+    "q_allocations": "Primiti deja aceste alocatii?",
+    "af": "Alocatii familiale",
+    "rsa": "RSA"
+  },
+  "step4": {
+    "title": "Sanatate si handicap",
+    "subtitle": "Aceste informatii ne permit sa verificam accesul la ajutoarele specifice.",
+    "q_ald": "Aveti o afectiune de lunga durata (ALD)?",
+    "q_rqth": "Aveti recunoastere de lucrator handicapat (RQTH)?",
+    "q_taux_incapacite": "Care este rata dvs. de incapacitate?",
+    "aucun": "Niciuna",
+    "taux50": "50% pana la 79%",
+    "taux80": "80% sau mai mult",
+    "q_cmu": "Beneficiati de CSS?"
+  },
+  "step5": {
+    "title": "Situatia dvs. profesionala",
+    "subtitle": "Statutul dvs. profesional determina accesul la mai multe ajutoare.",
+    "q_statut": "Care este situatia dvs. actuala?",
+    "cdi": "Angajat permanent (CDI)",
+    "cdd": "Angajat pe durata determinata (CDD)",
+    "chomeur": "Somer",
+    "etudiant": "Student",
+    "retraite": "Pensionar",
+    "independant": "Independent / Liber-profesionist",
+    "q_anciennete": "De cate luni va aflati in aceasta situatie?"
+  },
+  "results": {
+    "page_title": "Ajutoarele dvs. estimate",
+    "title": "Ajutoarele dvs. estimate",
+    "subtitle": "Pe baza raspunsurilor dvs., iata ajutoarele la care puteti fi eligibil.",
+    "per_month": "€ / luna",
+    "print": "Tipariti",
+    "share": "Distribuiti",
+    "refine": "Rafinati simularea",
+    "total_label": "Total estimat",
+    "disclaimer": "Aceste rezultate sunt orientative."
+  },
+  "common": {
+    "yes": "Da",
+    "no": "Nu",
+    "back": "Inapoi",
+    "next": "Urmator",
+    "other": "Altul",
+    "none": "Niciunul",
+    "years": "ani",
+    "months": "luni",
+    "or_more": "sau mai mult",
+    "per_month": "€/luna",
+    "test_eligibility": "Verifica eligibilitatea",
+    "see_detail": "Vezi detalii"
+  },
+  "footer": {
+    "copyright": "© 2025 Ajutoarele Mele — Macaron Software.",
+    "disclaimer": "Acest serviciu are scop orientativ.",
+    "legal": "Mentiuni legale"
+  },
+  "catalog": {
+    "title": "Catalog ajutoare",
+    "hero_title": "Toate ajutoarele disponibile",
+    "hero_subtitle": "71 ajutoare sociale referentiate.",
+    "search_placeholder": "Cauta un ajutor...",
+    "filter_all": "Toate",
+    "result_count": "ajutoare disponibile",
+    "hero_badge": "71 ajutoare referentiate",
+    "page_title": "Toate ajutoarele",
+    "search_label": "Cauta",
+    "filter_revenus": "Venituri",
+    "filter_logement": "Locuinta",
+    "filter_famille": "Familie",
+    "filter_sante": "Sanatate",
+    "filter_emploi": "Angajare",
+    "filter_energie": "Energie",
+    "results_heading": "Rezultate"
+  },
+  "guides": {
+    "title": "Ghiduri practice",
+    "hero_title": "Ghiduri practice",
+    "hero_subtitle": "Explicatii clare pentru a va intelege drepturile.",
+    "search_placeholder": "Cauta un ghid...",
+    "filter_all": "Toate ghidurile",
+    "count": "ghiduri disponibile",
+    "page_title": "Ghiduri",
+    "search_label": "Cauta",
+    "hero_badge": "6 ghiduri disponibile",
+    "filter_revenus": "Venituri",
+    "filter_logement": "Locuinta",
+    "filter_handicap": "Handicap",
+    "filter_jeunes": "Tineri",
+    "filter_retraite": "Pensionare",
+    "read_time_label": "min lectura",
+    "read_guide": "Citeste ghidul"
+  },
+  "cat": {
+    "revenus": "venituri",
+    "logement": "locuinta",
+    "famille": "familie",
+    "sante": "sanatate",
+    "emploi": "angajare",
+    "energie": "energie",
+    "handicap": "handicap",
+    "jeunes": "tineri",
+    "retraite": "pensionare"
+  }
+}

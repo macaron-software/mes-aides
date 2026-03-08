@@ -1,0 +1,164 @@
+{
+  "site": {
+    "name": "Kaalmadayda",
+    "tagline": "Xisaabi xuquuqdaada bulshada 3 daqiiqo"
+  },
+  "nav": {
+    "home": "Hoyga",
+    "simulator": "Simulator",
+    "aids": "Kaalmaha",
+    "guides": "Hagaha",
+    "cta": "Hubi xaqiijinta"
+  },
+  "home": {
+    "hero_title": "Ogaanso kaalmaha aad xaq u leedahay",
+    "hero_sub": "Xisaab bilaash ah, 3 daqiiqo, 71 kaalmo.",
+    "cta_primary": "Hubi xaqiijinta",
+    "how_it_works": "Sida u shaqeyso",
+    "step1": "Ka jawaabaa su'aalaha",
+    "step2": "Xisaabiyuhu wuxuu falanqeeyaa xaaladda",
+    "step3": "Qorshaha shaqada oo gaarka ah baan helaa"
+  },
+  "simulator": {
+    "page_title": "Simulator — Kaalmadayda",
+    "step_of": "Etape {n}/{total}",
+    "see_results": "Hubi xaqiijinta",
+    "progress_label": "Progression"
+  },
+  "step1": {
+    "title": "Situation personnelle",
+    "subtitle": "",
+    "q_age": "Age?",
+    "q_situation": "Situation familiale?",
+    "celibataire": "Haa",
+    "en_couple": "Couple",
+    "marie": "Marie(e)",
+    "parent_isole": "Parent isole",
+    "q_enfants": "Enfants?",
+    "q_handicap": "Handicap reconnu?"
+  },
+  "step2": {
+    "title": "Logement",
+    "subtitle": "",
+    "q_statut": "Statut logement?",
+    "locataire": "Locataire",
+    "proprietaire": "Proprietaire",
+    "heberge": "Heberge(e)",
+    "sans_domicile": "Sans domicile",
+    "q_loyer": "Loyer mensuel?",
+    "q_zone": "Zone?",
+    "zone1": "Zone 1 (IDF)",
+    "zone2": "Zone 2",
+    "zone3": "Zone 3"
+  },
+  "step3": {
+    "title": "Revenus",
+    "subtitle": "",
+    "q_revenu": "Revenu net mensuel?",
+    "hint_revenu": "",
+    "q_apl_actuelle": "Aide logement actuelle?",
+    "q_allocations": "Allocations percues?",
+    "af": "Allocations familiales",
+    "rsa": "RSA"
+  },
+  "step4": {
+    "title": "Sante",
+    "subtitle": "",
+    "q_ald": "ALD?",
+    "q_rqth": "RQTH?",
+    "q_taux_incapacite": "Taux incapacite?",
+    "aucun": "Aucun",
+    "taux50": "50-79%",
+    "taux80": "80%+",
+    "q_cmu": "CSS?"
+  },
+  "step5": {
+    "title": "Emploi",
+    "subtitle": "",
+    "q_statut": "Situation emploi?",
+    "cdi": "CDI",
+    "cdd": "CDD",
+    "chomeur": "Chomeur/se",
+    "etudiant": "Etudiant(e)",
+    "retraite": "Retraite(e)",
+    "independant": "Independant(e)",
+    "q_anciennete": "Anciennete (mois)?"
+  },
+  "results": {
+    "page_title": "Resultats — Kaalmadayda",
+    "title": "Vos aides estimees",
+    "subtitle": "",
+    "per_month": "€/bil",
+    "print": "Imprimer",
+    "share": "Partager",
+    "refine": "Affiner",
+    "total_label": "Total estime",
+    "disclaimer": "Resultats indicatifs."
+  },
+  "common": {
+    "yes": "Haa",
+    "no": "Maya",
+    "back": "Gadaal",
+    "next": "Xiga",
+    "other": "Autre",
+    "none": "Aucun",
+    "years": "Sano",
+    "months": "Bil",
+    "or_more": "+",
+    "per_month": "€/bil",
+    "test_eligibility": "Hubi xaqiijinta",
+    "see_detail": "Details"
+  },
+  "footer": {
+    "copyright": "© 2025 Kaalmadayda — Macaron Software.",
+    "disclaimer": "Service indicatif.",
+    "legal": "Mentions legales"
+  },
+  "catalog": {
+    "title": "Catalogue",
+    "hero_title": "Toutes les aides",
+    "hero_subtitle": "71 aides sociales.",
+    "search_placeholder": "Raadi...",
+    "filter_all": "Dhammaan",
+    "result_count": "aides",
+    "hero_badge": "71 aides",
+    "page_title": "Catalogue",
+    "search_label": "Recherche",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_famille": "Famille",
+    "filter_sante": "Sante",
+    "filter_emploi": "Emploi",
+    "filter_energie": "Energie",
+    "results_heading": "Resultats"
+  },
+  "guides": {
+    "title": "Guides",
+    "hero_title": "Guides pratiques",
+    "hero_subtitle": "",
+    "search_placeholder": "Raadi...",
+    "filter_all": "Dhammaan",
+    "count": "guides",
+    "page_title": "Guides",
+    "search_label": "Recherche",
+    "hero_badge": "6 guides",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_handicap": "Handicap",
+    "filter_jeunes": "Jeunes",
+    "filter_retraite": "Retraite",
+    "read_time_label": "min",
+    "read_guide": "Lire"
+  },
+  "cat": {
+    "revenus": "revenus",
+    "logement": "logement",
+    "famille": "famille",
+    "sante": "sante",
+    "emploi": "emploi",
+    "energie": "energie",
+    "handicap": "handicap",
+    "jeunes": "jeunes",
+    "retraite": "retraite"
+  }
+}

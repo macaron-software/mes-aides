@@ -1,0 +1,164 @@
+{
+  "site": {
+    "name": "Taimakonina",
+    "tagline": "Lissafa haqqoqinka na zamantakewa a cikin mintuna 3"
+  },
+  "nav": {
+    "home": "Gida",
+    "simulator": "Mai Kwaikwayo",
+    "aids": "Taimako",
+    "guides": "Jagora",
+    "cta": "Duba cancanta"
+  },
+  "home": {
+    "hero_title": "Gano duk taimakon da kake da hakki a kansa",
+    "hero_sub": "Kwaikwayon kyauta, mintuna 3, taimako 71 da aka tabbatar.",
+    "cta_primary": "Duba cancanta",
+    "how_it_works": "Yadda yake aiki",
+    "step1": "Ina amsa tambayoyin",
+    "step2": "Tsarin lissafi yana nazarin halin ni",
+    "step3": "Ina samun tsarin aiki na sirri"
+  },
+  "simulator": {
+    "page_title": "Mai Kwaikwayo — Taimakonina",
+    "step_of": "Etape {n}/{total}",
+    "see_results": "Duba cancanta",
+    "progress_label": "Progression"
+  },
+  "step1": {
+    "title": "Situation personnelle",
+    "subtitle": "",
+    "q_age": "Age?",
+    "q_situation": "Situation familiale?",
+    "celibataire": "Eh",
+    "en_couple": "Couple",
+    "marie": "Marie(e)",
+    "parent_isole": "Parent isole",
+    "q_enfants": "Enfants?",
+    "q_handicap": "Handicap reconnu?"
+  },
+  "step2": {
+    "title": "Logement",
+    "subtitle": "",
+    "q_statut": "Statut logement?",
+    "locataire": "Locataire",
+    "proprietaire": "Proprietaire",
+    "heberge": "Heberge(e)",
+    "sans_domicile": "Sans domicile",
+    "q_loyer": "Loyer mensuel?",
+    "q_zone": "Zone?",
+    "zone1": "Zone 1 (IDF)",
+    "zone2": "Zone 2",
+    "zone3": "Zone 3"
+  },
+  "step3": {
+    "title": "Revenus",
+    "subtitle": "",
+    "q_revenu": "Revenu net mensuel?",
+    "hint_revenu": "",
+    "q_apl_actuelle": "Aide logement actuelle?",
+    "q_allocations": "Allocations percues?",
+    "af": "Allocations familiales",
+    "rsa": "RSA"
+  },
+  "step4": {
+    "title": "Sante",
+    "subtitle": "",
+    "q_ald": "ALD?",
+    "q_rqth": "RQTH?",
+    "q_taux_incapacite": "Taux incapacite?",
+    "aucun": "Aucun",
+    "taux50": "50-79%",
+    "taux80": "80%+",
+    "q_cmu": "CSS?"
+  },
+  "step5": {
+    "title": "Emploi",
+    "subtitle": "",
+    "q_statut": "Situation emploi?",
+    "cdi": "CDI",
+    "cdd": "CDD",
+    "chomeur": "Chomeur/se",
+    "etudiant": "Etudiant(e)",
+    "retraite": "Retraite(e)",
+    "independant": "Independant(e)",
+    "q_anciennete": "Anciennete (mois)?"
+  },
+  "results": {
+    "page_title": "Resultats — Taimakonina",
+    "title": "Vos aides estimees",
+    "subtitle": "",
+    "per_month": "€/wata",
+    "print": "Imprimer",
+    "share": "Partager",
+    "refine": "Affiner",
+    "total_label": "Total estime",
+    "disclaimer": "Resultats indicatifs."
+  },
+  "common": {
+    "yes": "Eh",
+    "no": "A'a",
+    "back": "Baya",
+    "next": "Gaba",
+    "other": "Autre",
+    "none": "Aucun",
+    "years": "shekaru",
+    "months": "watanni",
+    "or_more": "+",
+    "per_month": "€/wata",
+    "test_eligibility": "Duba cancanta",
+    "see_detail": "Details"
+  },
+  "footer": {
+    "copyright": "© 2025 Taimakonina — Macaron Software.",
+    "disclaimer": "Service indicatif.",
+    "legal": "Mentions legales"
+  },
+  "catalog": {
+    "title": "Catalogue",
+    "hero_title": "Toutes les aides",
+    "hero_subtitle": "71 aides sociales.",
+    "search_placeholder": "Nema...",
+    "filter_all": "Duka",
+    "result_count": "aides",
+    "hero_badge": "71 aides",
+    "page_title": "Catalogue",
+    "search_label": "Recherche",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_famille": "Famille",
+    "filter_sante": "Sante",
+    "filter_emploi": "Emploi",
+    "filter_energie": "Energie",
+    "results_heading": "Resultats"
+  },
+  "guides": {
+    "title": "Guides",
+    "hero_title": "Guides pratiques",
+    "hero_subtitle": "",
+    "search_placeholder": "Nema...",
+    "filter_all": "Duka",
+    "count": "guides",
+    "page_title": "Guides",
+    "search_label": "Recherche",
+    "hero_badge": "6 guides",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_handicap": "Handicap",
+    "filter_jeunes": "Jeunes",
+    "filter_retraite": "Retraite",
+    "read_time_label": "min",
+    "read_guide": "Lire"
+  },
+  "cat": {
+    "revenus": "revenus",
+    "logement": "logement",
+    "famille": "famille",
+    "sante": "sante",
+    "emploi": "emploi",
+    "energie": "energie",
+    "handicap": "handicap",
+    "jeunes": "jeunes",
+    "retraite": "retraite"
+  }
+}

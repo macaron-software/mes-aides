@@ -1,7 +1,8 @@
 use axum::{
+    body::Bytes,
     extract::{Json, State},
-    http::StatusCode,
-    response::IntoResponse,
+    http::{header, StatusCode},
+    response::{IntoResponse, Response},
     routing::{get, post},
     Router,
 };
@@ -12,6 +13,8 @@ use aides_core::engine::{Simulator, Situation};
 use std::sync::Arc;
 use tokio::sync::RwLock;
 use std::time::{Duration, Instant};
+use printpdf::*;
+use std::io::BufWriter;
 
 // ── State ─────────────────────────────────────────────────────────────────────
 
@@ -172,6 +175,101 @@ async fn get_baremes(State(state): State<AppState>) -> impl IntoResponse {
     })))
 }
 
+// ── PDF Report ────────────────────────────────────────────────────────────────
+
+/// POST /api/pdf — generate PDF report from simulation result
+async fn generate_pdf(Json(situation): Json<Situation>) -> Response {
+    let sim = Simulator::new();
+    let result = sim.simulate(&situation);
+
+    match build_pdf(&result) {
+        Ok(bytes) => (
+            StatusCode::OK,
+            [
+                (header::CONTENT_TYPE, "application/pdf"),
+                (header::CONTENT_DISPOSITION, "attachment; filename=\"mes-aides.pdf\""),
+            ],
+            Bytes::from(bytes),
+        ).into_response(),
+        Err(e) => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(serde_json::json!({"error": e.to_string()})),
+        ).into_response(),
+    }
+}
+
+fn build_pdf(result: &aides_core::engine::SimulationResult) -> anyhow::Result<Vec<u8>> {
+    let (doc, page1, layer1) = PdfDocument::new(
+        "Mes Aides — Rapport personnalise",
+        Mm(210.0),
+        Mm(297.0),
+        "Couverture",
+    );
+
+    let font = doc.add_builtin_font(BuiltinFont::Helvetica)?;
+    let font_bold = doc.add_builtin_font(BuiltinFont::HelveticaBold)?;
+
+    let layer = doc.get_page(page1).get_layer(layer1);
+
+    // Title
+    layer.use_text("Mes Aides — Rapport personnalise", 18.0, Mm(20.0), Mm(270.0), &font_bold);
+    layer.use_text(
+        &format!("Total estime : {:.0} EUR/mois", result.total_mensuel),
+        13.0, Mm(20.0), Mm(255.0), &font_bold,
+    );
+    layer.use_text(
+        &format!("{} aide(s) eligible(s)", result.aides_eligibles.len()),
+        11.0, Mm(20.0), Mm(246.0), &font,
+    );
+
+    // Separator line
+    let line = Line {
+        points: vec![
+            (Point::new(Mm(20.0), Mm(240.0)), false),
+            (Point::new(Mm(190.0), Mm(240.0)), false),
+        ],
+        is_closed: false,
+    };
+    layer.add_line(line);
+
+    // Eligible aids
+    let mut y = 230.0_f32;
+    layer.use_text("Aides eligibles :", 12.0, Mm(20.0), Mm(y), &font_bold);
+    y -= 8.0;
+
+    for aide in &result.aides_eligibles {
+        if y < 40.0 { break; } // avoid overflow on page 1
+        let montant_str = match aide.montant_mensuel {
+            Some(m) if m > 0.0 => format!("{m:.0} EUR/mois"),
+            _ => "Gratuit / montant variable".to_string(),
+        };
+        layer.use_text(
+            &format!("  • {:?} : {}", aide.aide_id, montant_str),
+            10.0, Mm(20.0), Mm(y), &font,
+        );
+        if let Some(raison) = aide.raisons.first() {
+            y -= 5.0;
+            if y < 40.0 { break; }
+            layer.use_text(
+                &format!("    {}", raison),
+                8.5, Mm(25.0), Mm(y), &font,
+            );
+        }
+        y -= 8.0;
+    }
+
+    // Disclaimer
+    layer.use_text(
+        "Ces resultats sont indicatifs. Seul l'organisme competent confirme vos droits.",
+        8.0, Mm(20.0), Mm(15.0), &font,
+    );
+    layer.use_text("aides.macaron-software.com", 8.0, Mm(20.0), Mm(10.0), &font);
+
+    let mut buf = BufWriter::new(Vec::new());
+    doc.save(&mut buf)?;
+    Ok(buf.into_inner()?)
+}
+
 // ── Router ────────────────────────────────────────────────────────────────────
 
 pub fn app(state: AppState) -> Router {
@@ -188,6 +286,7 @@ pub fn app(state: AppState) -> Router {
         .route("/api/simulate",          post(simulate))
         .route("/api/aides",             get(list_aides))
         .route("/api/datagouv/baremes",  get(get_baremes))
+        .route("/api/pdf",               post(generate_pdf))
         .layer(cors)
         .layer(CompressionLayer::new())
         .with_state(state)

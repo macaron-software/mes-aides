@@ -1,0 +1,164 @@
+{
+  "site": {
+    "name": "Trợ Cấp Của Tôi",
+    "tagline": "Tính toán quyền lợi xã hội của bạn trong 3 phút"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "simulator": "Mô phỏng",
+    "aids": "Trợ cấp",
+    "guides": "Hướng dẫn",
+    "cta": "Kiểm tra điều kiện"
+  },
+  "home": {
+    "hero_title": "Khám phá tất cả trợ cấp bạn được hưởng",
+    "hero_sub": "Mô phỏng miễn phí, 3 phút, 71 trợ cấp đã xác minh.",
+    "cta_primary": "Kiểm tra điều kiện",
+    "how_it_works": "Cách thức hoạt động",
+    "step1": "Tôi trả lời bảng câu hỏi",
+    "step2": "Thuật toán phân tích tình huống của tôi",
+    "step3": "Tôi nhận được kế hoạch hành động cá nhân"
+  },
+  "simulator": {
+    "page_title": "Mô phỏng — Trợ Cấp Của Tôi",
+    "step_of": "Etape {n}/{total}",
+    "see_results": "Kiểm tra điều kiện",
+    "progress_label": "Progression"
+  },
+  "step1": {
+    "title": "Situation personnelle",
+    "subtitle": "",
+    "q_age": "Age?",
+    "q_situation": "Situation familiale?",
+    "celibataire": "Có",
+    "en_couple": "Couple",
+    "marie": "Marie(e)",
+    "parent_isole": "Parent isole",
+    "q_enfants": "Enfants?",
+    "q_handicap": "Handicap reconnu?"
+  },
+  "step2": {
+    "title": "Logement",
+    "subtitle": "",
+    "q_statut": "Statut logement?",
+    "locataire": "Locataire",
+    "proprietaire": "Proprietaire",
+    "heberge": "Heberge(e)",
+    "sans_domicile": "Sans domicile",
+    "q_loyer": "Loyer mensuel?",
+    "q_zone": "Zone?",
+    "zone1": "Zone 1 (IDF)",
+    "zone2": "Zone 2",
+    "zone3": "Zone 3"
+  },
+  "step3": {
+    "title": "Revenus",
+    "subtitle": "",
+    "q_revenu": "Revenu net mensuel?",
+    "hint_revenu": "",
+    "q_apl_actuelle": "Aide logement actuelle?",
+    "q_allocations": "Allocations percues?",
+    "af": "Allocations familiales",
+    "rsa": "RSA"
+  },
+  "step4": {
+    "title": "Sante",
+    "subtitle": "",
+    "q_ald": "ALD?",
+    "q_rqth": "RQTH?",
+    "q_taux_incapacite": "Taux incapacite?",
+    "aucun": "Aucun",
+    "taux50": "50-79%",
+    "taux80": "80%+",
+    "q_cmu": "CSS?"
+  },
+  "step5": {
+    "title": "Emploi",
+    "subtitle": "",
+    "q_statut": "Situation emploi?",
+    "cdi": "CDI",
+    "cdd": "CDD",
+    "chomeur": "Chomeur/se",
+    "etudiant": "Etudiant(e)",
+    "retraite": "Retraite(e)",
+    "independant": "Independant(e)",
+    "q_anciennete": "Anciennete (mois)?"
+  },
+  "results": {
+    "page_title": "Resultats — Trợ Cấp Của Tôi",
+    "title": "Vos aides estimees",
+    "subtitle": "",
+    "per_month": "€/tháng",
+    "print": "Imprimer",
+    "share": "Partager",
+    "refine": "Affiner",
+    "total_label": "Total estime",
+    "disclaimer": "Resultats indicatifs."
+  },
+  "common": {
+    "yes": "Có",
+    "no": "Không",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "other": "Autre",
+    "none": "Aucun",
+    "years": "tuổi",
+    "months": "tháng",
+    "or_more": "+",
+    "per_month": "€/tháng",
+    "test_eligibility": "Kiểm tra điều kiện",
+    "see_detail": "Details"
+  },
+  "footer": {
+    "copyright": "© 2025 Trợ Cấp Của Tôi — Macaron Software.",
+    "disclaimer": "Service indicatif.",
+    "legal": "Mentions legales"
+  },
+  "catalog": {
+    "title": "Catalogue",
+    "hero_title": "Toutes les aides",
+    "hero_subtitle": "71 aides sociales.",
+    "search_placeholder": "Tìm kiếm...",
+    "filter_all": "Tất cả",
+    "result_count": "aides",
+    "hero_badge": "71 aides",
+    "page_title": "Catalogue",
+    "search_label": "Recherche",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_famille": "Famille",
+    "filter_sante": "Sante",
+    "filter_emploi": "Emploi",
+    "filter_energie": "Energie",
+    "results_heading": "Resultats"
+  },
+  "guides": {
+    "title": "Guides",
+    "hero_title": "Guides pratiques",
+    "hero_subtitle": "",
+    "search_placeholder": "Tìm kiếm...",
+    "filter_all": "Tất cả",
+    "count": "guides",
+    "page_title": "Guides",
+    "search_label": "Recherche",
+    "hero_badge": "6 guides",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_handicap": "Handicap",
+    "filter_jeunes": "Jeunes",
+    "filter_retraite": "Retraite",
+    "read_time_label": "min",
+    "read_guide": "Lire"
+  },
+  "cat": {
+    "revenus": "revenus",
+    "logement": "logement",
+    "famille": "famille",
+    "sante": "sante",
+    "emploi": "emploi",
+    "energie": "energie",
+    "handicap": "handicap",
+    "jeunes": "jeunes",
+    "retraite": "retraite"
+  }
+}

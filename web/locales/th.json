@@ -1,0 +1,164 @@
+{
+  "site": {
+    "name": "สวัสดิการของฉัน",
+    "tagline": "คำนวณสิทธิ์ทางสังคมของคุณใน 3 นาที"
+  },
+  "nav": {
+    "home": "หน้าแรก",
+    "simulator": "จำลองสถานการณ์",
+    "aids": "สวัสดิการ",
+    "guides": "คู่มือ",
+    "cta": "ตรวจสอบสิทธิ์"
+  },
+  "home": {
+    "hero_title": "ค้นพบสวัสดิการทั้งหมดที่คุณมีสิทธิ์ได้รับ",
+    "hero_sub": "จำลองสถานการณ์ฟรี 3 นาที สวัสดิการ 71 รายการที่ผ่านการตรวจสอบ",
+    "cta_primary": "ตรวจสอบสิทธิ์",
+    "how_it_works": "วิธีการทำงาน",
+    "step1": "ตอบแบบสอบถาม",
+    "step2": "อัลกอริทึมวิเคราะห์สถานการณ์ของฉัน",
+    "step3": "ฉันได้รับแผนปฏิบัติการส่วนตัว"
+  },
+  "simulator": {
+    "page_title": "จำลองสถานการณ์ — สวัสดิการของฉัน",
+    "step_of": "Etape {n}/{total}",
+    "see_results": "ตรวจสอบสิทธิ์",
+    "progress_label": "Progression"
+  },
+  "step1": {
+    "title": "Situation personnelle",
+    "subtitle": "",
+    "q_age": "Age?",
+    "q_situation": "Situation familiale?",
+    "celibataire": "ใช่",
+    "en_couple": "Couple",
+    "marie": "Marie(e)",
+    "parent_isole": "Parent isole",
+    "q_enfants": "Enfants?",
+    "q_handicap": "Handicap reconnu?"
+  },
+  "step2": {
+    "title": "Logement",
+    "subtitle": "",
+    "q_statut": "Statut logement?",
+    "locataire": "Locataire",
+    "proprietaire": "Proprietaire",
+    "heberge": "Heberge(e)",
+    "sans_domicile": "Sans domicile",
+    "q_loyer": "Loyer mensuel?",
+    "q_zone": "Zone?",
+    "zone1": "Zone 1 (IDF)",
+    "zone2": "Zone 2",
+    "zone3": "Zone 3"
+  },
+  "step3": {
+    "title": "Revenus",
+    "subtitle": "",
+    "q_revenu": "Revenu net mensuel?",
+    "hint_revenu": "",
+    "q_apl_actuelle": "Aide logement actuelle?",
+    "q_allocations": "Allocations percues?",
+    "af": "Allocations familiales",
+    "rsa": "RSA"
+  },
+  "step4": {
+    "title": "Sante",
+    "subtitle": "",
+    "q_ald": "ALD?",
+    "q_rqth": "RQTH?",
+    "q_taux_incapacite": "Taux incapacite?",
+    "aucun": "Aucun",
+    "taux50": "50-79%",
+    "taux80": "80%+",
+    "q_cmu": "CSS?"
+  },
+  "step5": {
+    "title": "Emploi",
+    "subtitle": "",
+    "q_statut": "Situation emploi?",
+    "cdi": "CDI",
+    "cdd": "CDD",
+    "chomeur": "Chomeur/se",
+    "etudiant": "Etudiant(e)",
+    "retraite": "Retraite(e)",
+    "independant": "Independant(e)",
+    "q_anciennete": "Anciennete (mois)?"
+  },
+  "results": {
+    "page_title": "Resultats — สวัสดิการของฉัน",
+    "title": "Vos aides estimees",
+    "subtitle": "",
+    "per_month": "€/เดือน",
+    "print": "Imprimer",
+    "share": "Partager",
+    "refine": "Affiner",
+    "total_label": "Total estime",
+    "disclaimer": "Resultats indicatifs."
+  },
+  "common": {
+    "yes": "ใช่",
+    "no": "ไม่",
+    "back": "กลับ",
+    "next": "ถัดไป",
+    "other": "Autre",
+    "none": "Aucun",
+    "years": "ปี",
+    "months": "เดือน",
+    "or_more": "+",
+    "per_month": "€/เดือน",
+    "test_eligibility": "ตรวจสอบสิทธิ์",
+    "see_detail": "Details"
+  },
+  "footer": {
+    "copyright": "© 2025 สวัสดิการของฉัน — Macaron Software.",
+    "disclaimer": "Service indicatif.",
+    "legal": "Mentions legales"
+  },
+  "catalog": {
+    "title": "Catalogue",
+    "hero_title": "Toutes les aides",
+    "hero_subtitle": "71 aides sociales.",
+    "search_placeholder": "ค้นหา...",
+    "filter_all": "ทั้งหมด",
+    "result_count": "aides",
+    "hero_badge": "71 aides",
+    "page_title": "Catalogue",
+    "search_label": "Recherche",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_famille": "Famille",
+    "filter_sante": "Sante",
+    "filter_emploi": "Emploi",
+    "filter_energie": "Energie",
+    "results_heading": "Resultats"
+  },
+  "guides": {
+    "title": "Guides",
+    "hero_title": "Guides pratiques",
+    "hero_subtitle": "",
+    "search_placeholder": "ค้นหา...",
+    "filter_all": "ทั้งหมด",
+    "count": "guides",
+    "page_title": "Guides",
+    "search_label": "Recherche",
+    "hero_badge": "6 guides",
+    "filter_revenus": "Revenus",
+    "filter_logement": "Logement",
+    "filter_handicap": "Handicap",
+    "filter_jeunes": "Jeunes",
+    "filter_retraite": "Retraite",
+    "read_time_label": "min",
+    "read_guide": "Lire"
+  },
+  "cat": {
+    "revenus": "revenus",
+    "logement": "logement",
+    "famille": "famille",
+    "sante": "sante",
+    "emploi": "emploi",
+    "energie": "energie",
+    "handicap": "handicap",
+    "jeunes": "jeunes",
+    "retraite": "retraite"
+  }
+}
