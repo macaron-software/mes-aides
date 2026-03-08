@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0B6E4F"/>
+  <rect x="0" y="500" width="1200" height="130" fill="#094F39"/>
+
+  <!-- Logo mark -->
+  <circle cx="100" cy="100" r="36" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.4"/>
+  <path d="M88 100 L100 112 L116 92" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Main headline -->
+  <text x="100" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="800" fill="#ffffff" letter-spacing="-1">Mes Aides</text>
+
+  <!-- Subline -->
+  <text x="100" y="330" font-family="system-ui,-apple-system,sans-serif" font-size="32" font-weight="400" fill="#ffffff" opacity="0.85">Simulateur gratuit d'aides sociales — 71 aides analysees</text>
+
+  <!-- Stats -->
+  <text x="100" y="430" font-family="system-ui,-apple-system,sans-serif" font-size="24" fill="#ffffff" opacity="0.7">France 2026 · Calcul instantane · 100% gratuit · 40 langues</text>
+
+  <!-- Bottom bar -->
+  <text x="100" y="565" font-family="system-ui,-apple-system,sans-serif" font-size="22" fill="#ffffff" opacity="0.5">aides.macaron-software.com</text>
+
+  <!-- Decorative accent -->
+  <rect x="1050" y="0" width="150" height="4" fill="#D97706"/>
+  <rect x="1100" y="0" width="100" height="630" fill="#D97706" opacity="0.06"/>
+</svg>

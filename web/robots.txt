@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /resultats.html
+
+Sitemap: https://aides.macaron-software.com/sitemap.xml
