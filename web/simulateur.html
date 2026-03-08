@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- theme anti-flash -->
+  <script>(function(){var t=localStorage.getItem('theme');if(t&&t!=='light')document.documentElement.setAttribute('data-theme',t);else if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}})();</script>
   <title data-i18n="simulator.page_title">Simulation aides sociales gratuite 2026 — RSA APL AAH | Mes Aides</title>
   <meta name="description" content="Questionnaire gratuit en 5 minutes : situation personnelle, logement, revenus, sante, emploi. Decouvrez le montant de vos aides sociales 2026. Aucune donnee transmise.">
   <meta name="robots" content="index, follow">
@@ -610,16 +612,29 @@
     </main>
   </div>
 
+  <script src="js/theme.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/i18n.js"></script>
+  <!-- Umami Analytics (production uniquement) -->
+  <script async src="https://analytics.macaron-software.com/script.js"
+          data-website-id="b48fa85f-c884-44a9-9cd3-56f4ed29bba7"
+          data-domains="aides.macaron-software.com"></script>
   <script>
     const TOTAL_STEPS = 5;
     let currentStep = 1;
 
-    // Persist answers in localStorage
-    const answers = JSON.parse(localStorage.getItem('sim_answers') || '{}');
+    // Saisies : chargées au démarrage (déchiffrement async)
+    const answers = {};
+    SecureStorage.load('ma_sim_answers').then(saved => {
+      if (saved && typeof saved === 'object') {
+        Object.assign(answers, saved);
+        restoreUI();
+      }
+    });
 
+    // Sauvegarde chiffrée + compressée
     function saveAnswers() {
-      localStorage.setItem('sim_answers', JSON.stringify(answers));
+      SecureStorage.save('ma_sim_answers', answers);
     }
 
     // Choice buttons
@@ -689,6 +704,8 @@
         currentStep++;
         updateUI();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Analytics : étape complétée
+        window.umami?.track('sim-step', { step: currentStep });
       } else {
         submitSimulation();
       }
@@ -709,6 +726,8 @@
 
       // Build payload from answers
       const payload = buildPayload();
+      // Analytics : simulation lancée
+      window.umami?.track('sim-submit', { emploi: payload.emploi, age_range: Math.floor(payload.age / 10) * 10 });
 
       try {
         const resp = await fetch('/api/simulate', {
@@ -719,7 +738,8 @@
 
         if (resp.ok) {
           const data = await resp.json();
-          localStorage.setItem('sim_results', JSON.stringify(data));
+          await SecureStorage.save('ma_sim_results', data);
+          window.umami?.track('sim-result', { nb_aides: data.nb_aides, total: Math.round(data.total_mensuel) });
           window.location.href = 'resultats.html';
         } else {
           throw new Error('API error');
@@ -727,7 +747,8 @@
       } catch (e) {
         // Offline / demo mode — generate dummy results
         const demo = generateDemoResults(payload);
-        localStorage.setItem('sim_results', JSON.stringify(demo));
+        await SecureStorage.save('ma_sim_results', demo);
+        window.umami?.track('sim-result-demo', { nb_aides: demo.nb_aides });
         window.location.href = 'resultats.html';
       }
     }
@@ -819,19 +840,42 @@
       };
     }
 
-    // Restore saved answers
-    Object.entries(answers).forEach(([field, value]) => {
-      const btn = document.querySelector(`.choice-btn[data-field="${field}"][data-value="${value}"]`);
-      if (btn) {
-        document.querySelectorAll(`.choice-btn[data-field="${field}"]`).forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
+    // Restore UI depuis answers (appelé après chargement async SecureStorage)
+    function restoreUI() {
+      Object.entries(answers).forEach(([field, value]) => {
+        const btn = document.querySelector(`.choice-btn[data-field="${field}"][data-value="${value}"]`);
+        if (btn) {
+          document.querySelectorAll(`.choice-btn[data-field="${field}"]`).forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        }
+        const slider = document.getElementById(field);
+        if (slider) {
+          slider.value = value;
+          slider.dispatchEvent(new Event('input'));
+        }
+      });
+    }
+
+    // Pré-remplissage depuis paramètre URL ?profil=
+    (function applyProfile() {
+      const profil = new URLSearchParams(location.search).get('profil');
+      if (!profil) return;
+      const presets = {
+        parent:  { situation_familiale: 'parent_isole', nb_enfants: '1' },
+        jeune:   { statut_emploi: 'etudiant' },
+        salarie: { statut_emploi: 'salarie_cdi' },
+        chomeur: { statut_emploi: 'chomeur' },
+        senior:  { statut_emploi: 'retraite' },
+        handicap:{ rqth: 'true', taux_incapacite: '80' }
+      };
+      const p = presets[profil];
+      if (p) {
+        Object.assign(answers, p);
+        saveAnswers();
+        // Analytics : quelle persona a cliqué
+        window.umami?.track('persona-entry', { profil });
       }
-      const slider = document.getElementById(field);
-      if (slider) {
-        slider.value = value;
-        slider.dispatchEvent(new Event('input'));
-      }
-    });
+    })();
 
     updateUI();
   </script>

@@ -298,7 +298,13 @@
     </a>
   </div>
 
+  <script src="js/theme.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/i18n.js"></script>
+  <!-- Umami Analytics -->
+  <script async src="https://analytics.macaron-software.com/script.js"
+          data-website-id="b48fa85f-c884-44a9-9cd3-56f4ed29bba7"
+          data-domains="aides.macaron-software.com"></script>
   <script>
     // Journey steps data per aide
     const JOURNEYS = {
@@ -462,18 +468,17 @@
       }
     }
 
-    // Load results
-    const raw = localStorage.getItem('sim_results');
-    if (raw) {
-      try {
-        renderResults(JSON.parse(raw));
-      } catch (e) {
-        document.getElementById('aidesList').innerHTML = '<p style="color:var(--c-danger);padding:var(--sp-8);text-align:center;">Erreur de chargement. <a href="simulateur.html">Recommencer.</a></p>';
+    // Load results (chiffrés via SecureStorage)
+    SecureStorage.load('ma_sim_results').then(data => {
+      if (data) {
+        renderResults(data);
+        window.umami?.track('results-view', { nb_aides: data.nb_aides, total: Math.round(data.total_mensuel || 0) });
+      } else {
+        window.location.href = 'simulateur.html';
       }
-    } else {
-      // No results — redirect to simulator
-      window.location.href = 'simulateur.html';
-    }
+    }).catch(() => {
+      document.getElementById('aidesList').innerHTML = '<p style="color:var(--c-danger);padding:var(--sp-8);text-align:center;">Erreur de chargement. <a href="simulateur.html">Recommencer.</a></p>';
+    });
   </script>
 </body>
 </html>
