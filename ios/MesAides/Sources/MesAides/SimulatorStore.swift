@@ -73,7 +73,8 @@ final class SimulatorStore: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
 
-    private let baseURL = "https://aides.macaron-software.com"
+    // Set API_BASE_URL in Info.plist or build settings for production
+    private let baseURL = ProcessInfo.processInfo.environment["API_BASE_URL"] ?? "http://localhost:3001"
 
     func simulate() {
         isLoading = true

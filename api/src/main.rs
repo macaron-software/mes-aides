@@ -293,7 +293,7 @@ fn build_pdf(result: &aides_core::engine::SimulationResult) -> anyhow::Result<Ve
         "Ces resultats sont indicatifs. Seul l'organisme competent confirme vos droits.",
         8.0, Mm(20.0), Mm(15.0), &font,
     );
-    layer.use_text("aides.macaron-software.com", 8.0, Mm(20.0), Mm(10.0), &font);
+    layer.use_text("mes-aides.app", 8.0, Mm(20.0), Mm(10.0), &font);
 
     let mut buf = BufWriter::new(Vec::new());
     doc.save(&mut buf)?;
@@ -303,13 +303,15 @@ fn build_pdf(result: &aides_core::engine::SimulationResult) -> anyhow::Result<Ve
 // ── Router ────────────────────────────────────────────────────────────────────
 
 pub fn app(state: AppState) -> Router {
-    let cors = CorsLayer::new()
-        .allow_origin([
-            "https://aides.macaron-software.com".parse::<axum::http::HeaderValue>().unwrap(),
-            "http://localhost:8000".parse::<axum::http::HeaderValue>().unwrap(),
-        ])
-        .allow_methods(Any)
-        .allow_headers(Any);
+    // CORS: allow all origins in dev; set CORS_ORIGIN env var in production
+    let origin = std::env::var("CORS_ORIGIN").ok()
+        .and_then(|o| o.parse::<axum::http::HeaderValue>().ok());
+
+    let cors = if let Some(o) = origin {
+        CorsLayer::new().allow_origin(o).allow_methods(Any).allow_headers(Any)
+    } else {
+        CorsLayer::new().allow_origin(tower_http::cors::Any).allow_methods(Any).allow_headers(Any)
+    };
 
     Router::new()
         .route("/api/health",            get(health))

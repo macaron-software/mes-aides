@@ -6,3 +6,5 @@ node_modules/
 .DS_Store
 Thumbs.db
 aides-api-linux-amd64
+aides-api-linux
+aides-api-linux-amd64

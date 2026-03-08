@@ -65,7 +65,7 @@ struct PDFExportView: View {
                 .font: UIFont.italicSystemFont(ofSize: 9),
                 .foregroundColor: UIColor.lightGray,
             ]
-            "aides.macaron-software.com — Resultats indicatifs".draw(
+            "mes-aides.app — Resultats indicatifs".draw(
                 at: CGPoint(x: 40, y: 810), withAttributes: footer)
         }
     }

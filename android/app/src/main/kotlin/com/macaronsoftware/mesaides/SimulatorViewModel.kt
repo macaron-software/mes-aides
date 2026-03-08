@@ -69,9 +69,12 @@ class SimulatorViewModel(app: Application) : AndroidViewModel(app) {
     val result = MutableLiveData<SimulationResultModel?>()
     val error = MutableLiveData<String?>()
 
+    // Set API_BASE_URL in BuildConfig or gradle.properties for production (default: emulator localhost)
+    private val apiBaseUrl = BuildConfig.API_BASE_URL.ifEmpty { "http://10.0.2.2:3001/" }
+
     private val api: MesAidesApi by lazy {
         Retrofit.Builder()
-            .baseUrl("https://aides.macaron-software.com/")
+            .baseUrl(apiBaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MesAidesApi::class.java)

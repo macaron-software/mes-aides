@@ -1,20 +1,20 @@
+# nginx vhost template — replace DOMAIN with your domain
 server {
     listen 80;
-    server_name aides.macaron-software.com;
+    server_name DOMAIN;
     return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
     http2 on;
-    server_name aides.macaron-software.com;
+    server_name DOMAIN;
 
-    ssl_certificate     /etc/letsencrypt/live/aides.macaron-software.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/aides.macaron-software.com/privkey.pem;
+    ssl_certificate     /etc/letsencrypt/live/DOMAIN/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/DOMAIN/privkey.pem;
     ssl_protocols       TLSv1.2 TLSv1.3;
     ssl_ciphers         HIGH:!aNULL:!MD5;
 
-    # Security headers
     add_header Strict-Transport-Security "max-age=63072000; includeSubDomains" always;
     add_header X-Frame-Options            DENY                                  always;
     add_header X-Content-Type-Options     nosniff                               always;
@@ -27,22 +27,19 @@ server {
     gzip on;
     gzip_types text/plain text/css application/javascript application/wasm application/json;
 
-    # Static frontend
     location / {
         try_files $uri $uri/ /index.html;
         expires 1h;
         add_header Cache-Control "public, must-revalidate";
     }
 
-    # WASM — longer cache, content-addressed filenames
     location ~* \.wasm$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
 
-    # API reverse proxy
     location /api/ {
-        proxy_pass         http://127.0.0.1:3003;
+        proxy_pass         http://127.0.0.1:3001;
         proxy_set_header   Host              $host;
         proxy_set_header   X-Real-IP         $remote_addr;
         proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;

@@ -43,7 +43,7 @@ class PdfGenerator(private val context: Context) {
             y += 8f
         }
 
-        canvas.drawText("aides.macaron-software.com — Resultats indicatifs", 40f, 820f, small)
+        canvas.drawText("mes-aides.app — Resultats indicatifs", 40f, 820f, small)
         doc.finishPage(page)
 
         val dir = context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
