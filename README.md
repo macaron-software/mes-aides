@@ -71,17 +71,88 @@ server {
 }
 ```
 
-## Moteur de calcul
+## Aides couvertes (71)
 
-Les barèmes sont embarqués dans le code (mis à jour manuellement à chaque revalorisation) :
+### Mises en oeuvre (barèmes 2026 calculés)
 
-| Aide | Barème 2026 |
-|------|-------------|
-| RSA (personne seule) | 635,71 €/mois |
-| APL (zone 1) | jusqu'à 380 €/mois |
-| Prime d'activité | jusqu'à 354 €/mois |
-| AAH | 1 016,85 €/mois |
-| Chèque énergie | 200–277 €/an |
+| # | Aide | Sigle |
+|---|------|-------|
+| 1 | Revenu de Solidarité Active | RSA |
+| 2 | Prime d'Activité | — |
+| 3 | Allocation de Solidarité Spécifique | ASS |
+| 4 | Allocation de Retour à l'Emploi | ARE |
+| 5 | Aide Personnalisée au Logement | APL |
+| 6 | Allocation de Logement Sociale | ALS |
+| 7 | Garantie Caution Locative | Visale |
+| 8 | MaPrimeRénov' | — |
+| 9 | Allocation aux Adultes Handicapés | AAH |
+| 10 | Majoration Vie Autonome | MVA |
+| 11 | Prestation de Compensation du Handicap | PCH |
+| 12 | Allocation Éducation Enfant Handicapé | AEEH |
+| 13 | Allocation Supplémentaire d'Invalidité | ASI |
+| 14 | Pension d'Invalidité | — |
+| 15 | Complémentaire Santé Solidaire | CSS |
+| 16 | Allocations Familiales | AF |
+| 17 | Complément Familial | CF |
+| 18 | Prestation d'Accueil du Jeune Enfant | PAJE |
+| 19 | Allocation de Soutien Familial | ASF |
+| 20 | Allocation de Rentrée Scolaire | ARS |
+| 21 | Chèque Énergie | — |
+| 22 | Minimum Vieillesse | ASPA |
+| 23 | Minimum Contributif Retraite | MICO |
+| 24 | Contrat Engagement Jeune | CEJ |
+| 25 | Bourse CROUS sur Critères Sociaux | — |
+| 26 | Pass Culture | — |
+| 27 | Prime de Noël RSA | — |
+| 28 | Aide Juridictionnelle | AJ |
+
+### Répertoriées (analyse et guide, calcul en cours d'intégration)
+
+| # | Aide | Catégorie |
+|---|------|-----------|
+| 29 | Allocation de Logement Familiale | ALF | Logement |
+| 30 | Fonds de Solidarité pour le Logement | FSL | Logement |
+| 31 | Loca-Pass (avance caution) | — | Logement |
+| 32 | APL Accession (accession à la propriété) | — | Logement |
+| 33 | Prime Certificats d'Économies d'Énergie | CEE | Énergie |
+| 34 | Tarif social gaz et électricité | — | Énergie |
+| 35 | Prime à la conversion véhicule | — | Énergie |
+| 36 | Bonus écologique | — | Énergie |
+| 37 | Aide à la Création et Reprise d'Entreprise | ACRE | Emploi |
+| 38 | Chèques Vacances ANCV | — | Emploi |
+| 39 | Aide à la mobilité Pôle Emploi | — | Emploi |
+| 40 | Aide au Retour à l'Emploi Formation | AREF | Emploi |
+| 41 | Complément de Libre Choix du Mode de Garde | CLCMG | Famille |
+| 42 | Prestation Partagée d'Éducation de l'Enfant | PreParE | Famille |
+| 43 | Allocation Journalière de Présence Parentale | AJPP | Famille |
+| 44 | Allocation Journalière du Proche Aidant | AJPA | Famille |
+| 45 | Bourse collège et lycée sur critères sociaux | — | Famille |
+| 46 | Aide au transport scolaire | — | Famille |
+| 47 | Affection de Longue Durée 100% | ALD | Santé |
+| 48 | Carte Mobilité Inclusion | CMI | Handicap |
+| 49 | Reconnaissance Qualité Travailleur Handicapé | RQTH | Handicap |
+| 50 | Aide audioprothèse 100% Santé | — | Santé |
+| 51 | Protection Universelle Maladie | PUMa | Santé |
+| 52 | Indemnités Journalières maladie et maternité | IJ | Santé |
+| 53 | Allocation Personnalisée d'Autonomie | APA | Senior |
+| 54 | Aide à domicile (SAAD) | — | Senior |
+| 55 | Aide au Retour à Domicile après Hospitalisation | ARDH | Senior |
+| 56 | Complément Mode de Garde | CMG | Famille |
+| 57 | Aide au Poste en ESAT | — | Handicap |
+| 58 | Bourse aide à la mobilité en Master | — | Jeunes |
+| 59 | Aide au logement étudiant (CROUS) | — | Jeunes |
+| 60 | Permis à 1 euro | — | Jeunes |
+| 61 | Tarif social téléphone et internet | TPS | Divers |
+| 62 | Micro-crédit social (FASTT) | — | Emploi |
+| 63 | Garantie jeunes (fusionnée CEJ) | — | Jeunes |
+| 64 | Aide différentielle ex-combattants | — | Divers |
+| 65 | Aide aux victimes d'infractions | — | Justice |
+| 66 | Caution solidaire Garantie Visale étudiant | — | Logement |
+| 67 | Aide d'urgence CAF | — | Revenus |
+| 68 | Fonds d'aide aux jeunes | FAJ | Jeunes |
+| 69 | Revenu de Solidarité Outre-Mer | RSO | Revenus |
+| 70 | Allocation Veuvage | AV | Famille |
+| 71 | Allocation Équivalent Retraite | AER | Emploi |
 
 ## Tests
 
