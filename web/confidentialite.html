@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Confidentialité — Mes Aides</title>
+  <meta name="description" content="Politique de confidentialité de Mes Aides. Aucune donnée personnelle collectée.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://aides.macaron-software.com/confidentialite.html">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t&&t!=='light')document.documentElement.setAttribute('data-theme',t);else if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="/" class="site-logo" aria-label="Mes Aides — accueil">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="var(--c-primary)"/>
+        <path d="M12 18l3 3 5-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Mes Aides</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="/simulateur.html">Simulateur</a>
+      <a href="/aides.html">Toutes les aides</a>
+      <a href="/guides.html">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container" style="max-width:720px;padding-top:var(--sp-12);padding-bottom:var(--sp-16)">
+
+  <h1>Politique de confidentialité</h1>
+  <p style="color:var(--c-text-subtle);margin-bottom:var(--sp-8)">Dernière mise à jour : mars 2026</p>
+
+  <section style="margin-bottom:var(--sp-10)">
+    <h2>Résumé</h2>
+    <div style="background:var(--c-surface-alt);border-left:3px solid var(--c-primary);padding:var(--sp-4) var(--sp-6);border-radius:0 var(--radius-md) var(--radius-md) 0;margin-top:var(--sp-4)">
+      <p><strong>Mes Aides ne collecte, ne transmet et ne vend aucune donnée personnelle.</strong></p>
+      <p style="margin-top:var(--sp-2);color:var(--c-text-subtle)">
+        Tout le calcul se fait dans votre navigateur ou sur votre appareil.
+        Vos réponses au simulateur ne quittent jamais votre appareil.
+      </p>
+    </div>
+  </section>
+
+  <section style="margin-bottom:var(--sp-10)">
+    <h2>Données traitées</h2>
+    <table style="width:100%;border-collapse:collapse;margin-top:var(--sp-4);font-size:var(--text-sm)">
+      <thead>
+        <tr style="border-bottom:2px solid var(--c-border)">
+          <th style="text-align:left;padding:var(--sp-2) var(--sp-3)">Donnée</th>
+          <th style="text-align:left;padding:var(--sp-2) var(--sp-3)">Traitement</th>
+          <th style="text-align:left;padding:var(--sp-2) var(--sp-3)">Stockage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--c-border)">
+          <td style="padding:var(--sp-3)">Situation personnelle (âge, revenus, logement, handicap…)</td>
+          <td style="padding:var(--sp-3)">Calcul local dans le navigateur / l'app</td>
+          <td style="padding:var(--sp-3)">Jamais stockée ni transmise</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--c-border)">
+          <td style="padding:var(--sp-3)">Résultats de simulation</td>
+          <td style="padding:var(--sp-3)">Affichés en mémoire vive</td>
+          <td style="padding:var(--sp-3)">Jamais sauvegardés</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--c-border)">
+          <td style="padding:var(--sp-3)">Préférence de langue</td>
+          <td style="padding:var(--sp-3)">Enregistrée localement sur votre appareil (localStorage)</td>
+          <td style="padding:var(--sp-3)">Votre appareil uniquement</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--c-border)">
+          <td style="padding:var(--sp-3)">Préférence de thème (clair/sombre)</td>
+          <td style="padding:var(--sp-3)">Enregistrée localement sur votre appareil (localStorage)</td>
+          <td style="padding:var(--sp-3)">Votre appareil uniquement</td>
+        </tr>
+        <tr>
+          <td style="padding:var(--sp-3)">Données analytiques / de navigation</td>
+          <td style="padding:var(--sp-3)" colspan="2"><strong>Aucune collecte</strong> — pas de tracker, pas de cookie analytics</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section style="margin-bottom:var(--sp-10)">
+    <h2>Cookies</h2>
+    <p>Mes Aides n'utilise <strong>aucun cookie</strong>.</p>
+    <p style="margin-top:var(--sp-3)">
+      Deux préférences (langue, thème) sont mémorisées dans le
+      <code>localStorage</code> de votre navigateur — un mécanisme purement local qui
+      ne peut être lu que par ce site et ne génère aucune requête réseau.
+      Vous pouvez les effacer à tout moment via les paramètres de votre navigateur.
+    </p>
+  </section>
+
+  <section style="margin-bottom:var(--sp-10)">
+    <h2>Requêtes réseau</h2>
+    <p>
+      La seule requête réseau de l'application est le chargement du
+      <strong>fichier de traduction</strong> (<code>/locales/fr.json</code>, etc.)
+      depuis ce même serveur. Cette requête ne contient aucune donnée personnelle —
+      uniquement l'URL du fichier demandé, comme pour tout chargement de page web.
+    </p>
+    <p style="margin-top:var(--sp-3)">
+      La politique de sécurité du contenu (CSP) du site interdit techniquement
+      tout envoi de données vers un serveur tiers :
+    </p>
+    <pre style="background:var(--c-surface-alt);padding:var(--sp-3) var(--sp-4);border-radius:var(--radius-md);font-size:var(--text-xs);overflow-x:auto">Content-Security-Policy: script-src 'self'; connect-src 'self'</pre>
+  </section>
+
+  <section style="margin-bottom:var(--sp-10)">
+    <h2>Vos droits (RGPD)</h2>
+    <p>
+      Le Règlement Général sur la Protection des Données (RGPD) s'applique au
+      traitement de données à caractère personnel. Mes Aides ne traitant
+      <strong>aucune donnée personnelle</strong> (aucune donnée ne quitte votre appareil),
+      les obligations du RGPD relatives au consentement, à la durée de conservation,
+      ou aux droits d'accès/rectification/suppression ne sont pas applicables.
+    </p>
+    <p style="margin-top:var(--sp-3)">
+      Si vous avez une question relative à la vie privée, vous pouvez contacter :
+      <a href="mailto:contact@macaron-software.com">contact@macaron-software.com</a>
+    </p>
+  </section>
+
+  <section style="margin-bottom:var(--sp-10)">
+    <h2>Open source</h2>
+    <p>
+      Le code source de Mes Aides est entièrement public et auditable sur
+      <a href="https://github.com/macaron-software/mes-aides" rel="noopener">GitHub</a>.
+      N'importe qui peut vérifier qu'aucune donnée n'est transmise.
+    </p>
+  </section>
+
+  <section>
+    <h2>Hébergement</h2>
+    <p>
+      Le site est hébergé sur un serveur OVH en France (Europe).
+      Le serveur enregistre des journaux d'accès HTTP standards (adresses IP, URLs demandées)
+      à des fins de sécurité uniquement. Ces journaux sont automatiquement effacés après 7 jours
+      et ne sont jamais croisés avec des données de simulation.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-8);align-items:start">
+      <div>
+        <div style="display:flex;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-3)">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--c-primary)"/><path d="M12 18l3 3 5-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-weight:var(--fw-bold);font-size:var(--text-sm);color:var(--c-text)">Mes Aides</span>
+        </div>
+        <p style="font-size:var(--text-xs);color:var(--c-text-subtle);max-width:360px;line-height:var(--lh-relaxed)">
+          Service independant d'information sur les aides sociales. Non affilie au gouvernement.
+        </p>
+      </div>
+      <nav aria-label="Liens du pied de page" style="display:flex;flex-direction:column;gap:var(--sp-2);align-items:flex-end">
+        <a href="/simulateur.html" style="font-size:var(--text-sm);color:var(--c-text-muted)">Simulateur</a>
+        <a href="/aides.html" style="font-size:var(--text-sm);color:var(--c-text-muted)">Toutes les aides</a>
+        <a href="/confidentialite.html" style="font-size:var(--text-sm);color:var(--c-text-muted)">Confidentialite</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+</body>
+</html>
