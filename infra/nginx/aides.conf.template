@@ -30,11 +30,11 @@ server {
     # NOTE: Do NOT add add_header in location blocks — they override server-level security headers
     location / {
         try_files $uri $uri/ /index.html;
-        expires 1h;
+        expires -1;  # no-cache for HTML — always fresh
     }
 
     location ~* \.(js|css)$ {
-        expires 1d;
+        expires 1y;  # long cache for versioned assets
     }
 
     location ~* \.wasm$ {
