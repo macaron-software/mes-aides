@@ -874,6 +874,78 @@
       };
     }
 
+    // ── Sources officielles par aide ─────────────────────────────────────────
+    const SOURCES = {
+      'rsa':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F19869' },
+      'prime-activite':       { label: 'caf.fr', url: 'https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/travailler/la-prime-d-activite' },
+      'are':                  { label: 'francetravail.fr', url: 'https://www.francetravail.fr/candidat/mes-indemnisations/quelle-est-mon-allocation-chomage.html' },
+      'ass':                  { label: 'francetravail.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F12484' },
+      'apl':                  { label: 'caf.fr', url: 'https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement/aide-personnalisee-au-logement' },
+      'als':                  { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1280' },
+      'alf':                  { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F13132' },
+      'visale':               { label: 'visale.fr', url: 'https://www.visale.fr' },
+      'visale-etudiant':      { label: 'visale.fr', url: 'https://www.visale.fr/visale-pour-qui/etudiant' },
+      'ma-prime-renov':       { label: 'anah.gouv.fr', url: 'https://www.anah.gouv.fr/vous-etes/proprietaire-occupant/maprimerenov' },
+      'aah':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F12242' },
+      'mva':                  { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F16275' },
+      'pch':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F14202' },
+      'aeeh':                 { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F14809' },
+      'asi':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F16940' },
+      'pension-invalidite':   { label: 'ameli.fr', url: 'https://www.ameli.fr/assure/droits-demarches/maladie-accident-hospitalisation/pension-invalidite/pension-invalidite-presentation' },
+      'css':                  { label: 'ameli.fr', url: 'https://www.ameli.fr/assure/droits-demarches/difficult-acces-droits-soins/complementaire-sante-solidaire' },
+      'allocations-familiales': { label: 'caf.fr', url: 'https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/famille/les-allocations-familiales' },
+      'complement-familial':  { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F13214' },
+      'paje':                 { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F2552' },
+      'asf':                  { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F815' },
+      'ars':                  { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1878' },
+      'cheque-energie':       { label: 'chequeenergie.gouv.fr', url: 'https://chequeenergie.gouv.fr' },
+      'aspa':                 { label: 'lassuranceretraite.fr', url: 'https://www.lassuranceretraite.fr/portail-info/home/salaries/ma-retraite/al-aspa.html' },
+      'minimum-retraite':     { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F19666' },
+      'cej':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F35282' },
+      'bourse-crous':         { label: 'messervices.etudiant.gouv.fr', url: 'https://www.messervices.etudiant.gouv.fr/envoi/index.php' },
+      'pass-culture':         { label: 'pass.culture.fr', url: 'https://pass.culture.fr' },
+      'prime-noel':           { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F11752' },
+      'aide-juridictionnelle': { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F18074' },
+      'fsl':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1334' },
+      'loca-pass':            { label: 'actionlogement.fr', url: 'https://www.actionlogement.fr/le-loca-pass' },
+      'tarif-social-energie': { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F10580' },
+      'rst':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1337' },
+      'internet-social':      { label: 'orange.fr', url: 'https://boutique.orange.fr/informations/offre-sociale/' },
+      'cee':                  { label: 'ecologie.gouv.fr', url: 'https://www.ecologie.gouv.fr/politiques-publiques/certificats-deconomies-denergie' },
+      'acre':                 { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F11677' },
+      'cheques-vacances':     { label: 'ancv.com', url: 'https://www.ancv.com/les-cheques-vacances' },
+      'aide-mobilite':        { label: 'francetravail.fr', url: 'https://www.francetravail.fr/candidat/en-formation/les-dispositifs/jentre-en-formation---laide-au-d.html' },
+      'aref':                 { label: 'francetravail.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1728' },
+      'clcmg':                { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F345' },
+      'cmg-3-6':              { label: 'caf.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F345' },
+      'prepare':              { label: 'caf.fr', url: 'https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-personnelle/la-prestation-partagee-d-education-de-l-enfant-prepare' },
+      'ajpp':                 { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F15132' },
+      'ajpa':                 { label: 'service-public.fr', url: 'https://solidarites.gouv.fr/allocation-journaliere-du-proche-aidant' },
+      'bourse-scolaire':      { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F984' },
+      'transport-scolaire':   { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1348' },
+      'ald':                  { label: 'ameli.fr', url: 'https://www.ameli.fr/assure/remboursements/rembourse/maladies-affections-de-longue-duree/affection-longue-duree-ald' },
+      'cmi':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F15295' },
+      'rqth-statut':          { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1653' },
+      'audioprothese':        { label: 'ameli.fr', url: 'https://www.ameli.fr/assure/remboursements/remboursements-des-soins-et-du-materiel-medical/protheses-auditives/100-sante' },
+      'puma':                 { label: 'ameli.fr', url: 'https://www.ameli.fr/assure/droits-demarches/europe-international/travailler-en-france/protection-universelle-maladie' },
+      'ij-maladie':           { label: 'ameli.fr', url: 'https://www.ameli.fr/assure/remboursements/indemnites-journalieres-maladie-maternite-paternite/indemnites-journalieres-pour-maladie/arret-maladie-salarie' },
+      'apa':                  { label: 'cnsa.fr', url: 'https://www.cnsa.fr/qui-sommes-nous/le-financement/tarifs-de-lapa-et-de-la-pch/tarifs-de-lapa' },
+      'saad':                 { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F246' },
+      'ardh':                 { label: 'lassuranceretraite.fr', url: 'https://www.lassuranceretraite.fr/portail-info/home/retraites/ma-sante-mon-autonomie/aides-domicile/aide-retour-domicile-hospitalisation.html' },
+      'esat':                 { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F1650' },
+      'bourse-master':        { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F12382' },
+      'logement-crous':       { label: 'crous.fr', url: 'https://www.crous.fr/logements/' },
+      'permis-1euro':         { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F31922' },
+      'micro-credit':         { label: 'caf.fr', url: 'https://www.caf.fr/allocataires/aides-et-demarches/demandes-de-prets-et-aides-financieres' },
+      'allocation-veuvage':   { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F704' },
+      'aer':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F15246' },
+      'faj':                  { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F16474' },
+      'aide-victimes':        { label: 'fondsdegarantie.fr', url: 'https://www.fondsdegarantie.fr/victimes-dinfractions-penales/' },
+      'aide-urgence-caf':     { label: 'caf.fr', url: 'https://www.caf.fr/allocataires/aides-et-demarches/demandes-de-prets-et-aides-financieres' },
+      'exca':                 { label: 'onacvg.fr', url: 'https://www.onacvg.fr/aide-differentielle-aux-conjoints-survivants/' },
+      'aide-juridictionnelle': { label: 'service-public.fr', url: 'https://www.service-public.fr/particuliers/vosdroits/F18074' },
+    };
+
     // ── Icônes par catégorie ──────────────────────────────────────────────────
     const CAT_ICONS = {
       revenus:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
@@ -966,6 +1038,12 @@
                   </div>
                   <div class="sr-card__right">
                     <span class="${amtClass}">${amt}</span>
+                    ${(() => {
+                      const src = SOURCES[a.id];
+                      return src
+                        ? `<a href="${src.url}" class="sr-card__source" target="_blank" rel="noopener noreferrer">${src.label}</a>`
+                        : '';
+                    })()}
                     <a href="aides/${a.id}.html" class="sr-card__link">En savoir plus →</a>
                   </div>
                 </li>`;
