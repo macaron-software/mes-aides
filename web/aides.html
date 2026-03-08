@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="catalog.page_title">Liste des 71 aides sociales 2026 en France — RSA APL AAH | Mes Aides</title>
-  <meta name="description" content="Catalogue complet des 71 aides sociales en France : logement (APL, ALS), revenus (RSA, Prime d'activite), sante (AAH, CSS), energie, famille, jeunes. Montants 2026." />
+  <meta name="description" content="Catalogue complet des 71 aides sociales en France : logement (APL, ALS), revenus (RSA, Prime d'activité), santé (AAH, CSS), énergie, famille, jeunes. Montants 2026." />
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aides.macaron-software.com/aides.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Les 71 aides sociales 2026 en France | Mes Aides">
-  <meta property="og:description" content="Catalogue complet : APL, RSA, AAH, Prime d'activite, Cheque energie, CAF et toutes les aides sociales nationales. Montants officiels 2026.">
+  <meta property="og:description" content="Catalogue complet : APL, RSA, AAH, Prime d'activité, Chèque énergie, CAF et toutes les aides sociales nationales. Montants officiels 2026.">
   <meta property="og:url" content="https://aides.macaron-software.com/aides.html">
 
   <!-- theme anti-flash — doit être AVANT le CSS -->
@@ -23,7 +23,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Les 71 aides sociales 2026 en France | Mes Aides">
-  <meta name="twitter:description" content="APL, RSA, AAH, Prime d'activite, Cheque energie et 66 autres aides. Montants officiels 2026.">
+  <meta name="twitter:description" content="APL, RSA, AAH, Prime d'activité, Chèque énergie et 66 autres aides. Montants officiels 2026.">
   <meta name="twitter:image" content="https://aides.macaron-software.com/img/og-default.svg">
 
   <!-- hreflang -->
@@ -263,9 +263,9 @@
     .badge--revenus   { background: #fef3c7; color: #92400e; }
     .badge--logement  { background: #dbeafe; color: #1e40af; }
     .badge--famille   { background: #fce7f3; color: #9d174d; }
-    .badge--sante     { background: #d1fae5; color: #065f46; }
+    .badge--santé     { background: #d1fae5; color: #065f46; }
     .badge--emploi    { background: #ede9fe; color: #5b21b6; }
-    .badge--energie   { background: #ffedd5; color: #9a3412; }
+    .badge--énergie   { background: #ffedd5; color: #9a3412; }
     .badge--handicap  { background: #e0f2fe; color: #0c4a6e; }
     .badge--jeunes    { background: #fef9c3; color: #713f12; }
     .badge--retraite  { background: #f0fdf4; color: #14532d; }
@@ -472,7 +472,7 @@
 
       <!-- CTA -->
       <a href="/simulateur.html" class="btn-cta hide-mobile" data-i18n="nav.cta">
-        Tester mon eligibilite
+        Tester mon éligibilité
       </a>
 
       <!-- Outils -->
@@ -512,8 +512,8 @@
         Toutes les aides disponibles
       </h1>
       <p class="hero__subtitle" data-i18n="catalog.hero_subtitle">
-        Parcourez les dispositifs d'aide sociale en France et decouvrez en quelques
-        secondes si vous etes eligible.
+        Parcourez les dispositifs d'aide sociale en France et découvrez en quelques
+        secondes si vous etes éligible.
       </p>
 
       <!-- Search -->
@@ -533,7 +533,7 @@
       </div>
 
       <!-- Category filters -->
-      <div class="filters" role="group" aria-label="Filtrer par categorie" id="category-filters">
+      <div class="filters" role="group" aria-label="Filtrer par catégorie" id="category-filters">
         <button class="filter-tab active" data-filter="all" aria-pressed="true" data-i18n="catalog.filter_all">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                fill="none" stroke="currentColor" stroke-width="2"
@@ -576,13 +576,13 @@
           </svg>
           Famille
         </button>
-        <button class="filter-tab" data-filter="sante" aria-pressed="false" data-i18n="catalog.filter_sante">
+        <button class="filter-tab" data-filter="santé" aria-pressed="false" data-i18n="catalog.filter_santé">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                fill="none" stroke="currentColor" stroke-width="2"
                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
           </svg>
-          Sante
+          Santé
         </button>
         <button class="filter-tab" data-filter="emploi" aria-pressed="false" data-i18n="catalog.filter_emploi">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
@@ -593,13 +593,13 @@
           </svg>
           Emploi
         </button>
-        <button class="filter-tab" data-filter="energie" aria-pressed="false" data-i18n="catalog.filter_energie">
+        <button class="filter-tab" data-filter="énergie" aria-pressed="false" data-i18n="catalog.filter_énergie">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                fill="none" stroke="currentColor" stroke-width="2"
                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
           </svg>
-          Energie
+          Énergie
         </button>
       </div>
 
@@ -625,7 +625,7 @@
       <div class="cards-grid" id="cards-grid" role="list">
 
         <!-- ── RSA ── -->
-        <article class="aid-card" data-cat="revenus" role="listitem" aria-label="RSA — Revenu de Solidarite Active">
+        <article class="aid-card" data-cat="revenus" role="listitem" aria-label="RSA — Revenu de Solidarité Active">
           <div class="aid-card__top">
             <div class="aid-card__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -639,7 +639,7 @@
           </div>
           <div>
             <h3 class="aid-card__name" data-i18n="aid.rsa.name">RSA</h3>
-            <p class="aid-card__fullname" data-i18n="aid.rsa.fullname">Revenu de Solidarite Active</p>
+            <p class="aid-card__fullname" data-i18n="aid.rsa.fullname">Revenu de Solidarité Active</p>
           </div>
           <p class="aid-card__amount" aria-label="Montant moyen 635 euros par mois">
             635 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
@@ -650,7 +650,7 @@
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/rsa.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -659,7 +659,7 @@
         </article>
 
         <!-- ── APL ── -->
-        <article class="aid-card" data-cat="logement" role="listitem" aria-label="APL — Aide Personnalisee au Logement">
+        <article class="aid-card" data-cat="logement" role="listitem" aria-label="APL — Aide Personnalisée au Logement">
           <div class="aid-card__top">
             <div class="aid-card__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -673,18 +673,18 @@
           </div>
           <div>
             <h3 class="aid-card__name" data-i18n="aid.apl.name">APL</h3>
-            <p class="aid-card__fullname" data-i18n="aid.apl.fullname">Aide Personnalisee au Logement</p>
+            <p class="aid-card__fullname" data-i18n="aid.apl.fullname">Aide Personnalisée au Logement</p>
           </div>
           <p class="aid-card__amount" aria-label="Montant moyen 180 euros par mois">
             180 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
           </p>
           <p class="aid-card__desc" data-i18n="aid.apl.desc">
-            Aide versee par la CAF pour reduire le montant du loyer ou des mensualites
+            Aide versée par la CAF pour reduire le montant du loyer ou des mensualites
             d'un pret immobilier, selon les revenus et la composition du foyer.
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/apl.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -692,8 +692,8 @@
           </div>
         </article>
 
-        <!-- ── Prime d'activite ── -->
-        <article class="aid-card" data-cat="revenus" role="listitem" aria-label="Prime d'activite">
+        <!-- ── Prime d'activité ── -->
+        <article class="aid-card" data-cat="revenus" role="listitem" aria-label="Prime d'activité">
           <div class="aid-card__top">
             <div class="aid-card__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -705,21 +705,21 @@
             <span class="badge badge--revenus" data-i18n="cat.revenus">revenus</span>
           </div>
           <div>
-            <h3 class="aid-card__name" data-i18n="aid.prime-activite.name">Prime d'activite</h3>
-            <p class="aid-card__fullname" data-i18n="aid.prime-activite.fullname">Prime d'activite</p>
+            <h3 class="aid-card__name" data-i18n="aid.prime-activité.name">Prime d'activité</h3>
+            <p class="aid-card__fullname" data-i18n="aid.prime-activité.fullname">Prime d'activité</p>
           </div>
           <p class="aid-card__amount" aria-label="Montant moyen 180 euros par mois">
             180 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
           </p>
-          <p class="aid-card__desc" data-i18n="aid.prime-activite.desc">
-            Complement de revenus verse aux travailleurs a faibles salaires pour
-            encourager l'activite professionnelle et ameliorer le pouvoir d'achat.
+          <p class="aid-card__desc" data-i18n="aid.prime-activité.desc">
+            Complément de revenus versé aux travailleurs a faibles salaires pour
+            encourager l'activité professionnelle et améliorer le pouvoir d'achat.
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
-            <a href="/aides/prime-activite.html" class="btn-ghost" data-i18n="common.see_detail">
+            <a href="/aides/prime-activité.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
             </a>
           </div>
@@ -752,7 +752,7 @@
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/aah.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -760,8 +760,8 @@
           </div>
         </article>
 
-        <!-- ── Cheque energie ── -->
-        <article class="aid-card" data-cat="energie" role="listitem" aria-label="Cheque energie">
+        <!-- ── Cheque énergie ── -->
+        <article class="aid-card" data-cat="énergie" role="listitem" aria-label="Chèque énergie">
           <div class="aid-card__top">
             <div class="aid-card__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -770,25 +770,25 @@
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
               </svg>
             </div>
-            <span class="badge badge--energie" data-i18n="cat.energie">energie</span>
+            <span class="badge badge--énergie" data-i18n="cat.énergie">énergie</span>
           </div>
           <div>
-            <h3 class="aid-card__name" data-i18n="aid.cheque-energie.name">Cheque energie</h3>
-            <p class="aid-card__fullname" data-i18n="aid.cheque-energie.fullname">Cheque energie</p>
+            <h3 class="aid-card__name" data-i18n="aid.cheque-énergie.name">Chèque énergie</h3>
+            <p class="aid-card__fullname" data-i18n="aid.cheque-énergie.fullname">Chèque énergie</p>
           </div>
           <p class="aid-card__amount" aria-label="Montant moyen 17 euros par mois soit 200 euros par an">
             17 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
-            <br /><small class="text-xs text-subtle" data-i18n="aid.cheque-energie.alt_amount">200 €/an</small>
+            <br /><small class="text-xs text-subtle" data-i18n="aid.cheque-énergie.alt_amount">200 €/an</small>
           </p>
-          <p class="aid-card__desc" data-i18n="aid.cheque-energie.desc">
-            Aide automatiquement attribuee aux menages a revenus modestes pour payer
-            leurs factures d'energie ou financer des travaux de renovation.
+          <p class="aid-card__desc" data-i18n="aid.cheque-énergie.desc">
+            Aide automatiquement attribuee aux ménages a revenus modestes pour payer
+            leurs factures d'énergie ou financer des travaux de rénovation.
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
-            <a href="/aides/cheque-energie.html" class="btn-ghost" data-i18n="common.see_detail">
+            <a href="/aides/cheque-énergie.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
             </a>
           </div>
@@ -822,7 +822,7 @@
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/allocations-familiales.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -830,8 +830,8 @@
           </div>
         </article>
 
-        <!-- ── CSS (Complement Sante Solidaire) ── -->
-        <article class="aid-card" data-cat="sante" role="listitem" aria-label="CSS — Complement Sante Solidaire">
+        <!-- ── CSS (Complément Santé Solidaire) ── -->
+        <article class="aid-card" data-cat="santé" role="listitem" aria-label="CSS — Complément Santé Solidaire">
           <div class="aid-card__top">
             <div class="aid-card__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -840,22 +840,22 @@
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
               </svg>
             </div>
-            <span class="badge badge--sante" data-i18n="cat.sante">sante</span>
+            <span class="badge badge--santé" data-i18n="cat.santé">santé</span>
           </div>
           <div>
             <h3 class="aid-card__name" data-i18n="aid.css.name">CSS</h3>
-            <p class="aid-card__fullname" data-i18n="aid.css.fullname">Complement Sante Solidaire</p>
+            <p class="aid-card__fullname" data-i18n="aid.css.fullname">Complément Santé Solidaire</p>
           </div>
           <p class="aid-card__amount" aria-label="Montant moyen 30 euros par mois">
             30 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
           </p>
           <p class="aid-card__desc" data-i18n="aid.css.desc">
-            Mutuelle complementaire gratuite ou a faible participation permettant
-            une prise en charge integrale des frais de sante non rembourses par la Securite sociale.
+            Mutuelle complémentaire gratuite ou a faible participation permettant
+            une prise en charge integrale des frais de santé non rembourses par la Sécurité sociale.
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/css.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -885,11 +885,11 @@
           </p>
           <p class="aid-card__desc" data-i18n="aid.visale.desc">
             Caution locative gratuite fournie par Action Logement qui se substitue
-            aux garants personnels et facilite l'acces au logement prive.
+            aux garants personnels et facilite l'accès au logement prive.
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/garantie-visale.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -923,7 +923,7 @@
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/garantie-jeunes.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -932,7 +932,7 @@
         </article>
 
         <!-- ── ASPA ── -->
-        <article class="aid-card" data-cat="retraite" role="listitem" aria-label="ASPA — Allocation de Solidarite aux Personnes Agees">
+        <article class="aid-card" data-cat="retraite" role="listitem" aria-label="ASPA — Allocation de Solidarité aux Personnes Agees">
           <div class="aid-card__top">
             <div class="aid-card__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -947,18 +947,18 @@
           </div>
           <div>
             <h3 class="aid-card__name" data-i18n="aid.aspa.name">ASPA</h3>
-            <p class="aid-card__fullname" data-i18n="aid.aspa.fullname">Allocation de Solidarite aux Personnes Agees</p>
+            <p class="aid-card__fullname" data-i18n="aid.aspa.fullname">Allocation de Solidarité aux Personnes Agees</p>
           </div>
           <p class="aid-card__amount" aria-label="Montant moyen 961 euros par mois">
             961 <span class="aid-card__amount-label" data-i18n="common.per_month">€/mois</span>
           </p>
           <p class="aid-card__desc" data-i18n="aid.aspa.desc">
             Garantit un niveau de revenu minimum aux personnes retraitees
-            de 65 ans ou plus dont les ressources sont inferieures a un seuil fixe.
+            de 65 ans ou plus dont les ressources sont inférieures a un seuil fixe.
           </p>
           <div class="aid-card__actions">
             <a href="/simulateur.html" class="btn-primary" data-i18n="common.test_eligibility">
-              Tester mon eligibilite
+              Tester mon éligibilité
             </a>
             <a href="/aides/aspa.html" class="btn-ghost" data-i18n="common.see_detail">
               Voir le detail
@@ -995,7 +995,7 @@
           <ul>
             <li><a href="/simulateur.html" data-i18n="footer.start_simulation">Demarrer la simulation</a></li>
             <li><a href="/simulateur.html#comment" data-i18n="footer.how_it_works">Comment ca fonctionne</a></li>
-            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions frequentes</a></li>
+            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions fréquentes</a></li>
             <li><a href="/simulateur.html#donnees" data-i18n="footer.data_privacy">Vos donnees</a></li>
           </ul>
         </div>
@@ -1006,7 +1006,7 @@
           <ul>
             <li><a href="/aides/rsa.html">RSA</a></li>
             <li><a href="/aides/apl.html">APL</a></li>
-            <li><a href="/aides/prime-activite.html" data-i18n="footer.prime_activite">Prime d'activite</a></li>
+            <li><a href="/aides/prime-activité.html" data-i18n="footer.prime_activité">Prime d'activité</a></li>
             <li><a href="/aides/aah.html">AAH</a></li>
           </ul>
         </div>
@@ -1027,7 +1027,7 @@
           <p class="footer-col__title" data-i18n="footer.col_legal">Informations legales</p>
           <ul>
             <li><a href="/mentions-legales.html" data-i18n="footer.legal_notice">Mentions legales</a></li>
-            <li><a href="/confidentialite.html" data-i18n="footer.privacy">Politique de confidentialite</a></li>
+            <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></li>
             <li><a href="/accessibilite.html" data-i18n="footer.accessibility">Accessibilite</a></li>
             <li><a href="/contact.html" data-i18n="footer.contact">Contact</a></li>
           </ul>

@@ -17,7 +17,24 @@
     "how_it_works": "यह कैसे काम करता है",
     "step1": "मैं प्रश्नावली का उत्तर देता हूं",
     "step2": "एल्गोरिदम मेरी स्थिति का विश्लेषण करता है",
-    "step3": "मुझे अपनी वैयक्तिकृत कार्य योजना प्राप्त होती है"
+    "step3": "मुझे अपनी वैयक्तिकृत कार्य योजना प्राप्त होती है",
+    "kicker": "निःशुल्क सिमुलेशन · 71 सहायताएं · 5 मिनट",
+    "situation_title": "आपकी स्थिति क्या है?",
+    "situation_sub": "सबसे प्रासंगिक सहायताएं देखने के लिए चुनें",
+    "see_all_aids": "See all 71 aids →",
+    "full_sim": "Start full simulation",
+    "popular_label": "Most viewed aids",
+    "all_aids_chip": "All aids →",
+    "how_title": "यह कैसे काम करता है",
+    "how_sub": "कोई पंजीकरण नहीं, कोई दस्तावेज़ नहीं",
+    "step1_title": "Your situation",
+    "step1_desc": "5 topics in 3 minutes: personal situation, housing, income, health, employment",
+    "step2_title": "Instant calculation",
+    "step2_desc": "71 aids checked with official 2026 scales. Processed locally in your browser — no data sent.",
+    "step3_title": "Personalized action plan",
+    "step3_desc": "For each aid: precise steps, links to official forms, response times.",
+    "start_sim": "सिमुलेशन शुरू करें",
+    "faq_title": "अक्सर पूछे जाने वाले प्रश्न"
   },
   "simulator": {
     "page_title": "सामाजिक सहायता सिम्युलेटर - मेरी सहायता",
@@ -177,5 +194,56 @@
     "copyright": "© 2025 मेस एड्स - मैकरॉन सॉफ्टवेयर। सर्वाधिकार सुरक्षित।",
     "disclaimer": "यह सेवा सांकेतिक है और आधिकारिक प्रशासनिक अधिनियम का गठन नहीं करती है।",
     "legal": "कानूनी नोटिस"
+  },
+  "persona": {
+    "parent": {
+      "title": "Single parent",
+      "aids": "APL, Family allowances, RSA, PAJE…",
+      "count": "up to 12 aids",
+      "label": "Enter as single parent"
+    },
+    "jeune": {
+      "title": "Young person -26",
+      "aids": "CEJ, CROUS grant, APL, Permis 1€…",
+      "count": "up to 8 aids",
+      "label": "Enter as young person"
+    },
+    "salarie": {
+      "title": "Low-income worker",
+      "aids": "Activity bonus, ACRE, Holiday vouchers…",
+      "count": "up to 7 aids",
+      "label": "Enter as low-income worker"
+    },
+    "chomeur": {
+      "title": "Job seeker",
+      "aids": "RSA, ARE, ACRE, Christmas bonus…",
+      "count": "up to 9 aids",
+      "label": "Enter as job seeker"
+    },
+    "senior": {
+      "title": "Senior +60 years",
+      "aids": "Energy cheque, MaPrimeRenov', ARS…",
+      "count": "up to 8 aids",
+      "label": "Enter as senior"
+    },
+    "handicap": {
+      "title": "Disability situation",
+      "aids": "AAH, PCH, ALD 100%, CSS…",
+      "count": "up to 6 aids",
+      "label": "Enter as person with disability"
+    }
+  },
+  "faq": {
+    "q1": "Is the simulation really free?",
+    "a1": "Yes, 100% free. No registration, no credit card, no hidden conditions.",
+    "q2": "Are my data protected?",
+    "a2": "Your data never leaves your browser. Nothing is sent to any server.",
+    "q3": "Is this official?",
+    "a3": "Amounts are based on official 2026 scales from service-public.fr, caf.fr and ameli.fr.",
+    "q4": "What do I do after the simulation?",
+    "a4": "Each aid is accompanied by the official steps to apply (CAF, France Travail, MDPH...)."
+  },
+  "a11y": {
+    "skip_to_content": "मुख्य सामग्री पर जाएं"
   }
 }

@@ -17,7 +17,24 @@
     "how_it_works": "Cómo funciona",
     "step1": "Respondo el cuestionario",
     "step2": "El algoritmo analiza mi situación",
-    "step3": "Recibo mi plan de acción personalizado"
+    "step3": "Recibo mi plan de acción personalizado",
+    "kicker": "Simulación gratuita · 71 ayudas · 5 minutos",
+    "situation_title": "¿Cuál es su situación?",
+    "situation_sub": "Elija para ver las ayudas más relevantes",
+    "see_all_aids": "See all 71 aids →",
+    "full_sim": "Start full simulation",
+    "popular_label": "Most viewed aids",
+    "all_aids_chip": "All aids →",
+    "how_title": "Cómo funciona",
+    "how_sub": "Sin registro, sin documentos",
+    "step1_title": "Your situation",
+    "step1_desc": "5 topics in 3 minutes: personal situation, housing, income, health, employment",
+    "step2_title": "Instant calculation",
+    "step2_desc": "71 aids checked with official 2026 scales. Processed locally in your browser — no data sent.",
+    "step3_title": "Personalized action plan",
+    "step3_desc": "For each aid: precise steps, links to official forms, response times.",
+    "start_sim": "Iniciar simulación",
+    "faq_title": "Preguntas frecuentes"
   },
   "simulator": {
     "page_title": "Simulador de ayuda social — Mi Ayuda",
@@ -177,5 +194,56 @@
     "copyright": "© 2025 Mes Asistentes - Software Macaron. Todos los derechos reservados.",
     "disclaimer": "Este servicio es orientativo y no constituye un acto administrativo oficial.",
     "legal": "Avisos legales"
+  },
+  "persona": {
+    "parent": {
+      "title": "Padre/Madre soltero/a",
+      "aids": "APL, Asignaciones familiares, RSA, PAJE…",
+      "count": "hasta 12 ayudas",
+      "label": "Entrar como padre/madre soltero/a"
+    },
+    "jeune": {
+      "title": "Joven -26 años",
+      "aids": "CEJ, Beca CROUS, APL, Permis 1€…",
+      "count": "hasta 8 ayudas",
+      "label": "Entrar como joven"
+    },
+    "salarie": {
+      "title": "Trabajador de bajos ingresos",
+      "aids": "Prima de actividad, ACRE, Cheques vacaciones…",
+      "count": "hasta 7 ayudas",
+      "label": "Entrar como trabajador de bajos ingresos"
+    },
+    "chomeur": {
+      "title": "Demandante de empleo",
+      "aids": "RSA, ARE, ACRE, Prima de Navidad…",
+      "count": "hasta 9 ayudas",
+      "label": "Entrar como demandante de empleo"
+    },
+    "senior": {
+      "title": "Mayor +60 años",
+      "aids": "Cheque energía, MaPrimeRenov', ARS…",
+      "count": "hasta 8 ayudas",
+      "label": "Entrar como mayor"
+    },
+    "handicap": {
+      "title": "Situación de discapacidad",
+      "aids": "AAH, PCH, ALD 100%, CSS…",
+      "count": "hasta 6 ayudas",
+      "label": "Entrar como persona con discapacidad"
+    }
+  },
+  "faq": {
+    "q1": "¿Es realmente gratuita la simulación?",
+    "a1": "Sí, 100% gratuito. Sin registro, sin tarjeta de crédito, sin condiciones ocultas.",
+    "q2": "¿Están protegidos mis datos?",
+    "a2": "Sus datos nunca salen de su navegador. Nada se envía a ningún servidor.",
+    "q3": "Is this official?",
+    "a3": "Amounts are based on official 2026 scales from service-public.fr, caf.fr and ameli.fr.",
+    "q4": "What do I do after the simulation?",
+    "a4": "Each aid is accompanied by the official steps to apply (CAF, France Travail, MDPH...)."
+  },
+  "a11y": {
+    "skip_to_content": "Saltar al contenido principal"
   }
 }

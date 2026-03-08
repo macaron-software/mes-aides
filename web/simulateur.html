@@ -6,13 +6,13 @@
   <!-- theme anti-flash — doit être AVANT le CSS -->
   <script src="/js/theme-init.js"></script>
   <title data-i18n="simulator.page_title">Simulation aides sociales gratuite 2026 — RSA APL AAH | Mes Aides</title>
-  <meta name="description" content="Questionnaire gratuit en 5 minutes : situation personnelle, logement, revenus, sante, emploi. Decouvrez le montant de vos aides sociales 2026. Aucune donnee transmise.">
+  <meta name="description" content="Questionnaire gratuit en 5 minutes : situation personnelle, logement, revenus, santé, emploi. Découvrez le montant de vos aides sociales 2026. Aucune donnee transmise.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aides.macaron-software.com/simulateur.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Simulation aides sociales gratuite 2026 | Mes Aides">
-  <meta property="og:description" content="Questionnaire gratuit en 5 minutes. Decouvrez le montant de vos aides sociales 2026 : RSA, APL, AAH, Prime d'activite et plus.">
+  <meta property="og:description" content="Questionnaire gratuit en 5 minutes. Découvrez le montant de vos aides sociales 2026 : RSA, APL, AAH, Prime d'activité et plus.">
   <meta property="og:url" content="https://aides.macaron-software.com/simulateur.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
@@ -22,7 +22,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Simulation aides sociales gratuite 2026 | Mes Aides">
-  <meta name="twitter:description" content="Questionnaire 5 minutes — RSA, APL, AAH, Prime d'activite et 67 autres aides. Calcul instantane, confidentiel.">
+  <meta name="twitter:description" content="Questionnaire 5 minutes — RSA, APL, AAH, Prime d'activité et 67 autres aides. Calcul instantane, confidentiel.">
   <meta name="twitter:image" content="https://aides.macaron-software.com/img/og-default.svg">
 
   <!-- hreflang -->
@@ -322,7 +322,7 @@
         <div class="sim-progress-fill" id="progressFill" style="width: 20%"></div>
       </div>
 
-      <span class="sim-step-label" id="stepCounter" data-i18n-template="simulator.step_of">Etape 1 / 5</span>
+      <span class="sim-step-label" id="stepCounter" data-i18n-template="simulator.step_of">Étape 1 / 5</span>
       <div class="sim-header__tools">
         <button id="theme-toggle" class="theme-toggle" aria-label="Activer le mode sombre" title="Activer le mode sombre">
           <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -421,7 +421,7 @@
         <!-- ── STEP 2 — Logement ── -->
         <div class="sim-step" id="step-2">
           <h2 class="sim-step-heading" data-i18n="step2.title">Votre logement</h2>
-          <p class="sim-step-sub" data-i18n="step2.subtitle">Ces informations permettent de calculer l'APL et le cheque energie.</p>
+          <p class="sim-step-sub" data-i18n="step2.subtitle">Ces informations permettent de calculer l'APL et le chèque énergie.</p>
 
           <div class="question-group">
             <span class="question-label" data-i18n="step2.q_statut">Statut de votre logement</span>
@@ -516,9 +516,9 @@
           </div>
         </div>
 
-        <!-- ── STEP 4 — Sante ── -->
+        <!-- ── STEP 4 — Santé ── -->
         <div class="sim-step" id="step-4">
-          <h2 class="sim-step-heading" data-i18n="step4.title">Sante et handicap</h2>
+          <h2 class="sim-step-heading" data-i18n="step4.title">Santé et handicap</h2>
           <p class="sim-step-sub" data-i18n="step4.subtitle">Ces informations ouvrent droit a des aides specifiques.</p>
 
           <div class="question-group">
@@ -534,7 +534,7 @@
           </div>
 
           <div class="question-group">
-            <span class="question-label" data-i18n="step4.q_rqth">Reconnaissance RQTH (travailleur handicape) ?</span>
+            <span class="question-label" data-i18n="step4.q_rqth">Reconnaissance RQTH (travailleur handicapé) ?</span>
             <div class="choice-grid">
               <button class="choice-btn selected" data-field="rqth" data-value="false">
                 <span data-i18n="common.no">Non</span>
@@ -549,7 +549,7 @@
             <span class="question-label" data-i18n="step4.q_taux_incapacite">Taux d'incapacite reconnu ?</span>
             <div class="choice-grid">
               <button class="choice-btn selected" data-field="taux_incapacite" data-value="0">
-                <span data-i18n="step4.aucun">Aucun / Non evalue</span>
+                <span data-i18n="step4.aucun">Aucun / Non évalué</span>
               </button>
               <button class="choice-btn" data-field="taux_incapacite" data-value="50">
                 <span data-i18n="step4.taux50">50% a 79%</span>
@@ -561,7 +561,7 @@
           </div>
 
           <div class="question-group">
-            <span class="question-label" data-i18n="step4.q_cmu">Complement sante solidaire (CSS/CMU-C) ?</span>
+            <span class="question-label" data-i18n="step4.q_cmu">Complément santé solidaire (CSS/CMU-C) ?</span>
             <div class="choice-grid">
               <button class="choice-btn selected" data-field="cmu_c" data-value="false">
                 <span data-i18n="common.no">Non</span>
@@ -576,7 +576,7 @@
         <!-- ── STEP 5 — Emploi ── -->
         <div class="sim-step" id="step-5">
           <h2 class="sim-step-heading" data-i18n="step5.title">Situation professionnelle</h2>
-          <p class="sim-step-sub" data-i18n="step5.subtitle">Derniere etape. Vos resultats seront calcules immediatement.</p>
+          <p class="sim-step-sub" data-i18n="step5.subtitle">Dernière étape. Vos resultats seront calcules immédiatement.</p>
 
           <div class="question-group">
             <span class="question-label" data-i18n="step5.q_statut">Statut professionnel</span>
@@ -620,11 +620,11 @@
 
         <!-- Navigation -->
         <div class="sim-nav">
-          <button class="btn-back" id="btnBack" disabled aria-label="Etape precedente">
+          <button class="btn-back" id="btnBack" disabled aria-label="Étape precedente">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
             <span data-i18n="common.back">Retour</span>
           </button>
-          <button class="btn-next" id="btnNext" aria-label="Etape suivante">
+          <button class="btn-next" id="btnNext" aria-label="Étape suivante">
             <span id="btnNextLabel" data-i18n="common.next">Suivant</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </button>

@@ -3,7 +3,6 @@
     "name": "Mes Aides",
     "tagline": "Simulez vos droits aux aides sociales en 3 minutes"
   },
-
   "nav": {
     "home": "Accueil",
     "simulator": "Simulateur",
@@ -11,7 +10,6 @@
     "guides": "Guides",
     "cta": "Tester mon eligibilite"
   },
-
   "home": {
     "hero_title": "Decouvrez toutes les aides auxquelles vous avez droit",
     "hero_sub": "Simulation gratuite, 3 minutes, 71 aides verifiees.",
@@ -19,16 +17,31 @@
     "how_it_works": "Comment ca marche",
     "step1": "Je reponds au questionnaire",
     "step2": "L'algorithme analyse ma situation",
-    "step3": "Je recois mon plan d'action personnalise"
+    "step3": "Je recois mon plan d'action personnalise",
+    "kicker": "Simulation gratuite · 71 aides · 5 minutes",
+    "situation_title": "Quelle est votre situation ?",
+    "situation_sub": "Choisissez pour voir les aides qui vous correspondent en priorite",
+    "see_all_aids": "Voir les 71 aides →",
+    "full_sim": "Lancer la simulation complete",
+    "popular_label": "Aides les plus consultees",
+    "all_aids_chip": "Toutes les aides →",
+    "how_title": "Comment ca marche",
+    "how_sub": "Sans inscription, sans justificatif",
+    "step1_title": "Votre situation",
+    "step1_desc": "5 themes en 3 minutes : situation personnelle, logement, revenus, sante, emploi. Aucun justificatif requis.",
+    "step2_title": "Calcul instantane",
+    "step2_desc": "71 aides passees au crible avec les baremes officiels 2026. Traitement local dans votre navigateur.",
+    "step3_title": "Plan d'action personnalise",
+    "step3_desc": "Pour chaque aide : etapes precises, liens vers les formulaires officiels, delais a connaitre.",
+    "start_sim": "Commencer la simulation",
+    "faq_title": "Questions frequentes"
   },
-
   "simulator": {
     "page_title": "Simulateur d'aides sociales — Mes Aides",
     "step_of": "Etape {n} / {total}",
     "see_results": "Voir mes resultats",
     "progress_label": "Progression de la simulation"
   },
-
   "step1": {
     "title": "Votre situation personnelle",
     "subtitle": "Ces informations nous permettent de determiner les aides auxquelles vous etes eligible.",
@@ -41,7 +54,6 @@
     "q_enfants": "Combien d'enfants a charge avez-vous ?",
     "q_handicap": "Etes-vous reconnu(e) en situation de handicap ?"
   },
-
   "step2": {
     "title": "Votre logement",
     "subtitle": "Votre situation de logement influence plusieurs aides, notamment l'APL et les aides a l'energie.",
@@ -56,7 +68,6 @@
     "zone2": "Zone 2 (Grandes villes)",
     "zone3": "Zone 3 (Reste de la France)"
   },
-
   "step3": {
     "title": "Vos revenus",
     "subtitle": "Renseignez vos revenus nets mensuels. Ces donnees restent confidentielles et ne sont jamais transmises.",
@@ -67,7 +78,6 @@
     "af": "Allocations familiales",
     "rsa": "RSA"
   },
-
   "step4": {
     "title": "Sante et handicap",
     "subtitle": "Ces informations nous permettent de verifier votre acces aux aides specifiques au handicap et a la sante.",
@@ -79,7 +89,6 @@
     "taux80": "80 % ou plus",
     "q_cmu": "Beneficiez-vous de la Complementaire Sante Solidaire (CSS / ex-CMU-C) ?"
   },
-
   "step5": {
     "title": "Situation professionnelle",
     "subtitle": "Votre statut professionnel conditionne l'acces a plusieurs aides comme la Prime d'activite ou l'ASS.",
@@ -92,7 +101,6 @@
     "independant": "Independant / Auto-entrepreneur",
     "q_anciennete": "Depuis combien de mois etes-vous dans cette situation ?"
   },
-
   "results": {
     "page_title": "Vos aides estimees — Mes Aides",
     "title": "Vos aides estimees",
@@ -104,7 +112,6 @@
     "total_label": "Total estime",
     "disclaimer": "Ces resultats sont fournis a titre indicatif. Seul l'organisme competent peut confirmer votre droit."
   },
-
   "catalog": {
     "page_title": "Toutes les aides — Mes Aides France",
     "title": "Catalogue des aides",
@@ -123,7 +130,6 @@
     "result_count": "aides disponibles",
     "hero_badge": "71 aides referencees"
   },
-
   "guides": {
     "page_title": "Guides pratiques — Mes Aides France",
     "title": "Guides pratiques",
@@ -142,7 +148,6 @@
     "read_guide": "Lire le guide",
     "count": "guides disponibles"
   },
-
   "cat": {
     "revenus": "revenus",
     "logement": "logement",
@@ -154,7 +159,6 @@
     "jeunes": "jeunes",
     "retraite": "retraite"
   },
-
   "common": {
     "yes": "Oui",
     "no": "Non",
@@ -169,7 +173,6 @@
     "test_eligibility": "Tester mon eligibilite",
     "see_detail": "Voir le detail"
   },
-
   "footer": {
     "col_simulator": "Simulateur",
     "start_simulation": "Demarrer la simulation",
@@ -191,5 +194,56 @@
     "copyright": "© 2025 Mes Aides — Macaron Software. Tous droits reserves.",
     "disclaimer": "Ce service est indicatif et ne constitue pas un acte administratif officiel.",
     "legal": "Mentions legales"
+  },
+  "persona": {
+    "parent": {
+      "title": "Parent isole",
+      "aids": "APL, Alloc. familiales, RSA, PAJE…",
+      "count": "jusqu'a 12 aides",
+      "label": "Entrer comme parent isole"
+    },
+    "jeune": {
+      "title": "Jeune -26 ans",
+      "aids": "CEJ, Bourse CROUS, APL, Permis 1€…",
+      "count": "jusqu'a 8 aides",
+      "label": "Entrer comme jeune"
+    },
+    "salarie": {
+      "title": "Salarie modeste",
+      "aids": "Prime d'activite, ACRE, Cheques vacances…",
+      "count": "jusqu'a 7 aides",
+      "label": "Entrer comme salarie"
+    },
+    "chomeur": {
+      "title": "Demandeur d'emploi",
+      "aids": "RSA, ARE, ACRE, Prime de Noel…",
+      "count": "jusqu'a 9 aides",
+      "label": "Entrer comme demandeur d'emploi"
+    },
+    "senior": {
+      "title": "Senior +60 ans",
+      "aids": "Cheque energie, MaPrimeRenov', ARS…",
+      "count": "jusqu'a 8 aides",
+      "label": "Entrer comme senior"
+    },
+    "handicap": {
+      "title": "Situation de handicap",
+      "aids": "AAH, PCH, ALD 100%, CSS…",
+      "count": "jusqu'a 6 aides",
+      "label": "Entrer en situation de handicap"
+    }
+  },
+  "faq": {
+    "q1": "La simulation est-elle vraiment gratuite ?",
+    "a1": "Oui, 100% gratuit. Simulation, resultats, guide etape-par-etape et telechargement PDF — tout est gratuit, sans inscription ni paiement.",
+    "q2": "Les montants sont-ils fiables ?",
+    "a2": "Les montants sont des estimations basees sur les baremes officiels de l'annee en cours, mis a jour via les donnees ouvertes du gouvernement (data.gouv.fr). Seuls les organismes (CAF, France Travail) peuvent confirmer votre eligibilite exacte.",
+    "q3": "Mes donnees sont-elles protegees ?",
+    "a3": "Le calcul est effectue dans votre navigateur (via WebAssembly). Aucune donnee personnelle n'est transmise a un serveur. Nous ne collectons rien, nous ne vendons rien.",
+    "q4": "Combien de temps pour les demarches ?",
+    "a4": "Chaque aide dispose d'un guide detaille avec les etapes, les delais de traitement et les liens directs vers les formulaires officiels."
+  },
+  "a11y": {
+    "skip_to_content": "Aller au contenu principal"
   }
 }

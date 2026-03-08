@@ -3,7 +3,6 @@
     "name": "My Benefits",
     "tagline": "Simulate your social benefit entitlements in 3 minutes"
   },
-
   "nav": {
     "home": "Home",
     "simulator": "Simulator",
@@ -11,7 +10,6 @@
     "guides": "Guides",
     "cta": "Check my eligibility"
   },
-
   "home": {
     "hero_title": "Discover all the benefits you are entitled to",
     "hero_sub": "Free simulation, 3 minutes, 71 verified benefits.",
@@ -19,16 +17,31 @@
     "how_it_works": "How it works",
     "step1": "I answer the questionnaire",
     "step2": "The algorithm analyses my situation",
-    "step3": "I receive my personalised action plan"
+    "step3": "I receive my personalised action plan",
+    "kicker": "Free simulation · 71 aids · 5 minutes",
+    "situation_title": "What is your situation?",
+    "situation_sub": "Choose to see the most relevant aids for you",
+    "see_all_aids": "See all 71 aids →",
+    "full_sim": "Start full simulation",
+    "popular_label": "Most viewed aids",
+    "all_aids_chip": "All aids →",
+    "how_title": "How it works",
+    "how_sub": "No registration, no documents required",
+    "step1_title": "Your situation",
+    "step1_desc": "5 topics in 3 minutes: personal situation, housing, income, health, employment",
+    "step2_title": "Instant calculation",
+    "step2_desc": "71 aids checked with official 2026 scales. Processed locally in your browser — no data sent.",
+    "step3_title": "Personalized action plan",
+    "step3_desc": "For each aid: precise steps, links to official forms, response times.",
+    "start_sim": "Start simulation",
+    "faq_title": "Frequently asked questions"
   },
-
   "simulator": {
     "page_title": "Social Benefits Simulator — My Benefits",
     "step_of": "Step {n} of {total}",
     "see_results": "View my results",
     "progress_label": "Simulation progress"
   },
-
   "step1": {
     "title": "Your personal situation",
     "subtitle": "This information helps us determine the benefits you may be eligible for.",
@@ -41,7 +54,6 @@
     "q_enfants": "How many dependent children do you have?",
     "q_handicap": "Do you have an officially recognised disability?"
   },
-
   "step2": {
     "title": "Your housing situation",
     "subtitle": "Your housing situation affects several benefits, including housing allowance and energy assistance.",
@@ -56,7 +68,6 @@
     "zone2": "Zone 2 (Major cities)",
     "zone3": "Zone 3 (Rest of France)"
   },
-
   "step3": {
     "title": "Your income",
     "subtitle": "Enter your monthly net income. This data is confidential and never shared.",
@@ -67,7 +78,6 @@
     "af": "Family allowances",
     "rsa": "RSA (Active solidarity income)"
   },
-
   "step4": {
     "title": "Health and disability",
     "subtitle": "This information allows us to check your access to disability-specific and health benefits.",
@@ -79,7 +89,6 @@
     "taux80": "80% or above",
     "q_cmu": "Do you benefit from Complementary Health Solidarity (CSS / formerly CMU-C)?"
   },
-
   "step5": {
     "title": "Employment situation",
     "subtitle": "Your employment status determines access to several benefits such as the Activity Bonus or the ASS.",
@@ -92,7 +101,6 @@
     "independant": "Self-employed / Freelancer",
     "q_anciennete": "How many months have you been in this situation?"
   },
-
   "results": {
     "page_title": "Your estimated benefits — My Benefits",
     "title": "Your estimated benefits",
@@ -104,7 +112,6 @@
     "total_label": "Estimated total",
     "disclaimer": "These results are provided for guidance only. Only the relevant authority can confirm your entitlement."
   },
-
   "catalog": {
     "page_title": "All benefits — My Benefits France",
     "title": "Benefits catalogue",
@@ -123,7 +130,6 @@
     "result_count": "benefits available",
     "hero_badge": "71 referenced benefits"
   },
-
   "guides": {
     "page_title": "Practical guides — My Benefits France",
     "title": "Practical guides",
@@ -142,7 +148,6 @@
     "read_guide": "Read the guide",
     "count": "guides available"
   },
-
   "cat": {
     "revenus": "income",
     "logement": "housing",
@@ -154,7 +159,6 @@
     "jeunes": "youth",
     "retraite": "retirement"
   },
-
   "common": {
     "yes": "Yes",
     "no": "No",
@@ -169,7 +173,6 @@
     "test_eligibility": "Check my eligibility",
     "see_detail": "View details"
   },
-
   "footer": {
     "col_simulator": "Simulator",
     "start_simulation": "Start the simulation",
@@ -191,5 +194,56 @@
     "copyright": "© 2025 My Benefits — Macaron Software. All rights reserved.",
     "disclaimer": "This service is for guidance only and does not constitute an official administrative act.",
     "legal": "Legal notice"
+  },
+  "persona": {
+    "parent": {
+      "title": "Single parent",
+      "aids": "APL, Family allowances, RSA, PAJE…",
+      "count": "up to 12 aids",
+      "label": "Enter as single parent"
+    },
+    "jeune": {
+      "title": "Young person -26",
+      "aids": "CEJ, CROUS grant, APL, Permis 1€…",
+      "count": "up to 8 aids",
+      "label": "Enter as young person"
+    },
+    "salarie": {
+      "title": "Low-income worker",
+      "aids": "Activity bonus, ACRE, Holiday vouchers…",
+      "count": "up to 7 aids",
+      "label": "Enter as low-income worker"
+    },
+    "chomeur": {
+      "title": "Job seeker",
+      "aids": "RSA, ARE, ACRE, Christmas bonus…",
+      "count": "up to 9 aids",
+      "label": "Enter as job seeker"
+    },
+    "senior": {
+      "title": "Senior +60 years",
+      "aids": "Energy cheque, MaPrimeRenov', ARS…",
+      "count": "up to 8 aids",
+      "label": "Enter as senior"
+    },
+    "handicap": {
+      "title": "Disability situation",
+      "aids": "AAH, PCH, ALD 100%, CSS…",
+      "count": "up to 6 aids",
+      "label": "Enter as person with disability"
+    }
+  },
+  "faq": {
+    "q1": "Is the simulation really free?",
+    "a1": "Yes, 100% free. No registration, no credit card, no hidden conditions.",
+    "q2": "Are my data protected?",
+    "a2": "Your data never leaves your browser. Nothing is sent to any server.",
+    "q3": "Is this official?",
+    "a3": "Amounts are based on official 2026 scales from service-public.fr, caf.fr and ameli.fr.",
+    "q4": "What do I do after the simulation?",
+    "a4": "Each aid is accompanied by the official steps to apply (CAF, France Travail, MDPH...)."
+  },
+  "a11y": {
+    "skip_to_content": "Skip to main content"
   }
 }
