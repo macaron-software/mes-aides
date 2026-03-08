@@ -112,3 +112,71 @@
   --z-modal:    50;
   --z-toast:    100;
 }
+
+/* ============================================================
+   DARK MODE  —  <html data-theme="dark">
+   ============================================================ */
+[data-theme="dark"] {
+  --c-bg:             #161616;
+  --c-surface:        #1F1F1F;
+  --c-surface-raised: #2A2A2A;
+  --c-border:         #383838;
+  --c-border-strong:  #555555;
+  --c-text:           #EDEDED;
+  --c-text-muted:     #AAAAAA;
+  --c-text-subtle:    #777777;
+  /* Teal lightened for dark bg — contrast ≥ 4.5:1 */
+  --c-primary:        #3CC68E;
+  --c-primary-light:  #0D2B1F;
+  --c-primary-hover:  #52D49E;
+  --c-primary-dark:   #1A7A50;
+  --c-primary-rgb:    60, 198, 142;
+  --c-success:        #34C770;
+  --c-success-light:  #0A2A17;
+  --c-warning:        #F59E0B;
+  --c-warning-light:  #2A1A00;
+  --c-danger:         #F87171;
+  --c-danger-light:   #2A0A0A;
+  --c-info:           #60A5FA;
+  --c-info-light:     #0A1A2A;
+  --sh-xs: 0 1px 2px rgb(0 0 0/.3);
+  --sh-sm: 0 1px 3px rgb(0 0 0/.4), 0 1px 2px rgb(0 0 0/.3);
+  --sh-md: 0 4px 6px rgb(0 0 0/.4), 0 2px 4px rgb(0 0 0/.3);
+  --sh-lg: 0 10px 15px rgb(0 0 0/.5), 0 4px 6px rgb(0 0 0/.3);
+}
+
+/* ============================================================
+   HIGH CONTRAST MODE  —  <html data-theme="contrast">
+   Accessibilité malvoyants + prefers-contrast: more
+   ============================================================ */
+[data-theme="contrast"] {
+  --c-bg:             #000000;
+  --c-surface:        #0A0A0A;
+  --c-surface-raised: #141414;
+  --c-border:         #FFFFFF;
+  --c-border-strong:  #FFFFFF;
+  --c-text:           #FFFFFF;
+  --c-text-muted:     #FFFF00;
+  --c-text-subtle:    #FFFF00;
+  --c-text-inverse:   #000000;
+  --c-primary:        #FFFF00;
+  --c-primary-light:  #1A1A00;
+  --c-primary-hover:  #FFFFA0;
+  --c-primary-dark:   #CCCC00;
+  --c-primary-rgb:    255, 255, 0;
+  --c-success:        #00FF00;
+  --c-success-light:  #001A00;
+  --c-danger:         #FF4444;
+  --c-danger-light:   #1A0000;
+  --c-warning:        #FFA500;
+  --c-warning-light:  #1A0A00;
+  --sh-xs: none; --sh-sm: none; --sh-md: none; --sh-lg: none; --sh-xl: none;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --c-border: #000000;
+    --c-border-strong: #000000;
+    --c-text-muted: #1A2E25;
+  }
+}
