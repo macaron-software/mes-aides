@@ -71,31 +71,12 @@ final class SimulatorStore: ObservableObject {
     @Published var currentStep = 0
     @Published var result: SimulationResultDTO?
     @Published var isLoading = false
-    @Published var errorMessage: String?
 
-    // Set API_BASE_URL in Info.plist or build settings for production
-    private let baseURL = ProcessInfo.processInfo.environment["API_BASE_URL"] ?? "http://localhost:3001"
-
+    /// Calcul 100% local — aucune donnée transmise, aucune donnée stockée
     func simulate() {
         isLoading = true
-        errorMessage = nil
-
-        Task {
-            do {
-                let url = URL(string: "\(baseURL)/api/simulate")!
-                var req = URLRequest(url: url)
-                req.httpMethod = "POST"
-                req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                req.httpBody = try JSONEncoder().encode(situation)
-
-                let (data, _) = try await URLSession.shared.data(for: req)
-                let decoded = try JSONDecoder().decode(SimulationResultDTO.self, from: data)
-                result = decoded
-            } catch {
-                errorMessage = error.localizedDescription
-            }
-            isLoading = false
-        }
+        result = LocalEngine.run(situation)
+        isLoading = false
     }
 }
 

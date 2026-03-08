@@ -6,26 +6,25 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.gson.Gson
 
-/** Step-by-step guide for one aid */
+/** Détail d'une aide — données passées en mémoire via companion, pas de sérialisation */
 class AideDetailActivity : AppCompatActivity() {
 
     companion object {
-        private const val KEY_AIDE = "aide_json"
+        private var pendingAide: AideResultModel? = null
 
-        fun newIntent(ctx: Context, aide: AideResultModel): Intent =
-            Intent(ctx, AideDetailActivity::class.java).apply {
-                putExtra(KEY_AIDE, Gson().toJson(aide))
-            }
+        fun newIntent(ctx: Context, aide: AideResultModel): Intent {
+            pendingAide = aide
+            return Intent(ctx, AideDetailActivity::class.java)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aide_detail)
 
-        val json = intent.getStringExtra(KEY_AIDE) ?: return
-        val aide = Gson().fromJson(json, AideResultModel::class.java)
+        val aide = pendingAide ?: return
+        pendingAide = null
 
         title = aide.nom
 

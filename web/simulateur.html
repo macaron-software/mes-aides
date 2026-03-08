@@ -613,29 +613,14 @@
   </div>
 
   <script src="js/theme.js"></script>
-  <script src="js/storage.js"></script>
   <script src="js/i18n.js"></script>
-  <!-- Umami Analytics (production uniquement) -->
-  <script async src="https://analytics.macaron-software.com/script.js"
-          data-website-id="b48fa85f-c884-44a9-9cd3-56f4ed29bba7"
-          data-domains="aides.macaron-software.com"></script>
   <script>
     const TOTAL_STEPS = 5;
     let currentStep = 1;
 
-    // Saisies : chargées au démarrage (déchiffrement async)
+    // Saisies : mémoire uniquement (rien persisté, rien transmis)
     const answers = {};
-    SecureStorage.load('ma_sim_answers').then(saved => {
-      if (saved && typeof saved === 'object') {
-        Object.assign(answers, saved);
-        restoreUI();
-      }
-    });
-
-    // Sauvegarde chiffrée + compressée
-    function saveAnswers() {
-      SecureStorage.save('ma_sim_answers', answers);
-    }
+    function saveAnswers() { /* mémoire uniquement — pas de stockage */ }
 
     // Choice buttons
     document.querySelectorAll('.choice-btn[data-field]').forEach(btn => {
@@ -646,7 +631,6 @@
         document.querySelectorAll(`.choice-btn[data-field="${field}"]`).forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         answers[field] = value;
-        saveAnswers();
       });
     });
 
@@ -656,7 +640,6 @@
       if (el) {
         el.addEventListener('input', () => {
           answers[id] = parseInt(el.value);
-          saveAnswers();
         });
       }
     });
@@ -704,8 +687,7 @@
         currentStep++;
         updateUI();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Analytics : étape complétée
-        window.umami?.track('sim-step', { step: currentStep });
+
       } else {
         submitSimulation();
       }
@@ -724,33 +706,11 @@
       btnNext.disabled = true;
       btnNext.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Calcul en cours…';
 
-      // Build payload from answers
       const payload = buildPayload();
-      // Analytics : simulation lancée
-      window.umami?.track('sim-submit', { emploi: payload.emploi, age_range: Math.floor(payload.age / 10) * 10 });
 
-      try {
-        const resp = await fetch('/api/simulate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-
-        if (resp.ok) {
-          const data = await resp.json();
-          await SecureStorage.save('ma_sim_results', data);
-          window.umami?.track('sim-result', { nb_aides: data.nb_aides, total: Math.round(data.total_mensuel) });
-          window.location.href = 'resultats.html';
-        } else {
-          throw new Error('API error');
-        }
-      } catch (e) {
-        // Offline / demo mode — generate dummy results
-        const demo = generateDemoResults(payload);
-        await SecureStorage.save('ma_sim_results', demo);
-        window.umami?.track('sim-result-demo', { nb_aides: demo.nb_aides });
-        window.location.href = 'resultats.html';
-      }
+      // Moteur local — calcul dans le navigateur, rien n'est transmis ni stocké
+      const results = simulate(payload);
+      displayResults(results);
     }
 
     function buildPayload() {
@@ -803,7 +763,7 @@
       };
     }
 
-    function generateDemoResults(p) {
+    function simulate(p) {
       const aides = [];
       const rev = p.revenus_nets_mensuels || 0;
 
@@ -840,7 +800,58 @@
       };
     }
 
-    // Restore UI depuis answers (appelé après chargement async SecureStorage)
+    function displayResults(res) {
+      // Masque le wizard
+      document.querySelector('.sim-wizard')?.classList.add('hidden');
+      document.getElementById('stepNav')?.classList.add('hidden');
+
+      // Affiche la section résultats (créée dynamiquement si absente)
+      let section = document.getElementById('sim-results');
+      if (!section) {
+        section = document.createElement('section');
+        section.id = 'sim-results';
+        section.className = 'results-section';
+        document.querySelector('main')?.appendChild(section);
+      }
+
+      const total = res.total_mensuel || 0;
+      const aides = res.aides || [];
+
+      section.innerHTML = `
+        <div class="results-header">
+          <h2>Vos aides estimées</h2>
+          <p class="results-total">Jusqu'à <strong>${Math.round(total)} €/mois</strong> au total</p>
+        </div>
+        <ul class="results-list" role="list">
+          ${aides.length === 0
+            ? '<li class="result-empty">Aucune aide détectée avec ces informations.</li>'
+            : aides.map(a => `
+              <li class="result-card">
+                <div class="result-card-name">${a.nom}</div>
+                <div class="result-card-amount">${a.montant_mensuel > 0 ? Math.round(a.montant_mensuel) + ' €/mois' : 'Montant variable'}</div>
+                <a href="aides/${a.id}.html" class="result-card-link">En savoir plus →</a>
+              </li>`).join('')}
+        </ul>
+        <p class="results-note">Estimation basée sur les barèmes 2026. Calculé localement dans votre navigateur — aucune donnée transmise.</p>
+        <button class="btn-secondary" onclick="resetSimulation()">Recommencer</button>
+      `;
+      section.classList.remove('hidden');
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetSimulation() {
+      document.getElementById('sim-results')?.remove();
+      document.querySelector('.sim-wizard')?.classList.remove('hidden');
+      document.getElementById('stepNav')?.classList.remove('hidden');
+      // Reset
+      Object.keys(answers).forEach(k => delete answers[k]);
+      currentStep = 1;
+      updateUI();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
+    // Restaure UI depuis answers en mémoire (pré-remplissage profil URL)
     function restoreUI() {
       Object.entries(answers).forEach(([field, value]) => {
         const btn = document.querySelector(`.choice-btn[data-field="${field}"][data-value="${value}"]`);
@@ -873,7 +884,7 @@
         Object.assign(answers, p);
         saveAnswers();
         // Analytics : quelle persona a cliqué
-        window.umami?.track('persona-entry', { profil });
+
       }
     })();
 

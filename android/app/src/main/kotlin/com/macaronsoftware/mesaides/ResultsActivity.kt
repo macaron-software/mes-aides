@@ -45,11 +45,7 @@ class ResultsActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.error.observe(this) { msg ->
-            msg?.let { findViewById<TextView>(R.id.tvError).text = it }
-        }
 
-        // PDF button
         findViewById<Button>(R.id.btnPdf).setOnClickListener {
             viewModel.result.value?.let { res ->
                 PdfGenerator(this).generate(res)

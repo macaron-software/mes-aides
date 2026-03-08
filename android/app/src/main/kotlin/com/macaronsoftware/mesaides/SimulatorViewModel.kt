@@ -1,19 +1,9 @@
 package com.macaronsoftware.mesaides
 
-import android.app.Application
-import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import com.google.gson.annotations.SerializedName
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.POST
+import androidx.lifecycle.ViewModel
 
-// MARK: — Models
+// Modèles
 
 data class SituationModel(
     val age: Int = 30,
@@ -33,64 +23,110 @@ data class SituationModel(
     val etudiant_boursier: Boolean = false,
 )
 
-data class EtapeModel(
-    val titre: String,
-    val description: String,
-    val lien: String,
-)
+data class EtapeModel(val titre: String, val description: String, val lien: String)
 
 data class AideResultModel(
-    @SerializedName("aide_id") val aideId: String,
+    val aideId: String,
     val nom: String,
     val eligible: Boolean,
-    @SerializedName("montant_mensuel") val montantMensuel: Double?,
+    val montantMensuel: Double?,
     val raisons: List<String>,
     val etapes: List<EtapeModel>,
-    @SerializedName("lien_officiel") val lienOfficiel: String,
+    val lienOfficiel: String,
 )
 
 data class SimulationResultModel(
-    @SerializedName("aides_eligibles") val aidesEligibles: List<AideResultModel>,
-    @SerializedName("total_mensuel") val totalMensuel: Double,
+    val aidesEligibles: List<AideResultModel>,
+    val totalMensuel: Double,
 )
 
-// MARK: — Retrofit API
+// Moteur de calcul local — barèmes 2026
+// Aucun réseau, aucun stockage, aucune donnée transmise.
 
-interface MesAidesApi {
-    @POST("api/simulate")
-    suspend fun simulate(@Body situation: SituationModel): SimulationResultModel
-}
+object LocalEngine {
 
-// MARK: — ViewModel
+    fun run(s: SituationModel): SimulationResultModel {
+        val rev = s.salaire_net_mensuel + s.autres_revenus
+        val aides = mutableListOf<AideResultModel>()
 
-class SimulatorViewModel(app: Application) : AndroidViewModel(app) {
+        // RSA
+        if (s.emploi_status_raw != "Salarie" && s.emploi_status_raw != "Retraite" && rev < 1102) {
+            val base = if (s.en_couple) 1041.0 else if (s.nb_enfants > 0) 777.0 else 635.71
+            val montant = maxOf(0.0, base - rev * 0.68)
+            aides += aide("rsa", "Revenu de Solidarité Active (RSA)", montant, listOf(
+                "Rendez-vous CAF", "Dossier RSA", "Contrat engagement", "Versement mensuel", "Actualisation trimestrielle"))
+        }
 
-    val situation = MutableLiveData(SituationModel())
-    val result = MutableLiveData<SimulationResultModel?>()
-    val error = MutableLiveData<String?>()
+        // APL
+        if (s.locataire && s.loyer_mensuel > 100) {
+            val plafonds = listOf(380.0, 290.0, 250.0)
+            val base = plafonds.getOrElse(s.zone - 1) { 250.0 }
+            val montant = maxOf(0.0, base - rev * 0.2)
+            if (montant > 15)
+                aides += aide("apl", "Aide Personnalisée au Logement (APL)", montant, listOf(
+                    "Simulation CAF", "Dossier en ligne", "Vérification contrat bail", "Versement mensuel"))
+        }
 
-    // Set API_BASE_URL in BuildConfig or gradle.properties for production (default: emulator localhost)
-    private val apiBaseUrl = BuildConfig.API_BASE_URL.ifEmpty { "http://10.0.2.2:3001/" }
+        // Prime d'activité
+        if (s.emploi_status_raw == "Salarie" && rev > 0 && rev < 1900) {
+            val montant = maxOf(0.0, 354.0 - maxOf(0.0, rev - 1063) * 0.38)
+            aides += aide("prime-activite", "Prime d'Activité", montant, listOf(
+                "Simulation CAF", "Dossier en ligne", "Actualisation mensuelle"))
+        }
 
-    private val api: MesAidesApi by lazy {
-        Retrofit.Builder()
-            .baseUrl(apiBaseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(MesAidesApi::class.java)
+        // AAH
+        if (s.handicap && rev < 1016) {
+            val montant = if (s.en_couple) maxOf(0.0, 1016.85 - rev) else 1016.85
+            aides += aide("aah", "Allocation aux Adultes Handicapés (AAH)", montant, listOf(
+                "Dossier MDPH", "Reconnaissance handicap", "Demande CAF", "Commission CDAPH", "Notification", "Versement"))
+        }
+
+        // Chèque énergie
+        if (rev < 2500) {
+            val montant = if (rev < 1000) 277.0 / 12 else 200.0 / 12
+            aides += aide("cheque-energie", "Chèque Énergie", montant, listOf(
+                "Attribution automatique (courrier)"))
+        }
+
+        // CSS (ex-CMU-C)
+        if (!s.cmu_c && rev < 900) {
+            aides += aide("css", "Complémentaire Santé Solidaire (CSS)", 0.0, listOf(
+                "Dossier Ameli", "Validation revenus", "Carte vitale mise à jour"))
+        }
+
+        // ALS (si pas d'APL)
+        if (s.locataire && aides.none { it.aideId == "apl" } && rev < 1200) {
+            val montant = maxOf(0.0, 200.0 - rev * 0.1)
+            aides += aide("als", "Allocation de Logement Social (ALS)", montant, listOf(
+                "Dossier CAF", "Justificatif bail", "Versement mensuel"))
+        }
+
+        val sorted = aides.sortedByDescending { it.montantMensuel ?: 0.0 }
+        val total  = sorted.mapNotNull { it.montantMensuel }.sum()
+        return SimulationResultModel(aidesEligibles = sorted, totalMensuel = total)
     }
 
+    private fun aide(id: String, nom: String, montant: Double, steps: List<String>) =
+        AideResultModel(
+            aideId = id,
+            nom = nom,
+            eligible = true,
+            montantMensuel = if (montant > 0) montant else null,
+            raisons = emptyList(),
+            etapes = steps.mapIndexed { i, t -> EtapeModel("Étape ${i + 1}", t, "") },
+            lienOfficiel = "https://www.service-public.fr"
+        )
+}
+
+// ViewModel — calcul local uniquement, aucun réseau
+
+class SimulatorViewModel : ViewModel() {
+
+    val situation = MutableLiveData(SituationModel())
+    val result    = MutableLiveData<SimulationResultModel?>()
+
+    /** Calcul instantané dans le thread courant — pas d'IO, pas de réseau */
     fun simulate() {
-        val sit = situation.value ?: return
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                val res = api.simulate(sit)
-                result.postValue(res)
-                error.postValue(null)
-            } catch (e: Exception) {
-                Log.e("SimulatorViewModel", "simulate failed", e)
-                error.postValue(e.message)
-            }
-        }
+        result.value = LocalEngine.run(situation.value ?: SituationModel())
     }
 }
