@@ -6,7 +6,7 @@ html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%;
 body {
   font-family: var(--font);
   font-size: var(--text-base);
-  line-height: var(--lh-normal);
+  line-height: var(--lh-relaxed);
   color: var(--c-text);
   background: var(--c-bg);
   -webkit-font-smoothing: antialiased;
@@ -15,37 +15,58 @@ img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 ul, ol { list-style: none; }
-h1,h2,h3,h4,h5,h6 { line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--c-text); }
 
-/* ── Typography scale ────────────────────────────────────────────────────── */
-.text-xs     { font-size: var(--text-xs); }
-.text-sm     { font-size: var(--text-sm); }
-.text-base   { font-size: var(--text-base); }
-.text-lg     { font-size: var(--text-lg); }
-.text-xl     { font-size: var(--text-xl); }
-.text-2xl    { font-size: var(--text-2xl); }
-.text-3xl    { font-size: var(--text-3xl); }
-.text-4xl    { font-size: var(--text-4xl); }
-.text-5xl    { font-size: var(--text-5xl); }
-.fw-medium   { font-weight: var(--fw-medium); }
-.fw-semibold { font-weight: var(--fw-semibold); }
-.fw-bold     { font-weight: var(--fw-bold); }
-.fw-xbold    { font-weight: var(--fw-extrabold); }
-.text-muted  { color: var(--c-text-muted); }
-.text-subtle { color: var(--c-text-subtle); }
-.text-primary{ color: var(--c-primary); }
+/* ── Vertical rhythm ─────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+  color: var(--c-text);
+}
+h1 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); margin-bottom: var(--sp-4); }
+h2 { font-size: clamp(var(--text-xl),  3vw, var(--text-2xl)); margin-bottom: var(--sp-3); }
+h3 { font-size: var(--text-lg);  margin-bottom: var(--sp-2); }
+h4 { font-size: var(--text-base); margin-bottom: var(--sp-2); }
+
+p  { line-height: var(--lh-relaxed); color: var(--c-text-muted); margin-bottom: var(--sp-4); }
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: var(--fw-semibold); color: var(--c-text); }
+
+/* ── Typography utilities ────────────────────────────────────────────────── */
+.text-xs     { font-size: var(--text-xs) !important; }
+.text-sm     { font-size: var(--text-sm) !important; }
+.text-base   { font-size: var(--text-base) !important; }
+.text-lg     { font-size: var(--text-lg) !important; }
+.text-xl     { font-size: var(--text-xl) !important; }
+.text-2xl    { font-size: var(--text-2xl) !important; }
+.text-3xl    { font-size: var(--text-3xl) !important; }
+.fw-medium   { font-weight: var(--fw-medium) !important; }
+.fw-semibold { font-weight: var(--fw-semibold) !important; }
+.fw-bold     { font-weight: var(--fw-bold) !important; }
+.fw-xbold    { font-weight: var(--fw-extrabold) !important; }
+.text-muted  { color: var(--c-text-muted) !important; }
+.text-subtle { color: var(--c-text-subtle) !important; }
+.text-primary{ color: var(--c-primary) !important; }
 
 /* ── Layout ──────────────────────────────────────────────────────────────── */
-.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--sp-4); }
-@media (min-width: 640px) { .container { padding-inline: var(--sp-6); } }
+.container {
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--sp-5);
+}
+@media (min-width: 640px)  { .container { padding-inline: var(--sp-8); } }
+@media (min-width: 1024px) { .container { padding-inline: var(--sp-12); } }
+
 .content-narrow { max-width: var(--max-w-content); margin-inline: auto; }
 
 /* ── Flex / Grid helpers ─────────────────────────────────────────────────── */
-.flex       { display: flex; }
-.flex-col   { flex-direction: column; }
-.items-center { align-items: center; }
+.flex            { display: flex; }
+.flex-col        { flex-direction: column; }
+.items-center    { align-items: center; }
+.items-start     { align-items: flex-start; }
 .justify-between { justify-content: space-between; }
 .justify-center  { justify-content: center; }
+.flex-wrap       { flex-wrap: wrap; }
 .gap-2  { gap: var(--sp-2); }
 .gap-3  { gap: var(--sp-3); }
 .gap-4  { gap: var(--sp-4); }
@@ -58,19 +79,20 @@ h1,h2,h3,h4,h5,h6 { line-height: var(--lh-tight); font-weight: var(--fw-bold); c
 @media (min-width: 640px) and (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
 
 /* ── Spacing helpers ─────────────────────────────────────────────────────── */
-.mt-2 { margin-top: var(--sp-2); }  .mt-3 { margin-top: var(--sp-3); }
-.mt-4 { margin-top: var(--sp-4); }  .mt-6 { margin-top: var(--sp-6); }
-.mt-8 { margin-top: var(--sp-8); }  .mt-12{ margin-top: var(--sp-12);}
-.mb-2 { margin-bottom: var(--sp-2); } .mb-4 { margin-bottom: var(--sp-4); }
-.mb-6 { margin-bottom: var(--sp-6); } .mb-8 { margin-bottom: var(--sp-8); }
-.pt-16 { padding-top: var(--sp-16); } .pb-16 { padding-bottom: var(--sp-16); }
-.pt-20 { padding-top: var(--sp-20); } .pb-20 { padding-bottom: var(--sp-20); }
-.py-16 { padding-block: var(--sp-16); }
-.py-20 { padding-block: var(--sp-20); }
-.py-24 { padding-block: var(--sp-24); }
+.mt-2  { margin-top: var(--sp-2);  } .mt-3  { margin-top: var(--sp-3);  }
+.mt-4  { margin-top: var(--sp-4);  } .mt-6  { margin-top: var(--sp-6);  }
+.mt-8  { margin-top: var(--sp-8);  } .mt-12 { margin-top: var(--sp-12); }
+.mb-2  { margin-bottom: var(--sp-2); } .mb-4  { margin-bottom: var(--sp-4); }
+.mb-6  { margin-bottom: var(--sp-6); } .mb-8  { margin-bottom: var(--sp-8); }
+.mb-12 { margin-bottom: var(--sp-12); }
+.pt-16 { padding-top: var(--sp-16);    } .pb-16 { padding-bottom: var(--sp-16); }
+.pt-20 { padding-top: var(--sp-20);    } .pb-20 { padding-bottom: var(--sp-20); }
+.py-16 { padding-block: var(--sp-16);  }
+.py-20 { padding-block: var(--sp-20);  }
+.py-24 { padding-block: var(--sp-24);  }
 
 /* ── Visibility ──────────────────────────────────────────────────────────── */
-.hidden     { display: none !important; }
-.sr-only    { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+.hidden  { display: none !important; }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 @media (max-width: 640px)  { .hide-mobile  { display: none; } }
 @media (min-width: 641px)  { .hide-desktop { display: none; } }
