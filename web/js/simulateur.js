@@ -1010,6 +1010,44 @@
             </div>
           </div>
 
+          ${(() => {
+            const CAT_LABELS = {
+              logement:'Logement', famille:'Famille', emploi:'Emploi',
+              sante:'Santé', handicap:'Handicap', energie:'Énergie',
+              seniors:'Seniors', jeunes:'Jeunes', revenus:'Revenus',
+              divers:'Divers', justice:'Justice'
+            };
+            const counts = {};
+            aides.forEach(a => { counts[a.cat] = (counts[a.cat]||0) + 1; });
+            const cats = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+            if (cats.length === 0) return '';
+            return `<div class="sr-cats">
+              ${cats.map(([cat, n]) => `
+                <span class="sr-cat-badge">
+                  <span class="sr-cat-badge__count">${n}</span>
+                  <span class="sr-cat-badge__label">${CAT_LABELS[cat]||cat}</span>
+                </span>`).join('')}
+            </div>`;
+          })()}
+          ${(() => {
+            const CAT_LABELS = {
+              logement:'Logement', famille:'Famille', emploi:'Emploi',
+              sante:'Santé', handicap:'Handicap', energie:'Énergie',
+              seniors:'Seniors', jeunes:'Jeunes', revenus:'Revenus',
+              divers:'Divers', justice:'Justice'
+            };
+            const counts = {};
+            aides.forEach(a => { counts[a.cat] = (counts[a.cat]||0) + 1; });
+            const cats = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+            if (cats.length === 0) return '';
+            return `<div class="sr-cats">
+              ${cats.map(([cat, n]) => `
+                <span class="sr-cat-badge">
+                  <span class="sr-cat-badge__count">${n}</span>
+                  <span class="sr-cat-badge__label">${CAT_LABELS[cat]||cat}</span>
+                </span>`).join('')}
+            </div>`;
+          })()}
           <ul class="sr-list" role="list">
             ${aides.map(a => {
               const icon = CAT_ICONS[a.categorie] || CAT_ICONS.revenus;

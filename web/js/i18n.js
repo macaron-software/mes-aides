@@ -23,6 +23,9 @@ const I18n = {
       document.documentElement.lang = l;
       document.documentElement.dir = RTL_LANGS.includes(l) ? 'rtl' : 'ltr';
       this.apply();
+      if (l !== 'fr' && !Object.keys(this.fallback).length) {
+        fetch('/locales/fr.json').then(r => r.ok ? r.json() : {}).then(d => { this.fallback = d; });
+      }
     } catch {
       if (l !== 'fr') {
         try {
@@ -37,14 +40,17 @@ const I18n = {
   },
 
   /** Resolve dot-separated key: "step1.title" -> data.step1.title */
+  fallback: {},
+
   t(key, vars = {}) {
-    const parts = key.split('.');
-    let val = this.data;
-    for (const p of parts) {
-      if (val == null) return key;
-      val = val[p];
-    }
-    if (typeof val !== 'string') return key;
+    const resolve = (data, k) => {
+      const parts = k.split('.');
+      let v = data;
+      for (const p of parts) { if (v == null) return null; v = v[p]; }
+      return typeof v === 'string' ? v : null;
+    };
+    let val = resolve(this.data, key) ?? resolve(this.fallback, key);
+    if (val === null) return key;
     return val.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? `{${k}}`);
   },
 
