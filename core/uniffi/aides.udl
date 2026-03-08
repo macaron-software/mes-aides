@@ -1,0 +1,64 @@
+// UniFFI interface definition for aides-core
+// Generates Swift + Kotlin bindings via:
+//   uniffi-bindgen generate --library target/.../libaides_core.dylib --language swift --out-dir ios/Sources/MesAidesCore
+//   uniffi-bindgen generate --library target/.../libaides_core.so   --language kotlin --out-dir android/app/src/main/kotlin/uniffi
+
+namespace aides_core {
+  SimulationResult simulate(Situation situation);
+  sequence<AideInfo> list_aides();
+};
+
+// ── Input ────────────────────────────────────────────────────────────────────
+
+dictionary Situation {
+  u32 age;
+  boolean en_couple;
+  u32 nb_enfants;
+  boolean handicap;
+  boolean locataire;
+  double loyer_mensuel;
+  u32 zone;
+  double salaire_net_mensuel;
+  double autres_revenus;
+  double patrimoine;
+  boolean ald;
+  boolean dependance;
+  boolean cmu_c;
+  string emploi_status_raw;
+  boolean etudiant_boursier;
+};
+
+// ── Output ───────────────────────────────────────────────────────────────────
+
+dictionary AideResult {
+  string aide_id;
+  boolean eligible;
+  double? montant_mensuel;
+  double? montant_annuel;
+  double score;
+  sequence<string> raisons;
+  sequence<string> raisons_ineligible;
+  u8 nb_etapes;
+};
+
+dictionary SimulationResult {
+  sequence<AideResult> aides_eligibles;
+  sequence<AideResult> aides_ineligibles;
+  double total_mensuel;
+  double total_annuel;
+  string calcule_le;
+  string version_baremes;
+};
+
+dictionary AideInfo {
+  string id;
+  string slug;
+  string nom;
+  string description;
+  string categorie;
+  double? montant_min;
+  double? montant_max;
+  string periodicite;
+  string organisme;
+  string url_info;
+};

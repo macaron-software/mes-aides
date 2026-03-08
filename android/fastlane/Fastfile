@@ -1,0 +1,48 @@
+# android/fastlane/Fastfile
+# Deploy to Google Play via Fastlane supply
+# Prereqs: Google Play API JSON key at ~/.fastlane/google_play_key.json
+
+default_platform :android
+
+platform :android do
+
+  desc "Run unit tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Build release APK/AAB"
+  lane :build do
+    gradle(
+      task: "bundle",
+      build_type: "Release",
+      properties: {
+        "android.injected.signing.store.file" => ENV["KEYSTORE_PATH"],
+        "android.injected.signing.store.password" => ENV["KEYSTORE_PASSWORD"],
+        "android.injected.signing.key.alias" => ENV["KEY_ALIAS"],
+        "android.injected.signing.key.password" => ENV["KEY_PASSWORD"],
+      }
+    )
+  end
+
+  desc "Upload to internal track (Play Console)"
+  lane :internal do
+    build
+    upload_to_play_store(
+      track: "internal",
+      json_key: "~/.fastlane/google_play_key.json",
+      aab: "app/build/outputs/bundle/release/app-release.aab",
+      metadata_path: "./fastlane/metadata/android"
+    )
+  end
+
+  desc "Promote internal to production"
+  lane :production do
+    upload_to_play_store(
+      track: "internal",
+      track_promote_to: "production",
+      json_key: "~/.fastlane/google_play_key.json"
+    )
+  end
+
+end

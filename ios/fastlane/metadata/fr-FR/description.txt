@@ -1,0 +1,21 @@
+Savez-vous a quelles aides sociales vous avez droit ?
+
+Mes Aides est un simulateur gratuit qui analyse votre situation en 3 minutes et vous indique toutes les aides auxquelles vous etes eligible, avec les demarches precises pour les obtenir.
+
+28 aides analysees :
+- RSA, Prime d'activite, AAH, ASPA
+- APL, Aide au logement
+- Cheque energie, CSS
+- Bourses CROUS, Garantie Visale
+- Allocations familiales, PAJE, ARS
+- Complement de ressources, MVA, CEJ
+- Pass Culture, et bien plus
+
+Ce qui nous differencie :
+- Baremes 2026 officiels (sources service-public.fr)
+- Rapport PDF gratuit avec etapes precises et liens formulaires officiels
+- 40 langues disponibles
+- 100% gratuit, sans inscription
+- Aucune publicite
+
+Disponible en francais, anglais, arabe, espagnol, portugais, russe, ukrainien, turc et 32 autres langues.

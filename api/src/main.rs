@@ -19,7 +19,7 @@ use std::io::BufWriter;
 // ── State ─────────────────────────────────────────────────────────────────────
 
 #[derive(Clone)]
-struct AppState {
+pub(crate) struct AppState {
     baremes_cache: Arc<RwLock<BaremesCache>>,
     http: reqwest::Client,
 }
@@ -41,11 +41,46 @@ impl BaremesCache {
 struct LiveBaremes {
     version: String,
     source: String,
-    rsa_base: f64,
-    aah_montant_max: f64,
-    prime_activite_forfait: f64,
-    smic_net_mensuel: f64,
+    // Minima sociaux — barèmes 2026 officiels (service-public.fr)
+    rsa_base: f64,                  // 646.52 €
+    rsa_couple: f64,                // 969.78 €
+    aah_montant_max: f64,           // 1033.32 €
+    aah_plafond_annuel: f64,        // 12399.84 €
+    prime_activite_forfait: f64,    // 633.21 €
+    smic_net_mensuel: f64,          // 1398.69 €
+    prime_activite_bonification_max: f64, // 253.28 €
+    aspa_seul: f64,                 // 1043.59 €
+    aspa_couple: f64,               // 1620.18 €
+    ass_journaliere: f64,           // 19.33 €
+    // APL zones (plafonds loyer référence)
+    apl_zone1_1p: f64,              // 600.15 €
+    apl_zone2_1p: f64,              // 508.13 €
+    apl_zone3_1p: f64,              // 462.32 €
     updated_at: String,
+}
+
+impl LiveBaremes {
+    /// Embedded 2026 baremes from service-public.fr (fallback when datagouv unreachable)
+    fn embedded_2026() -> Self {
+        Self {
+            version: "2026-01".to_string(),
+            source: "embedded-2026".to_string(),
+            rsa_base: 646.52,
+            rsa_couple: 969.78,
+            aah_montant_max: 1033.32,
+            aah_plafond_annuel: 12399.84,
+            prime_activite_forfait: 633.21,
+            smic_net_mensuel: 1398.69,
+            prime_activite_bonification_max: 253.28,
+            aspa_seul: 1043.59,
+            aspa_couple: 1620.18,
+            ass_journaliere: 19.33,
+            apl_zone1_1p: 600.15,
+            apl_zone2_1p: 508.13,
+            apl_zone3_1p: 462.32,
+            updated_at: "2026-01-01".to_string(),
+        }
+    }
 }
 
 // ── Health ────────────────────────────────────────────────────────────────────
@@ -152,15 +187,10 @@ async fn get_baremes(State(state): State<AppState>) -> impl IntoResponse {
     };
 
     // Build baremes from embedded fallback (live sync done asynchronously)
-    let baremes = LiveBaremes {
-        version: "2026-01".to_string(),
-        source: if fetched.is_some() { "datagouv-mcp".to_string() } else { "embedded-fallback".to_string() },
-        rsa_base: 635.71,
-        aah_montant_max: 1016.85,
-        prime_activite_forfait: 635.71,
-        smic_net_mensuel: 1398.69,
-        updated_at: "2026-01-01".to_string(),
-    };
+    let mut baremes = LiveBaremes::embedded_2026();
+    if fetched.is_some() {
+        baremes.source = "datagouv-mcp".to_string();
+    }
 
     // Update cache
     {
