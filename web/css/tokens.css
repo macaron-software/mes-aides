@@ -30,6 +30,7 @@
   --c-bg:               #F7FAF9;
   --c-surface:          #FFFFFF;
   --c-surface-raised:   #F0F7F4;
+  --c-surface-alt:      #EFF5F2;
   --c-border:           #D1D9D5;
   --c-border-strong:    #9BB3A8;
 
@@ -98,6 +99,10 @@
   --t-normal:   200ms var(--ease);
   --t-slow:     300ms var(--ease);
 
+  --motion-fast:   150ms;
+  --motion-normal: 250ms;
+  --motion-slow:   350ms;
+
   /* ── Layout ─────────────────────────────────────────────────── */
   --max-w:         72rem;    /* 1152px — page max-width */
   --max-w-content: 48rem;    /* 768px  — prose/form width */
@@ -120,6 +125,7 @@
   --c-bg:             #161616;
   --c-surface:        #1F1F1F;
   --c-surface-raised: #2A2A2A;
+  --c-surface-alt:    #262626;
   --c-border:         #383838;
   --c-border-strong:  #555555;
   --c-text:           #EDEDED;
@@ -153,6 +159,7 @@
   --c-bg:             #000000;
   --c-surface:        #0A0A0A;
   --c-surface-raised: #141414;
+  --c-surface-alt:    #111111;
   --c-border:         #FFFFFF;
   --c-border-strong:  #FFFFFF;
   --c-text:           #FFFFFF;

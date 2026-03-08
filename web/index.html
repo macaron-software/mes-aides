@@ -50,13 +50,13 @@
   <div class="site-header__inner">
 
     <!-- Logo -->
-    <a href="/" aria-label="Mes Aides — accueil" style="display:flex;align-items:center;gap:var(--sp-3);text-decoration:none">
+    <a href="/" aria-label="Mes Aides — accueil" class="site-logo">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="var(--c-primary)"/>
         <path d="M16 6L8 10V17C8 22.5 11.6 27.4 16 29C20.4 27.4 24 22.5 24 17V10L16 6Z" fill="white" opacity=".2"/>
         <path d="M12 18l3 3 5-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span style="font-size:var(--text-base);font-weight:var(--fw-extrabold);color:var(--c-primary);line-height:1">Mes Aides</span>
+      <span class="site-logo__name">Mes Aides</span>
     </a>
 
     <!-- Nav principale -->
@@ -66,7 +66,7 @@
     </nav>
 
     <!-- Outils accessibilité + langue -->
-    <div style="display:flex;align-items:center;gap:var(--sp-2)">
+    <div class="site-header__tools">
 
       <!-- Toggle thème -->
       <button id="theme-toggle" class="theme-toggle" aria-label="Activer le mode sombre" title="Activer le mode sombre">
@@ -86,7 +86,7 @@
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/>
         </svg>
-        <span style="font-size:11px;font-weight:700">A</span>
+        <span class="contrast-label">A</span>
       </button>
 
       <!-- Sélecteur de langue -->
@@ -113,7 +113,7 @@
 <main id="main-content">
 
   <!-- ── Section 1 : Entrée par situation (above fold) ──────────────────── -->
-  <section style="padding-block:var(--sp-12) var(--sp-8);background:var(--c-bg)" aria-labelledby="situation-title">
+  <section class="section section--hero" aria-labelledby="situation-title">
     <div class="container">
 
       <p class="section-kicker" data-i18n="home.kicker">
@@ -121,10 +121,10 @@
         Simulation gratuite &middot; 71 aides &middot; 5 minutes
       </p>
 
-      <h1 id="situation-title" style="font-size:clamp(var(--text-2xl),4vw,var(--text-4xl));font-weight:var(--fw-extrabold);line-height:var(--lh-tight);color:var(--c-text);max-width:600px;margin-bottom:var(--sp-2)" data-i18n="home.situation_title">
+      <h1 id="situation-title" class="hero-title" data-i18n="home.situation_title">
         Quelle est votre situation&nbsp;?
       </h1>
-      <p style="font-size:var(--text-base);color:var(--c-text-muted);margin-bottom:0;max-width:520px" data-i18n="home.situation_sub">
+      <p class="text-lead" data-i18n="home.situation_sub">
         Choisissez pour voir les aides qui vous correspondent en priorite
       </p>
 
@@ -202,11 +202,11 @@
 
       <!-- Liens alternatifs -->
       <div class="situation-footer">
-        <a href="/aides.html" style="font-size:var(--text-sm);color:var(--c-text-muted);text-decoration:underline;text-underline-offset:3px" data-i18n="home.see_all_aids">
+        <a href="/aides.html" class="link-subtle" data-i18n="home.see_all_aids">
           Voir les 71 aides &rarr;
         </a>
         <span class="situation-footer__sep">ou</span>
-        <a href="/simulateur.html" class="btn btn-primary" data-i18n="home.full_sim">
+        <a href="/simulateur.html" class="btn btn--primary" data-i18n="home.full_sim">
           Lancer la simulation complete
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
@@ -216,9 +216,9 @@
   </section>
 
   <!-- ── Section 2 : Aides populaires ──────────────────────────────────── -->
-  <section style="background:var(--c-surface);border-block:1px solid var(--c-border);padding-block:var(--sp-5)" aria-label="Aides les plus consultees">
+  <section class="section section--band" aria-label="Aides les plus consultees">
     <div class="container">
-      <p style="font-size:var(--text-xs);font-weight:var(--fw-semibold);text-transform:uppercase;letter-spacing:.06em;color:var(--c-text-subtle);margin-bottom:var(--sp-3)" data-i18n="home.popular_label">
+      <p class="section-kicker section-kicker--subtle" data-i18n="home.popular_label">
         Aides les plus consultees
       </p>
       <div class="aid-strip" role="list">
@@ -230,13 +230,13 @@
         <a class="aid-chip" href="/aides.html#acre" role="listitem">ACRE</a>
         <a class="aid-chip" href="/aides.html#cej" role="listitem">CEJ</a>
         <a class="aid-chip" href="/aides.html#paje" role="listitem">PAJE</a>
-        <a class="aid-chip" href="/aides.html" role="listitem" style="color:var(--c-primary);font-weight:var(--fw-semibold)" data-i18n="home.all_aids_chip">Toutes les aides &rarr;</a>
+        <a class="aid-chip aid-chip--highlight" href="/aides.html" role="listitem" data-i18n="home.all_aids_chip">Toutes les aides &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- ── Section 3 : Comment ca marche | FAQ ────────────────────────────── -->
-  <section style="padding-block:var(--sp-16);background:var(--c-bg)" aria-label="Comment ca marche et questions frequentes">
+  <section class="section" aria-label="Comment ca marche et questions frequentes">
     <div class="container">
       <div class="split-layout">
 
@@ -269,8 +269,8 @@
               </div>
             </li>
           </ol>
-          <div style="margin-top:var(--sp-8)">
-            <a href="/simulateur.html" class="btn btn-primary" data-i18n="home.start_sim">
+          <div class="mt-8">
+            <a href="/simulateur.html" class="btn btn--primary" data-i18n="home.start_sim">
               Commencer la simulation
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
@@ -338,26 +338,26 @@
      ════════════════════════════════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-8);align-items:start">
+    <div class="site-footer__layout">
 
       <div>
-        <div style="display:flex;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-3)">
+        <div class="site-footer__brand">
           <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--c-primary)"/><path d="M12 18l3 3 5-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="font-weight:var(--fw-bold);font-size:var(--text-sm);color:var(--c-text)">Mes Aides</span>
+          <span class="site-footer__name">Mes Aides</span>
         </div>
-        <p style="font-size:var(--text-xs);color:var(--c-text-subtle);max-width:360px;line-height:var(--lh-relaxed)" data-i18n="footer.desc">
+        <p class="site-footer__desc" data-i18n="footer.desc">
           Service independant d'information sur les aides sociales. Non affilie au gouvernement.
         </p>
-        <p style="font-size:var(--text-xs);color:var(--c-text-subtle);margin-top:var(--sp-2)" data-i18n="footer.baremes">
+        <p class="site-footer__meta" data-i18n="footer.baremes">
           Baremes mis a jour depuis data.gouv.fr
         </p>
       </div>
 
-      <nav aria-label="Liens du pied de page" style="display:flex;flex-direction:column;gap:var(--sp-2);align-items:flex-end">
-        <a href="/simulateur.html" style="font-size:var(--text-sm);color:var(--c-text-muted)" data-i18n="nav.simulator">Simulateur</a>
-        <a href="/aides.html" style="font-size:var(--text-sm);color:var(--c-text-muted)" data-i18n="nav.aids">Toutes les aides</a>
-        <a href="/guides.html" style="font-size:var(--text-sm);color:var(--c-text-muted)" data-i18n="nav.guides">Guides</a>
-        <a href="/confidentialite.html" style="font-size:var(--text-sm);color:var(--c-text-muted)">Confidentialite</a>
+      <nav aria-label="Liens du pied de page" class="site-footer__nav">
+        <a href="/simulateur.html" data-i18n="nav.simulator">Simulateur</a>
+        <a href="/aides.html" data-i18n="nav.aids">Toutes les aides</a>
+        <a href="/guides.html" data-i18n="nav.guides">Guides</a>
+        <a href="/confidentialite.html">Confidentialite</a>
       </nav>
 
     </div>
