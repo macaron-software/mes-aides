@@ -8,7 +8,9 @@
     "simulator": "Simulateur",
     "aids": "Aides",
     "guides": "Guides",
-    "cta": "Tester mon eligibilite"
+    "cta": "Tester mon eligibilite",
+    "skip_to_content": "Aller au contenu principal",
+    "test_eligibility": "Tester mon éligibilité"
   },
   "home": {
     "hero_title": "Decouvrez toutes les aides auxquelles vous avez droit",
@@ -128,7 +130,10 @@
     "filter_energie": "Energie",
     "results_heading": "Resultats",
     "result_count": "aides disponibles",
-    "hero_badge": "71 aides referencees"
+    "hero_badge": "71 aides referencees",
+    "filter_santé": "Santé",
+    "filter_énergie": "Énergie",
+    "no_result": "Aucune aide trouvée pour ces critères."
   },
   "guides": {
     "page_title": "Guides pratiques — Mes Aides France",
@@ -157,7 +162,9 @@
     "energie": "energie",
     "handicap": "handicap",
     "jeunes": "jeunes",
-    "retraite": "retraite"
+    "retraite": "retraite",
+    "santé": "Santé",
+    "énergie": "Énergie"
   },
   "common": {
     "yes": "Oui",
@@ -193,7 +200,12 @@
     "contact": "Contact",
     "copyright": "© 2025 Mes Aides — Macaron Software. Tous droits reserves.",
     "disclaimer": "Ce service est indicatif et ne constitue pas un acte administratif officiel.",
-    "legal": "Mentions legales"
+    "legal": "Mentions legales",
+    "prime_activité": "Prime d'activité",
+    "cheque_energie": "Chèque Énergie",
+    "cheque_énergie": "Chèque Énergie",
+    "desc": "Service indépendant d'information sur les aides sociales françaises. Non affilié au gouvernement.",
+    "baremes": "Barèmes mis à jour depuis data.gouv.fr"
   },
   "persona": {
     "parent": {
@@ -245,5 +257,156 @@
   },
   "a11y": {
     "skip_to_content": "Aller au contenu principal"
+  },
+  "breadcrumb": {
+    "home": "Accueil",
+    "aids": "Toutes les aides",
+    "guides": "Guides"
+  },
+  "aid": {
+    "simulate_eligibility": "Tester mon éligibilité",
+    "conditions_title": "Conditions d'éligibilité",
+    "amount_title": "Montants 2026",
+    "steps_title": "Comment faire la démarche",
+    "faq_title": "Questions fréquentes",
+    "cta_title": "Prêt à simuler votre situation ?",
+    "cta_subtitle": "Notre simulateur vérifie 71 aides en quelques minutes, sans inscription.",
+    "cta_btn": "Lancer la simulation",
+    "source_label": "Source officielle",
+    "official_link": "Lien officiel",
+    "rsa": {
+      "page_title": "RSA 2026 — Montant, conditions et démarches | Mes Aides",
+      "name": "RSA",
+      "hero_desc": "Revenu minimum garanti pour les personnes sans emploi ou avec de faibles revenus",
+      "fullname": "Revenu de Solidarité Active",
+      "desc": "Revenu minimum garanti pour les personnes sans emploi"
+    },
+    "apl": {
+      "page_title": "APL 2026 — Aide au logement : montant, conditions | Mes Aides",
+      "name": "APL",
+      "hero_desc": "Aide personnalisée au logement pour alléger votre loyer ou remboursement",
+      "fullname": "Aide Personnalisée au Logement",
+      "desc": "Aide pour alléger votre loyer ou remboursement de prêt immobilier"
+    },
+    "aah": {
+      "page_title": "AAH 2026 — Allocation adulte handicapé : montant, conditions | Mes Aides",
+      "name": "AAH",
+      "hero_desc": "Allocation pour les personnes en situation de handicap avec taux ≥ 80%",
+      "fullname": "Allocation Adulte Handicapé",
+      "desc": "Revenu garanti pour les personnes avec un taux d'incapacité ≥ 80%"
+    },
+    "prime-activite": {
+      "page_title": "Prime d'activité 2026 — Montant, calcul, conditions | Mes Aides",
+      "name": "Prime d'activité",
+      "hero_desc": "Complément de revenu pour les travailleurs à bas salaires",
+      "fullname": "Prime d'activité",
+      "desc": "Complément de revenu mensuel pour les travailleurs à faibles salaires"
+    },
+    "prime-activité": {
+      "name": "Prime d'activité",
+      "fullname": "Prime d'activité",
+      "desc": "Complément de revenu mensuel pour les travailleurs à faibles salaires",
+      "page_title": "Prime d'activité 2026 — Montant, calcul, conditions | Mes Aides",
+      "hero_desc": "Complément de revenu pour les travailleurs à bas salaires"
+    },
+    "cheque-energie": {
+      "page_title": "Chèque Énergie 2026 — Montant, conditions, utilisation | Mes Aides",
+      "name": "Chèque Énergie",
+      "hero_desc": "Aide automatique pour payer vos factures d'énergie ou travaux d'isolation",
+      "fullname": "Chèque Énergie",
+      "alt_amount": "48 € à 277 €/an",
+      "desc": "Aide automatique envoyée par courrier pour payer vos factures d'énergie"
+    },
+    "cheque-énergie": {
+      "name": "Chèque Énergie",
+      "fullname": "Chèque Énergie",
+      "alt_amount": "48 € à 277 €/an",
+      "desc": "Aide automatique envoyée par courrier pour payer vos factures d'énergie",
+      "page_title": "Chèque Énergie 2026 — Montant, conditions, utilisation | Mes Aides",
+      "hero_desc": "Aide automatique pour payer vos factures d'énergie ou travaux d'isolation"
+    },
+    "are": {
+      "page_title": "ARE 2026 — Allocation de retour à l'emploi | Mes Aides",
+      "name": "ARE",
+      "hero_desc": "Indemnisation chômage versée par France Travail après perte involontaire d'emploi"
+    },
+    "css": {
+      "page_title": "Complémentaire Santé Solidaire 2026 — CSS, ex-CMU-C | Mes Aides",
+      "name": "CSS",
+      "fullname": "Complémentaire Santé Solidaire",
+      "desc": "Mutuelle gratuite ou quasi-gratuite pour les foyers à faibles revenus",
+      "hero_desc": "Couverture santé complémentaire gratuite ou quasi-gratuite pour les foyers modestes"
+    },
+    "apa": {
+      "page_title": "APA 2026 — Allocation personnalisée d'autonomie | Mes Aides",
+      "name": "APA",
+      "hero_desc": "Aide pour les personnes de plus de 60 ans en perte d'autonomie (GIR 1 à 4)"
+    },
+    "pch": {
+      "page_title": "PCH 2026 — Prestation de compensation du handicap | Mes Aides",
+      "name": "PCH",
+      "hero_desc": "Aide financière pour compenser les surcoûts liés au handicap avant 60 ans"
+    },
+    "caf-allocations-familiales": {
+      "page_title": "Allocations Familiales 2026 — Montant, conditions CAF | Mes Aides",
+      "name": "Allocations Familiales",
+      "hero_desc": "Aide versée par la CAF dès 2 enfants à charge de moins de 20 ans"
+    },
+    "paje": {
+      "page_title": "PAJE 2026 — Prestation d'accueil du jeune enfant | Mes Aides",
+      "name": "PAJE",
+      "hero_desc": "Aide pour les familles avec enfants de moins de 6 ans (allocation de base, CMG)"
+    },
+    "ma-prime-renov": {
+      "page_title": "MaPrimeRénov' 2026 — Aide rénovation énergétique | Mes Aides",
+      "name": "MaPrimeRénov'",
+      "hero_desc": "Prime pour financer vos travaux de rénovation énergétique, jusqu'à 90% des coûts"
+    },
+    "cej": {
+      "page_title": "CEJ 2026 — Contrat d'engagement jeune | Mes Aides",
+      "name": "CEJ",
+      "hero_desc": "Accompagnement intensif et allocation pour les jeunes de 16 à 25 ans sans emploi"
+    },
+    "bourse-crous": {
+      "page_title": "Bourse CROUS 2026 — Critères, montants, dossier | Mes Aides",
+      "name": "Bourse CROUS",
+      "hero_desc": "Aide financière pour les étudiants sur critères sociaux, de 100€ à 6 335€/an"
+    },
+    "cheque-vacances": {
+      "page_title": "Chèques Vacances ANCV 2026 — Conditions, montants | Mes Aides",
+      "name": "Chèques Vacances",
+      "hero_desc": "Titre de paiement co-financé par l'employeur pour financer vos vacances et loisirs"
+    },
+    "af": {
+      "name": "Allocations Familiales",
+      "fullname": "Allocations Familiales (CAF)",
+      "desc": "Aide versée aux familles avec au moins 2 enfants à charge"
+    },
+    "visale": {
+      "name": "Visale",
+      "fullname": "Visa pour le Logement et l'Emploi",
+      "amount_label": "Garantie locative",
+      "amount_sub": "Caution gratuite",
+      "desc": "Caution gratuite pour les jeunes et les salariés en mobilité professionnelle"
+    },
+    "garantie-jeunes": {
+      "name": "Garantie Jeunes",
+      "fullname": "Garantie Jeunes (intégrée au CEJ)",
+      "desc": "Programme d'accompagnement vers l'emploi pour les jeunes en situation précaire"
+    },
+    "aspa": {
+      "name": "ASPA",
+      "fullname": "Allocation de Solidarité aux Personnes Âgées",
+      "desc": "Minimum vieillesse pour les retraités avec de faibles pensions"
+    }
+  },
+  "plan": {
+    "title": "Plan du site",
+    "desc": "Toutes les pages de Mes Aides — simulateur d'aides sociales 2026, disponible en 45 langues.",
+    "tools": "Outils",
+    "aids": "Fiches aides détaillées",
+    "langs": "45 langues disponibles",
+    "langs_desc": "Le simulateur et toutes les fiches sont disponibles dans ces langues. Cliquez sur une langue pour basculer immédiatement.",
+    "legal": "Informations légales"
   }
 }

@@ -489,7 +489,7 @@
   <script src="../js/theme-init.js"></script>
 </head>
 <body>
-  <a href="#main-content" class="sr-only">Aller au contenu principal</a>
+  <a href="#main-content" class="sr-only" data-i18n="a11y.skip_to_content">Aller au contenu principal</a>
   <header class="site-header" role="banner">
     <div class="page-wrapper">
       <div class="site-header__inner">
@@ -498,10 +498,10 @@
           <span>Mes Aides</span>
         </a>
         <nav class="site-nav" aria-label="Navigation principale">
-          <a href="/simulateur.html" class="nav-link">Simulateur</a>
-          <a href="/aides.html" class="nav-link" aria-current="page">Aides</a>
-          <a href="/guides.html" class="nav-link">Guides</a>
-          <a href="/simulateur.html" class="btn-cta">
+          <a href="/simulateur.html" class="nav-link" data-i18n="nav.simulator">Simulateur</a>
+          <a href="/aides.html" class="nav-link" aria-current="page" data-i18n="nav.aids">Aides</a>
+          <a href="/guides.html" class="nav-link" data-i18n="nav.guides">Guides</a>
+          <a href="/simulateur.html" class="btn-cta" data-i18n="nav.test_eligibility">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             Tester mon éligibilité
           </a>
@@ -535,9 +535,9 @@
   <nav aria-label="Fil d'ariane">
     <div class="page-wrapper">
       <ol class="breadcrumb">
-        <li><a href="/">Accueil</a></li>
+        <li><a href="/" data-i18n="breadcrumb.home">Accueil</a></li>
         <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
-        <li><a href="/aides.html">Aides</a></li>
+        <li><a href="/aides.html" data-i18n="breadcrumb.aids">Aides</a></li>
         <li class="breadcrumb-sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></li>
         <li aria-current="page">Santé</li>
       </ol>
@@ -548,13 +548,13 @@
       <div class="hero__badge" role="img" aria-label="Catégorie : Santé">
         <span>Santé</span>
       </div>
-      <h1 id="hero-title" class="hero__title">Complémentaire Santé Solidaire (CSS)</h1>
-      <p class="hero__desc">La CSS remplace la CMU-C et l'ACS depuis 2019. Elle offre une couverture complémentaire santé gratuite ou à participation réduite pour les personnes à faibles ressources.</p>
+      <h1 id="hero-title" class="hero__title" data-i18n="aid.css.name">Complémentaire Santé Solidaire (CSS)</h1>
+      <p class="hero__desc" data-i18n="aid.css.hero_desc">La CSS remplace la CMU-C et l'ACS depuis 2019. Elle offre une couverture complémentaire santé gratuite ou à participation réduite pour les personnes à faibles ressources.</p>
       <div class="hero__amount-block" role="img" aria-label="Montant : Gratuite ou 1 €/mois">
         <span class="hero__amount-value">Gratuite</span>
         <span class="hero__amount-label">ou 1 €/mois</span>
       </div>
-      <a href="/simulateur.html" class="hero__cta">
+      <a href="/simulateur.html" class="hero__cta" data-i18n="aid.simulate_eligibility">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         Simuler mon éligibilité
       </a>
@@ -567,7 +567,7 @@
           <div class="info-card">
             <h2 class="info-card__title" id="info-conditions-title">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>Conditions d'éligibilité</span>
+              <span data-i18n="aid.conditions_title">Conditions d'éligibilité</span>
             </h2>
             <ul class="criteria-list" aria-label="Conditions d'éligibilité">
               <li><span>Revenus annuels inférieurs à 9 030 € pour 1 personne (plafond CSS gratuite 2026)</span></li>
@@ -579,7 +579,7 @@
           <div class="info-card">
             <h2 class="info-card__title" id="info-amount-title">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <span>Montant</span>
+              <span data-i18n="aid.amount_title">Montant</span>
             </h2>
             <table class="amount-table" aria-label="Montants">
               <thead>
@@ -621,7 +621,7 @@
       <div class="section-header">
         <div class="section-header__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <div>
-          <h2 class="section-header__title" id="démarche-title">Guide de démarche</h2>
+          <h2 class="section-header__title" id="démarche-title"><span data-i18n="aid.steps_title">Guide de démarche</span></h2>
           <p class="section-header__subtitle">4 étapes pour obtenir la CSS</p>
         </div>
       </div>
@@ -662,7 +662,7 @@
       <div class="section-header">
         <div class="section-header__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
         <div>
-          <h2 class="section-header__title" id="faq-title">Questions fréquentes</h2>
+          <h2 class="section-header__title" id="faq-title"><span data-i18n="aid.faq_title">Questions fréquentes</span></h2>
           <p class="section-header__subtitle">Les réponses aux questions les plus posées sur la CSS</p>
         </div>
       </div>
@@ -699,9 +699,9 @@
   </section>
   <section class="cta-section" aria-labelledby="cta-title">
     <div class="page-wrapper">
-      <h2 class="cta-section__title" id="cta-title">Vérifiez votre éligibilité à la CSS</h2>
-      <p class="cta-section__subtitle">Notre simulateur analyse votre situation en 3 minutes et vous indique le montant auquel vous pouvez prétendre.</p>
-      <a href="/simulateur.html" class="cta-section__btn">
+      <h2 class="cta-section__title" id="cta-title" data-i18n="aid.cta_title">Prêt à simuler votre situation ?</h2>
+      <p class="cta-section__subtitle" data-i18n="aid.cta_subtitle">Notre simulateur vérifie 71 aides en quelques minutes, sans inscription.</p>
+      <a href="/simulateur.html" class="cta-section__btn" data-i18n="aid.cta_btn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         Simuler mon éligibilité gratuitement
       </a>
@@ -712,44 +712,44 @@
     <div class="page-wrapper">
       <div class="footer-grid">
         <div class="footer-col">
-          <p class="footer-col__title">Simulateur</p>
+          <p class="footer-col__title" data-i18n="footer.col_simulator">Simulateur</p>
           <ul>
-            <li><a href="/simulateur.html">Démarrer la simulation</a></li>
-            <li><a href="/simulateur.html#comment">Comment ça fonctionne</a></li>
-            <li><a href="/simulateur.html#faq">Questions fréquentes</a></li>
+            <li><a href="/simulateur.html" data-i18n="footer.start_simulation">Démarrer la simulation</a></li>
+            <li><a href="/simulateur.html#comment" data-i18n="footer.how_it_works">Comment ça fonctionne</a></li>
+            <li><a href="/simulateur.html#faq" data-i18n="footer.faq">Questions fréquentes</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <p class="footer-col__title">Aides populaires</p>
+          <p class="footer-col__title" data-i18n="footer.col_popular">Aides populaires</p>
           <ul>
-            <li><a href="/aides/rsa.html">RSA</a></li>
-            <li><a href="/aides/apl.html">APL</a></li>
-            <li><a href="/aides/prime-activité.html">Prime d'activité</a></li>
-            <li><a href="/aides/aah.html">AAH</a></li>
-            <li><a href="/aides/cheque-énergie.html">Chèque Énergie</a></li>
+            <li><a href="/aides/rsa.html" data-i18n="aid.rsa.name">RSA</a></li>
+            <li><a href="/aides/apl.html" data-i18n="aid.apl.name">APL</a></li>
+            <li><a href="/aides/prime-activité.html" data-i18n="footer.prime_activité">Prime d'activité</a></li>
+            <li><a href="/aides/aah.html" data-i18n="aid.aah.name">AAH</a></li>
+            <li><a href="/aides/cheque-énergie.html" data-i18n="footer.cheque_énergie">Chèque Énergie</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <p class="footer-col__title">Guides</p>
+          <p class="footer-col__title" data-i18n="footer.col_guides">Guides</p>
           <ul>
-            <li><a href="/guides.html">Tous les guides</a></li>
-            <li><a href="/guides/droits-sociaux.html">Comprendre vos droits</a></li>
-            <li><a href="/guides/dossier-caf.html">Constituer un dossier CAF</a></li>
+            <li><a href="/guides.html" data-i18n="footer.all_guides">Tous les guides</a></li>
+            <li><a href="/guides/droits-sociaux.html" data-i18n="footer.guide_droits">Comprendre vos droits</a></li>
+            <li><a href="/guides/dossier-caf.html" data-i18n="footer.guide_caf">Constituer un dossier CAF</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <p class="footer-col__title">Informations légales</p>
+          <p class="footer-col__title" data-i18n="footer.col_legal">Informations légales</p>
           <ul>
-            <li><a href="/mentions-legales.html">Mentions légales</a></li>
-            <li><a href="/politique-confidentialite.html">Politique de confidentialité</a></li>
-            <li><a href="/accessibilite.html">Accessibilité</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/mentions-legales.html" data-i18n="footer.legal_notice">Mentions légales</a></li>
+            <li><a href="/politique-confidentialite.html" data-i18n="footer.privacy">Politique de confidentialité</a></li>
+            <li><a href="/accessibilite.html" data-i18n="footer.accessibility">Accessibilité</a></li>
+            <li><a href="/contact.html" data-i18n="footer.contact">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Mes Aides — Macaron Software. Tous droits réservés.</p>
-        <p>Ce service est indicatif et ne constitue pas un acte administratif officiel.</p>
+        <p data-i18n="footer.copyright">&copy; 2025 Mes Aides — Macaron Software. Tous droits réservés.</p>
+        <p data-i18n="footer.disclaimer">Ce service est indicatif et ne constitue pas un acte administratif officiel.</p>
       </div>
     </div>
   </footer>
