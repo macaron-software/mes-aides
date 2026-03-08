@@ -689,55 +689,75 @@
       const revenu = parseInt(document.getElementById('revenu').value);
       const loyer = parseInt(document.getElementById('loyer').value);
       const anciennete = parseInt(document.getElementById('anciennete').value);
+      const nbEnfants = parseInt(answers.nb_enfants) || 0;
+      const tauxIncapacite = parseInt(answers.taux_incapacite) || 0;
+
+      // Map frontend statut_emploi values to backend EmploiStatus enum
+      const emploiMap = {
+        salarie_cdi: 'salarie', salarie_cdd: 'salarie',
+        independant: 'independant', chomeur: 'chomeur',
+        etudiant: 'etudiant', retraite: 'retraite',
+        sans_emploi: 'sans_emploi', apprenti: 'alternant_apprentissage'
+      };
+      const emploi = emploiMap[answers.statut_emploi] || answers.statut_emploi || 'chomeur';
+
+      // Map frontend logement values to backend LogementStatus enum
+      const logementMap = {
+        locataire: 'locataire', proprietaire: 'proprietaire',
+        heberge: 'heberge', sans_domicile: 'sans_domicile', foyer: 'foyer'
+      };
+      const logement = logementMap[answers.statut_logement] || 'locataire';
 
       return {
         age,
-        revenu_mensuel: revenu,
+        revenus_nets_mensuels: revenu,
+        revenus_conjoint: 0,
         loyer_mensuel: loyer,
         anciennete_emploi_mois: anciennete,
+        heures_semaine: emploi === 'salarie' ? 35 : 0,
         situation_familiale: answers.situation_familiale || 'celibataire',
-        nb_enfants: parseInt(answers.nb_enfants) || 0,
-        handicap: answers.handicap === 'true',
-        statut_logement: answers.statut_logement || 'locataire',
+        nb_enfants: nbEnfants,
+        ages_enfants: Array.from({ length: nbEnfants }, () => 5),
+        logement,
         zone_apl: parseInt(answers.zone_apl) || 3,
-        apl_actuelle: answers.apl_actuelle === 'true',
+        patrimoine_estime: 0,
+        aides_percues: [],
         ald: answers.ald === 'true',
-        rqth: answers.rqth === 'true',
-        taux_incapacite: parseInt(answers.taux_incapacite) || 0,
+        rqth: answers.rqth === 'true' || tauxIncapacite >= 50,
+        invalidite: tauxIncapacite >= 80,
+        dependance: false,
+        gir: null,
         cmu_c: answers.cmu_c === 'true',
-        statut_emploi: answers.statut_emploi || 'chomeur',
-        allocations_caf: answers.allocations_caf || 'false'
+        emploi,
+        primo_accedant: false,
+        etudiant_boursier: answers.allocations_caf === 'true'
       };
     }
 
     function generateDemoResults(p) {
       const aides = [];
+      const rev = p.revenus_nets_mensuels || 0;
 
-      // RSA
-      if (p.statut_emploi !== 'salarie_cdi' && p.revenu_mensuel < 1000) {
-        aides.push({ id: 'rsa', nom: 'Revenu de Solidarite Active (RSA)', montant_mensuel: Math.max(0, 635 - p.revenu_mensuel * 0.68), categorie: 'revenus', eligible: true, nb_etapes: 5 });
+      if (p.emploi !== 'salarie' && p.emploi !== 'retraite' && rev < 1000) {
+        aides.push({ id: 'rsa', nom: 'Revenu de Solidarite Active (RSA)', montant_mensuel: Math.max(0, 635 - rev * 0.68), categorie: 'revenus', eligible: true, nb_etapes: 5 });
       }
 
-      // APL
-      if (p.statut_logement === 'locataire' && p.loyer_mensuel > 0) {
+      if (p.logement === 'locataire' && p.loyer_mensuel > 0) {
         const bases = [380, 290, 250];
-        const base = bases[p.zone_apl - 1] || 250;
-        const montant = Math.max(0, base - p.revenu_mensuel * 0.2);
+        const base = bases[(p.zone_apl || 3) - 1] || 250;
+        const montant = Math.max(0, base - rev * 0.2);
         aides.push({ id: 'apl', nom: 'Aide Personnalisee au Logement (APL)', montant_mensuel: montant, categorie: 'logement', eligible: true, nb_etapes: 4 });
       }
 
-      // Prime activite
-      if ((p.statut_emploi === 'salarie_cdi' || p.statut_emploi === 'salarie_cdd') && p.revenu_mensuel < 1800) {
-        aides.push({ id: 'prime-activite', nom: 'Prime d\'Activite', montant_mensuel: Math.max(0, 300 - (p.revenu_mensuel - 1000) * 0.38), categorie: 'revenus', eligible: true, nb_etapes: 3 });
+      if (p.emploi === 'salarie' && rev < 1800) {
+        aides.push({ id: 'prime-activite', nom: 'Prime d\'Activite', montant_mensuel: Math.max(0, 300 - (rev - 1000) * 0.38), categorie: 'revenus', eligible: true, nb_etapes: 3 });
       }
 
-      // AAH
-      if (p.taux_incapacite >= 80 && p.revenu_mensuel < 1016) {
+      if (p.invalidite && rev < 1016) {
         aides.push({ id: 'aah', nom: 'Allocation aux Adultes Handicapes (AAH)', montant_mensuel: 1016.85, categorie: 'handicap', eligible: true, nb_etapes: 6 });
       }
 
-      // Cheque energie
-      if (p.revenu_mensuel < 2500) {
+      if (rev < 2500) {
         aides.push({ id: 'cheque-energie', nom: 'Cheque Energie', montant_mensuel: Math.round(200 / 12), categorie: 'energie', eligible: true, nb_etapes: 1 });
       }
 

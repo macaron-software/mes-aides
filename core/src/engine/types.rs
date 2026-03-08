@@ -5,50 +5,73 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 pub struct Situation {
     // ── Identité ─────────────────────────────────────────────────────────────
+    #[serde(default)]
     pub age: u8,
+    #[serde(default)]
     pub situation_familiale: FamilleStatus,
 
     // ── Enfants ──────────────────────────────────────────────────────────────
+    #[serde(default)]
     pub nb_enfants: u8,
     /// Âges des enfants (pour aides spécifiques jeunes enfants, bourses…)
+    #[serde(default)]
     pub ages_enfants: Vec<u8>,
 
     // ── Logement ─────────────────────────────────────────────────────────────
+    #[serde(default)]
     pub logement: LogementStatus,
     /// Loyer mensuel charges comprises (0 si propriétaire / hébergé)
+    #[serde(default)]
     pub loyer_mensuel: f64,
     /// Code postal (pour zonage APL)
+    #[serde(default)]
     pub code_postal: Option<String>,
     /// Zone géographique APL : 1 = Île-de-France, 2 = grandes villes, 3 = reste
+    #[serde(default)]
     pub zone_apl: Option<u8>,
 
     // ── Revenus ──────────────────────────────────────────────────────────────
     /// Revenus nets mensuels du foyer (tous actifs confondus)
+    #[serde(default, alias = "revenu_mensuel")]
     pub revenus_nets_mensuels: f64,
     /// Revenus du conjoint (si couple)
+    #[serde(default)]
     pub revenus_conjoint: f64,
     /// Aides déjà perçues (pour éviter double-compte)
+    #[serde(default, alias = "aides_percues")]
     pub aides_perçues: Vec<String>,
     /// Patrimoine estimé (pour certains plafonds)
+    #[serde(default)]
     pub patrimoine_estime: f64,
 
     // ── Sante ─────────────────────────────────────────────────────────────────
-    pub ald: bool,          // Affection longue duree
-    pub rqth: bool,         // Reconnu travailleur handicape
+    #[serde(default)]
+    pub ald: bool,
+    #[serde(default)]
+    pub rqth: bool,
+    #[serde(default)]
     pub invalidite: bool,
-    pub dependance: bool,   // GIR 1-4
-    pub gir: Option<u8>,    // Grade GIR (1-6)
-    pub cmu_c: bool,        // Beneficiaire CSS/CMU-C actuel
+    #[serde(default)]
+    pub dependance: bool,
+    #[serde(default)]
+    pub gir: Option<u8>,
+    #[serde(default)]
+    pub cmu_c: bool,
 
     // ── Emploi ───────────────────────────────────────────────────────────────
+    #[serde(default)]
     pub emploi: EmploiStatus,
     /// Ancienneté emploi actuel (en mois)
+    #[serde(default)]
     pub anciennete_emploi_mois: u32,
     /// Heures travaillées par semaine (pour prime d'activité)
+    #[serde(default)]
     pub heures_semaine: f64,
 
     // ── Flags spéciaux ───────────────────────────────────────────────────────
-    pub primo_accedant: bool,   // Accession à la propriété
+    #[serde(default)]
+    pub primo_accedant: bool,
+    #[serde(default)]
     pub etudiant_boursier: bool,
 }
 
