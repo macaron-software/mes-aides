@@ -1,13 +1,9 @@
-mod auth;
-mod db;
-mod middleware;
-
 use axum::{
     body::Bytes,
-    extract::{Json, Path, State},
+    extract::{Json, State},
     http::{header, StatusCode},
     response::{IntoResponse, Response},
-    routing::{delete, get, post},
+    routing::{get, post},
     Router,
 };
 use serde::{Deserialize, Serialize};
@@ -20,17 +16,12 @@ use std::time::{Duration, Instant};
 use printpdf::*;
 use std::io::BufWriter;
 
-use middleware::{RequireAdmin, RequireAuth};
-use db::DbPool;
-
 // ── State ─────────────────────────────────────────────────────────────────────
 
 #[derive(Clone)]
-pub struct AppState {
+pub(crate) struct AppState {
     baremes_cache: Arc<RwLock<BaremesCache>>,
     http: reqwest::Client,
-    pub db: DbPool,
-    pub jwt_secret: Vec<u8>,
 }
 
 struct BaremesCache {
@@ -214,13 +205,10 @@ async fn get_baremes(State(state): State<AppState>) -> impl IntoResponse {
     })))
 }
 
-// ── PDF (requires auth) ───────────────────────────────────────────────────────
+// ── PDF Report ────────────────────────────────────────────────────────────────
 
-/// POST /api/pdf — generate PDF report (requires authenticated user)
-async fn generate_pdf(
-    _caller: RequireAuth,
-    Json(situation): Json<Situation>,
-) -> Response {
+/// POST /api/pdf — generate PDF report from simulation result
+async fn generate_pdf(Json(situation): Json<Situation>) -> Response {
     let sim = Simulator::new();
     let result = sim.simulate(&situation);
 
@@ -312,103 +300,10 @@ fn build_pdf(result: &aides_core::engine::SimulationResult) -> anyhow::Result<Ve
     Ok(buf.into_inner()?)
 }
 
-// ── Admin handlers ────────────────────────────────────────────────────────────
-
-async fn admin_list_users(
-    _caller: RequireAdmin,
-    State(state): State<AppState>,
-) -> impl IntoResponse {
-    match db::list_users(&state.db) {
-        Ok(users) => (
-            StatusCode::OK,
-            Json(
-                users
-                    .iter()
-                    .map(|u| {
-                        serde_json::json!({
-                            "id": u.id,
-                            "email": u.email,
-                            "role": u.role,
-                            "active": u.active,
-                            "created_at": u.created_at
-                        })
-                    })
-                    .collect::<Vec<_>>(),
-            ),
-        )
-            .into_response(),
-        Err(e) => (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(serde_json::json!({"error": e.to_string()})),
-        )
-            .into_response(),
-    }
-}
-
-async fn admin_delete_user(
-    _caller: RequireAdmin,
-    State(state): State<AppState>,
-    Path(id): Path<String>,
-) -> impl IntoResponse {
-    match db::delete_user(&state.db, &id) {
-        Ok(true) => (StatusCode::NO_CONTENT, "").into_response(),
-        Ok(false) => (
-            StatusCode::NOT_FOUND,
-            Json(serde_json::json!({"error": "user not found"})),
-        )
-            .into_response(),
-        Err(e) => (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(serde_json::json!({"error": e.to_string()})),
-        )
-            .into_response(),
-    }
-}
-
-#[derive(Debug, Deserialize)]
-struct SetActiveRequest {
-    active: bool,
-}
-
-async fn admin_set_user_active(
-    _caller: RequireAdmin,
-    State(state): State<AppState>,
-    Path(id): Path<String>,
-    Json(req): Json<SetActiveRequest>,
-) -> impl IntoResponse {
-    match db::set_user_active(&state.db, &id, req.active) {
-        Ok(true) => (StatusCode::OK, Json(serde_json::json!({"ok": true}))).into_response(),
-        Ok(false) => (
-            StatusCode::NOT_FOUND,
-            Json(serde_json::json!({"error": "user not found"})),
-        )
-            .into_response(),
-        Err(e) => (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(serde_json::json!({"error": e.to_string()})),
-        )
-            .into_response(),
-    }
-}
-
-async fn admin_stats(
-    _caller: RequireAdmin,
-    State(state): State<AppState>,
-) -> impl IntoResponse {
-    let total_users = db::user_count(&state.db).unwrap_or(0);
-    let _ = db::purge_expired_tokens(&state.db);
-    (
-        StatusCode::OK,
-        Json(serde_json::json!({
-            "total_users": total_users,
-            "version": env!("CARGO_PKG_VERSION"),
-        })),
-    )
-}
-
 // ── Router ────────────────────────────────────────────────────────────────────
 
 pub fn app(state: AppState) -> Router {
+    // CORS: allow all origins in dev; set CORS_ORIGIN env var in production
     let origin = std::env::var("CORS_ORIGIN").ok()
         .and_then(|o| o.parse::<axum::http::HeaderValue>().ok());
 
@@ -419,23 +314,11 @@ pub fn app(state: AppState) -> Router {
     };
 
     Router::new()
-        // ── Public ──────────────────────────────────────────────────────
-        .route("/api/health",           get(health))
-        .route("/api/simulate",         post(simulate))
-        .route("/api/aides",            get(list_aides))
-        .route("/api/datagouv/baremes", get(get_baremes))
-        // ── Auth ─────────────────────────────────────────────────────────
-        .route("/api/auth/login",       post(auth::login))
-        .route("/api/auth/register",    post(auth::register))
-        .route("/api/auth/refresh",     post(auth::refresh))
-        .route("/api/auth/logout",      post(auth::logout))
-        // ── User (requires valid JWT) ─────────────────────────────────────
-        .route("/api/pdf",              post(generate_pdf))
-        // ── Admin (requires admin role) ───────────────────────────────────
-        .route("/api/admin/users",             get(admin_list_users))
-        .route("/api/admin/users/:id",         delete(admin_delete_user))
-        .route("/api/admin/users/:id/active",  post(admin_set_user_active))
-        .route("/api/admin/stats",             get(admin_stats))
+        .route("/api/health",            get(health))
+        .route("/api/simulate",          post(simulate))
+        .route("/api/aides",             get(list_aides))
+        .route("/api/datagouv/baremes",  get(get_baremes))
+        .route("/api/pdf",               post(generate_pdf))
         .layer(cors)
         .layer(CompressionLayer::new())
         .with_state(state)
@@ -443,31 +326,6 @@ pub fn app(state: AppState) -> Router {
 
 #[tokio::main]
 async fn main() {
-    let jwt_secret = std::env::var("JWT_SECRET")
-        .unwrap_or_else(|_| {
-            eprintln!(
-                "WARNING: JWT_SECRET not set — using insecure default. Set JWT_SECRET in production!"
-            );
-            "change-me-in-production-use-a-long-random-secret".to_string()
-        })
-        .into_bytes();
-
-    let db_path = std::env::var("DB_PATH").unwrap_or_else(|_| "aides.db".to_string());
-    let db = db::init_db(&db_path).expect("failed to init sqlite db");
-
-    // Bootstrap: create first admin from env vars if no users exist
-    if db::user_count(&db).unwrap_or(0) == 0 {
-        let email = std::env::var("ADMIN_EMAIL").unwrap_or_else(|_| "admin@localhost".to_string());
-        let password = std::env::var("ADMIN_PASSWORD").unwrap_or_else(|_| {
-            eprintln!("WARNING: ADMIN_PASSWORD not set — using 'changeme123'. Change immediately!");
-            "changeme123".to_string()
-        });
-        match db::create_user(&db, &email, &password, "admin") {
-            Ok(u) => eprintln!("Bootstrap: admin created — id={} email={}", u.id, u.email),
-            Err(e) => eprintln!("Bootstrap: failed to create admin: {e}"),
-        }
-    }
-
     let state = AppState {
         baremes_cache: Arc::new(RwLock::new(BaremesCache {
             data: None,
@@ -478,8 +336,6 @@ async fn main() {
             .user_agent("aides-macaron/0.1")
             .build()
             .unwrap(),
-        db,
-        jwt_secret,
     };
 
     let port = std::env::var("PORT").unwrap_or_else(|_| "3001".to_string());
