@@ -1,30 +1,36 @@
 // UniFFI interface definition for aides-core
-// Generates Swift + Kotlin bindings via:
-//   uniffi-bindgen generate --library target/.../libaides_core.dylib --language swift --out-dir ios/Sources/MesAidesCore
-//   uniffi-bindgen generate --library target/.../libaides_core.so   --language kotlin --out-dir android/app/src/main/kotlin/uniffi
 
 namespace aides_core {
   SimulationResult simulate(Situation situation);
   sequence<AideInfo> list_aides();
+  string translate(string lang, string key);
+  sequence<string> supported_langs();
 };
 
 // ── Input ────────────────────────────────────────────────────────────────────
 
 dictionary Situation {
-  u32 age;
-  boolean en_couple;
-  u32 nb_enfants;
-  boolean handicap;
-  boolean locataire;
+  u8 age;
+  string situation_familiale;
+  u8 nb_enfants;
+  sequence<u8> ages_enfants;
+  string logement;
   double loyer_mensuel;
-  u32 zone;
-  double salaire_net_mensuel;
-  double autres_revenus;
-  double patrimoine;
+  string? code_postal;
+  u8? zone_apl;
+  double revenus_nets_mensuels;
+  double revenus_conjoint;
+  double patrimoine_estime;
   boolean ald;
+  boolean rqth;
+  boolean invalidite;
   boolean dependance;
+  u8? gir;
   boolean cmu_c;
-  string emploi_status_raw;
+  string emploi;
+  u32 anciennete_emploi_mois;
+  double heures_semaine;
+  boolean primo_accedant;
   boolean etudiant_boursier;
 };
 

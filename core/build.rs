@@ -1,6 +1,4 @@
 fn main() {
-    #[cfg(feature = "ffi")]
-    {
-        uniffi::generate_scaffolding("uniffi/aides.udl").unwrap();
-    }
+    // UniFFI bindings are fully proc-macro based (#[derive(uniffi::Record)], #[uniffi::export])
+    // No UDL scaffolding needed.
 }

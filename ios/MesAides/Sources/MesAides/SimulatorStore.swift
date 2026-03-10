@@ -47,19 +47,26 @@ struct SimulationResultDTO: Codable {
 
 struct SituationForm: Codable {
     var age: Int = 30
-    var en_couple: Bool = false
+    var situation_familiale: String = "celibataire"
     var nb_enfants: Int = 0
-    var handicap: Bool = false
-    var locataire: Bool = true
+    var ages_enfants: [Int] = []
+    var logement: String = "locataire"
     var loyer_mensuel: Double = 700
-    var zone: Int = 2
-    var salaire_net_mensuel: Double = 0
-    var autres_revenus: Double = 0
-    var patrimoine: Double = 0
+    var code_postal: String? = nil
+    var zone_apl: Int? = 2
+    var revenus_nets_mensuels: Double = 0
+    var revenus_conjoint: Double = 0
+    var patrimoine_estime: Double = 0
     var ald: Bool = false
+    var rqth: Bool = false
+    var invalidite: Bool = false
     var dependance: Bool = false
+    var gir: Int? = nil
     var cmu_c: Bool = false
-    var emploi_status_raw: String = "SansSituation"
+    var emploi: String = "sans_situation"
+    var anciennete_emploi_mois: Int = 0
+    var heures_semaine: Double = 0
+    var primo_accedant: Bool = false
     var etudiant_boursier: Bool = false
 }
 
@@ -72,9 +79,16 @@ final class SimulatorStore: ObservableObject {
     @Published var result: SimulationResultDTO?
     @Published var isLoading = false
 
-    /// Calcul 100% local — aucune donnée transmise, aucune donnée stockée
+    init() {
+        if let saved = SecureStore.load() {
+            situation = saved
+        }
+    }
+
+    /// Calcul 100% local via Rust core -- 28 aides, baremes 2026, 0 reseau
     func simulate() {
         isLoading = true
+        try? SecureStore.save(situation)
         result = LocalEngine.run(situation)
         isLoading = false
     }

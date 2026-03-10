@@ -11,3 +11,6 @@ pub mod wasm_bindings;
 
 #[cfg(feature = "ffi")]
 pub mod ffi;
+
+#[cfg(feature = "ffi")]
+uniffi::setup_scaffolding!();

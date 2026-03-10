@@ -2,25 +2,37 @@ package com.macaronsoftware.mesaides
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import uniffi.aides_core.Situation as FfiSituation
+import uniffi.aides_core.simulate as ffiSimulate
+import uniffi.aides_core.translate as ffiTranslate
+import uniffi.aides_core.supportedLangs as ffiSupportedLangs
+import uniffi.aides_core.listAides as ffiListAides
 
-// Modèles
+// Modeles
 
 data class SituationModel(
     val age: Int = 30,
-    val en_couple: Boolean = false,
-    val nb_enfants: Int = 0,
-    val handicap: Boolean = false,
-    val locataire: Boolean = true,
-    val loyer_mensuel: Double = 700.0,
-    val zone: Int = 2,
-    val salaire_net_mensuel: Double = 0.0,
-    val autres_revenus: Double = 0.0,
-    val patrimoine: Double = 0.0,
+    val situationFamiliale: String = "celibataire",
+    val nbEnfants: Int = 0,
+    val agesEnfants: List<Int> = emptyList(),
+    val logement: String = "locataire",
+    val loyerMensuel: Double = 700.0,
+    val codePostal: String? = null,
+    val zoneApl: Int? = 2,
+    val revenusNetsMensuels: Double = 0.0,
+    val revenusConjoint: Double = 0.0,
+    val patrimoineEstime: Double = 0.0,
     val ald: Boolean = false,
+    val rqth: Boolean = false,
+    val invalidite: Boolean = false,
     val dependance: Boolean = false,
-    val cmu_c: Boolean = false,
-    val emploi_status_raw: String = "SansSituation",
-    val etudiant_boursier: Boolean = false,
+    val gir: Int? = null,
+    val cmuC: Boolean = false,
+    val emploi: String = "sans_situation",
+    val ancienneteEmploiMois: Int = 0,
+    val heuresSemaine: Double = 0.0,
+    val primoAccedant: Boolean = false,
+    val etudiantBoursier: Boolean = false,
 )
 
 data class EtapeModel(val titre: String, val description: String, val lien: String)
@@ -40,92 +52,77 @@ data class SimulationResultModel(
     val totalMensuel: Double,
 )
 
-// Moteur de calcul local — barèmes 2026
-// Aucun réseau, aucun stockage, aucune donnée transmise.
+// Pont vers le moteur Rust via UniFFI JNI.
+// 0 reseau, 28 aides, baremes 2026 complets.
 
 object LocalEngine {
 
     fun run(s: SituationModel): SimulationResultModel {
-        val rev = s.salaire_net_mensuel + s.autres_revenus
-        val aides = mutableListOf<AideResultModel>()
-
-        // RSA
-        if (s.emploi_status_raw != "Salarie" && s.emploi_status_raw != "Retraite" && rev < 1102) {
-            val base = if (s.en_couple) 1041.0 else if (s.nb_enfants > 0) 777.0 else 635.71
-            val montant = maxOf(0.0, base - rev * 0.68)
-            aides += aide("rsa", "Revenu de Solidarité Active (RSA)", montant, listOf(
-                "Rendez-vous CAF", "Dossier RSA", "Contrat engagement", "Versement mensuel", "Actualisation trimestrielle"))
-        }
-
-        // APL
-        if (s.locataire && s.loyer_mensuel > 100) {
-            val plafonds = listOf(380.0, 290.0, 250.0)
-            val base = plafonds.getOrElse(s.zone - 1) { 250.0 }
-            val montant = maxOf(0.0, base - rev * 0.2)
-            if (montant > 15)
-                aides += aide("apl", "Aide Personnalisée au Logement (APL)", montant, listOf(
-                    "Simulation CAF", "Dossier en ligne", "Vérification contrat bail", "Versement mensuel"))
-        }
-
-        // Prime d'activité
-        if (s.emploi_status_raw == "Salarie" && rev > 0 && rev < 1900) {
-            val montant = maxOf(0.0, 354.0 - maxOf(0.0, rev - 1063) * 0.38)
-            aides += aide("prime-activite", "Prime d'Activité", montant, listOf(
-                "Simulation CAF", "Dossier en ligne", "Actualisation mensuelle"))
-        }
-
-        // AAH
-        if (s.handicap && rev < 1016) {
-            val montant = if (s.en_couple) maxOf(0.0, 1016.85 - rev) else 1016.85
-            aides += aide("aah", "Allocation aux Adultes Handicapés (AAH)", montant, listOf(
-                "Dossier MDPH", "Reconnaissance handicap", "Demande CAF", "Commission CDAPH", "Notification", "Versement"))
-        }
-
-        // Chèque énergie
-        if (rev < 2500) {
-            val montant = if (rev < 1000) 277.0 / 12 else 200.0 / 12
-            aides += aide("cheque-energie", "Chèque Énergie", montant, listOf(
-                "Attribution automatique (courrier)"))
-        }
-
-        // CSS (ex-CMU-C)
-        if (!s.cmu_c && rev < 900) {
-            aides += aide("css", "Complémentaire Santé Solidaire (CSS)", 0.0, listOf(
-                "Dossier Ameli", "Validation revenus", "Carte vitale mise à jour"))
-        }
-
-        // ALS (si pas d'APL)
-        if (s.locataire && aides.none { it.aideId == "apl" } && rev < 1200) {
-            val montant = maxOf(0.0, 200.0 - rev * 0.1)
-            aides += aide("als", "Allocation de Logement Social (ALS)", montant, listOf(
-                "Dossier CAF", "Justificatif bail", "Versement mensuel"))
-        }
-
-        val sorted = aides.sortedByDescending { it.montantMensuel ?: 0.0 }
-        val total  = sorted.mapNotNull { it.montantMensuel }.sum()
-        return SimulationResultModel(aidesEligibles = sorted, totalMensuel = total)
-    }
-
-    private fun aide(id: String, nom: String, montant: Double, steps: List<String>) =
-        AideResultModel(
-            aideId = id,
-            nom = nom,
-            eligible = true,
-            montantMensuel = if (montant > 0) montant else null,
-            raisons = emptyList(),
-            etapes = steps.mapIndexed { i, t -> EtapeModel("Étape ${i + 1}", t, "") },
-            lienOfficiel = "https://www.service-public.fr"
+        val ffiSit = FfiSituation(
+            age = s.age.toUByte(),
+            situationFamiliale = s.situationFamiliale,
+            nbEnfants = s.nbEnfants.toUByte(),
+            agesEnfants = s.agesEnfants.map { it.toUByte() },
+            logement = s.logement,
+            loyerMensuel = s.loyerMensuel,
+            codePostal = s.codePostal,
+            zoneApl = s.zoneApl?.toUByte(),
+            revenusNetsMensuels = s.revenusNetsMensuels,
+            revenusConjoint = s.revenusConjoint,
+            patrimoineEstime = s.patrimoineEstime,
+            ald = s.ald,
+            rqth = s.rqth,
+            invalidite = s.invalidite,
+            dependance = s.dependance,
+            gir = s.gir?.toUByte(),
+            cmuC = s.cmuC,
+            emploi = s.emploi,
+            ancienneteEmploiMois = s.ancienneteEmploiMois.toUInt(),
+            heureSemaine = s.heuresSemaine,
+            primoAccedant = s.primoAccedant,
+            etudiantBoursier = s.etudiantBoursier,
         )
+
+        val ffiResult = ffiSimulate(ffiSit)
+
+        val aides = ffiResult.aidesEligibles.map { a ->
+            AideResultModel(
+                aideId = a.aideId,
+                nom = a.aideId,
+                eligible = a.eligible,
+                montantMensuel = a.montantMensuel,
+                raisons = a.raisons,
+                etapes = (0 until a.nbEtapes.toInt()).map { i ->
+                    EtapeModel("Etape ${i + 1}", "", "")
+                },
+                lienOfficiel = "https://www.service-public.fr"
+            )
+        }
+
+        return SimulationResultModel(
+            aidesEligibles = aides,
+            totalMensuel = ffiResult.totalMensuel
+        )
+    }
 }
 
-// ViewModel — calcul local uniquement, aucun réseau
+// Locale manager backed by Rust core (50 embedded locales, 0 network)
+
+object LocaleManager {
+    var currentLocale: String = "fr"
+
+    fun t(key: String): String = ffiTranslate(currentLocale, key)
+    fun t(key: String, lang: String): String = ffiTranslate(lang, key)
+    fun availableLocales(): List<String> = ffiSupportedLangs()
+}
+
+// ViewModel -- calcul local via Rust core, 0 reseau
 
 class SimulatorViewModel : ViewModel() {
 
     val situation = MutableLiveData(SituationModel())
     val result    = MutableLiveData<SimulationResultModel?>()
 
-    /** Calcul instantané dans le thread courant — pas d'IO, pas de réseau */
     fun simulate() {
         result.value = LocalEngine.run(situation.value ?: SituationModel())
     }

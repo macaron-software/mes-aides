@@ -1,35 +1,34 @@
 /// FFI entry points for UniFFI (iOS Swift / Android Kotlin)
-/// Build commands:
-///   iOS:     cargo build --release --target aarch64-apple-ios
-///   Android: cargo build --release --target aarch64-linux-android
-///
-/// Then generate bindings:
-///   uniffi-bindgen generate --library target/aarch64-apple-ios/release/libaides_core.a \
-///     --language swift --out-dir ../ios/Sources/MesAidesCore/
-///   uniffi-bindgen generate --library target/aarch64-linux-android/release/libaides_core.so \
-///     --language kotlin --out-dir ../android/app/src/main/kotlin/uniffi/
 
-use crate::engine::{Simulator, Situation as CoreSituation};
-use serde::Deserialize;
+use crate::engine::Simulator;
+use crate::engine::Situation as CoreSituation;
+use crate::i18n::I18n;
 
 // ── FFI-compatible flat structs ───────────────────────────────────────────────
 
 #[derive(Debug, Clone, uniffi::Record)]
 pub struct FfiSituation {
-    pub age: u32,
-    pub en_couple: bool,
-    pub nb_enfants: u32,
-    pub handicap: bool,
-    pub locataire: bool,
+    pub age: u8,
+    pub situation_familiale: String,   // "celibataire" | "couple" | "monoparental_mere" | ...
+    pub nb_enfants: u8,
+    pub ages_enfants: Vec<u8>,
+    pub logement: String,              // "locataire" | "proprietaire" | "heberge" | ...
     pub loyer_mensuel: f64,
-    pub zone: u32,
-    pub salaire_net_mensuel: f64,
-    pub autres_revenus: f64,
-    pub patrimoine: f64,
+    pub code_postal: Option<String>,
+    pub zone_apl: Option<u8>,
+    pub revenus_nets_mensuels: f64,
+    pub revenus_conjoint: f64,
+    pub patrimoine_estime: f64,
     pub ald: bool,
+    pub rqth: bool,
+    pub invalidite: bool,
     pub dependance: bool,
+    pub gir: Option<u8>,
     pub cmu_c: bool,
-    pub emploi_status_raw: String,
+    pub emploi: String,                // "salarie" | "chomeur" | "etudiant" | ...
+    pub anciennete_emploi_mois: u32,
+    pub heures_semaine: f64,
+    pub primo_accedant: bool,
     pub etudiant_boursier: bool,
 }
 
@@ -75,19 +74,27 @@ pub struct FfiAideInfo {
 pub fn simulate(situation: FfiSituation) -> FfiSimulationResult {
     let core_sit = CoreSituation {
         age: situation.age,
-        en_couple: situation.en_couple,
+        situation_familiale: parse_enum(&situation.situation_familiale),
         nb_enfants: situation.nb_enfants,
-        handicap: situation.handicap,
-        locataire: situation.locataire,
+        ages_enfants: situation.ages_enfants,
+        logement: parse_enum(&situation.logement),
         loyer_mensuel: situation.loyer_mensuel,
-        zone: situation.zone,
-        salaire_net_mensuel: situation.salaire_net_mensuel,
-        autres_revenus: situation.autres_revenus,
-        patrimoine: situation.patrimoine,
+        code_postal: situation.code_postal,
+        zone_apl: situation.zone_apl,
+        revenus_nets_mensuels: situation.revenus_nets_mensuels,
+        revenus_conjoint: situation.revenus_conjoint,
+        aides_perçues: vec![],
+        patrimoine_estime: situation.patrimoine_estime,
         ald: situation.ald,
+        rqth: situation.rqth,
+        invalidite: situation.invalidite,
         dependance: situation.dependance,
+        gir: situation.gir,
         cmu_c: situation.cmu_c,
-        emploi_status: situation.emploi_status_raw.parse().unwrap_or_default(),
+        emploi: parse_enum(&situation.emploi),
+        anciennete_emploi_mois: situation.anciennete_emploi_mois,
+        heures_semaine: situation.heures_semaine,
+        primo_accedant: situation.primo_accedant,
         etudiant_boursier: situation.etudiant_boursier,
     };
 
@@ -122,6 +129,18 @@ pub fn list_aides() -> Vec<FfiAideInfo> {
         .collect()
 }
 
+// ── i18n FFI ──────────────────────────────────────────────────────────────────
+
+#[uniffi::export]
+pub fn translate(lang: String, key: String) -> String {
+    I18n::t(&lang, &key)
+}
+
+#[uniffi::export]
+pub fn supported_langs() -> Vec<String> {
+    I18n::supported_langs()
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 fn to_ffi_aide(a: crate::engine::AideResult) -> FfiAideResult {
@@ -137,4 +156,8 @@ fn to_ffi_aide(a: crate::engine::AideResult) -> FfiAideResult {
     }
 }
 
-uniffi::setup_scaffolding!();
+fn parse_enum<T: serde::de::DeserializeOwned + Default>(raw: &str) -> T {
+    serde_json::from_value(serde_json::Value::String(raw.to_string())).unwrap_or_default()
+}
+
+// Remove scaffolding from submodule - it's in lib.rs
