@@ -1,0 +1,22 @@
+Do you know which French social benefits you are entitled to?
+
+Mes Aides is a free simulator that analyses your situation in 3 minutes and tells you all the benefits you are eligible for, with precise step-by-step instructions to claim them.
+
+28 benefits analysed:
+- RSA (guaranteed minimum income), Prime d'activité (in-work benefit)
+- AAH (disability allowance), ASPA (old-age solidarity allowance)
+- APL (housing benefit)
+- Chèque énergie (energy voucher), CSS (complementary health coverage)
+- CROUS grants, Visale rent guarantee
+- Family allowances, PAJE, ARS
+- CEJ (young people employment contract), Pass Culture
+- And many more
+
+What makes us different:
+- Official 2026 barèmes (sourced from service-public.fr)
+- Free PDF report with numbered steps and official form links
+- 40 languages
+- 100% free, no account required
+- No advertising
+
+Available in French, English, Arabic, Spanish, Portuguese, Russian, Ukrainian, Turkish and 32 other languages.

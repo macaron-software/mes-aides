@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .box { fill: #f0f7f4; stroke: #0B6E4F; stroke-width: 2; rx: 8; }
+      .box-core { fill: #0B6E4F; stroke: #063D2C; stroke-width: 2; rx: 8; }
+      .box-web { fill: #E8F5F0; stroke: #0B6E4F; stroke-width: 2; rx: 8; }
+      .box-mobile { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; rx: 8; }
+      .box-api { fill: #E0F2FE; stroke: #0369A1; stroke-width: 2; rx: 8; }
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #1A2E25; }
+      .label-white { font-family: system-ui, sans-serif; font-size: 14px; fill: white; }
+      .label-sm { font-family: system-ui, sans-serif; font-size: 11px; fill: #4D6B5C; }
+      .title { font-family: system-ui, sans-serif; font-size: 20px; font-weight: 600; fill: #1A2E25; }
+      .arrow { stroke: #9BB3A8; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow-data { stroke: #0B6E4F; stroke-width: 2; fill: none; stroke-dasharray: 5,3; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9BB3A8"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">Mes Aides — Architecture</text>
+  
+  <!-- User -->
+  <circle cx="100" cy="120" r="25" fill="#E8F5F0" stroke="#0B6E4F" stroke-width="2"/>
+  <text x="100" y="125" text-anchor="middle" class="label">User</text>
+  
+  <!-- Web Browser -->
+  <rect x="200" y="60" width="200" height="120" class="box-web"/>
+  <text x="300" y="90" text-anchor="middle" class="label" font-weight="600">Web Browser</text>
+  <text x="300" y="115" text-anchor="middle" class="label-sm">HTML/CSS/JS</text>
+  <text x="300" y="135" text-anchor="middle" class="label-sm">Service Worker</text>
+  <text x="300" y="155" text-anchor="middle" class="label-sm">localStorage</text>
+  
+  <!-- WASM Core -->
+  <rect x="450" y="60" width="140" height="120" class="box-core"/>
+  <text x="520" y="95" text-anchor="middle" class="label-white" font-weight="600">Rust Core</text>
+  <text x="520" y="115" text-anchor="middle" class="label-white" font-size="11">(WASM)</text>
+  <text x="520" y="140" text-anchor="middle" class="label-white" font-size="11">28 aids</text>
+  <text x="520" y="160" text-anchor="middle" class="label-white" font-size="11">Barèmes 2026</text>
+  
+  <!-- Arrows Web -->
+  <path d="M125 120 L195 120" class="arrow"/>
+  <path d="M405 120 L445 120" class="arrow"/>
+  
+  <!-- iOS -->
+  <rect x="200" y="220" width="140" height="100" class="box-mobile"/>
+  <text x="270" y="250" text-anchor="middle" class="label" font-weight="600">iOS App</text>
+  <text x="270" y="275" text-anchor="middle" class="label-sm">SwiftUI</text>
+  <text x="270" y="295" text-anchor="middle" class="label-sm">UniFFI</text>
+  
+  <!-- Android -->
+  <rect x="360" y="220" width="140" height="100" class="box-mobile"/>
+  <text x="430" y="250" text-anchor="middle" class="label" font-weight="600">Android App</text>
+  <text x="430" y="275" text-anchor="middle" class="label-sm">Kotlin</text>
+  <text x="430" y="295" text-anchor="middle" class="label-sm">JNI</text>
+  
+  <!-- Native Core -->
+  <rect x="520" y="220" width="140" height="100" class="box-core"/>
+  <text x="590" y="255" text-anchor="middle" class="label-white" font-weight="600">Rust Core</text>
+  <text x="590" y="275" text-anchor="middle" class="label-white" font-size="11">(Native)</text>
+  <text x="590" y="295" text-anchor="middle" class="label-white" font-size="11">libcore.a/.so</text>
+  
+  <!-- Arrows Mobile -->
+  <path d="M345 270 L515 270" class="arrow"/>
+  <path d="M505 270 L515 270" class="arrow"/>
+  
+  <!-- API Server (Optional) -->
+  <rect x="200" y="360" width="300" height="100" class="box-api"/>
+  <text x="350" y="390" text-anchor="middle" class="label" font-weight="600">API Server (Optional)</text>
+  <text x="350" y="415" text-anchor="middle" class="label-sm">Axum :3001</text>
+  <text x="350" y="435" text-anchor="middle" class="label-sm">POST /api/simulate • GET /api/aides • POST /api/pdf</text>
+  
+  <!-- API Core -->
+  <rect x="520" y="360" width="140" height="100" class="box-core"/>
+  <text x="590" y="395" text-anchor="middle" class="label-white" font-weight="600">Rust Core</text>
+  <text x="590" y="415" text-anchor="middle" class="label-white" font-size="11">(Server)</text>
+  <text x="590" y="435" text-anchor="middle" class="label-white" font-size="11">aides-api</text>
+  
+  <!-- Arrow API -->
+  <path d="M505 410 L515 410" class="arrow"/>
+  
+  <!-- datagouv -->
+  <rect x="680" y="360" width="100" height="60" class="box" fill="#f5f5f5"/>
+  <text x="730" y="395" text-anchor="middle" class="label-sm">data.gouv.fr</text>
+  <text x="730" y="410" text-anchor="middle" class="label-sm">MCP</text>
+  
+  <!-- Arrow datagouv -->
+  <path d="M665 390 L675 390" class="arrow-data"/>
+  
+  <!-- Legend -->
+  <rect x="30" y="400" width="150" height="90" fill="white" stroke="#D1D9D5" rx="4"/>
+  <text x="40" y="420" class="label-sm" font-weight="600">Legend</text>
+  <rect x="40" y="430" width="20" height="12" fill="#0B6E4F" rx="2"/>
+  <text x="65" y="440" class="label-sm">Rust Core</text>
+  <rect x="40" y="450" width="20" height="12" fill="#E8F5F0" stroke="#0B6E4F" rx="2"/>
+  <text x="65" y="460" class="label-sm">Web</text>
+  <rect x="40" y="470" width="20" height="12" fill="#FEF3C7" stroke="#D97706" rx="2"/>
+  <text x="65" y="480" class="label-sm">Mobile</text>
+  
+  <!-- Privacy badge -->
+  <rect x="620" y="50" width="160" height="50" fill="#DCFCE7" stroke="#15803D" stroke-width="2" rx="8"/>
+  <text x="700" y="72" text-anchor="middle" class="label" fill="#15803D" font-weight="600">100% Local</text>
+  <text x="700" y="90" text-anchor="middle" class="label-sm" fill="#15803D">No data transmitted</text>
+</svg>

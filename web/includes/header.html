@@ -1,0 +1,30 @@
+<!-- Shared Header Component -->
+
+<a class="skip-link" href="#main-content" data-i18n="a11y.skip_to_content">Aller au contenu</a>
+
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="/" aria-label="Mes Aides — accueil" class="site-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="var(--c-primary)"/>
+        <path d="M16 6L8 10V17C8 22.5 11.6 27.4 16 29C20.4 27.4 24 22.5 24 17V10L16 6Z" fill="white" opacity=".2"/>
+        <path d="M12 18l3 3 5-6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="site-logo__name">Mes Aides</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="/aides.html" class="hide-mobile" data-i18n="nav.aids">Toutes les aides</a>
+      <a href="/guides.html" class="hide-mobile" data-i18n="nav.guides">Guides</a>
+    </nav>
+    <div class="site-header__tools">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Activer le mode sombre">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>

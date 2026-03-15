@@ -1,4 +1,11 @@
-    const TOTAL_STEPS = 5;
+/**
+ * @fileoverview Simulator wizard controller
+ * @description Multi-step form wizard for aid eligibility simulation.
+ * All data stays in memory - nothing persisted or transmitted.
+ */
+
+/** @constant {number} Total number of wizard steps */
+const TOTAL_STEPS = 5;
     let currentStep = 1;
 
     // Saisies : mémoire uniquement (rien persisté, rien transmis)

@@ -33,6 +33,15 @@
   {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aides.macaron-software.com/#website","url":"https://aides.macaron-software.com/","name":"Mes Aides","description":"Simulateur gratuit d'aides sociales en France — 71 aides, baremes 2026","inLanguage":"fr-FR","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://aides.macaron-software.com/aides.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"FAQPage","@id":"https://aides.macaron-software.com/#faq","mainEntity":[{"@type":"Question","name":"La simulation est-elle vraiment gratuite ?","acceptedAnswer":{"@type":"Answer","text":"Oui, 100% gratuit. Simulation, resultats, guide étape-par-étape et telechargement PDF — tout est gratuit, sans inscription ni paiement."}},{"@type":"Question","name":"Les montants sont-ils fiables ?","acceptedAnswer":{"@type":"Answer","text":"Les montants sont des estimations basees sur les baremes officiels de l'année en cours, mis a jour via les donnees ouvertes du gouvernement (data.gouv.fr). Seuls les organismes (CAF, France Travail) peuvent confirmer votre éligibilité exacte."}},{"@type":"Question","name":"Mes donnees sont-elles protegees ?","acceptedAnswer":{"@type":"Answer","text":"Le calcul est effectue dans votre navigateur. Aucune donnee personnelle n'est transmise a un serveur. Nous ne collectons rien, nous ne vendons rien."}}]}]}
   </script>
 
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0B6E4F">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
+  
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="/css/tokens.css" as="style">
+  <link rel="preload" href="/css/base.css" as="style">
+  
   <link rel="stylesheet" href="/css/components.css">
 </head>
 <body>
@@ -361,6 +370,14 @@
 <script src="/js/theme.js"></script>
 <script src="/js/i18n.js"></script>
 <script src="/js/index.js"></script>
-  <script src="/js/nav.js"></script>
+<script src="/js/nav.js"></script>
+<script>
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('SW registered:', reg.scope))
+      .catch(err => console.warn('SW registration failed:', err));
+  }
+</script>
 </body>
 </html>

@@ -31,3 +31,8 @@ uniffi = { version = "0.28", features = ["build"], optional = true }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3"
+criterion = "0.5"
+
+[[bench]]
+name = "simulation"
+harness = false

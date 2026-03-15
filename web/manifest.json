@@ -1,0 +1,60 @@
+{
+  "name": "Mes Aides",
+  "short_name": "Mes Aides",
+  "description": "Simulateur d'aides sociales françaises — 100% privé, calcul local",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0B6E4F",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    {
+      "src": "/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Simulateur sur mobile"
+    },
+    {
+      "src": "/img/screenshot-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Résultats sur desktop"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nouvelle simulation",
+      "short_name": "Simuler",
+      "url": "/simulateur.html",
+      "icons": [{ "src": "/img/icon-simulate.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Catalogue des aides",
+      "short_name": "Aides",
+      "url": "/aides.html",
+      "icons": [{ "src": "/img/icon-list.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

@@ -1,3 +1,13 @@
+/**
+ * @fileoverview Internationalization module
+ * @description Handles language switching, translations, and RTL support.
+ * Supports 50 languages with fallback to French.
+ */
+
+/**
+ * List of supported locale codes
+ * @constant {string[]}
+ */
 const SUPPORTED = [
   'fr','en','de','es','it','pt','nl','ru','ja','ko','zh','ar',
   'hi','tr','pl','sv','da','nb','fi','cs','sk','hu','ro','el',
@@ -6,12 +16,27 @@ const SUPPORTED = [
   'sw','so','ha','tl','ku','ps','ur','sr','yo'
 ];
 
+/**
+ * Right-to-left languages
+ * @constant {string[]}
+ */
 const RTL_LANGS = ['ar','fa','he','ur','ps','ku'];
 
+/**
+ * I18n singleton for managing translations
+ * @namespace
+ */
 const I18n = {
+  /** @type {string} Current language code */
   lang: localStorage.getItem('lang') || navigator.language?.slice(0,2) || 'fr',
+  /** @type {Object<string, string>} Current language translations */
   data: {},
 
+  /**
+   * Load translations for a language
+   * @param {string} lang - Language code (e.g., 'fr', 'en', 'ar')
+   * @returns {Promise<void>}
+   */
   async load(lang) {
     const l = SUPPORTED.includes(lang) ? lang : 'fr';
     try {
