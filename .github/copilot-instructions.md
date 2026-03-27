@@ -1,115 +1,106 @@
-# Mes Aides — Copilot Instructions
+# Copilot Instructions — aides-macaron
 
-## PROJECT
+READ: CLAUDE.md, .ai/ARCHITECTURE.md, .ai/PLANS.md, .ai/DECISIONS.md
 
-```
-Type: Social benefits simulator (French aids)
-Privacy: 100% local, zero data transmission
-Stack: Rust core + vanilla HTML/CSS/JS + SwiftUI + Kotlin
+## Project
+Fr social benefits simulator. 100% local, zero data collection.
 URL: aides.macaron-software.com
+Target: 71 aids, baremes 2026 embedded.
+
+## Stack
+- **core/** Rust lib (cdylib+rlib+wasm) — eligibility engine, 71 aids
+- **api/** Axum :3001 — POST /api/simulate (optional)
+- **web/** Vanilla HTML/CSS/JS — tokens.css DS, feather SVG icons, WASM
+- **ios/** SwiftUI + UniFFI → libcore.a
+- **android/** Kotlin + JNI → libcore.so
+- **infra/** nginx static-only
+
+## Architecture
+```
+Simulator::simulate(situation: &Situation) -> SimulationResult
+  Situation: age, revenus_mensuels, composition_familiale, logement, handicap_taux, nb_enfants, ages_enfants
+  Result: aides_eligibles[], total_mensuel, total_annuel, calcule_le, version_baremes
+  Sorted: montant_mensuel desc
 ```
 
-## STRUCTURE
+Core modules:
+- `core/src/engine/simulator.rs` — Simulator::simulate()
+- `core/src/engine/rules.rs` — Baremes 2026, calc_* per aid
+- `core/src/aides/catalog.rs` — 71 aids defs
+- `core/src/aides/types.rs` — AideId, Categorie, AideResult
+- `core/src/engine/types.rs` — Situation, SimulationResult
+- `core/src/ffi/mod.rs` — UniFFI/JNI bindings
+- `core/src/wasm_bindings.rs` — wasm-bindgen exports
 
-```
-core/     Rust lib (cdylib+rlib) — 28 aids impl, baremes 2026
-api/      Axum :3001 — POST /api/simulate, GET /api/aides, POST /api/pdf
-web/      HTML/CSS/JS vanilla — tokens.css DS, feather icons
-ios/      SwiftUI + UniFFI
-android/  Kotlin + JNI
-docs/     SKILL-*.md, openapi.yaml, tracability.db
-```
+Data: Situation struct → Rust calc → SimulationResult (sorted desc)
 
-## TOKENS (css/tokens.css)
-
-```
-Primary: #0B6E4F (teal, NOT DSFR blue)
-Accent:  #D97706 (orange)
-Font:    system-ui (0 external fonts)
-Spacing: 4/8/16/24/32px (xs-xl)
-Radius:  4/8/12px (sm-lg)
-```
-
-## RULES
-
-- NO emojis (code, docs, UI)
-- NO external fonts/analytics/trackers
-- NO competitor URLs
-- SVG icons: feather style (stroke, round, 2px)
-- All calcs local — WASM or native engine
-- A11Y: WCAG 2.2 AA, keyboard nav, 4.5:1 contrast
-- i18n: 50 locales, RTL support (ar, he, fa)
-
-## AIDS ENGINE
-
-```rust
-Simulator::new().simulate(&Situation) -> SimulationResult
-// 28 aids: RSA, APL, AAH, Prime Activité, Chèque Énergie...
-// Baremes 2026 embedded, live update via datagouv MCP
-```
-
-## COMMANDS
-
+## Commands
 ```bash
-# Web dev
+# Dev
+cargo test -p aides-core
 cd web && python3 -m http.server 8000
 
-# Rust build
+# Build
 cargo build --release -p aides-core
 cargo build --release -p aides-api
 
-# Tests
-cargo test -p aides-core
-
-# Deploy static
+# Deploy (static)
 rsync -avz web/ debian@OVH_IP:/var/www/aides/
 ```
 
-## DOCS (docs/)
+## Invariants
+1. Zero data leaves browser — all calc local
+2. Simulator::simulate() is pure — no side effects
+3. Results sorted by montant_mensuel desc
+4. Baremes versioned + embedded — never fetched at runtime
+5. No ext fonts (system-ui only) or analytics deps
+6. All interactive elems keyboard accessible (WCAG 2.2 AA)
+7. RTL: ar, he fully supported
+8. GDPR: zero personal data collected, no consent needed
+9. RTO 15min (static redeploy), RPO 0 (no user data)
 
-| File | Content |
-|------|---------|
-| SKILL-UX.md | 30 UX laws |
-| SKILL-UI.md | 60 components + tokens |
-| SKILL-A11Y.md | WCAG + 30 ARIA patterns |
-| SKILL-SECURITY.md | 25 SecureByDesign controls |
-| SKILL-UI-SKELETON.md | Skeleton + placeholder system |
-| openapi.yaml | API spec v1.0 |
-| tracability.db | SQLite: personas/features/stories/tests |
-| GDPR-LIFECYCLE.md | Data policy (no collection) |
-| DR-PLAN.md | RTO 15min, RPO 0 |
-| AUDIT-LEAN.md | Dependency audit |
-| AUDIT-PATTERNS.md | Architecture patterns |
-| AUDIT-SECURITY.md | CVE scan results |
+## Forbidden
+- emojis in code/docs/UI (use feather SVG icons)
+- ext font deps (system-ui only)
+- DSFR blue (#0055D3) as primary color — use teal #0B6E4F
+- non-feather SVG icons
+- console.log or data exfil
+- analytics/tracking/cookies
+- baremes fetched at runtime (embed in Rust)
+- competitor URLs in code/docs
 
-## TRACABILITY DB
+## Active Milestones
+- **S2:** Web UI + i18n — landing, 5-step wizard, results, tokens.css, fr/en (100%), ar (80%), es/de/it/pt (85%), RTL ar+he
+- **S3:** 71 aids + Datagouv — all aids impl, datagouv MCP client, PDF gen, 40 langs
+- **S4:** iOS App — SwiftUI + UniFFI, libcore.a, App Store
+- **S5:** Android App — Kotlin + JNI, libcore.so, Play Store
 
-```sql
--- Query personas
-SELECT * FROM personas;
+Completed: S1 foundation (28 aids, Axum API, nginx, systemd, WASM).
 
--- Query features with stories
-SELECT f.code, f.title, COUNT(us.udid) as stories
-FROM features f
-LEFT JOIN user_stories us ON us.feature_udid = f.udid
-GROUP BY f.udid;
+Metrics: 28/71 aids impl, ~50KB gzip, ~2300 Rust LOC, ~2000 JS LOC.
 
--- Coverage matrix
-SELECT * FROM v_traceability_matrix;
+## Key Decisions
+- **AD-001:** Rust as single source of truth (web WASM + iOS UniFFI + Android JNI)
+- **AD-002:** 100% local computation — privacy-first, no GDPR burden, no backend attack surface
+- **AD-003:** Static site first — simplicity, hosting cost, offline-capable
+- **AD-004:** Vanilla JS — no build step, no bundle bloat, SEO-friendly
+- **AD-005:** CSS custom props — no Sass/Tailwind, native, runtime theming
+- **AD-006:** Teal primary #0B6E4F — brand differentiation, accessibility contrast
+- **AD-007:** Feather SVG icons — stroke, round linecap/join, 2px width
+- **AD-008:** No ext fonts — system-ui stack only (privacy, perf, no CDN)
+- **AD-009:** Baremes embedded in Rust — offline capable, deterministic, no runtime fetch
+- **AD-010:** WCAG 2.2 AA — inclusivity, RGAA legal req France, RTL, keyboard, screen reader
+
+## Design Tokens (web/css/tokens.css)
+```
+--c-primary: #0B6E4F  (teal)
+--c-accent: #D97706   (orange)
+--font: system-ui      (0 ext deps)
 ```
 
-## SECURITY
-
-- Tier: LOW (static site, no backend for web)
-- No cookies, no sessions, no accounts
-- CSP: default-src 'self'
-- Headers: X-Frame-Options DENY, nosniff
-- cargo audit: 0 critical/high (2 low warnings in build deps)
-
-## WHEN EDITING
-
-1. Check SKILL-*.md for guidelines
-2. Respect tokens.css values
-3. Maintain a11y (keyboard, ARIA, contrast)
-4. Test with RTL (ar locale)
-5. No new npm/external deps without discussion
+## Security (Tier: LOW)
+- CSP: default-src 'self'; script-src 'self'; object-src 'none'
+- X-Frame-Options: DENY
+- X-Content-Type-Options: nosniff
+- No cookies (UI prefs only localStorage)
+- Zero data collected

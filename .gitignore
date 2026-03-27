@@ -1,12 +1,21 @@
 target/
 dist/
-.env
-*.wasm
+build/
+.venv/
 node_modules/
+.env
+.env.*
+!.env.example
+*.db
+data/
+*.wasm
 .DS_Store
 Thumbs.db
 aides-api-linux-amd64
 aides-api-linux
-aides-api-linux-amd64
 android/app/src/main/jniLibs/
 ios/AidesCoreFFI.xcframework/
+
+# AI config personal overrides
+CLAUDE.local.md
+.claude/settings.local.json
