@@ -6,27 +6,27 @@ import Foundation
 enum LocalEngine {
 
     static func run(_ s: SituationForm) -> SimulationResultDTO {
-        let ffiSit = Situation(
+        let ffiSit = FfiSituation(
             age: UInt8(clamping: s.age),
-            situationFamiliale: s.situation_familiale,
+            situationFamiliale: s.en_couple ? "couple" : s.situation_familiale,
             nbEnfants: UInt8(clamping: s.nb_enfants),
-            agesEnfants: s.ages_enfants.map { UInt8(clamping: $0) },
-            logement: s.logement,
+            agesEnfants: Data(s.ages_enfants.map { UInt8(clamping: $0) }),
+            logement: s.locataire ? "locataire" : s.logement,
             loyerMensuel: s.loyer_mensuel,
             codePostal: s.code_postal,
-            zoneApl: s.zone_apl.map { UInt8(clamping: $0) },
-            revenusNetsMensuels: s.revenus_nets_mensuels,
-            revenusConjoint: s.revenus_conjoint,
-            patrimoineEstime: s.patrimoine_estime,
+            zoneApl: (s.zone ?? s.zone_apl).map { UInt8(clamping: $0) },
+            revenusNetsMensuels: s.salaire_net_mensuel > 0 ? s.salaire_net_mensuel : s.revenus_nets_mensuels,
+            revenusConjoint: s.autres_revenus > 0 ? s.autres_revenus : s.revenus_conjoint,
+            patrimoineEstime: s.patrimoine > 0 ? s.patrimoine : s.patrimoine_estime,
             ald: s.ald,
-            rqth: s.rqth,
+            rqth: s.handicap || s.rqth,
             invalidite: s.invalidite,
             dependance: s.dependance,
             gir: s.gir.map { UInt8(clamping: $0) },
             cmuC: s.cmu_c,
-            emploi: s.emploi,
+            emploi: s.emploi_status_raw.isEmpty ? s.emploi : s.emploi_status_raw,
             ancienneteEmploiMois: UInt32(s.anciennete_emploi_mois),
-            heureSemaine: s.heures_semaine,
+            heuresSemaine: s.heures_semaine,
             primoAccedant: s.primo_accedant,
             etudiantBoursier: s.etudiant_boursier
         )

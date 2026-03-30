@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SwiftUI
 
 // MARK: - DTOs (mirroring Rust JSON output from /api/simulate)
 
@@ -48,22 +49,30 @@ struct SimulationResultDTO: Codable {
 struct SituationForm: Codable {
     var age: Int = 30
     var situation_familiale: String = "celibataire"
+    var en_couple: Bool = false
     var nb_enfants: Int = 0
     var ages_enfants: [Int] = []
     var logement: String = "locataire"
+    var locataire: Bool = true
     var loyer_mensuel: Double = 700
     var code_postal: String? = nil
     var zone_apl: Int? = 2
+    var zone: Int? = 2
     var revenus_nets_mensuels: Double = 0
+    var salaire_net_mensuel: Double = 0
     var revenus_conjoint: Double = 0
+    var autres_revenus: Double = 0
     var patrimoine_estime: Double = 0
+    var patrimoine: Double = 0
     var ald: Bool = false
     var rqth: Bool = false
+    var handicap: Bool = false
     var invalidite: Bool = false
     var dependance: Bool = false
     var gir: Int? = nil
     var cmu_c: Bool = false
     var emploi: String = "sans_situation"
+    var emploi_status_raw: String = "sans_situation"
     var anciennete_emploi_mois: Int = 0
     var heures_semaine: Double = 0
     var primo_accedant: Bool = false

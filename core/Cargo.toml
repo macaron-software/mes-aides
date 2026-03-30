@@ -5,7 +5,7 @@ edition.workspace = true
 
 [lib]
 name = "aides_core"
-crate-type = ["cdylib", "rlib"]   # cdylib for WASM & FFI, rlib for Axum
+crate-type = ["cdylib", "rlib", "staticlib"]   # cdylib for WASM & FFI, rlib for Axum, staticlib for iOS
 
 [features]
 default = []
