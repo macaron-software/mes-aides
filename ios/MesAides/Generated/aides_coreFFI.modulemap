@@ -1,0 +1,7 @@
+module aides_coreFFI {
+    header "aides_coreFFI.h"
+    export *
+    use "Darwin"
+    use "_Builtin_stdbool"
+    use "_Builtin_stdint"
+}

@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C1C336644ED5CA38A13A3F9 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C667D2B0D94B20C9B86D3 /* LanguagePicker.swift */; };
+		1A51908EFF7B2FEE8A22BE8A /* SimulatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C1C6023E293F51F458171A /* SimulatorStore.swift */; };
+		2ACA8911CB5F26730638AFED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06512B6342231A648C4B77D9 /* HomeView.swift */; };
+		36B9738F2A7D9E99BB2E9421 /* SimulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B94D8F7B3487D10FBF5E3D3 /* SimulatorView.swift */; };
+		3E4AA3DD1EDC28A957CC4308 /* LocalEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1DC32D84F594B336FC7F8B /* LocalEngine.swift */; };
+		652F9BB1A6326F740B79B300 /* AideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B121CAB973CBD579516962 /* AideDetailView.swift */; };
+		8EF8D657BA62E2A64617E003 /* MesAidesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407D3EDB9AFDB5628572A3C /* MesAidesApp.swift */; };
+		B6951FFC778537E8A9A1DFC8 /* PDFExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA87302CA17E1EC9927FE97 /* PDFExportView.swift */; };
+		BA18853C959D8941AEC2CEDC /* aides_core.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A10CC411FF6ECB6076AB6 /* aides_core.swift */; };
+		D4E4DB7B57940A10E71E3BA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025C56110C54B584B43C457 /* ContentView.swift */; };
+		EFBB27E2C3FC9376D5EF5620 /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41115EDDA8B9D5C757A346B /* LocaleManager.swift */; };
+		F5F770FB5AC2DEBABE918371 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C1DBBEB0B7D641908CDFD0 /* ResultsView.swift */; };
+		FEB74FC2C087159FE44F98A8 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C2F4E4ABC4274BD32C209 /* SecureStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0025C56110C54B584B43C457 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		06512B6342231A648C4B77D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		17694B7A4CD3A6EE6874C9F1 /* MesAides.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MesAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1DC32D84F594B336FC7F8B /* LocalEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEngine.swift; sourceTree = "<group>"; };
+		49C1DBBEB0B7D641908CDFD0 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		5C185A588EAEDB0E725CBCA4 /* MesAides-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MesAides-Bridging-Header.h"; sourceTree = "<group>"; };
+		61B121CAB973CBD579516962 /* AideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AideDetailView.swift; sourceTree = "<group>"; };
+		61C1C6023E293F51F458171A /* SimulatorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorStore.swift; sourceTree = "<group>"; };
+		7B863A486DB2298FF315B9A1 /* aides_coreFFI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aides_coreFFI.h; sourceTree = "<group>"; };
+		8AA87302CA17E1EC9927FE97 /* PDFExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExportView.swift; sourceTree = "<group>"; };
+		8B94D8F7B3487D10FBF5E3D3 /* SimulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorView.swift; sourceTree = "<group>"; };
+		AF7C2F4E4ABC4274BD32C209 /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		B1540FB0363348FCBF6FA2DD /* aides_coreFFI.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = aides_coreFFI.modulemap; sourceTree = "<group>"; };
+		B35A10CC411FF6ECB6076AB6 /* aides_core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aides_core.swift; sourceTree = "<group>"; };
+		B41115EDDA8B9D5C757A346B /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
+		D407D3EDB9AFDB5628572A3C /* MesAidesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesAidesApp.swift; sourceTree = "<group>"; };
+		DD3C667D2B0D94B20C9B86D3 /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		5DB253E756A947F1D7B92613 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17694B7A4CD3A6EE6874C9F1 /* MesAides.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6173E582A4BB5020C6533DB7 /* MesAides */ = {
+			isa = PBXGroup;
+			children = (
+				61B121CAB973CBD579516962 /* AideDetailView.swift */,
+				0025C56110C54B584B43C457 /* ContentView.swift */,
+				06512B6342231A648C4B77D9 /* HomeView.swift */,
+				DD3C667D2B0D94B20C9B86D3 /* LanguagePicker.swift */,
+				B41115EDDA8B9D5C757A346B /* LocaleManager.swift */,
+				1C1DC32D84F594B336FC7F8B /* LocalEngine.swift */,
+				5C185A588EAEDB0E725CBCA4 /* MesAides-Bridging-Header.h */,
+				D407D3EDB9AFDB5628572A3C /* MesAidesApp.swift */,
+				8AA87302CA17E1EC9927FE97 /* PDFExportView.swift */,
+				49C1DBBEB0B7D641908CDFD0 /* ResultsView.swift */,
+				AF7C2F4E4ABC4274BD32C209 /* SecureStore.swift */,
+				61C1C6023E293F51F458171A /* SimulatorStore.swift */,
+				8B94D8F7B3487D10FBF5E3D3 /* SimulatorView.swift */,
+			);
+			name = MesAides;
+			path = MesAides/Sources/MesAides;
+			sourceTree = "<group>";
+		};
+		CE03840E74ED6527A4C97118 /* MesAidesCore */ = {
+			isa = PBXGroup;
+			children = (
+				B35A10CC411FF6ECB6076AB6 /* aides_core.swift */,
+				7B863A486DB2298FF315B9A1 /* aides_coreFFI.h */,
+				B1540FB0363348FCBF6FA2DD /* aides_coreFFI.modulemap */,
+			);
+			name = MesAidesCore;
+			path = MesAides/Sources/MesAidesCore;
+			sourceTree = "<group>";
+		};
+		E7CEEB63B8C41A25CCDFF787 = {
+			isa = PBXGroup;
+			children = (
+				6173E582A4BB5020C6533DB7 /* MesAides */,
+				CE03840E74ED6527A4C97118 /* MesAidesCore */,
+				5DB253E756A947F1D7B92613 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F4A04E7B34099702DB32C8F /* MesAides */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C796C03B15060C57F6188BD /* Build configuration list for PBXNativeTarget "MesAides" */;
+			buildPhases = (
+				2F835C207288F7DEDCFB82DF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MesAides;
+			packageProductDependencies = (
+			);
+			productName = MesAides;
+			productReference = 17694B7A4CD3A6EE6874C9F1 /* MesAides.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AEB296CC22D2927339A77DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 8A6CCAD55138038AD3CC7750 /* Build configuration list for PBXProject "MesAides" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E7CEEB63B8C41A25CCDFF787;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F4A04E7B34099702DB32C8F /* MesAides */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F835C207288F7DEDCFB82DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652F9BB1A6326F740B79B300 /* AideDetailView.swift in Sources */,
+				D4E4DB7B57940A10E71E3BA0 /* ContentView.swift in Sources */,
+				2ACA8911CB5F26730638AFED /* HomeView.swift in Sources */,
+				0C1C336644ED5CA38A13A3F9 /* LanguagePicker.swift in Sources */,
+				3E4AA3DD1EDC28A957CC4308 /* LocalEngine.swift in Sources */,
+				EFBB27E2C3FC9376D5EF5620 /* LocaleManager.swift in Sources */,
+				8EF8D657BA62E2A64617E003 /* MesAidesApp.swift in Sources */,
+				B6951FFC778537E8A9A1DFC8 /* PDFExportView.swift in Sources */,
+				F5F770FB5AC2DEBABE918371 /* ResultsView.swift in Sources */,
+				FEB74FC2C087159FE44F98A8 /* SecureStore.swift in Sources */,
+				1A51908EFF7B2FEE8A22BE8A /* SimulatorStore.swift in Sources */,
+				36B9738F2A7D9E99BB2E9421 /* SimulatorView.swift in Sources */,
+				BA18853C959D8941AEC2CEDC /* aides_core.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0ECA91E319A7DD2CF6BFA2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited) $(SRCROOT)/MesAides/Generated";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "$(inherited) -laides_core -lc++";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_USE_INTEGRATED_DRIVER = NO;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		7D62935B914003F0F9E1275B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/MesAides/Generated $(inherited)";
+				INFOPLIST_KEY_CFBundleDisplayName = MesAides;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macaron.aida;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MesAides/Sources/MesAides/MesAides-Bridging-Header.h";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD9C7262880F6BF6D7A32C02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/MesAides/Generated $(inherited)";
+				INFOPLIST_KEY_CFBundleDisplayName = MesAides;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macaron.aida;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MesAides/Sources/MesAides/MesAides-Bridging-Header.h";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C5FDC2B4D66BEA377770C051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited) $(SRCROOT)/MesAides/Generated";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited) -laides_core -lc++";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_USE_INTEGRATED_DRIVER = NO;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C796C03B15060C57F6188BD /* Build configuration list for PBXNativeTarget "MesAides" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D62935B914003F0F9E1275B /* Debug */,
+				AD9C7262880F6BF6D7A32C02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A6CCAD55138038AD3CC7750 /* Build configuration list for PBXProject "MesAides" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FDC2B4D66BEA377770C051 /* Debug */,
+				0ECA91E319A7DD2CF6BFA2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AEB296CC22D2927339A77DD /* Project object */;
+}
