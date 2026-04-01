@@ -32,6 +32,42 @@
       opacity: 0.85;
     }
 
+    .sr-hero-local {
+      margin-top: var(--sp-4);
+      padding: var(--sp-3) var(--sp-4);
+      border-radius: var(--r-lg);
+      border: 1px solid var(--c-border);
+      background: var(--c-bg);
+    }
+
+    .sr-hero-local__title {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--c-muted);
+      margin-bottom: var(--sp-2);
+    }
+
+    .sr-hero-local__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+
+    .sr-hero-local__item strong {
+      display: block;
+      font-size: var(--fs-sm);
+      color: var(--c-text);
+    }
+
+    .sr-hero-local__item p {
+      margin: var(--sp-1) 0 0;
+      font-size: var(--fs-xs);
+      color: var(--c-muted);
+    }
+
     .results-total {
       display: inline-flex;
       align-items: baseline;
@@ -94,6 +130,7 @@
     .aide-icon.énergie  { background: var(--c-accent-light);  color: var(--c-accent-hover); }
     .aide-icon.santé    { background: var(--c-danger-light);  color: var(--c-danger); }
     .aide-icon.famille  { background: var(--c-primary-light); color: var(--c-primary); }
+    .aide-icon.transport { background: var(--c-info-light); color: var(--c-info); }
 
     .aide-info { flex: 1; }
 
@@ -343,6 +380,22 @@
         Calcul en cours…
       </div>
     </div>
+
+    <section class="card card--hover mt-8" id="feedback-panel" aria-labelledby="feedback-title">
+      <div class="badge badge--neutral">Feedback</div>
+      <h2 id="feedback-title" class="mt-4" data-i18n="results.feedback_title">Il manque une aide ou un réseau ?</h2>
+      <p class="text-lead" data-i18n="results.feedback_text">
+        Envoyez-nous un retour en 1 clic pour corriger un montant, ajouter un réseau ou signaler une aide locale.
+      </p>
+      <div class="cluster cluster--lg">
+        <button class="btn btn--secondary" id="btnFeedbackBug" type="button">
+          Signaler une erreur
+        </button>
+        <button class="btn btn--primary" id="btnFeedbackAdd" type="button">
+          Proposer une aide
+        </button>
+      </div>
+    </section>
   </main>
 
   <!-- Bottom bar -->
@@ -354,6 +407,10 @@
     <button class="btn btn-outline" id="btnShare">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
       <span data-i18n="results.share">Partager</span>
+    </button>
+    <button class="btn btn-outline" id="btnFeedback">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4v-4H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+      <span data-i18n="results.feedback">Donner un avis</span>
     </button>
     <a href="simulateur.html" class="btn btn-primary">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.5"/></svg>

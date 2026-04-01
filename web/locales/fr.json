@@ -36,7 +36,12 @@
     "step3_title": "Plan d'action personnalise",
     "step3_desc": "Pour chaque aide : etapes precises, liens vers les formulaires officiels, delais a connaitre.",
     "start_sim": "Commencer la simulation",
-    "faq_title": "Questions frequentes"
+    "faq_title": "Questions frequentes",
+    "transport_news_badge": "Nouveaute mobilite",
+    "transport_news_title": "On peut faire pareil, et plus encore",
+    "transport_news_sub": "Les contenus de mobilité s'enrichissent avec des réseaux locaux et des aides déjà couvertes par le simulateur.",
+    "transport_news_list_title": "Aides mobilite deja couvertes",
+    "transport_news_cta": "Tester ma situation"
   },
   "simulator": {
     "page_title": "Simulateur d'aides sociales — Mes Aides",
@@ -110,9 +115,12 @@
     "per_month": "€ / mois",
     "print": "Imprimer",
     "share": "Partager",
+    "feedback": "Donner un avis",
     "refine": "Affiner ma simulation",
     "total_label": "Total estime",
-    "disclaimer": "Ces resultats sont fournis a titre indicatif. Seul l'organisme competent peut confirmer votre droit."
+    "disclaimer": "Ces resultats sont fournis a titre indicatif. Seul l'organisme competent peut confirmer votre droit.",
+    "feedback_title": "Il manque une aide ou un réseau ?",
+    "feedback_text": "Envoyez-nous un retour en 1 clic pour corriger un montant, ajouter un réseau ou signaler une aide locale."
   },
   "catalog": {
     "page_title": "Toutes les aides — Mes Aides France",

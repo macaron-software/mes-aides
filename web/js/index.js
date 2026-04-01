@@ -12,3 +12,20 @@ document.querySelectorAll('.accordion__trigger').forEach(btn => {
     }
   });
 });
+
+// ── Copy announcement text ────────────────────────────────────────────────
+document.querySelectorAll('[data-copy-text]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = btn.getAttribute('data-copy-text');
+    if (!text) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      const original = btn.textContent;
+      btn.textContent = 'Copié';
+      setTimeout(() => { btn.textContent = original; }, 1400);
+    } catch {
+      window.prompt('Copiez le message', text);
+    }
+  });
+});

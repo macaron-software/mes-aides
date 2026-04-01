@@ -236,6 +236,23 @@
       cursor: pointer;
     }
 
+    .text-input {
+      width: 100%;
+      padding: var(--sp-3) var(--sp-4);
+      border: 2px solid var(--c-border);
+      border-radius: var(--r-lg);
+      background: var(--c-surface);
+      color: var(--c-text);
+      font: inherit;
+      transition: border-color var(--tr), box-shadow var(--tr);
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--c-primary);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-primary) 14%, transparent);
+    }
+
     .slider-labels {
       display: flex;
       justify-content: space-between;
@@ -304,6 +321,49 @@
 
     .step-dot.done { background: var(--c-primary-hover); }
     .step-dot.active { background: var(--c-primary); transform: scale(1.3); }
+
+    /* ── Results hero local summary ── */
+    .sr-local {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      padding: var(--sp-4);
+      margin-bottom: var(--sp-5);
+      border: 1px solid color-mix(in srgb, var(--c-primary) 22%, var(--c-border));
+      border-radius: var(--r-lg);
+      background: color-mix(in srgb, var(--c-primary) 7%, var(--c-surface));
+    }
+
+    .sr-local__title {
+      margin: 0;
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      color: var(--c-primary);
+    }
+
+    .sr-local__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+    }
+
+    .sr-local__chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--r-full);
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      color: var(--c-text);
+      font-size: var(--fs-xs);
+      line-height: 1;
+    }
+
+    .sr-local__empty {
+      margin: 0;
+      color: var(--c-muted);
+      font-size: var(--fs-sm);
+    }
   </style>
 </head>
 <body>
@@ -415,6 +475,12 @@
                 <span data-i18n="common.yes">Oui</span>
               </button>
             </div>
+          </div>
+          <div class="question-group">
+            <label class="question-label" for="territoire">Territoire / région / métropole</label>
+            <input list="territoires" id="territoire" name="territoire" class="text-input" placeholder="Ex : Île-de-France, Lyon Métropole, 69">
+            <datalist id="territoires"></datalist>
+            <p class="question-hint" id="territoireFeedback" aria-live="polite">Saisissez la région, le département, la métropole ou un code postal.</p>
           </div>
         </div>
 
@@ -636,6 +702,7 @@
   <script src="js/theme.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/transport-networks.js"></script>
   <script src="js/simulateur.js"></script>
 </body>
 </html>

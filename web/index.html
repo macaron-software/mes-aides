@@ -6,13 +6,13 @@
   <!-- theme anti-flash — doit être AVANT le CSS -->
   <script src="/js/theme-init.js"></script>
 
-  <title>Simulateur d'aides sociales 2026 gratuit — RSA, APL, AAH | Mes Aides</title>
-  <meta name="description" content="Simulez gratuitement vos droits aux aides sociales en France : RSA, APL, Prime d'activité, AAH, Chèque énergie et 67 autres. Baremes 2026 officiels. Calcul instantane, 100% confidentiel.">
+  <title>Simulateur d'aides sociales 2026 gratuit — RSA, APL, mobilité | Mes Aides</title>
+  <meta name="description" content="Simulez gratuitement vos droits aux aides sociales en France : RSA, APL, Prime d'activité, AAH et aides à la mobilité. Barèmes 2026 officiels, calcul instantané, 100% confidentiel.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aides.macaron-software.com/">
 
-  <meta property="og:title" content="Simulateur d'aides sociales 2026 gratuit — RSA, APL, AAH | Mes Aides">
-  <meta property="og:description" content="Découvrez en 5 minutes les aides sociales auxquelles vous avez droit. 71 aides, baremes 2026, calcul instantane. Gratuit et confidentiel.">
+  <meta property="og:title" content="Simulateur d'aides sociales 2026 gratuit — RSA, APL, mobilité | Mes Aides">
+  <meta property="og:description" content="Découvrez en 5 minutes les aides sociales auxquelles vous avez droit. 71 aides, barèmes 2026, calcul instantané. Gratuit et confidentiel.">
   <meta property="og:url" content="https://aides.macaron-software.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
@@ -21,8 +21,8 @@
   <meta property="og:site_name" content="Mes Aides">
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Simulateur d'aides sociales 2026 gratuit | Mes Aides">
-  <meta name="twitter:description" content="RSA, APL, Prime d'activité, AAH et 67 autres aides. Simulation gratuite en 5 minutes.">
+  <meta name="twitter:title" content="Simulateur d'aides sociales 2026 gratuit — RSA, APL, mobilité | Mes Aides">
+  <meta name="twitter:description" content="RSA, APL, Prime d'activité, AAH et aides à la mobilité. Simulation gratuite en 5 minutes.">
   <meta name="twitter:image" content="https://aides.macaron-software.com/img/og-default.svg">
   <link rel="alternate" hreflang="fr" href="https://aides.macaron-software.com/">
   <link rel="alternate" hreflang="en" href="https://aides.macaron-software.com/?lang=en">
@@ -233,7 +233,49 @@
     </div>
   </section>
 
-  <!-- ── Section 3 : Comment ca marche | FAQ ────────────────────────────── -->
+  <!-- ── Section 3 : Nouveautes mobilite ─────────────────────────────── -->
+  <section class="section section--band" aria-labelledby="transport-news-title">
+    <div class="container">
+      <div class="card card--aid stack stack--lg">
+        <div class="stack stack--sm">
+          <span class="badge badge--primary" data-i18n="home.transport_news_badge">Nouveaute mobilite</span>
+          <h2 id="transport-news-title" data-i18n="home.transport_news_title">On peut faire pareil, et plus encore</h2>
+          <p data-i18n="home.transport_news_sub">Les contenus de mobilité s'enrichissent avec des réseaux locaux et des aides déjà couvertes par le simulateur.</p>
+        </div>
+
+        <blockquote class="card" style="margin:0;background:var(--c-surface-raised);border-left:4px solid var(--c-primary);">
+          <p style="margin:0 0 var(--sp-3);font-weight:600;">Après les aides aux transports de @NantesMetropole, ce sont celles des réseaux @CTS_Strasbourg et @fluograndest qui ont été ajoutées au simulateur @MesAides ! https://mes-aides.org 🚀🚊😷</p>
+          <p style="margin:0;font-size:var(--text-sm);color:var(--c-text-subtle);">Texte prêt à copier pour relayer la nouveauté.</p>
+        </blockquote>
+
+        <div class="stack stack--sm">
+          <strong data-i18n="home.transport_news_list_title">Aides mobilite deja couvertes</strong>
+          <div class="cluster">
+            <span class="tag">Aide à la mobilité France Travail</span>
+            <span class="tag">Aide au transport scolaire</span>
+            <span class="tag">CMI</span>
+            <span class="tag">ARDH</span>
+            <span class="tag">Bourse mobilité Master</span>
+          </div>
+        </div>
+
+        <div class="cluster">
+          <button type="button" class="btn btn--secondary btn--sm" id="copyTransportPost" data-copy-text="Après les aides aux transports de @NantesMetropole, ce sont celles des réseaux @CTS_Strasbourg et @fluograndest qui ont été ajoutées au simulateur @MesAides ! https://mes-aides.org 🚀🚊😷">
+            Copier le message
+          </button>
+          <a href="/simulateur.html" class="btn btn--primary btn--sm" data-i18n="home.transport_news_cta">Tester ma situation</a>
+          <a
+            class="btn btn--secondary btn--sm"
+            href="mailto:support@macaron-software.com?subject=Mes%20Aides%20-%20R%C3%A9seau%20transport%20%C3%A0%20ajouter&body=Bonjour%2C%0A%0AJe%20souhaiterais%20voir%20ajouter%20un%20r%C3%A9seau%20transport%20local%20dans%20Mes%20Aides.%0A%0AR%C3%A9seau%20sugg%C3%A9r%C3%A9%20%3A%20%0ASource%20officielle%20%3A%20%0APage%20%3A%20https%3A%2F%2Faides.macaron-software.com%2F"
+          >
+            Proposer un réseau
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 4 : Comment ca marche | FAQ ────────────────────────────── -->
   <section class="section" aria-label="Comment ca marche et questions fréquentes">
     <div class="container">
       <div class="split-layout">

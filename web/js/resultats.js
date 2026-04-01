@@ -52,7 +52,8 @@
       handicap: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M10 22v-5h4v5M7 9l2 2 4-4"/></svg>',
       energie:  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
       sante:    '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
-      famille:  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'
+      famille:  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      transport: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="3"/><path d="M5 11h14"/><path d="M8 18v1"/><path d="M16 18v1"/><path d="M7 8v-3"/><path d="M17 8v-3"/></svg>'
     };
 
     function renderResults(data) {
@@ -99,6 +100,19 @@
             </div>`;
         });
 
+        if (!stepsHtml && aide.source_url) {
+          const sourceLabel = aide.source_label || 'site officiel';
+          stepsHtml = `
+            <div class="journey-step">
+              <div class="journey-step-num">1</div>
+              <div class="journey-step-body">
+                <div class="journey-step-title">Consulter les critères officiels</div>
+                <div class="journey-step-desc">Tarification sociale ou solidaire publiée par le réseau ${aide.nom}.</div>
+                <a href="${aide.source_url}" target="_blank" rel="noopener noreferrer" class="journey-step-link">${sourceLabel} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              </div>
+            </div>`;
+        }
+
         html += `
           <div class="aide-card" id="card-${aide.id}">
             <div class="aide-card-header" onclick="toggleCard('${aide.id}')" role="button" tabindex="0" aria-expanded="false" aria-controls="journey-${aide.id}">
@@ -119,11 +133,27 @@
                 Guide de demarche
               </div>
               ${stepsHtml}
-              <div class="journey-cta">
-                <a href="aides/${aide.id}.html" class="btn btn-outline">
-                  Fiche complete de l'aide
-                </a>
-              </div>
+              ${(() => {
+                const ctaHref = aide.source_url || `aides/${aide.id}.html`;
+                const ctaLabel = aide.source_url
+                  ? `Consulter ${aide.source_label || 'le site officiel'}`
+                  : aide.info_only
+                    ? 'Affiner le territoire'
+                    : "Fiche complete de l'aide";
+                const ctaAttrs = aide.source_url ? ' target=\"_blank\" rel=\"noopener noreferrer\"' : '';
+                if (aide.info_only && !aide.source_url) {
+                  return `
+                <div class="journey-cta">
+                  <div style="color:var(--c-muted);font-size:var(--fs-sm);">Aucun réseau reconnu pour ce territoire dans le catalogue actuel. Essayez une région, une métropole ou un réseau plus précis.</div>
+                </div>`;
+                }
+                return `
+                <div class="journey-cta">
+                  <a href="${ctaHref}" class="btn btn-outline"${ctaAttrs}>
+                    ${ctaLabel}
+                  </a>
+                </div>`;
+              })()}
             </div>
           </div>`;
       });
@@ -151,13 +181,36 @@
 
     function shareResults() {
       const url = window.location.href;
+      const total = document.getElementById('totalAmount')?.textContent?.trim();
+      const text = total && total !== '—'
+        ? `J'ai estime ${total} € / mois de droits potentiels avec Mes Aides.`
+        : 'J’ai fait une simulation avec Mes Aides.';
       if (navigator.share) {
-        navigator.share({ title: 'Mes aides sociales', url });
+        navigator.share({ title: 'Mes aides sociales', text, url });
       } else {
-        navigator.clipboard.writeText(url).then(() => {
+        navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
           alert('Lien copie dans le presse-papier.');
         });
       }
+    }
+
+    function sendFeedback(kind = 'general') {
+      const subjectMap = {
+        bug: 'Mes Aides - signalement d\'erreur',
+        add: 'Mes Aides - aide ou réseau à ajouter',
+        general: 'Feedback Mes Aides'
+      };
+      const subject = encodeURIComponent(subjectMap[kind] || subjectMap.general);
+      const total = document.getElementById('totalAmount')?.textContent?.trim();
+      const body = encodeURIComponent([
+        `Page: ${window.location.href}`,
+        `Langue: ${document.documentElement.lang || 'fr'}`,
+        total && total !== '—' ? `Total estimé: ${total} € / mois` : null,
+        '',
+        'Mon avis:',
+        ''
+      ].filter(Boolean).join('\n'));
+      window.location.href = `mailto:support@macaron-software.com?subject=${subject}&body=${body}`;
     }
 
     // La page résultats est accessible directement (guide par aide)
@@ -169,4 +222,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var btnShare = document.getElementById('btnShare');
   if (btnShare) btnShare.addEventListener('click', shareResults);
+
+  var btnFeedback = document.getElementById('btnFeedback');
+  if (btnFeedback) btnFeedback.addEventListener('click', sendFeedback);
+
+  var btnFeedbackBug = document.getElementById('btnFeedbackBug');
+  if (btnFeedbackBug) btnFeedbackBug.addEventListener('click', function() { sendFeedback('bug'); });
+
+  var btnFeedbackAdd = document.getElementById('btnFeedbackAdd');
+  if (btnFeedbackAdd) btnFeedbackAdd.addEventListener('click', function() { sendFeedback('add'); });
 });

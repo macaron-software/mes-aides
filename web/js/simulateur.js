@@ -8,8 +8,50 @@
 const TOTAL_STEPS = 5;
     let currentStep = 1;
 
+    /** Suggestions used to populate the territoire datalist */
+    const TERRITORY_SUGGESTIONS = [
+      'Île-de-France', 'Métropole du Grand Paris', 'Hauts-de-France', 'Normandie', 'Bretagne',
+      'Pays de la Loire', 'Centre-Val de Loire', 'Nouvelle-Aquitaine', 'Occitanie',
+      'Auvergne-Rhône-Alpes', 'Provence-Alpes-Côte d’Azur', 'Grand Est', 'Bourgogne-Franche-Comté',
+      'Lyon Métropole', 'Métropole de Strasbourg', 'Métropole de Nantes', 'Métropole de Toulouse',
+      'Métropole de Bordeaux', 'Métropole de Lille', 'Métropole de Toulon Provence Méditerranée',
+      'Métropole Nice Côte d’Azur', 'Métropole Européenne de Lille', 'Métropole du Grand Paris',
+      'Métropole d’Aix-Marseille-Provence', 'Métropole de Lyon', 'Paris', 'Marseille',
+      'Lyon', 'Bordeaux', 'Toulouse', 'Nice', 'Lille', 'Nantes',
+      '75', '92', '93', '94', '91', '77', '78', '95', '69', '06',
+      '83', '13', '31', '34', '44', '35', '59', '62', '76', '21',
+      '57', '67', '68', '30', '66', '11', '87', '88', '29', '64',
+      '16', '24', '33', '01', '74'
+    ];
+
+    const TERRITORY_SYNONYMS = {
+      'idf': 'ile de france', 'ile de france': 'ile de france', 'paris': 'ile de france',
+      'paca': 'provence alpes cote d azur', 'provence alpes cote d azur': 'provence alpes cote d azur',
+      'grand est': 'grand est', 'breton': 'bretagne', 'bretagne': 'bretagne',
+      'normandie': 'normandie', 'hauts de france': 'hauts de france', 'hdf': 'hauts de france',
+      'nouvelle aquitaine': 'nouvelle aquitaine', 'occitanie': 'occitanie',
+      'auvergne rhone alpes': 'auvergne rhone alpes', 'ara': 'auvergne rhone alpes',
+      'centre val de loire': 'centre val de loire', 'cvl': 'centre val de loire',
+      'bourgogne franche comte': 'bourgogne franche comte', 'bfc': 'bourgogne franche comte',
+      'pays de la loire': 'pays de la loire',
+      '75': 'ile de france', '92': 'ile de france', '93': 'ile de france',
+      '94': 'ile de france', '91': 'ile de france', '77': 'ile de france',
+      '78': 'ile de france', '95': 'ile de france',
+      '13': 'provence alpes cote d azur', '06': 'provence alpes cote d azur', '83': 'provence alpes cote d azur',
+      '69': 'auvergne rhone alpes', '01': 'auvergne rhone alpes', '74': 'auvergne rhone alpes',
+      '31': 'occitanie', '11': 'occitanie', '34': 'occitanie',
+      '44': 'pays de la loire', '35': 'bretagne', '29': 'bretagne', '44': 'pays de la loire',
+      '59': 'hauts de france', '62': 'hauts de france', '76': 'normandie',
+      '21': 'bourgogne franche comte', '57': 'grand est', '67': 'grand est', '68': 'grand est',
+      '30': 'occitanie', '66': 'occitanie', '64': 'nouvelle aquitaine'
+    };
+
     // Saisies : mémoire uniquement (rien persisté, rien transmis)
     const answers = {};
+    const LOCAL_HIGHLIGHT_IDS = new Set([
+      'maprimeadapt', 'permis-insertion', 'vacances-familles', 'carte-familles-nombreuses', 'fsl-cantine',
+      'transport-local', 'ars', 'fsl', 'clcmg', 'cmg-3-6'
+    ]);
     function saveAnswers() { /* mémoire uniquement — pas de stockage */ }
 
     // Choice buttons
@@ -33,6 +75,14 @@ const TOTAL_STEPS = 5;
         });
       }
     });
+
+    const territoryInput = document.getElementById('territoire');
+    if (territoryInput) {
+      answers.territoire = territoryInput.value.trim();
+      territoryInput.addEventListener('input', () => {
+        answers.territoire = territoryInput.value.trim();
+      });
+    }
 
     function updateRevenu(val) {
       const n = parseInt(val);
@@ -149,9 +199,10 @@ const TOTAL_STEPS = 5;
         cmu_c: answers.cmu_c === 'true',
         emploi,
         primo_accedant: false,
-        etudiant_boursier: answers.allocations_caf === 'true'
-      };
-    }
+      etudiant_boursier: answers.allocations_caf === 'true',
+      territoire: answers.territoire || ''
+    };
+  }
 
     // ── Barèmes 2026 ─────────────────────────────────────────────────────────
     // Sources officielles (mise à jour annuelle recommandée) :
@@ -306,9 +357,70 @@ const TOTAL_STEPS = 5;
       return mk(id, nom, montant, cat, 2, desc, { approx: true });
     }
     // infoaide = droit/avantage sans montant mensuel fixe (garantie, couverture, statut, one-shot)
-    function infoaide(id, nom, cat, desc) {
-      return mk(id, nom, 0, cat, 2, desc, { info_only: true });
+    function infoaide(id, nom, cat, desc, opts = {}) {
+      return mk(id, nom, 0, cat, 2, desc, Object.assign({ info_only: true }, opts));
     }
+
+    function normalizeTerritoryTerm(value) {
+      return (value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    }
+
+    const TRANSPORT_NETWORKS = Array.isArray(window?.TRANSPORT_NETWORKS) ? window.TRANSPORT_NETWORKS : [];
+
+    const TERRITORY_INDEX = (function buildTerritoryIndex() {
+      const map = Object.create(null);
+      TRANSPORT_NETWORKS.forEach(net => {
+        const tokens = String(net?.territoire || '').split('|');
+        tokens.forEach(token => {
+          const normalizedToken = normalizeTerritoryTerm(token);
+          if (!normalizedToken) return;
+          if (!map[normalizedToken]) map[normalizedToken] = new Set();
+          map[normalizedToken].add(net.id);
+        });
+      });
+      return map;
+    })();
+
+    function matchesTerritoryEntry(network, term) {
+      if (!term) return true;
+      const territory = network?.territoire || '';
+      return territory.split('|').some(token => {
+        const normalizedToken = normalizeTerritoryTerm(token);
+        return normalizedToken.includes(term);
+      });
+    }
+
+    function findTransportNetworksByTerritory(value) {
+      const normalized = normalizeTerritoryTerm(value);
+      if (!normalized) return TRANSPORT_NETWORKS;
+      const matchedIds = TERRITORY_INDEX[normalized];
+      if (matchedIds && matchedIds.size) {
+        return TRANSPORT_NETWORKS.filter(net => matchedIds.has(net.id));
+      }
+      const direct = TRANSPORT_NETWORKS.filter(net => matchesTerritoryEntry(net, normalized));
+      return direct.length ? direct : [];
+    }
+
+    function sortTerritorySuggestions(value) {
+      const normalized = normalizeTerritoryTerm(value);
+      if (!normalized) return TERRITORY_SUGGESTIONS.slice();
+      const ranked = TERRITORY_SUGGESTIONS.slice().sort((a, b) => {
+        const na = normalizeTerritoryTerm(a);
+        const nb = normalizeTerritoryTerm(b);
+        const score = (n) => {
+          if (n === normalized) return 0;
+          if (n.startsWith(normalized)) return 1;
+          if (n.includes(normalized)) return 2;
+          return 3;
+        };
+        return score(na) - score(nb) || na.localeCompare(nb, 'fr');
+      });
+      return ranked.filter(item => normalizeTerritoryTerm(item).includes(normalized) || TERRITORY_SYNONYMS[normalized] === normalizeTerritoryTerm(item))
+        .concat(ranked.filter(item => !normalizeTerritoryTerm(item).includes(normalized) && TERRITORY_SYNONYMS[normalized] !== normalizeTerritoryTerm(item)));
+    }
+
+    window.findTransportNetworksByTerritory = findTransportNetworksByTerritory;
 
     // ── Moteur 71 aides — barèmes 2026 ───────────────────────────────────────
     function simulate(p) {
@@ -713,6 +825,50 @@ const TOTAL_STEPS = 5;
         add(infoaide('transport-scolaire', 'Aide au Transport Scolaire', 'famille',
           'Prise en charge partielle ou totale des transports scolaires selon le d\u00e9partement et la distance domicile-\u00e9tablissement.'));
 
+      const transportNetworks = findTransportNetworksByTerritory(p.territoire);
+      if (transportNetworks.length > 0) {
+        transportNetworks.forEach(net => {
+          if (!net || !net.id || !net.source_url) return;
+          const criteres = Array.isArray(net.criteres) && net.criteres.length
+            ? `Critères : ${net.criteres.join(', ')}.`
+            : '';
+          const desc = [net.desc, criteres].filter(Boolean).join(' ');
+          add(infoaide(net.id, net.nom, 'transport', desc, {
+            source_url: net.source_url,
+            source_label: net.source_label || net.source_url,
+            criteres: net.criteres
+          }));
+        });
+      } else if (territory) {
+        add(infoaide('transport-local', 'Réseaux transport locaux', 'transport',
+          'Aucun réseau officiel reconnu pour ce territoire dans le catalogue actuel. Essayez une région, une métropole ou un nom de réseau plus précis.'));
+      }
+
+      // Aide info-only : MaPrimeAdapt' pour adapter un logement
+      add(infoaide('ma-prime-adapt', "MaPrimeAdapt' — Adaptation logement", 'logement',
+        "Aide ANAH pour financer les travaux d'adaptation (salles de bains, accès, équipements) en cas de perte d'autonomie. Voir service-public.fr/F37501.",
+        { source_url: 'https://www.service-public.fr/particuliers/vosdroits/F37501', source_label: 'service-public.fr' }));
+
+      // Aide info-only : aide au permis de conduire pour insertion
+      add(infoaide('permis-insertion', 'Aide au permis de conduire', 'emploi',
+        'France Travail/CFA peuvent financer une partie du permis pour retrouver un emploi ou une formation. Voir service-public.fr/R67946.',
+        { source_url: 'https://www.service-public.fr/particuliers/vosdroits/F67946', source_label: 'service-public.fr' }));
+
+      // Aide info-only : vacances et loisirs
+      add(infoaide('vacances-familles', 'Aide aux vacances familiales', 'famille',
+        'CAF/MSA financent des séjours labellisés pendant les vacances pour les familles modestes (AVE/AVF). Voir service-public.fr/F2038.',
+        { source_url: 'https://www.service-public.fr/particuliers/vosdroits/F2038', source_label: 'service-public.fr' }));
+
+      // Aide info-only : carte familles nombreuses
+      add(infoaide('carte-familles-nombreuses', 'Carte familles nombreuses', 'famille',
+        'Réductions sur transports, cantines et loisirs pour familles de 3 enfants et plus, gérée par la SNCF ou la CAF. Voir service-public.fr/F15292.',
+        { source_url: 'https://www.service-public.fr/particuliers/vosdroits/F15292', source_label: 'service-public.fr' }));
+
+      // Aide info-only : fonds sociaux cantine
+      add(infoaide('fsl-cantine', 'Fonds social cantine', 'famille',
+        'Les communes et départements peuvent abaisser les tarifs de cantine via les fonds sociaux : renseignez-vous auprès de votre mairie ou du département. Voir service-public.fr/F19294.',
+        { source_url: 'https://www.service-public.fr/particuliers/vosdroits/F19294', source_label: 'service-public.fr' }));
+
       // 46. ALD 100%
       // Source: ameli.fr/assure/remboursements/rembourse/maladies-affections-de-longue-duree
       if (est_ald || est_invalide)
@@ -868,6 +1024,9 @@ const TOTAL_STEPS = 5;
       const exact  = out.filter(a => !a.info_only && !a.approx);
       const approx = out.filter(a =>  a.approx);
       const infos  = out.filter(a =>  a.info_only);
+      const highlightIds = new Set(LOCAL_HIGHLIGHT_IDS);
+      transportNetworks.forEach(net => highlightIds.add(net.id));
+      const localAids = out.filter(a => highlightIds.has(a.id)).slice(0, 5);
 
       return {
         aides:         out,
@@ -877,7 +1036,9 @@ const TOTAL_STEPS = 5;
         nb_exact:      exact.length,
         nb_approx:     approx.length,
         nb_info:       infos.length,
-        situation:     p
+        situation:     p,
+        local_aides:   localAids,
+        territoire:    p.territoire || ''
       };
     }
 
@@ -961,6 +1122,7 @@ const TOTAL_STEPS = 5;
       energie:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
       sante:    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
       famille:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      transport: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="10" rx="2"/><path d="M3 15h18"/><circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/><path d="M7 6v-2h10v2"/></svg>',
       emploi:   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>',
       seniors:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a6 6 0 0 1 6-6"/><path d="M18 17a3 3 0 0 1-6 0v-2h6v2z"/></svg>',
       jeunes:   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
@@ -984,7 +1146,7 @@ const TOTAL_STEPS = 5;
       const nbExact = res.nb_exact || 0;
       const nbApprox = res.nb_approx || 0;
       const nbInfo  = res.nb_info || 0;
-
+      const territoire = res.situation?.territoire || '';
       if (aides.length === 0) {
         section.innerHTML = `
           <div class="sr-empty">
@@ -997,6 +1159,24 @@ const TOTAL_STEPS = 5;
         const totalFormatted = Math.round(total).toLocaleString('fr-FR');
         const approxLine = totalApprox > 0
           ? `<p class="sr-hero__approx">+ potentiellement ~${Math.round(totalApprox).toLocaleString('fr-FR')} €/mois supplémentaires (estimés)</p>`
+          : '';
+        const localItems = res.local_aides || [];
+        const territoryLabel = (res.territoire || res.situation?.territoire || '').trim();
+        const localSection = territoryLabel && localItems.length > 0
+          ? `<div class="sr-hero-local">
+              <div class="sr-hero-local__title">Aides locales pour ${territoryLabel}</div>
+              <ul class="sr-hero-local__list">
+                ${localItems.slice(0, 4).map(a => {
+                  const snippet = a.desc ? a.desc.split('. ')[0] : 'Consultez la fiche pour les conditions.';
+                  const linkStart = a.source_url ? `<a href="${a.source_url}" target="_blank" rel="noopener noreferrer">` : '<span>';
+                  const linkEnd = a.source_url ? '</a>' : '</span>';
+                  return `<li class="sr-hero-local__item">
+                    ${linkStart}<strong>${a.nom}</strong>${linkEnd}
+                    <p>${snippet}</p>
+                  </li>`;
+                }).join('')}
+              </ul>
+            </div>`
           : '';
         const counterParts = [];
         if (nbExact > 0) counterParts.push(`${nbExact} aide${nbExact > 1 ? 's' : ''} calculée${nbExact > 1 ? 's' : ''}`);
@@ -1013,6 +1193,7 @@ const TOTAL_STEPS = 5;
                 <span class="sr-hero__period">/mois</span>
               </div>
               ${approxLine}
+              ${localSection}
               <p class="sr-hero__sub">${counterLine} · 100% local, aucune donnée transmise</p>
             </div>
           </div>
@@ -1022,7 +1203,7 @@ const TOTAL_STEPS = 5;
               logement:'Logement', famille:'Famille', emploi:'Emploi',
               sante:'Santé', handicap:'Handicap', energie:'Énergie',
               seniors:'Seniors', jeunes:'Jeunes', revenus:'Revenus',
-              divers:'Divers', justice:'Justice'
+              transport:'Transport', divers:'Divers', justice:'Justice'
             };
             const counts = {};
             aides.forEach(a => { counts[a.cat] = (counts[a.cat]||0) + 1; });
@@ -1041,7 +1222,7 @@ const TOTAL_STEPS = 5;
               logement:'Logement', famille:'Famille', emploi:'Emploi',
               sante:'Santé', handicap:'Handicap', energie:'Énergie',
               seniors:'Seniors', jeunes:'Jeunes', revenus:'Revenus',
-              divers:'Divers', justice:'Justice'
+              transport:'Transport', divers:'Divers', justice:'Justice'
             };
             const counts = {};
             aides.forEach(a => { counts[a.cat] = (counts[a.cat]||0) + 1; });
@@ -1165,6 +1346,40 @@ const TOTAL_STEPS = 5;
 // ── Event listeners (replaces inline handlers) ────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
   // Slider: age
+  const territoryList = document.getElementById('territoires');
+  const territoryInputEl = document.getElementById('territoire');
+  const territoryFeedback = document.getElementById('territoireFeedback');
+
+  function updateTerritoryAssistant() {
+    if (!territoryList || !territoryInputEl) return;
+    const raw = territoryInputEl.value || '';
+    const suggestions = sortTerritorySuggestions(raw).slice(0, 18);
+    territoryList.innerHTML = suggestions.map(value => `<option value="${value}">`).join('');
+
+    if (!territoryFeedback) return;
+    const normalized = normalizeTerritoryTerm(raw);
+    if (!normalized) {
+      territoryFeedback.textContent = 'Saisissez la région, le département, la métropole ou un code postal.';
+      return;
+    }
+    const networks = findTransportNetworksByTerritory(raw);
+    if (networks.length === 0) {
+      territoryFeedback.textContent = 'Aucun réseau local reconnu pour ce territoire dans le catalogue actuel.';
+      return;
+    }
+    const preview = networks.slice(0, 4).map(net => net.nom).join(', ');
+    const suffix = networks.length > 4 ? ` et ${networks.length - 4} autre${networks.length - 4 > 1 ? 's' : ''}` : '';
+    territoryFeedback.textContent = `${networks.length} réseau${networks.length > 1 ? 'x' : ''} trouvé${networks.length > 1 ? 's' : ''} : ${preview}${suffix}.`;
+  }
+
+  if (territoryList) {
+    territoryList.innerHTML = TERRITORY_SUGGESTIONS.map(value => `<option value="${value}">`).join('');
+  }
+  if (territoryInputEl) {
+    territoryInputEl.addEventListener('input', updateTerritoryAssistant);
+    updateTerritoryAssistant();
+  }
+
   const ageEl = document.getElementById('age');
   if (ageEl) ageEl.addEventListener('input', function() {
     document.getElementById('ageDisplay').firstChild.textContent = this.value + ' ';
