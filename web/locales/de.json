@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Zum Hauptinhalt springen"
+  },
+  "eu": {
+    "page_title": "Sozialleistungen in Europa 2026 | Mes Aides",
+    "hub_title": "Sozialleistungen in Europa",
+    "hub_sub": "Sozialleistungen aus 30 europäischen Ländern — Beträge 2026, Voraussetzungen, offizielle Stellen.",
+    "benefits_table": "Leistungsübersicht — Sätze 2026",
+    "official_source": "Offizielle Quelle",
+    "eligibility": "Anspruchsvoraussetzungen",
+    "amount": "Betrag",
+    "benefit": "Leistung",
+    "category": "Kategorie",
+    "back_to_europe": "Zurück zu Europa",
+    "countries_covered": "Ausführlich behandelte Länder"
   }
 }

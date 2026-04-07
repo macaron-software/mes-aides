@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "Social Benefits in Europe 2026 | Mes Aides",
+    "hub_title": "Social Benefits in Europe",
+    "hub_sub": "Social benefits from 30 European countries — 2026 amounts, eligibility criteria, official sources.",
+    "benefits_table": "Benefits table — 2026 rates",
+    "official_source": "Official source",
+    "eligibility": "Eligibility criteria",
+    "amount": "Amount",
+    "benefit": "Benefit",
+    "category": "Category",
+    "back_to_europe": "Back to Europe",
+    "countries_covered": "Countries covered in detail"
   }
 }

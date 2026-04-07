@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Siirry pääsisältöön"
+  },
+  "eu": {
+    "page_title": "Sosiaalietuudet Euroopassa 2026 | Mes Aides",
+    "hub_title": "Sosiaalietuudet Euroopassa",
+    "hub_sub": "30 eurooppalaisen maan sosiaalietuudet — vuoden 2026 määrät, ehdot, viralliset lähteet.",
+    "benefits_table": "Etuustaulukko — vuoden 2026 tasot",
+    "official_source": "Virallinen lähde",
+    "eligibility": "Tukikelpoisuusehdot",
+    "amount": "Määrä",
+    "benefit": "Etuus",
+    "category": "Kategoria",
+    "back_to_europe": "Takaisin Eurooppaan",
+    "countries_covered": "Yksityiskohtaisesti katetut maat"
   }
 }

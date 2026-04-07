@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "주요 콘텐츠로 건너뛰기"
+  },
+  "eu": {
+    "page_title": "유럽 사회 급여 2026 | Mes Aides",
+    "hub_title": "유럽 사회 급여",
+    "hub_sub": "유럽 30개국의 사회 급여 — 2026년 금액, 자격 기준, 공식 출처.",
+    "benefits_table": "급여 표 — 2026년 기준",
+    "official_source": "공식 출처",
+    "eligibility": "자격 기준",
+    "amount": "금액",
+    "benefit": "급여",
+    "category": "카테고리",
+    "back_to_europe": "유럽으로 돌아가기",
+    "countries_covered": "상세하게 다루는 국가"
   }
 }

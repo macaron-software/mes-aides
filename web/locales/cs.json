@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Přejít na hlavní obsah"
+  },
+  "eu": {
+    "page_title": "Sociální dávky v Evropě 2026 | Mes Aides",
+    "hub_title": "Sociální dávky v Evropě",
+    "hub_sub": "Sociální dávky z 30 evropských zemí — částky 2026, podmínky, oficiální zdroje.",
+    "benefits_table": "Tabulka dávek — sazby 2026",
+    "official_source": "Oficiální zdroj",
+    "eligibility": "Podmínky nároku",
+    "amount": "Částka",
+    "benefit": "Dávka",
+    "category": "Kategorie",
+    "back_to_europe": "Zpět do Evropy",
+    "countries_covered": "Podrobně zpracované země"
   }
 }

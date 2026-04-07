@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Lompat ke konten utama"
+  },
+  "eu": {
+    "page_title": "Tunjangan sosial di Eropa 2026 | Mes Aides",
+    "hub_title": "Tunjangan sosial di Eropa",
+    "hub_sub": "Tunjangan sosial dari 30 negara Eropa — jumlah 2026, kriteria, sumber resmi.",
+    "benefits_table": "Tabel tunjangan — tarif 2026",
+    "official_source": "Sumber resmi",
+    "eligibility": "Kriteria kelayakan",
+    "amount": "Jumlah",
+    "benefit": "Tunjangan",
+    "category": "Kategori",
+    "back_to_europe": "Kembali ke Eropa",
+    "countries_covered": "Negara yang dicakup secara rinci"
   }
 }

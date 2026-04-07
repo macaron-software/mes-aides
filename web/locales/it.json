@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Vai al contenuto principale"
+  },
+  "eu": {
+    "page_title": "Aiuti sociali in Europa 2026 | Mes Aides",
+    "hub_title": "Aiuti sociali in Europa",
+    "hub_sub": "Prestazioni sociali di 30 paesi europei — importi 2026, condizioni, enti ufficiali.",
+    "benefits_table": "Tabella delle prestazioni — importi 2026",
+    "official_source": "Fonte ufficiale",
+    "eligibility": "Criteri di eleggibilità",
+    "amount": "Importo",
+    "benefit": "Prestazione",
+    "category": "Categoria",
+    "back_to_europe": "Torna all'Europa",
+    "countries_covered": "Paesi coperti in dettaglio"
   }
 }

@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "Awọn anfani awujọ ni Yuroopu 2026 | Mes Aides",
+    "hub_title": "Awọn anfani awujọ ni Yuroopu",
+    "hub_sub": "Awọn anfani awujọ lati awọn orilẹ-ede Yuroopu 30 — awọn iye 2026, awọn ibeere, awọn orisun osise.",
+    "benefits_table": "Tabili awọn anfani — awọn oṣuwọn 2026",
+    "official_source": "Orisun osise",
+    "eligibility": "Awọn ibeere ẹtọ",
+    "amount": "Iye",
+    "benefit": "Anfani",
+    "category": "Ẹka",
+    "back_to_europe": "Pada si Yuroopu",
+    "countries_covered": "Awọn orilẹ-ede ti a bo ni apejuwe"
   }
 }

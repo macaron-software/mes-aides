@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "跳轉到主要內容"
+  },
+  "eu": {
+    "page_title": "歐洲社會福利 2026 | Mes Aides",
+    "hub_title": "歐洲社會福利",
+    "hub_sub": "來自歐洲30個國家的社會福利 — 2026年金額、資格條件、官方來源。",
+    "benefits_table": "福利表 — 2026年標準",
+    "official_source": "官方來源",
+    "eligibility": "資格條件",
+    "amount": "金額",
+    "benefit": "福利",
+    "category": "類別",
+    "back_to_europe": "返回歐洲",
+    "countries_covered": "詳細介紹的國家"
   }
 }

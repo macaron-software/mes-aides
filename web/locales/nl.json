@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Ga naar hoofdinhoud"
+  },
+  "eu": {
+    "page_title": "Sociale uitkeringen in Europa 2026 | Mes Aides",
+    "hub_title": "Sociale uitkeringen in Europa",
+    "hub_sub": "Sociale uitkeringen uit 30 Europese landen — bedragen 2026, voorwaarden, officiële instanties.",
+    "benefits_table": "Uitkeringstabel — tarieven 2026",
+    "official_source": "Officiële bron",
+    "eligibility": "Voorwaarden",
+    "amount": "Bedrag",
+    "benefit": "Uitkering",
+    "category": "Categorie",
+    "back_to_europe": "Terug naar Europa",
+    "countries_covered": "Uitgebreid behandelde landen"
   }
 }

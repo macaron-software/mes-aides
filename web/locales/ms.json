@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Langkau ke kandungan utama"
+  },
+  "eu": {
+    "page_title": "Faedah sosial di Eropah 2026 | Mes Aides",
+    "hub_title": "Faedah sosial di Eropah",
+    "hub_sub": "Faedah sosial dari 30 negara Eropah — jumlah 2026, kriteria, sumber rasmi.",
+    "benefits_table": "Jadual faedah — kadar 2026",
+    "official_source": "Sumber rasmi",
+    "eligibility": "Kriteria kelayakan",
+    "amount": "Jumlah",
+    "benefit": "Faedah",
+    "category": "Kategori",
+    "back_to_europe": "Kembali ke Eropah",
+    "countries_covered": "Negara yang diliputi secara terperinci"
   }
 }

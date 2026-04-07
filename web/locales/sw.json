@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "Faida za kijamii katika Ulaya 2026 | Mes Aides",
+    "hub_title": "Faida za kijamii katika Ulaya",
+    "hub_sub": "Faida za kijamii kutoka nchi 30 za Ulaya — kiasi 2026, vigezo, vyanzo rasmi.",
+    "benefits_table": "Jedwali la faida — viwango 2026",
+    "official_source": "Chanzo rasmi",
+    "eligibility": "Vigezo vya ustahili",
+    "amount": "Kiasi",
+    "benefit": "Faida",
+    "category": "Kategoria",
+    "back_to_europe": "Rudi Ulaya",
+    "countries_covered": "Nchi zilizofunikwa kwa undani"
   }
 }

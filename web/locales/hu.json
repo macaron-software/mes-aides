@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Ugrás a főtartalomhoz"
+  },
+  "eu": {
+    "page_title": "Szociális juttatások Európában 2026 | Mes Aides",
+    "hub_title": "Szociális juttatások Európában",
+    "hub_sub": "30 európai ország szociális juttatásai — 2026-os összegek, feltételek, hivatalos forrásokkal.",
+    "benefits_table": "Juttatási táblázat — 2026-os mértékek",
+    "official_source": "Hivatalos forrás",
+    "eligibility": "Jogosultsági feltételek",
+    "amount": "Összeg",
+    "benefit": "Juttatás",
+    "category": "Kategória",
+    "back_to_europe": "Vissza Európába",
+    "countries_covered": "Részletesen tárgyalt országok"
   }
 }

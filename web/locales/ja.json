@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "メインコンテンツへスキップ"
+  },
+  "eu": {
+    "page_title": "欧州の社会保障給付 2026 | Mes Aides",
+    "hub_title": "欧州の社会保障給付",
+    "hub_sub": "欧州30カ国の社会保障給付 — 2026年の金額、受給条件、公式情報源。",
+    "benefits_table": "給付一覧表 — 2026年基準額",
+    "official_source": "公式情報源",
+    "eligibility": "受給資格要件",
+    "amount": "金額",
+    "benefit": "給付",
+    "category": "カテゴリ",
+    "back_to_europe": "欧州に戻る",
+    "countries_covered": "詳細に掲載している国"
   }
 }

@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "በአውሮፓ ማህበራዊ ጥቅሞች 2026 | Mes Aides",
+    "hub_title": "በአውሮፓ ማህበራዊ ጥቅሞች",
+    "hub_sub": "ከ30 አውሮፓ ሀገሮች ማህበራዊ ጥቅሞች — 2026 መጠን፣ መስፈርቶች፣ ኦፊሴላዊ ምንጮች።",
+    "benefits_table": "ጥቅሞቹ ሰንጠረዥ — 2026 መጠኖች",
+    "official_source": "ኦፊሴላዊ ምንጭ",
+    "eligibility": "ብቁነት መስፈርቶች",
+    "amount": "መጠን",
+    "benefit": "ጥቅም",
+    "category": "ምድብ",
+    "back_to_europe": "ወደ አውሮፓ ተመለስ",
+    "countries_covered": "በዝርዝር የተሸፈኑ ሀገሮች"
   }
 }

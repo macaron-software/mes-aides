@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Ana içeriğe geç"
+  },
+  "eu": {
+    "page_title": "Avrupa'da sosyal yardımlar 2026 | Mes Aides",
+    "hub_title": "Avrupa'da sosyal yardımlar",
+    "hub_sub": "30 Avrupa ülkesinden sosyal yardımlar — 2026 miktarları, koşullar, resmi kurumlar.",
+    "benefits_table": "Yardım tablosu — 2026 oranları",
+    "official_source": "Resmi kaynak",
+    "eligibility": "Uygunluk koşulları",
+    "amount": "Miktar",
+    "benefit": "Yardım",
+    "category": "Kategori",
+    "back_to_europe": "Avrupa'ya dön",
+    "countries_covered": "Ayrıntılı kapsanan ülkeler"
   }
 }

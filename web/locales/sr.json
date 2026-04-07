@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "Socijalne naknade u Evropi 2026 | Mes Aides",
+    "hub_title": "Socijalne naknade u Evropi",
+    "hub_sub": "Socijalne naknade iz 30 evropskih zemalja — iznosi 2026, uslovi, zvanični izvori.",
+    "benefits_table": "Tabela naknada — stope 2026",
+    "official_source": "Zvanični izvor",
+    "eligibility": "Uslovi prihvatljivosti",
+    "amount": "Iznos",
+    "benefit": "Naknada",
+    "category": "Kategorija",
+    "back_to_europe": "Nazad na Evropu",
+    "countries_covered": "Detaljno pokrivene zemlje"
   }
 }

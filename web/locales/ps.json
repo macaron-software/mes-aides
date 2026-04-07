@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "د اروپا ټولنیز ګټې ۲۰۲۶ | Mes Aides",
+    "hub_title": "د اروپا ټولنیز ګټې",
+    "hub_sub": "د ۳۰ اروپایي هیوادونو ټولنیز ګټې — د ۲۰۲۶ مقدارونه، معیارونه، رسمي سرچینې.",
+    "benefits_table": "د ګټو جدول — د ۲۰۲۶ نرخونه",
+    "official_source": "رسمي سرچینه",
+    "eligibility": "د وړتیا معیارونه",
+    "amount": "مقدار",
+    "benefit": "ګټه",
+    "category": "کټګورۍ",
+    "back_to_europe": "اروپا ته ستنیدل",
+    "countries_covered": "هیوادونه چې تفصیل سره پوښل شوي"
   }
 }

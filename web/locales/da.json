@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Gå til hovedindhold"
+  },
+  "eu": {
+    "page_title": "Sociale ydelser i Europa 2026 | Mes Aides",
+    "hub_title": "Sociale ydelser i Europa",
+    "hub_sub": "Sociale ydelser fra 30 europæiske lande — beløb 2026, betingelser, officielle kilder.",
+    "benefits_table": "Ydelsestabel — satser 2026",
+    "official_source": "Officiel kilde",
+    "eligibility": "Støtteberettigelseskriterier",
+    "amount": "Beløb",
+    "benefit": "Ydelse",
+    "category": "Kategori",
+    "back_to_europe": "Tilbage til Europa",
+    "countries_covered": "Lande dækket i detaljer"
   }
 }

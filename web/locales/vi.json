@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Chuyển đến nội dung chính"
+  },
+  "eu": {
+    "page_title": "Phúc lợi xã hội ở Châu Âu 2026 | Mes Aides",
+    "hub_title": "Phúc lợi xã hội ở Châu Âu",
+    "hub_sub": "Phúc lợi xã hội từ 30 quốc gia Châu Âu — số tiền 2026, điều kiện, nguồn chính thức.",
+    "benefits_table": "Bảng phúc lợi — mức 2026",
+    "official_source": "Nguồn chính thức",
+    "eligibility": "Tiêu chí đủ điều kiện",
+    "amount": "Số tiền",
+    "benefit": "Phúc lợi",
+    "category": "Danh mục",
+    "back_to_europe": "Quay lại Châu Âu",
+    "countries_covered": "Các quốc gia được đề cập chi tiết"
   }
 }

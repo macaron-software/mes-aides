@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "Mga benepisyong panlipunan sa Europa 2026 | Mes Aides",
+    "hub_title": "Mga benepisyong panlipunan sa Europa",
+    "hub_sub": "Mga benepisyong panlipunan mula sa 30 bansang European — halaga 2026, pamantayan, opisyal na pinagmulan.",
+    "benefits_table": "Talahanayan ng mga benepisyo — mga rate 2026",
+    "official_source": "Opisyal na pinagmulan",
+    "eligibility": "Pamantayan sa pagiging karapat-dapat",
+    "amount": "Halaga",
+    "benefit": "Benepisyo",
+    "category": "Kategorya",
+    "back_to_europe": "Bumalik sa Europa",
+    "countries_covered": "Mga bansang detalyadong sinasaklaw"
   }
 }

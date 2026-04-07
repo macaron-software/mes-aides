@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "یورپ میں سماجی فوائد ۲۰۲۶ | Mes Aides",
+    "hub_title": "یورپ میں سماجی فوائد",
+    "hub_sub": "۳۰ یورپی ممالک کے سماجی فوائد — ۲۰۲۶ مقدار، معیار، سرکاری ذرائع۔",
+    "benefits_table": "فوائد کا جدول — ۲۰۲۶ کی شرحیں",
+    "official_source": "سرکاری ذریعہ",
+    "eligibility": "اہلیت کے معیار",
+    "amount": "مقدار",
+    "benefit": "فائدہ",
+    "category": "زمرہ",
+    "back_to_europe": "یورپ واپس جائیں",
+    "countries_covered": "تفصیل سے احاطہ شدہ ممالک"
   }
 }

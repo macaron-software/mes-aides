@@ -245,5 +245,18 @@
   },
   "a11y": {
     "skip_to_content": "Skip to main content"
+  },
+  "eu": {
+    "page_title": "Taimakon zamantakewa a Turai 2026 | Mes Aides",
+    "hub_title": "Taimakon zamantakewa a Turai",
+    "hub_sub": "Taimakon zamantakewa daga kasashe 30 na Turai — adadin 2026, sharudda, hukumomin hukuma.",
+    "benefits_table": "Tebur na taimakon — ƙimar 2026",
+    "official_source": "Tushen hukuma",
+    "eligibility": "Sharuddan cancantar",
+    "amount": "Adadi",
+    "benefit": "Taimako",
+    "category": "Nau'i",
+    "back_to_europe": "Koma Turai",
+    "countries_covered": "Kasashe da aka rufe cikin cikakkun bayanai"
   }
 }

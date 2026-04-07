@@ -416,5 +416,18 @@
     "langs": "45 langues disponibles",
     "langs_desc": "Le simulateur et toutes les fiches sont disponibles dans ces langues. Cliquez sur une langue pour basculer immédiatement.",
     "legal": "Informations légales"
+  },
+  "eu": {
+    "page_title": "Aides sociales en Europe 2026 | Mes Aides",
+    "hub_title": "Aides sociales en Europe",
+    "hub_sub": "Prestations sociales de 30 pays européens — montants 2026, conditions, organismes officiels.",
+    "benefits_table": "Tableau des prestations — barèmes 2026",
+    "official_source": "Source officielle",
+    "eligibility": "Conditions d'éligibilité",
+    "amount": "Montant",
+    "benefit": "Prestation",
+    "category": "Catégorie",
+    "back_to_europe": "Retour à l'Europe",
+    "countries_covered": "Pays couverts en détail"
   }
 }
