@@ -63,3 +63,23 @@ const LANG_NAMES = {
     i.classList.toggle('active', i.getAttribute('data-lang') === lang);
   });
 })();
+
+// ── App Shell loader ─────────────────────────────────────────────────────────
+// Injected here so all pages (which load nav.js) get the layout shell.
+(function loadShell() {
+  // CSS
+  if (!document.querySelector('link[href*="layout.css"]')) {
+    var lnk = document.createElement('link');
+    lnk.rel = 'stylesheet';
+    // Resolve path relative to root regardless of current page depth
+    var base = window.location.origin;
+    lnk.href = base + '/css/layout.css';
+    document.head.appendChild(lnk);
+  }
+  // JS
+  if (!document.querySelector('script[src*="app-shell.js"]')) {
+    var scr = document.createElement('script');
+    scr.src = window.location.origin + '/js/app-shell.js';
+    document.head.appendChild(scr);
+  }
+})();
