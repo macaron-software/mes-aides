@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "IT",
+  "name": "Italy",
+  "name_local": "Italia",
+  "language": "it",
+  "currency": "EUR",
+  "welfare_model": "mediteranean",
+  "sources": [
+    "https://www.inps.it",
+    "https://www.lavoro.gov.it"
+  ],
+  "aids": [
+    {
+      "id": "it-adi",
+      "slug": "assegno-inclusione",
+      "nom": "Assegno di Inclusione",
+      "description_en": "Social inclusion benefit, replaces Reddito di Cittadinanza since January 2024.",
+      "categorie": "revenus_emploi",
+      "organisme": "INPS",
+      "montant_min_eur": 500,
+      "montant_max_eur": 780,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.assegno-di-inclusione-adi-.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "income_below_threshold",
+        "family_with_minors_or_disabled"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "it-naspi",
+      "slug": "naspi",
+      "nom": "NASpI",
+      "description_en": "Unemployment benefit, 75% of average monthly wage for first 4 contribution years, then 25%.",
+      "categorie": "revenus_emploi",
+      "organisme": "INPS",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1550,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.naspi--nuova-assicurazione-sociale-per-l-impiego.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "contribution_13_weeks",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "it-assegno-unico",
+      "slug": "assegno-unico",
+      "nom": "Assegno Unico Universale",
+      "description_en": "Universal child benefit up to €189/month per child, from 7th month of pregnancy to age 21.",
+      "categorie": "famille",
+      "organisme": "INPS",
+      "montant_min_eur": 54,
+      "montant_max_eur": 189,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "isee_below_threshold",
+        "child_under_21"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

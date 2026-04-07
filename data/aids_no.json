@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "NO",
+  "name": "Norway",
+  "name_local": "Norge",
+  "language": "no",
+  "currency": "NOK",
+  "welfare_model": "nordic",
+  "sources": [
+    "https://www.nav.no"
+  ],
+  "aids": [
+    {
+      "id": "no-dagpenger",
+      "slug": "dagpenger",
+      "nom": "Dagpenger ved Arbeidsløshet",
+      "description_en": "Unemployment benefit, 62.4% of previous income up to NOK 716,400/year (approx. €2,100/mo).",
+      "categorie": "revenus_emploi",
+      "organisme": "NAV",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2100,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nav.no/dagpenger",
+      "eligibility_criteria": [
+        "residence_no",
+        "income_above_threshold",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "no-sosialhjelp",
+      "slug": "sosialhjelp",
+      "nom": "Sosialhjelp (Sosial stønad)",
+      "description_en": "Social assistance last resort, approx. NOK 6,900/month single (approx. €600).",
+      "categorie": "revenus_emploi",
+      "organisme": "NAV",
+      "montant_min_eur": 0,
+      "montant_max_eur": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nav.no/sosialhjelp",
+      "eligibility_criteria": [
+        "residence_no",
+        "income_below_threshold",
+        "all_other_options_exhausted"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "no-barnetrygd",
+      "slug": "barnetrygd",
+      "nom": "Barnetrygd",
+      "description_en": "Child benefit NOK 1,766/month for children under 6, NOK 1,766/month under 18.",
+      "categorie": "famille",
+      "organisme": "NAV",
+      "montant_min_eur": 155,
+      "montant_max_eur": 155,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nav.no/barnetrygd",
+      "eligibility_criteria": [
+        "residence_no",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

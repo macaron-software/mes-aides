@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "SE",
+  "name": "Sweden",
+  "name_local": "Sverige",
+  "language": "sv",
+  "currency": "SEK",
+  "welfare_model": "nordic",
+  "sources": [
+    "https://www.forsakringskassan.se",
+    "https://www.socialstyrelsen.se"
+  ],
+  "aids": [
+    {
+      "id": "se-a-kassa",
+      "slug": "a-kassa",
+      "nom": "A-kassa (Arbetslöshetsersättning)",
+      "description_en": "Unemployment insurance, 80% of previous salary up to SEK 25,000/month (approx. €2,200).",
+      "categorie": "revenus_emploi",
+      "organisme": "Arbetslöshetskassan",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.alfakassan.se",
+      "eligibility_criteria": [
+        "residence_se",
+        "union_member_a_kassa",
+        "contribution_6mo"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "se-forsojningsstod",
+      "slug": "forsojningsstod",
+      "nom": "Försörjningsstöd",
+      "description_en": "Social assistance, approx. SEK 4,600/month single (approx. €410).",
+      "categorie": "revenus_emploi",
+      "organisme": "Socialtjänsten (Kommunen)",
+      "montant_min_eur": 0,
+      "montant_max_eur": 410,
+      "periodicite": "mensuel",
+      "url_info": "https://www.socialstyrelsen.se/stod-i-olika-livssituationer/ekonomiskt-bistand/om-ekonomiskt-bistand",
+      "eligibility_criteria": [
+        "residence_se",
+        "income_below_threshold",
+        "active_job_search"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "se-barnbidrag",
+      "slug": "barnbidrag",
+      "nom": "Barnbidrag",
+      "description_en": "Child benefit SEK 1,250/month per child (approx. €111).",
+      "categorie": "famille",
+      "organisme": "Försäkringskassan",
+      "montant_min_eur": 111,
+      "montant_max_eur": 111,
+      "periodicite": "mensuel",
+      "url_info": "https://www.forsakringskassan.se/privatperson/foralder/barnbidrag",
+      "eligibility_criteria": [
+        "residence_se",
+        "child_under_16"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

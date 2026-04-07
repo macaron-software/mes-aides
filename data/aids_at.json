@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "AT",
+  "name": "Austria",
+  "name_local": "Österreich",
+  "language": "de",
+  "currency": "EUR",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://www.ams.at",
+    "https://www.oesterreich.gv.at"
+  ],
+  "aids": [
+    {
+      "id": "at-arbeitslosengeld",
+      "slug": "arbeitslosengeld",
+      "nom": "Arbeitslosengeld",
+      "description_en": "Unemployment benefit, 55% of last net salary, up to 52 weeks.",
+      "categorie": "revenus_emploi",
+      "organisme": "AMS (Arbeitsmarktservice)",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ams.at/arbeitsuchende/arbeitslos-was-nun/ich-bekomme-arbeitslosengeld",
+      "eligibility_criteria": [
+        "residence_at",
+        "contribution_52_weeks",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "at-mindestsicherung",
+      "slug": "mindestsicherung",
+      "nom": "Mindestsicherung / Sozialhilfe",
+      "description_en": "Social assistance minimum income, varies by Bundesland.",
+      "categorie": "revenus_emploi",
+      "organisme": "Land (Bezirksverwaltungsbehörde)",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1078,
+      "periodicite": "mensuel",
+      "url_info": "https://www.oesterreich.gv.at/themen/soziales/sozialhilfe.html",
+      "eligibility_criteria": [
+        "residence_at",
+        "income_below_threshold",
+        "age_18"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "at-familienbeihilfe",
+      "slug": "familienbeihilfe",
+      "nom": "Familienbeihilfe",
+      "description_en": "Child benefit €136-€165/month depending on child's age.",
+      "categorie": "famille",
+      "organisme": "Finanzamt",
+      "montant_min_eur": 136,
+      "montant_max_eur": 165,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmf.gv.at/services/familienbeihilfe.html",
+      "eligibility_criteria": [
+        "residence_at",
+        "child_under_24"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

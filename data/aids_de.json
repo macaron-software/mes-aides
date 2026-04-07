@@ -1,0 +1,105 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "DE",
+  "name": "Germany",
+  "name_local": "Deutschland",
+  "language": "de",
+  "currency": "EUR",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://www.bundesregierung.de",
+    "https://www.arbeitsagentur.de"
+  ],
+  "aids": [
+    {
+      "id": "de-buergergeld",
+      "slug": "buergergeld",
+      "nom": "Bürgergeld",
+      "description_en": "Basic income support for unemployed, replaces Hartz IV since 2023.",
+      "categorie": "revenus_emploi",
+      "organisme": "Jobcenter",
+      "montant_min_eur": 0,
+      "montant_max_eur": 563,
+      "periodicite": "mensuel",
+      "url_info": "https://www.arbeitsagentur.de/buergergeld",
+      "eligibility_criteria": [
+        "residence_de",
+        "age_15_65",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "de-wohngeld",
+      "slug": "wohngeld",
+      "nom": "Wohngeld",
+      "description_en": "Housing benefit for low-income households.",
+      "categorie": "logement",
+      "organisme": "Wohngeldbehörde",
+      "montant_min_eur": 0,
+      "montant_max_eur": 450,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmwsb.bund.de/wohngeld",
+      "eligibility_criteria": [
+        "residence_de",
+        "low_income",
+        "renter_or_owner"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "de-kindergeld",
+      "slug": "kindergeld",
+      "nom": "Kindergeld",
+      "description_en": "Child benefit, €255 per child per month.",
+      "categorie": "famille",
+      "organisme": "Familienkasse",
+      "montant_min_eur": 255,
+      "montant_max_eur": 255,
+      "periodicite": "mensuel",
+      "url_info": "https://www.arbeitsagentur.de/familie-und-kinder/kindergeld",
+      "eligibility_criteria": [
+        "residence_de",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "de-alg1",
+      "slug": "arbeitslosengeld-i",
+      "nom": "Arbeitslosengeld I",
+      "description_en": "Unemployment insurance, 60-67% of net wage for up to 24 months.",
+      "categorie": "revenus_emploi",
+      "organisme": "Bundesagentur für Arbeit",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.arbeitsagentur.de/arbeitslos-und-arbeit-finden",
+      "eligibility_criteria": [
+        "residence_de",
+        "contribution_12mo",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "de-bafoeg",
+      "slug": "bafoeg",
+      "nom": "BAföG",
+      "description_en": "Federal student grant/loan for higher education students.",
+      "categorie": "jeunesse",
+      "organisme": "Studentenwerk",
+      "montant_min_eur": 0,
+      "montant_max_eur": 812,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmbf.de/bmbf/de/bildung/ausbildungsfoerderung/bafoeg/bafoeg_node.html",
+      "eligibility_criteria": [
+        "residence_de",
+        "student",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "ES",
+  "name": "Spain",
+  "name_local": "España",
+  "language": "es",
+  "currency": "EUR",
+  "welfare_model": "mediteranean",
+  "sources": [
+    "https://www.seg-social.es",
+    "https://www.sepe.es"
+  ],
+  "aids": [
+    {
+      "id": "es-imv",
+      "slug": "ingreso-minimo-vital",
+      "nom": "Ingreso Mínimo Vital",
+      "description_en": "Minimum vital income for households in poverty situation.",
+      "categorie": "revenus_emploi",
+      "organisme": "IMSERSO/Seguridad Social",
+      "montant_min_eur": 470,
+      "montant_max_eur": 1350,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensiones/imv",
+      "eligibility_criteria": [
+        "residence_es",
+        "income_below_threshold",
+        "registration_padron"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "es-sepe",
+      "slug": "prestacion-desempleo",
+      "nom": "Prestación por Desempleo (SEPE)",
+      "description_en": "Unemployment benefit, 70% then 60% of regulatory base for up to 24 months.",
+      "categorie": "revenus_emploi",
+      "organisme": "SEPE",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sepe.es/HomeSepe/prestaciones/que-puedes-cobrar.html",
+      "eligibility_criteria": [
+        "residence_es",
+        "contribution_360_days",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "es-beca-estudio",
+      "slug": "beca-estudio",
+      "nom": "Beca de Estudios (MEC)",
+      "description_en": "State scholarships for university students.",
+      "categorie": "jeunesse",
+      "organisme": "Ministerio de Educación",
+      "montant_min_eur": 0,
+      "montant_max_eur": 6000,
+      "periodicite": "annuel",
+      "url_info": "https://www.becaseducacion.gob.es",
+      "eligibility_criteria": [
+        "residence_es",
+        "student",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "es-prestacion-familiar",
+      "slug": "prestacion-familiar",
+      "nom": "Prestación Familiar por Hijo a Cargo",
+      "description_en": "Child benefit for low-income families with children.",
+      "categorie": "famille",
+      "organisme": "IMSERSO",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1200,
+      "periodicite": "annuel",
+      "url_info": "https://www.imserso.es",
+      "eligibility_criteria": [
+        "residence_es",
+        "child_under_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

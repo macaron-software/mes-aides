@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "BE",
+  "name": "Belgium",
+  "name_local": "België / Belgique / Belgien",
+  "language": "fr",
+  "currency": "EUR",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://www.belgium.be",
+    "https://www.onem.be"
+  ],
+  "aids": [
+    {
+      "id": "be-revenu-integration",
+      "slug": "revenu-integration",
+      "nom": "Revenu d'Intégration (CPAS)",
+      "description_en": "Minimum income guaranteed by CPAS (Public Centre for Social Welfare) for isolated persons.",
+      "categorie": "revenus_emploi",
+      "organisme": "CPAS/OCMW",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1174,
+      "periodicite": "mensuel",
+      "url_info": "https://www.belgium.be/fr/famille/aide_sociale_et_integration/cpas",
+      "eligibility_criteria": [
+        "residence_be",
+        "age_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "be-allocations-chomage",
+      "slug": "allocations-chomage",
+      "nom": "Allocations de Chômage",
+      "description_en": "Unemployment benefits, 65% then 60% then flat rate depending on career.",
+      "categorie": "revenus_emploi",
+      "organisme": "ONEM/RVA",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.onem.be/fr/documentation/feuille-info/t2",
+      "eligibility_criteria": [
+        "residence_be",
+        "contribution_required",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "be-allocations-familiales",
+      "slug": "allocations-familiales",
+      "nom": "Allocations Familiales",
+      "description_en": "Child benefit, varies by region (Wallonia, Flanders, Brussels).",
+      "categorie": "famille",
+      "organisme": "Famiwal/Groeipakket/Iriscare",
+      "montant_min_eur": 0,
+      "montant_max_eur": 500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.belgium.be/fr/famille/allocation_familiale",
+      "eligibility_criteria": [
+        "residence_be",
+        "child_under_25"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

@@ -2,6 +2,7 @@ pub mod engine;
 pub mod aides;
 pub mod i18n;
 pub mod datagouv;
+pub mod countries;
 
 pub use engine::{Simulator, Situation, SimulationResult};
 pub use aides::{AideId, Categorie};

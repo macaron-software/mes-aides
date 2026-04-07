@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "PT",
+  "name": "Portugal",
+  "name_local": "Portugal",
+  "language": "pt",
+  "currency": "EUR",
+  "welfare_model": "mediteranean",
+  "sources": [
+    "https://www.seg-social.pt",
+    "https://www.iefp.pt"
+  ],
+  "aids": [
+    {
+      "id": "pt-rsi",
+      "slug": "rendimento-social-insercao",
+      "nom": "Rendimento Social de Inserção (RSI)",
+      "description_en": "Minimum income for individuals and families in extreme poverty.",
+      "categorie": "revenus_emploi",
+      "organisme": "Instituto da Segurança Social",
+      "montant_min_eur": 240,
+      "montant_max_eur": 750,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.pt/rendimento-social-de-insercao",
+      "eligibility_criteria": [
+        "residence_pt",
+        "income_below_threshold",
+        "active_job_search"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "pt-subsidio-desemprego",
+      "slug": "subsidio-desemprego",
+      "nom": "Subsídio de Desemprego",
+      "description_en": "Unemployment benefit, 65% of reference salary for up to 30 months.",
+      "categorie": "revenus_emploi",
+      "organisme": "Instituto do Emprego e Formação Profissional",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.iefp.pt/subsidio-de-desemprego",
+      "eligibility_criteria": [
+        "residence_pt",
+        "contribution_450_days",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "pt-abono-familia",
+      "slug": "abono-familia",
+      "nom": "Abono de Família",
+      "description_en": "Child benefit for families with children under 16.",
+      "categorie": "famille",
+      "organisme": "Instituto da Segurança Social",
+      "montant_min_eur": 50,
+      "montant_max_eur": 200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.pt/abono-de-familia-para-criancas-e-jovens",
+      "eligibility_criteria": [
+        "residence_pt",
+        "child_under_16",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

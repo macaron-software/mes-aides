@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "NL",
+  "name": "Netherlands",
+  "name_local": "Nederland",
+  "language": "nl",
+  "currency": "EUR",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://www.uwv.nl",
+    "https://www.rijksoverheid.nl"
+  ],
+  "aids": [
+    {
+      "id": "nl-ww",
+      "slug": "werkloosheidsuitkering",
+      "nom": "WW (Werkloosheidsuitkering)",
+      "description_en": "Unemployment benefit, 75% then 70% of last wage, max 24 months.",
+      "categorie": "revenus_emploi",
+      "organisme": "UWV",
+      "montant_min_eur": 0,
+      "montant_max_eur": 3500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.uwv.nl/nl/werkloos/ww-aanvragen",
+      "eligibility_criteria": [
+        "residence_nl",
+        "contribution_26_weeks",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "nl-bijstand",
+      "slug": "bijstand",
+      "nom": "Bijstand (Participatiewet)",
+      "description_en": "Social assistance minimum income for those with no other means.",
+      "categorie": "revenus_emploi",
+      "organisme": "Gemeente",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1137,
+      "periodicite": "mensuel",
+      "url_info": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
+      "eligibility_criteria": [
+        "residence_nl",
+        "age_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "nl-kinderbijslag",
+      "slug": "kinderbijslag",
+      "nom": "Kinderbijslag",
+      "description_en": "Child benefit, approximately €275 per quarter per child.",
+      "categorie": "famille",
+      "organisme": "SVB",
+      "montant_min_eur": 0,
+      "montant_max_eur": 275,
+      "periodicite": "trimestriel",
+      "url_info": "https://www.svb.nl/nl/kinderbijslag",
+      "eligibility_criteria": [
+        "residence_nl",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

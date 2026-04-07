@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "FI",
+  "name": "Finland",
+  "name_local": "Suomi",
+  "language": "fi",
+  "currency": "EUR",
+  "welfare_model": "nordic",
+  "sources": [
+    "https://www.kela.fi",
+    "https://www.tyomarkkinatori.fi"
+  ],
+  "aids": [
+    {
+      "id": "fi-peruspaivaraha",
+      "slug": "peruspaivaraha",
+      "nom": "Peruspäiväraha / Ansioturva",
+      "description_en": "Basic unemployment allowance €37.21/day or income-related 60-65% of previous salary.",
+      "categorie": "revenus_emploi",
+      "organisme": "Kela / Työttömyyskassa",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/tyottomyys",
+      "eligibility_criteria": [
+        "residence_fi",
+        "involuntary_unemployment",
+        "labour_market_available"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "fi-toimeentulotuki",
+      "slug": "toimeentulotuki",
+      "nom": "Toimeentulotuki",
+      "description_en": "Last-resort social assistance, approx. €504/month for single person.",
+      "categorie": "revenus_emploi",
+      "organisme": "Kela",
+      "montant_min_eur": 0,
+      "montant_max_eur": 504,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/toimeentulotuki",
+      "eligibility_criteria": [
+        "residence_fi",
+        "income_below_threshold",
+        "all_other_benefits_exhausted"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "fi-lapsilisa",
+      "slug": "lapsilisa",
+      "nom": "Lapsilisä",
+      "description_en": "Child benefit approx. €100/month per child.",
+      "categorie": "famille",
+      "organisme": "Kela",
+      "montant_min_eur": 100,
+      "montant_max_eur": 173,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/lapsilisa",
+      "eligibility_criteria": [
+        "residence_fi",
+        "child_under_17"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

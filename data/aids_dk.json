@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "DK",
+  "name": "Denmark",
+  "name_local": "Danmark",
+  "language": "da",
+  "currency": "DKK",
+  "welfare_model": "nordic",
+  "sources": [
+    "https://www.borger.dk",
+    "https://www.atp.dk"
+  ],
+  "aids": [
+    {
+      "id": "dk-dagpenge",
+      "slug": "dagpenge",
+      "nom": "Dagpenge (A-dagpenge)",
+      "description_en": "Unemployment insurance, 90% of previous income up to DKK 19,351/month (approx. €2,592).",
+      "categorie": "revenus_emploi",
+      "organisme": "A-kasse",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2592,
+      "periodicite": "mensuel",
+      "url_info": "https://www.atp.dk/pensions-og-forsikringsordninger/dagpengesystemet",
+      "eligibility_criteria": [
+        "residence_dk",
+        "union_member_akasse",
+        "contribution_12mo",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "dk-kontanthjaelp",
+      "slug": "kontanthjaelp",
+      "nom": "Kontanthjælp",
+      "description_en": "Social assistance, up to DKK 11,980/month for job-ready persons (approx. €1,605).",
+      "categorie": "revenus_emploi",
+      "organisme": "Jobcenter (Kommune)",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1605,
+      "periodicite": "mensuel",
+      "url_info": "https://www.borger.dk/arbejde-dagpenge-orlov/kontanthjaelp-og-starthjae/kontanthjaelp",
+      "eligibility_criteria": [
+        "residence_dk",
+        "income_below_threshold",
+        "age_30"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "dk-bornetilskud",
+      "slug": "bornetilskud",
+      "nom": "Børnetilskud",
+      "description_en": "Child supplement benefit for single parents and low-income families.",
+      "categorie": "famille",
+      "organisme": "Udbetaling Danmark",
+      "montant_min_eur": 0,
+      "montant_max_eur": 600,
+      "periodicite": "kvartal",
+      "url_info": "https://www.borger.dk/familie-og-boern/bornepenge-og-tilskud/boernetilskud",
+      "eligibility_criteria": [
+        "residence_dk",
+        "child_under_18",
+        "single_parent_or_low_income"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

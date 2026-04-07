@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "PL",
+  "name": "Poland",
+  "name_local": "Polska",
+  "language": "pl",
+  "currency": "PLN",
+  "welfare_model": "post_communist",
+  "sources": [
+    "https://psz.praca.gov.pl",
+    "https://www.zus.pl"
+  ],
+  "aids": [
+    {
+      "id": "pl-zasilek-bezrobotnych",
+      "slug": "zasilek-dla-bezrobotnych",
+      "nom": "Zasiłek dla Bezrobotnych",
+      "description_en": "Basic unemployment benefit, PLN 1,079/month (approx. €253).",
+      "categorie": "revenus_emploi",
+      "organisme": "Urząd Pracy",
+      "montant_min_eur": 0,
+      "montant_max_eur": 253,
+      "periodicite": "mensuel",
+      "url_info": "https://psz.praca.gov.pl/dla-bezrobotnych-i-poszukujacych-pracy/zasilek",
+      "eligibility_criteria": [
+        "residence_pl",
+        "contribution_365_days",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "pl-800plus",
+      "slug": "800plus",
+      "nom": "800+ (Świadczenie Wychowawcze)",
+      "description_en": "Child benefit PLN 800/month per child (approx. €188), universal.",
+      "categorie": "famille",
+      "organisme": "ZUS / Ośrodek Pomocy Społecznej",
+      "montant_min_eur": 188,
+      "montant_max_eur": 188,
+      "periodicite": "mensuel",
+      "url_info": "https://www.zus.pl/swiadczenia/swiadczenia-rodzinne/swiadczenie-wychowawcze-500",
+      "eligibility_criteria": [
+        "residence_pl",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "pl-zasilek-mieszkaniowy",
+      "slug": "zasilek-mieszkaniowy",
+      "nom": "Zasiłek Mieszkaniowy",
+      "description_en": "Housing benefit for low-income families, means-tested.",
+      "categorie": "logement",
+      "organisme": "Ośrodek Pomocy Społecznej",
+      "montant_min_eur": 0,
+      "montant_max_eur": 300,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.pl/web/gov/zasilek-mieszkaniowy",
+      "eligibility_criteria": [
+        "residence_pl",
+        "income_below_threshold",
+        "renter"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

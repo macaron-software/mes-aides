@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aides sociales en Europe — 30 pays | Mes Aides</title>
+  <meta name="description" content="Découvrez les aides sociales de 30 pays européens : Allemagne, Espagne, Italie, Royaume-Uni, Pays-Bas, Belgique, Suisse et plus. Montants, conditions, organismes officiels." />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aides.macaron-software.com/aides/europe.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aides sociales en Europe — 30 pays | Mes Aides">
+  <meta property="og:description" content="Bürgergeld, Universal Credit, IMV, RSI… Comparez les prestations sociales de 30 pays européens.">
+  <meta property="og:url" content="https://aides.macaron-software.com/aides/europe.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
+  <meta property="og:site_name" content="Mes Aides">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aides.macaron-software.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Toutes les aides", "item": "https://aides.macaron-software.com/aides.html" },
+          { "@type": "ListItem", "position": 3, "name": "Europe", "item": "https://aides.macaron-software.com/aides/europe.html" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Aides sociales en Europe — 30 pays couverts",
+        "url": "https://aides.macaron-software.com/aides/europe.html",
+        "dateModified": "2026-04-07",
+        "publisher": { "@type": "Organization", "name": "Mes Aides", "url": "https://aides.macaron-software.com/" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    .page-wrapper {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--sp-4);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--c-brand, #1565C0) 0%, color-mix(in srgb, var(--c-brand, #1565C0) 60%, #000) 100%);
+      color: #fff;
+      padding: var(--sp-10) var(--sp-4) var(--sp-8);
+      text-align: center;
+    }
+    .hero__eyebrow {
+      font-size: var(--text-sm, 0.875rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: var(--sp-2);
+    }
+    .hero__title {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: var(--sp-3);
+    }
+    .hero__subtitle {
+      font-size: var(--text-base, 1rem);
+      opacity: 0.9;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      padding: var(--sp-3) 0;
+      font-size: var(--text-sm, 0.875rem);
+      color: var(--c-text-secondary, #6b7280);
+    }
+    .breadcrumb a { color: inherit; text-decoration: underline; }
+    .breadcrumb a:hover { color: var(--c-brand, #1565C0); }
+    .breadcrumb__sep { margin-inline: var(--sp-1); }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-size: var(--text-xl, 1.25rem);
+      font-weight: 700;
+      margin: var(--sp-6) 0 var(--sp-1);
+      color: var(--c-text, #111827);
+    }
+    .section-desc {
+      font-size: var(--text-sm, 0.875rem);
+      color: var(--c-text-secondary, #6b7280);
+      margin-bottom: var(--sp-4);
+    }
+
+    /* ── Country grid ── */
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--sp-3);
+      margin-bottom: var(--sp-8);
+    }
+
+    .country-card {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      padding: var(--sp-4);
+      background: var(--c-surface, #fff);
+      border: 1px solid var(--c-border, #e5e7eb);
+      border-radius: var(--radius-md, 12px);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .country-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      border-color: var(--c-brand, #1565C0);
+    }
+    .country-card--stub {
+      opacity: 0.65;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .flag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 28px;
+      background: var(--c-surface-raised, #f3f4f6);
+      border: 1px solid var(--c-border, #e5e7eb);
+      border-radius: 4px;
+      font-size: var(--text-xs, 0.75rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--c-text, #111827);
+      flex-shrink: 0;
+      font-family: var(--font-mono, monospace);
+    }
+
+    .country-card__body { flex: 1; min-width: 0; }
+    .country-card__name {
+      font-weight: 700;
+      font-size: var(--text-base, 1rem);
+      margin-bottom: 2px;
+    }
+    .country-card__local {
+      font-size: var(--text-sm, 0.875rem);
+      color: var(--c-text-secondary, #6b7280);
+      margin-bottom: var(--sp-1);
+    }
+    .country-card__meta {
+      display: flex;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      background: var(--c-surface-raised, #f3f4f6);
+      color: var(--c-text-secondary, #6b7280);
+      border: 1px solid var(--c-border, #e5e7eb);
+    }
+    .badge--model { background: color-mix(in srgb, var(--c-brand, #1565C0) 12%, transparent); color: var(--c-brand, #1565C0); }
+    .badge--coming { background: #fef3c7; color: #92400e; }
+
+    /* ── Welfare model legend ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-6);
+      padding: var(--sp-3);
+      background: var(--c-surface, #fff);
+      border: 1px solid var(--c-border, #e5e7eb);
+      border-radius: var(--radius-md, 12px);
+    }
+    .legend__item { display: flex; align-items: center; gap: var(--sp-1); font-size: var(--text-sm, 0.875rem); }
+    .legend__dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+    .dot-nordic { background: #0ea5e9; }
+    .dot-bismarckian { background: #8b5cf6; }
+    .dot-mediteranean { background: #f59e0b; }
+    .dot-liberal { background: #10b981; }
+    .dot-post_communist { background: #f87171; }
+    .dot-transitional { background: #9ca3af; }
+    .dot-napoleonic { background: #6366f1; }
+    .dot-continental { background: #14b8a6; }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       HEADER / NAV
+  ══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="page-wrapper">
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/" class="site-nav__logo" aria-label="Mes Aides — accueil">Mes Aides</a>
+        <ul class="site-nav__links" role="list">
+          <li><a href="/simulateur.html">Simulateur</a></li>
+          <li><a href="/aides.html" aria-current="page">Toutes les aides</a></li>
+          <li><a href="/guides.html">Guides</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="page-wrapper">
+        <p class="hero__eyebrow">Expansion européenne</p>
+        <h1 class="hero__title" id="hero-title">Aides sociales en Europe</h1>
+        <p class="hero__subtitle">Bürgergeld, Universal Credit, IMV, RSI&hellip; Retrouvez les prestations sociales de 30 pays européens — montants 2026, conditions, organismes officiels.</p>
+      </div>
+    </section>
+
+    <div class="page-wrapper">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/aides.html">Toutes les aides</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Europe</span>
+      </nav>
+
+      <!-- Welfare model legend -->
+      <div class="legend" role="complementary" aria-label="Légende des modèles de protection sociale">
+        <div class="legend__item"><span class="legend__dot dot-nordic" aria-hidden="true"></span> Nordique (universaliste)</div>
+        <div class="legend__item"><span class="legend__dot dot-bismarckian" aria-hidden="true"></span> Bismarckien (cotisations)</div>
+        <div class="legend__item"><span class="legend__dot dot-mediteranean" aria-hidden="true"></span> Méditerranéen (familialiste)</div>
+        <div class="legend__item"><span class="legend__dot dot-liberal" aria-hidden="true"></span> Libéral (assistance ciblée)</div>
+        <div class="legend__item"><span class="legend__dot dot-post_communist" aria-hidden="true"></span> Post-communiste (en transition)</div>
+        <div class="legend__item"><span class="legend__dot dot-napoleonic" aria-hidden="true"></span> Napoléonien (centralisé)</div>
+        <div class="legend__item"><span class="legend__dot dot-continental" aria-hidden="true"></span> Continental (mixte)</div>
+      </div>
+
+      <!-- ── TIER 1 ── -->
+      <h2 class="section-title" id="tier1">Tier 1 — Pays couverts en détail</h2>
+      <p class="section-desc">Pages complètes avec liste des aides, barèmes 2026, conditions d'éligibilité et liens officiels.</p>
+
+      <div class="country-grid" role="list" aria-labelledby="tier1">
+
+        <a href="/aides/europe/de.html" class="country-card" role="listitem" aria-label="Allemagne — voir les aides sociales">
+          <span class="flag" lang="de">DE</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Allemagne</p>
+            <p class="country-card__local">Deutschland</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">bismarckien</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/es.html" class="country-card" role="listitem" aria-label="Espagne — voir les aides sociales">
+          <span class="flag" lang="es">ES</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Espagne</p>
+            <p class="country-card__local">España</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">méditerranéen</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/it.html" class="country-card" role="listitem" aria-label="Italie — voir les aides sociales">
+          <span class="flag" lang="it">IT</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Italie</p>
+            <p class="country-card__local">Italia</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">méditerranéen</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/pt.html" class="country-card" role="listitem" aria-label="Portugal — voir les aides sociales">
+          <span class="flag" lang="pt">PT</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Portugal</p>
+            <p class="country-card__local">Portugal</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">méditerranéen</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/be.html" class="country-card" role="listitem" aria-label="Belgique — voir les aides sociales">
+          <span class="flag" lang="fr">BE</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Belgique</p>
+            <p class="country-card__local">België / Belgique</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">bismarckien</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/nl.html" class="country-card" role="listitem" aria-label="Pays-Bas — voir les aides sociales">
+          <span class="flag" lang="nl">NL</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Pays-Bas</p>
+            <p class="country-card__local">Nederland</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">bismarckien</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/at.html" class="country-card" role="listitem" aria-label="Autriche — voir les aides sociales">
+          <span class="flag" lang="de">AT</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Autriche</p>
+            <p class="country-card__local">Österreich</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">bismarckien</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/pl.html" class="country-card" role="listitem" aria-label="Pologne — voir les aides sociales">
+          <span class="flag" lang="pl">PL</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Pologne</p>
+            <p class="country-card__local">Polska</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">post-communiste</span>
+              <span class="badge">PLN</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/se.html" class="country-card" role="listitem" aria-label="Suède — voir les aides sociales">
+          <span class="flag" lang="sv">SE</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Suède</p>
+            <p class="country-card__local">Sverige</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">nordique</span>
+              <span class="badge">SEK</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/dk.html" class="country-card" role="listitem" aria-label="Danemark — voir les aides sociales">
+          <span class="flag" lang="da">DK</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Danemark</p>
+            <p class="country-card__local">Danmark</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">nordique</span>
+              <span class="badge">DKK</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/fi.html" class="country-card" role="listitem" aria-label="Finlande — voir les aides sociales">
+          <span class="flag" lang="fi">FI</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Finlande</p>
+            <p class="country-card__local">Suomi</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">nordique</span>
+              <span class="badge">EUR</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/no.html" class="country-card" role="listitem" aria-label="Norvège — voir les aides sociales">
+          <span class="flag" lang="no">NO</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Norvège</p>
+            <p class="country-card__local">Norge</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">nordique</span>
+              <span class="badge">NOK</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/ch.html" class="country-card" role="listitem" aria-label="Suisse — voir les aides sociales">
+          <span class="flag" lang="de">CH</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Suisse</p>
+            <p class="country-card__local">Schweiz / Suisse</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">bismarckien</span>
+              <span class="badge">CHF</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/aides/europe/uk.html" class="country-card" role="listitem" aria-label="Royaume-Uni — voir les aides sociales">
+          <span class="flag" lang="en">GB</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Royaume-Uni</p>
+            <p class="country-card__local">United Kingdom</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">libéral</span>
+              <span class="badge">GBP</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ── TIER 2 ── -->
+      <h2 class="section-title" id="tier2">Tier 2 — En cours de déploiement</h2>
+      <p class="section-desc">Ces pays seront couverts en détail dans les prochaines mises à jour.</p>
+
+      <div class="country-grid" role="list" aria-labelledby="tier2">
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="France — catalogue principal disponible">
+          <span class="flag" lang="fr">FR</span>
+          <div class="country-card__body">
+            <p class="country-card__name">France</p>
+            <p class="country-card__local">France</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">napoléonien</span>
+              <span class="badge badge--coming">Catalogue FR dédié</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Roumanie — à venir">
+          <span class="flag" lang="ro">RO</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Roumanie</p>
+            <p class="country-card__local">România</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">transitionnel</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="République tchèque — à venir">
+          <span class="flag" lang="cs">CZ</span>
+          <div class="country-card__body">
+            <p class="country-card__name">République tchèque</p>
+            <p class="country-card__local">Česká republika</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">post-communiste</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Hongrie — à venir">
+          <span class="flag" lang="hu">HU</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Hongrie</p>
+            <p class="country-card__local">Magyarország</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">post-communiste</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Slovaquie — à venir">
+          <span class="flag" lang="sk">SK</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Slovaquie</p>
+            <p class="country-card__local">Slovensko</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">post-communiste</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Bulgarie — à venir">
+          <span class="flag" lang="bg">BG</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Bulgarie</p>
+            <p class="country-card__local">България</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">transitionnel</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Croatie — à venir">
+          <span class="flag" lang="hr">HR</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Croatie</p>
+            <p class="country-card__local">Hrvatska</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">post-communiste</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Slovénie — à venir">
+          <span class="flag" lang="sl">SI</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Slovénie</p>
+            <p class="country-card__local">Slovenija</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">post-communiste</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Estonie — à venir">
+          <span class="flag" lang="et">EE</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Estonie</p>
+            <p class="country-card__local">Eesti</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">libéral</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Lettonie — à venir">
+          <span class="flag" lang="lv">LV</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Lettonie</p>
+            <p class="country-card__local">Latvija</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">libéral</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Lituanie — à venir">
+          <span class="flag" lang="lt">LT</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Lituanie</p>
+            <p class="country-card__local">Lietuva</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">libéral</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Malte — à venir">
+          <span class="flag" lang="mt">MT</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Malte</p>
+            <p class="country-card__local">Malta</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">méditerranéen</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Chypre — à venir">
+          <span class="flag" lang="el">CY</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Chypre</p>
+            <p class="country-card__local">Κύπρος / Kıbrıs</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">méditerranéen</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Luxembourg — à venir">
+          <span class="flag" lang="lb">LU</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Luxembourg</p>
+            <p class="country-card__local">Lëtzebuerg</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">continental</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Irlande — à venir">
+          <span class="flag" lang="ga">IE</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Irlande</p>
+            <p class="country-card__local">Éire</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">libéral</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card country-card--stub" role="listitem" aria-label="Grèce — à venir">
+          <span class="flag" lang="el">GR</span>
+          <div class="country-card__body">
+            <p class="country-card__name">Grèce</p>
+            <p class="country-card__local">Ελλάδα</p>
+            <div class="country-card__meta">
+              <span class="badge badge--model">méditerranéen</span>
+              <span class="badge badge--coming">À venir</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Back links -->
+      <nav aria-label="Navigation secondaire" style="margin-bottom: var(--sp-8); display: flex; gap: var(--sp-3); flex-wrap: wrap; font-size: var(--text-sm, 0.875rem);">
+        <a href="/">&larr; Accueil</a>
+        <a href="/aides.html">&larr; Toutes les aides françaises</a>
+        <a href="/aides/rsa.html">RSA 2026</a>
+        <a href="/simulateur.html">Simulateur</a>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="page-wrapper">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__title">Simulateur</p>
+          <ul>
+            <li><a href="/simulateur.html">Démarrer la simulation</a></li>
+            <li><a href="/simulateur.html#comment">Comment ça fonctionne</a></li>
+            <li><a href="/simulateur.html#faq">Questions fréquentes</a></li>
+            <li><a href="/simulateur.html#donnees">Vos données</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Aides populaires</p>
+          <ul>
+            <li><a href="/aides/rsa.html">RSA</a></li>
+            <li><a href="/aides/apl.html">APL</a></li>
+            <li><a href="/aides/prime-activité.html">Prime d'activité</a></li>
+            <li><a href="/aides/aah.html">AAH</a></li>
+            <li><a href="/aides/cheque-énergie.html">Chèque Énergie</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Europe</p>
+          <ul>
+            <li><a href="/aides/europe.html" aria-current="page">Vue d'ensemble</a></li>
+            <li><a href="/aides/europe/de.html">Allemagne</a></li>
+            <li><a href="/aides/europe/es.html">Espagne</a></li>
+            <li><a href="/aides/europe/it.html">Italie</a></li>
+            <li><a href="/aides/europe/uk.html">Royaume-Uni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Informations légales</p>
+          <ul>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/politique-confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="/accessibilite.html">Accessibilité</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mes Aides — Macaron Software. Tous droits réservés.</p>
+        <p>Ce service est indicatif et ne constitue pas un acte administratif officiel.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

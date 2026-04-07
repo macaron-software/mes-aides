@@ -73,6 +73,13 @@ pub struct Situation {
     pub primo_accedant: bool,
     #[serde(default)]
     pub etudiant_boursier: bool,
+
+    /// ISO 3166-1 alpha-2 country code (e.g. "FR", "DE", "ES")
+    #[serde(default)]
+    pub country: Option<String>,
+    /// BCP 47 language tag for UI/messages
+    #[serde(default)]
+    pub language: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default, PartialEq)]

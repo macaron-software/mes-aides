@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-07T20:00:00Z",
+  "country_code": "GB",
+  "name": "United Kingdom",
+  "name_local": "United Kingdom",
+  "language": "en",
+  "currency": "GBP",
+  "welfare_model": "liberal",
+  "sources": [
+    "https://www.gov.uk/browse/benefits",
+    "https://www.gov.uk/universal-credit"
+  ],
+  "aids": [
+    {
+      "id": "gb-universal-credit",
+      "slug": "universal-credit",
+      "nom": "Universal Credit",
+      "description_en": "Means-tested benefit combining 6 legacy benefits. Standard allowance £578/month for single 25+.",
+      "categorie": "revenus_emploi",
+      "organisme": "DWP (Department for Work and Pensions)",
+      "montant_min_eur": 0,
+      "montant_max_eur": 678,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.uk/universal-credit",
+      "eligibility_criteria": [
+        "residence_gb",
+        "income_below_threshold",
+        "age_18",
+        "savings_below_16000"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "gb-child-benefit",
+      "slug": "child-benefit",
+      "nom": "Child Benefit",
+      "description_en": "£25.60/week first child, £16.95/week additional children. Tapered above £60k income.",
+      "categorie": "famille",
+      "organisme": "HMRC",
+      "montant_min_eur": 0,
+      "montant_max_eur": 111,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.uk/child-benefit",
+      "eligibility_criteria": [
+        "residence_gb",
+        "child_under_16",
+        "not_in_full_time_education"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "gb-housing-benefit",
+      "slug": "housing-benefit",
+      "nom": "Housing Benefit / Housing Element",
+      "description_en": "Housing cost element within Universal Credit covering private or social rent.",
+      "categorie": "logement",
+      "organisme": "DWP / Local Authority",
+      "montant_min_eur": 0,
+      "montant_max_eur": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.uk/housing-benefit",
+      "eligibility_criteria": [
+        "residence_gb",
+        "renter",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}
