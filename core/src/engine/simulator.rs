@@ -96,55 +96,39 @@ impl Simulator {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::engine::types::{Situation, Logement, LogementType, ZoneAPL, CompositionFamiliale};
+    use crate::engine::types::{Situation, EmploiStatus, FamilleStatus, LogementStatus};
 
     fn situation_base() -> Situation {
         Situation {
             age: 35,
-            revenus_mensuels: 0.0,
-            composition_familiale: CompositionFamiliale::Seul,
-            nombre_enfants: 0,
+            revenus_nets_mensuels: 0.0,
+            situation_familiale: FamilleStatus::Celibataire,
+            nb_enfants: 0,
             ages_enfants: vec![],
-            logement: Some(Logement {
-                type_logement: LogementType::Locataire,
-                loyer_mensuel: Some(500.0),
-                zone_apl: Some(ZoneAPL::Zone2),
-                surface_m2: None,
-                meuble: false,
-            }),
-            handicap_taux: None,
-            demandeur_emploi: false,
-            etudiant: false,
-            retraite: false,
-            departement: Some("75".to_string()),
-            ressortissant_ue: true,
-            residence_france_5ans: true,
+            logement: LogementStatus::Locataire,
+            loyer_mensuel: 500.0,
+            zone_apl: Some(2),
+            emploi: EmploiStatus::SansEmploi,
+            ..Default::default()
         }
     }
 
     #[test]
     fn test_rsa_eligible_revenus_zero() {
         let sim = Simulator::new();
-        let mut sit = situation_base();
-        sit.revenus_mensuels = 0.0;
-        
+        let sit = situation_base();
         let result = sim.simulate(&sit);
-        
         let rsa = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Rsa);
         assert!(rsa.is_some(), "RSA should be eligible with zero income");
-        
-        let rsa = rsa.unwrap();
-        assert!(rsa.montant_mensuel.unwrap_or(0.0) > 500.0, "RSA amount should be > 500€");
+        assert!(rsa.unwrap().montant_mensuel.unwrap_or(0.0) > 500.0, "RSA amount should be > 500€");
     }
 
     #[test]
     fn test_rsa_ineligible_high_income() {
         let sim = Simulator::new();
         let mut sit = situation_base();
-        sit.revenus_mensuels = 2000.0;
-        
+        sit.revenus_nets_mensuels = 2000.0;
         let result = sim.simulate(&sit);
-        
         let rsa = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Rsa);
         assert!(rsa.is_none(), "RSA should not be eligible with 2000€ income");
     }
@@ -153,33 +137,26 @@ mod tests {
     fn test_aah_eligible_with_disability() {
         let sim = Simulator::new();
         let mut sit = situation_base();
-        sit.handicap_taux = Some(80);
-        
+        sit.invalidite = true;
         let result = sim.simulate(&sit);
-        
         let aah = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Aah);
-        assert!(aah.is_some(), "AAH should be eligible with 80% disability");
+        assert!(aah.is_some(), "AAH should be eligible with disability");
     }
 
     #[test]
-    fn test_aah_ineligible_low_disability() {
+    fn test_aah_ineligible_no_disability() {
         let sim = Simulator::new();
-        let mut sit = situation_base();
-        sit.handicap_taux = Some(50);
-        
+        let sit = situation_base();
         let result = sim.simulate(&sit);
-        
         let aah = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Aah);
-        assert!(aah.is_none(), "AAH should not be eligible with 50% disability");
+        assert!(aah.is_none(), "AAH should not be eligible without disability");
     }
 
     #[test]
     fn test_apl_eligible_locataire() {
         let sim = Simulator::new();
         let sit = situation_base();
-        
         let result = sim.simulate(&sit);
-        
         let apl = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Apl);
         assert!(apl.is_some(), "APL should be eligible for low-income tenant");
     }
@@ -188,12 +165,8 @@ mod tests {
     fn test_apl_ineligible_owner() {
         let sim = Simulator::new();
         let mut sit = situation_base();
-        if let Some(ref mut logement) = sit.logement {
-            logement.type_logement = LogementType::Proprietaire;
-        }
-        
+        sit.logement = LogementStatus::Proprietaire;
         let result = sim.simulate(&sit);
-        
         let apl = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Apl);
         assert!(apl.is_none(), "APL should not be eligible for owners");
     }
@@ -202,23 +175,20 @@ mod tests {
     fn test_cheque_energie_eligible() {
         let sim = Simulator::new();
         let sit = situation_base();
-        
         let result = sim.simulate(&sit);
-        
         let ce = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::ChequeEnergie);
-        assert!(ce.is_some(), "Chèque Énergie should be eligible for low income");
+        assert!(ce.is_some(), "Cheque Energie should be eligible for low income");
     }
 
     #[test]
     fn test_prime_activite_eligible_low_salary() {
         let sim = Simulator::new();
         let mut sit = situation_base();
-        sit.revenus_mensuels = 900.0;  // Travailleur modeste
-        
+        sit.emploi = EmploiStatus::Salarie;
+        sit.revenus_nets_mensuels = 900.0;
         let result = sim.simulate(&sit);
-        
         let pa = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::PrimeActivite);
-        assert!(pa.is_some(), "Prime d'Activité should be eligible for low salary worker");
+        assert!(pa.is_some(), "Prime d'Activite should be eligible for low salary worker");
     }
 
     #[test]
@@ -226,11 +196,9 @@ mod tests {
         let sim = Simulator::new();
         let mut sit = situation_base();
         sit.age = 67;
-        sit.retraite = true;
-        sit.revenus_mensuels = 500.0;
-        
+        sit.emploi = EmploiStatus::Retraite;
+        sit.revenus_nets_mensuels = 500.0;
         let result = sim.simulate(&sit);
-        
         let aspa = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::Aspa);
         assert!(aspa.is_some(), "ASPA should be eligible for senior with low pension");
     }
@@ -239,12 +207,10 @@ mod tests {
     fn test_allocations_familiales_with_children() {
         let sim = Simulator::new();
         let mut sit = situation_base();
-        sit.composition_familiale = CompositionFamiliale::Couple;
-        sit.nombre_enfants = 2;
+        sit.situation_familiale = FamilleStatus::Couple;
+        sit.nb_enfants = 2;
         sit.ages_enfants = vec![5, 10];
-        
         let result = sim.simulate(&sit);
-        
         let af = result.aides_eligibles.iter().find(|a| a.aide_id == AideId::AllocationsFamiliales);
         assert!(af.is_some(), "Allocations Familiales should be eligible with 2 children");
     }
@@ -253,15 +219,12 @@ mod tests {
     fn test_total_mensuel_sum() {
         let sim = Simulator::new();
         let sit = situation_base();
-        
         let result = sim.simulate(&sit);
-        
         let manual_sum: f64 = result.aides_eligibles
             .iter()
             .filter_map(|a| a.montant_mensuel)
             .sum();
-        
-        assert!((result.total_mensuel - manual_sum).abs() < 0.01, 
+        assert!((result.total_mensuel - manual_sum).abs() < 0.01,
             "total_mensuel should equal sum of eligible aids");
     }
 
@@ -269,9 +232,7 @@ mod tests {
     fn test_sorted_by_amount() {
         let sim = Simulator::new();
         let sit = situation_base();
-        
         let result = sim.simulate(&sit);
-        
         for i in 0..result.aides_eligibles.len().saturating_sub(1) {
             let a = result.aides_eligibles[i].montant_mensuel.unwrap_or(0.0);
             let b = result.aides_eligibles[i + 1].montant_mensuel.unwrap_or(0.0);

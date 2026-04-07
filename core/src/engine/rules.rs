@@ -98,6 +98,12 @@ pub struct Baremes {
     // PCH
     pub pch_taux_horaire: f64,
     pub pch_plafond_hum: f64,
+    // APA — barème 2026 (source: service-public.fr/F10009)
+    pub apa_gir1: f64,
+    pub apa_gir2: f64,
+    pub apa_gir3: f64,
+    pub apa_gir4: f64,
+    pub apa_seuil_participation: f64,
 }
 
 impl Baremes {
@@ -171,6 +177,11 @@ impl Baremes {
             visale_plafond_z3: 1000.0,
             pch_taux_horaire: 18.18,
             pch_plafond_hum: 1743.0,
+            apa_gir1: 1955.61,
+            apa_gir2: 1574.39,
+            apa_gir3: 1133.68,
+            apa_gir4: 752.46,
+            apa_seuil_participation: 817.0,
         }
     }
 }
@@ -743,6 +754,263 @@ pub fn calc_asi(s: &Situation, b: &Baremes) -> AideResult {
     }
     ok(AideId::Asi, (b.asi_max - rev).max(0.0),
         "Complement invalidite < 65 ans", 4)
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── ALF ───────────────────────────────────────────────────────────────────────
+// Source: https://www.service-public.fr/particuliers/vosdroits/F13132 -- bareme 2026
+
+pub fn calc_alf(s: &Situation, b: &Baremes) -> AideResult {
+    if s.nb_enfants == 0 {
+        return ko(AideId::Alf, "Pas d'enfant a charge");
+    }
+    if !matches!(s.logement, LogementStatus::Locataire | LogementStatus::Foyer) {
+        return ko(AideId::Alf, "Non locataire");
+    }
+    if s.loyer_mensuel < 10.0 {
+        return ko(AideId::Alf, "Loyer non renseigne");
+    }
+    let zone = s.zone_apl.unwrap_or(3);
+    let (plafond_loyer, plafond_rev) = match zone {
+        1 => (b.apl_plafond_loyer_z1, 2000.0 + s.nb_enfants as f64 * 200.0),
+        2 => (b.apl_plafond_loyer_z2, 1800.0 + s.nb_enfants as f64 * 200.0),
+        _ => (b.apl_plafond_loyer_z3, 1600.0 + s.nb_enfants as f64 * 200.0),
+    };
+    let rev = s.revenu_foyer();
+    if rev >= plafond_rev {
+        return ko(AideId::Alf,
+            format!("Revenus ({rev:.0}) >= plafond ({plafond_rev:.0})"));
+    }
+    let loyer = s.loyer_mensuel.min(plafond_loyer);
+    let taux = 1.0 - (rev / plafond_rev).min(0.95);
+    let montant = (loyer * 0.35 * taux).max(0.0).round();
+    if montant < 10.0 {
+        return ko(AideId::Alf, "Montant < 10€");
+    }
+    ok(AideId::Alf, montant,
+        format!("ALF zone {zone}, {} enfant(s)", s.nb_enfants), 5)
+}
+
+// ── APA ───────────────────────────────────────────────────────────────────────
+// Source: https://www.service-public.fr/particuliers/vosdroits/F10009 -- bareme 2026
+
+pub fn calc_apa(s: &Situation, b: &Baremes) -> AideResult {
+    if s.age < 60 {
+        return ko(AideId::Apa, "Age < 60 ans");
+    }
+    if !s.dependance {
+        return ko(AideId::Apa, "Dependance non declaree (GIR 1-4 requis)");
+    }
+    let gir = s.gir.unwrap_or(4);
+    if gir == 0 || gir > 4 {
+        return ko(AideId::Apa, "GIR invalide (1-4 attendu)");
+    }
+    let plafond_gir = match gir {
+        1 => b.apa_gir1,
+        2 => b.apa_gir2,
+        3 => b.apa_gir3,
+        _ => b.apa_gir4,
+    };
+    let rev = s.revenu_foyer();
+    let participation = if rev <= b.apa_seuil_participation {
+        0.0
+    } else {
+        ((rev - b.apa_seuil_participation) / (plafond_gir * 2.0)).min(0.90)
+    };
+    let montant = plafond_gir * (1.0 - participation);
+    ok(AideId::Apa, montant,
+        format!("GIR {} -- plafond {plafond_gir:.0}€/mois", gir), 5)
+}
+
+// ── Tarif Social Mobile ───────────────────────────────────────────────────────
+// Source: Decision ARCEP 2015-0202 -- operateurs > 1M abonnes (Orange, SFR, Bouygues, Free)
+
+pub fn calc_tarif_social_mobile(s: &Situation, b: &Baremes) -> AideResult {
+    let eligible = s.cmu_c || s.revenu_foyer() <= b.rsa_seul * 1.5;
+    if !eligible {
+        return ko(AideId::TarifSocialMobile,
+            "RSA ou CSS requis -- revenus trop eleves");
+    }
+    ok(AideId::TarifSocialMobile, 10.0,
+        "Economie ~10€/mois vs offre standard (Orange/SFR/Bouygues/Free)", 3)
+}
+
+// ── Internet Social ───────────────────────────────────────────────────────────
+// Source: Decret 2022-669 du 29 avril 2022 (service universel numerique)
+
+pub fn calc_internet_social(s: &Situation, b: &Baremes) -> AideResult {
+    let eligible = s.cmu_c || s.revenu_foyer() <= b.rsa_seul * 1.5;
+    if !eligible {
+        return ko(AideId::InternetSocial,
+            "RSA ou CSS requis -- revenus trop eleves");
+    }
+    ok(AideId::InternetSocial, 15.0,
+        "Offre internet 30 Mbps a 15€/mois (decret 2022-669)", 3)
+}
+
+// ── MaPrimeAdapt' ─────────────────────────────────────────────────────────────
+// Source: ANAH -- https://www.anah.gouv.fr/maprimeadapt -- bareme 2026
+
+pub fn calc_maprimeadapt(s: &Situation, _b: &Baremes) -> AideResult {
+    let eligible_profil = s.age >= 70
+        || (s.age >= 60 && s.invalidite)
+        || s.rqth;
+    if !eligible_profil {
+        return ko(AideId::MaPrimeAdapt,
+            "Profil non eligible -- age >= 70, invalidite >= 60 ans, ou RQTH requis");
+    }
+    if matches!(s.logement, LogementStatus::SansDomicile) {
+        return ko(AideId::MaPrimeAdapt, "Logement stable requis");
+    }
+    let rev_annuel = s.revenu_foyer() * 12.0;
+    let plafond_travaux = 70_000.0_f64;
+    let (taux, cat) = if rev_annuel <= 21_805.0 {
+        (0.70_f64, "modeste")
+    } else if rev_annuel <= 27_343.0 {
+        (0.50_f64, "intermediaire")
+    } else {
+        return ko(AideId::MaPrimeAdapt,
+            "Revenus trop eleves (seuil modeste: 21 805€/an, intermediaire: 27 343€/an)");
+    };
+    let montant_total = plafond_travaux * taux;
+    ok(AideId::MaPrimeAdapt, montant_total / 12.0,
+        format!("Menage {} -- {:.0}% sur 70 000€ max travaux adaptation", cat, taux * 100.0), 4)
+}
+
+// ── Cheques-Vacances ANCV ─────────────────────────────────────────────────────
+// Source: ANCV -- Loi 85-19 du 4 janvier 1985
+
+pub fn calc_cheques_vacances(s: &Situation, _b: &Baremes) -> AideResult {
+    if !matches!(s.emploi, EmploiStatus::Salarie | EmploiStatus::FonctionnairePublic) {
+        return ko(AideId::ChequesVacances,
+            "Reserve aux salaries et fonctionnaires");
+    }
+    if s.heures_semaine < 10.0 {
+        return ko(AideId::ChequesVacances, "Minimum 10h/semaine requis");
+    }
+    let seuil = 1398.69 * 3.5;
+    if s.revenu_foyer() > seuil {
+        return ko(AideId::ChequesVacances,
+            format!("Revenus > {seuil:.0}€/mois (plafond 3.5x SMIC)"));
+    }
+    ok(AideId::ChequesVacances, 500.0 / 12.0,
+        "Jusqu'a 500€/an en cheques-vacances ANCV (co-financement employeur)", 3)
+}
+
+// ── FSL ───────────────────────────────────────────────────────────────────────
+// Source: https://www.service-public.fr/particuliers/vosdroits/F1334
+
+pub fn calc_fsl(s: &Situation, b: &Baremes) -> AideResult {
+    if matches!(s.logement, LogementStatus::Proprietaire) {
+        return ko(AideId::Fsl, "Reserve aux locataires et personnes sans logement stable");
+    }
+    let plafond = b.rsa_couple * 2.0;
+    let rev = s.revenu_foyer();
+    if rev >= plafond {
+        return ko(AideId::Fsl,
+            format!("Revenus ({rev:.0}€) >= plafond FSL ({plafond:.0}€)"));
+    }
+    ok(AideId::Fsl, 1_500.0 / 12.0,
+        "Aide ponctuelle impayes loyer/energie -- max 1 500€ (variable par dept)", 4)
+}
+
+// ── Aides Mobilite Emploi ─────────────────────────────────────────────────────
+// Source: France Travail -- https://www.francetravail.fr/candidat/vos-droits-aux-aides-et-prestations/aides-a-la-mobilite.html
+
+pub fn calc_aides_mobilite_emploi(s: &Situation, _b: &Baremes) -> AideResult {
+    if !s.emploi.is_sans_emploi() {
+        return ko(AideId::AidesMobiliteEmploi,
+            "Reserve aux demandeurs d'emploi inscrits France Travail");
+    }
+    ok(AideId::AidesMobiliteEmploi, 5_000.0 / 12.0,
+        "Aide demenagement jusqu'a 5 000€ + visite 300€ + entretien 200€", 3)
+}
+
+// ── Aide Dentaire RAC0 ────────────────────────────────────────────────────────
+// Source: https://www.service-public.fr/particuliers/vosdroits/F34055
+
+pub fn calc_aide_dentaire(s: &Situation, _b: &Baremes) -> AideResult {
+    if !s.cmu_c {
+        return ko(AideId::AideDentaire,
+            "CSS gratuite requise pour RAC0 dentaire");
+    }
+    ok(AideId::AideDentaire, 500.0 / 12.0,
+        "Soins dentaires sans reste a charge (RAC0) via CSS", 2)
+}
+
+// ── Prime a la Conversion Automobile ─────────────────────────────────────────
+// Source: https://www.service-public.fr/particuliers/vosdroits/F35580 -- bareme 2026
+
+pub fn calc_prime_conversion_auto(s: &Situation, _b: &Baremes) -> AideResult {
+    let rev_uc = s.revenu_par_uc();
+    let (montant_max, cat) = if rev_uc <= 1_174.0 {
+        (7_000.0_f64, "tres modeste")
+    } else if rev_uc <= 2_348.0 {
+        (5_000.0_f64, "modeste")
+    } else if rev_uc <= 3_521.0 {
+        (3_000.0_f64, "standard")
+    } else {
+        return ko(AideId::PrimeConversionAuto,
+            "Revenus/UC trop eleves pour la prime a la conversion");
+    };
+    ok(AideId::PrimeConversionAuto, montant_max / 12.0,
+        format!("Menage {} -- jusqu'a {montant_max:.0}€ pour VE ou PHEV", cat), 3)
+}
+
+// ── Carte Avantage Famille SNCF ───────────────────────────────────────────────
+// Source: https://www.sncf-connect.com/aide/carte-famille-nombreuse
+
+pub fn calc_carte_avantage_famille(s: &Situation, _b: &Baremes) -> AideResult {
+    if s.nb_enfants < 3 {
+        return ko(AideId::CarteAvantageFamille,
+            "3 enfants minimum requis (carte famille nombreuse)");
+    }
+    ok(AideId::CarteAvantageFamille, 300.0 / 12.0,
+        "Reduction 30-75% TGV/Intercites pour famille avec 3+ enfants", 2)
+}
+
+// ── Remboursement Transport Domicile-Travail ──────────────────────────────────
+// Source: Code du travail Art. L3261-2
+
+pub fn calc_remboursement_transport(s: &Situation, _b: &Baremes) -> AideResult {
+    if !matches!(s.emploi, EmploiStatus::Salarie | EmploiStatus::FonctionnairePublic) {
+        return ko(AideId::RemboursementTransport,
+            "Reserve aux salaries (obligation employeur)");
+    }
+    if s.heures_semaine < 10.0 {
+        return ko(AideId::RemboursementTransport, "Minimum 10h/semaine requis");
+    }
+    ok(AideId::RemboursementTransport, 75.0,
+        "50% abonnement transport en commun pris en charge par l'employeur (C. trav. L3261-2)", 2)
+}
+
+// ── Bonus Reparation ──────────────────────────────────────────────────────────
+// Source: https://www.bonusreparation.fr -- lance decembre 2022
+
+pub fn calc_bonus_reparation(s: &Situation, _b: &Baremes) -> AideResult {
+    let _ = s;
+    ok(AideId::BonusReparation, 26.0 / 12.0,
+        "De 7€ a 45€ par reparation selon categorie (electronique, vetements, etc.)", 2)
+}
+
+// ── Aides Regionales a la Formation ──────────────────────────────────────────
+// Source: https://www.intercariforef.org -- variable selon region
+
+pub fn calc_aides_regionales_formation(s: &Situation, _b: &Baremes) -> AideResult {
+    let eligible = s.emploi.is_sans_emploi()
+        || matches!(s.emploi, EmploiStatus::AlternantApprentissage);
+    if !eligible {
+        return ko(AideId::AidesRegionalesFormation,
+            "Reserve aux demandeurs d'emploi et alternants");
+    }
+    let seuil = 1398.69 * 2.0;
+    if s.revenu_foyer() > seuil {
+        return ko(AideId::AidesRegionalesFormation,
+            format!("Revenus > {seuil:.0}€/mois (plafond 2x SMIC)"));
+    }
+    ok(AideId::AidesRegionalesFormation, 2_000.0 / 12.0,
+        "Aide a la formation jusqu'a 2 000€/an selon region (Conseil Regional)", 4)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

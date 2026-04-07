@@ -45,6 +45,26 @@ pub enum AideId {
     // Divers
     PrimeNoel,
     AideJuridictionnelle,
+    // Telecom social
+    TarifSocialMobile,
+    InternetSocial,
+    // Logement avance
+    Apa,
+    MaPrimeAdapt,
+    Fsl,
+    // Emploi / Mobilite
+    AidesMobiliteEmploi,
+    RemboursementTransport,
+    // Famille / Vacances
+    ChequesVacances,
+    CarteAvantageFamille,
+    // Sante
+    AideDentaire,
+    // Conversion ecologique
+    PrimeConversionAuto,
+    BonusReparation,
+    // Formation
+    AidesRegionalesFormation,
     // Anciens variants (compat)
     Are,
     GarantieJeunes,
