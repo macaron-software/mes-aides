@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "KE",
+  "name": "Kenya",
+  "name_local": "Kenya",
+  "language": "sw",
+  "currency": "KES",
+  "welfare_model": "Social Protection + Assistance",
+  "sources": [
+    "https://socialprotection.go.ke",
+    "https://nssf.or.ke",
+    "https://nhif.or.ke"
+  ],
+  "aids": [
+    {
+      "id": "ke-inua-jamii-elderly",
+      "slug": "inua-jamii-personnes-agees",
+      "nom": "Inua Jamii – Transfert personnes âgées 70+",
+      "description_en": "Unconditional monthly cash transfer of KES 2,000 for Kenyans aged 70 and above, regardless of income.",
+      "categorie": "retraite",
+      "organisme": "State Department for Social Protection Kenya",
+      "montant_min_kes": 200000,
+      "montant_max_kes": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://socialprotection.go.ke",
+      "eligibility_criteria": [
+        "age_min_70_or_disability"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-inua-jamii-disability",
+      "slug": "inua-jamii-handicap",
+      "nom": "Inua Jamii – Transfert personnes handicapées",
+      "description_en": "Unconditional monthly cash transfer of KES 2,000 for persons with severe disabilities, regardless of income.",
+      "categorie": "handicap_invalidite",
+      "organisme": "State Department for Social Protection Kenya",
+      "montant_min_kes": 200000,
+      "montant_max_kes": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://socialprotection.go.ke",
+      "eligibility_criteria": [
+        "disability_verified"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-ovc-cash",
+      "slug": "transfert-orphelins-enfants",
+      "nom": "Transfert monétaire – Orphelins et enfants vulnérables",
+      "description_en": "Monthly cash aid of KES 2,000 for households caring for orphans or vulnerable children under OVC programme.",
+      "categorie": "famille_enfants",
+      "organisme": "State Department for Social Protection Kenya",
+      "montant_min_kes": 200000,
+      "montant_max_kes": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://socialprotection.go.ke",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-nssf-pension",
+      "slug": "pension-nssf-kenya",
+      "nom": "Pension de retraite NSSF",
+      "description_en": "NSSF minimum retirement pension of KES 1,200/month for contributors. Based on contributions made during working life.",
+      "categorie": "retraite",
+      "organisme": "NSSF Kenya",
+      "montant_min_kes": 120000,
+      "montant_max_kes": 120000,
+      "periodicite": "mensuel",
+      "url_info": "https://nssf.or.ke",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-nhif",
+      "slug": "nhif-assurance-maladie",
+      "nom": "NHIF – Assurance maladie nationale",
+      "description_en": "Subsidised health insurance at KES 150/month for low-income informal workers. Covers hospitalisation and outpatient care.",
+      "categorie": "sante",
+      "organisme": "NHIF Kenya",
+      "montant_min_kes": 0,
+      "montant_max_kes": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://nhif.or.ke",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-hsnp",
+      "slug": "hsnp-filet-securitaire-asal",
+      "nom": "HSNP – Filet sécuritaire alimentaire (ASAL)",
+      "description_en": "Monthly cash transfer of KES 2,000 for food-insecure households in arid and semi-arid (ASAL) regions.",
+      "categorie": "alimentation",
+      "organisme": "HSNP Kenya",
+      "montant_min_kes": 200000,
+      "montant_max_kes": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://hsnp.or.ke",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-yef",
+      "slug": "youth-enterprise-fund",
+      "nom": "Youth Enterprise Fund – Microcrédit jeunes",
+      "description_en": "Microloans of KES 50,000 to KES 2,000,000 for young entrepreneurs under 35 years old through Youth Enterprise Fund.",
+      "categorie": "emploi_formation",
+      "organisme": "Youth Enterprise Fund Kenya",
+      "montant_min_kes": 0,
+      "montant_max_kes": 5000000,
+      "periodicite": "unique",
+      "url_info": "https://youthfund.go.ke",
+      "eligibility_criteria": [
+        "age_18_to_30"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-wef",
+      "slug": "women-enterprise-fund",
+      "nom": "Women Enterprise Fund – Microcrédit femmes",
+      "description_en": "Microloans of KES 50,000 to KES 500,000 for women entrepreneurs through Women Enterprise Fund.",
+      "categorie": "emploi_formation",
+      "organisme": "Women Enterprise Fund Kenya",
+      "montant_min_kes": 0,
+      "montant_max_kes": 5000000,
+      "periodicite": "unique",
+      "url_info": "https://wef.go.ke",
+      "eligibility_criteria": [
+        "residence_ke"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-uwezo",
+      "slug": "uwezo-fund",
+      "nom": "Uwezo Fund – Microcrédit communautaire",
+      "description_en": "Community-level fund for youth and women through local savings groups. Variable amounts based on community allocations.",
+      "categorie": "emploi_formation",
+      "organisme": "Uwezo Fund Kenya",
+      "montant_min_kes": 0,
+      "montant_max_kes": 0,
+      "periodicite": "unique",
+      "url_info": "https://uwezo.go.ke",
+      "eligibility_criteria": [
+        "residence_ke"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ke-helb",
+      "slug": "helb-pret-etudiant",
+      "nom": "HELB – Prêt étudiant enseignement supérieur",
+      "description_en": "Annual student loan of up to KES 60,000 for students enrolled in public higher education through HELB.",
+      "categorie": "education_jeunesse",
+      "organisme": "HELB Kenya",
+      "montant_min_kes": 0,
+      "montant_max_kes": 6000000,
+      "periodicite": "annuel",
+      "url_info": "https://helb.co.ke",
+      "eligibility_criteria": [
+        "student"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

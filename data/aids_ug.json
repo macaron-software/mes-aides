@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "UG",
+  "name": "Uganda",
+  "name_local": "Uganda",
+  "language": "en",
+  "currency": "UGX",
+  "welfare_model": "Social Protection + Assistance",
+  "sources": [
+    "https://mglsd.go.ug",
+    "https://nssf.co.ug",
+    "https://moes.go.ug"
+  ],
+  "aids": [
+    {
+      "id": "ug-sage",
+      "slug": "sage-aide-personnes-agees",
+      "nom": "SAGE – Aide sociale personnes âgées 80+",
+      "description_en": "Unconditional monthly cash transfer of UGX 25,000 for Ugandans aged 80 and above under the Senior Citizen Grant.",
+      "categorie": "retraite",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 25000,
+      "montant_max_ugx": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "age_min_65"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-nusaf",
+      "slug": "nusaf-nord-ouganda",
+      "nom": "NUSAF – Fonds action sociale nord Ouganda",
+      "description_en": "Monthly cash transfer of UGX 25,000 for vulnerable households in northern Uganda under NUSAF 3 post-conflict recovery.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-nssf-pension",
+      "slug": "pension-nssf-ouganda",
+      "nom": "Pension de retraite NSSF",
+      "description_en": "NSSF retirement pension of 15 to 25% of reference salary for contributors with at least 180 months of contributions.",
+      "categorie": "retraite",
+      "organisme": "NSSF Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://nssf.co.ug",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-pwd-cash",
+      "slug": "transfert-personnes-handicapees",
+      "nom": "Transfert monétaire – Personnes handicapées",
+      "description_en": "Monthly cash transfer of UGX 25,000 for persons with severe recognised disabilities.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "disability_verified"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-school-capitation",
+      "slug": "upe-education-primaire",
+      "nom": "Capitation grant – Éducation primaire universelle",
+      "description_en": "Free primary education under Universal Primary Education (UPE). School fees covered for all pupils in public primary schools.",
+      "categorie": "education_jeunesse",
+      "organisme": "MOES Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 0,
+      "periodicite": "annuel",
+      "url_info": "https://moes.go.ug",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-nhis",
+      "slug": "nhis-assurance-maladie-2024",
+      "nom": "NHIS – Assurance maladie nationale (2024)",
+      "description_en": "New national health insurance scheme launched 2024 with subsidised coverage for poor households.",
+      "categorie": "sante",
+      "organisme": "NHIS Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 0,
+      "periodicite": "annuel",
+      "url_info": "https://nhis.go.ug",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-ylp",
+      "slug": "ylp-programme-jeunes",
+      "nom": "YLP – Programme des moyens de subsistance jeunes",
+      "description_en": "Grant of UGX 2,500,000 to 5,000,000 for groups of young entrepreneurs aged 18-35.",
+      "categorie": "emploi_formation",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 2500000,
+      "periodicite": "unique",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "age_18_to_30"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-wef",
+      "slug": "fonds-entreprise-femmes",
+      "nom": "Fonds d'entreprise des femmes",
+      "description_en": "Microloans and grants for women entrepreneurs through women's groups.",
+      "categorie": "emploi_formation",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 0,
+      "periodicite": "unique",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "residence_ug"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-grow",
+      "slug": "grow-filles-travail",
+      "nom": "GROW – Opportunités pour filles au travail",
+      "description_en": "Education subsidies and vocational training grants for vulnerable adolescent girls through the GROW programme.",
+      "categorie": "education_jeunesse",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 0,
+      "periodicite": "unique",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "student"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ug-social-assistance",
+      "slug": "assistance-sociale-directe",
+      "nom": "Assistance sociale directe",
+      "description_en": "Direct monthly aid of UGX 25,000 for highly vulnerable households as complement to national programmes.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MGLSD Uganda",
+      "montant_min_ugx": 0,
+      "montant_max_ugx": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://mglsd.go.ug",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "EG",
+  "name": "Egypt",
+  "name_local": "مصر",
+  "language": "ar",
+  "currency": "EGP",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://moss.gov.eg",
+    "https://nsi.gov.eg",
+    "https://manpower.gov.eg"
+  ],
+  "aids": [
+    {
+      "id": "eg-takaful",
+      "slug": "takaful-wa-karama",
+      "nom": "Takaful wa Karama – Solidarité et Dignité",
+      "description_en": "Conditional cash transfer for poor families with school-age children (Takaful) and unconditional aid for elderly/disabled poor (Karama). Monthly benefit of around E£1,600.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MOSS Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 160000,
+      "periodicite": "mensuel",
+      "url_info": "https://moss.gov.eg",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "family_with_children",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-nssf-pension",
+      "slug": "nssf-retirement-pension",
+      "nom": "Pension de retraite NSSF",
+      "description_en": "National Social Security Fund retirement pension. Minimum pension of E£1,650/month after 15% increase in 2025.",
+      "categorie": "retraite",
+      "organisme": "NSSF Egypt",
+      "montant_min_egp": 165000,
+      "montant_max_egp": 165000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsi.gov.eg",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-unemployment",
+      "slug": "chomage-egypte",
+      "nom": "Indemnité de chômage",
+      "description_en": "60% of last salary for up to 6 months for insured workers dismissed from formal employment. Managed by Ministry of Manpower.",
+      "categorie": "chomage",
+      "organisme": "Ministry of Manpower Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://manpower.gov.eg",
+      "eligibility_criteria": [
+        "involuntary_unemployment",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-solidarity-pension",
+      "slug": "pension-solidarite-sociale",
+      "nom": "Pension de solidarité sociale",
+      "description_en": "Monthly pension for persons with disabilities or elderly with no other pension source. Provided under MOSS social solidarity programme.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MOSS Egypt",
+      "montant_min_egp": 100000,
+      "montant_max_egp": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://moss.gov.eg",
+      "eligibility_criteria": [
+        "disability_verified",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-tamween-bread",
+      "slug": "pain-subventionne-tamween",
+      "nom": "Pain subventionné Tamween",
+      "description_en": "5 subsidised bread loaves per day per ration card at EGP 0.05/loaf under the national food subsidy system.",
+      "categorie": "alimentation",
+      "organisme": "MOSS / MSAD Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 0,
+      "periodicite": "journalier",
+      "url_info": "https://moss.gov.eg",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-cooking-gas",
+      "slug": "gaz-cuisine-subventionne",
+      "nom": "Gaz de cuisine subventionné",
+      "description_en": "Subsidised cooking gas cylinder at reduced price (about EGP 8/cylinder) for low-income households under the Tamween subsidy system.",
+      "categorie": "energie",
+      "organisme": "MOSS Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://moss.gov.eg",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-disability-support",
+      "slug": "aide-handicap-egypte",
+      "nom": "Aide au handicap",
+      "description_en": "Monthly aid variable by degree of disability under MOSS social protection framework. Includes support for daily living and rehabilitation.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MOSS Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://moss.gov.eg",
+      "eligibility_criteria": [
+        "disability_verified",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-dar-misr",
+      "slug": "dar-misr-logement-social",
+      "nom": "Dar Misr – Logement social",
+      "description_en": "Government subsidised housing programme for low-income brackets. Units priced by income tier through Ministry of Housing.",
+      "categorie": "logement",
+      "organisme": "MHUC Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 0,
+      "periodicite": "unique",
+      "url_info": "https://mhuc.gov.eg",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "not_in_public_housing",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-widow-pension",
+      "slug": "pension-veuve-egypte",
+      "nom": "Pension pour veuves",
+      "description_en": "Minimum guaranteed monthly pension for widows without other income source, under NSSF survivor benefit rules.",
+      "categorie": "famille_enfants",
+      "organisme": "NSSF Egypt",
+      "montant_min_egp": 75000,
+      "montant_max_egp": 75000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsi.gov.eg",
+      "eligibility_criteria": [
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "eg-qardh-hasan",
+      "slug": "microfinance-sans-interet",
+      "nom": "Qardh Hasan – Microfinance sans intérêt",
+      "description_en": "Interest-free loans for poor families through approved Islamic microfinance organisations, facilitating income-generating activities.",
+      "categorie": "revenus_emploi",
+      "organisme": "MOSS Egypt",
+      "montant_min_egp": 0,
+      "montant_max_egp": 0,
+      "periodicite": "unique",
+      "url_info": "https://moss.gov.eg",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_eg"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

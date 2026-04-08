@@ -2487,4 +2487,189 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/az.html"/>
   </url>
 
+  <!-- Africa expansion: aid pages -->
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/ng.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/ng.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/ng.html"/>
+    <xhtml:link rel="alternate" hreflang="ha"   href="https://aides.macaron-software.com/aides/monde/ng.html"/>
+    <xhtml:link rel="alternate" hreflang="yo"   href="https://aides.macaron-software.com/aides/monde/ng.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/ng.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/ng.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/ng.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/eg.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/eg.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/eg.html"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/eg.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/eg.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/eg.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh"   href="https://aides.macaron-software.com/aides/monde/eg.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/eg.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/ma.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/ma.html"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/ma.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/ma.html"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/ma.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/ma.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it"   href="https://aides.macaron-software.com/aides/monde/ma.html?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/ma.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/dz.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/dz.html"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/dz.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/dz.html"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/dz.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/dz.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/dz.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/gh.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/gh.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/gh.html"/>
+    <xhtml:link rel="alternate" hreflang="ak"   href="https://aides.macaron-software.com/aides/monde/gh.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/gh.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/gh.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/gh.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/tn.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/tn.html"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/tn.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/tn.html"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/tn.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/tn.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/tn.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/ke.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/ke.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/ke.html"/>
+    <xhtml:link rel="alternate" hreflang="sw"   href="https://aides.macaron-software.com/aides/monde/ke.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/ke.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/ke.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/ke.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/ke.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/et.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/et.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/et.html"/>
+    <xhtml:link rel="alternate" hreflang="am"   href="https://aides.macaron-software.com/aides/monde/et.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/et.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/et.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/et.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/tz.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/tz.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/tz.html"/>
+    <xhtml:link rel="alternate" hreflang="sw"   href="https://aides.macaron-software.com/aides/monde/tz.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/tz.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/tz.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/tz.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/ug.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/ug.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/ug.html"/>
+    <xhtml:link rel="alternate" hreflang="sw"   href="https://aides.macaron-software.com/aides/monde/ug.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/monde/ug.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/ug.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/ug.html"/>
+  </url>
+  <!-- Africa expansion: simulator pages -->
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/ng.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/ng.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/ng.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ha"   href="https://aides.macaron-software.com/simulateur/ng.html?lang=ha"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/ng.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/ng.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/ng.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/eg.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/eg.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/eg.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/eg.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/eg.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/simulateur/eg.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/eg.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/ma.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/ma.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/ma.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/ma.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/simulateur/ma.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/ma.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/ma.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/dz.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/dz.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/dz.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/dz.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/dz.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/dz.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/gh.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/gh.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/gh.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ak"   href="https://aides.macaron-software.com/simulateur/gh.html?lang=ak"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/gh.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/gh.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/gh.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/tn.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/tn.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/tn.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/tn.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/tn.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/tn.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/ke.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/ke.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/ke.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="sw"   href="https://aides.macaron-software.com/simulateur/ke.html?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/ke.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/ke.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/ke.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/et.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/et.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/et.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="am"   href="https://aides.macaron-software.com/simulateur/et.html?lang=am"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/et.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/et.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/et.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/tz.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/tz.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/tz.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="sw"   href="https://aides.macaron-software.com/simulateur/tz.html?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/tz.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/tz.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/tz.html"/>
+  </url>
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/ug.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/ug.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/ug.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="sw"   href="https://aides.macaron-software.com/simulateur/ug.html?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/ug.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/ug.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/ug.html"/>
+  </url>
+
 </urlset>

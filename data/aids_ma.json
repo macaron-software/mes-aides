@@ -1,0 +1,186 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "MA",
+  "name": "Morocco",
+  "name_local": "المغرب",
+  "language": "fr",
+  "currency": "MAD",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://cnss.ma",
+    "https://cnr.ma",
+    "https://men.gov.ma"
+  ],
+  "aids": [
+    {
+      "id": "ma-amo-tadamon",
+      "slug": "amo-tadamon-assurance-maladie",
+      "nom": "AMO Tadamon – Assurance maladie obligatoire",
+      "description_en": "Free health insurance for low-income households. Replaced RAMED since 2022. Covers hospitalisation, consultations, and essential medicines for registered households.",
+      "categorie": "sante",
+      "organisme": "CNSS Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 0,
+      "periodicite": "annuel",
+      "url_info": "https://cnss.ma",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_ma"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-tayssir",
+      "slug": "tayssir-scolarisation",
+      "nom": "Tayssir – Aide conditionnelle scolarisation",
+      "description_en": "Monthly conditional cash transfer of MAD 180/child for enrolled children in rural and peri-urban areas. Conditioned on school attendance.",
+      "categorie": "education_jeunesse",
+      "organisme": "MEN Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 18000,
+      "periodicite": "mensuel",
+      "url_info": "https://men.gov.ma",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "family_with_children",
+        "child_enrolled_school"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-daam-chomage",
+      "slug": "daam-indemnite-chomage",
+      "nom": "Daam – Indemnité chômage CNSS",
+      "description_en": "70% of capped salary (max MAD 3,000/month) for 6 months for CNSS contributors who lose their job. Called Daam programme.",
+      "categorie": "chomage",
+      "organisme": "CNSS Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.ma",
+      "eligibility_criteria": [
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-retraite-cnr",
+      "slug": "retraite-cnr",
+      "nom": "Retraite CNR – Pension minimale",
+      "description_en": "Minimum retirement pension guaranteed by the Caisse Nationale de Retraite for public sector employees.",
+      "categorie": "retraite",
+      "organisme": "CNR Maroc",
+      "montant_min_mad": 100000,
+      "montant_max_mad": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnr.ma",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-cnss-pension",
+      "slug": "pension-cnss-retraite",
+      "nom": "Pension CNSS – Retraite secteur privé",
+      "description_en": "CNSS retirement pension for private sector workers. Average minimum benefit around MAD 2,800/month, based on contributions.",
+      "categorie": "retraite",
+      "organisme": "CNSS Maroc",
+      "montant_min_mad": 100000,
+      "montant_max_mad": 280000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.ma",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-aide-logement",
+      "slug": "aide-logement-social",
+      "nom": "Aide au logement social",
+      "description_en": "One-time subsidy of MAD 100,000 for acquiring a social housing unit. Available for first-time low-income buyers under national housing programme.",
+      "categorie": "logement",
+      "organisme": "MHU Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 10000000,
+      "periodicite": "unique",
+      "url_info": "https://mhu.gov.ma",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "not_in_public_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-alloc-familiales",
+      "slug": "allocations-familiales-cnss",
+      "nom": "Allocations familiales CNSS",
+      "description_en": "Monthly family allowance of MAD 300/month per child (up to 3 children) for CNSS-affiliated workers.",
+      "categorie": "famille_enfants",
+      "organisme": "CNSS Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 30000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.ma",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-maternite-cnss",
+      "slug": "maternite-cnss",
+      "nom": "Indemnité maternité CNSS",
+      "description_en": "100% of salary for 14 weeks maternity leave for female CNSS contributors.",
+      "categorie": "famille_enfants",
+      "organisme": "CNSS Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 0,
+      "periodicite": "unique",
+      "url_info": "https://cnss.ma",
+      "eligibility_criteria": [
+        "new_parent_or_expecting",
+        "stopped_working_for_birth_or_adoption"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-liqaa",
+      "slug": "aides-directes-liqaa",
+      "nom": "Aides sociales directes Liqaa",
+      "description_en": "Pilot monthly direct cash transfer of MAD 750/month for vulnerable registered households under the social protection reform.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "Ministère des Affaires Sociales Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 75000,
+      "periodicite": "mensuel",
+      "url_info": "https://social.gov.ma",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ma-ramed-transition",
+      "slug": "ramed-couverture-sante",
+      "nom": "RAMED – Couverture santé transitoire",
+      "description_en": "Former health coverage programme for the destitute, now replaced by AMO Tadamon. Still valid in transition for registered beneficiaries.",
+      "categorie": "sante",
+      "organisme": "Ministère de la Santé Maroc",
+      "montant_min_mad": 0,
+      "montant_max_mad": 0,
+      "periodicite": "annuel",
+      "url_info": "https://ramed.ma",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

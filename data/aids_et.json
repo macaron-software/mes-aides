@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "ET",
+  "name": "Ethiopia",
+  "name_local": "ኢትዮጵያ",
+  "language": "am",
+  "currency": "ETB",
+  "welfare_model": "Social Safety Net",
+  "sources": [
+    "https://dsa.gov.et",
+    "https://moh.gov.et",
+    "https://molsa.gov.et"
+  ],
+  "aids": [
+    {
+      "id": "et-psnp",
+      "slug": "psnp-productive-safety-net",
+      "nom": "PSNP – Programme filet sécuritaire productif",
+      "description_en": "Monthly cash or in-kind transfer for chronically food-insecure households. Public works (ETB 580/day) or direct support transfer. Largest safety net programme in Africa.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "DSA Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 58000,
+      "periodicite": "mensuel",
+      "url_info": "https://dsa.gov.et",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-sctpp",
+      "slug": "sctpp-transfert-conditionnel",
+      "nom": "SCTPP – Transfert monétaire pilotes régionaux",
+      "description_en": "Conditional cash transfer pilot in select regions providing monthly aid of ETB 440 for very poor households.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "DSA Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 44000,
+      "periodicite": "mensuel",
+      "url_info": "https://dsa.gov.et",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-cbhi",
+      "slug": "cbhi-assurance-communautaire",
+      "nom": "CBHI – Assurance maladie communautaire",
+      "description_en": "Community-based health insurance with very low annual premium of ETB 72 for rural households. Covers outpatient and hospitalisation.",
+      "categorie": "sante",
+      "organisme": "MOH Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 7200,
+      "periodicite": "annuel",
+      "url_info": "https://moh.gov.et",
+      "eligibility_criteria": [
+        "residence_et"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-civil-pension",
+      "slug": "pension-fonctionnaires",
+      "nom": "Pension fonctionnaires d'État",
+      "description_en": "Civil service pension of 30 to 70% of salary based on years of service. Minimum retirement age 55 for government employees.",
+      "categorie": "retraite",
+      "organisme": "MOLSA Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://molsa.gov.et",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-mch",
+      "slug": "soins-maternels-infantiles-gratuits",
+      "nom": "MCH – Soins maternels et infantiles gratuits",
+      "description_en": "Free antenatal, delivery, and postnatal care at public health facilities under the maternal and child health programme.",
+      "categorie": "sante",
+      "organisme": "MOH Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 0,
+      "periodicite": "unique",
+      "url_info": "https://moh.gov.et",
+      "eligibility_criteria": [
+        "new_parent_or_expecting"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-school-feeding",
+      "slug": "alimentation-scolaire",
+      "nom": "Alimentation scolaire – zones insécurité alimentaire",
+      "description_en": "Free daily school meals in food-insecure zones for enrolled pupils as part of the National School Feeding Programme.",
+      "categorie": "education_jeunesse",
+      "organisme": "MOE Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 0,
+      "periodicite": "journalier",
+      "url_info": "https://moe.gov.et",
+      "eligibility_criteria": [
+        "family_with_children",
+        "child_enrolled_school"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-idp-assistance",
+      "slug": "aide-personnes-deplacees",
+      "nom": "Aide aux personnes déplacées internes",
+      "description_en": "One-time reintegration support for internally displaced persons under humanitarian and government programmes. ETB 2,000 lump sum.",
+      "categorie": "urgence_catastrophe",
+      "organisme": "DSA Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 200000,
+      "periodicite": "unique",
+      "url_info": "https://dsa.gov.et",
+      "eligibility_criteria": [
+        "residence_et"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-disability-pension",
+      "slug": "pension-invalidite",
+      "nom": "Pension d'invalidité",
+      "description_en": "Invalidity pension of 30 to 50% of reference salary for recognised disability.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MOLSA Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://molsa.gov.et",
+      "eligibility_criteria": [
+        "disability_verified"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-land-access",
+      "slug": "acces-terres-rurales",
+      "nom": "Programme accès terres rurales",
+      "description_en": "Land use rights for poor rural households under the agrarian reform programme. Non-monetary benefit.",
+      "categorie": "logement",
+      "organisme": "MOALRE Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 0,
+      "periodicite": "unique",
+      "url_info": "https://moalre.gov.et",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "et-uep",
+      "slug": "programme-emploi-urbain",
+      "nom": "Programme emploi urbain",
+      "description_en": "Daily wage of ETB 300 for urban public works participants under the Urban Employment Programme.",
+      "categorie": "emploi_formation",
+      "organisme": "MOLSA Ethiopia",
+      "montant_min_etb": 0,
+      "montant_max_etb": 30000,
+      "periodicite": "journalier",
+      "url_info": "https://molsa.gov.et",
+      "eligibility_criteria": [
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

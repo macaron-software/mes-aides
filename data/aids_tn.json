@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "TN",
+  "name": "Tunisia",
+  "name_local": "تونس",
+  "language": "fr",
+  "currency": "TND",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://cnss.tn",
+    "https://social.gov.tn",
+    "https://emploi.gov.tn"
+  ],
+  "aids": [
+    {
+      "id": "tn-pnafn",
+      "slug": "pnafn-aide-familles-necessiteuses",
+      "nom": "PNAFN – Aide familles nécessiteuses",
+      "description_en": "Monthly direct cash aid of TND 180/month for needy families registered with the Ministry of Social Affairs.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MAFFP Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 180000,
+      "periodicite": "mensuel",
+      "url_info": "https://social.gov.tn",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-cnss-retraite",
+      "slug": "pension-retraite-cnss",
+      "nom": "Pension de retraite CNSS",
+      "description_en": "Minimum retirement pension of TND 350/month for non-agricultural private sector affiliates.",
+      "categorie": "retraite",
+      "organisme": "CNSS Tunisie",
+      "montant_min_tnd": 350000,
+      "montant_max_tnd": 350000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.tn",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-chomage",
+      "slug": "allocation-chomage-cnss",
+      "nom": "Allocation chômage CNSS",
+      "description_en": "34.7% of last capped salary up to TND 300/month for 3 to 12 months for CNSS contributors.",
+      "categorie": "chomage",
+      "organisme": "Ministère Emploi Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://emploi.gov.tn",
+      "eligibility_criteria": [
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-amg",
+      "slug": "amg-aide-medicale-gratuite",
+      "nom": "AMG 1/2 – Aide médicale gratuite",
+      "description_en": "Free or reduced-rate health care for low-income households. AMG1 = fully free, AMG2 = reduced rates at public health facilities.",
+      "categorie": "sante",
+      "organisme": "CNAM Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 0,
+      "periodicite": "annuel",
+      "url_info": "https://cnam.tn",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-alloc-familiale",
+      "slug": "allocations-familiales-cnss",
+      "nom": "Allocation familiale CNSS",
+      "description_en": "Monthly family allowance of TND 16/child per month for CNSS-affiliated workers.",
+      "categorie": "famille_enfants",
+      "organisme": "CNSS Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 16000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.tn",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-prime-naissance",
+      "slug": "prime-naissance-cnss",
+      "nom": "Prime de naissance CNSS",
+      "description_en": "One-time birth grant of TND 200 paid to CNSS-affiliated mothers at birth.",
+      "categorie": "famille_enfants",
+      "organisme": "CNSS Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 200000,
+      "periodicite": "unique",
+      "url_info": "https://cnss.tn",
+      "eligibility_criteria": [
+        "new_parent_or_expecting"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-pension-invalidite",
+      "slug": "pension-invalidite-cnss",
+      "nom": "Pension d'invalidité CNSS",
+      "description_en": "Invalidity pension of 50 to 100% of reference salary based on degree of recognised invalidity.",
+      "categorie": "handicap_invalidite",
+      "organisme": "CNSS Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.tn",
+      "eligibility_criteria": [
+        "disability_verified",
+        "invalidity_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-bourse-univ",
+      "slug": "bourse-universitaire",
+      "nom": "Bourse universitaire",
+      "description_en": "Monthly student grant of TND 300/month for students enrolled in public higher education based on social criteria.",
+      "categorie": "education_jeunesse",
+      "organisme": "MES Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://mes.tn",
+      "eligibility_criteria": [
+        "student"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-aide-logement",
+      "slug": "aide-logement-foprolos",
+      "nom": "Aide au logement FOPROLOS",
+      "description_en": "One-time subsidy of TND 10,000 for first-time buyers of FOPROLOS social housing.",
+      "categorie": "logement",
+      "organisme": "FOPROLOS Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 10000000,
+      "periodicite": "unique",
+      "url_info": "https://foprolos.com.tn",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "not_in_public_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tn-maternite",
+      "slug": "indemnite-maternite-cnss",
+      "nom": "Indemnité de maternité CNSS",
+      "description_en": "100% of salary for 8 weeks maternity leave for female CNSS affiliates.",
+      "categorie": "famille_enfants",
+      "organisme": "CNSS Tunisie",
+      "montant_min_tnd": 0,
+      "montant_max_tnd": 0,
+      "periodicite": "unique",
+      "url_info": "https://cnss.tn",
+      "eligibility_criteria": [
+        "new_parent_or_expecting"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "NG",
+  "name": "Nigeria",
+  "name_local": "Nigeria",
+  "language": "en",
+  "currency": "NGN",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://nsipa.gov.ng",
+    "https://nhia.gov.ng",
+    "https://pencom.gov.ng"
+  ],
+  "aids": [
+    {
+      "id": "ng-nsip",
+      "slug": "national-social-investment-programme",
+      "nom": "NSIP – National Social Investment Programme",
+      "description_en": "Conditional cash transfer for extremely poor households. Monthly stipend of ₦5,000 per household meeting poverty criteria. Managed by the National Social Investment Programme Agency.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "NSIPA / Federal Government of Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsipa.gov.ng",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-npower",
+      "slug": "npower-youth-employment",
+      "nom": "N-Power – Programme emploi jeunes",
+      "description_en": "Monthly stipend of ₦30,000 for unemployed graduates participating in civic service. Provides skills training and work experience for young Nigerians.",
+      "categorie": "emploi_formation",
+      "organisme": "FMF / N-Power Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 3000000,
+      "periodicite": "mensuel",
+      "url_info": "https://npower.gov.ng",
+      "eligibility_criteria": [
+        "age_18_to_30",
+        "involuntary_unemployment",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-tradermoni",
+      "slug": "tradermoni-microcredit",
+      "nom": "TraderMoni / MarketMoni – Microcrédit",
+      "description_en": "Interest-free microloan of ₦10,000 for informal traders and small entrepreneurs. Scalable up to ₦100,000 on repayment.",
+      "categorie": "revenus_emploi",
+      "organisme": "NESF / BOI Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 1000000,
+      "periodicite": "unique",
+      "url_info": "https://nesf.gov.ng",
+      "eligibility_criteria": [
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-nhia",
+      "slug": "nhia-health-insurance",
+      "nom": "NHIA – Assurance maladie nationale",
+      "description_en": "Subsidised health coverage for low-income households under the National Health Insurance Authority. Provides access to primary and secondary care.",
+      "categorie": "sante",
+      "organisme": "NHIA Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 0,
+      "periodicite": "annuel",
+      "url_info": "https://nhia.gov.ng",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-pencom",
+      "slug": "pencom-minimum-pension",
+      "nom": "PENCOM – Pension minimale de retraite",
+      "description_en": "Minimum pension guarantee equivalent to the national minimum wage for contributors to the contributory pension scheme. Managed by PENCOM.",
+      "categorie": "retraite",
+      "organisme": "PENCOM Nigeria",
+      "montant_min_ngn": 7000000,
+      "montant_max_ngn": 7000000,
+      "periodicite": "mensuel",
+      "url_info": "https://pencom.gov.ng",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-geep",
+      "slug": "geep-enterprise-programme",
+      "nom": "GEEP – Programme autonomisation entreprise",
+      "description_en": "Microloan of ₦50,000 for SMEs and entrepreneurs via the Bank of Agriculture. Part of the Government Enterprise and Empowerment Programme.",
+      "categorie": "revenus_emploi",
+      "organisme": "NESF / BOA Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 5000000,
+      "periodicite": "unique",
+      "url_info": "https://nesf.gov.ng",
+      "eligibility_criteria": [
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-cct",
+      "slug": "conditional-cash-transfer",
+      "nom": "CCT – Transfert monétaire conditionnel",
+      "description_en": "Monthly cash aid of ₦5,000 for the poorest households with school-age children meeting education conditionalities. Linked to NSIP programme.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "NSIPA Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsipa.gov.ng",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "family_with_children",
+        "child_enrolled_school",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-nhsp",
+      "slug": "national-home-grown-school-feeding",
+      "nom": "NHSP – Programme alimentation scolaire",
+      "description_en": "Free daily meal for primary school pupils in public schools under the National Home-Grown School Feeding Programme.",
+      "categorie": "education_jeunesse",
+      "organisme": "NSIPA Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 0,
+      "periodicite": "journalier",
+      "url_info": "https://nsipa.gov.ng",
+      "eligibility_criteria": [
+        "family_with_children",
+        "child_enrolled_school",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-nhf-housing",
+      "slug": "national-housing-fund",
+      "nom": "NHF – Prêt immobilier subventionné",
+      "description_en": "Subsidised mortgage loan via the National Housing Fund for low-income earners. Provides affordable access to home ownership.",
+      "categorie": "logement",
+      "organisme": "FMBN Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 0,
+      "periodicite": "unique",
+      "url_info": "https://fmbnigeria.org",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "not_in_public_housing",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ng-disability-grant",
+      "slug": "disability-grant-fct",
+      "nom": "Allocation handicap (FCT Abuja)",
+      "description_en": "Monthly grant for persons with disabilities in the Federal Capital Territory. Provided under federal social protection schemes.",
+      "categorie": "handicap_invalidite",
+      "organisme": "NSIPA / FCT Nigeria",
+      "montant_min_ngn": 0,
+      "montant_max_ngn": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsipa.gov.ng",
+      "eligibility_criteria": [
+        "disability_verified",
+        "residence_ng"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

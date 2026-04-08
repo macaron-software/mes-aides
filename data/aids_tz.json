@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "TZ",
+  "name": "Tanzania",
+  "name_local": "Tanzania",
+  "language": "sw",
+  "currency": "TZS",
+  "welfare_model": "Social Protection + Safety Net",
+  "sources": [
+    "https://nsgrp.go.tz",
+    "https://nhif.or.tz",
+    "https://nssf.or.tz"
+  ],
+  "aids": [
+    {
+      "id": "tz-pssn",
+      "slug": "pssn-productive-social-safety-net",
+      "nom": "PSSN – Filet de sécurité sociale productif",
+      "description_en": "Conditional cash transfer of TZS 36,000/month for extremely poor households with public works component.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "NSGRP Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 3600000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsgrp.go.tz",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-nhif",
+      "slug": "nhif-assurance-maladie",
+      "nom": "NHIF – Assurance maladie nationale",
+      "description_en": "National health insurance fund with subsidised contribution of TZS 33,000/month for formal sector workers.",
+      "categorie": "sante",
+      "organisme": "NHIF Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 3300000,
+      "periodicite": "mensuel",
+      "url_info": "https://nhif.or.tz",
+      "eligibility_criteria": [
+        "residence_tz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-nssf-pension",
+      "slug": "pension-nssf-tanzanie",
+      "nom": "Pension de retraite NSSF",
+      "description_en": "NSSF retirement pension of 30 to 40% of reference salary based on contributions.",
+      "categorie": "retraite",
+      "organisme": "NSSF Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://nssf.or.tz",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-ovc-cash",
+      "slug": "transfert-orphelins-enfants",
+      "nom": "Transfert monétaire – Orphelins et enfants vulnérables",
+      "description_en": "Monthly cash aid of TZS 20,000 for households caring for orphans and vulnerable children.",
+      "categorie": "famille_enfants",
+      "organisme": "NSGRP Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 2000000,
+      "periodicite": "mensuel",
+      "url_info": "https://nsgrp.go.tz",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-elimu-bora",
+      "slug": "education-gratuite-tanzanie",
+      "nom": "Elimu Bora – Éducation gratuite",
+      "description_en": "Free primary and secondary public education for all Tanzanian children under the Fee-Free Basic Education programme.",
+      "categorie": "education_jeunesse",
+      "organisme": "MOE Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 0,
+      "periodicite": "annuel",
+      "url_info": "https://moe.go.tz",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-tasaf",
+      "slug": "tasaf-fonds-action-sociale",
+      "nom": "TASAF – Fonds d'action sociale tanzanien",
+      "description_en": "Monthly extended cash transfer of TZS 36,000 for vulnerable households via Tanzania Social Action Fund.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "TASAF Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 3600000,
+      "periodicite": "mensuel",
+      "url_info": "https://tasaf.or.tz",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-food-for-work",
+      "slug": "vivres-contre-travail",
+      "nom": "Vivres contre travail",
+      "description_en": "Daily cash payment of TZS 5,000 for participation in community public works under food-for-work schemes.",
+      "categorie": "emploi_formation",
+      "organisme": "NSGRP Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 500000,
+      "periodicite": "journalier",
+      "url_info": "https://nsgrp.go.tz",
+      "eligibility_criteria": [
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-disability-grant",
+      "slug": "allocation-handicap-tanzanie",
+      "nom": "Allocation handicap",
+      "description_en": "Monthly grant of TZS 20,000 for persons with recognised disabilities under national social protection.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MCDGEC Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 2000000,
+      "periodicite": "mensuel",
+      "url_info": "https://mcdgec.go.tz",
+      "eligibility_criteria": [
+        "disability_verified"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-maternal-health",
+      "slug": "soins-maternels-gratuits",
+      "nom": "Soins maternels gratuits",
+      "description_en": "Free antenatal, delivery, and postnatal care at all public health facilities in Tanzania.",
+      "categorie": "sante",
+      "organisme": "MOH Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 0,
+      "periodicite": "unique",
+      "url_info": "https://moh.go.tz",
+      "eligibility_criteria": [
+        "new_parent_or_expecting"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tz-jibu-microfinance",
+      "slug": "jibu-microfinance",
+      "nom": "Jibu – Microfinance petites entreprises",
+      "description_en": "Variable microloans for small businesses and informal sector entrepreneurs through government microfinance schemes.",
+      "categorie": "emploi_formation",
+      "organisme": "MOF Tanzania",
+      "montant_min_tzs": 0,
+      "montant_max_tzs": 0,
+      "periodicite": "unique",
+      "url_info": "https://mofinance.go.tz",
+      "eligibility_criteria": [
+        "residence_tz"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

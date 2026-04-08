@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "DZ",
+  "name": "Algeria",
+  "name_local": "الجزائر",
+  "language": "fr",
+  "currency": "DZD",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://cnr.dz",
+    "https://cnas.dz",
+    "https://anem.dz"
+  ],
+  "aids": [
+    {
+      "id": "dz-retraite-cnr",
+      "slug": "pension-retraite-cnr",
+      "nom": "Pension de retraite CNR",
+      "description_en": "Minimum retirement pension guaranteed by the Caisse Nationale de Retraite (CNR). Minimum amount approximately DZD 20,000/month.",
+      "categorie": "retraite",
+      "organisme": "CNR Algérie",
+      "montant_min_dzd": 2000000,
+      "montant_max_dzd": 2000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnr.dz",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-anem-chomage",
+      "slug": "allocation-chomage-anem",
+      "nom": "Allocation chômage ANEM",
+      "description_en": "Unemployment benefit for insured workers paid for 6 to 12 months. Approximately DZD 10,800/month (75% of national minimum wage).",
+      "categorie": "chomage",
+      "organisme": "ANEM Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 1080000,
+      "periodicite": "mensuel",
+      "url_info": "https://anem.dz",
+      "eligibility_criteria": [
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-alloc-familiale",
+      "slug": "allocation-familiale",
+      "nom": "Allocation familiale",
+      "description_en": "Monthly allowance of DZD 700/child for workers in the public and private sector with dependent children. Funded by CNAS.",
+      "categorie": "famille_enfants",
+      "organisme": "CNAS Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 70000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnas.dz",
+      "eligibility_criteria": [
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-amt-sante",
+      "slug": "soins-gratuits-cnas",
+      "nom": "AMT – Soins médicaux gratuits CNAS",
+      "description_en": "Free medical care for CNAS insured members and dependants including hospitalization, specialist consultations, and essential medicines.",
+      "categorie": "sante",
+      "organisme": "CNAS Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 0,
+      "periodicite": "annuel",
+      "url_info": "https://cnas.dz",
+      "eligibility_criteria": [
+        "residence_dz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-fiph-handicap",
+      "slug": "fiph-insertion-handicap",
+      "nom": "FIPH – Fonds insertion personnes handicapées",
+      "description_en": "Variable support for professional insertion of persons with disabilities under the FIPH scheme.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MST Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://mst.gov.dz",
+      "eligibility_criteria": [
+        "disability_verified"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-filet-social",
+      "slug": "filet-social-afs",
+      "nom": "Filet social – AFS",
+      "description_en": "Monthly cash transfer of DZD 3,000 for extremely poor households with no other income, under the national social safety net (AFS).",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "Ministère des Affaires Sociales Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://social.gov.dz",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-aadl-logement",
+      "slug": "aadl-logement-locatif",
+      "nom": "AADL – Logement locatif aidé",
+      "description_en": "State-subsidised rent-to-own housing programme managed by AADL for low and middle-income households.",
+      "categorie": "logement",
+      "organisme": "AADL Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 0,
+      "periodicite": "unique",
+      "url_info": "https://aadl.com.dz",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "not_in_public_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-bourse-universite",
+      "slug": "bourse-enseignement-superieur",
+      "nom": "Bourse d'enseignement supérieur",
+      "description_en": "Semester-based university scholarship of DZD 8,000/semester for students in higher education based on social criteria.",
+      "categorie": "education_jeunesse",
+      "organisme": "MESRS Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 800000,
+      "periodicite": "semestriel",
+      "url_info": "https://mesrs.dz",
+      "eligibility_criteria": [
+        "student"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-pension-invalidite",
+      "slug": "pension-invalidite-cnas",
+      "nom": "Pension d'invalidité CNAS",
+      "description_en": "Invalidity pension of 50 to 100% of reference salary based on degree of recognised invalidity.",
+      "categorie": "handicap_invalidite",
+      "organisme": "CNAS Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://cnas.dz",
+      "eligibility_criteria": [
+        "disability_verified",
+        "invalidity_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dz-maternite",
+      "slug": "indemnite-maternite",
+      "nom": "Indemnité de maternité",
+      "description_en": "100% of salary for 14 weeks maternity leave for women insured with CNAS.",
+      "categorie": "famille_enfants",
+      "organisme": "CNAS Algérie",
+      "montant_min_dzd": 0,
+      "montant_max_dzd": 0,
+      "periodicite": "unique",
+      "url_info": "https://cnas.dz",
+      "eligibility_criteria": [
+        "new_parent_or_expecting"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "GH",
+  "name": "Ghana",
+  "name_local": "Ghana",
+  "language": "en",
+  "currency": "GHS",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://leap.gov.gh",
+    "https://nhis.gov.gh",
+    "https://ssnit.org.gh"
+  ],
+  "aids": [
+    {
+      "id": "gh-leap",
+      "slug": "leap-cash-transfer",
+      "nom": "LEAP – Livelihood Empowerment Against Poverty",
+      "description_en": "Bimonthly cash transfer for extremely poor households with children or elderly persons. GHS 96/bimonth per household.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "LEAP Ghana / DSWD",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 9600,
+      "periodicite": "bimestriel",
+      "url_info": "https://leap.gov.gh",
+      "eligibility_criteria": [
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-nhis",
+      "slug": "nhis-assurance-maladie",
+      "nom": "NHIS – Assurance maladie nationale",
+      "description_en": "Near-free health insurance for registered NHIS members covering outpatient, inpatient, and maternity care.",
+      "categorie": "sante",
+      "organisme": "NHIA Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 0,
+      "periodicite": "annuel",
+      "url_info": "https://nhis.gov.gh",
+      "eligibility_criteria": [
+        "residence_gh"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-ssnit-pension",
+      "slug": "pension-ssnit",
+      "nom": "Pension de retraite SSNIT",
+      "description_en": "SSNIT minimum retirement pension of GHS 200/month guaranteed for contributors with at least 180 months of contributions.",
+      "categorie": "retraite",
+      "organisme": "SSNIT Ghana",
+      "montant_min_ghs": 20000,
+      "montant_max_ghs": 20000,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnit.org.gh",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-school-feeding",
+      "slug": "gsfp-alimentation-scolaire",
+      "nom": "GSFP – Programme alimentation scolaire",
+      "description_en": "Free daily meal for primary school pupils in public schools under the Ghana School Feeding Programme.",
+      "categorie": "education_jeunesse",
+      "organisme": "GSFP Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 0,
+      "periodicite": "journalier",
+      "url_info": "https://gsfp.gov.gh",
+      "eligibility_criteria": [
+        "family_with_children",
+        "child_enrolled_school"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-capitation-grant",
+      "slug": "capitation-grant",
+      "nom": "Capitation Grant – Frais de scolarité",
+      "description_en": "Termly grant of GHS 9.90 per pupil to public primary schools to cover basic school costs.",
+      "categorie": "education_jeunesse",
+      "organisme": "MOE Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 990,
+      "periodicite": "trimestriel",
+      "url_info": "https://moe.gov.gh",
+      "eligibility_criteria": [
+        "family_with_children",
+        "child_enrolled_school"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-social-pension",
+      "slug": "pension-sociale-70-plus",
+      "nom": "Pension sociale 70+ ans",
+      "description_en": "Monthly non-contributory pension of GHS 250/month for persons aged 70 and above without SSNIT pension.",
+      "categorie": "retraite",
+      "organisme": "MELR Ghana",
+      "montant_min_ghs": 25000,
+      "montant_max_ghs": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://melr.gov.gh",
+      "eligibility_criteria": [
+        "age_min_70_or_disability"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-ssnit-disability",
+      "slug": "pension-invalidite-ssnit",
+      "nom": "Pension invalidity SSNIT",
+      "description_en": "37.5% of reference salary invalidity pension for recognised disability through SSNIT.",
+      "categorie": "handicap_invalidite",
+      "organisme": "SSNIT Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnit.org.gh",
+      "eligibility_criteria": [
+        "disability_verified",
+        "invalidity_pension_recipient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-maternity",
+      "slug": "conge-maternite-ghana",
+      "nom": "Congé maternité – Loi du travail",
+      "description_en": "12 weeks at 100% salary for formal sector female workers under Ghanaian labour law.",
+      "categorie": "famille_enfants",
+      "organisme": "MELR Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 0,
+      "periodicite": "unique",
+      "url_info": "https://melr.gov.gh",
+      "eligibility_criteria": [
+        "new_parent_or_expecting"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-yea",
+      "slug": "yea-agence-emploi-jeunes",
+      "nom": "YEA – Youth Employment Agency",
+      "description_en": "Monthly stipend of GHS 559/month for young people enrolled in the national Youth Employment Programme.",
+      "categorie": "emploi_formation",
+      "organisme": "YEA Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 55900,
+      "periodicite": "mensuel",
+      "url_info": "https://yea.gov.gh",
+      "eligibility_criteria": [
+        "age_18_to_30",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "gh-leap-expanded",
+      "slug": "leap-etendu-nutrition",
+      "nom": "LEAP Étendu – Soutien nutritionnel",
+      "description_en": "Nutritional supplement support for LEAP beneficiary households with young children under age 5.",
+      "categorie": "alimentation",
+      "organisme": "LEAP Ghana",
+      "montant_min_ghs": 0,
+      "montant_max_ghs": 5000,
+      "periodicite": "mensuel",
+      "url_info": "https://leap.gov.gh",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "family_with_children"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}
