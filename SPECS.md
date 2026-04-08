@@ -6,18 +6,18 @@
 | App | Aida / MesAides |
 | Dir | _HELP/aides-macaron |
 | Brand | #1565C0 (deep blue) |
-| Domain | aides.macaron-software.com |
+| Domain | aides.macaron-software.com + aida.macaron-software.com |
 | Platform | iOS + Android + Web (SvelteKit) |
 | Stack | Rust (core + WASM) + SvelteKit + SwiftUI + Kotlin |
-| Status | Greenfield (28/71 aids implemented) |
+| Status | Prod v0.3 — 71+ FR aids, 36 countries |
 | Privacy | GDPR Tier 3 (precarious data) |
 
 ## Purpose
 Evidence-based eligibility checker for vulnerable populations. Local-first: zero data collection, 100% device computation. Intervenant coordination for social workers + volunteers.
 
 ## Language & A11y
-- i18n: 47 locales (FR primary)
-- RTL: ar, he (RTL via Svelte i18n)
+- i18n: 50 locales (FR primary)
+- RTL: ar/fa/he/ur/ps/ku (via Svelte i18n)
 - Flesch-Kincaid ≤60 (plain language, mandatory)
 - WCAG 2.2 AA (a11y, focus, contrast ≥4.5:1 text, ≥3:1 UI)
 
@@ -72,7 +72,7 @@ Evidence-based eligibility checker for vulnerable populations. Local-first: zero
 
 ## Benefits Data
 
-### Implemented (28/71)
+### Implemented (71+ FR aids, 36 countries)
 | Category | Count | Examples |
 |----------|-------|----------|
 | Income | 4 | RSA, ARE, ASS, Prime d'activité |
@@ -119,6 +119,31 @@ data/aids_de.json              # German benefits
 web/aides/europe/de.html       # HTML page (generated)
 ```
 
+## World Coverage
+- FR: 71 aids (2025-2026 barèmes)
+- EU (30 countries): AT BE CH DE DK ES FI FR GB IT NL NO PL PT SE + 15 smaller
+- World (6): AU CA CN JP MX US
+- Total: 36 countries, 50 locales (i18n), RTL: ar/fa/he/ur
+
+### JSON Schema (aids_*.json)
+Field `montant_max_*` varies by currency:
+- EUR countries: `montant_max_eur` (integer cents)
+- GBP: `montant_max_gbp`, SEK: `montant_max_sek`, DKK: `montant_max_dkk`
+- NOK: `montant_max_nok`, CHF: `montant_max_chf`, PLN: `montant_max_pln`
+- USD: `montant_max_usd`, CAD: `montant_max_cad`, AUD: `montant_max_aud`
+- JPY: `montant_max_jpy`, MXN: `montant_max_mxn`, CNY: `montant_max_cny`
+
+### Data Files (data/*.json)
+- aids_fr.json — 71 aids
+- aids_de/es/it/pt/be/nl/se/dk/fi/at/ch/no/uk/pl.json — EU 14 main countries
+- aids_eu.json — EU hub (36 EU entries)
+- aids_us/ca/au/jp/mx/cn.json — world 6 countries
+
+### Simulators (web/simulateur/)
+- Per-country 5-step flow: situation→family→housing→income→results
+- eu-simulator.js: EUSimulator class, eligibility engine, currency fmt
+- monde.html: global selector, europe.html: EU selector
+
 ## Roles & Access
 
 | Role | Access | Use Case |
@@ -134,7 +159,7 @@ web/aides/europe/de.html       # HTML page (generated)
 | Feature | Status | Notes |
 |---------|--------|-------|
 | Eligibility calculator | ✓ Done | Local WASM, zero network |
-| Aid catalog | ✓ Done | 28 implemented + metadata |
+| Aid catalog | ✓ Done | 71+ FR + 36-country catalog |
 | Questionnaire | ✓ Done | Adaptive, i18n |
 | Results page | ✓ Done | Slug-based URLs, structured data |
 | Intervention planning | Pending | Intervenant + beneficiary workflow |
@@ -168,7 +193,7 @@ web/aides/europe/de.html       # HTML page (generated)
 
 ## Onboarding Flow
 
-1. **Language** — 47 locales, auto-detect OS
+1. **Language** — 50 locales, auto-detect OS
 2. **Country** — FR complete, others scaffolded
 3. **Role** — beneficiary / intervenant / volunteer / coordinator
 4. **Questionnaire** → Eligibility Engine calculates
@@ -179,8 +204,9 @@ web/aides/europe/de.html       # HTML page (generated)
 | Aspect | Implementation |
 |--------|-----------------|
 | URLs | `/fr/aides/{slug}` (slug = aid ID) |
-| Sitemap | Auto-generated per country |
-| Structured data | JSON-LD aids schema + FAQPage |
+| Sitemap | Auto-generated per country + sitemap.xml with hreflang for all 36 countries |
+| Structured data | FAQPage + GovernmentService + BreadcrumbList JSON-LD on all pages |
+| robots.txt | Points to sitemap |
 | Meta tags | `og:title`, `og:description`, `og:image` |
 | Indexing | Google OK (no robots.txt block) |
 | Canonical | `<link rel="canonical" href="...">` |
