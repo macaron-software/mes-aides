@@ -20,7 +20,7 @@
       "categorie": "revenus_emploi",
       "organisme": "RAV / SECO",
       "montant_min_eur": 0,
-      "montant_max_eur": 14000,
+      "montant_max_eur": 9200,
       "periodicite": "mensuel",
       "url_info": "https://www.arbeit.swiss/secoalv/fr/home/menue/arbeitnehmer/arbeitslos.html",
       "eligibility_criteria": [

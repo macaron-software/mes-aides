@@ -15,13 +15,17 @@
       "ville": null,
       "organisme": "CAF / MSA",
       "montant_min_eur": 0,
-      "montant_max_eur": 646.52,
+      "montant_max_eur": 635.71,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/N19775",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/N19775",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["age_min_18", "residency_fr", "income_below_threshold"],
+      "eligibility_criteria": [
+        "age_min_18",
+        "residency_fr",
+        "income_below_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -36,13 +40,17 @@
       "ville": null,
       "organisme": "CAF / MSA",
       "montant_min_eur": 0,
-      "montant_max_eur": 633.21,
+      "montant_max_eur": 635.0,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F2882",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F2882",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["age_min_18", "residency_fr", "employed_or_self_employed"],
+      "eligibility_criteria": [
+        "age_min_18",
+        "residency_fr",
+        "employed_or_self_employed"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -57,13 +65,17 @@
       "ville": null,
       "organisme": "France Travail",
       "montant_min_eur": 0,
-      "montant_max_eur": 579.90,
+      "montant_max_eur": 545.1,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F12484",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F12484",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["worked_5_years_min", "are_exhausted", "residency_fr"],
+      "eligibility_criteria": [
+        "worked_5_years_min",
+        "are_exhausted",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -84,7 +96,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F14860",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["involuntary_job_loss", "worked_contributing_period", "residency_fr"],
+      "eligibility_criteria": [
+        "involuntary_job_loss",
+        "worked_contributing_period",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -105,7 +121,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F12006",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["tenant_or_roommate", "income_below_threshold", "eligible_housing"],
+      "eligibility_criteria": [
+        "tenant_or_roommate",
+        "income_below_threshold",
+        "eligible_housing"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -126,7 +146,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F1215",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["not_eligible_apl", "income_below_threshold", "residency_fr"],
+      "eligibility_criteria": [
+        "not_eligible_apl",
+        "income_below_threshold",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -140,14 +164,18 @@
       "departement": null,
       "ville": null,
       "organisme": "Action Logement",
-      "montant_min_eur": null,
-      "montant_max_eur": null,
+      "montant_min_eur": 0,
+      "montant_max_eur": 800.0,
       "periodicite": "unique",
       "url_info": "https://www.visale.fr",
       "url_source": "https://www.visale.fr",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_under_30_or_new_job", "tenant", "residency_fr"],
+      "eligibility_criteria": [
+        "age_under_30_or_new_job",
+        "tenant",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -168,7 +196,11 @@
       "url_source": "https://www.maprimerenov.gouv.fr",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["owner_occupant_or_landlord", "eligible_works", "income_threshold"],
+      "eligibility_criteria": [
+        "owner_occupant_or_landlord",
+        "eligible_works",
+        "income_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -183,13 +215,17 @@
       "ville": null,
       "organisme": "CAF",
       "montant_min_eur": 0,
-      "montant_max_eur": 1033.32,
+      "montant_max_eur": 1016.05,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F12242",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F12242",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["disability_rate_min_50pct", "age_20_to_60", "income_below_threshold"],
+      "eligibility_criteria": [
+        "disability_rate_min_50pct",
+        "age_20_to_60",
+        "income_below_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -210,7 +246,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F12242",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["aah_recipient", "lives_alone", "autonomous_housing"],
+      "eligibility_criteria": [
+        "aah_recipient",
+        "lives_alone",
+        "autonomous_housing"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -231,7 +271,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F14202",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["disability_significant_activity_limitation", "age_under_60", "residency_fr"],
+      "eligibility_criteria": [
+        "disability_significant_activity_limitation",
+        "age_under_60",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -252,7 +296,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F14809",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["child_age_under_20", "disability_rate_min_50pct", "residency_fr"],
+      "eligibility_criteria": [
+        "child_age_under_20",
+        "disability_rate_min_50pct",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -273,7 +321,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F16385",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["invalidity_pension_recipient", "age_under_65", "income_below_threshold"],
+      "eligibility_criteria": [
+        "invalidity_pension_recipient",
+        "age_under_65",
+        "income_below_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -294,7 +346,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F672",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["work_capacity_reduced_2_3", "social_security_affiliation", "age_under_67"],
+      "eligibility_criteria": [
+        "work_capacity_reduced_2_3",
+        "social_security_affiliation",
+        "age_under_67"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -308,14 +364,17 @@
       "departement": null,
       "ville": null,
       "organisme": "CPAM",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 1100.0,
       "periodicite": "annuel",
       "url_info": "https://www.complementaire-sante-solidaire.gouv.fr",
       "url_source": "https://www.complementaire-sante-solidaire.gouv.fr",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["income_below_threshold", "residency_fr_min_3_months"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_fr_min_3_months"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -329,14 +388,18 @@
       "departement": null,
       "ville": null,
       "organisme": "CAF / MSA",
-      "montant_min_eur": 37.77,
+      "montant_min_eur": 179.57,
       "montant_max_eur": 500.0,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F13213",
       "url_source": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/prestations-familiales/allocations-familiales",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["children_count_min_2", "children_age_under_20", "residency_fr"],
+      "eligibility_criteria": [
+        "children_count_min_2",
+        "children_age_under_20",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -357,7 +420,11 @@
       "url_source": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/prestations-familiales/complement-familial",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["children_count_min_3", "all_children_age_3_to_21", "income_below_threshold"],
+      "eligibility_criteria": [
+        "children_count_min_3",
+        "all_children_age_3_to_21",
+        "income_below_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -371,14 +438,18 @@
       "departement": null,
       "ville": null,
       "organisme": "CAF / MSA",
-      "montant_min_eur": 98.30,
-      "montant_max_eur": 196.59,
+      "montant_min_eur": 92.72,
+      "montant_max_eur": 185.45,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F2552",
       "url_source": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/petite-enfance/paje-allocations",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["child_age_under_3", "income_below_threshold", "residency_fr"],
+      "eligibility_criteria": [
+        "child_age_under_3",
+        "income_below_threshold",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -399,7 +470,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F815",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["single_parent", "child_age_under_20", "no_alimony_received"],
+      "eligibility_criteria": [
+        "single_parent",
+        "child_age_under_20",
+        "no_alimony_received"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -420,7 +495,11 @@
       "url_source": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/scolarite/allocation-de-rentree-scolaire",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 365,
-      "eligibility_criteria": ["child_age_6_to_18", "child_enrolled_school", "income_below_threshold"],
+      "eligibility_criteria": [
+        "child_age_6_to_18",
+        "child_enrolled_school",
+        "income_below_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -441,7 +520,10 @@
       "url_source": "https://chequeenergie.gouv.fr",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 365,
-      "eligibility_criteria": ["income_below_threshold_rfr", "main_residence"],
+      "eligibility_criteria": [
+        "income_below_threshold_rfr",
+        "main_residence"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -456,13 +538,17 @@
       "ville": null,
       "organisme": "Caisse de retraite / MSA",
       "montant_min_eur": 0,
-      "montant_max_eur": 1043.59,
+      "montant_max_eur": 1026.35,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F16871",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F16871",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["age_min_65", "income_below_threshold", "residency_fr"],
+      "eligibility_criteria": [
+        "age_min_65",
+        "income_below_threshold",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -483,7 +569,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F12004",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["full_rate_pension", "low_pension_amount", "residency_fr"],
+      "eligibility_criteria": [
+        "full_rate_pension",
+        "low_pension_amount",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -498,13 +588,17 @@
       "ville": null,
       "organisme": "France Travail / Mission Locale",
       "montant_min_eur": 0,
-      "montant_max_eur": 528.60,
+      "montant_max_eur": 528.6,
       "periodicite": "mensuel",
       "url_info": "https://www.1jeune1solution.gouv.fr/contrat-engagement-jeune",
       "url_source": "https://www.1jeune1solution.gouv.fr/contrat-engagement-jeune",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["age_16_to_25", "not_in_employment_or_training", "residency_fr"],
+      "eligibility_criteria": [
+        "age_16_to_25",
+        "not_in_employment_or_training",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -519,13 +613,17 @@
       "ville": null,
       "organisme": "CROUS",
       "montant_min_eur": 106.65,
-      "montant_max_eur": 563.50,
+      "montant_max_eur": 563.5,
       "periodicite": "mensuel",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F12214",
       "url_source": "https://www.messervices.etudiant.gouv.fr/envoi/index.php",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["enrolled_higher_education", "french_nationality_or_eu", "income_below_threshold"],
+      "eligibility_criteria": [
+        "enrolled_higher_education",
+        "french_nationality_or_eu",
+        "income_below_threshold"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -546,7 +644,10 @@
       "url_source": "https://passculture.app",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 180,
-      "eligibility_criteria": ["age_18", "residency_fr"],
+      "eligibility_criteria": [
+        "age_18",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -567,7 +668,10 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F1325",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 365,
-      "eligibility_criteria": ["rsa_or_ass_recipient", "residency_fr"],
+      "eligibility_criteria": [
+        "rsa_or_ass_recipient",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -581,14 +685,17 @@
       "departement": null,
       "ville": null,
       "organisme": "Ministère de la Justice",
-      "montant_min_eur": null,
-      "montant_max_eur": null,
+      "montant_min_eur": 0,
+      "montant_max_eur": 0,
       "periodicite": "unique",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F18074",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F18074",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "legal_proceeding"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "legal_proceeding"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -609,7 +716,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F1334",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["housing_difficulty", "income_below_threshold", "residency_department"],
+      "eligibility_criteria": [
+        "housing_difficulty",
+        "income_below_threshold",
+        "residency_department"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -623,14 +734,17 @@
       "departement": null,
       "ville": null,
       "organisme": "SIAO / DDETS",
-      "montant_min_eur": null,
-      "montant_max_eur": null,
+      "montant_min_eur": 0,
+      "montant_max_eur": 0,
       "periodicite": "variable",
       "url_info": "https://www.service-public.fr/particuliers/vosdroits/F31960",
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F31960",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["homeless_or_housing_risk", "emergency_situation"],
+      "eligibility_criteria": [
+        "homeless_or_housing_risk",
+        "emergency_situation"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -651,7 +765,11 @@
       "url_source": "https://www.service-public.fr/particuliers/vosdroits/F10009",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 30,
-      "eligibility_criteria": ["age_min_60", "autonomy_loss_gir_1_to_4", "residency_fr"],
+      "eligibility_criteria": [
+        "age_min_60",
+        "autonomy_loss_gir_1_to_4",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -672,7 +790,11 @@
       "url_source": "https://www.anah.gouv.fr/proprietaires/vos-travaux/adapter-votre-logement",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_min_70_or_disability", "owner_occupant", "eligible_works"],
+      "eligibility_criteria": [
+        "age_min_70_or_disability",
+        "owner_occupant",
+        "eligible_works"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -686,14 +808,18 @@
       "departement": null,
       "ville": null,
       "organisme": "CAF / ARIPA",
-      "montant_min_eur": null,
-      "montant_max_eur": null,
+      "montant_min_eur": 0,
+      "montant_max_eur": 131.0,
       "periodicite": "mensuel",
       "url_info": "https://www.pension-alimentaire.caf.fr",
       "url_source": "https://www.pension-alimentaire.caf.fr",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["divorce_or_separation", "child_maintenance_order", "residency_fr"],
+      "eligibility_criteria": [
+        "divorce_or_separation",
+        "child_maintenance_order",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -714,7 +840,11 @@
       "url_source": "https://www.adie.org/nos-solutions/le-microcredit/",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["excluded_from_bank_credit", "business_creation_project", "residency_fr"],
+      "eligibility_criteria": [
+        "excluded_from_bank_credit",
+        "business_creation_project",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -735,7 +865,11 @@
       "url_source": "https://www.bpifrance.fr/nos-solutions/financement/prets/pret-dhonneur",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["business_creation_or_takeover", "viable_project", "residency_fr"],
+      "eligibility_criteria": [
+        "business_creation_or_takeover",
+        "viable_project",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -756,7 +890,11 @@
       "url_source": "https://www.lassuranceretraite.fr/portail-info/home/retraites/droits/aide-retour-domicile.html",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["retirement_pension_recipient", "recent_hospitalization", "return_home"],
+      "eligibility_criteria": [
+        "retirement_pension_recipient",
+        "recent_hospitalization",
+        "return_home"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -777,7 +915,10 @@
       "url_source": "https://www.ancv.com/cheque-vacances",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 365,
-      "eligibility_criteria": ["employed_or_via_ce", "income_below_threshold_for_self_employed"],
+      "eligibility_criteria": [
+        "employed_or_via_ce",
+        "income_below_threshold_for_self_employed"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -791,14 +932,17 @@
       "departement": null,
       "ville": null,
       "organisme": "Assurance Maladie",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 1400.0,
       "periodicite": "unique",
       "url_info": "https://www.ameli.fr/assure/remboursements/100-sante",
       "url_source": "https://www.ameli.fr/assure/remboursements/100-sante",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["social_security_affiliation", "complementary_health_insurance"],
+      "eligibility_criteria": [
+        "social_security_affiliation",
+        "complementary_health_insurance"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -812,14 +956,17 @@
       "departement": null,
       "ville": null,
       "organisme": "Île-de-France Mobilités (IDFM)",
-      "montant_min_eur": null,
-      "montant_max_eur": 382.80,
+      "montant_min_eur": 0,
+      "montant_max_eur": 382.8,
       "periodicite": "annuel",
       "url_info": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/navigo-solidarite",
       "url_source": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/navigo-solidarite",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_aah_or_ass_recipient", "residency_idf_departments"],
+      "eligibility_criteria": [
+        "rsa_or_aah_or_ass_recipient",
+        "residency_idf_departments"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -833,14 +980,18 @@
       "departement": null,
       "ville": null,
       "organisme": "Île-de-France Mobilités (IDFM)",
-      "montant_min_eur": null,
-      "montant_max_eur": 388.40,
+      "montant_min_eur": 0,
+      "montant_max_eur": 388.4,
       "periodicite": "annuel",
       "url_info": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/navigo-imagine-r",
       "url_source": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/navigo-imagine-r",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_4_to_26", "enrolled_school_or_university", "residency_idf"],
+      "eligibility_criteria": [
+        "age_4_to_26",
+        "enrolled_school_or_university",
+        "residency_idf"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -854,14 +1005,17 @@
       "departement": "Rhône",
       "ville": "Lyon",
       "organisme": "TCL / Sytral",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 300.0,
       "periodicite": "annuel",
       "url_info": "https://www.tcl.fr/tarifs-et-titres/abonnements-reduits",
       "url_source": "https://www.tcl.fr/tarifs-et-titres/abonnements-reduits",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_aah_recipient", "residency_metropole_lyon"],
+      "eligibility_criteria": [
+        "rsa_or_aah_recipient",
+        "residency_metropole_lyon"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -875,14 +1029,17 @@
       "departement": "Haute-Garonne",
       "ville": "Toulouse",
       "organisme": "Tisséo",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 230.0,
       "periodicite": "annuel",
       "url_info": "https://www.tisseo.fr/tarifs/abonnements-solidarite",
       "url_source": "https://www.tisseo.fr/tarifs/abonnements-solidarite",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_aah_or_minimum_social_recipient", "residency_toulouse_metropole"],
+      "eligibility_criteria": [
+        "rsa_or_aah_or_minimum_social_recipient",
+        "residency_toulouse_metropole"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -896,14 +1053,17 @@
       "departement": null,
       "ville": null,
       "organisme": "SNCF",
-      "montant_min_eur": null,
-      "montant_max_eur": null,
+      "montant_min_eur": 0,
+      "montant_max_eur": 250.0,
       "periodicite": "mensuel",
       "url_info": "https://www.sncf.com/fr/offres-voyageurs/tarifs-reduits/carte-avantage",
       "url_source": "https://www.sncf.com/fr/offres-voyageurs/tarifs-reduits/carte-avantage",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_aah_or_minimum_social_recipient", "residency_fr"],
+      "eligibility_criteria": [
+        "rsa_or_aah_or_minimum_social_recipient",
+        "residency_fr"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -917,14 +1077,17 @@
       "departement": null,
       "ville": null,
       "organisme": "Région Occitanie / SNCF TER",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 200.0,
       "periodicite": "annuel",
       "url_info": "https://www.ter.sncf.com/occitanie/offres/tarifs-reduits",
       "url_source": "https://www.ter.sncf.com/occitanie/offres/tarifs-reduits",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_minimum_social_recipient", "residency_occitanie"],
+      "eligibility_criteria": [
+        "rsa_or_minimum_social_recipient",
+        "residency_occitanie"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -938,14 +1101,17 @@
       "departement": null,
       "ville": null,
       "organisme": "Région Bretagne / SNCF TER",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 180.0,
       "periodicite": "annuel",
       "url_info": "https://www.ter.sncf.com/bretagne/offres/tarifs-reduits",
       "url_source": "https://www.ter.sncf.com/bretagne/offres/tarifs-reduits",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_minimum_social_recipient", "residency_bretagne"],
+      "eligibility_criteria": [
+        "rsa_or_minimum_social_recipient",
+        "residency_bretagne"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -959,14 +1125,17 @@
       "departement": null,
       "ville": null,
       "organisme": "Région PACA / SNCF TER",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 220.0,
       "periodicite": "annuel",
       "url_info": "https://zou.maregionsud.fr/abonnements-et-tarifs/zo-solidaire",
       "url_source": "https://zou.maregionsud.fr/abonnements-et-tarifs/zo-solidaire",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_minimum_social_recipient", "residency_paca"],
+      "eligibility_criteria": [
+        "rsa_or_minimum_social_recipient",
+        "residency_paca"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -980,14 +1149,17 @@
       "departement": "Paris",
       "ville": "Paris",
       "organisme": "Mairie de Paris",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 500.0,
       "periodicite": "annuel",
       "url_info": "https://www.paris.fr/pages/carte-emeraude-la-carte-des-seniors-parisiens-5697",
       "url_source": "https://www.paris.fr/pages/carte-emeraude-la-carte-des-seniors-parisiens-5697",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_min_60", "residency_paris"],
+      "eligibility_criteria": [
+        "age_min_60",
+        "residency_paris"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1001,14 +1173,17 @@
       "departement": "Paris",
       "ville": "Paris",
       "organisme": "Mairie de Paris",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 800.0,
       "periodicite": "annuel",
       "url_info": "https://www.paris.fr/pages/paris-famille-6087",
       "url_source": "https://www.paris.fr/pages/paris-famille-6087",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["children_count_min_3", "residency_paris"],
+      "eligibility_criteria": [
+        "children_count_min_3",
+        "residency_paris"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1022,14 +1197,17 @@
       "departement": "Rhône",
       "ville": "Lyon",
       "organisme": "Ville de Lyon / Métropole de Lyon",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 600.0,
       "periodicite": "annuel",
       "url_info": "https://www.lyon.fr/service/la-carte-familles-nombreuses",
       "url_source": "https://www.lyon.fr/service/la-carte-familles-nombreuses",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["children_count_min_3", "residency_lyon_metropole"],
+      "eligibility_criteria": [
+        "children_count_min_3",
+        "residency_lyon_metropole"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1050,7 +1228,11 @@
       "url_source": "https://www.marseille.fr/solidarites/ccas",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_marseille", "social_difficulty"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_marseille",
+        "social_difficulty"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1071,7 +1253,10 @@
       "url_source": "https://www.bordeaux-metropole.fr/Mobilite/Se-deplacer-autrement/Velo/Aides-velo",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_bordeaux_metropole"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_bordeaux_metropole"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1085,14 +1270,17 @@
       "departement": "Haute-Garonne",
       "ville": "Toulouse",
       "organisme": "Toulouse Métropole",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 400.0,
       "periodicite": "annuel",
       "url_info": "https://www.toulouse.fr/aides-sociales",
       "url_source": "https://www.toulouse.fr/aides-sociales",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_job_seeker", "residency_toulouse_metropole"],
+      "eligibility_criteria": [
+        "rsa_or_job_seeker",
+        "residency_toulouse_metropole"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1106,14 +1294,17 @@
       "departement": "Loire-Atlantique",
       "ville": "Nantes",
       "organisme": "Nantes Métropole / TAN",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 350.0,
       "periodicite": "annuel",
       "url_info": "https://metropole.nantes.fr/services/solidarites",
       "url_source": "https://metropole.nantes.fr/services/solidarites",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_nantes_metropole"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_nantes_metropole"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1134,7 +1325,11 @@
       "url_source": "https://www.strasbourg.eu/aides-sociales-logement",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_strasbourg", "housing_difficulty"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_strasbourg",
+        "housing_difficulty"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1155,7 +1350,11 @@
       "url_source": "https://www.lillemetropole.fr/vivre-ensemble/solidarites",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_mel", "social_difficulty"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_mel",
+        "social_difficulty"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1176,7 +1375,11 @@
       "url_source": "https://www.rennes.fr/solidarites-et-sante",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["family_with_children", "income_below_threshold", "residency_rennes"],
+      "eligibility_criteria": [
+        "family_with_children",
+        "income_below_threshold",
+        "residency_rennes"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1190,14 +1393,17 @@
       "departement": "Isère",
       "ville": "Grenoble",
       "organisme": "Grenoble-Alpes Métropole / TAG",
-      "montant_min_eur": null,
+      "montant_min_eur": 0,
       "montant_max_eur": 480.0,
       "periodicite": "annuel",
       "url_info": "https://www.tag.fr/tarifs/tarifs-solidaires",
       "url_source": "https://www.tag.fr/tarifs/tarifs-solidaires",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_or_aah_or_minimum_social_recipient", "residency_grenoble_metropole"],
+      "eligibility_criteria": [
+        "rsa_or_aah_or_minimum_social_recipient",
+        "residency_grenoble_metropole"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1218,7 +1424,11 @@
       "url_source": "https://www.iledefrance.fr/aides-regionales",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["rsa_recipient", "residency_idf", "professional_integration_project"],
+      "eligibility_criteria": [
+        "rsa_recipient",
+        "residency_idf",
+        "professional_integration_project"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1239,7 +1449,11 @@
       "url_source": "https://www.iledefrance.fr/cheque-formation",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["job_seeker", "residency_idf", "eligible_training"],
+      "eligibility_criteria": [
+        "job_seeker",
+        "residency_idf",
+        "eligible_training"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1260,7 +1474,10 @@
       "url_source": "https://www.auvergnerhonealpes.fr/aide/apprentissage",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["apprentice_or_employer", "residency_aura"],
+      "eligibility_criteria": [
+        "apprentice_or_employer",
+        "residency_aura"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1281,7 +1498,11 @@
       "url_source": "https://www.laregion.fr/voiture-electrique",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_occitanie", "first_electric_vehicle"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_occitanie",
+        "first_electric_vehicle"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1302,7 +1523,11 @@
       "url_source": "https://www.bourgognefranchecomte.fr/aides-etudiants",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["enrolled_higher_education", "crous_scholarship_recipient", "residency_bfc"],
+      "eligibility_criteria": [
+        "enrolled_higher_education",
+        "crous_scholarship_recipient",
+        "residency_bfc"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1323,7 +1548,11 @@
       "url_source": "https://www.hautsdefrance.fr/aides-jeunes",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_18_to_25", "not_in_employment_or_training", "residency_hdf"],
+      "eligibility_criteria": [
+        "age_18_to_25",
+        "not_in_employment_or_training",
+        "residency_hdf"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1344,7 +1573,11 @@
       "url_source": "https://www.nouvelle-aquitaine.fr/formation",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["job_seeker", "residency_nouvelle_aquitaine", "eligible_training"],
+      "eligibility_criteria": [
+        "job_seeker",
+        "residency_nouvelle_aquitaine",
+        "eligible_training"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1365,7 +1598,11 @@
       "url_source": "https://www.bretagne.bzh/aides/logement-etudiant",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["enrolled_higher_education", "income_below_threshold", "residency_bretagne"],
+      "eligibility_criteria": [
+        "enrolled_higher_education",
+        "income_below_threshold",
+        "residency_bretagne"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1386,7 +1623,11 @@
       "url_source": "https://www.paysdelaloire.fr/mobilite-jeunes",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_under_26", "job_seeker_or_trainee", "residency_pays_de_la_loire"],
+      "eligibility_criteria": [
+        "age_under_26",
+        "job_seeker_or_trainee",
+        "residency_pays_de_la_loire"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1407,7 +1648,10 @@
       "url_source": "https://www.normandie.fr/formation-insertion",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["job_seeker", "residency_normandie"],
+      "eligibility_criteria": [
+        "job_seeker",
+        "residency_normandie"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1428,7 +1672,11 @@
       "url_source": "https://www.maregionsud.fr/aides-et-appels-a-projets/logement-jeunes",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["age_18_to_30", "income_below_threshold", "residency_paca"],
+      "eligibility_criteria": [
+        "age_18_to_30",
+        "income_below_threshold",
+        "residency_paca"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1449,7 +1697,11 @@
       "url_source": "https://www.centre-valdeloire.fr/etudiants-carte-blanche",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["enrolled_higher_education", "crous_scholarship_recipient", "residency_cvl"],
+      "eligibility_criteria": [
+        "enrolled_higher_education",
+        "crous_scholarship_recipient",
+        "residency_cvl"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1470,7 +1722,11 @@
       "url_source": "https://www.isula.corsica/aides-logement",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["income_below_threshold", "residency_corse", "housing_need"],
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residency_corse",
+        "housing_need"
+      ],
       "amounts_baremes_year": 2026
     },
     {
@@ -1491,7 +1747,10 @@
       "url_source": "https://www.grandest.fr/apprentissage",
       "last_fetched": "2026-04-07T20:00:00Z",
       "update_freq_days": 90,
-      "eligibility_criteria": ["apprentice", "residency_grand_est"],
+      "eligibility_criteria": [
+        "apprentice",
+        "residency_grand_est"
+      ],
       "amounts_baremes_year": 2026
     }
   ]
