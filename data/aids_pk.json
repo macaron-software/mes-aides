@@ -1,0 +1,223 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "PK",
+  "name": "Pakistan",
+  "name_local": "پاکستان",
+  "language": "ur",
+  "currency": "PKR",
+  "welfare_model": "Developmental",
+  "sources": [
+    "https://bisp.gov.pk/",
+    "https://eobi.gov.pk/",
+    "https://nhsrc.gov.pk/",
+    "https://pass.gov.pk/",
+    "https://wwf.gov.pk/"
+  ],
+  "aids": [
+    {
+      "id": "pk-bisp-kafaalat",
+      "slug": "bisp-kafaalat",
+      "nom": "Benazir Income Support Programme (BISP) Kafaalat",
+      "description_en": "Quarterly cash transfer of Rs 10,500 (Rs 3,500/month equivalent) for women from the poorest households in Pakistan. Registered via National Socioeconomic Registry (NSER). Payment via Benazir Debit Card at designated HBL Konnect or Bank Alfalah outlets. Over 9 million beneficiaries as of 2024.",
+      "categorie": "revenus_emploi",
+      "organisme": "Benazir Income Support Programme (BISP)",
+      "montant_min_pkr": 10500,
+      "montant_max_pkr": 10500,
+      "periodicite": "trimestriel",
+      "url_info": "https://bisp.gov.pk/",
+      "source_url": "https://bisp.gov.pk/",
+      "eligibility_criteria": [
+        "female_head_household",
+        "poorest_40pct_NSER",
+        "Pakistani_national",
+        "CNIC_required"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-ehsaas-ration",
+      "slug": "ehsaas-ration",
+      "nom": "Ehsaas Ration Subsidy",
+      "description_en": "Monthly digital food subsidy of Rs 1,000 credited to a digital wallet or debit card for low-income households to purchase subsidised staple foods (flour, ghee, pulses) at designated utility stores. Distributed via the Ehsaas Digital Payment platform linked to the National Database and Registration Authority (NADRA).",
+      "categorie": "alimentation",
+      "organisme": "Ehsaas Programme / Ministry of Finance",
+      "montant_min_pkr": 1000,
+      "montant_max_pkr": 1000,
+      "periodicite": "mensuel",
+      "url_info": "https://pass.gov.pk/",
+      "source_url": "https://pass.gov.pk/",
+      "eligibility_criteria": [
+        "low_income_household",
+        "CNIC_required",
+        "NSER_registered",
+        "utility_store_access"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-eobi-pension",
+      "slug": "eobi-pension",
+      "nom": "EOBI Pension (Employees' Old-Age Benefits Institution)",
+      "description_en": "Monthly old-age pension for registered workers in the formal sector. Minimum pension raised to Rs 10,000/month in 2024 following government directive. Funded by employer (5%) and government contributions. Invalidity, survivors, and old-age grant components also available. Contribution history of at least 15 years required for full pension.",
+      "categorie": "retraite",
+      "organisme": "Employees' Old-Age Benefits Institution (EOBI)",
+      "montant_min_pkr": 10000,
+      "montant_max_pkr": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://eobi.gov.pk/",
+      "source_url": "https://eobi.gov.pk/",
+      "eligibility_criteria": [
+        "formal_sector_worker",
+        "age_60_male_55_female",
+        "minimum_15yr_contributions",
+        "EOBI_registered_employer"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-sehat-sahulat",
+      "slug": "sehat-sahulat",
+      "nom": "Sehat Sahulat Programme (Health Card)",
+      "description_en": "Free health insurance card providing up to Rs 1,000,000 per family per year for secondary and tertiary hospitalisation at empanelled public and private hospitals. Initially targeted at poorest BISP households, expanded to cover all households in KPK, AJK, GB and selected districts. No premium required for eligible families.",
+      "categorie": "sante",
+      "organisme": "National Health Services, Regulations & Coordination (NHSRC)",
+      "montant_min_pkr": 0,
+      "montant_max_pkr": 1000000,
+      "periodicite": "annuel",
+      "url_info": "https://nhsrc.gov.pk/",
+      "source_url": "https://nhsrc.gov.pk/",
+      "eligibility_criteria": [
+        "BISP_registered_OR_provincial_expansion",
+        "Pakistani_national",
+        "CNIC_required",
+        "hospitalisation_required"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-ehsaas-taleemi",
+      "slug": "ehsaas-taleemi-wazaif",
+      "nom": "Ehsaas Taleemi Wazaif (Student Stipend)",
+      "description_en": "Quarterly conditional cash transfer for children of BISP Kafaalat beneficiaries enrolled in primary to secondary education. Amounts: Rs 2,000/quarter (primary girls), Rs 3,000/quarter (secondary girls), Rs 1,500/quarter (primary boys), Rs 2,500/quarter (secondary boys). Children must maintain minimum 70% school attendance. Over 8 million children enrolled.",
+      "categorie": "education",
+      "organisme": "Benazir Income Support Programme (BISP)",
+      "montant_min_pkr": 2000,
+      "montant_max_pkr": 4500,
+      "periodicite": "trimestriel",
+      "url_info": "https://bisp.gov.pk/",
+      "source_url": "https://bisp.gov.pk/",
+      "eligibility_criteria": [
+        "BISP_Kafaalat_beneficiary_parent",
+        "enrolled_primary_secondary",
+        "age_4_16",
+        "70pct_attendance",
+        "CNIC_or_B_form"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-ehsaas-nashonuma",
+      "slug": "ehsaas-nashonuma",
+      "nom": "Ehsaas Nashonuma (Nutrition Programme)",
+      "description_en": "Monthly conditional cash transfer of Rs 2,000 for pregnant and lactating women in poorest households to improve maternal and child nutrition. Beneficiaries receive nutrition counselling at designated health facilitation centres. Operates in underserved areas with high stunting rates (KPK, Balochistan, FATA, AJK, GB).",
+      "categorie": "famille",
+      "organisme": "Benazir Income Support Programme (BISP) / Ministry of NHSRC",
+      "montant_min_pkr": 2000,
+      "montant_max_pkr": 2000,
+      "periodicite": "mensuel",
+      "url_info": "https://bisp.gov.pk/",
+      "source_url": "https://bisp.gov.pk/",
+      "eligibility_criteria": [
+        "pregnant_OR_lactating",
+        "BISP_beneficiary",
+        "health_facility_registration",
+        "underserved_district"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-pessi-sick",
+      "slug": "pessi-sick-disability",
+      "nom": "PESSI / ESSI Social Security — Sick & Disability",
+      "description_en": "Provincial Employees Social Security Institution (PESSI in Punjab, ESSI in Sindh/KPK) provides sickness benefits (50-60% of wages during certified illness), medical care, maternity benefits (8-12 weeks full pay), and disability pension. Covers registered workers earning below Rs 30,000/month. Employer contribution: 6% of wages. No employee contribution required.",
+      "categorie": "sante",
+      "organisme": "PESSI (Punjab) / ESSI (Sindh/KPK)",
+      "montant_min_pkr": 0,
+      "montant_max_pkr": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://pessi.punjab.gov.pk/",
+      "source_url": "https://pessi.punjab.gov.pk/",
+      "eligibility_criteria": [
+        "formal_sector_worker",
+        "PESSI_ESSI_registered",
+        "salary_below_30000",
+        "provincial_resident"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-workers-welfare",
+      "slug": "workers-welfare-fund",
+      "nom": "Workers Welfare Fund (WWF) — Housing & Education",
+      "description_en": "Subsidised housing loans (interest-free or low-interest) and lump-sum housing grants of Rs 300,000–500,000 for construction/purchase of low-cost housing for registered industrial workers. Also provides children's education scholarships (Rs 10,000–50,000/year) and death/disability grants through the Workers Welfare Board.",
+      "categorie": "logement",
+      "organisme": "Workers Welfare Fund (WWF) / Ministry of Overseas Pakistanis",
+      "montant_min_pkr": 0,
+      "montant_max_pkr": 500000,
+      "periodicite": "unique",
+      "url_info": "https://wwf.gov.pk/",
+      "source_url": "https://wwf.gov.pk/",
+      "eligibility_criteria": [
+        "industrial_worker",
+        "WWF_registered",
+        "minimum_wage_worker",
+        "no_existing_house"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-zakat",
+      "slug": "zakat-state",
+      "nom": "Zakat — State-Administered Cash Assistance",
+      "description_en": "Monthly cash stipend of Rs 1,000–2,000 from the state Zakat Fund distributed to eligible Muslims (mustahiqeen) who are below the nisab threshold. Disbursed through Local Zakat Committees (LZCs) at district level. Also covers medical and rehabilitation assistance and educational scholarships (Bait-ul-Maal programme).",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministry of Religious Affairs and Interfaith Harmony / Zakat Fund",
+      "montant_min_pkr": 1000,
+      "montant_max_pkr": 2000,
+      "periodicite": "mensuel",
+      "url_info": "https://mohr.gov.pk/",
+      "source_url": "https://mohr.gov.pk/",
+      "eligibility_criteria": [
+        "Muslim_national",
+        "below_nisab_threshold",
+        "not_BISP_recipient",
+        "resident_Pakistan",
+        "LZC_approved"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "pk-kifalat",
+      "slug": "kifalat-disability",
+      "nom": "Kifalat — Disability Support Allowance",
+      "description_en": "Monthly cash stipend of Rs 2,000 for persons with disabilities registered under the National Disability Register (NDR) and belonging to BISP-registered households. Part of the Ehsaas disability umbrella. Disbursed quarterly via Benazir Debit Card. Includes priority access to Sehat Sahulat health card and vocational training programmes.",
+      "categorie": "handicap",
+      "organisme": "Benazir Income Support Programme (BISP) / National Commission for Persons with Disabilities",
+      "montant_min_pkr": 2000,
+      "montant_max_pkr": 2000,
+      "periodicite": "mensuel",
+      "url_info": "https://bisp.gov.pk/",
+      "source_url": "https://bisp.gov.pk/",
+      "eligibility_criteria": [
+        "disability_certified",
+        "NDR_registered",
+        "BISP_household",
+        "CNIC_required",
+        "age_18_plus"
+      ],
+      "amounts_baremes_year": 2024
+    }
+  ]
+}

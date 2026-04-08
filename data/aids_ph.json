@@ -1,0 +1,228 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "PH",
+  "name": "Philippines",
+  "name_local": "Pilipinas",
+  "language": "fil",
+  "currency": "PHP",
+  "welfare_model": "Mixed — Contributory + Targeted",
+  "sources": [
+    "https://dswd.gov.ph/",
+    "https://sss.gov.ph/",
+    "https://philhealth.gov.ph/",
+    "https://gsis.gov.ph/",
+    "https://dole.gov.ph/",
+    "https://doh.gov.ph/"
+  ],
+  "aids": [
+    {
+      "id": "ph-4ps",
+      "slug": "4ps-pantawid-pamilya",
+      "nom": "4Ps — Pantawid Pamilyang Pilipino Program",
+      "description_en": "Flagship conditional cash transfer programme for the poorest 20% of households. Monthly grants per household: Health grant PHP 750/month for households with children 0-18 years. Education grant PHP 500/month per child in elementary (up to 3 children), PHP 700/month per child in high school. Total household benefit: PHP 500–PHP 1,400+/month. Conditions: regular health check-ups, 85% school attendance, family development sessions. Over 4.6 million household beneficiaries as of 2024.",
+      "categorie": "famille",
+      "organisme": "Department of Social Welfare and Development (DSWD)",
+      "montant_min_php": 500,
+      "montant_max_php": 1400,
+      "periodicite": "mensuel",
+      "url_info": "https://dswd.gov.ph/",
+      "source_url": "https://dswd.gov.ph/",
+      "eligibility_criteria": [
+        "poorest_20pct_NHTS",
+        "children_0_18_OR_pregnant",
+        "school_attendance_85pct",
+        "health_visits_required",
+        "family_development_sessions"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-sss-pension",
+      "slug": "sss-retirement-pension",
+      "nom": "SSS Retirement Pension",
+      "description_en": "Monthly retirement pension for private sector workers covered by the Social Security System (SSS). Minimum pension: PHP 2,000/month (with 10-20 years contributions). Average pension approximately PHP 5,000–PHP 8,000/month. Formula: 300 + 20% of average monthly salary credit + 2% for each contribution year above 10. Lump-sum option available for those with fewer than 120 monthly contributions. Retirement age 60 (optional) or 65 (mandatory).",
+      "categorie": "retraite",
+      "organisme": "Social Security System (SSS)",
+      "montant_min_php": 2000,
+      "montant_max_php": 20000,
+      "periodicite": "mensuel",
+      "url_info": "https://sss.gov.ph/",
+      "source_url": "https://sss.gov.ph/",
+      "eligibility_criteria": [
+        "SSS_member",
+        "minimum_120_months_contributions",
+        "age_60_optional_65_mandatory",
+        "private_sector_worker"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-philhealth",
+      "slug": "philhealth",
+      "nom": "PhilHealth — National Health Insurance",
+      "description_en": "National health insurance programme providing inpatient and outpatient benefit packages at accredited hospitals and clinics. Premium-free for indigent members (Listahanan/4Ps beneficiaries) — government pays their premiums. Covers hospitalisation, surgeries, maternity, and selected outpatient treatments. Case rates of PHP 4,000–PHP 750,000 depending on procedure. 90+ million Filipinos covered under the Universal Health Care Act (RA 11223, 2019).",
+      "categorie": "sante",
+      "organisme": "Philippine Health Insurance Corporation (PhilHealth)",
+      "montant_min_php": 0,
+      "montant_max_php": 100000,
+      "periodicite": "annuel",
+      "url_info": "https://philhealth.gov.ph/",
+      "source_url": "https://philhealth.gov.ph/",
+      "eligibility_criteria": [
+        "Filipino_citizen",
+        "listahanan_OR_4ps_for_free",
+        "employed_OR_self_employed_pay_premium",
+        "UHC_Act_coverage"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-gsis-pension",
+      "slug": "gsis-pension",
+      "nom": "GSIS Pension — Government Service Insurance System",
+      "description_en": "Retirement pension for government employees (civil service, military, police, teachers). Old Age Pension = 80-90% of average monthly compensation (AMC) for members with 15+ years service and reaching age 60. Minimum pension PHP 5,000/month. Life insurance, disability, and survivorship benefits included. Separation pay for those with fewer than 15 years. 1.9 million active members and 900,000 pensioners as of 2024.",
+      "categorie": "retraite",
+      "organisme": "Government Service Insurance System (GSIS)",
+      "montant_min_php": 5000,
+      "montant_max_php": 50000,
+      "periodicite": "mensuel",
+      "url_info": "https://gsis.gov.ph/",
+      "source_url": "https://gsis.gov.ph/",
+      "eligibility_criteria": [
+        "government_employee",
+        "GSIS_member",
+        "age_60",
+        "minimum_15yr_service",
+        "retirement_OR_separation"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-tupad",
+      "slug": "tupad-emergency-employment",
+      "nom": "TUPAD — Tulong Panghanapbuhay sa Ating Disadvantaged/Displaced Workers",
+      "description_en": "Emergency community-based employment programme providing 10-30 days of paid community work at the minimum wage rate (PHP 500–PHP 750/day depending on region). Workers engage in community service, public works maintenance, and disaster recovery. Total income per engagement: PHP 5,000–PHP 22,500. Primarily targets displaced workers, informal sector workers, and those affected by calamities or economic shocks. Monthly cycle engagements.",
+      "categorie": "revenus_emploi",
+      "organisme": "Department of Labor and Employment (DOLE)",
+      "montant_min_php": 5000,
+      "montant_max_php": 7500,
+      "periodicite": "unique",
+      "url_info": "https://dole.gov.ph/",
+      "source_url": "https://dole.gov.ph/",
+      "eligibility_criteria": [
+        "displaced_worker",
+        "informal_sector",
+        "calamity_affected",
+        "age_18_59",
+        "able_bodied",
+        "LGU_endorsement"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-aics",
+      "slug": "aics-crisis-assistance",
+      "nom": "AICS — Assistance to Individuals in Crisis Situation",
+      "description_en": "One-time emergency financial assistance from DSWD Field Offices for individuals and families in crisis. Categories: medical assistance (PHP 1,000–PHP 10,000 for hospitalization/medicines), burial assistance (PHP 3,000–PHP 5,000), educational assistance (PHP 1,000–PHP 3,000 for enrolment), food assistance (PHP 1,500 grocery package or cash), transportation assistance. No income test but requires social case study report by DSWD social worker.",
+      "categorie": "sante",
+      "organisme": "Department of Social Welfare and Development (DSWD)",
+      "montant_min_php": 500,
+      "montant_max_php": 10000,
+      "periodicite": "unique",
+      "url_info": "https://dswd.gov.ph/",
+      "source_url": "https://dswd.gov.ph/",
+      "eligibility_criteria": [
+        "crisis_situation",
+        "Filipino_citizen",
+        "DSWD_social_case_study",
+        "walk_in_OR_referral"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-senior-pension",
+      "slug": "senior-citizen-pension",
+      "nom": "Social Pension for Indigent Senior Citizens (RA 9994)",
+      "description_en": "Monthly stipend of PHP 500 for indigent senior citizens aged 60 years and above who are frail, sickly, or with disability, and have no pension or regular income support. Implemented by DSWD under Republic Act 9994 (Expanded Senior Citizens Act). Approximately 3.5 million indigent elderly covered. Disbursed bimonthly (PHP 1,000 every 2 months). Separate from GSIS/SSS pension.",
+      "categorie": "retraite",
+      "organisme": "Department of Social Welfare and Development (DSWD)",
+      "montant_min_php": 500,
+      "montant_max_php": 500,
+      "periodicite": "mensuel",
+      "url_info": "https://dswd.gov.ph/",
+      "source_url": "https://dswd.gov.ph/",
+      "eligibility_criteria": [
+        "age_60_plus",
+        "frail_OR_sickly_OR_disabled",
+        "no_SSS_GSIS_pension",
+        "no_regular_income",
+        "Filipino_citizen"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-malasakit",
+      "slug": "malasakit-centers",
+      "nom": "Malasakit Centers — Medical Financial Assistance",
+      "description_en": "One-stop shops in government hospitals combining DOH medical assistance, PhilHealth, PCSO (charity fund), and DSWD assistance to eliminate out-of-pocket expenses for poor patients. Financial assistance covers residual hospital bills after PhilHealth coverage, medicines, and medical supplies. Amounts vary from PHP 500 to PHP 50,000 per patient depending on need. 159 Malasakit Centers operational nationwide as of 2024 (RA 11463).",
+      "categorie": "sante",
+      "organisme": "Department of Health (DOH) / DOH-retained hospitals",
+      "montant_min_php": 0,
+      "montant_max_php": 50000,
+      "periodicite": "unique",
+      "url_info": "https://doh.gov.ph/",
+      "source_url": "https://doh.gov.ph/",
+      "eligibility_criteria": [
+        "hospitalized_in_government_hospital",
+        "low_income",
+        "Filipino_citizen",
+        "PhilHealth_coverage_insufficient"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-sss-maternity",
+      "slug": "sss-sickness-maternity",
+      "nom": "SSS Maternity/Sickness Benefit",
+      "description_en": "SSS maternity benefit: 105 days (solo parents: 120 days) paid maternity leave at 100% of average daily salary credit. Maximum daily benefit capped based on salary bracket (approximately PHP 2,600–PHP 4,000/day). Sickness benefit: 90% of average daily salary credit for certified illness after 3-day waiting period. Both require minimum 3 months SSS contributions in the 12 months before semester of contingency. Also covers miscarriage and emergency termination.",
+      "categorie": "famille",
+      "organisme": "Social Security System (SSS)",
+      "montant_min_php": 0,
+      "montant_max_php": 70000,
+      "periodicite": "unique",
+      "url_info": "https://sss.gov.ph/",
+      "source_url": "https://sss.gov.ph/",
+      "eligibility_criteria": [
+        "SSS_member",
+        "3_months_contributions",
+        "employed_OR_voluntary",
+        "maternity_OR_illness_certified",
+        "notification_to_employer"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "ph-bssf",
+      "slug": "unemployment-insurance-bssf",
+      "nom": "Unemployment Insurance (BSSF) — SSS",
+      "description_en": "Unemployment benefit under the Unemployment Insurance or Involuntary Separation (UISA) programme / Bayanihan SSS Fund. Up to PHP 10,000 per semester (PHP 5,000/month for 2 months) for involuntarily separated SSS members. Requires: minimum 36 months SSS contributions (24 in last 3 years), involuntary separation, not receiving SSS pension/retirement. Application within 1 year of separation. Enacted under RA 11199 (Social Security Act of 2018).",
+      "categorie": "revenus_emploi",
+      "organisme": "Social Security System (SSS)",
+      "montant_min_php": 0,
+      "montant_max_php": 10000,
+      "periodicite": "unique",
+      "url_info": "https://sss.gov.ph/",
+      "source_url": "https://sss.gov.ph/",
+      "eligibility_criteria": [
+        "SSS_member",
+        "36_months_contributions",
+        "involuntary_separation",
+        "age_below_60",
+        "not_receiving_SSS_pension"
+      ],
+      "amounts_baremes_year": 2024
+    }
+  ]
+}

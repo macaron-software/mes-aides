@@ -1,0 +1,215 @@
+{
+  "version": "1.0",
+  "last_scraped": "2021-01-01T00:00:00Z",
+  "last_updated": "2021-01-01",
+  "country_code": "MM",
+  "name": "Myanmar",
+  "name_local": "မြန်မာ",
+  "language": "my",
+  "currency": "MMK",
+  "welfare_model": "Limited Developmental (Pre-2021 data — coverage severely limited post-coup)",
+  "sources": [
+    "https://www.social-welfare.gov.mm/",
+    "https://www.wfp.org/countries/myanmar",
+    "https://www.unhcr.org/myanmar/"
+  ],
+  "aids": [
+    {
+      "id": "mm-elderly-pension",
+      "slug": "elderly-pension",
+      "nom": "Social Pension for the Elderly (70+)",
+      "description_en": "Pre-2021 monthly social pension of MMK 10,000 for citizens aged 70 years and above. Administered by the Ministry of Social Welfare, Relief and Resettlement. Coverage was very limited — only approximately 200,000 elderly of an estimated 1.5 million eligible. Following the February 2021 military coup, many social protection programmes have been suspended or severely disrupted. Data reflects the 2020 situation before political disruption.",
+      "categorie": "retraite",
+      "organisme": "Ministry of Social Welfare, Relief and Resettlement (pre-2021)",
+      "montant_min_mmk": 10000,
+      "montant_max_mmk": 10000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.social-welfare.gov.mm/",
+      "source_url": "https://www.social-welfare.gov.mm/",
+      "eligibility_criteria": [
+        "age_70_plus",
+        "Myanmar_citizen",
+        "rural_township_registration",
+        "limited_coverage"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-disability-pension",
+      "slug": "disability-pension",
+      "nom": "Disability Pension (Limited Coverage)",
+      "description_en": "Monthly disability pension of approximately MMK 30,000 for persons with severe disabilities under the Social Welfare Department. Coverage was extremely limited before 2021 — fewer than 50,000 beneficiaries nationally out of an estimated 2 million persons with disabilities. Registration required at township social welfare offices. Disrupted post-February 2021. Current status of programme uncertain.",
+      "categorie": "handicap",
+      "organisme": "Ministry of Social Welfare, Relief and Resettlement",
+      "montant_min_mmk": 30000,
+      "montant_max_mmk": 30000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.social-welfare.gov.mm/",
+      "source_url": "https://www.social-welfare.gov.mm/",
+      "eligibility_criteria": [
+        "severe_disability",
+        "Myanmar_citizen",
+        "township_registration",
+        "very_limited_coverage"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-moh-health",
+      "slug": "moh-health-subsidy",
+      "nom": "Ministry of Health — Public Hospital Subsidies",
+      "description_en": "Nominal fee (near-zero cost) subsidised healthcare at public hospitals and rural health centres under the Ministry of Health and Sports. Patients pay minimal registration fees (MMK 300–1,500). Essential medicines theoretically free at public facilities but frequent stockouts. Rural Health Centres provide free maternal and child health services. Actual out-of-pocket costs can be significant due to medicine shortages and informal payments. Severely disrupted post-2021 coup with many health workers on Civil Disobedience Movement.",
+      "categorie": "sante",
+      "organisme": "Ministry of Health and Sports",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mohs.gov.mm/",
+      "source_url": "https://www.mohs.gov.mm/",
+      "eligibility_criteria": [
+        "Myanmar_resident",
+        "public_hospital_access",
+        "nominal_fee"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-school-subsidy",
+      "slug": "school-subsidy",
+      "nom": "Free Public Education Subsidy",
+      "description_en": "Free primary and secondary education at government schools, including free textbooks, school uniforms (subsidised), and school feeding in selected areas. Myanmar achieved near-universal primary enrolment before 2021. Schools severely disrupted post-coup with widespread school strikes and attacks on education. UNICEF estimates over 700,000 children displaced from education by 2022. Private school and community school alternatives have emerged but are unsubsidised.",
+      "categorie": "education",
+      "organisme": "Ministry of Education",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 0,
+      "periodicite": "annuel",
+      "url_info": "https://www.moe.gov.mm/",
+      "source_url": "https://www.moe.gov.mm/",
+      "eligibility_criteria": [
+        "school_age",
+        "Myanmar_resident",
+        "government_school_access",
+        "disrupted_post_2021"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-disaster-relief",
+      "slug": "disaster-relief",
+      "nom": "Natural Disaster Relief — Cash and In-Kind",
+      "description_en": "Emergency cash assistance and in-kind relief (food, shelter materials, non-food items) for households affected by cyclones, floods, and landslides. Historically MMK 0–500,000 per household depending on damage assessment. Myanmar experiences recurring cyclones (Irrawaddy Delta, coastal areas) and monsoon flooding. Post-2021, humanitarian access severely restricted; OCHA and UN agencies provide alternative relief channels but with significant access constraints.",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministry of Social Welfare / NDRRMC",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 500000,
+      "periodicite": "unique",
+      "url_info": "https://www.social-welfare.gov.mm/",
+      "source_url": "https://reliefweb.int/",
+      "eligibility_criteria": [
+        "natural_disaster_affected",
+        "damage_assessment",
+        "township_registration",
+        "limited_access_post_2021"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-farmer-support",
+      "slug": "farmer-support",
+      "nom": "Farmer Support — Seed and Fertilizer Subsidy",
+      "description_en": "Government agricultural input subsidies providing seeds and fertilizers at subsidised prices or for free to smallholder farmers. Programme volumes and targeting varied by year. Agricultural credit at below-market rates also provided through Myanmar Agricultural Development Bank (MADB) — loans of MMK 100,000–500,000/acre for paddy cultivation. Programme continuity uncertain post-2021 coup with major disruption to banking and agricultural finance systems.",
+      "categorie": "alimentation",
+      "organisme": "Ministry of Agriculture, Livestock and Irrigation",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 100000,
+      "periodicite": "annuel",
+      "url_info": "https://www.moali.gov.mm/",
+      "source_url": "https://www.moali.gov.mm/",
+      "eligibility_criteria": [
+        "smallholder_farmer",
+        "registered_agricultural_land",
+        "township_farmer_registration",
+        "Myanmar_citizen"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-microfinance",
+      "slug": "mfat-microfinance",
+      "nom": "MFAT Microfinance — Small Business Loans",
+      "description_en": "Small business and livelihood microfinance loans under the Myanmar Financial Inclusion and Poverty Eradication programme. Loan amounts MMK 100,000–5,000,000 at subsidised interest rates (2-3%/month) for micro-entrepreneurs, farmers, and small traders. Delivered through regulated Microfinance Institutions (MFIs) licensed by the MFAT (Myanmar Financial Advisory and Taxation). Major MFIs include LIFT-funded NGO-MFIs. Severely disrupted post-2021 due to banking crisis and currency devaluation.",
+      "categorie": "revenus_emploi",
+      "organisme": "Myanmar Financial Advisory and Taxation (MFAT) / Regulated MFIs",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 5000000,
+      "periodicite": "unique",
+      "url_info": "https://www.mopfi.gov.mm/",
+      "source_url": "https://www.mopfi.gov.mm/",
+      "eligibility_criteria": [
+        "micro_entrepreneur",
+        "group_guarantee_OR_individual",
+        "MFI_registration",
+        "business_plan",
+        "limited_post_2021"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-wfp",
+      "slug": "wfp-food-assistance",
+      "nom": "WFP Food Assistance",
+      "description_en": "World Food Programme (WFP) food assistance programmes providing food vouchers, cash transfers, and nutritional support to food-insecure households in conflict-affected and disaster-prone areas. Historically covering 700,000+ beneficiaries/year in Rakhine, Kachin, Shan, and other conflict states. Post-2021 scale-up to over 1.7 million beneficiaries amid severe food insecurity driven by economic collapse and ongoing conflict. Assistance conditional on access permissions from authorities.",
+      "categorie": "alimentation",
+      "organisme": "World Food Programme (WFP) Myanmar",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.wfp.org/countries/myanmar",
+      "source_url": "https://www.wfp.org/countries/myanmar",
+      "eligibility_criteria": [
+        "food_insecure_household",
+        "conflict_affected_OR_displaced",
+        "WFP_targeting",
+        "humanitarian_access_available"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-unhcr",
+      "slug": "unhcr-support",
+      "nom": "UNHCR Support for Refugees and IDPs",
+      "description_en": "UNHCR cash assistance, non-food items, and protection services for refugees, internally displaced persons (IDPs), and stateless persons (primarily Rohingya in Rakhine State). Cash assistance amounts vary by household size and location. UNHCR also funds WASH, shelter, and protection programmes through implementing NGO partners. Post-2021 coup has created over 2 million additional IDPs, severely straining humanitarian resources and access.",
+      "categorie": "revenus_emploi",
+      "organisme": "UNHCR Myanmar / NGO Partners",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.unhcr.org/myanmar/",
+      "source_url": "https://www.unhcr.org/myanmar/",
+      "eligibility_criteria": [
+        "IDP_OR_refugee_OR_stateless",
+        "UNHCR_registration",
+        "access_to_humanitarian_services"
+      ],
+      "amounts_baremes_year": 2020
+    },
+    {
+      "id": "mm-mnsp",
+      "slug": "mnsp-framework",
+      "nom": "Myanmar National Social Protection Strategic Plan (Framework)",
+      "description_en": "The Myanmar National Social Protection Strategic Plan (MNSP-SP 2014–2018, reviewed 2020) established the framework for expanding social protection to cover 30% of the population by 2018 and universal coverage by 2030. The plan identified gaps in old-age security, maternity protection, child benefits, and employment injury. Actual implementation was limited due to fiscal constraints. The 2021 coup suspended most policy implementation and disbursements under this framework.",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministry of Social Welfare, Relief and Resettlement (policy framework)",
+      "montant_min_mmk": 0,
+      "montant_max_mmk": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.social-welfare.gov.mm/",
+      "source_url": "https://www.social-welfare.gov.mm/",
+      "eligibility_criteria": [
+        "framework_document_not_active_programme",
+        "policy_reference_only"
+      ],
+      "amounts_baremes_year": 2020
+    }
+  ]
+}

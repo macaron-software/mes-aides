@@ -67,6 +67,17 @@ const EU_CURRENCIES = {
   ph: { symbol: '₱',   locale: 'fil-PH', code: 'PHP', suffix: false },
   mm: { symbol: 'K',   locale: 'my-MM', code: 'MMK', suffix: false },
   kh: { symbol: '៛',   locale: 'km-KH', code: 'KHR', suffix: true  },
+  /* Africa expansion */
+  ng: { symbol: '₦',   locale: 'en-NG', code: 'NGN', suffix: false },
+  eg: { symbol: 'E£',  locale: 'ar-EG', code: 'EGP', suffix: false },
+  ma: { symbol: 'DH',  locale: 'fr-MA', code: 'MAD', suffix: true  },
+  dz: { symbol: 'DA',  locale: 'fr-DZ', code: 'DZD', suffix: true  },
+  gh: { symbol: 'GH₵', locale: 'en-GH', code: 'GHS', suffix: false },
+  tn: { symbol: 'DT',  locale: 'fr-TN', code: 'TND', suffix: true  },
+  ke: { symbol: 'KSh', locale: 'sw-KE', code: 'KES', suffix: false },
+  et: { symbol: 'Br',  locale: 'am-ET', code: 'ETB', suffix: false },
+  tz: { symbol: 'TSh', locale: 'sw-TZ', code: 'TZS', suffix: false },
+  ug: { symbol: 'USh', locale: 'en-UG', code: 'UGX', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -94,6 +105,8 @@ const CURRENCY_AMOUNT_FIELD = {
   ve: 'ves', ec: 'usd', bo: 'bob', uy: 'uyu', do: 'dop', cr: 'crc', pa: 'usd', mu: 'mur',
   /* South Asia + SE Asia expansion */
   pk: 'pkr', bd: 'bdt', lk: 'lkr', np: 'npr', ph: 'php', mm: 'mmk', kh: 'khr',
+  /* Africa expansion */
+  ng: 'ngn', eg: 'egp', ma: 'mad', dz: 'dzd', gh: 'ghs', tn: 'tnd', ke: 'kes', et: 'etb', tz: 'tzs', ug: 'ugx',
 };
 
 /**
@@ -123,6 +136,8 @@ const INCOME_THRESHOLDS = {
   ve: 500, ec: 550, bo: 2000, uy: 20000, do: 20000, cr: 350000, pa: 700, mu: 10000,
   /* South Asia + SE Asia expansion — monthly net, local currency */
   pk: 100000000, bd: 50000000, lk: 500000000, np: 400000000, ph: 5000000, mm: 60000000, kh: 40000000000,
+  /* Africa expansion — monthly net, local currency */
+  ng: 700000000, eg: 165000000, ma: 500000, dz: 2000000, gh: 100000, tn: 180000, ke: 200000, et: 58000, tz: 36000, ug: 25000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */

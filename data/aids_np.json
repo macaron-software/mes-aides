@@ -1,0 +1,220 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "NP",
+  "name": "Nepal",
+  "name_local": "नेपाल",
+  "language": "ne",
+  "currency": "NPR",
+  "welfare_model": "Developmental — Federal SSN",
+  "sources": [
+    "https://ssnpmis.gov.np/",
+    "https://ssf.gov.np/",
+    "https://mohp.gov.np/",
+    "https://mofe.gov.np/"
+  ],
+  "aids": [
+    {
+      "id": "np-old-age-allowance",
+      "slug": "old-age-allowance",
+      "nom": "Old Age Allowance (वृद्ध भत्ता)",
+      "description_en": "Monthly cash allowance of NPR 4,000 for all Nepali citizens aged 70 years and above (reduced to age 60 for Dalits and citizens from Karnali Province and other remote mountain districts). One of Nepal's most universal social protection programmes covering approximately 1.4 million elderly. Disbursed via Nepal Post or bank accounts at ward-level offices. No income or assets test — universally available to all eligible citizens.",
+      "categorie": "retraite",
+      "organisme": "Department of Women, Children and Senior Citizens / Ministry of Women, Children and Senior Citizens",
+      "montant_min_npr": 4000,
+      "montant_max_npr": 4000,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnpmis.gov.np/",
+      "source_url": "https://ssnpmis.gov.np/",
+      "eligibility_criteria": [
+        "age_70_plus_OR_60_plus_Dalit_Karnali",
+        "Nepali_citizen",
+        "citizenship_certificate",
+        "no_other_government_pension"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-disability-allowance",
+      "slug": "disability-allowance",
+      "nom": "Disability Allowance (अपाङ्गता भत्ता)",
+      "description_en": "Monthly cash allowance of NPR 4,000 for persons with severe (Red Card) or complete disability as certified by the District Disability Card Committee. Persons with moderate disability receive NPR 2,000/month. Universal — no income test. Approximately 170,000 beneficiaries receiving severe disability allowance. Benefits include priority access to government services and 5% quota in public employment.",
+      "categorie": "handicap",
+      "organisme": "Department of Women, Children and Senior Citizens",
+      "montant_min_npr": 2000,
+      "montant_max_npr": 4000,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnpmis.gov.np/",
+      "source_url": "https://ssnpmis.gov.np/",
+      "eligibility_criteria": [
+        "disability_certified_Red_OR_Blue_card",
+        "Nepali_citizen",
+        "citizenship_certificate"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-single-women",
+      "slug": "single-women-allowance",
+      "nom": "Single Women Allowance (एकल महिला भत्ता)",
+      "description_en": "Monthly cash allowance of NPR 4,000 for widows aged 60 years and above, and NPR 2,000/month for widows aged 60 years and below. Also covers divorced, separated, and unmarried women above 60. Approximately 250,000 beneficiaries. No income test. Payments via Nepal Post or bank accounts at ward offices. Introduced as part of Nepal's universal social protection framework under the 2015 Social Security Act.",
+      "categorie": "famille",
+      "organisme": "Department of Women, Children and Senior Citizens",
+      "montant_min_npr": 2000,
+      "montant_max_npr": 4000,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnpmis.gov.np/",
+      "source_url": "https://ssnpmis.gov.np/",
+      "eligibility_criteria": [
+        "widow_OR_divorced_OR_separated",
+        "Nepali_citizen",
+        "age_60_plus_for_higher_rate",
+        "citizenship_certificate"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-child-nutrition",
+      "slug": "child-nutrition-allowance",
+      "nom": "Child Nutrition Allowance — Karnali Zone",
+      "description_en": "Monthly cash allowance of NPR 1,100 for children aged 0-5 years in Karnali Province and other remote mountain districts with high stunting rates, to improve infant and young child nutrition. Universal within eligible geographic areas — no income test. Disbursed monthly via ward offices. Part of Nepal's Social Security Allowance scheme. Aims to reduce acute malnutrition in the most food-insecure districts.",
+      "categorie": "famille",
+      "organisme": "Department of Women, Children and Senior Citizens / Ministry of Federal Affairs",
+      "montant_min_npr": 1100,
+      "montant_max_npr": 1100,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnpmis.gov.np/",
+      "source_url": "https://ssnpmis.gov.np/",
+      "eligibility_criteria": [
+        "age_0_5",
+        "Karnali_Province_OR_remote_mountain_district",
+        "birth_registered",
+        "Nepali_citizen"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-dalit-child",
+      "slug": "dalit-child-grant",
+      "nom": "Dalit Children School Incentive Grant",
+      "description_en": "Monthly cash incentive of NPR 1,100 for Dalit children aged 5-12 years who are enrolled in school (grades 1-6). Intended to incentivize school attendance and reduce dropout rates for the most marginalized communities. No income test — universal for Dalit households with school-age children. Disbursed via ward offices with school attendance verification.",
+      "categorie": "education",
+      "organisme": "Department of Education / Ministry of Education",
+      "montant_min_npr": 1100,
+      "montant_max_npr": 1100,
+      "periodicite": "mensuel",
+      "url_info": "https://ssnpmis.gov.np/",
+      "source_url": "https://ssnpmis.gov.np/",
+      "eligibility_criteria": [
+        "Dalit_caste",
+        "age_5_12",
+        "enrolled_school",
+        "Nepali_citizen",
+        "school_attendance_verified"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-ssf-pension",
+      "slug": "ssf-social-security-fund",
+      "nom": "Social Security Fund (SSF) — Contribution-Based Pension",
+      "description_en": "New formal sector social security scheme launched 2018 providing old-age pension, medical insurance, and maternity/accident benefits. Employee contributes 11%, employer contributes 20% of basic salary. Pension payable after 20 years of contributions at age 60. Medical insurance up to NPR 100,000/year per member. Accident and disability benefits. Approximately 400,000 formal sector workers enrolled by 2024.",
+      "categorie": "retraite",
+      "organisme": "Social Security Fund (SSF) / Ministry of Labour, Employment and Social Security",
+      "montant_min_npr": 0,
+      "montant_max_npr": 50000,
+      "periodicite": "mensuel",
+      "url_info": "https://ssf.gov.np/",
+      "source_url": "https://ssf.gov.np/",
+      "eligibility_criteria": [
+        "formal_sector_employee",
+        "SSF_registered",
+        "age_60",
+        "20yr_contributions_for_pension"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-maternity-incentive",
+      "slug": "maternity-incentive",
+      "nom": "Safe Motherhood Maternity Incentive (सुरक्षित मातृत्व प्रोत्साहन भत्ता)",
+      "description_en": "One-time cash incentive of NPR 1,400 per institutional delivery to encourage women to give birth in health facilities rather than at home with traditional birth attendants. Higher rates of NPR 3,000 per delivery in hilly and mountain districts to compensate for transport costs. Paid directly to mothers at health facility upon discharge. Part of Nepal's free delivery and safe motherhood policy.",
+      "categorie": "famille",
+      "organisme": "Ministry of Health and Population (MOHP)",
+      "montant_min_npr": 1400,
+      "montant_max_npr": 3000,
+      "periodicite": "unique",
+      "url_info": "https://mohp.gov.np/",
+      "source_url": "https://mohp.gov.np/",
+      "eligibility_criteria": [
+        "institutional_delivery",
+        "Nepali_citizen",
+        "registered_health_facility",
+        "citizenship_certificate"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-scholarship-deprived",
+      "slug": "scholarship-deprived-groups",
+      "nom": "Scholarships for Deprived and Marginalized Groups",
+      "description_en": "Annual scholarship grants of NPR 3,000–10,000 for students from marginalized communities (Dalits, indigenous Janajati, remote mountain areas, girls from poor families) enrolled in secondary and higher secondary education. Amount varies by level: NPR 3,000/year for secondary (grades 9-10), NPR 5,000/year for higher secondary (+2), up to NPR 10,000/year for bachelor's degree for most deprived. Applied through school or campus.",
+      "categorie": "education",
+      "organisme": "Ministry of Finance / Ministry of Education",
+      "montant_min_npr": 3000,
+      "montant_max_npr": 10000,
+      "periodicite": "annuel",
+      "url_info": "https://mofe.gov.np/",
+      "source_url": "https://mofe.gov.np/",
+      "eligibility_criteria": [
+        "marginalized_group",
+        "enrolled_secondary_plus",
+        "Nepali_citizen",
+        "income_below_threshold",
+        "application_required"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-aarthik-adhaar",
+      "slug": "aarthik-adhaar",
+      "nom": "Aarthik Adhaar — Economic Support (Pilot)",
+      "description_en": "Pilot unconditional cash transfer programme providing NPR 1,000/month to extreme poor households not covered by other social protection schemes. Tested in select municipalities to assess coverage gaps in Nepal's social protection system. Targets households below the poverty line who do not qualify for categorical allowances (old age, disability, single women, child nutrition). Expansion under consideration by Ministry of Finance.",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministry of Finance / Local Government",
+      "montant_min_npr": 1000,
+      "montant_max_npr": 1000,
+      "periodicite": "mensuel",
+      "url_info": "https://mofe.gov.np/",
+      "source_url": "https://mofe.gov.np/",
+      "eligibility_criteria": [
+        "extreme_poor",
+        "not_receiving_other_SSN",
+        "pilot_municipality_resident",
+        "Nepali_citizen"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "np-civil-pension",
+      "slug": "civil-service-pension",
+      "nom": "Contribution-Based Civil Service Pension",
+      "description_en": "Defined-benefit pension for civil servants, army, and police retiring after minimum 20 years of service. Pension = 50-75% of last drawn salary depending on years of service, paid monthly. Managed by the Public Retirement Fund (PRF). Survivor pension (two-thirds) for widows/widowers. Civil servants also receive a gratuity lump sum. Covers approximately 200,000 current pensioners.",
+      "categorie": "retraite",
+      "organisme": "Ministry of Finance / Public Retirement Fund (PRF)",
+      "montant_min_npr": 0,
+      "montant_max_npr": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://mofe.gov.np/",
+      "source_url": "https://mofe.gov.np/",
+      "eligibility_criteria": [
+        "civil_servant_army_police",
+        "minimum_20yr_service",
+        "retirement_age_58",
+        "Nepali_citizen"
+      ],
+      "amounts_baremes_year": 2024
+    }
+  ]
+}

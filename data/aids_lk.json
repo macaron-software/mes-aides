@@ -1,0 +1,224 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "LK",
+  "name": "Sri Lanka",
+  "name_local": "ශ්‍රී ලංකාව",
+  "language": "si",
+  "currency": "LKR",
+  "welfare_model": "Mixed — Post-crisis Social Protection",
+  "sources": [
+    "https://welfare.gov.lk/",
+    "https://epf.lk/",
+    "https://etf.lk/",
+    "https://ugc.ac.lk/",
+    "https://nhda.lk/"
+  ],
+  "aids": [
+    {
+      "id": "lk-aswesuma",
+      "slug": "aswesuma",
+      "nom": "Aswesuma Social Protection (අස්වෙසුම)",
+      "description_en": "Flagship social protection programme launched in 2023 replacing the former Samurdhi scheme. Monthly cash transfers tiered by poverty level: Tier 1 (extreme poor) LKR 15,000/month, Tier 2 (poorest) LKR 7,500/month, Tier 3 (poor) LKR 5,000/month, Tier 4 (vulnerable) LKR 2,500/month. Beneficiaries identified via National Targeting System (NTS) using Household Income and Expenditure Survey data. Approximately 1.8 million households enrolled.",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministry of Social Empowerment / Department of Welfare Benefits",
+      "montant_min_lkr": 5000,
+      "montant_max_lkr": 15000,
+      "periodicite": "mensuel",
+      "url_info": "https://welfare.gov.lk/",
+      "source_url": "https://welfare.gov.lk/",
+      "eligibility_criteria": [
+        "NTS_targeting_assessment",
+        "low_income_household",
+        "Sri_Lankan_citizen",
+        "NIC_required",
+        "bank_account_required"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-epf-pension",
+      "slug": "epf-pension",
+      "nom": "Employees' Provident Fund (EPF) — Retirement Benefit",
+      "description_en": "Mandatory defined-contribution provident fund for all employees in Sri Lanka. Employee contributes 8% and employer 12% of monthly wages. Lump-sum withdrawal at age 55 (men) or 50 (women) or upon reaching 10 years of service. Over LKR 4 trillion in assets under management. Managed by Central Bank of Sri Lanka. Members may also access partial withdrawals for housing, medical emergencies, and higher education.",
+      "categorie": "retraite",
+      "organisme": "Employees' Provident Fund (EPF) / Central Bank of Sri Lanka",
+      "montant_min_lkr": 0,
+      "montant_max_lkr": 0,
+      "periodicite": "unique",
+      "url_info": "https://epf.lk/",
+      "source_url": "https://epf.lk/",
+      "eligibility_criteria": [
+        "employed_formal_sector",
+        "EPF_registered",
+        "age_55_men_50_women_OR_10yr_service",
+        "NIC_required"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-etf",
+      "slug": "etf-employees-trust-fund",
+      "nom": "Employees' Trust Fund (ETF)",
+      "description_en": "Additional employer-funded trust fund where the employer contributes 3% of the employee's monthly wages. Withdrawal at retirement (age 55/50) or resignation after 5 years of service. Provides a supplementary retirement income on top of EPF. Interest credited annually. Also provides death and disability benefits. Managed by the ETF Board under the Ministry of Labour.",
+      "categorie": "retraite",
+      "organisme": "Employees' Trust Fund (ETF) Board",
+      "montant_min_lkr": 0,
+      "montant_max_lkr": 0,
+      "periodicite": "unique",
+      "url_info": "https://etf.lk/",
+      "source_url": "https://etf.lk/",
+      "eligibility_criteria": [
+        "employed_formal_sector",
+        "ETF_registered",
+        "age_55_OR_5yr_service",
+        "NIC_required"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-disability-allowance",
+      "slug": "disability-allowance",
+      "nom": "Disability Allowance",
+      "description_en": "Monthly cash allowance of LKR 5,000 for persons with certified physical, sensory, intellectual, or psychiatric disabilities who are unable to maintain themselves financially. Disbursed via government welfare offices. Disability assessment by Medical Board. Covers approximately 150,000 beneficiaries. Part of the broader Aswesuma/social protection reform framework since 2023.",
+      "categorie": "handicap",
+      "organisme": "Department of Social Services / Ministry of Social Empowerment",
+      "montant_min_lkr": 5000,
+      "montant_max_lkr": 5000,
+      "periodicite": "mensuel",
+      "url_info": "https://welfare.gov.lk/",
+      "source_url": "https://welfare.gov.lk/",
+      "eligibility_criteria": [
+        "disability_certified_Medical_Board",
+        "unable_to_work",
+        "Sri_Lankan_citizen",
+        "NIC_required",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-elderly-allowance",
+      "slug": "elderly-allowance",
+      "nom": "Elderly Allowance (70+)",
+      "description_en": "Monthly cash allowance of LKR 3,000 for Sri Lankan citizens aged 70 years and above who have no regular income or pension. Part of the national elderly care policy. Disbursed via divisional secretariat offices or directly to bank accounts. Approximately 250,000 elderly persons benefit. Persons receiving a government pension are not eligible for double benefits.",
+      "categorie": "retraite",
+      "organisme": "Department of Social Services / Ministry of Elder Affairs",
+      "montant_min_lkr": 3000,
+      "montant_max_lkr": 3000,
+      "periodicite": "mensuel",
+      "url_info": "https://welfare.gov.lk/",
+      "source_url": "https://welfare.gov.lk/",
+      "eligibility_criteria": [
+        "age_70_plus",
+        "Sri_Lankan_citizen",
+        "no_government_pension",
+        "NIC_required",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-maternity-epf",
+      "slug": "maternity-benefit-epf",
+      "nom": "Maternity Benefit (EPF / Shop and Office Act)",
+      "description_en": "Female employees covered by EPF are entitled to 12 weeks of paid maternity leave at 100% of regular wages for the first two births. The Shop and Office Employees Act mandates this benefit. Additional two weeks for caesarean deliveries. Employer pays directly; claim reimbursable through EPF for qualifying establishments. Government sector employees receive 84 days under separate government circulars.",
+      "categorie": "famille",
+      "organisme": "Employees' Provident Fund (EPF) / Ministry of Labour",
+      "montant_min_lkr": 0,
+      "montant_max_lkr": 0,
+      "periodicite": "unique",
+      "url_info": "https://epf.lk/",
+      "source_url": "https://epf.lk/",
+      "eligibility_criteria": [
+        "female_employee",
+        "EPF_registered",
+        "employed_at_least_6_months",
+        "first_OR_second_birth"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-mahapola",
+      "slug": "mahapola-scholarship",
+      "nom": "Mahapola Higher Education Scholarship",
+      "description_en": "Merit-and-means-based monthly scholarship of LKR 5,000 for students admitted to state universities and technical colleges. Awarded to students scoring in the top percentile of A/L examinations who demonstrate financial need. Approximately 40% of all state university students receive Mahapola. Also provides a bursary component for students who narrowly miss the merit threshold. Administered by Mahapola Trust Fund.",
+      "categorie": "education",
+      "organisme": "University Grants Commission (UGC) / Mahapola Trust Fund",
+      "montant_min_lkr": 5000,
+      "montant_max_lkr": 5000,
+      "periodicite": "mensuel",
+      "url_info": "https://ugc.ac.lk/",
+      "source_url": "https://ugc.ac.lk/",
+      "eligibility_criteria": [
+        "state_university_admission",
+        "AL_merit_threshold",
+        "financial_need_assessment",
+        "Sri_Lankan_citizen"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-nhda-housing",
+      "slug": "nhda-housing-subsidy",
+      "nom": "NHDA Low-Income Housing Subsidy",
+      "description_en": "One-time housing construction grant or subsidised loan up to LKR 500,000 for low-income families to build or improve a permanent house. Administered by the National Housing Development Authority (NHDA). Prioritises estate sector workers (tea, rubber), fishing communities, and those affected by natural disasters. Housing loans at concessionary interest rates (5-6%) repayable over 15-20 years.",
+      "categorie": "logement",
+      "organisme": "National Housing Development Authority (NHDA)",
+      "montant_min_lkr": 0,
+      "montant_max_lkr": 500000,
+      "periodicite": "unique",
+      "url_info": "https://nhda.lk/",
+      "source_url": "https://nhda.lk/",
+      "eligibility_criteria": [
+        "low_income_household",
+        "no_permanent_house",
+        "Sri_Lankan_citizen",
+        "NIC_required",
+        "NHDA_approval"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "lk-samurdhi-history",
+      "slug": "samurdhi-former",
+      "nom": "Samurdhi (Former Programme — Superseded by Aswesuma)",
+      "description_en": "Former flagship social protection programme (1995–2023) providing monthly cash transfers of LKR 500–3,500 to low-income households based on family size. Covered approximately 1.8 million families at its peak. Reformed and replaced by Aswesuma in 2023 with improved targeting via the National Targeting System. Former Samurdhi beneficiaries were automatically assessed for Aswesuma eligibility during the transition.",
+      "categorie": "revenus_emploi",
+      "organisme": "Samurdhi Development Programme (superseded)",
+      "montant_min_lkr": 500,
+      "montant_max_lkr": 3500,
+      "periodicite": "mensuel",
+      "url_info": "https://welfare.gov.lk/",
+      "source_url": "https://welfare.gov.lk/",
+      "eligibility_criteria": [
+        "superseded_by_Aswesuma",
+        "low_income_household",
+        "former_Samurdhi_registered"
+      ],
+      "amounts_baremes_year": 2022
+    },
+    {
+      "id": "lk-school-bursary",
+      "slug": "school-bursary",
+      "nom": "School Bursary — Ministry of Education",
+      "description_en": "Monthly school bursary of LKR 500–2,500 for students from low-income families enrolled in grades 6-13 at government schools. Amount varies based on grade level and household income assessment. Covers approximately 200,000 students per year. Includes a uniform allowance of LKR 1,500 per year. Applications submitted through school principals with verification by divisional education office.",
+      "categorie": "education",
+      "organisme": "Ministry of Education / Divisional Education Offices",
+      "montant_min_lkr": 500,
+      "montant_max_lkr": 2500,
+      "periodicite": "mensuel",
+      "url_info": "https://moe.gov.lk/",
+      "source_url": "https://moe.gov.lk/",
+      "eligibility_criteria": [
+        "enrolled_government_school",
+        "grades_6_13",
+        "low_income_family",
+        "income_below_threshold",
+        "school_attendance_required"
+      ],
+      "amounts_baremes_year": 2024
+    }
+  ]
+}

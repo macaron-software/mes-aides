@@ -1,0 +1,222 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "BD",
+  "name": "Bangladesh",
+  "name_local": "বাংলাদেশ",
+  "language": "bn",
+  "currency": "BDT",
+  "welfare_model": "Developmental",
+  "sources": [
+    "https://mopa.gov.bd/",
+    "https://mowca.gov.bd/",
+    "https://bnfe.gov.bd/",
+    "https://jss.gov.bd/"
+  ],
+  "aids": [
+    {
+      "id": "bd-old-age-allowance",
+      "slug": "old-age-allowance",
+      "nom": "Old Age Allowance (বয়স্ক ভাতা)",
+      "description_en": "Monthly allowance of BDT 500 for elderly citizens aged 62 and above (men) or 62+ (women) from low-income households. One of Bangladesh's largest social protection programmes covering over 5.7 million beneficiaries. Disbursed via mobile financial services (bKash/Nagad) or post office. Beneficiary selection through local government (Union Parishad/Pourashava).",
+      "categorie": "retraite",
+      "organisme": "Ministry of Social Welfare / Department of Social Services",
+      "montant_min_bdt": 500,
+      "montant_max_bdt": 500,
+      "periodicite": "mensuel",
+      "url_info": "https://mopa.gov.bd/",
+      "source_url": "https://mopa.gov.bd/",
+      "eligibility_criteria": [
+        "age_62_plus",
+        "low_income",
+        "Bangladeshi_citizen",
+        "no_other_government_allowance"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-widow-allowance",
+      "slug": "widow-distressed-allowance",
+      "nom": "Widow and Distressed Women Allowance (বিধবা ও স্বামী পরিত্যক্তা মহিলা ভাতা)",
+      "description_en": "Monthly allowance of BDT 500 for widows, separated, and abandoned women in financial hardship. Covers approximately 2.4 million beneficiaries. Disbursed through mobile financial services or post office. Selection criteria include absence of male breadwinner and low household income below the official poverty line. Priority given to older, rural, and landless women.",
+      "categorie": "famille",
+      "organisme": "Ministry of Women and Children Affairs",
+      "montant_min_bdt": 500,
+      "montant_max_bdt": 500,
+      "periodicite": "mensuel",
+      "url_info": "https://mopa.gov.bd/",
+      "source_url": "https://mopa.gov.bd/",
+      "eligibility_criteria": [
+        "widow_OR_separated_OR_abandoned",
+        "female",
+        "low_income",
+        "Bangladeshi_citizen",
+        "no_permanent_income"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-disability-allowance",
+      "slug": "disability-allowance",
+      "nom": "Disability Allowance (প্রতিবন্ধী ভাতা)",
+      "description_en": "Monthly allowance of BDT 700 for persons with certified disabilities. Covers approximately 1.8 million beneficiaries across Bangladesh. Certificates issued by district-level disability review boards. Amount represents a 2024 increase from BDT 600. Payments via MFS or post office. Also includes a 5% quota in government employment for persons with disabilities.",
+      "categorie": "handicap",
+      "organisme": "Department of Social Services / Ministry of Social Welfare",
+      "montant_min_bdt": 700,
+      "montant_max_bdt": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://mopa.gov.bd/",
+      "source_url": "https://mopa.gov.bd/",
+      "eligibility_criteria": [
+        "disability_certified",
+        "Bangladeshi_citizen",
+        "age_6_plus",
+        "low_income_household"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-maternity-allowance",
+      "slug": "maternity-allowance",
+      "nom": "Maternity Allowance for Poor Lactating Mothers (মাতৃত্ব ভাতা)",
+      "description_en": "Monthly allowance of BDT 800 for rural poor lactating mothers for up to 2 years per child (maximum 2 births supported). Conditional on attendance at antenatal care and use of skilled birth attendants. Covers approximately 700,000 mothers annually. Includes nutrition counselling and health education components. Disbursed via mobile financial services.",
+      "categorie": "famille",
+      "organisme": "Ministry of Women and Children Affairs (MOWCA)",
+      "montant_min_bdt": 800,
+      "montant_max_bdt": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://mowca.gov.bd/",
+      "source_url": "https://mowca.gov.bd/",
+      "eligibility_criteria": [
+        "rural_poor_mother",
+        "pregnant_OR_lactating",
+        "first_OR_second_child",
+        "ANC_attendance",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-primary-stipend",
+      "slug": "primary-education-stipend",
+      "nom": "Primary Education Stipend (প্রাথমিক শিক্ষা উপবৃত্তি)",
+      "description_en": "Monthly stipend for children from poor households enrolled in primary school (grades 1-5). Amounts: BDT 130/month for one child, BDT 225/month for two or more children from the same household. Conditional on 85% attendance. Disbursed directly to mothers via G2P mobile payment. Over 14 million children benefit nationwide.",
+      "categorie": "education",
+      "organisme": "Directorate of Primary Education / Ministry of Primary and Mass Education",
+      "montant_min_bdt": 130,
+      "montant_max_bdt": 225,
+      "periodicite": "mensuel",
+      "url_info": "https://bnfe.gov.bd/",
+      "source_url": "https://bnfe.gov.bd/",
+      "eligibility_criteria": [
+        "enrolled_primary_school",
+        "poor_household",
+        "85pct_attendance",
+        "age_6_12",
+        "mother_must_receive_payment"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-school-feeding",
+      "slug": "school-feeding",
+      "nom": "National School Feeding Programme",
+      "description_en": "Free nutritious meals (typically fortified biscuits or cooked meals) provided to students in food-insecure and underprivileged areas. Operated in collaboration with WFP and government in approximately 25,000 primary schools covering about 4 million students. Aims to improve attendance, retention, and nutrition outcomes for the poorest children.",
+      "categorie": "alimentation",
+      "organisme": "Ministry of Primary and Mass Education / WFP Bangladesh",
+      "montant_min_bdt": 0,
+      "montant_max_bdt": 0,
+      "periodicite": "journalier",
+      "url_info": "https://mopme.gov.bd/",
+      "source_url": "https://www.wfp.org/countries/bangladesh",
+      "eligibility_criteria": [
+        "enrolled_primary_school",
+        "food_insecure_area",
+        "school_days_attendance"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-vgd",
+      "slug": "vgd-vulnerable-group-development",
+      "nom": "Vulnerable Group Development (VGD) Programme",
+      "description_en": "Monthly in-kind or cash transfer for ultra-poor women. Beneficiaries receive 30 kg of rice per month OR a cash equivalent of BDT 700, along with life skills training and microfinance linkages. Approximately 1 million women covered in 2-year cycles. Selection by Union Parishad with verification by Department of Women Affairs. Combines food security with livelihood development.",
+      "categorie": "alimentation",
+      "organisme": "Ministry of Women and Children Affairs / WFP Bangladesh",
+      "montant_min_bdt": 700,
+      "montant_max_bdt": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://mowca.gov.bd/",
+      "source_url": "https://mowca.gov.bd/",
+      "eligibility_criteria": [
+        "ultra_poor_woman",
+        "age_18_50",
+        "no_land_OR_homestead",
+        "no_other_safety_net",
+        "Union_Parishad_selection"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-test-relief",
+      "slug": "test-relief-food-work",
+      "nom": "Test Relief (Food/Cash for Work)",
+      "description_en": "Short-term cash or in-kind employment programme providing BDT 250–500/day to poor rural workers for participating in government construction projects (roads, embankments, canal excavation) during agricultural lean seasons (July-September and January-March). Annual budget of approximately BDT 1.2 billion. Implemented through local government units (Upazila Parishad).",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministry of Disaster Management and Relief",
+      "montant_min_bdt": 0,
+      "montant_max_bdt": 500,
+      "periodicite": "journalier",
+      "url_info": "https://modmr.gov.bd/",
+      "source_url": "https://modmr.gov.bd/",
+      "eligibility_criteria": [
+        "poor_rural_worker",
+        "able_bodied",
+        "lean_season",
+        "government_project_participation"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-ssnp",
+      "slug": "social-safety-net-programme",
+      "nom": "SSNP — Social Safety Net Programme (General)",
+      "description_en": "Umbrella of social safety net transfer programmes covering: old age, widows, disabilities, and general vulnerability. Monthly transfers ranging from BDT 500 to BDT 800 depending on category. Over 15 million direct beneficiaries in FY2024. The government allocates approximately 3% of GDP to social protection. Selection via local government committees with national oversight by Finance Division.",
+      "categorie": "revenus_emploi",
+      "organisme": "Finance Division / Ministry of Social Welfare",
+      "montant_min_bdt": 500,
+      "montant_max_bdt": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://jss.gov.bd/",
+      "source_url": "https://jss.gov.bd/",
+      "eligibility_criteria": [
+        "low_income",
+        "Bangladeshi_citizen",
+        "eligible_category",
+        "local_committee_selection"
+      ],
+      "amounts_baremes_year": 2024
+    },
+    {
+      "id": "bd-health-insurance",
+      "slug": "shasthya-surokkha-health-insurance",
+      "nom": "Shasthya Surokkha Karmasuchi (Health Insurance Pilot)",
+      "description_en": "Pilot government health insurance scheme covering primary and secondary hospitalisation costs up to BDT 50,000 per household per year. Operational in selected districts (Tangail initially). Targets informal sector workers and vulnerable households not covered by formal employment insurance. Premium-free for below-poverty-line households. Linked to Upazila Health Complexes.",
+      "categorie": "sante",
+      "organisme": "Ministry of Health and Family Welfare (MOHFW)",
+      "montant_min_bdt": 0,
+      "montant_max_bdt": 50000,
+      "periodicite": "annuel",
+      "url_info": "https://mohfw.gov.bd/",
+      "source_url": "https://mohfw.gov.bd/",
+      "eligibility_criteria": [
+        "pilot_district_resident",
+        "informal_sector",
+        "low_income",
+        "not_covered_by_formal_insurance"
+      ],
+      "amounts_baremes_year": 2024
+    }
+  ]
+}
