@@ -31,6 +31,11 @@ const EU_CURRENCIES = {
   in: { symbol: '₹',   locale: 'en-IN', code: 'INR', suffix: false },
   kr: { symbol: '₩',   locale: 'ko-KR', code: 'KRW', suffix: false },
   sg: { symbol: 'S$',  locale: 'en-SG', code: 'SGD', suffix: false },
+  /* SE Asia expansion */
+  id: { symbol: 'Rp',  locale: 'id-ID', code: 'IDR', suffix: false },
+  vn: { symbol: '₫',   locale: 'vi-VN', code: 'VND', suffix: true  },
+  th: { symbol: '฿',   locale: 'th-TH', code: 'THB', suffix: false },
+  my: { symbol: 'RM',  locale: 'ms-MY', code: 'MYR', suffix: false },
   /* EMEA expansion */
   ru: { symbol: '₽',   locale: 'ru-RU', code: 'RUB', suffix: false },
   ua: { symbol: '₴',   locale: 'uk-UA', code: 'UAH', suffix: false },
@@ -54,6 +59,8 @@ const CURRENCY_AMOUNT_FIELD = {
   tr: 'try', za: 'zar', nz: 'nzd',
   /* Asia expansion */
   in: 'inr', kr: 'krw', sg: 'sgd',
+  /* SE Asia expansion */
+  id: 'idr', vn: 'vnd', th: 'thb', my: 'myr',
   /* EMEA expansion */
   ru: 'rub', ua: 'uah', il: 'ils',
   /* LatAm expansion */
@@ -75,6 +82,8 @@ const INCOME_THRESHOLDS = {
   tr: 2210400, za: 350000, nz: 150000,
   /* Asia expansion — monthly net, local currency */
   in: 15000, kr: 713102, sg: 2000,
+  /* SE Asia expansion — monthly net, local currency smallest unit */
+  id: 600000000, vn: 400000000, th: 250000, my: 350000,
   /* EMEA expansion — monthly net, local currency smallest unit */
   ru: 2216500, ua: 446200, il: 588000,
   /* LatAm expansion — monthly net, local currency */
@@ -93,6 +102,8 @@ const LOW_INCOME_THRESHOLDS = {
   tr: 4420800, za: 700000, nz: 300000,
   /* Asia expansion */
   in: 30000, kr: 1200000, sg: 4000,
+  /* SE Asia expansion */
+  id: 1200000000, vn: 800000000, th: 500000, my: 700000,
   /* EMEA expansion */
   ru: 4433000, ua: 800000, il: 1000000,
   /* LatAm expansion */

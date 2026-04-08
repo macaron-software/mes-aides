@@ -1,0 +1,240 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "VN",
+  "name": "Vietnam",
+  "name_local": "Viet Nam",
+  "language": "vi",
+  "currency": "VND",
+  "welfare_model": "Social Insurance + Social Assistance",
+  "sources": [
+    "https://molisa.gov.vn",
+    "https://baohiemxahoi.gov.vn",
+    "https://bhyt.gov.vn",
+    "https://nhandan.vn"
+  ],
+  "aids": [
+    {
+      "id": "vn-luong-huu",
+      "slug": "luong-huu-bhxh",
+      "nom": "Luong huu — Pension de retraite (BHXH)",
+      "description_en": "Social insurance retirement pension from Vietnam Social Security (VSS/BHXH). Benefit = 45% of average salary after 20 years of contributions, +2% per additional year (max 75%). Average monthly pension approximately VND 3,000,000 (2025). Retirement age: men 62, women 60 (rising to 62 by 2035). Source: baohiemxahoi.gov.vn.",
+      "categorie": "retraite",
+      "organisme": "Bao hiem xa hoi Viet Nam (BHXH — VSS)",
+      "montant_min_vnd": 1800000,
+      "montant_max_vnd": 5000000,
+      "periodicite": "mensuel",
+      "url_info": "https://baohiemxahoi.gov.vn",
+      "source_url": "https://baohiemxahoi.gov.vn",
+      "eligibility_criteria": [
+        "minimum_20_years_contributions_bhxh",
+        "age_62_men_or_60_women",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-tro-cap-that-nghiep",
+      "slug": "tro-cap-that-nghiep",
+      "nom": "Tro cap that nghiep — Allocation chomage (BHTN)",
+      "description_en": "Unemployment insurance benefit of 60% of average monthly salary from the previous 6 months of employment. Duration: 3 months (12-35 months contributed), 6 months (36-71 months), 9 months (72-143 months), 12 months (144+ months). Paid by unemployment insurance fund (BHTN). Source: molisa.gov.vn.",
+      "categorie": "chomage",
+      "organisme": "Trung tam Dich vu Viec lam / BHXH",
+      "montant_min_vnd": 1800000,
+      "montant_max_vnd": 6000000,
+      "periodicite": "mensuel",
+      "url_info": "https://molisa.gov.vn",
+      "source_url": "https://molisa.gov.vn",
+      "eligibility_criteria": [
+        "minimum_12_months_bhtn_contributions",
+        "involuntary_job_loss",
+        "registered_employment_center",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-tro-cap-nguoi-khuyet-tat",
+      "slug": "tro-cap-nguoi-khuyet-tat",
+      "nom": "Tro cap nguoi khuyet tat — Allocation handicap",
+      "description_en": "Monthly social assistance for persons with disabilities: VND 405,000/month for moderate disability; VND 540,000/month for severe disability; VND 810,000/month for extremely severe disability. Additional household support available. Source: molisa.gov.vn (Decree 20/2021/ND-CP).",
+      "categorie": "handicap_invalidite",
+      "organisme": "So Lao dong - Thuong binh va Xa hoi (SOLĐTBXH)",
+      "montant_min_vnd": 405000,
+      "montant_max_vnd": 810000,
+      "periodicite": "mensuel",
+      "url_info": "https://molisa.gov.vn",
+      "source_url": "https://molisa.gov.vn",
+      "eligibility_criteria": [
+        "certified_disability",
+        "residence_vn",
+        "not_receiving_other_social_insurance"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-tro-cap-nguoi-cao-tuoi",
+      "slug": "tro-cap-bao-tro-xa-hoi-nguoi-cao-tuoi",
+      "nom": "Tro cap bao tro xa hoi — Allocation personnes agees",
+      "description_en": "Social protection allowance for elderly: VND 360,000/month for those aged 75-79 without pension or social insurance; VND 540,000/month for those aged 80+ without pension. Paid by commune-level social affairs. Source: Decree 20/2021/ND-CP, molisa.gov.vn.",
+      "categorie": "vieillesse",
+      "organisme": "Uy ban nhan dan xa/phuong / So LDTBXH",
+      "montant_min_vnd": 360000,
+      "montant_max_vnd": 540000,
+      "periodicite": "mensuel",
+      "url_info": "https://molisa.gov.vn",
+      "source_url": "https://molisa.gov.vn",
+      "eligibility_criteria": [
+        "age_75_plus",
+        "no_pension_no_social_insurance",
+        "low_income_household",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-bhyt-ho-ngheo",
+      "slug": "bao-hiem-y-te-ho-ngheo",
+      "nom": "Bao hiem y te (BHYT) — Assurance maladie",
+      "description_en": "Health insurance (BHYT). State subsidizes 100% of premium for poor households and near-poor households (95% of premium). Covers 80-100% of medical costs at registered facilities. Veterans and meritorious persons covered at 100%. Source: bhyt.gov.vn / baohiemxahoi.gov.vn.",
+      "categorie": "sante",
+      "organisme": "BHXH Viet Nam / Bo Y te",
+      "montant_min_vnd": 0,
+      "montant_max_vnd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://baohiemxahoi.gov.vn",
+      "source_url": "https://baohiemxahoi.gov.vn",
+      "eligibility_criteria": [
+        "registered_poor_near_poor_household",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-nha-o-xa-hoi",
+      "slug": "chinh-sach-nha-o-xa-hoi",
+      "nom": "Chinh sach nha o xa hoi — Logement social",
+      "description_en": "Subsidized housing loans at 4.8% annual interest rate (2025) through the Social Policy Bank (VBSP) for purchase or construction of social housing. Maximum loan VND 500,000,000 per household. Income eligibility: no owned home or housing below standard. Source: moc.gov.vn / vbsp.org.vn.",
+      "categorie": "logement",
+      "organisme": "Ngan hang Chinh sach Xa hoi (VBSP) / Bo Xay dung",
+      "montant_min_vnd": 0,
+      "montant_max_vnd": 500000000,
+      "periodicite": "unique",
+      "url_info": "https://vbsp.org.vn",
+      "source_url": "https://moc.gov.vn",
+      "eligibility_criteria": [
+        "no_owned_housing",
+        "income_below_official_threshold",
+        "residence_vn",
+        "first_time_buyer"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-hoc-bong-hssvdt",
+      "slug": "hoc-bong-hoc-sinh-sinh-vien",
+      "nom": "Hoc bong HSSVDT — Bourse etudiants minorites ethniques",
+      "description_en": "Scholarship for ethnic minority students and students from disadvantaged areas. Monthly allowance: VND 200,000-1,000,000/month depending on level and location (boarding allowance, monthly stipend). Also includes exemption/reduction of tuition fees. Source: Decree 86/2015/ND-CP, moet.gov.vn.",
+      "categorie": "jeunesse_etudes",
+      "organisme": "Bo Giao duc va Dao tao (MOET)",
+      "montant_min_vnd": 200000,
+      "montant_max_vnd": 1000000,
+      "periodicite": "mensuel",
+      "url_info": "https://moet.gov.vn",
+      "source_url": "https://moet.gov.vn",
+      "eligibility_criteria": [
+        "ethnic_minority_or_disadvantaged_area",
+        "enrolled_school_or_university",
+        "low_income_family"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-tro-cap-thai-san",
+      "slug": "tro-cap-thai-san",
+      "nom": "Tro cap thai san — Conge maternite (BHXH)",
+      "description_en": "Maternity benefit from social insurance (BHXH): 100% of average monthly salary for 6 months (for vaginal birth) or 6 months (C-section). For fathers: 5-14 working days paid leave at 100% salary. Funded through social insurance contributions. Source: baohiemxahoi.gov.vn (Law 58/2014/QH13).",
+      "categorie": "famille",
+      "organisme": "Bao hiem xa hoi Viet Nam (BHXH)",
+      "montant_min_vnd": 2000000,
+      "montant_max_vnd": 8000000,
+      "periodicite": "mensuel",
+      "url_info": "https://baohiemxahoi.gov.vn",
+      "source_url": "https://baohiemxahoi.gov.vn",
+      "eligibility_criteria": [
+        "bhxh_member_minimum_6_months",
+        "maternity_childbirth_or_adoption",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-ho-ngheo",
+      "slug": "chinh-sach-ho-ngheo",
+      "nom": "Chinh sach ho ngheo — Politique pauvrete multidimensionnelle",
+      "description_en": "Multi-dimensional poverty reduction policy package providing: free BHYT health card, fee waivers for education, housing support, clean water subsidy, preferential loans via VBSP, agricultural extension support. National poverty line 2021-2025: rural Rp 1,500,000/person/month, urban Rp 2,000,000/person/month. Source: molisa.gov.vn.",
+      "categorie": "revenus_emploi",
+      "organisme": "Bo LDTBXH / Uy ban nhan dan cac cap",
+      "montant_min_vnd": 0,
+      "montant_max_vnd": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://molisa.gov.vn",
+      "source_url": "https://molisa.gov.vn",
+      "eligibility_criteria": [
+        "certified_poor_household",
+        "income_below_national_poverty_line",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-giam-ngheo-da-chieu",
+      "slug": "giam-ngheo-da-chieu",
+      "nom": "Chuong trinh giam ngheo da chieu",
+      "description_en": "National multi-dimensional poverty reduction program 2021-2025 targeting 8 dimensions (income, employment, housing, water, sanitation, education, health, information). Specific support packages per dimension: vocational training grants, micro-credit at 0%, house repair grants up to VND 40,000,000. Source: molisa.gov.vn.",
+      "categorie": "revenus_emploi",
+      "organisme": "Bo LDTBXH / ngan sach nha nuoc",
+      "montant_min_vnd": 0,
+      "montant_max_vnd": 40000000,
+      "periodicite": "unique",
+      "url_info": "https://molisa.gov.vn",
+      "source_url": "https://molisa.gov.vn",
+      "eligibility_criteria": [
+        "certified_poor_near_poor_household",
+        "multidimensional_deprivation",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "vn-tro-cap-nen-nhan-xhcn",
+      "slug": "tro-cap-nguoi-co-cong-cach-mang",
+      "nom": "Tro cap nguoi co cong cach mang — Meritorious persons",
+      "description_en": "Monthly benefit for war heroes, wounded veterans, families of fallen soldiers and revolutionary meritorious persons. Amounts vary: wounded soldiers Rp 2,000,000-4,500,000/month based on disability grade. Fully funded by state budget. Source: molisa.gov.vn (Ordinance 02/2020/UBTVQH14).",
+      "categorie": "handicap_invalidite",
+      "organisme": "Bo LDTBXH / So LDTBXH cac tinh",
+      "montant_min_vnd": 2000000,
+      "montant_max_vnd": 4500000,
+      "periodicite": "mensuel",
+      "url_info": "https://molisa.gov.vn",
+      "source_url": "https://molisa.gov.vn",
+      "eligibility_criteria": [
+        "certified_meritorious_person_or_family",
+        "residence_vn"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

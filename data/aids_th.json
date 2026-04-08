@@ -1,0 +1,240 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "TH",
+  "name": "Thailand",
+  "name_local": "Prathet Thai",
+  "language": "th",
+  "currency": "THB",
+  "welfare_model": "Universal + Targeted Social Assistance",
+  "sources": [
+    "https://dss.go.th",
+    "https://sso.go.th",
+    "https://nhso.or.th",
+    "https://www.cgd.go.th"
+  ],
+  "aids": [
+    {
+      "id": "th-welfare-card",
+      "slug": "bat-swasdikan-haeng-rat",
+      "nom": "Bat Swasdikan Haeng Rat — Carte bien-etre (Bua Thong)",
+      "description_en": "State Welfare Card (Bua Thong card) for low-income earners with annual income below THB 100,000. Monthly credit: THB 300 (income < THB 30,000/yr) or THB 200 (income THB 30,001-100,000/yr) for food/goods at registered shops. Additional THB 400 (income < THB 30,000/yr) or THB 200 for utility subsidies. Plus bus/BTS/MRT public transport discount. Source: cgd.go.th.",
+      "categorie": "revenus_emploi",
+      "organisme": "Krom Banychi Klang (CGD) / Krasuat Khaeng",
+      "montant_min_thb": 200,
+      "montant_max_thb": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://www.cgd.go.th/welfare",
+      "source_url": "https://www.cgd.go.th",
+      "eligibility_criteria": [
+        "thai_citizen_national_id",
+        "annual_income_below_100000_thb",
+        "registered_welfare_card"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-old-age-allowance",
+      "slug": "ngoen-chuai-liao-phuyaosu",
+      "nom": "Ngoen Chuai Liao Phu Yao Su — Allocation personnes agees",
+      "description_en": "Universal old age allowance for Thai citizens aged 60+: THB 600/month (age 60-69), THB 700/month (age 70-79), THB 800/month (age 80-89), THB 1,000/month (age 90+). Disbursed quarterly through local government (OrBorTor). Source: dss.go.th (Budget Law 2568).",
+      "categorie": "vieillesse",
+      "organisme": "Krom Sangkhom Sungwai lae Phatthana Chumchon (DSS) / OrBorTor",
+      "montant_min_thb": 600,
+      "montant_max_thb": 1000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dss.go.th",
+      "source_url": "https://www.dss.go.th",
+      "eligibility_criteria": [
+        "thai_citizen",
+        "age_60_plus",
+        "residence_th",
+        "not_receiving_civil_servant_pension"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-uhc",
+      "slug": "sitthi-bu-ranu-krom-luak-lak-prakan-sukkhaphap",
+      "nom": "Universal Health Coverage — Batkho 30 Baht",
+      "description_en": "Universal Health Coverage (UHC/UC scheme). Free primary care at registered public health centres and hospitals. Standard co-payment THB 30 per visit (often waived in practice). Covers outpatient, inpatient, essential medicines, surgery, chronic diseases, maternity. 47 million beneficiaries. Managed by NHSO. Source: nhso.or.th.",
+      "categorie": "sante",
+      "organisme": "Samnak Ngan Lak Prakan Sukkhaphap Haeng Chat (NHSO)",
+      "montant_min_thb": 0,
+      "montant_max_thb": 30,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.nhso.or.th",
+      "source_url": "https://www.nhso.or.th",
+      "eligibility_criteria": [
+        "thai_citizen",
+        "not_covered_csmbs_or_sso",
+        "registered_health_facility"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-disability-allowance",
+      "slug": "ngoen-chuai-liao-khon-phikan",
+      "nom": "Ngoen Chuai Liao Khon Phikan — Allocation handicap",
+      "description_en": "Monthly disability allowance of THB 800/month for persons registered in the disability registry. Additional THB 1,000 supplement for those with severe disability welfare card (income < THB 100,000/yr). Disbursed quarterly through OrBorTor. Source: dep.go.th / dss.go.th.",
+      "categorie": "handicap_invalidite",
+      "organisme": "Krom Songserm lae Phatthana Khunna-phap Chiiwit Khon Phikan (DEP) / DSS",
+      "montant_min_thb": 800,
+      "montant_max_thb": 1800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dep.go.th",
+      "source_url": "https://www.dep.go.th",
+      "eligibility_criteria": [
+        "thai_citizen",
+        "registered_disability",
+        "age_18_plus"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-child-support",
+      "slug": "ngoen-anuthan-dek-kaeo",
+      "nom": "Ngoen Anuthan Dek Kaeo — Allocation enfant (0-6 ans)",
+      "description_en": "Child support allowance of THB 600/month per child aged 0-6 years for families with income below THB 100,000/year. Extended to children aged 0-6 in low-income households registered in the state welfare system. Paid monthly. Source: dss.go.th.",
+      "categorie": "famille",
+      "organisme": "Krom Sangkhom Sungwai lae Phatthana Chumchon (DSS)",
+      "montant_min_thb": 600,
+      "montant_max_thb": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dss.go.th",
+      "source_url": "https://www.dss.go.th",
+      "eligibility_criteria": [
+        "thai_citizen",
+        "child_age_0_to_6",
+        "household_income_below_100000_thb_per_year"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-sso-unemployment",
+      "slug": "prakan-khangngaan-wo-ngan",
+      "nom": "Prakan Khangngaan — Assurance chomage (SSO)",
+      "description_en": "Unemployment insurance under Social Security Office (SSO). Benefit: 50% of last registered wage, maximum THB 7,500/month (50% of THB 15,000 wage ceiling), for up to 180 days per year. Voluntary/early termination: 30% of wage, max 90 days. Source: sso.go.th (Social Security Act B.E. 2533).",
+      "categorie": "chomage",
+      "organisme": "Samnak Ngan Prakan Sangkhom (SSO)",
+      "montant_min_thb": 1500,
+      "montant_max_thb": 7500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sso.go.th",
+      "source_url": "https://www.sso.go.th",
+      "eligibility_criteria": [
+        "sso_section_33_contributor_minimum_6_months",
+        "involuntary_unemployment",
+        "registered_sso_unemployment",
+        "age_15_to_60"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-sso-pension",
+      "slug": "prakan-sangkhom-bamnaan-chao",
+      "nom": "Prakan Sangkhom (SSO) — Retraite et prestations",
+      "description_en": "Social Security (SSO Section 33/39/40) contributions-based benefits: retirement pension at 55+ after 15 years of contributions (pension amount depends on salary and tenure, typically 15-20% of salary); disability benefit (50% of wage); maternity (THB 15,000 lump sum + 50% wage for 90 days). Employee 5% + employer 5% of salary. Source: sso.go.th.",
+      "categorie": "retraite",
+      "organisme": "Samnak Ngan Prakan Sangkhom (SSO)",
+      "montant_min_thb": 1000,
+      "montant_max_thb": 7500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sso.go.th",
+      "source_url": "https://www.sso.go.th",
+      "eligibility_criteria": [
+        "sso_section_33_contributor",
+        "minimum_15_years_contributions",
+        "age_55_plus"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-gys-loan",
+      "slug": "krop-thun-khu-yum-yu-sos",
+      "nom": "Krop Thun Khu Yum Yu SOS — Pret etudiant (GYS)",
+      "description_en": "Student loan from Student Loan Fund (GYS/Kro Phet Khu Yum Yu Sos). Up to THB 90,000/year covering tuition fees and living expenses. 0% interest during study and 1% per year during repayment (5-15 years). For students from families with income < THB 360,000/year. Source: studentloan.or.th.",
+      "categorie": "jeunesse_etudes",
+      "organisme": "Krop Thun Khu Yum Yu Sos (GYS — Student Loan Fund)",
+      "montant_min_thb": 10000,
+      "montant_max_thb": 90000,
+      "periodicite": "annuel",
+      "url_info": "https://www.studentloan.or.th",
+      "source_url": "https://www.studentloan.or.th",
+      "eligibility_criteria": [
+        "thai_citizen",
+        "enrolled_school_or_university",
+        "family_income_below_360000_thb_per_year"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-electricity-subsidy",
+      "slug": "sap-sap-kha-fai-fa",
+      "nom": "Sap Sap Kha Fai Fa — Subvention electricite (Baan Meng Khong)",
+      "description_en": "Electricity subsidy for welfare card holders: first 50 kWh/month free (electricity bill waived up to THB 230/month equivalent). For households consuming under 50 units, zero payment. For 51-100 units, 50% discount. Managed by Provincial Electricity Authority (PEA) and Metropolitan Electricity Authority (MEA). Source: cgd.go.th / dss.go.th.",
+      "categorie": "logement",
+      "organisme": "PEA / MEA / Krasuat Phalaangaan",
+      "montant_min_thb": 0,
+      "montant_max_thb": 230,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dss.go.th",
+      "source_url": "https://www.cgd.go.th",
+      "eligibility_criteria": [
+        "welfare_card_holder",
+        "household_consumption_under_50kwh"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-nha-housing",
+      "slug": "baan-eua-arthorn-nha",
+      "nom": "Baan Eua Arthorn — Logement social (NHA)",
+      "description_en": "Subsidized social rental housing by National Housing Authority (NHA). Rent THB 800-2,500/month for low-income households. Purchase price below market rate. For families with income < THB 30,000/month and no owned property. Source: nha.co.th.",
+      "categorie": "logement",
+      "organisme": "Karn Kha Akkhansathan Haeng Chat (NHA)",
+      "montant_min_thb": 800,
+      "montant_max_thb": 2500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nha.co.th",
+      "source_url": "https://www.nha.co.th",
+      "eligibility_criteria": [
+        "thai_citizen",
+        "household_income_below_30000_thb_per_month",
+        "no_owned_housing",
+        "age_20_plus"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "th-water-subsidy",
+      "slug": "sap-sap-kha-nam-prapa",
+      "nom": "Sap Sap Kha Nam Prapa — Subvention eau (carte bien-etre)",
+      "description_en": "Water utility subsidy for welfare card holders: THB 100/month credit for piped water bill. For welfare card holders with income < THB 30,000/year: THB 100/month; income THB 30,001-100,000/year: THB 70/month. Applied automatically via welfare card to MWA/PWA accounts. Source: cgd.go.th.",
+      "categorie": "logement",
+      "organisme": "Kra Suat Maha Nakhon Nai Phak / MWA / PWA",
+      "montant_min_thb": 70,
+      "montant_max_thb": 100,
+      "periodicite": "mensuel",
+      "url_info": "https://www.cgd.go.th",
+      "source_url": "https://www.cgd.go.th",
+      "eligibility_criteria": [
+        "welfare_card_holder",
+        "annual_income_below_100000_thb"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

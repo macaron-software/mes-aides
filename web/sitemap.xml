@@ -1745,4 +1745,132 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/il.html"/>
   </url>
 
+  <!-- ── World info: Indonesia ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/id.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/id.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/id.html"/>
+    <xhtml:link rel="alternate" hreflang="id"   href="https://aides.macaron-software.com/aides/monde/id.html"/>
+    <xhtml:link rel="alternate" hreflang="ms"   href="https://aides.macaron-software.com/aides/monde/my.html"/>
+    <xhtml:link rel="alternate" hreflang="jv"   href="https://aides.macaron-software.com/aides/monde/id.html"/>
+    <xhtml:link rel="alternate" hreflang="su"   href="https://aides.macaron-software.com/aides/monde/id.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/europe/de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/id.html"/>
+  </url>
+
+  <!-- ── World simulators: Indonesia ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/id.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/id.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/id.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="id"   href="https://aides.macaron-software.com/simulateur/id.html?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="ms"   href="https://aides.macaron-software.com/simulateur/my.html?lang=ms"/>
+    <xhtml:link rel="alternate" hreflang="jv"   href="https://aides.macaron-software.com/simulateur/id.html?lang=jv"/>
+    <xhtml:link rel="alternate" hreflang="su"   href="https://aides.macaron-software.com/simulateur/id.html?lang=su"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/id.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/id.html"/>
+  </url>
+
+  <!-- ── World info: Vietnam ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/vn.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/vn.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/vn.html"/>
+    <xhtml:link rel="alternate" hreflang="vi"   href="https://aides.macaron-software.com/aides/monde/vn.html"/>
+    <xhtml:link rel="alternate" hreflang="zh"   href="https://aides.macaron-software.com/aides/monde/cn.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/europe/de.html"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/ar.html"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/vn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/vn.html"/>
+  </url>
+
+  <!-- ── World simulators: Vietnam ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/vn.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/vn.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/vn.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="vi"   href="https://aides.macaron-software.com/simulateur/vn.html?lang=vi"/>
+    <xhtml:link rel="alternate" hreflang="zh"   href="https://aides.macaron-software.com/simulateur/cn.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/vn.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/simulateur/vn.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/vn.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/vn.html"/>
+  </url>
+
+  <!-- ── World info: Thailand ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/th.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/aides/monde/th.html"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/aides/monde/th.html"/>
+    <xhtml:link rel="alternate" hreflang="th"   href="https://aides.macaron-software.com/aides/monde/th.html"/>
+    <xhtml:link rel="alternate" hreflang="zh"   href="https://aides.macaron-software.com/aides/monde/cn.html"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/aides/europe/de.html"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/aides/monde/ar.html"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/aides/monde/th.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/th.html"/>
+  </url>
+
+  <!-- ── World simulators: Thailand ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/th.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"   href="https://aides.macaron-software.com/simulateur/th.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"   href="https://aides.macaron-software.com/simulateur/th.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="th"   href="https://aides.macaron-software.com/simulateur/th.html?lang=th"/>
+    <xhtml:link rel="alternate" hreflang="zh"   href="https://aides.macaron-software.com/simulateur/th.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="de"   href="https://aides.macaron-software.com/simulateur/th.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es"   href="https://aides.macaron-software.com/simulateur/th.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="ar"   href="https://aides.macaron-software.com/simulateur/th.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/th.html"/>
+  </url>
+
+  <!-- ── World info: Malaysia ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/aides/monde/my.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"    href="https://aides.macaron-software.com/aides/monde/my.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://aides.macaron-software.com/aides/monde/my.html"/>
+    <xhtml:link rel="alternate" hreflang="ms"    href="https://aides.macaron-software.com/aides/monde/my.html"/>
+    <xhtml:link rel="alternate" hreflang="zh"    href="https://aides.macaron-software.com/aides/monde/cn.html"/>
+    <xhtml:link rel="alternate" hreflang="ta"    href="https://aides.macaron-software.com/aides/monde/my.html"/>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://aides.macaron-software.com/aides/monde/my.html"/>
+    <xhtml:link rel="alternate" hreflang="de"    href="https://aides.macaron-software.com/aides/europe/de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/aides/monde/my.html"/>
+  </url>
+
+  <!-- ── World simulators: Malaysia ── -->
+  <url>
+    <loc>https://aides.macaron-software.com/simulateur/my.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr"    href="https://aides.macaron-software.com/simulateur/my.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://aides.macaron-software.com/simulateur/my.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ms"    href="https://aides.macaron-software.com/simulateur/my.html?lang=ms"/>
+    <xhtml:link rel="alternate" hreflang="zh"    href="https://aides.macaron-software.com/simulateur/my.html?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ta"    href="https://aides.macaron-software.com/simulateur/my.html?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://aides.macaron-software.com/simulateur/my.html?lang=en-MY"/>
+    <xhtml:link rel="alternate" hreflang="de"    href="https://aides.macaron-software.com/simulateur/my.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/my.html"/>
+  </url>
+
 </urlset>

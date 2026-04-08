@@ -1,0 +1,262 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "ID",
+  "name": "Indonesia",
+  "name_local": "Indonesia",
+  "language": "id",
+  "currency": "IDR",
+  "welfare_model": "Social Insurance + Conditional Cash Transfer",
+  "sources": [
+    "https://www.kemensos.go.id",
+    "https://www.bpjs-kesehatan.go.id",
+    "https://www.bpjsketenagakerjaan.go.id",
+    "https://www.tnp2k.go.id",
+    "https://www.prakerja.go.id"
+  ],
+  "aids": [
+    {
+      "id": "id-pkh",
+      "slug": "program-keluarga-harapan",
+      "nom": "Program Keluarga Harapan (PKH)",
+      "description_en": "Conditional cash transfer program for poor and vulnerable families. Components: pregnant/nursing mothers (Rp 750,000/year), children under 6 (Rp 750,000/year), school children SD (Rp 900,000/year), SMP (Rp 1,500,000/year), SMA (Rp 2,000,000/year), elderly 70+ (Rp 2,400,000/year), disabled severe (Rp 2,400,000/year). Total up to Rp 3,000,000/year per family. Paid quarterly via KKS (Electronic Welfare Card). Source: kemensos.go.id.",
+      "categorie": "revenus_emploi",
+      "organisme": "Kementerian Sosial (Kemensos)",
+      "montant_min_idr": 750000,
+      "montant_max_idr": 3000000,
+      "periodicite": "annuel",
+      "url_info": "https://www.kemensos.go.id/program-keluarga-harapan-pkh",
+      "source_url": "https://www.kemensos.go.id",
+      "eligibility_criteria": [
+        "registered_dtks_datasosialekonomi",
+        "income_very_low",
+        "residence_id",
+        "kks_card_holder"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-bpnt",
+      "slug": "bantuan-pangan-non-tunai",
+      "nom": "Bantuan Pangan Non-Tunai (BPNT) / Program Sembako",
+      "description_en": "Non-cash food assistance of Rp 200,000/month disbursed as e-voucher (KKS) redeemable at registered warung/agent for food staples (rice, eggs, etc.). Targets 18.8 million poor households (DTKS registry). Source: kemensos.go.id.",
+      "categorie": "revenus_emploi",
+      "organisme": "Kementerian Sosial",
+      "montant_min_idr": 200000,
+      "montant_max_idr": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kemensos.go.id/sembako",
+      "source_url": "https://www.kemensos.go.id",
+      "eligibility_criteria": [
+        "registered_dtks",
+        "income_low",
+        "residence_id"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-pip",
+      "slug": "program-indonesia-pintar",
+      "nom": "Program Indonesia Pintar (PIP)",
+      "description_en": "Student scholarship for poor children: SD/MI (primary school) Rp 450,000/year; SMP/MTs (junior high) Rp 750,000/year; SMA/SMK (senior high) Rp 1,000,000/year. Disbursed via BRI/BSI bank accounts. Source: kemdikbud.go.id.",
+      "categorie": "jeunesse_etudes",
+      "organisme": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
+      "montant_min_idr": 450000,
+      "montant_max_idr": 1000000,
+      "periodicite": "annuel",
+      "url_info": "https://pip.kemdikbud.go.id",
+      "source_url": "https://pip.kemdikbud.go.id",
+      "eligibility_criteria": [
+        "enrolled_school_sd_sma",
+        "income_low",
+        "kip_card_holder_or_dtks"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-prakerja",
+      "slug": "kartu-prakerja",
+      "nom": "Kartu Prakerja",
+      "description_en": "Vocational training program for unemployed/underemployed workers. Total benefit Rp 3,550,000 per participant: training incentive Rp 2,500,000 (for online courses on partner platforms) + post-training incentive Rp 600,000/month x 2 months + survey incentive Rp 50,000 x 3. Source: prakerja.go.id.",
+      "categorie": "chomage",
+      "organisme": "Manajemen Pelaksana Program Kartu Prakerja",
+      "montant_min_idr": 3550000,
+      "montant_max_idr": 3550000,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.prakerja.go.id",
+      "source_url": "https://www.prakerja.go.id",
+      "eligibility_criteria": [
+        "age_18_plus",
+        "indonesian_citizen_nik",
+        "unemployed_or_underemployed",
+        "not_student_not_civil_servant"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-jkn-pbi",
+      "slug": "jaminan-kesehatan-nasional-pbi",
+      "nom": "Jaminan Kesehatan Nasional — Penerima Bantuan Iuran (JKN-PBI)",
+      "description_en": "Free national health insurance (BPJS Kesehatan) for poor and vulnerable households. Premium paid by central government (Rp 0 for PBI beneficiaries). Covers primary care at puskesmas/clinic and hospital referrals. Source: bpjs-kesehatan.go.id.",
+      "categorie": "sante",
+      "organisme": "BPJS Kesehatan / Kemensos",
+      "montant_min_idr": 0,
+      "montant_max_idr": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bpjs-kesehatan.go.id/bpjs/pages/detail/2014/12",
+      "source_url": "https://www.bpjs-kesehatan.go.id",
+      "eligibility_criteria": [
+        "registered_dtks",
+        "income_very_low",
+        "residence_id"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-subsidi-listrik",
+      "slug": "subsidi-listrik",
+      "nom": "Subsidi Listrik (Electricity Subsidy)",
+      "description_en": "Electricity tariff subsidy for household connections 450 VA (lowest income, fully subsidized) and 900 VA (subsidized — households with per capita income below Rp 1,400,000/month). The 450 VA tariff is Rp 415/kWh versus normal rate Rp 1,699/kWh. Source: esdm.go.id / PLN.",
+      "categorie": "logement",
+      "organisme": "PT PLN (Persero) / Kementerian ESDM",
+      "montant_min_idr": 0,
+      "montant_max_idr": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.esdm.go.id/id/media-center/arsip-berita/subsidi-listrik",
+      "source_url": "https://www.esdm.go.id",
+      "eligibility_criteria": [
+        "electricity_connection_450va_or_900va",
+        "income_low",
+        "residence_id"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-blt",
+      "slug": "bantuan-langsung-tunai",
+      "nom": "Bantuan Langsung Tunai (BLT)",
+      "description_en": "Direct cash transfer of Rp 300,000/month for poor households affected by economic shocks (fuel subsidy adjustment, inflation, disasters). Disbursed through post offices (Kantor Pos) or village funds (Dana Desa). Available on a periodic basis as policy response. Source: kemensos.go.id.",
+      "categorie": "revenus_emploi",
+      "organisme": "Kementerian Sosial / Kementerian Keuangan",
+      "montant_min_idr": 300000,
+      "montant_max_idr": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kemensos.go.id",
+      "source_url": "https://www.kemensos.go.id",
+      "eligibility_criteria": [
+        "registered_dtks",
+        "income_low",
+        "not_receiving_pkh_or_bpnt"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-padat-karya",
+      "slug": "program-padat-karya",
+      "nom": "Program Padat Karya (Cash-for-Work)",
+      "description_en": "Cash-for-work program paying Rp 100,000/day for unskilled poor workers on public infrastructure projects (roads, irrigation, village infrastructure). Implemented through village funds and various ministries. Minimum 5 working days per participant per project. Source: pu.go.id.",
+      "categorie": "emploi",
+      "organisme": "Kementerian PUPR / Kementerian Desa PDTT",
+      "montant_min_idr": 100000,
+      "montant_max_idr": 100000,
+      "periodicite": "journalier",
+      "url_info": "https://www.pu.go.id",
+      "source_url": "https://www.pu.go.id",
+      "eligibility_criteria": [
+        "income_low",
+        "unemployed_or_underemployed",
+        "residence_village"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-flpp",
+      "slug": "kpr-flpp",
+      "nom": "KPR FLPP (Fasilitas Likuiditas Pembiayaan Perumahan)",
+      "description_en": "Subsidized housing mortgage with fixed 5% interest rate over loan term (up to 20 years). Maximum home price Rp 166,000,000 (type 36). Down payment minimum 1%. Maximum borrower income Rp 8,000,000/month (non-subsidized area). Source: kemenpera / pupr.go.id.",
+      "categorie": "logement",
+      "organisme": "Kementerian PUPR / Bank Tabungan Negara (BTN)",
+      "montant_min_idr": 0,
+      "montant_max_idr": 166000000,
+      "periodicite": "unique",
+      "url_info": "https://www.rumahsubsidi.pu.go.id",
+      "source_url": "https://www.pu.go.id",
+      "eligibility_criteria": [
+        "income_below_8000000_per_month",
+        "first_time_buyer",
+        "residence_id",
+        "age_21_to_65"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-jht",
+      "slug": "jaminan-hari-tua",
+      "nom": "Jaminan Hari Tua (JHT — BPJS Ketenagakerjaan)",
+      "description_en": "Old-age savings plan through BPJS Ketenagakerjaan. Employer contributes 3.7% and employee 2% of salary per month. Lump-sum disbursement at retirement (age 56+), permanent disability, or death. Average accumulation depends on salary and tenure. Source: bpjsketenagakerjaan.go.id.",
+      "categorie": "retraite",
+      "organisme": "BPJS Ketenagakerjaan",
+      "montant_min_idr": 0,
+      "montant_max_idr": 0,
+      "periodicite": "unique",
+      "url_info": "https://www.bpjsketenagakerjaan.go.id/jht.html",
+      "source_url": "https://www.bpjsketenagakerjaan.go.id",
+      "eligibility_criteria": [
+        "formal_worker_bpjstk_member",
+        "age_56_plus_or_disability_or_death",
+        "minimum_1_month_contribution"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-jkk",
+      "slug": "jaminan-kecelakaan-kerja",
+      "nom": "Jaminan Kecelakaan Kerja (JKK — BPJS Ketenagakerjaan)",
+      "description_en": "Work accident insurance. Covers medical costs (100%) for work-related injuries, temporary disability benefit (100% salary for first 12 months, 75% thereafter), permanent disability up to 70% of base pay x 80 months, and death benefit. Funded by employer contribution 0.24-1.74% of salary. Source: bpjsketenagakerjaan.go.id.",
+      "categorie": "handicap_invalidite",
+      "organisme": "BPJS Ketenagakerjaan",
+      "montant_min_idr": 0,
+      "montant_max_idr": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bpjsketenagakerjaan.go.id/jkk.html",
+      "source_url": "https://www.bpjsketenagakerjaan.go.id",
+      "eligibility_criteria": [
+        "formal_worker_bpjstk_member",
+        "work_accident_or_occupational_disease"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "id-pkm",
+      "slug": "program-keluarga-mandiri",
+      "nom": "Asistensi Sosial Penyandang Disabilitas (ASPD)",
+      "description_en": "Social assistance for persons with severe disabilities not covered by family: Rp 300,000/month (non-PKH recipients). Distributed via Post Office. Managed by Ministry of Social Affairs. Source: kemensos.go.id.",
+      "categorie": "handicap_invalidite",
+      "organisme": "Kementerian Sosial",
+      "montant_min_idr": 300000,
+      "montant_max_idr": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kemensos.go.id",
+      "source_url": "https://www.kemensos.go.id",
+      "eligibility_criteria": [
+        "severe_disability",
+        "income_very_low",
+        "not_pkh_recipient"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

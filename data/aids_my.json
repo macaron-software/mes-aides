@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "MY",
+  "name": "Malaysia",
+  "name_local": "Malaysia",
+  "language": "ms",
+  "currency": "MYR",
+  "currency_minor": "sen",
+  "currency_minor_factor": 100,
+  "welfare_model": "Contributory EPF + Targeted Assistance",
+  "sources": [
+    "https://jkm.gov.my",
+    "https://kwsp.gov.my",
+    "https://perkeso.gov.my",
+    "https://socso.gov.my",
+    "https://str.hasil.gov.my"
+  ],
+  "aids": [
+    {
+      "id": "my-str",
+      "slug": "sumbangan-tunai-rahmah",
+      "nom": "Sumbangan Tunai Rahmah (STR) / ex-BR1M",
+      "description_en": "Sumbangan Tunai Rahmah (STR) cash transfer for low-income households. Amounts (2025): MYR 1,000 (household income < MYR 2,500/month), MYR 800 (household income MYR 2,501-4,999), additional MYR 500 per eligible child under 18. Maximum household MYR 2,800/year. Paid in 3 instalments via Maybank2u or PosMalaysia. Source: str.hasil.gov.my.",
+      "categorie": "revenus_emploi",
+      "organisme": "Lembaga Hasil Dalam Negeri (LHDN) / Kementerian Kewangan",
+      "montant_min_myr": 80000,
+      "montant_max_myr": 160000,
+      "periodicite": "annuel",
+      "url_info": "https://str.hasil.gov.my",
+      "source_url": "https://str.hasil.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "household_income_below_500000sen_per_month",
+        "registered_myKad"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-epf",
+      "slug": "kumpulan-wang-simpanan-pekerja",
+      "nom": "Kumpulan Wang Simpanan Pekerja (KWSP / EPF)",
+      "description_en": "Employees Provident Fund (EPF/KWSP): mandatory retirement savings. Employer contributes 13% (income <= MYR 5,000) or 12% of salary. Employee contributes 11% (9% for employees above 60). Withdrawals allowed at 55 (Account 1 — locked) and 50 (Account 2 — partial). Dividends: 5-7% per year. Source: kwsp.gov.my.",
+      "categorie": "retraite",
+      "organisme": "Kumpulan Wang Simpanan Pekerja (KWSP / EPF)",
+      "montant_min_myr": 0,
+      "montant_max_myr": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kwsp.gov.my",
+      "source_url": "https://www.kwsp.gov.my",
+      "eligibility_criteria": [
+        "employed_formal_sector",
+        "malaysian_or_pr",
+        "age_below_75"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-socso",
+      "slug": "perkeso-socso",
+      "nom": "PERKESO / SOCSO — Jaminan Keselamatan Pekerjaan",
+      "description_en": "Social Security Organisation (SOCSO/PERKESO): work accident and invalidity coverage. Permanent disability pension: 50-80% of daily wage x 1,800 (Employment Injury Scheme). Temporary disability allowance: 100% of daily insured wage. Maximum insured wage MYR 5,000/month. Employee 0.5% + employer 1.75% of salary. Source: perkeso.gov.my.",
+      "categorie": "handicap_invalidite",
+      "organisme": "Pertubuhan Keselamatan Sosial (PERKESO / SOCSO)",
+      "montant_min_myr": 0,
+      "montant_max_myr": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.perkeso.gov.my",
+      "source_url": "https://www.perkeso.gov.my",
+      "eligibility_criteria": [
+        "employed_private_sector",
+        "socso_contributor",
+        "work_accident_or_invalidity"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-eis",
+      "slug": "sistem-insurans-pekerjaan",
+      "nom": "Sistem Insurans Pekerjaan (SIP / EIS)",
+      "description_en": "Employment Insurance System (EIS): unemployment benefit 60-80% of last insured wage for up to 6 months. Maximum insured wage MYR 4,000/month → max benefit MYR 3,200/month. Funded by employee 0.2% + employer 0.2% of salary. Also covers job search allowance and training fees. Source: perkeso.gov.my (Employment Insurance System Act 2017).",
+      "categorie": "chomage",
+      "organisme": "PERKESO",
+      "montant_min_myr": 24000,
+      "montant_max_myr": 400000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.perkeso.gov.my/eis.html",
+      "source_url": "https://www.perkeso.gov.my",
+      "eligibility_criteria": [
+        "eis_contributor_minimum_12_months",
+        "involuntary_retrenchment",
+        "registered_eis_claim",
+        "age_below_57"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-jkm",
+      "slug": "bantuan-kebajikan-jkm",
+      "nom": "Bantuan Am (JKM) — Aide sociale (Jabatan Kebajikan Masyarakat)",
+      "description_en": "JKM social welfare assistance for poor households: MYR 350-450/month per household depending on family composition. Additional support: MYR 200/month per elderly member (if not receiving other pension), school transport, medical aid. Household income ceiling MYR 1,500/month. Source: jkm.gov.my.",
+      "categorie": "revenus_emploi",
+      "organisme": "Jabatan Kebajikan Masyarakat (JKM)",
+      "montant_min_myr": 35000,
+      "montant_max_myr": 45000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.jkm.gov.my",
+      "source_url": "https://www.jkm.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "household_income_below_150000sen",
+        "not_receiving_str",
+        "registered_eKasih"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-bantuan-warga-emas",
+      "slug": "bantuan-warga-emas",
+      "nom": "Bantuan Warga Emas — Allocation personnes agees",
+      "description_en": "Elderly assistance for low-income Malaysians aged 60+: MYR 500/month (2025). Target: elderly not receiving EPF pension or civil service pension, with household income below eKasih threshold. Distributed monthly via JKM. Source: jkm.gov.my / Bajet 2025.",
+      "categorie": "vieillesse",
+      "organisme": "Jabatan Kebajikan Masyarakat (JKM) / Kementerian Pembangunan Wanita",
+      "montant_min_myr": 50000,
+      "montant_max_myr": 50000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.jkm.gov.my",
+      "source_url": "https://www.jkm.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "age_60_plus",
+        "low_income_ekasih",
+        "no_epf_pension"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-peka-b40",
+      "slug": "program-peka-b40",
+      "nom": "Program PeKa B40 — Depistage sante",
+      "description_en": "Health screening program for B40 (bottom 40%) households with gross monthly income < MYR 4,000. Free cancer screening, non-communicable disease screening, mental health assessment. Also includes medical device assistance (e.g. hearing aids up to MYR 1,000, glasses MYR 300, prosthetics). Source: pekab40.com.my / moh.gov.my.",
+      "categorie": "sante",
+      "organisme": "Yayasan Penjagaan Kesihatan Rakyat (YPHKR) / MOH",
+      "montant_min_myr": 0,
+      "montant_max_myr": 100000,
+      "periodicite": "annuel",
+      "url_info": "https://www.pekab40.com.my",
+      "source_url": "https://www.moh.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "household_income_below_400000sen",
+        "age_40_plus"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-mysiswa",
+      "slug": "biasiswa-mysiswa",
+      "nom": "Biasiswa MySiswa — Bourse etudiants",
+      "description_en": "MySiswa scholarship for Malaysian students in public universities: up to MYR 5,000/year for eligible low-income students. Covers tuition and living expenses supplement. For students from households with income < MYR 4,000/month. Administered by Ministry of Higher Education. Source: mohe.gov.my.",
+      "categorie": "jeunesse_etudes",
+      "organisme": "Kementerian Pengajian Tinggi (MOHE)",
+      "montant_min_myr": 100000,
+      "montant_max_myr": 500000,
+      "periodicite": "annuel",
+      "url_info": "https://www.mohe.gov.my",
+      "source_url": "https://www.mohe.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "enrolled_public_university",
+        "household_income_below_400000sen",
+        "academic_merit_required"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-ppr",
+      "slug": "program-perumahan-rakyat",
+      "nom": "Program Perumahan Rakyat (PPR) — Logement social",
+      "description_en": "People's Housing Programme (PPR): subsidized rental housing for urban poor. Monthly rent MYR 124-250/month for 700-900 sqft apartments. For households with monthly income < MYR 2,500. Over 100,000 units in Klang Valley. Applied through JKM/KPKT. Source: kpkt.gov.my.",
+      "categorie": "logement",
+      "organisme": "Kementerian Perumahan dan Kerajaan Tempatan (KPKT) / JKM",
+      "montant_min_myr": 12400,
+      "montant_max_myr": 25000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kpkt.gov.my",
+      "source_url": "https://www.kpkt.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "household_income_below_250000sen",
+        "no_owned_property",
+        "urban_area_registration"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-isinar",
+      "slug": "epf-i-sinar",
+      "nom": "EPF i-Sinar — Retrait EPF en cas de difficulte",
+      "description_en": "EPF i-Sinar allows EPF members facing financial hardship to withdraw from Account 1 (up to MYR 6,000 lump sum or MYR 500/month for 12 months). For registered contributors with Account 1 savings > MYR 1,000. Reactivated during economic hardship periods. Also: i-Citra, i-Lestari for specific categories. Source: kwsp.gov.my.",
+      "categorie": "revenus_emploi",
+      "organisme": "KWSP / EPF",
+      "montant_min_myr": 50000,
+      "montant_max_myr": 600000,
+      "periodicite": "unique",
+      "url_info": "https://www.kwsp.gov.my",
+      "source_url": "https://www.kwsp.gov.my",
+      "eligibility_criteria": [
+        "epf_member",
+        "financial_hardship",
+        "account1_balance_above_100000sen"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "my-bantuan-oku",
+      "slug": "bantuan-orang-kurang-upaya",
+      "nom": "Bantuan OKU (Orang Kurang Upaya) — Allocation handicap",
+      "description_en": "Monthly social assistance for registered persons with disabilities (OKU card holders): MYR 350/month (JKM basic). Additional SOCSO invalidity pension if covered. EPF i-Citra special withdrawal available. JKM also provides assistive devices (wheelchairs, prosthetics up to MYR 5,000). Source: jkm.gov.my / dep.gov.my.",
+      "categorie": "handicap_invalidite",
+      "organisme": "JKM / PERKESO / Jabatan OKU",
+      "montant_min_myr": 35000,
+      "montant_max_myr": 50000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.jkm.gov.my",
+      "source_url": "https://www.jkm.gov.my",
+      "eligibility_criteria": [
+        "malaysian_citizen",
+        "registered_oku_card",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}
