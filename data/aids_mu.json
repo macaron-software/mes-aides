@@ -1,0 +1,198 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "MU",
+  "name": "Maurice",
+  "name_local": "Mauritius",
+  "language": "en",
+  "currency": "MUR",
+  "welfare_model": "Universal social protection + contributory NPF",
+  "sources": [
+    "https://socialsecurity.govmu.org",
+    "https://npf.intnet.mu"
+  ],
+  "aids": [
+    {
+      "id": "mu-basic-retirement-pension",
+      "slug": "basic-retirement-pension",
+      "nom": "Basic Retirement Pension (60+)",
+      "description_en": "Universal non-contributory pension of 6,500 MUR/month for all Mauritian citizens aged 60 and above. No means test. Administered by Ministry of Social Integration and Social Security. Source: socialsecurity.govmu.org.",
+      "categorie": "retraite",
+      "organisme": "Ministry of Social Integration and Social Security",
+      "montant_min_mur": 6500,
+      "montant_max_mur": 6500,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "age_60_plus",
+        "mauritian_citizen"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-basic-invalids-pension",
+      "slug": "basic-invalids-pension",
+      "nom": "Basic Invalid's Pension",
+      "description_en": "Universal disability benefit of 6,500 MUR/month for Mauritians with permanent disability who are unable to work. No contributory requirement. Administered by Ministry of Social Security. Source: socialsecurity.govmu.org.",
+      "categorie": "handicap",
+      "organisme": "Ministry of Social Integration and Social Security",
+      "montant_min_mur": 6500,
+      "montant_max_mur": 6500,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "disabled",
+        "unable_to_work"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-social-aid",
+      "slug": "social-aid-msis",
+      "nom": "Social Aid (Aide Sociale)",
+      "description_en": "Means-tested monthly benefit of 3,300 MUR for households in need who cannot support themselves. No contributory requirement. Income and assets tested. Source: socialsecurity.govmu.org.",
+      "categorie": "pauvrete",
+      "organisme": "Ministry of Social Integration and Social Security",
+      "montant_min_mur": 3300,
+      "montant_max_mur": 3300,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "income_below_threshold",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-unemployment-hardship",
+      "slug": "unemployment-hardship-relief",
+      "nom": "Unemployment Hardship Relief",
+      "description_en": "Monthly hardship relief of 5,000 MUR for unemployed persons who are registered at Employment Service and actively seeking work. Administered by Ministry of Labour. Source: socialsecurity.govmu.org.",
+      "categorie": "chomage",
+      "organisme": "Ministry of Social Integration / Ministry of Labour",
+      "montant_min_mur": 5000,
+      "montant_max_mur": 5000,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "unemployed",
+        "registered_employment_service"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-npf-pension",
+      "slug": "npf-contributory-pension",
+      "nom": "NPF Pension (Contributory)",
+      "description_en": "Contributory pension through the National Pensions Fund (NPF). Employer and employee contributions (6% employee + 9% employer). Retirement at 60. Benefit varies based on contributions. Source: npf.intnet.mu.",
+      "categorie": "retraite",
+      "organisme": "NPF — National Pensions Fund",
+      "montant_min_mur": 3000,
+      "montant_max_mur": 15000,
+      "periodicite": "mensuel",
+      "url_info": "https://npf.intnet.mu",
+      "source_url": "https://npf.intnet.mu",
+      "eligibility_criteria": [
+        "residence_mu",
+        "age_60_plus",
+        "contributions_npf"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-orphans-pension",
+      "slug": "orphans-pension",
+      "nom": "Orphan's Pension",
+      "description_en": "Monthly pension of 3,600 MUR per child for orphaned children who have lost one or both parents. Paid until age 15 (or 23 if in education). Source: socialsecurity.govmu.org.",
+      "categorie": "famille",
+      "organisme": "Ministry of Social Integration and Social Security",
+      "montant_min_mur": 3600,
+      "montant_max_mur": 3600,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "orphan",
+        "child_under_15"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-child-allowance",
+      "slug": "child-allowance-disability",
+      "nom": "Child Allowance (Disabled Child)",
+      "description_en": "Monthly allowance of 3,300 MUR per disabled child for families caring for a child with disability (under 15). Source: socialsecurity.govmu.org.",
+      "categorie": "famille",
+      "organisme": "Ministry of Social Integration and Social Security",
+      "montant_min_mur": 3300,
+      "montant_max_mur": 3300,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "disabled_child",
+        "child_under_15"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-rent-assistance",
+      "slug": "rent-assistance",
+      "nom": "Rent Assistance",
+      "description_en": "Monthly rent assistance of 500–1,000 MUR for low-income households without permanent housing. Income-tested. Source: socialsecurity.govmu.org.",
+      "categorie": "logement",
+      "organisme": "Ministry of Social Integration and Social Security",
+      "montant_min_mur": 500,
+      "montant_max_mur": 1000,
+      "periodicite": "mensuel",
+      "url_info": "https://socialsecurity.govmu.org",
+      "source_url": "https://socialsecurity.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "income_below_threshold",
+        "rented",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "mu-free-education",
+      "slug": "free-education-programme",
+      "nom": "Free Education Programme",
+      "description_en": "Free education including school fees, uniforms, textbooks and transport for all students in primary and secondary public schools. Universal, no means test. Source: govmu.org.",
+      "categorie": "jeunesse",
+      "organisme": "Ministry of Education",
+      "montant_min_mur": 0,
+      "montant_max_mur": 3000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.govmu.org",
+      "source_url": "https://www.govmu.org",
+      "eligibility_criteria": [
+        "residence_mu",
+        "student",
+        "enrolled_public_school"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

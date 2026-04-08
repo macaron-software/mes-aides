@@ -1,0 +1,217 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "EC",
+  "name": "Équateur",
+  "name_local": "Ecuador",
+  "language": "es",
+  "currency": "USD",
+  "welfare_model": "Contributory + non-contributory (dollarized)",
+  "sources": [
+    "https://www.iess.gob.ec",
+    "https://www.mies.gob.ec",
+    "https://www.biess.fin.ec"
+  ],
+  "aids": [
+    {
+      "id": "ec-pension-vejez-iess",
+      "slug": "pension-vejez-iess",
+      "nom": "Pensión por Vejez (IESS)",
+      "description_en": "Contributory old-age pension via IESS (Instituto Ecuatoriano de Seguridad Social). Minimum pension = 1 minimum wage = 550 USD/month in 2025. Age 65 (men/women) with 360 months of contributions. Source: iess.gob.ec.",
+      "categorie": "retraite",
+      "organisme": "IESS — Instituto Ecuatoriano de Seguridad Social",
+      "montant_min_usd": 550,
+      "montant_max_usd": 550,
+      "periodicite": "mensuel",
+      "url_info": "https://www.iess.gob.ec",
+      "source_url": "https://www.iess.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "age_65_plus",
+        "contributions_360_months"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-bono-desarrollo-humano",
+      "slug": "bono-desarrollo-humano-mies",
+      "nom": "Bono de Desarrollo Humano (BDH)",
+      "description_en": "Non-contributory conditional cash transfer of 50 USD/month for extreme-poor households (lowest quintile SISBÉN). Conditionalities: school attendance and health checkups for children. Administered by MIES. Source: mies.gob.ec.",
+      "categorie": "pauvrete",
+      "organisme": "MIES — Ministerio de Inclusión Económica y Social",
+      "montant_min_usd": 50,
+      "montant_max_usd": 50,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mies.gob.ec",
+      "source_url": "https://www.mies.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "extreme_poverty_sisben",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-mis-mejores-anos",
+      "slug": "pension-adultos-mayores-mies",
+      "nom": "Pensión Mis Mejores Años (65+ sin pensión)",
+      "description_en": "Non-contributory pension of 50 USD/month for adults aged 65+ who have no contributory pension and are in poverty. Administered by MIES. Source: mies.gob.ec.",
+      "categorie": "retraite",
+      "organisme": "MIES — Ministerio de Inclusión Económica y Social",
+      "montant_min_usd": 50,
+      "montant_max_usd": 50,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mies.gob.ec",
+      "source_url": "https://www.mies.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "age_65_plus",
+        "no_pension",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-pension-discapacidad",
+      "slug": "pension-discapacidad-mies",
+      "nom": "Pensión por Discapacidad (MIES)",
+      "description_en": "Non-contributory disability benefit of 50 USD/month for persons with disability (≥40%) in poverty with no other pension. Administered by MIES. Source: mies.gob.ec.",
+      "categorie": "handicap",
+      "organisme": "MIES — Ministerio de Inclusión Económica y Social",
+      "montant_min_usd": 50,
+      "montant_max_usd": 50,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mies.gob.ec",
+      "source_url": "https://www.mies.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "disabled",
+        "income_below_threshold",
+        "no_pension"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-seguro-desempleo-iess",
+      "slug": "seguro-desempleo-iess",
+      "nom": "Seguro de Desempleo (IESS)",
+      "description_en": "70% of last wage for 5 months for formal workers who lose employment through no fault of their own. Requires min. 6 months of IESS contributions. Source: iess.gob.ec.",
+      "categorie": "chomage",
+      "organisme": "IESS — Instituto Ecuatoriano de Seguridad Social",
+      "montant_min_usd": 280,
+      "montant_max_usd": 385,
+      "periodicite": "mensuel",
+      "url_info": "https://www.iess.gob.ec",
+      "source_url": "https://www.iess.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "unemployed",
+        "contributions_6_months_iess"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-subsidio-gas",
+      "slug": "subsidio-gas-cocina",
+      "nom": "Subsidio Gas de Uso Doméstico",
+      "description_en": "Subsidized domestic cooking gas at 1.60 USD per 15 kg cylinder (vs. approx. 5 USD market price). Universal for all households. Source: Ministerio de Energía Ecuador.",
+      "categorie": "logement",
+      "organisme": "Ministerio de Energía y Minas",
+      "montant_min_usd": 2,
+      "montant_max_usd": 3,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mies.gob.ec",
+      "source_url": "https://www.mies.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-miduvi-vivienda",
+      "slug": "bono-vivienda-miduvi",
+      "nom": "Bono de Vivienda (MIDUVI)",
+      "description_en": "One-time housing subsidy of 6,000–12,000 USD for purchase, construction or improvement of first home for low-income families. Administered by MIDUVI. Source: miduvi.gob.ec.",
+      "categorie": "logement",
+      "organisme": "MIDUVI — Ministerio de Desarrollo Urbano y Vivienda",
+      "montant_min_usd": 6000,
+      "montant_max_usd": 12000,
+      "periodicite": "unique",
+      "url_info": "https://www.miduvi.gob.ec",
+      "source_url": "https://www.miduvi.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "income_below_threshold",
+        "first_home",
+        "not_owner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-beca-progresar",
+      "slug": "beca-progresar-educacion",
+      "nom": "Beca Progresar (Educación Superior)",
+      "description_en": "Monthly scholarship of 50 USD for students from low-income households enrolled in higher education (universities/technical institutes). Source: Ministerio de Educación Ecuador.",
+      "categorie": "jeunesse",
+      "organisme": "Ministerio de Educación / SENESCYT",
+      "montant_min_usd": 50,
+      "montant_max_usd": 50,
+      "periodicite": "mensuel",
+      "url_info": "https://www.educacion.gob.ec",
+      "source_url": "https://www.educacion.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "student",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-seguro-salud-iess",
+      "slug": "seguro-salud-iess",
+      "nom": "Seguro de Salud (IESS)",
+      "description_en": "Healthcare coverage for IESS affiliates and their dependents including hospitalisation, consultations and medications. Non-affiliates covered by MSP public network. Source: iess.gob.ec.",
+      "categorie": "sante",
+      "organisme": "IESS / MSP",
+      "montant_min_usd": 0,
+      "montant_max_usd": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.iess.gob.ec",
+      "source_url": "https://www.iess.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "ec-credito-desarrollo-humano",
+      "slug": "credito-desarrollo-humano",
+      "nom": "Crédito de Desarrollo Humano (CDH)",
+      "description_en": "Lump-sum advance on Bono de Desarrollo Humano for beneficiaries wishing to start a micro-enterprise. Amount = 12 x monthly BDH = 600 USD one-time. Managed by BanEcuador. Source: mies.gob.ec.",
+      "categorie": "travail",
+      "organisme": "BanEcuador / MIES",
+      "montant_min_usd": 600,
+      "montant_max_usd": 600,
+      "periodicite": "unique",
+      "url_info": "https://www.mies.gob.ec",
+      "source_url": "https://www.mies.gob.ec",
+      "eligibility_criteria": [
+        "residence_ec",
+        "bdh_beneficiary",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

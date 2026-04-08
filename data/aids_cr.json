@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "CR",
+  "name": "Costa Rica",
+  "name_local": "Costa Rica",
+  "language": "es",
+  "currency": "CRC",
+  "welfare_model": "Universal CCSS + targeted IMAS/FODESAF",
+  "sources": [
+    "https://www.ccss.sa.cr",
+    "https://www.imas.go.cr",
+    "https://www.fodesaf.go.cr"
+  ],
+  "aids": [
+    {
+      "id": "cr-pension-ivm-ccss",
+      "slug": "pension-ivm-ccss",
+      "nom": "Pensión IVM (CCSS — Vejez)",
+      "description_en": "Contributory old-age pension under IVM (Invalidez, Vejez y Muerte) regime of CCSS. Minimum pension: 184,520 CRC/month in 2025. Age 65 (men) / 63 (women) with 300 months of contributions. Source: ccss.sa.cr.",
+      "categorie": "retraite",
+      "organisme": "CCSS — Caja Costarricense del Seguro Social",
+      "montant_min_crc": 184520,
+      "montant_max_crc": 184520,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ccss.sa.cr",
+      "source_url": "https://www.ccss.sa.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "age_65_plus",
+        "contributions_300_months"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-fodesaf",
+      "slug": "fodesaf-transferencia-selectiva",
+      "nom": "FODESAF — Transferencia Selectiva",
+      "description_en": "Means-tested conditional cash transfer of 40,000–90,000 CRC/month for extreme-poor households via FODESAF. Multiple programs channel this funding (IMAS, PANI). Source: fodesaf.go.cr.",
+      "categorie": "pauvrete",
+      "organisme": "FODESAF — Fondo de Desarrollo Social y Asignaciones Familiares",
+      "montant_min_crc": 40000,
+      "montant_max_crc": 90000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.fodesaf.go.cr",
+      "source_url": "https://www.fodesaf.go.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "extreme_poverty",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-avancemos",
+      "slug": "imas-avancemos-transfer",
+      "nom": "IMAS Avancemos (Educación Secundaria)",
+      "description_en": "Conditional cash transfer of 21,000–125,000 CRC/month for secondary school students from poor families. Amount varies by school level. Conditionality: school attendance. Source: imas.go.cr.",
+      "categorie": "jeunesse",
+      "organisme": "IMAS — Instituto Mixto de Ayuda Social",
+      "montant_min_crc": 21000,
+      "montant_max_crc": 125000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.imas.go.cr",
+      "source_url": "https://www.imas.go.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "student",
+        "secondary_school",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-bono-vivienda-banhvi",
+      "slug": "bono-vivienda-banhvi",
+      "nom": "Bono Vivienda (BANHVI)",
+      "description_en": "One-time housing subsidy of 14–18 million CRC for purchase, construction or improvement of first home for low-income families. Administered by BANHVI (Banco Hipotecario de la Vivienda). Source: banhvi.fi.cr.",
+      "categorie": "logement",
+      "organisme": "BANHVI — Banco Hipotecario de la Vivienda",
+      "montant_min_crc": 14000000,
+      "montant_max_crc": 18000000,
+      "periodicite": "unique",
+      "url_info": "https://www.banhvi.fi.cr",
+      "source_url": "https://www.banhvi.fi.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "income_below_threshold",
+        "first_home",
+        "not_owner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-desempleo-ccss",
+      "slug": "subsidio-desempleo-ccss",
+      "nom": "Subsidio Desempleo (CCSS)",
+      "description_en": "Unemployment benefit of 50% of last wage for 3–6 months for formal workers covered by CCSS. Requires min. 3 months of contributions. Managed via FODESAF/CCSS. Source: ccss.sa.cr.",
+      "categorie": "chomage",
+      "organisme": "CCSS / FODESAF",
+      "montant_min_crc": 185000,
+      "montant_max_crc": 185000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ccss.sa.cr",
+      "source_url": "https://www.ccss.sa.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "unemployed",
+        "contributions_ccss"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-pension-invalidez-ccss",
+      "slug": "pension-invalidez-ccss",
+      "nom": "Pensión Invalidez IVM (CCSS)",
+      "description_en": "Disability pension of approx. 60% of average insured salary for workers with permanent disability under CCSS IVM regime. Requires medical certificate and min. 12 months of contributions. Source: ccss.sa.cr.",
+      "categorie": "handicap",
+      "organisme": "CCSS — Caja Costarricense del Seguro Social",
+      "montant_min_crc": 110000,
+      "montant_max_crc": 184520,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ccss.sa.cr",
+      "source_url": "https://www.ccss.sa.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "disabled",
+        "contributions_ccss"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-seguro-salud-ccss",
+      "slug": "seguro-salud-ccss",
+      "nom": "Seguro de Salud (CCSS Universal)",
+      "description_en": "Universal healthcare coverage via CCSS SEM (Seguro de Enfermedad y Maternidad). Compulsory for formal workers; voluntary for self-employed and informal. Public hospitals and EBAIS clinics free for SEM subscribers. Source: ccss.sa.cr.",
+      "categorie": "sante",
+      "organisme": "CCSS — Caja Costarricense del Seguro Social",
+      "montant_min_crc": 0,
+      "montant_max_crc": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ccss.sa.cr",
+      "source_url": "https://www.ccss.sa.cr",
+      "eligibility_criteria": [
+        "residence_cr"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cr-becas-fonabe",
+      "slug": "becas-fonabe-universidad",
+      "nom": "Becas FONABE (Universidad)",
+      "description_en": "University scholarship of 40,000–90,000 CRC/month for students from low-income households. Renewable annually. Administered by FONABE (Fondo Nacional de Becas). Source: fonabe.go.cr.",
+      "categorie": "jeunesse",
+      "organisme": "FONABE — Fondo Nacional de Becas",
+      "montant_min_crc": 40000,
+      "montant_max_crc": 90000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.fonabe.go.cr",
+      "source_url": "https://www.fonabe.go.cr",
+      "eligibility_criteria": [
+        "residence_cr",
+        "student",
+        "university",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

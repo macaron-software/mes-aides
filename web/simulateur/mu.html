@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/theme-init.js"></script>
+  <title>Mauritius Social Benefits Simulator 2025 | Basic Pension, NPF, Social Aid | Mes Aides</title>
+  <meta name="description" content="Mauritius social benefits simulator 2025: Basic Retirement Pension MUR 6,500/month, Social Aid MUR 3,300/month, NPF pension. Free eligibility check.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aides.macaron-software.com/simulateur/mu.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mauritius Social Benefits Simulator 2025 | Basic Pension, NPF, Social Aid | Mes Aides">
+  <meta property="og:description" content="Mauritius social benefits simulator 2025: Basic Retirement Pension MUR 6,500/month, Social Aid MUR 3,300/month, NPF pension. Free eligibility check.">
+  <meta property="og:url" content="https://aides.macaron-software.com/simulateur/mu.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://aides.macaron-software.com/"},
+          {"@type":"ListItem","position":2,"name":"World","item":"https://aides.macaron-software.com/simulateur/monde.html"},
+          {"@type":"ListItem","position":3,"name":"Mauritius","item":"https://aides.macaron-software.com/simulateur/mu.html"}
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Mauritius Social Benefits Simulator 2025 | Basic Pension, NPF, Social Aid | Mes Aides",
+        "url": "https://aides.macaron-software.com/simulateur/mu.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type":"Offer","price":"0","priceCurrency":"MUR"},
+        "description": "Mauritius social benefits simulator 2025: Basic Retirement Pension MUR 6,500/month, Social Aid MUR 3,300/month, NPF pension. Free eligibility check."
+      }
+    ]
+  }
+  </script>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="fr" href="https://aides.macaron-software.com/simulateur/mu.html?lang=fr">
+  <link rel="alternate" hreflang="en" href="https://aides.macaron-software.com/simulateur/mu.html?lang=en">
+  <link rel="alternate" hreflang="mfe" href="https://aides.macaron-software.com/simulateur/mu.html?lang=mfe">
+  <link rel="alternate" hreflang="zh" href="https://aides.macaron-software.com/simulateur/cn.html?lang=zh">
+  <link rel="alternate" hreflang="de" href="https://aides.macaron-software.com/simulateur/de.html?lang=de">
+  <link rel="alternate" hreflang="ar" href="https://aides.macaron-software.com/simulateur/mu.html?lang=ar">
+  <link rel="alternate" hreflang="ta" href="https://aides.macaron-software.com/simulateur/mu.html?lang=ta">
+  <link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/mu.html">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .sim-shell { min-height: 100dvh; display: flex; flex-direction: column; background: var(--c-bg); }
+    .sim-header { display: flex; align-items: center; gap: var(--sp-3, 12px); padding: var(--sp-3, 12px) var(--sp-4, 16px); background: var(--c-surface, #fff); border-bottom: 1px solid var(--c-border, #e5e7eb); position: sticky; top: 0; z-index: 100; }
+    .sim-logo { display: flex; align-items: center; gap: var(--sp-2); text-decoration: none; color: #EA2839; font-weight: 700; font-size: var(--fs-lg, 1.125rem); }
+    .sim-country-badge { font-size: 1.25rem; line-height: 1; }
+    .sim-progress-bar { flex: 1; max-width: 320px; height: 6px; background: var(--c-border); border-radius: var(--r-full, 9999px); overflow: hidden; }
+    .sim-progress-fill { height: 100%; background: #EA2839; border-radius: var(--r-full, 9999px); transition: width 400ms ease; width: 16.67%; }
+    .sim-step-label { font-size: var(--fs-xs); color: var(--c-muted); white-space: nowrap; }
+    .sim-tools { margin-left: auto; display: flex; gap: var(--sp-2); }
+    .sim-body { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: var(--sp-6) var(--sp-4); }
+    .sim-card { background: var(--c-surface, #fff); border-radius: var(--r-xl, 24px); box-shadow: 0 4px 24px rgba(0,0,0,.08); padding: var(--sp-8) var(--sp-6); width: 100%; max-width: 560px; }
+    .sim-step { display: none; }
+    .sim-step.active { display: block; }
+    .sim-step-heading { font-size: var(--fs-xl, 1.25rem); font-weight: 800; color: var(--c-text); margin: 0 0 var(--sp-2); }
+    .sim-step-sub { font-size: var(--fs-sm); color: var(--c-muted); margin: 0 0 var(--sp-6); line-height: 1.5; }
+    .question-group { margin-bottom: var(--sp-6, 24px); }
+    .question-label { display: block; font-size: var(--fs-base); font-weight: 600; color: var(--c-text); margin-bottom: var(--sp-3, 12px); }
+    .question-hint { font-size: var(--fs-sm); color: var(--c-muted); margin-top: var(--sp-1, 4px); }
+    .input-field { width: 100%; padding: var(--sp-3) var(--sp-4); border: 2px solid var(--c-border); border-radius: var(--r-md, 12px); font-size: var(--fs-base); background: var(--c-bg); color: var(--c-text); outline: none; transition: border-color .2s; }
+    .input-field:focus { border-color: #EA2839; }
+    .input-suffix { position: relative; }
+    .input-suffix .input-field { padding-right: 80px; }
+    .input-suffix__label { position: absolute; right: var(--sp-3); top: 50%; transform: translateY(-50%); font-size: var(--fs-sm); color: var(--c-muted); pointer-events: none; }
+    .choice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--sp-3); }
+    .choice-btn { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); padding: var(--sp-4) var(--sp-3); border: 2px solid var(--c-border); border-radius: var(--r-lg, 16px); background: var(--c-bg); color: var(--c-text); font-size: var(--fs-sm); font-weight: 500; cursor: pointer; transition: border-color .2s, background .2s; min-height: 44px; text-align: center; }
+    .choice-btn:hover { border-color: #EA2839; background: color-mix(in srgb, #EA2839 6%, transparent); }
+    .choice-btn.selected { border-color: #EA2839; background: color-mix(in srgb, #EA2839 10%, transparent); color: #EA2839; font-weight: 700; }
+    .sim-nav { display: flex; gap: var(--sp-3); justify-content: space-between; margin-top: var(--sp-6); }
+    .btn-next { display: flex; align-items: center; gap: var(--sp-2); padding: var(--sp-3) var(--sp-5); background: #EA2839; color: #fff; border: none; border-radius: 24px 28px 26px 22px; font-size: var(--fs-base); font-weight: 700; cursor: pointer; min-height: 44px; transition: opacity .2s; }
+    .btn-next:hover { opacity: .88; }
+    .btn-back { display: flex; align-items: center; gap: var(--sp-2); padding: var(--sp-3) var(--sp-4); background: none; border: 2px solid var(--c-border); border-radius: 22px 24px 28px 20px; font-size: var(--fs-sm); color: var(--c-muted); cursor: pointer; min-height: 44px; transition: border-color .2s; }
+    .btn-back:hover { border-color: #EA2839; color: #EA2839; }
+    .btn-back:disabled { opacity: .4; cursor: not-allowed; }
+    .results-header { margin-bottom: var(--sp-6); }
+    .results-count { font-size: var(--fs-sm); color: var(--c-muted); margin-top: var(--sp-1); }
+    .results-actions { display: flex; gap: var(--sp-3); margin-top: var(--sp-6); flex-wrap: wrap; }
+    .btn-share { display: flex; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-4); background: none; border: 2px solid var(--c-border); border-radius: var(--r-full); font-size: var(--fs-sm); color: var(--c-muted); cursor: pointer; min-height: 44px; }
+    .btn-restart { display: flex; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-4); background: #EA2839; color: #fff; border: none; border-radius: var(--r-full); font-size: var(--fs-sm); font-weight: 600; cursor: pointer; min-height: 44px; }
+    .aid-card { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r-lg, 16px); padding: var(--sp-4) var(--sp-5); margin-bottom: var(--sp-3); }
+    .aid-card__amount { font-size: 1.25rem; font-weight: 800; color: #EA2839; margin-bottom: var(--sp-1); }
+    .aid-card__amount small { font-size: .7em; font-weight: 400; color: var(--c-muted); margin-left: 4px; }
+    .aid-card__name { font-size: var(--fs-base); font-weight: 700; margin: 0 0 var(--sp-1); }
+    .aid-card__org { font-size: var(--fs-xs); color: var(--c-muted); margin-bottom: var(--sp-2); }
+    .aid-card__period { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: .7rem; background: color-mix(in srgb, #EA2839 10%, transparent); color: #EA2839; font-weight: 600; margin-bottom: var(--sp-2); }
+    .aid-card__desc { font-size: var(--fs-sm); color: var(--c-muted); margin: var(--sp-2) 0; line-height: 1.5; }
+    .aid-card__link { font-size: var(--fs-sm); color: #EA2839; text-decoration: none; font-weight: 600; }
+    .share-toast { position: fixed; bottom: var(--sp-6); left: 50%; transform: translateX(-50%) translateY(120%); background: var(--c-text); color: var(--c-bg); padding: var(--sp-3) var(--sp-5); border-radius: var(--r-full); font-size: var(--fs-sm); font-weight: 600; transition: transform .3s ease; z-index: 200; pointer-events: none; }
+    .share-toast.visible { transform: translateX(-50%) translateY(0); }
+    .empty-results { text-align: center; padding: var(--sp-10) 0; color: var(--c-muted); }
+    @media print { .sim-header, .sim-nav, .results-actions, .share-toast { display: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="sim-shell">
+    <!-- Header -->
+    <header class="sim-header" role="banner">
+      <a href="/" class="sim-logo" aria-label="Mes Aides — Home">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Mes Aides</span>
+      </a>
+      <span class="sim-country-badge" aria-hidden="true">&#127474;&#127482;</span>
+      <div class="sim-progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" aria-label="Simulation progress" id="simProgressBar">
+        <div class="sim-progress-fill" id="simProgressFill"></div>
+      </div>
+      <span class="sim-step-label" id="stepCounter">Step 1 / 6</span>
+      <div class="sim-tools">
+        <button id="btnTheme" aria-label="Toggle theme" style="background:none;border:none;cursor:pointer;padding:var(--sp-2);border-radius:var(--r-md);min-height:44px;min-width:44px;color:var(--c-muted)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="sim-body" id="main-content">
+      <div class="sim-card">
+
+        <!-- Step 1: Income -->
+        <div class="sim-step active" id="step-1" role="group" aria-labelledby="step1-heading">
+          <h1 class="sim-step-heading" id="step1-heading">Sus ingresos mensuales</h1>
+          <p class="sim-step-sub">Ingrese su ingreso mensual neto en MUR (Mauritian rupees).</p>
+          <div class="question-group">
+            <label class="question-label" for="inputIncome">Ingreso mensual neto</label>
+            <div class="input-suffix">
+              <input type="number" id="inputIncome" name="income" min="0" max="9999999999" step="100"
+                placeholder="e.g. 11000" class="input-field" inputmode="numeric" autocomplete="off"
+                data-testid="simulator-step-income" aria-describedby="incomeHint">
+              <span class="input-suffix__label" aria-hidden="true">MUR (Rs)</span>
+            </div>
+            <p class="question-hint" id="incomeHint">Monthly net income in MUR. Your data stays in your browser.</p>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack1" disabled aria-label="Previous step">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Volver</span>
+            </button>
+            <button class="btn-next" id="btnNext1" data-testid="simulator-btn-next">
+              <span>Siguiente</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Region -->
+        <div class="sim-step" id="step-2" role="group" aria-labelledby="step2-heading">
+          <h2 class="sim-step-heading" id="step2-heading">District</h2>
+          <p class="sim-step-sub">Select your district &mdash; some benefits may vary by region.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="District" id="stateGroup">
+              <button class="choice-btn" data-field="state" data-value="PL" role="radio" aria-checked="false" data-testid="simulator-state-pl">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Port Louis</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="BW" role="radio" aria-checked="false" data-testid="simulator-state-bw">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Black River</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="FL" role="radio" aria-checked="false" data-testid="simulator-state-fl">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Flacq</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="GP" role="radio" aria-checked="false" data-testid="simulator-state-gp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Grand Port</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="Other" role="radio" aria-checked="false" data-testid="simulator-state-other">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Other district &#127474;&#127482;</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack2" aria-label="Previous step">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Volver</span>
+            </button>
+            <button class="btn-next" id="btnNext2" data-testid="simulator-btn-next">
+              <span>Siguiente</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Age -->
+        <div class="sim-step" id="step-3" role="group" aria-labelledby="step3-heading">
+          <h2 class="sim-step-heading" id="step3-heading">Su edad</h2>
+          <p class="sim-step-sub">Algunos beneficios tienen umbrales de edad (jubilación, bonos adultos mayores, becas).</p>
+          <div class="question-group">
+            <label class="question-label" for="inputAge">Edad (años)</label>
+            <input type="number" id="inputAge" name="age" min="15" max="99" step="1"
+              placeholder="ej. 35" class="input-field" inputmode="numeric" autocomplete="off"
+              data-testid="simulator-step-age" style="max-width:160px">
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack3" aria-label="Previous step">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Volver</span>
+            </button>
+            <button class="btn-next" id="btnNext3" data-testid="simulator-btn-next">
+              <span>Siguiente</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Family -->
+        <div class="sim-step" id="step-4" role="group" aria-labelledby="step4-heading">
+          <h2 class="sim-step-heading" id="step4-heading">Situación familiar</h2>
+          <p class="sim-step-sub">Seleccione la opción que mejor describe su hogar.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="Situación familiar" id="situationGroup">
+              <button class="choice-btn" data-field="situation" data-value="single" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+                <span>Soltero/a</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="couple" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/></svg>
+                <span>Pareja</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="family" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Familia con hijos</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="single_parent" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4"/><circle cx="18" cy="17" r="3"/><path d="M18 14v3l1.5 1.5"/></svg>
+                <span>Progenitor/a solo/a</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="senior" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                <span>Mayor (60+)</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="student" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>Estudiante</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack4" aria-label="Previous step">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Volver</span>
+            </button>
+            <button class="btn-next" id="btnNext4" data-testid="simulator-btn-next">
+              <span>Siguiente</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5: Employment -->
+        <div class="sim-step" id="step-5" role="group" aria-labelledby="step5-heading">
+          <h2 class="sim-step-heading" id="step5-heading">Situación laboral</h2>
+          <p class="sim-step-sub">Su situación laboral determina sus derechos a pensión, desempleo y bonos.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="Situación laboral" id="employmentGroup">
+              <button class="choice-btn" data-field="employment" data-value="employed" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span>Empleado/a (formal)</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="unemployed" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                <span>Desocupado/a</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="self_employed" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                <span>Autónomo/a</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="student" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>Estudiante</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="disabled" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="2.5" r="1.5"/><path d="M9 9h6l-1 7-2-2-2 2-1-7z"/><path d="M7 20a5 5 0 0 0 5 1 5 5 0 0 0 5-1"/></svg>
+                <span>Con discapacidad</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="retired" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                <span>Jubilado/a</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack5" aria-label="Previous step">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Volver</span>
+            </button>
+            <button class="btn-next" id="btnNext5" data-testid="simulator-btn-next">
+              <span>Siguiente</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 6: Housing -->
+        <div class="sim-step" id="step-6" role="group" aria-labelledby="step6-heading">
+          <h2 class="sim-step-heading" id="step6-heading">Situación de vivienda</h2>
+          <p class="sim-step-sub">Último paso. Sus resultados se calcularán inmediatamente.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="Situación de vivienda" id="housingGroup">
+              <button class="choice-btn" data-field="housing" data-value="rented" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Inquilino/a</span>
+              </button>
+              <button class="choice-btn" data-field="housing" data-value="owned" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="18" cy="18" r="3"/><path d="M21 15l-3 3-1.5-1.5"/></svg>
+                <span>Propietario/a</span>
+              </button>
+              <button class="choice-btn" data-field="housing" data-value="social" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="16" rx="2"/><path d="M12 2l-9 9h18L12 2z"/></svg>
+                <span>Vivienda social</span>
+              </button>
+              <button class="choice-btn" data-field="housing" data-value="homeless" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                <span>Sin domicilio fijo</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack6" aria-label="Previous step">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Volver</span>
+            </button>
+            <button class="btn-next" id="btnNext6" data-testid="simulator-btn-next">
+              <span>Ver resultados</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="sim-step" id="step-results" data-testid="simulator-results" role="region" aria-labelledby="resultsHeading" aria-live="polite">
+          <div class="results-header">
+            <h2 class="sim-step-heading" id="resultsHeading">Sus beneficios elegibles</h2>
+            <p class="results-count" id="resultsCount"></p>
+          </div>
+          <div class="results-actions">
+            <button class="btn-share" id="btnShare" aria-label="Compartir resultados">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Compartir
+            </button>
+            <button class="btn-restart" id="btnRestart" aria-label="Reiniciar simulación">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3"/></svg>
+              Reiniciar
+            </button>
+            <a href="/aides/monde/mu.html" style="display:flex;align-items:center;gap:var(--sp-2);padding:var(--sp-2) var(--sp-4);color:#EA2839;text-decoration:none;font-size:var(--fs-sm);font-weight:600">
+              Guide complet Maurice
+            </a>
+          </div>
+          <div id="aidsList" style="margin-top:var(--sp-6)"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <div class="share-toast" id="shareToast" role="status" aria-live="polite">Lien copié !</div>
+  </div>
+
+  <script src="../js/eu-simulator.js"></script>
+  <script>
+  (() => {
+    const CC = 'mu';
+    const TOTAL_STEPS = 6;
+    const SUBDIV_KEY = 'state';
+
+    const profile = { income: null, age: null, situation: null, employment: null, housing: null };
+    profile[SUBDIV_KEY] = null;
+    let currentStep = 1;
+    let sim = null;
+
+    const params = new URLSearchParams(location.search);
+    if (params.get('income'))     profile.income     = Number(params.get('income'));
+    if (params.get('age'))        profile.age        = Number(params.get('age'));
+    if (params.get('situation'))  profile.situation  = params.get('situation');
+    if (params.get('employment')) profile.employment = params.get('employment');
+    if (params.get('housing'))    profile.housing    = params.get('housing');
+    if (params.get(SUBDIV_KEY))   profile[SUBDIV_KEY] = params.get(SUBDIV_KEY);
+
+    if (profile.income) document.getElementById('inputIncome').value = profile.income;
+    if (profile.age)    document.getElementById('inputAge').value    = profile.age;
+
+    function showStep(n) {
+      document.querySelectorAll('.sim-step').forEach(el => el.classList.remove('active'));
+      const target = n === 'results' ? 'step-results' : 'step-' + n;
+      const el = document.getElementById(target);
+      if (el) el.classList.add('active');
+      currentStep = typeof n === 'number' ? n : TOTAL_STEPS + 1;
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateProgress() {
+      const n = Math.min(currentStep, TOTAL_STEPS);
+      const pct = ((n - 1) / TOTAL_STEPS) * 100;
+      document.getElementById('simProgressFill').style.width = pct + '%';
+      document.getElementById('stepCounter').textContent = n + ' / ' + TOTAL_STEPS;
+      const bar = document.getElementById('simProgressBar');
+      bar.setAttribute('aria-valuenow', n);
+    }
+
+    function selectChoice(groupId, value) {
+      const btns = document.querySelectorAll('#' + groupId + ' .choice-btn');
+      btns.forEach(b => {
+        const sel = b.dataset.value === value;
+        b.classList.toggle('selected', sel);
+        b.setAttribute('aria-checked', sel ? 'true' : 'false');
+      });
+    }
+
+    document.querySelectorAll('.choice-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const field = this.dataset.field;
+        const value = this.dataset.value;
+        profile[field] = value;
+        const groupId = this.closest('[role=radiogroup]')?.id;
+        if (groupId) selectChoice(groupId, value);
+      });
+    });
+
+    if (profile[SUBDIV_KEY]) selectChoice(SUBDIV_KEY + 'Group', profile[SUBDIV_KEY]);
+    if (profile.situation)   selectChoice('situationGroup',  profile.situation);
+    if (profile.employment)  selectChoice('employmentGroup', profile.employment);
+    if (profile.housing)     selectChoice('housingGroup',    profile.housing);
+
+    function nextStep(n) {
+      if (n === 1) profile.income = Number(document.getElementById('inputIncome').value) || 0;
+      if (n === 3) profile.age   = Number(document.getElementById('inputAge').value)    || 25;
+      showStep(n + 1 <= TOTAL_STEPS ? n + 1 : 'results');
+      if (n === TOTAL_STEPS) runSimulation();
+    }
+
+    for (let i = 1; i <= TOTAL_STEPS; i++) {
+      const btn = document.getElementById('btnNext' + i);
+      if (btn) btn.addEventListener('click', () => nextStep(i));
+      const back = document.getElementById('btnBack' + i);
+      if (back && i > 1) back.addEventListener('click', () => showStep(i - 1));
+    }
+
+    async function runSimulation() {
+      const aidsList = document.getElementById('aidsList');
+      aidsList.innerHTML = '<p style="color:var(--c-muted);text-align:center;padding:var(--sp-6)">Cargando...</p>';
+      try {
+        if (!sim) {
+          sim = new EUSimulator(CC);
+          await sim.init();
+        }
+        const results = sim.simulate(profile);
+        renderResults(results);
+      } catch (err) {
+        aidsList.innerHTML = '<p style="color:var(--c-danger,#dc2626);text-align:center">Error al cargar datos. Intente nuevamente.</p>';
+        console.error(err);
+      }
+    }
+
+    function renderResults(results) {
+      const aidsList  = document.getElementById('aidsList');
+      const countEl   = document.getElementById('resultsCount');
+      const n = results.length;
+      if (countEl) countEl.textContent = n + ' beneficio' + (n !== 1 ? 's' : '') + ' encontrado' + (n !== 1 ? 's' : '') + ' para su perfil';
+      if (!n) {
+        aidsList.innerHTML = '<div class="empty-results"><p>No se encontraron beneficios para su perfil. Intente modificar sus respuestas.</p></div>';
+        return;
+      }
+      aidsList.innerHTML = results.map(aid => {
+        const fmtAmt = aid._formatted?.amount;
+        const amountHtml = fmtAmt ? '<div class="aid-card__amount" aria-label="Monto">' + fmtAmt + '<small>/mes</small></div>' : '';
+        const orgHtml  = aid.organisme ? '<div class="aid-card__org">' + escHtml(aid.organisme) + '</div>' : '';
+        const descHtml = aid.description_en ? '<p class="aid-card__desc">' + escHtml(aid.description_en) + '</p>' : '';
+        const periodHtml = aid.periodicite ? '<span class="aid-card__period">' + escHtml(aid.periodicite) + '</span>' : '';
+        const linkHtml = aid.url_info
+          ? '<a class="aid-card__link" href="' + escHtml(aid.url_info) + '" target="_blank" rel="noopener">Información oficial</a>'
+          : '';
+        return '<article class="aid-card" data-testid="simulator-aid-item" data-aid-id="' + escHtml(aid.id) + '">'
+          + amountHtml + '<h3 class="aid-card__name">' + escHtml(aid.nom) + '</h3>'
+          + orgHtml + periodHtml + descHtml + linkHtml + '</article>';
+      }).join('');
+    }
+
+    function escHtml(s) {
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    document.getElementById('btnShare').addEventListener('click', function() {
+      const p = new URLSearchParams();
+      if (profile.income)       p.set('income',    profile.income);
+      if (profile.age)          p.set('age',       profile.age);
+      if (profile[SUBDIV_KEY])  p.set(SUBDIV_KEY,  profile[SUBDIV_KEY]);
+      if (profile.situation)    p.set('situation',  profile.situation);
+      if (profile.employment)   p.set('employment', profile.employment);
+      if (profile.housing)      p.set('housing',    profile.housing);
+      const url = location.origin + location.pathname + '?' + p.toString();
+      navigator.clipboard.writeText(url).catch(() => {});
+      const toast = document.getElementById('shareToast');
+      toast.classList.add('visible');
+      setTimeout(() => toast.classList.remove('visible'), 2200);
+    });
+
+    document.getElementById('btnRestart').addEventListener('click', function() {
+      Object.keys(profile).forEach(k => profile[k] = null);
+      document.getElementById('inputIncome').value = '';
+      document.getElementById('inputAge').value = '';
+      document.querySelectorAll('.choice-btn').forEach(b => {
+        b.classList.remove('selected');
+        b.setAttribute('aria-checked','false');
+      });
+      showStep(1);
+    });
+
+    document.getElementById('btnTheme').addEventListener('click', function() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('life-theme', next);
+    });
+
+    if (profile.income && profile.age && profile[SUBDIV_KEY] && profile.situation && profile.employment && profile.housing) {
+      showStep('results');
+      runSimulation();
+    }
+  })();
+  </script>
+</body>
+</html>

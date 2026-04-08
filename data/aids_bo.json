@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "BO",
+  "name": "Bolivie",
+  "name_local": "Bolivia",
+  "language": "es",
+  "currency": "BOB",
+  "welfare_model": "Universal non-contributory + contributory",
+  "sources": [
+    "https://www.segip.gob.bo",
+    "https://www.fundempresa.org.bo",
+    "https://www.bcb.gob.bo"
+  ],
+  "aids": [
+    {
+      "id": "bo-renta-dignidad",
+      "slug": "renta-dignidad-vejez",
+      "nom": "Renta Dignidad (60+)",
+      "description_en": "Universal non-contributory pension of 250 BOB/month (3,000 BOB/year) for all Bolivians aged 60+. No means test. Paid biannually in 1,500 BOB installments. Funded by hydrocarbon royalties (IDH). Source: segip.gob.bo.",
+      "categorie": "retraite",
+      "organisme": "Ministerio de Economía — Renta Dignidad",
+      "montant_min_bob": 250,
+      "montant_max_bob": 250,
+      "periodicite": "mensuel",
+      "url_info": "https://www.segip.gob.bo",
+      "source_url": "https://www.segip.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "age_60_plus",
+        "bolivian_citizen"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-bono-juancito-pinto",
+      "slug": "bono-juancito-pinto-escolar",
+      "nom": "Bono Juancito Pinto (Escolar)",
+      "description_en": "Annual school bonus of 200 BOB per student enrolled in public primary and secondary school (1st–12th grade). Paid once per year to incentivize school attendance. Administered by Ministerio de Educación. Source: minedu.gob.bo.",
+      "categorie": "jeunesse",
+      "organisme": "Ministerio de Educación",
+      "montant_min_bob": 200,
+      "montant_max_bob": 200,
+      "periodicite": "unique",
+      "url_info": "https://www.minedu.gob.bo",
+      "source_url": "https://www.minedu.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "student",
+        "enrolled_public_school"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-bono-juana-azurduy",
+      "slug": "bono-juana-azurduy-maternidad",
+      "nom": "Bono Juana Azurduy (Maternidad)",
+      "description_en": "Maternity and child health conditional cash transfer totaling 1,820 BOB: 4 prenatal check payments (50 BOB each) + 2 postnatal check payments + breastfeeding incentives for children up to 2 years. Administered by Ministerio de Salud. Source: minsalud.gob.bo.",
+      "categorie": "famille",
+      "organisme": "Ministerio de Salud y Deportes",
+      "montant_min_bob": 50,
+      "montant_max_bob": 200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.minsalud.gob.bo",
+      "source_url": "https://www.minsalud.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "pregnant_or_child_under_2",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-pension-solidaria",
+      "slug": "pension-solidaria-aps",
+      "nom": "Pensión Solidaria (AFP/APS)",
+      "description_en": "Supplementary pension for low-income formal workers managed by APS (Autoridad de Pensiones y Seguros). Amount ranges 1,050–2,300 BOB/month depending on contributions and years of service. Source: aps.gob.bo.",
+      "categorie": "retraite",
+      "organisme": "APS — Autoridad de Pensiones y Seguros",
+      "montant_min_bob": 1050,
+      "montant_max_bob": 2300,
+      "periodicite": "mensuel",
+      "url_info": "https://www.aps.gob.bo",
+      "source_url": "https://www.aps.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "age_58_plus",
+        "low_income_contributions",
+        "formal_worker"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-seguro-sus",
+      "slug": "seguro-universal-salud",
+      "nom": "Seguro Universal de Salud (SUS)",
+      "description_en": "Free universal healthcare at public facilities for all Bolivians not covered by a contributory social insurance. Covers consultations, medications, hospitalisation. Source: minsalud.gob.bo.",
+      "categorie": "sante",
+      "organisme": "Ministerio de Salud y Deportes",
+      "montant_min_bob": 0,
+      "montant_max_bob": 1000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.minsalud.gob.bo",
+      "source_url": "https://www.minsalud.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "not_contributory_insurance"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-discapacidad",
+      "slug": "subsidio-discapacidad",
+      "nom": "Subsidio por Discapacidad",
+      "description_en": "Monthly disability allowance of 250 BOB for persons with permanent disability who do not receive a contributory pension. Administered by Ministerio de Salud. Source: minsalud.gob.bo.",
+      "categorie": "handicap",
+      "organisme": "Ministerio de Salud y Deportes",
+      "montant_min_bob": 250,
+      "montant_max_bob": 250,
+      "periodicite": "mensuel",
+      "url_info": "https://www.minsalud.gob.bo",
+      "source_url": "https://www.minsalud.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "disabled",
+        "no_pension"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-beca-excelencia",
+      "slug": "beca-excelencia-estudiantil",
+      "nom": "Beca de Excelencia Estudiantil",
+      "description_en": "Monthly scholarship of 400 BOB for outstanding students in public universities. Merit-based, administered by Ministerio de Educación. Source: minedu.gob.bo.",
+      "categorie": "jeunesse",
+      "organisme": "Ministerio de Educación",
+      "montant_min_bob": 400,
+      "montant_max_bob": 400,
+      "periodicite": "mensuel",
+      "url_info": "https://www.minedu.gob.bo",
+      "source_url": "https://www.minedu.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "student",
+        "academic_excellence",
+        "public_university"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "bo-pension-contributiva",
+      "slug": "pension-contributiva-afp",
+      "nom": "Pensión Contributiva (AFP)",
+      "description_en": "Contributory old-age pension through private AFP (Administradoras de Fondos de Pensiones). Amount approx. 70% of last salary reference. Retirement age 58 (men/women) with 10+ years contributions. Source: aps.gob.bo.",
+      "categorie": "retraite",
+      "organisme": "AFP / APS",
+      "montant_min_bob": 1500,
+      "montant_max_bob": 4000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.aps.gob.bo",
+      "source_url": "https://www.aps.gob.bo",
+      "eligibility_criteria": [
+        "residence_bo",
+        "age_58_plus",
+        "contributions_10_years"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

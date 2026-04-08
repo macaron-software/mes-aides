@@ -1,0 +1,176 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "UY",
+  "name": "Uruguay",
+  "name_local": "Uruguay",
+  "language": "es",
+  "currency": "UYU",
+  "welfare_model": "Bismarckian + Beveridge universal coverage",
+  "sources": [
+    "https://www.bps.gub.uy",
+    "https://www.mides.gub.uy"
+  ],
+  "aids": [
+    {
+      "id": "uy-jubilacion-bps",
+      "slug": "jubilacion-bps",
+      "nom": "Jubilación (BPS — Retiro por Vejez)",
+      "description_en": "Contributory old-age pension via BPS (Banco de Previsión Social). Minimum pension: 22,231 UYU/month in 2025. Age 60 (men/women) with 30 years of contributions. Source: bps.gub.uy.",
+      "categorie": "retraite",
+      "organisme": "BPS — Banco de Previsión Social",
+      "montant_min_uyu": 22231,
+      "montant_max_uyu": 22231,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bps.gub.uy",
+      "source_url": "https://www.bps.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "age_60_plus",
+        "contributions_30_years"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-subsidio-desempleo",
+      "slug": "subsidio-desempleo-bps",
+      "nom": "Subsidio por Desempleo (BPS)",
+      "description_en": "Unemployment benefit: 50–66% of last salary for up to 6 months for formal workers who lose employment. Requires min. 6 months of BPS contributions. Tapering: 66% first month, declining to 50% by month 6. Source: bps.gub.uy.",
+      "categorie": "chomage",
+      "organisme": "BPS — Banco de Previsión Social",
+      "montant_min_uyu": 11116,
+      "montant_max_uyu": 14672,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bps.gub.uy",
+      "source_url": "https://www.bps.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "unemployed",
+        "contributions_6_months"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-asignaciones-familiares",
+      "slug": "asignaciones-familiares-afam-pe",
+      "nom": "Asignaciones Familiares AFAM-PE",
+      "description_en": "Non-contributory child benefit of 2,500–6,000 UYU/month per child for low-income families. Income-tested via MIDES. Amount increases for children with disability. Conditionality: school enrolment. Source: mides.gub.uy.",
+      "categorie": "famille",
+      "organisme": "MIDES / BPS — Asignaciones Familiares",
+      "montant_min_uyu": 2500,
+      "montant_max_uyu": 6000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mides.gub.uy",
+      "source_url": "https://www.mides.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "child_under_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-tarjeta-uruguay-social",
+      "slug": "tarjeta-uruguay-social-tus",
+      "nom": "Tarjeta Uruguay Social (TUS)",
+      "description_en": "Monthly food card (prepaid) of 1,500–3,500 UYU for households in extreme poverty identified by MIDES. Used for food and personal care products. No conditionalities. Source: mides.gub.uy.",
+      "categorie": "pauvrete",
+      "organisme": "MIDES — Ministerio de Desarrollo Social",
+      "montant_min_uyu": 1500,
+      "montant_max_uyu": 3500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mides.gub.uy",
+      "source_url": "https://www.mides.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "extreme_poverty",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-pension-vejez-nc",
+      "slug": "pension-vejez-no-contributiva",
+      "nom": "Pensión a la Vejez (65+ sin jubilación)",
+      "description_en": "Non-contributory pension of 14,500 UYU/month for adults aged 65+ with no contributory pension and low resources. Administered by BPS. Source: bps.gub.uy.",
+      "categorie": "retraite",
+      "organisme": "BPS — Banco de Previsión Social",
+      "montant_min_uyu": 14500,
+      "montant_max_uyu": 14500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bps.gub.uy",
+      "source_url": "https://www.bps.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "age_65_plus",
+        "no_pension",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-pension-invalidez",
+      "slug": "pension-invalidez-bps",
+      "nom": "Pensión por Invalidez (BPS)",
+      "description_en": "Disability pension of 60–80% of reference salary for workers with permanent disability affecting work capacity. Contributory requirement via BPS. Source: bps.gub.uy.",
+      "categorie": "handicap",
+      "organisme": "BPS — Banco de Previsión Social",
+      "montant_min_uyu": 13300,
+      "montant_max_uyu": 17800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bps.gub.uy",
+      "source_url": "https://www.bps.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "disabled",
+        "contributions_bps"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-fonasa-salud",
+      "slug": "fonasa-salud-universal",
+      "nom": "FONASA — Fondo Nacional de Salud",
+      "description_en": "Universal health coverage via FONASA for all formal and informal workers and their families. Provides access to mutualistas or ASSE (public system). No cost for low-income households. Source: msp.gub.uy.",
+      "categorie": "sante",
+      "organisme": "MSP — FONASA",
+      "montant_min_uyu": 0,
+      "montant_max_uyu": 5000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.msp.gub.uy",
+      "source_url": "https://www.msp.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "uy-seguro-enfermedad",
+      "slug": "subsidio-enfermedad-bps",
+      "nom": "Seguro de Enfermedad / Maternidad (BPS)",
+      "description_en": "Sickness and maternity benefit of 70% of salary for up to 1 year for workers unable to work due to illness or for maternity leave (13 weeks). Administered by BPS. Source: bps.gub.uy.",
+      "categorie": "sante",
+      "organisme": "BPS — Banco de Previsión Social",
+      "montant_min_uyu": 15562,
+      "montant_max_uyu": 15562,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bps.gub.uy",
+      "source_url": "https://www.bps.gub.uy",
+      "eligibility_criteria": [
+        "residence_uy",
+        "employed_formal",
+        "sick_or_maternity"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

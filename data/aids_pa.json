@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "PA",
+  "name": "Panama",
+  "name_local": "Panamá",
+  "language": "es",
+  "currency": "PAB",
+  "welfare_model": "Contributory CSS + targeted social programs (dollarized)",
+  "sources": [
+    "https://www.css.gob.pa",
+    "https://www.mides.gob.pa",
+    "https://www.mitradel.gob.pa"
+  ],
+  "aids": [
+    {
+      "id": "pa-pension-vejez-css",
+      "slug": "pension-vejez-css",
+      "nom": "Pensión de Vejez (CSS)",
+      "description_en": "Contributory old-age pension: 60–100% of last salary (100% at 35 years of service). Age 62 (men) / 57 (women) with minimum 15 years (180 months) of CSS contributions. Administered by CSS (Caja de Seguro Social). Source: css.gob.pa.",
+      "categorie": "retraite",
+      "organisme": "CSS — Caja de Seguro Social",
+      "montant_min_usd": 600,
+      "montant_max_usd": 2000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.css.gob.pa",
+      "source_url": "https://www.css.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "age_62_male_or_57_female",
+        "contributions_180_months"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-120-a-los-65",
+      "slug": "120-a-los-65-adultos-mayores",
+      "nom": "120 a los 65 (Adultos Mayores sin pensión)",
+      "description_en": "Universal non-contributory pension of 120 USD every two months (60 USD/month effective) for Panamanians aged 65+ who do not receive a CSS pension. Administered by MIDES. Source: mides.gob.pa.",
+      "categorie": "retraite",
+      "organisme": "MIDES — Ministerio de Desarrollo Social",
+      "montant_min_usd": 60,
+      "montant_max_usd": 60,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mides.gob.pa",
+      "source_url": "https://www.mides.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "age_65_plus",
+        "no_css_pension"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-red-oportunidades",
+      "slug": "red-oportunidades-mides",
+      "nom": "Red de Oportunidades (Extrema Pobreza)",
+      "description_en": "Conditional cash transfer of 100–120 USD every two months (50–60 USD/month) for households in extreme poverty. Conditionalities: school attendance and health checkups. Source: mides.gob.pa.",
+      "categorie": "pauvrete",
+      "organisme": "MIDES — Ministerio de Desarrollo Social",
+      "montant_min_usd": 50,
+      "montant_max_usd": 60,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mides.gob.pa",
+      "source_url": "https://www.mides.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "extreme_poverty",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-seguro-enfermedad-css",
+      "slug": "seguro-enfermedad-maternidad-css",
+      "nom": "Seguro Enfermedad-Maternidad (CSS)",
+      "description_en": "Sickness and maternity benefit of 70% of salary for up to 52 weeks for workers unable to work due to illness or for maternity (14 weeks). Requires CSS contributions. Source: css.gob.pa.",
+      "categorie": "sante",
+      "organisme": "CSS — Caja de Seguro Social",
+      "montant_min_usd": 420,
+      "montant_max_usd": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://www.css.gob.pa",
+      "source_url": "https://www.css.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "employed_formal",
+        "sick_or_maternity",
+        "contributions_css"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-beca-universal",
+      "slug": "beca-universal-educacion",
+      "nom": "Beca Universal (Educación Básica)",
+      "description_en": "Universal education subsidy of 180 USD per semester per student in public primary and secondary education. No means test — universal for all students. Source: meduca.gob.pa.",
+      "categorie": "jeunesse",
+      "organisme": "MEDUCA — Ministerio de Educación",
+      "montant_min_usd": 90,
+      "montant_max_usd": 90,
+      "periodicite": "mensuel",
+      "url_info": "https://www.meduca.gob.pa",
+      "source_url": "https://www.meduca.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "student",
+        "enrolled_public_school"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-desempleo-css",
+      "slug": "subsidio-desempleo-css",
+      "nom": "Subsidio de Desempleo (CSS)",
+      "description_en": "Unemployment benefit of 70% of last wage for up to 18 weeks for formal workers who lose employment. Requires min. 6 months of CSS contributions. Source: css.gob.pa.",
+      "categorie": "chomage",
+      "organisme": "CSS — Caja de Seguro Social",
+      "montant_min_usd": 420,
+      "montant_max_usd": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://www.css.gob.pa",
+      "source_url": "https://www.css.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "unemployed",
+        "contributions_css"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-invalidez-css",
+      "slug": "pension-invalidez-css",
+      "nom": "Pensión Invalidez (CSS)",
+      "description_en": "Disability pension of 60% of average insured salary for workers with permanent total disability. Requires CSS contributions and medical evaluation. Source: css.gob.pa.",
+      "categorie": "handicap",
+      "organisme": "CSS — Caja de Seguro Social",
+      "montant_min_usd": 360,
+      "montant_max_usd": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.css.gob.pa",
+      "source_url": "https://www.css.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "disabled",
+        "contributions_css"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pa-fondo-solidario-vivienda",
+      "slug": "fondo-solidario-vivienda",
+      "nom": "Fondo Solidario de Vivienda",
+      "description_en": "Housing subsidy of 5,000–15,000 USD for low-income families to purchase or improve first home. Administered by MIVIOT (Ministerio de Vivienda). Source: miviot.gob.pa.",
+      "categorie": "logement",
+      "organisme": "MIVIOT — Ministerio de Vivienda",
+      "montant_min_usd": 5000,
+      "montant_max_usd": 15000,
+      "periodicite": "unique",
+      "url_info": "https://www.miviot.gob.pa",
+      "source_url": "https://www.miviot.gob.pa",
+      "eligibility_criteria": [
+        "residence_pa",
+        "income_below_threshold",
+        "first_home",
+        "not_owner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

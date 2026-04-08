@@ -1,0 +1,197 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "VE",
+  "name": "Venezuela",
+  "name_local": "Venezuela",
+  "language": "es",
+  "currency": "VES",
+  "welfare_model": "State-directed social programs (Misiones)",
+  "sources": [
+    "https://www.ivss.gov.ve",
+    "https://www.banavih.gov.ve",
+    "https://patria.org.ve"
+  ],
+  "aids": [
+    {
+      "id": "ve-pension-ivss",
+      "slug": "pension-ivss-vejez",
+      "nom": "Pensión IVSS — Retiro por Vejez",
+      "description_en": "Non-contributory/contributory retirement pension via IVSS. Minimum amount set at approx. 100 USD equivalent in VES/month (official reference, hyperinflation applies). For formal workers 60+ (men) / 55+ (women) with min. 750 weekly contributions. Administered by IVSS (ivss.gov.ve).",
+      "categorie": "retraite",
+      "organisme": "IVSS — Instituto Venezolano de los Seguros Sociales",
+      "montant_min_ves": 650,
+      "montant_max_ves": 900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ivss.gov.ve",
+      "source_url": "https://www.ivss.gov.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "age_60_plus_male_or_55_plus_female",
+        "contributions_750_weeks"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-bono-alimentacion",
+      "slug": "bono-alimentacion-cendas",
+      "nom": "Bono de Alimentación — CENDAS",
+      "description_en": "Monthly food bonus equivalent to ~40 USD in VES for low-income workers and formal sector employees. Provides supplementary nutrition support. Administered via CENDAS. Source: ivss.gov.ve.",
+      "categorie": "alimentation",
+      "organisme": "CENDAS / Empleadores",
+      "montant_min_ves": 250,
+      "montant_max_ves": 290,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ivss.gov.ve",
+      "source_url": "https://www.ivss.gov.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "employed_formal",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-clap",
+      "slug": "clap-bolsas-alimentos",
+      "nom": "CLAP — Bolsa de Alimentos Subsidiada",
+      "description_en": "Subsidized food bag distributed monthly by local CLAP committees. Equivalent to approx. 3–5 USD in food products per household. Accessed via Sistema Patria registration. Source: clap.gob.ve.",
+      "categorie": "alimentation",
+      "organisme": "CLAP — Comités Locales de Abastecimiento y Producción",
+      "montant_min_ves": 20,
+      "montant_max_ves": 35,
+      "periodicite": "mensuel",
+      "url_info": "https://patria.org.ve",
+      "source_url": "https://patria.org.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "registered_patria",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-bono-guerra",
+      "slug": "bono-guerra-economica",
+      "nom": "Bono de Guerra Económica",
+      "description_en": "Emergency monetary transfer of approx. 30 USD equivalent in VES/month via Sistema Patria platform for households affected by economic crisis. Also known by various names (Bono Especial). Administered by Gobierno Nacional.",
+      "categorie": "pauvrete",
+      "organisme": "Gobierno Nacional / Sistema Patria",
+      "montant_min_ves": 180,
+      "montant_max_ves": 220,
+      "periodicite": "mensuel",
+      "url_info": "https://patria.org.ve",
+      "source_url": "https://patria.org.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "registered_patria",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-bono-patria",
+      "slug": "bono-patria-sistema",
+      "nom": "Bono Patria",
+      "description_en": "Monthly cash transfer of 20–50 USD equivalent in VES via Patria digital platform. Various types: Bono Especial, Bono de Hogares, etc. Conditioned on Sistema Patria enrollment. Source: patria.org.ve.",
+      "categorie": "pauvrete",
+      "organisme": "Sistema Patria / Gobierno Nacional",
+      "montant_min_ves": 130,
+      "montant_max_ves": 360,
+      "periodicite": "mensuel",
+      "url_info": "https://patria.org.ve",
+      "source_url": "https://patria.org.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "registered_patria",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-gmvv",
+      "slug": "gran-mision-vivienda",
+      "nom": "Gran Misión Vivienda Venezuela (GMVV)",
+      "description_en": "Heavily subsidized housing program providing free or near-free new homes to low-income Venezuelan families. Beneficiaries receive keys to a new apartment at no cost or very minimal payment. Administered by BANAVIH/MINVIH. Source: banavih.gov.ve.",
+      "categorie": "logement",
+      "organisme": "BANAVIH / Ministerio de Vivienda",
+      "montant_min_ves": 0,
+      "montant_max_ves": 0,
+      "periodicite": "unique",
+      "url_info": "https://www.banavih.gov.ve",
+      "source_url": "https://www.banavih.gov.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "low_income",
+        "not_owner",
+        "registered_patria"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-invalidez-ivss",
+      "slug": "pension-invalidez-ivss",
+      "nom": "Pensión de Invalidez (IVSS)",
+      "description_en": "Disability pension via IVSS covering 70–100% of last registered salary reference for workers with permanent disability. Requires medical evaluation and min. 250 weekly contributions. Source: ivss.gov.ve.",
+      "categorie": "handicap",
+      "organisme": "IVSS — Instituto Venezolano de los Seguros Sociales",
+      "montant_min_ves": 450,
+      "montant_max_ves": 900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ivss.gov.ve",
+      "source_url": "https://www.ivss.gov.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "disabled",
+        "contributions_250_weeks"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-barrio-adentro",
+      "slug": "barrio-adentro-salud",
+      "nom": "Barrio Adentro — Salud Comunitaria",
+      "description_en": "Free community healthcare program providing primary care, dental, ophthalmology and emergency services in popular neighborhoods. No cost to beneficiaries. Administered by Ministerio de Salud. Source: misiones.gob.ve.",
+      "categorie": "sante",
+      "organisme": "Ministerio de Salud / Misión Barrio Adentro",
+      "montant_min_ves": 0,
+      "montant_max_ves": 500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ivss.gov.ve",
+      "source_url": "https://www.ivss.gov.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    },
+    {
+      "id": "ve-ingreso-minimo",
+      "slug": "ingreso-minimo-vital",
+      "nom": "Ingreso Mínimo Vital (Salario Mínimo)",
+      "description_en": "Statutory minimum wage of 130 VES/month (symbolic, hyperinflation affected). Formal workers are entitled to at least minimum wage plus bonuses. Source: Gaceta Oficial Venezuela.",
+      "categorie": "travail",
+      "organisme": "Ministerio del Trabajo",
+      "montant_min_ves": 130,
+      "montant_max_ves": 130,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ivss.gov.ve",
+      "source_url": "https://www.ivss.gov.ve",
+      "eligibility_criteria": [
+        "residence_ve",
+        "employed_formal"
+      ],
+      "amounts_baremes_year": 2024,
+      "verified_year": 2024
+    }
+  ]
+}

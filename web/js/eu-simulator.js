@@ -44,6 +44,29 @@ const EU_CURRENCIES = {
   co: { symbol: '$',   locale: 'es-CO', code: 'COP', suffix: false },
   cl: { symbol: '$',   locale: 'es-CL', code: 'CLP', suffix: false },
   pe: { symbol: 'S/',  locale: 'es-PE', code: 'PEN', suffix: false },
+  /* Central Asia + Caucasus expansion */
+  kz: { symbol: '₸',   locale: 'kk-KZ', code: 'KZT', suffix: false },
+  uz: { symbol: "so'm", locale: 'uz-UZ', code: 'UZS', suffix: true  },
+  am: { symbol: '֏',   locale: 'hy-AM', code: 'AMD', suffix: false },
+  ge: { symbol: '₾',   locale: 'ka-GE', code: 'GEL', suffix: false },
+  az: { symbol: '₼',   locale: 'az-AZ', code: 'AZN', suffix: false },
+  /* LatAm2 + Pacific expansion */
+  ve: { symbol: 'Bs.S', locale: 'es-VE', code: 'VES', suffix: false },
+  ec: { symbol: '$',    locale: 'es-EC', code: 'USD', suffix: false },
+  bo: { symbol: 'Bs',   locale: 'es-BO', code: 'BOB', suffix: false },
+  uy: { symbol: '$U',   locale: 'es-UY', code: 'UYU', suffix: false },
+  do: { symbol: 'RD$',  locale: 'es-DO', code: 'DOP', suffix: false },
+  cr: { symbol: '\u20A1', locale: 'es-CR', code: 'CRC', suffix: false },
+  pa: { symbol: '$',    locale: 'es-PA', code: 'USD', suffix: false },
+  mu: { symbol: 'Rs',   locale: 'en-MU', code: 'MUR', suffix: false },
+  /* South Asia + SE Asia expansion */
+  pk: { symbol: 'Rs',  locale: 'ur-PK', code: 'PKR', suffix: false },
+  bd: { symbol: '৳',   locale: 'bn-BD', code: 'BDT', suffix: false },
+  lk: { symbol: 'Rs',  locale: 'si-LK', code: 'LKR', suffix: false },
+  np: { symbol: 'रू',  locale: 'ne-NP', code: 'NPR', suffix: false },
+  ph: { symbol: '₱',   locale: 'fil-PH', code: 'PHP', suffix: false },
+  mm: { symbol: 'K',   locale: 'my-MM', code: 'MMK', suffix: false },
+  kh: { symbol: '៛',   locale: 'km-KH', code: 'KHR', suffix: true  },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -65,6 +88,12 @@ const CURRENCY_AMOUNT_FIELD = {
   ru: 'rub', ua: 'uah', il: 'ils',
   /* LatAm expansion */
   co: 'cop', cl: 'clp', pe: 'pen',
+  /* Central Asia + Caucasus expansion */
+  kz: 'kzt', uz: 'uzs', am: 'amd', ge: 'gel', az: 'azn',
+  /* LatAm2 + Pacific expansion */
+  ve: 'ves', ec: 'usd', bo: 'bob', uy: 'uyu', do: 'dop', cr: 'crc', pa: 'usd', mu: 'mur',
+  /* South Asia + SE Asia expansion */
+  pk: 'pkr', bd: 'bdt', lk: 'lkr', np: 'npr', ph: 'php', mm: 'mmk', kh: 'khr',
 };
 
 /**
@@ -88,6 +117,12 @@ const INCOME_THRESHOLDS = {
   ru: 2216500, ua: 446200, il: 588000,
   /* LatAm expansion — monthly net, local currency */
   co: 130000000, cl: 21400000, pe: 100000,
+  /* Central Asia + Caucasus — monthly net, local currency smallest unit */
+  kz: 10700000000, uz: 105600000000, am: 4350000000, ge: 28000000, az: 26000000,
+  /* LatAm2 + Pacific expansion — monthly net, local currency */
+  ve: 500, ec: 550, bo: 2000, uy: 20000, do: 20000, cr: 350000, pa: 700, mu: 10000,
+  /* South Asia + SE Asia expansion — monthly net, local currency */
+  pk: 100000000, bd: 50000000, lk: 500000000, np: 400000000, ph: 5000000, mm: 60000000, kh: 40000000000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -108,6 +143,12 @@ const LOW_INCOME_THRESHOLDS = {
   ru: 4433000, ua: 800000, il: 1000000,
   /* LatAm expansion */
   co: 260000000, cl: 42800000, pe: 200000,
+  /* Central Asia + Caucasus expansion */
+  kz: 21400000000, uz: 211200000000, am: 8700000000, ge: 56000000, az: 52000000,
+  /* LatAm2 + Pacific expansion */
+  ve: 1000, ec: 1100, bo: 4000, uy: 40000, do: 40000, cr: 700000, pa: 1400, mu: 20000,
+  /* South Asia + SE Asia expansion */
+  pk: 200000000, bd: 100000000, lk: 1000000000, np: 800000000, ph: 10000000, mm: 120000000, kh: 80000000000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */

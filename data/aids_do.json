@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "DO",
+  "name": "République Dominicaine",
+  "name_local": "República Dominicana",
+  "language": "es",
+  "currency": "DOP",
+  "welfare_model": "Targeted conditional cash transfers + contributory",
+  "sources": [
+    "https://www.prosoli.gob.do",
+    "https://www.pensiones.gob.do",
+    "https://www.supension.gob.do"
+  ],
+  "aids": [
+    {
+      "id": "do-progresando-solidaridad",
+      "slug": "prosoli-progresando-solidaridad",
+      "nom": "Progresando con Solidaridad (PROSOLI)",
+      "description_en": "Flagship conditional cash transfer (CCT) program: 1,500–2,000 DOP/month for extreme-poor families with conditionalities (school attendance, health checkups). Administered by PROSOLI. Source: prosoli.gob.do.",
+      "categorie": "pauvrete",
+      "organisme": "PROSOLI — Gabinete de Coordinación de Política Social",
+      "montant_min_dop": 1500,
+      "montant_max_dop": 2000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.prosoli.gob.do",
+      "source_url": "https://www.prosoli.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "extreme_poverty",
+        "income_below_threshold",
+        "school_conditionality"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-comer-es-primero",
+      "slug": "comer-es-primero-tarjeta",
+      "nom": "Comer es Primero (Tarjeta Alimentaria)",
+      "description_en": "Food card transfer of 2,500 DOP/month for the poorest households to purchase food at participating stores. Administered by PROSOLI. Source: prosoli.gob.do.",
+      "categorie": "alimentation",
+      "organisme": "PROSOLI",
+      "montant_min_dop": 2500,
+      "montant_max_dop": 2500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.prosoli.gob.do",
+      "source_url": "https://www.prosoli.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "extreme_poverty",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-pension-contributiva",
+      "slug": "pension-contributiva-sipen",
+      "nom": "Pensión Contributiva (SIPEN/AFP)",
+      "description_en": "Contributory old-age pension under SIPEN system via private AFPs. Benefit: 60–80% of last salary. Age 60 (men) / 55 (women) with 30 years of contributions. Guaranteed minimum pension if contributions insufficient. Source: pensiones.gob.do.",
+      "categorie": "retraite",
+      "organisme": "SIPEN — Superintendencia de Pensiones",
+      "montant_min_dop": 12600,
+      "montant_max_dop": 42000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.pensiones.gob.do",
+      "source_url": "https://www.pensiones.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "age_60_male_or_55_female",
+        "contributions_30_years"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-regimen-subsidiado",
+      "slug": "seguro-familiar-salud-subsidiado",
+      "nom": "Régimen Subsidiado SFS (Salud Gratuita)",
+      "description_en": "Free healthcare (Seguro Familiar de Salud — Régimen Subsidiado) for the poorest population via SENASA. Covers consultations, hospitalisation and medications at public facilities. Source: senasa.gob.do.",
+      "categorie": "sante",
+      "organisme": "SENASA — Seguro Nacional de Salud",
+      "montant_min_dop": 0,
+      "montant_max_dop": 20000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.senasa.gob.do",
+      "source_url": "https://www.senasa.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "income_below_threshold",
+        "extreme_poverty"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-bono-escolar",
+      "slug": "bono-escolar-estudiando-progreso",
+      "nom": "Bono Escolar Estudiando Progreso",
+      "description_en": "Annual school supply transfer of 1,500 DOP per student for families receiving PROSOLI, to support school attendance and reduce drop-out. Source: prosoli.gob.do.",
+      "categorie": "jeunesse",
+      "organisme": "PROSOLI / Ministerio de Educación",
+      "montant_min_dop": 1500,
+      "montant_max_dop": 1500,
+      "periodicite": "unique",
+      "url_info": "https://www.prosoli.gob.do",
+      "source_url": "https://www.prosoli.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "student",
+        "prosoli_beneficiary"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-bonogas",
+      "slug": "subsidio-electricidad-bonogas",
+      "nom": "BONOGAS / Bonoluz (Subsidio Electricidad)",
+      "description_en": "Monthly electricity/gas subsidy of 300–600 DOP for low-income households. Covers up to 700 kWh/month of electricity (subsidized tariff) and LPG gas subsidy. Source: cne.gob.do.",
+      "categorie": "logement",
+      "organisme": "CNE — Comisión Nacional de Energía",
+      "montant_min_dop": 300,
+      "montant_max_dop": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.cne.gob.do",
+      "source_url": "https://www.cne.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "income_below_threshold",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-seguro-desempleo",
+      "slug": "seguro-desempleo-formal",
+      "nom": "Seguro de Desempleo (Sector Formal)",
+      "description_en": "Unemployment insurance of 70% of last salary for up to 6 months for formal sector workers. Limited to workers contributing to AFP. Source: mepyd.gob.do.",
+      "categorie": "chomage",
+      "organisme": "AFP / Ministerio de Trabajo",
+      "montant_min_dop": 14700,
+      "montant_max_dop": 14700,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ministeriodetrabajo.gob.do",
+      "source_url": "https://www.ministeriodetrabajo.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "unemployed",
+        "formal_worker",
+        "contributions_afp"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "do-pension-discapacidad",
+      "slug": "pension-discapacidad-sipen",
+      "nom": "Pensión por Discapacidad (SIPEN)",
+      "description_en": "Disability pension of 60% of reference salary for workers with permanent disability under SIPEN system. Requires AFP contributions. Source: pensiones.gob.do.",
+      "categorie": "handicap",
+      "organisme": "SIPEN / AFP",
+      "montant_min_dop": 12600,
+      "montant_max_dop": 12600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.pensiones.gob.do",
+      "source_url": "https://www.pensiones.gob.do",
+      "eligibility_criteria": [
+        "residence_do",
+        "disabled",
+        "contributions_afp"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}
