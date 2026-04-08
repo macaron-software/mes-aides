@@ -1,0 +1,240 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "PE",
+  "name": "Peru",
+  "name_local": "Perú",
+  "language": "es",
+  "currency": "PEN",
+  "welfare_model": "Non-contributory safety net + AFP private pensions + EsSalud insurance",
+  "sources": [
+    "https://www.midis.gob.pe",
+    "https://www.onp.gob.pe",
+    "https://www.essalud.gob.pe",
+    "https://www.sisfoh.gob.pe"
+  ],
+  "aids": [
+    {
+      "id": "pe-pension65",
+      "slug": "pension-65-midis",
+      "nom": "Pensión 65 — Subvención económica a adultos mayores",
+      "description_en": "Non-contributory cash transfer of PEN 250/bimonthly (PEN 125/month effective) for adults aged 65+ in extreme poverty as classified by SISFOH. Payment: PEN 250 every two months via Banco de la Nación. Administered by MIDIS (Ministerio de Desarrollo e Inclusión Social). Source: pension65.gob.pe.",
+      "categorie": "retraite",
+      "organisme": "MIDIS — Ministerio de Desarrollo e Inclusión Social",
+      "montant_min_pen": 12500,
+      "montant_max_pen": 12500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.pension65.gob.pe/pension-65/",
+      "source_url": "https://www.midis.gob.pe/index.php/es/programas-sociales/pension-65",
+      "eligibility_criteria": [
+        "residence_pe",
+        "age_65_plus",
+        "extreme_poverty_sisfoh",
+        "no_other_pension",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-juntos",
+      "slug": "juntos-transferencia-monetaria",
+      "nom": "Juntos — Programa Nacional de Apoyo Directo a los más Pobres",
+      "description_en": "Conditional cash transfer of PEN 200 bimonthly (PEN 100/month effective) for rural poor households with children under 19 or pregnant women. Conditionalities: school attendance (85%), health checkups (growth monitoring), civil registration. Administered by MIDIS. Source: juntos.gob.pe.",
+      "categorie": "famille",
+      "organisme": "MIDIS — Programa Nacional Juntos",
+      "montant_min_pen": 10000,
+      "montant_max_pen": 10000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.juntos.gob.pe/",
+      "source_url": "https://www.midis.gob.pe/index.php/es/programas-sociales/juntos",
+      "eligibility_criteria": [
+        "residence_pe",
+        "extreme_poverty_sisfoh",
+        "child_under_19_or_pregnant",
+        "rural_area",
+        "income_below_threshold",
+        "school_attendance_conditionality",
+        "health_checkup_conditionality"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-contigo",
+      "slug": "contigo-personas-discapacidad",
+      "nom": "Contigo — Programa Nacional de Entrega de la Pensión no Contributiva",
+      "description_en": "Non-contributory pension of PEN 300 bimonthly (PEN 150/month effective) for persons with severe disability in extreme poverty who have no other pension. Administered by MIDIS. Requires CONADIS disability certificate (severe grade). Source: contigo.gob.pe.",
+      "categorie": "handicap",
+      "organisme": "MIDIS — Programa Nacional Contigo",
+      "montant_min_pen": 15000,
+      "montant_max_pen": 15000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.contigo.gob.pe/",
+      "source_url": "https://www.midis.gob.pe/index.php/es/programas-sociales/contigo",
+      "eligibility_criteria": [
+        "residence_pe",
+        "severe_disability_conadis",
+        "extreme_poverty_sisfoh",
+        "no_other_pension",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-beca18",
+      "slug": "beca-18-pronabec",
+      "nom": "Beca 18 — Programa Nacional de Becas y Crédito Educativo",
+      "description_en": "Full scholarship up to PEN 30,000/year for higher education (university or technical) for high-achieving students from households in poverty or extreme poverty as identified by SISFOH. Covers tuition, accommodation, meals, and supplies. Administered by PRONABEC (Ministerio de Educación). Source: pronabec.gob.pe.",
+      "categorie": "jeunesse",
+      "organisme": "PRONABEC — Ministerio de Educación",
+      "montant_min_pen": 2000000,
+      "montant_max_pen": 3000000,
+      "periodicite": "annuel",
+      "url_info": "https://www.pronabec.gob.pe/beca18/",
+      "source_url": "https://www.pronabec.gob.pe/beca18/",
+      "eligibility_criteria": [
+        "residence_pe",
+        "age_18_to_25",
+        "income_below_threshold",
+        "extreme_poverty_sisfoh",
+        "student",
+        "enrolled_higher_education",
+        "academic_merit"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-sis",
+      "slug": "sis-seguro-integral-salud",
+      "nom": "SIS — Seguro Integral de Salud",
+      "description_en": "Free public health insurance for individuals and families in poverty and extreme poverty classified by SISFOH. Covers primary care, hospitalization, surgeries, medications, and maternity. Enrollment via health centers (MINSA network). Source: sis.gob.pe.",
+      "categorie": "sante",
+      "organisme": "SIS — Ministerio de Salud del Perú",
+      "montant_min_pen": 0,
+      "montant_max_pen": 85000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sis.gob.pe/portalsis/",
+      "source_url": "https://www.sis.gob.pe/portalsis/",
+      "eligibility_criteria": [
+        "residence_pe",
+        "income_below_threshold",
+        "low_income",
+        "sisfoh_enrolled",
+        "not_essalud_insured"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-trabaja-peru",
+      "slug": "trabaja-peru-empleo-temporal",
+      "nom": "Trabaja Perú — Programa de Empleo Temporal",
+      "description_en": "Temporary employment program for unemployed individuals in poverty providing 30–60 days of public works employment at minimum wage (PEN 1,025/month reference in 2025). Targets regions affected by natural disasters and high unemployment. Administered by MTPE (Ministerio de Trabajo y Promoción del Empleo). Source: trabajaperu.gob.pe.",
+      "categorie": "chomage",
+      "organisme": "MTPE — Ministerio de Trabajo y Promoción del Empleo",
+      "montant_min_pen": 102500,
+      "montant_max_pen": 102500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.trabajaperu.gob.pe/",
+      "source_url": "https://www.mtpe.gob.pe/componentes/ver/trabaja-peru",
+      "eligibility_criteria": [
+        "residence_pe",
+        "income_below_threshold",
+        "unemployed",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-qali-warma",
+      "slug": "qali-warma-alimentacion-escolar",
+      "nom": "Qali Warma — Programa Nacional de Alimentación Escolar",
+      "description_en": "Free school meals program (breakfast and lunch) for all children in public schools (initial and primary level). Non-cash benefit valued at approximately PEN 850/month per child. Administered by MIDIS. No income test: universal for public school enrollment. Source: qaliwarma.gob.pe.",
+      "categorie": "jeunesse",
+      "organisme": "MIDIS — Programa Qali Warma",
+      "montant_min_pen": 0,
+      "montant_max_pen": 85000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.qaliwarma.gob.pe/",
+      "source_url": "https://www.qaliwarma.gob.pe/",
+      "eligibility_criteria": [
+        "residence_pe",
+        "child_under_18",
+        "public_school_enrolled",
+        "student"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-techo-propio",
+      "slug": "techo-propio-bono-habitacion",
+      "nom": "Techo Propio — Bono Familiar Habitacional",
+      "description_en": "One-time housing subsidy of PEN 33,000–64,000 depending on modality (acquisition of existing housing, new construction on own land, or improvement). Targets families earning below PEN 3,626/month. Administered by Fondo MIVIVIENDA / MVCS. Source: mivivienda.com.pe.",
+      "categorie": "logement",
+      "organisme": "Fondo MIVIVIENDA / MVCS",
+      "montant_min_pen": 3300000,
+      "montant_max_pen": 6400000,
+      "periodicite": "unique",
+      "url_info": "https://www.mivivienda.com.pe/portalweb/usuario-busca-viviendas/pagina.aspx?idpage=21",
+      "source_url": "https://www.mivivienda.com.pe/portalweb/usuario-busca-viviendas/pagina.aspx?idpage=21",
+      "eligibility_criteria": [
+        "residence_pe",
+        "income_below_threshold",
+        "low_income",
+        "first_home",
+        "not_owner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-essalud",
+      "slug": "essalud-prestaciones-economicas",
+      "nom": "EsSalud — Prestaciones Económicas (subsidio enfermedad)",
+      "description_en": "Sickness benefit for formal workers insured by EsSalud: 70% of salary from day 21 of incapacity (employer covers first 20 days). Duration up to 11.5 months/year. Also covers maternity leave (98 days) at 100% of salary. Requires 3 months of contributions in the last 6 months. Source: essalud.gob.pe.",
+      "categorie": "sante",
+      "organisme": "EsSalud — Seguro Social de Salud del Perú",
+      "montant_min_pen": 72000,
+      "montant_max_pen": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.essalud.gob.pe/prestaciones-economicas/",
+      "source_url": "https://www.essalud.gob.pe/prestaciones-economicas/",
+      "eligibility_criteria": [
+        "residence_pe",
+        "formal_worker",
+        "essalud_insured",
+        "contributions_3_months",
+        "medical_incapacity_or_maternity"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "pe-afp-pension",
+      "slug": "afp-pension-vejez-retiro",
+      "nom": "AFP / SNP-ONP — Pensión de vejez (sistema previsional)",
+      "description_en": "Contributory old-age pension from AFP (private individual account) or SNP/ONP (public). Average AFP pension: ~PEN 850/month (2025). SNP minimum: PEN 500/month with 20+ years contributions. AFP access: age 65 or early retirement with 500 weeks contributions. Administered by SBS (AFP supervision) or ONP (SNP). Source: onp.gob.pe / sbs.gob.pe.",
+      "categorie": "retraite",
+      "organisme": "AFP (SBS-supervised) / ONP — Oficina de Normalización Previsional",
+      "montant_min_pen": 50000,
+      "montant_max_pen": 85000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.onp.gob.pe/pensiones_onp/sistema_nacional_pensiones",
+      "source_url": "https://www.onp.gob.pe/pensiones_onp/sistema_nacional_pensiones",
+      "eligibility_criteria": [
+        "residence_pe",
+        "age_65_plus",
+        "contributions_500_weeks_afp_or_20_years_snp",
+        "afp_or_snp_member"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

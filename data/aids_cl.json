@@ -1,0 +1,235 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "CL",
+  "name": "Chile",
+  "name_local": "Chile",
+  "language": "es",
+  "currency": "CLP",
+  "welfare_model": "Mixed: contributory AFP + solidarity pillar (PGU) + universal programs",
+  "sources": [
+    "https://www.chileatiende.gob.cl",
+    "https://www.ips.gob.cl",
+    "https://www.fonasa.cl",
+    "https://www.senadis.gob.cl"
+  ],
+  "aids": [
+    {
+      "id": "cl-pgu",
+      "slug": "pension-garantizada-universal",
+      "nom": "Pensión Garantizada Universal (PGU)",
+      "description_en": "Universal guaranteed pension of CLP 214,000/month for all residents aged 65+ with less than 30 years of contributions. Replaces and extends the previous PBS and APS. No means test for most elderly. Administered by IPS (ex INP). Source: ips.gob.cl / chileatiende.gob.cl.",
+      "categorie": "retraite",
+      "organisme": "IPS — Instituto de Previsión Social",
+      "montant_min_clp": 214000,
+      "montant_max_clp": 214000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ips.gob.cl/servlet/internet/content/1421301382788/pension-garantizada-universal",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/74789",
+      "eligibility_criteria": [
+        "residence_cl",
+        "age_65_plus",
+        "contributions_less_than_30_years",
+        "not_institutionalized"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-pbs-vejez",
+      "slug": "pension-basica-solidaria-vejez",
+      "nom": "Pensión Básica Solidaria de Vejez (PBS)",
+      "description_en": "Basic solidarity pension of CLP 214,000/month for adults aged 65+ with no AFP/INP pension and belonging to the poorest 60% of the population. Effectively subsumed by PGU for most beneficiaries since 2022. Administered by IPS. Source: ips.gob.cl.",
+      "categorie": "retraite",
+      "organisme": "IPS — Instituto de Previsión Social",
+      "montant_min_clp": 214000,
+      "montant_max_clp": 214000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ips.gob.cl/servlet/internet/content/1421301382785/pension-basica-solidaria-de-vejez",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/23",
+      "eligibility_criteria": [
+        "residence_cl",
+        "age_65_plus",
+        "no_other_pension",
+        "income_below_threshold",
+        "poorest_60_percent"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-aps",
+      "slug": "aporte-previsional-solidario",
+      "nom": "Aporte Previsional Solidario (APS)",
+      "description_en": "Top-up for low AFP pensions. If a contributory pension is below CLP 214,000/month, APS supplements it to reach that floor. Amounts are proportional: full APS for very low pensions, tapering to zero at the threshold. Requires age 65+ and belonging to poorest 60%. Administered by IPS. Source: ips.gob.cl.",
+      "categorie": "retraite",
+      "organisme": "IPS — Instituto de Previsión Social",
+      "montant_min_clp": 1,
+      "montant_max_clp": 214000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ips.gob.cl/servlet/internet/content/1421301382786/aporte-previsional-solidario-de-vejez",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/24",
+      "eligibility_criteria": [
+        "residence_cl",
+        "age_65_plus",
+        "low_income",
+        "income_below_threshold",
+        "poorest_60_percent"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-subsidio-cesantia",
+      "slug": "subsidio-cesantia-sence",
+      "nom": "Seguro de Cesantía (SENCE / AFC Chile)",
+      "description_en": "Unemployment insurance for formal workers. Benefits replace 70% of last salary in month 1, 55% in month 2, 50% in months 3–4, 45% in month 5. Minimum payout: CLP 161,000/month. Funded by worker (0.6%) and employer (2.4%) contributions. Managed by AFC Chile. Source: afc.cl / chileatiende.gob.cl.",
+      "categorie": "chomage",
+      "organisme": "AFC Chile / SENCE",
+      "montant_min_clp": 161000,
+      "montant_max_clp": 1200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.afc.cl/seguro-de-cesantia/",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/29",
+      "eligibility_criteria": [
+        "residence_cl",
+        "formal_worker",
+        "job_loss",
+        "contributions_12_months",
+        "registered_with_afc"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-asignacion-familiar",
+      "slug": "asignacion-familiar-ips",
+      "nom": "Asignación Familiar",
+      "description_en": "Monthly family allowance of CLP 3,168/month per dependent child (under 18 or disabled) for workers with income below the threshold. Paid by employer or IPS. Income-tested with three tranches. Source: ips.gob.cl / chileatiende.gob.cl.",
+      "categorie": "famille",
+      "organisme": "IPS — Instituto de Previsión Social",
+      "montant_min_clp": 1356,
+      "montant_max_clp": 3168,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ips.gob.cl/servlet/internet/content/1421301382792/asignacion-familiar",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/27",
+      "eligibility_criteria": [
+        "residence_cl",
+        "child_under_18",
+        "income_below_threshold",
+        "formal_worker_or_pensioner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-chile-crece-contigo",
+      "slug": "chile-crece-contigo",
+      "nom": "Chile Crece Contigo",
+      "description_en": "Comprehensive child development support system from pregnancy to age 4. Includes prenatal support, in-kind benefits (crib, stroller), early childhood checkups, and access to public childcare (JUNJI/integra). Targeted to 40% most vulnerable families. Administered by MDSF. Source: chilecrece.gob.cl.",
+      "categorie": "famille",
+      "organisme": "MDSF — Ministerio de Desarrollo Social y Familia",
+      "montant_min_clp": 0,
+      "montant_max_clp": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.crececontigo.gob.cl/",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/25",
+      "eligibility_criteria": [
+        "residence_cl",
+        "child_under_5",
+        "low_income",
+        "pregnancy_or_early_childhood"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-bono-invierno",
+      "slug": "bono-invierno-ips",
+      "nom": "Bono de Invierno (Bono Marzo / Energía)",
+      "description_en": "Annual winter energy bonus of CLP 50,000 for pensioners and elderly in low-income households aged 65+. Paid once a year (typically May). Administered by IPS. Also known as Aporte Invierno. Source: ips.gob.cl / chileatiende.gob.cl.",
+      "categorie": "retraite",
+      "organisme": "IPS — Instituto de Previsión Social",
+      "montant_min_clp": 50000,
+      "montant_max_clp": 50000,
+      "periodicite": "annuel",
+      "url_info": "https://www.chileatiende.gob.cl/fichas/ver/74788",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/74788",
+      "eligibility_criteria": [
+        "residence_cl",
+        "age_65_plus",
+        "low_income",
+        "income_below_threshold",
+        "pbs_or_pgu_recipient"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-fonasa",
+      "slug": "fonasa-plan-salud-gratuito",
+      "nom": "FONASA — Plan A/B (salud gratuita o subsidiada)",
+      "description_en": "Free or subsidized public healthcare through FONASA. Plan A: completely free for beneficiaries with no income (unemployed, indigent). Plan B: 20% copay for formal workers earning less than CLP 321,858/month. Provides access to public hospital network, GES plan guarantees. Source: fonasa.cl.",
+      "categorie": "sante",
+      "organisme": "FONASA — Fondo Nacional de Salud",
+      "montant_min_clp": 0,
+      "montant_max_clp": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.fonasa.cl/sites/fonasa/beneficiarios/registro-fonasa",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/31",
+      "eligibility_criteria": [
+        "residence_cl",
+        "income_below_threshold",
+        "low_income",
+        "not_isapre_subscriber"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-subsidio-habitacional",
+      "slug": "subsidio-habitacional-minvu-ds49",
+      "nom": "Subsidio Habitacional MINVU (DS49 / DS01)",
+      "description_en": "One-time housing subsidy up to 280 UF (~CLP 11,200,000 in 2025) for purchase or construction of social housing (VIS). DS49 targets families earning below 25,000 UF. Administered by MINVU via Servicio de Vivienda y Urbanización (SERVIU). Source: minvu.cl.",
+      "categorie": "logement",
+      "organisme": "MINVU — Ministerio de Vivienda y Urbanismo / SERVIU",
+      "montant_min_clp": 3000000,
+      "montant_max_clp": 11200000,
+      "periodicite": "unique",
+      "url_info": "https://www.minvu.cl/nuestros-programas/subsidio-habitacional/",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/35",
+      "eligibility_criteria": [
+        "residence_cl",
+        "income_below_threshold",
+        "low_income",
+        "first_home",
+        "not_owner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "cl-beca-junaeb",
+      "slug": "beca-junaeb-alimentacion",
+      "nom": "Beca JUNAEB — Alimentación Escolar",
+      "description_en": "School support from JUNAEB (Junta Nacional de Auxilio Escolar y Becas): free daily meals (desayuno y almuerzo), school supplies (útiles), and transportation for public school students from vulnerable families. Access through school enrollment; no application needed. Source: junaeb.cl.",
+      "categorie": "jeunesse",
+      "organisme": "JUNAEB — Junta Nacional de Auxilio Escolar y Becas",
+      "montant_min_clp": 0,
+      "montant_max_clp": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.junaeb.cl/programas/alimentacion",
+      "source_url": "https://www.chileatiende.gob.cl/fichas/ver/1021",
+      "eligibility_criteria": [
+        "residence_cl",
+        "child_under_18",
+        "low_income",
+        "public_school_enrolled",
+        "student"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

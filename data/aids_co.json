@@ -1,0 +1,235 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "CO",
+  "name": "Colombia",
+  "name_local": "Colombia",
+  "language": "es",
+  "currency": "COP",
+  "welfare_model": "Non-contributory + contributory social insurance",
+  "sources": [
+    "https://www.mintrabajo.gov.co",
+    "https://www.colpensiones.gov.co",
+    "https://www.dps.gov.co",
+    "https://www.icbf.gov.co"
+  ],
+  "aids": [
+    {
+      "id": "co-colombia-mayor",
+      "slug": "colombia-mayor-subsidio-vejez",
+      "nom": "Colombia Mayor — Subsidio económico al adulto mayor",
+      "description_en": "Non-contributory monthly cash transfer for adults aged 60+ (men) or 55+ (women) living in extreme poverty with no pension. Amount: COP 80,000–90,000/month paid bimonthly (COP 160,000–180,000 every two months). Administered by the DPS (Departamento para la Prosperidad Social). Application through Colombia Mayor offices or Corresponsales Bancarios. Source: dps.gov.co.",
+      "categorie": "retraite",
+      "organisme": "DPS — Departamento para la Prosperidad Social",
+      "montant_min_cop": 80000,
+      "montant_max_cop": 90000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dps.gov.co/Beneficiarios/Paginas/Colombia-Mayor.aspx",
+      "source_url": "https://www.dps.gov.co/Beneficiarios/Paginas/Colombia-Mayor.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "age_60_plus_male_or_55_plus_female",
+        "extreme_poverty_sisben",
+        "no_other_pension",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-pension-vejez-colpensiones",
+      "slug": "pension-vejez-colpensiones",
+      "nom": "Pensión de Vejez (Colpensiones / RAIS)",
+      "description_en": "Contributory old-age pension under the public RPM scheme (Colpensiones) or private RAIS scheme (AFP). Minimum pension: 1 SMMLV = COP 1,300,000/month in 2025. Requires 1,150 weeks of contributions (RPM) and age 62 (men) / 57 (women). Administered by Colpensiones for RPM or private AFP for RAIS. Source: colpensiones.gov.co.",
+      "categorie": "retraite",
+      "organisme": "Colpensiones / AFP (RAIS)",
+      "montant_min_cop": 1300000,
+      "montant_max_cop": 1300000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.colpensiones.gov.co/pensionados/Paginas/pensiondevejez.aspx",
+      "source_url": "https://www.colpensiones.gov.co/pensionados/Paginas/pensiondevejez.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "age_62_male_or_57_female",
+        "contributions_1150_weeks",
+        "registered_with_colpensiones_or_afp"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-ingreso-solidario",
+      "slug": "ingreso-solidario-dps",
+      "nom": "Ingreso Solidario",
+      "description_en": "Non-contributory cash transfer of COP 160,000/month for households in extreme poverty not covered by other social programs (Familias en Acción, Jóvenes en Acción, Colombia Mayor). Administered by DPS. Beneficiaries identified via SISBEN IV. Source: dps.gov.co.",
+      "categorie": "pauvrete",
+      "organisme": "DPS — Departamento para la Prosperidad Social",
+      "montant_min_cop": 160000,
+      "montant_max_cop": 160000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dps.gov.co/Beneficiarios/Paginas/IngresosSuperiores.aspx",
+      "source_url": "https://www.dps.gov.co/Beneficiarios/Paginas/IngresosSuperiores.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "extreme_poverty_sisben",
+        "income_below_threshold",
+        "not_receiving_familias_en_accion",
+        "not_receiving_colombia_mayor"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-familias-en-accion",
+      "slug": "familias-en-accion-dps",
+      "nom": "Familias en Acción",
+      "description_en": "Conditional cash transfer (CCT) program: COP 160,000–200,000 bimonthly per child for nutrition and education conditionalities. Targets households in poverty and extreme poverty with children aged 0–18 enrolled in school. Administered by DPS. Conditionalities: school attendance and health checkups. Source: dps.gov.co.",
+      "categorie": "famille",
+      "organisme": "DPS — Departamento para la Prosperidad Social",
+      "montant_min_cop": 80000,
+      "montant_max_cop": 100000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dps.gov.co/Beneficiarios/Paginas/FamiliasEnAccion.aspx",
+      "source_url": "https://www.dps.gov.co/Beneficiarios/Paginas/FamiliasEnAccion.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "child_under_18",
+        "income_below_threshold",
+        "extreme_poverty_sisben",
+        "school_attendance_conditionality",
+        "health_checkup_conditionality"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-jovenes-en-accion",
+      "slug": "jovenes-en-accion-dps",
+      "nom": "Jóvenes en Acción",
+      "description_en": "Cash transfer of COP 400,000 bimonthly (COP 200,000/month effective) for young people aged 16–24 from vulnerable households enrolled in higher education (SENA technical or university). Conditionality: academic performance. Administered by DPS. Source: dps.gov.co.",
+      "categorie": "jeunesse",
+      "organisme": "DPS — Departamento para la Prosperidad Social",
+      "montant_min_cop": 200000,
+      "montant_max_cop": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dps.gov.co/Beneficiarios/Paginas/JovenesEnAccion.aspx",
+      "source_url": "https://www.dps.gov.co/Beneficiarios/Paginas/JovenesEnAccion.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "age_16_to_24",
+        "income_below_threshold",
+        "student",
+        "enrolled_higher_education"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-subsidio-desempleo",
+      "slug": "mecanismo-proteccion-cesantias",
+      "nom": "Subsidio al Desempleo (Mecanismo Protección Cesantías)",
+      "description_en": "Unemployment protection mechanism for formal workers who lose their job. Workers with less than 1 year of severance (cesantías) fund accrue a monthly subsidy of approximately COP 650,000 for up to 6 months. Access via severance fund (Fondo de Cesantías). Requires having contributed to a formal pension fund. Source: mintrabajo.gov.co.",
+      "categorie": "chomage",
+      "organisme": "Ministerio del Trabajo / Fondos de Cesantías",
+      "montant_min_cop": 400000,
+      "montant_max_cop": 650000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mintrabajo.gov.co/web/guest/empleo/subsidio-de-empleo",
+      "source_url": "https://www.mintrabajo.gov.co/web/guest/empleo/subsidio-de-empleo",
+      "eligibility_criteria": [
+        "residence_co",
+        "formal_worker",
+        "job_loss",
+        "contributions_to_pension_fund"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-renta-ciudadana",
+      "slug": "renta-ciudadana-dps",
+      "nom": "Renta Ciudadana",
+      "description_en": "Flagship social protection program replacing Ingreso Solidario and partially replacing other transfers. COP 500,000 bimonthly (COP 250,000/month effective) for households in poverty and extreme poverty identified via SISBEN IV. Includes conditionalities on health and education. Administered by DPS. Source: dps.gov.co.",
+      "categorie": "pauvrete",
+      "organisme": "DPS — Departamento para la Prosperidad Social",
+      "montant_min_cop": 250000,
+      "montant_max_cop": 250000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dps.gov.co/Beneficiarios/Paginas/Renta-Ciudadana.aspx",
+      "source_url": "https://www.dps.gov.co/Beneficiarios/Paginas/Renta-Ciudadana.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "income_below_threshold",
+        "extreme_poverty_sisben",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-icbf-programas",
+      "slug": "icbf-hogares-comunitarios",
+      "nom": "ICBF — Hogares Comunitarios de Bienestar",
+      "description_en": "Child welfare programs by ICBF (Instituto Colombiano de Bienestar Familiar): childcare, nutrition, and early childhood development for children under 5 in vulnerable families. Not a direct cash transfer but provides subsidized childcare and meals. Access through local ICBF offices. Source: icbf.gov.co.",
+      "categorie": "famille",
+      "organisme": "ICBF — Instituto Colombiano de Bienestar Familiar",
+      "montant_min_cop": 0,
+      "montant_max_cop": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.icbf.gov.co/programas-y-estrategias/primera-infancia",
+      "source_url": "https://www.icbf.gov.co/programas-y-estrategias/primera-infancia",
+      "eligibility_criteria": [
+        "residence_co",
+        "child_under_5",
+        "income_below_threshold",
+        "low_income"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-sisben-salud",
+      "slug": "regimen-subsidiado-sgsss",
+      "nom": "SGSSS Régimen Subsidiado (SISBEN / Salud)",
+      "description_en": "Subsidized healthcare coverage for people identified as poor/vulnerable by SISBEN IV. Provides free access to the POS (Plan Obligatorio de Salud) including primary care, hospitalization, medications, and maternity. Enrollment through local EPS-S (Entidades Promotoras de Salud Subsidiadas). Source: minsalud.gov.co.",
+      "categorie": "sante",
+      "organisme": "Ministerio de Salud / EPS Subsidiadas",
+      "montant_min_cop": 0,
+      "montant_max_cop": 1000000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.minsalud.gov.co/salud/Paginas/aseguramiento.aspx",
+      "source_url": "https://www.minsalud.gov.co/salud/Paginas/aseguramiento.aspx",
+      "eligibility_criteria": [
+        "residence_co",
+        "income_below_threshold",
+        "sisben_iv_enrolled",
+        "not_contributory_regime"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    },
+    {
+      "id": "co-mi-casa-ya",
+      "slug": "mi-casa-ya-subsidio-vivienda",
+      "nom": "Mi Casa Ya — Subsidio Familiar de Vivienda",
+      "description_en": "One-time housing subsidy up to 50 SMMLV (COP 65,000,000 in 2025) for purchase of first home (VIS housing up to 135 SMMLV). Income-tested: monthly income ≤ 2 SMMLV (COP 2,600,000). Administered by Ministerio de Vivienda / Fonvivienda. Source: minvivienda.gov.co.",
+      "categorie": "logement",
+      "organisme": "Ministerio de Vivienda / Fonvivienda",
+      "montant_min_cop": 30000000,
+      "montant_max_cop": 65000000,
+      "periodicite": "unique",
+      "url_info": "https://www.minvivienda.gov.co/programas-y-proyectos/mi-casa-ya",
+      "source_url": "https://www.minvivienda.gov.co/programas-y-proyectos/mi-casa-ya",
+      "eligibility_criteria": [
+        "residence_co",
+        "income_below_threshold",
+        "low_income",
+        "first_home",
+        "not_owner"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_year": 2025
+    }
+  ]
+}

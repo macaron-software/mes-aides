@@ -35,6 +35,10 @@ const EU_CURRENCIES = {
   ru: { symbol: '₽',   locale: 'ru-RU', code: 'RUB', suffix: false },
   ua: { symbol: '₴',   locale: 'uk-UA', code: 'UAH', suffix: false },
   il: { symbol: '₪',   locale: 'he-IL', code: 'ILS', suffix: false },
+  /* LatAm expansion */
+  co: { symbol: '$',   locale: 'es-CO', code: 'COP', suffix: false },
+  cl: { symbol: '$',   locale: 'es-CL', code: 'CLP', suffix: false },
+  pe: { symbol: 'S/',  locale: 'es-PE', code: 'PEN', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -52,6 +56,8 @@ const CURRENCY_AMOUNT_FIELD = {
   in: 'inr', kr: 'krw', sg: 'sgd',
   /* EMEA expansion */
   ru: 'rub', ua: 'uah', il: 'ils',
+  /* LatAm expansion */
+  co: 'cop', cl: 'clp', pe: 'pen',
 };
 
 /**
@@ -71,6 +77,8 @@ const INCOME_THRESHOLDS = {
   in: 15000, kr: 713102, sg: 2000,
   /* EMEA expansion — monthly net, local currency smallest unit */
   ru: 2216500, ua: 446200, il: 588000,
+  /* LatAm expansion — monthly net, local currency */
+  co: 130000000, cl: 21400000, pe: 100000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -87,6 +95,8 @@ const LOW_INCOME_THRESHOLDS = {
   in: 30000, kr: 1200000, sg: 4000,
   /* EMEA expansion */
   ru: 4433000, ua: 800000, il: 1000000,
+  /* LatAm expansion */
+  co: 260000000, cl: 42800000, pe: 200000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
