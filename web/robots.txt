@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Pages privées (résultats personnels)
-Disallow: /resultats.html
+# Private pages
+Disallow: /admin/
+Disallow: /*.json$
 
 # Sitemap
 Sitemap: https://aides.macaron-software.com/sitemap.xml

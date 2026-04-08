@@ -464,6 +464,14 @@
     "link_copied": "Lien copié !",
     "restart": "Recommencer",
     "disabled": "Personne handicapée / bénéficiaire d'une allocation d'invalidité",
-    "senior": "Senior (65+)"
+    "senior": "Senior (65+)",
+    "countries": {
+      "jp": "Japon",
+      "ca": "Canada",
+      "mx": "Mexique",
+      "us": "États-Unis",
+      "cn": "Chine",
+      "au": "Australie"
+    }
   }
 }

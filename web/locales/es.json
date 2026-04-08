@@ -293,6 +293,14 @@
     "link_copied": "¡Enlace copiado!",
     "restart": "Volver a empezar",
     "disabled": "Persona con discapacidad / beneficiario de prestación por incapacidad",
-    "senior": "Mayor (65+)"
+    "senior": "Mayor (65+)",
+    "countries": {
+      "jp": "Japón",
+      "ca": "Canadá",
+      "mx": "México",
+      "us": "EE.UU.",
+      "cn": "China",
+      "au": "Australia"
+    }
   }
 }

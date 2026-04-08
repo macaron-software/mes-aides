@@ -293,6 +293,14 @@
     "link_copied": "Link kopiert!",
     "restart": "Neu starten",
     "disabled": "Person mit Behinderung / Empfänger einer Behindertenrente",
-    "senior": "Senior (65+)"
+    "senior": "Senior (65+)",
+    "countries": {
+      "jp": "Japan",
+      "ca": "Kanada",
+      "mx": "Mexiko",
+      "us": "USA",
+      "cn": "China",
+      "au": "Australien"
+    }
   }
 }

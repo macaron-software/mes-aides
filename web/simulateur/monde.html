@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/theme-init.js"></script>
+  <title data-i18n="eu.world_sim_title">World Social Benefits Simulators — 20 Countries | Mes Aides</title>
+  <meta name="description" content="Free eligibility simulators for social benefits in 20 countries across Europe, North America, and Asia-Pacific. Check your rights in Germany, USA, Japan, Canada and more. 2026 official amounts.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aides.macaron-software.com/simulateur/monde.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="World Benefits Simulators — 20 Countries | Mes Aides">
+  <meta property="og:description" content="Free eligibility check for social benefits across 20 countries. Income, age, family situation. 2026 official data.">
+  <meta property="og:url" content="https://aides.macaron-software.com/simulateur/monde.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "World Social Benefits Simulators — Mes Aides",
+    "url": "https://aides.macaron-software.com/simulateur/monde.html",
+    "description": "Free eligibility simulators for social benefits in 20 countries across Europe, North America, and Asia-Pacific.",
+    "hasPart": [
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/de.html","name":"Germany Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/es.html","name":"Spain Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/it.html","name":"Italy Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/pt.html","name":"Portugal Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/be.html","name":"Belgium Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/nl.html","name":"Netherlands Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/se.html","name":"Sweden Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/dk.html","name":"Denmark Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/fi.html","name":"Finland Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/at.html","name":"Austria Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/ch.html","name":"Switzerland Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/no.html","name":"Norway Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/gb.html","name":"United Kingdom Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/pl.html","name":"Poland Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/jp.html","name":"Japan Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/ca.html","name":"Canada Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/mx.html","name":"Mexico Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/us.html","name":"USA Benefits Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/cn.html","name":"China Dibao Simulator"},
+      {"@type":"WebApplication","url":"https://aides.macaron-software.com/simulateur/au.html","name":"Australia Benefits Simulator"}
+    ]
+  }
+  </script>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="fr" href="https://aides.macaron-software.com/simulateur/monde.html?lang=fr">
+  <link rel="alternate" hreflang="en" href="https://aides.macaron-software.com/simulateur/monde.html?lang=en">
+  <link rel="alternate" hreflang="de" href="https://aides.macaron-software.com/simulateur/monde.html?lang=de">
+  <link rel="alternate" hreflang="es" href="https://aides.macaron-software.com/simulateur/monde.html?lang=es">
+  <link rel="alternate" hreflang="it" href="https://aides.macaron-software.com/simulateur/monde.html?lang=it">
+  <link rel="alternate" hreflang="pt" href="https://aides.macaron-software.com/simulateur/monde.html?lang=pt">
+  <link rel="alternate" hreflang="nl" href="https://aides.macaron-software.com/simulateur/monde.html?lang=nl">
+  <link rel="alternate" hreflang="ja" href="https://aides.macaron-software.com/simulateur/monde.html?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://aides.macaron-software.com/simulateur/monde.html?lang=ko">
+  <link rel="alternate" hreflang="zh" href="https://aides.macaron-software.com/simulateur/monde.html?lang=zh">
+  <link rel="alternate" hreflang="ar" href="https://aides.macaron-software.com/simulateur/monde.html?lang=ar">
+  <link rel="alternate" hreflang="hi" href="https://aides.macaron-software.com/simulateur/monde.html?lang=hi">
+  <link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/monde.html">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .page-shell { min-height: 100dvh; background: var(--c-bg); }
+    .eu-hero {
+      background: linear-gradient(135deg, #1a2d5a 0%, #2d4b8e 100%);
+      color: #fff;
+      padding: var(--sp-12, 48px) var(--sp-4, 16px) var(--sp-10, 40px);
+      text-align: center;
+    }
+    .eu-hero__inner { max-width: 720px; margin-inline: auto; }
+    .eu-hero__eyebrow { font-size: var(--fs-sm, .875rem); letter-spacing: .08em; text-transform: uppercase; opacity: .75; margin-bottom: var(--sp-3); }
+    .eu-hero__title { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800; margin-bottom: var(--sp-3); }
+    .eu-hero__sub { font-size: var(--fs-base, 1rem); opacity: .88; max-width: 560px; margin-inline: auto; margin-bottom: var(--sp-6); }
+    .eu-hero__badge { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: var(--r-full, 9999px); padding: var(--sp-1) var(--sp-4); font-size: var(--fs-sm); }
+    .eu-main { max-width: 960px; margin-inline: auto; padding: var(--sp-10, 40px) var(--sp-4, 16px) var(--sp-16, 64px); }
+    .region-section { margin-bottom: var(--sp-12, 48px); }
+    .region-title {
+      font-size: var(--fs-xl, 1.25rem);
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: var(--sp-6);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+    .region-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--c-border);
+    }
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-4, 16px);
+    }
+    @media (max-width: 640px) { .country-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 390px) { .country-grid { grid-template-columns: 1fr; } }
+    .country-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-1, 4px);
+      padding: var(--sp-5, 20px) var(--sp-4, 16px);
+      background: var(--c-surface);
+      border: 2px solid var(--c-border);
+      border-radius: 24px 28px 26px 22px;
+      text-decoration: none;
+      color: var(--c-text);
+      transition: border-color .2s, box-shadow .2s, transform .15s;
+      text-align: center;
+      min-height: 44px;
+    }
+    .country-card:hover {
+      border-color: #1565C0;
+      box-shadow: 0 4px 16px rgba(21,101,192,.15);
+      transform: translateY(-2px);
+    }
+    .country-card__flag { font-size: 2rem; line-height: 1; margin-bottom: var(--sp-1); }
+    .country-card__name { font-size: var(--fs-base, 1rem); font-weight: 700; }
+    .country-card__name-local { font-size: var(--fs-xs, .75rem); color: var(--c-muted); }
+    .country-card__count { font-size: var(--fs-xs, .75rem); color: #1565C0; font-weight: 600; margin-top: var(--sp-1); }
+    .breadcrumb { font-size: var(--fs-sm); color: var(--c-muted); margin-bottom: var(--sp-6); }
+    .breadcrumb a { color: var(--c-muted); text-decoration: underline; }
+    .breadcrumb a:hover { color: var(--c-brand, #1565C0); }
+    .fr-cta-box {
+      background: var(--c-surface);
+      border: 2px solid var(--c-border);
+      border-radius: var(--r-xl, 24px);
+      padding: var(--sp-6) var(--sp-8);
+      margin-top: var(--sp-10);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .fr-cta-box__text { flex: 1; min-width: 200px; }
+    .fr-cta-box__title { font-size: var(--fs-lg); font-weight: 700; margin-bottom: var(--sp-1); }
+    .fr-cta-box__sub { font-size: var(--fs-sm); color: var(--c-muted); }
+    .fr-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-6);
+      background: #1565C0;
+      color: #fff;
+      border: none;
+      border-radius: 24px 28px 26px 22px;
+      font-size: var(--fs-base);
+      font-weight: 700;
+      text-decoration: none;
+      min-height: 44px;
+      transition: opacity .2s;
+    }
+    .fr-cta-btn:hover { opacity: .88; }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <main id="main-content">
+      <section class="eu-hero" aria-labelledby="worldHeroTitle">
+        <div class="eu-hero__inner">
+          <p class="eu-hero__eyebrow" data-i18n="eu.eyebrow">Social Benefits · World · 2026</p>
+          <h1 class="eu-hero__title" id="worldHeroTitle" data-i18n="eu.world_sim_heading">Check your eligibility worldwide</h1>
+          <p class="eu-hero__sub" data-i18n="eu.world_sim_sub">Free simulators for social benefits in 20 countries across Europe, North America and Asia-Pacific. Results in under 3 minutes. No data sent.</p>
+          <span class="eu-hero__badge" data-i18n="eu.world_badge">20 countries · 2026 official amounts · 100% private</span>
+        </div>
+      </section>
+
+      <div class="eu-main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/" data-i18n="nav.home">Home</a>
+          <span aria-hidden="true"> / </span>
+          <span aria-current="page" data-i18n="eu.world_simulators">World Simulators</span>
+        </nav>
+
+        <!-- Europe -->
+        <section class="region-section" aria-labelledby="regionEurope">
+          <h2 class="region-title" id="regionEurope">🌍 Europe <small style="font-size:var(--fs-sm);font-weight:400;color:var(--c-muted);margin-left:var(--sp-2)">14 countries</small></h2>
+          <nav class="country-grid" aria-label="European country simulators">
+            <a href="/simulateur/de.html" class="country-card" data-testid="simulator-country-de" aria-label="Simulator for Germany">
+              <span class="country-card__flag" aria-hidden="true">🇩🇪</span>
+              <span class="country-card__name">Germany</span>
+              <span class="country-card__name-local">Deutschland</span>
+              <span class="country-card__count">5 benefits</span>
+            </a>
+            <a href="/simulateur/es.html" class="country-card" data-testid="simulator-country-es" aria-label="Simulator for Spain">
+              <span class="country-card__flag" aria-hidden="true">🇪🇸</span>
+              <span class="country-card__name">Spain</span>
+              <span class="country-card__name-local">España</span>
+              <span class="country-card__count">4 benefits</span>
+            </a>
+            <a href="/simulateur/it.html" class="country-card" data-testid="simulator-country-it" aria-label="Simulator for Italy">
+              <span class="country-card__flag" aria-hidden="true">🇮🇹</span>
+              <span class="country-card__name">Italy</span>
+              <span class="country-card__name-local">Italia</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/pt.html" class="country-card" data-testid="simulator-country-pt" aria-label="Simulator for Portugal">
+              <span class="country-card__flag" aria-hidden="true">🇵🇹</span>
+              <span class="country-card__name">Portugal</span>
+              <span class="country-card__name-local">Portugal</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/be.html" class="country-card" data-testid="simulator-country-be" aria-label="Simulator for Belgium">
+              <span class="country-card__flag" aria-hidden="true">🇧🇪</span>
+              <span class="country-card__name">Belgium</span>
+              <span class="country-card__name-local">Belgique</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/nl.html" class="country-card" data-testid="simulator-country-nl" aria-label="Simulator for Netherlands">
+              <span class="country-card__flag" aria-hidden="true">🇳🇱</span>
+              <span class="country-card__name">Netherlands</span>
+              <span class="country-card__name-local">Nederland</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/se.html" class="country-card" data-testid="simulator-country-se" aria-label="Simulator for Sweden">
+              <span class="country-card__flag" aria-hidden="true">🇸🇪</span>
+              <span class="country-card__name">Sweden</span>
+              <span class="country-card__name-local">Sverige</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/dk.html" class="country-card" data-testid="simulator-country-dk" aria-label="Simulator for Denmark">
+              <span class="country-card__flag" aria-hidden="true">🇩🇰</span>
+              <span class="country-card__name">Denmark</span>
+              <span class="country-card__name-local">Danmark</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/fi.html" class="country-card" data-testid="simulator-country-fi" aria-label="Simulator for Finland">
+              <span class="country-card__flag" aria-hidden="true">🇫🇮</span>
+              <span class="country-card__name">Finland</span>
+              <span class="country-card__name-local">Suomi</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/at.html" class="country-card" data-testid="simulator-country-at" aria-label="Simulator for Austria">
+              <span class="country-card__flag" aria-hidden="true">🇦🇹</span>
+              <span class="country-card__name">Austria</span>
+              <span class="country-card__name-local">Österreich</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/ch.html" class="country-card" data-testid="simulator-country-ch" aria-label="Simulator for Switzerland">
+              <span class="country-card__flag" aria-hidden="true">🇨🇭</span>
+              <span class="country-card__name">Switzerland</span>
+              <span class="country-card__name-local">Schweiz</span>
+              <span class="country-card__count">4 benefits</span>
+            </a>
+            <a href="/simulateur/no.html" class="country-card" data-testid="simulator-country-no" aria-label="Simulator for Norway">
+              <span class="country-card__flag" aria-hidden="true">🇳🇴</span>
+              <span class="country-card__name">Norway</span>
+              <span class="country-card__name-local">Norge</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/gb.html" class="country-card" data-testid="simulator-country-gb" aria-label="Simulator for United Kingdom">
+              <span class="country-card__flag" aria-hidden="true">🇬🇧</span>
+              <span class="country-card__name">United Kingdom</span>
+              <span class="country-card__name-local">United Kingdom</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+            <a href="/simulateur/pl.html" class="country-card" data-testid="simulator-country-pl" aria-label="Simulator for Poland">
+              <span class="country-card__flag" aria-hidden="true">🇵🇱</span>
+              <span class="country-card__name">Poland</span>
+              <span class="country-card__name-local">Polska</span>
+              <span class="country-card__count">3 benefits</span>
+            </a>
+          </nav>
+        </section>
+
+        <!-- North America -->
+        <section class="region-section" aria-labelledby="regionNorthAmerica">
+          <h2 class="region-title" id="regionNorthAmerica">🌎 North America <small style="font-size:var(--fs-sm);font-weight:400;color:var(--c-muted);margin-left:var(--sp-2)">3 countries</small></h2>
+          <nav class="country-grid" aria-label="North American country simulators">
+            <a href="/simulateur/ca.html" class="country-card" data-testid="simulator-country-ca" aria-label="Simulator for Canada">
+              <span class="country-card__flag" aria-hidden="true">🇨🇦</span>
+              <span class="country-card__name">Canada</span>
+              <span class="country-card__name-local">Canada</span>
+              <span class="country-card__count">5 benefits</span>
+            </a>
+            <a href="/simulateur/mx.html" class="country-card" data-testid="simulator-country-mx" aria-label="Simulator for Mexico">
+              <span class="country-card__flag" aria-hidden="true">🇲🇽</span>
+              <span class="country-card__name">Mexico</span>
+              <span class="country-card__name-local">México</span>
+              <span class="country-card__count">4 benefits</span>
+            </a>
+            <a href="/simulateur/us.html" class="country-card" data-testid="simulator-country-us" aria-label="Simulator for United States">
+              <span class="country-card__flag" aria-hidden="true">🇺🇸</span>
+              <span class="country-card__name">United States</span>
+              <span class="country-card__name-local">United States</span>
+              <span class="country-card__count">5 benefits</span>
+            </a>
+          </nav>
+        </section>
+
+        <!-- Asia-Pacific -->
+        <section class="region-section" aria-labelledby="regionAsiaPacific">
+          <h2 class="region-title" id="regionAsiaPacific">🌏 Asia-Pacific <small style="font-size:var(--fs-sm);font-weight:400;color:var(--c-muted);margin-left:var(--sp-2)">3 countries</small></h2>
+          <nav class="country-grid" aria-label="Asia-Pacific country simulators">
+            <a href="/simulateur/jp.html" class="country-card" data-testid="simulator-country-jp" aria-label="Simulator for Japan">
+              <span class="country-card__flag" aria-hidden="true">🇯🇵</span>
+              <span class="country-card__name">Japan</span>
+              <span class="country-card__name-local">日本</span>
+              <span class="country-card__count">4 benefits</span>
+            </a>
+            <a href="/simulateur/au.html" class="country-card" data-testid="simulator-country-au" aria-label="Simulator for Australia">
+              <span class="country-card__flag" aria-hidden="true">🇦🇺</span>
+              <span class="country-card__name">Australia</span>
+              <span class="country-card__name-local">Australia</span>
+              <span class="country-card__count">5 benefits</span>
+            </a>
+            <a href="/simulateur/cn.html" class="country-card" data-testid="simulator-country-cn" aria-label="Simulator for China">
+              <span class="country-card__flag" aria-hidden="true">🇨🇳</span>
+              <span class="country-card__name">China</span>
+              <span class="country-card__name-local">中国</span>
+              <span class="country-card__count">4 benefits</span>
+            </a>
+          </nav>
+        </section>
+
+        <div class="fr-cta-box" role="complementary" aria-label="French simulator">
+          <div class="fr-cta-box__text">
+            <p class="fr-cta-box__title" data-i18n="eu.fr_sim_title">Looking for French benefits?</p>
+            <p class="fr-cta-box__sub" data-i18n="eu.fr_sim_sub">Our French simulator covers 71 aids (RSA, APL, AAH, Prime d'activité and more).</p>
+          </div>
+          <a href="/simulateur.html" class="fr-cta-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            <span data-i18n="eu.fr_sim_cta">French Simulator</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/theme-init.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

@@ -15,6 +15,13 @@ const EU_CURRENCIES = {
   no: { symbol: 'kr',  locale: 'nb-NO', suffix: true  },
   ch: { symbol: 'CHF', locale: 'de-CH', suffix: false },
   pl: { symbol: 'zł',  locale: 'pl-PL', suffix: true  },
+  /* World */
+  jp: { symbol: '¥',   locale: 'ja-JP', code: 'JPY', suffix: false },
+  ca: { symbol: 'CA$', locale: 'en-CA', code: 'CAD', suffix: false },
+  mx: { symbol: 'MX$', locale: 'es-MX', code: 'MXN', suffix: false },
+  us: { symbol: '$',   locale: 'en-US', code: 'USD', suffix: false },
+  cn: { symbol: '¥',   locale: 'zh-CN', code: 'CNY', suffix: false },
+  au: { symbol: 'A$',  locale: 'en-AU', code: 'AUD', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -28,6 +35,8 @@ const INCOME_THRESHOLDS = {
   de: 1600, es: 1200, it: 1200, pt:  950, be: 1500,
   nl: 1400, se:18000, dk:20000, fi: 1600, at: 1400,
   ch: 3500, no:20000, gb: 1200, pl: 4000,
+  /* World (monthly net, local currency) */
+  jp: 150000, ca: 2000, mx: 6000, us: 1800, cn: 3000, au: 2500,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -35,6 +44,8 @@ const LOW_INCOME_THRESHOLDS = {
   de: 2500, es: 2000, it: 2000, pt: 1500, be: 2500,
   nl: 2200, se:28000, dk:30000, fi: 2500, at: 2200,
   ch: 5500, no:32000, gb: 2000, pl: 6000,
+  /* World */
+  jp: 250000, ca: 3500, mx: 10000, us: 3000, cn: 5000, au: 4000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */

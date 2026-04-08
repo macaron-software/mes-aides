@@ -293,6 +293,14 @@
     "link_copied": "Link copied!",
     "restart": "Start again",
     "disabled": "Disabled / recipient of disability allowance",
-    "senior": "Senior (65+)"
+    "senior": "Senior (65+)",
+    "countries": {
+      "jp": "日本",
+      "ca": "加拿大",
+      "mx": "墨西哥",
+      "us": "美国",
+      "cn": "中国",
+      "au": "澳大利亚"
+    }
   }
 }
