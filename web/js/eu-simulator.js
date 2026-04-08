@@ -27,6 +27,10 @@ const EU_CURRENCIES = {
   tr: { symbol: '₺',   locale: 'tr-TR', code: 'TRY', suffix: false },
   za: { symbol: 'R',   locale: 'en-ZA', code: 'ZAR', suffix: false },
   nz: { symbol: 'NZ$', locale: 'en-NZ', code: 'NZD', suffix: false },
+  /* Asia expansion */
+  in: { symbol: '₹',   locale: 'en-IN', code: 'INR', suffix: false },
+  kr: { symbol: '₩',   locale: 'ko-KR', code: 'KRW', suffix: false },
+  sg: { symbol: 'S$',  locale: 'en-SG', code: 'SGD', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -40,6 +44,8 @@ const CURRENCY_AMOUNT_FIELD = {
   us: 'usd', ca: 'cad', au: 'aud',
   jp: 'jpy', mx: 'mxn', cn: 'cny', br: 'brl', ar: 'ars',
   tr: 'try', za: 'zar', nz: 'nzd',
+  /* Asia expansion */
+  in: 'inr', kr: 'krw', sg: 'sgd',
 };
 
 /**
@@ -55,6 +61,8 @@ const INCOME_THRESHOLDS = {
   /* World (monthly net, local currency) */
   jp: 150000, ca: 2000, mx: 6000, us: 1800, cn: 3000, au: 2500, br: 1518, ar: 302000,
   tr: 2210400, za: 350000, nz: 150000,
+  /* Asia expansion — monthly net, local currency */
+  in: 15000, kr: 713102, sg: 2000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -67,6 +75,8 @@ const LOW_INCOME_THRESHOLDS = {
   /* World */
   jp: 250000, ca: 3500, mx: 10000, us: 3000, cn: 5000, au: 4000, br: 3036, ar: 604000,
   tr: 4420800, za: 700000, nz: 300000,
+  /* Asia expansion */
+  in: 30000, kr: 1200000, sg: 4000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
