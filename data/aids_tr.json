@@ -1,0 +1,233 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "TR",
+  "name": "Turkey",
+  "name_local": "Turkiye",
+  "language": "tr",
+  "currency": "TRY",
+  "welfare_model": "Bismarckian-social insurance",
+  "sources": [
+    "https://www.sgk.gov.tr",
+    "https://www.aile.gov.tr",
+    "https://www.iskur.gov.tr",
+    "https://www.sydgm.gov.tr"
+  ],
+  "aids": [
+    {
+      "id": "tr-emekli-maasi",
+      "slug": "emekli-maasi-sgk",
+      "nom": "Emekli Maaşı (SGK Yaşlılık Aylığı)",
+      "description_en": "SGK retirement pension. Minimum 22,000 TRY/month after 2025 minimum pension guarantee increase. Amount based on career earnings and contribution days. Requires min. 25 years contributions (9000 days) and age 55/58 (women/men). Source: sgk.gov.tr",
+      "categorie": "retraite",
+      "organisme": "Sosyal Güvenlik Kurumu (SGK)",
+      "montant_min_try": 2200000,
+      "montant_max_try": 3500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sgk.gov.tr/wps/portal/sgk/tr/emekli/yaslilik_aylik",
+      "source_url": "https://www.sgk.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "age_55_plus_women_or_58_plus_men",
+        "sgk_contribution_9000_days",
+        "retired_status"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-issizlik-sigortasi",
+      "slug": "issizlik-sigortasi",
+      "nom": "İşsizlik Sigortası",
+      "description_en": "Unemployment insurance benefit. 80% of average daily wage, paid for 180-300 days depending on contribution history (600/900/1080+ days). Maximum 16,800 TRY/month (2025). Administered by ISKUR. Requires involuntary job loss. Source: iskur.gov.tr",
+      "categorie": "revenus_emploi",
+      "organisme": "Türkiye İş Kurumu (ISKUR)",
+      "montant_min_try": 500000,
+      "montant_max_try": 1680000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.iskur.gov.tr/isgucune-katilim/issizlik-sigortasi/",
+      "source_url": "https://www.iskur.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "worked_contributing_period",
+        "involuntary_unemployment",
+        "sgk_premium_600_days_last_3yr",
+        "registered_unemployed"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-engelli-ayligi",
+      "slug": "engelli-ayligi",
+      "nom": "Engelli Aylığı",
+      "description_en": "Disability allowance for Turkish citizens. 7,600 TRY/month for 40-69% disability rate; 11,400 TRY/month for 70%+ disability rate (2025). Income-tested: monthly income must be below minimum pension threshold. Source: aile.gov.tr",
+      "categorie": "handicap",
+      "organisme": "Aile ve Sosyal Hizmetler Bakanlığı",
+      "montant_min_try": 760000,
+      "montant_max_try": 1140000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.aile.gov.tr/engelli-ve-yasli-hizmetleri/engelli-aylik-basvurusu/",
+      "source_url": "https://www.aile.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "disability_40_percent_plus",
+        "turkish_citizen",
+        "income_below_threshold",
+        "age_18_plus"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-muhtaclik-ayligi",
+      "slug": "muhtaclik-ayligi-sydgm",
+      "nom": "Muhtaçlık Aylığı (SYDGM)",
+      "description_en": "Means-tested monthly allowance for Turkish citizens without income or social security support. Approximately 5,000 TRY/month (2025) from SYDGM solidarity funds. Income-tested: applicant must have no regular income and no family support. Source: aile.gov.tr/sydgm",
+      "categorie": "minima_sociaux",
+      "organisme": "Sosyal Yardımlaşma ve Dayanışma Genel Müdürlüğü (SYDGM)",
+      "montant_min_try": 400000,
+      "montant_max_try": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.aile.gov.tr/sosyal-yardimlar/",
+      "source_url": "https://www.aile.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "turkish_citizen",
+        "income_below_threshold",
+        "no_social_security_income",
+        "means_tested"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-genel-saglik-sigortasi",
+      "slug": "genel-saglik-sigortasi",
+      "nom": "Genel Sağlık Sigortası (GSS)",
+      "description_en": "General health insurance providing free access to public healthcare. Free for individuals with income below minimum wage (22,104 TRY/month in 2025). Includes hospitalization, outpatient care, medication subsidies, and preventive care. Source: sgk.gov.tr",
+      "categorie": "sante",
+      "organisme": "Sosyal Güvenlik Kurumu (SGK)",
+      "montant_min_try": 0,
+      "montant_max_try": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sgk.gov.tr/wps/portal/sgk/tr/genel-saglik-sigortasi",
+      "source_url": "https://www.sgk.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "income_below_minimum_wage",
+        "registered_gss"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-asgari-ucret",
+      "slug": "asgari-ucret-2025",
+      "nom": "Asgari Ücret (2025 referans)",
+      "description_en": "National minimum wage reference: 22,104 TRY gross/month (January 2025). Determined by the Minimum Wage Determination Commission. Used as income reference threshold for many social benefit eligibility tests. Net ~18,971 TRY/month after SSK and income tax deductions. Source: csgb.gov.tr",
+      "categorie": "revenus_emploi",
+      "organisme": "Çalışma ve Sosyal Güvenlik Bakanlığı",
+      "montant_min_try": 2210400,
+      "montant_max_try": 2210400,
+      "periodicite": "mensuel",
+      "url_info": "https://www.csgb.gov.tr/asgari-ucret/",
+      "source_url": "https://www.csgb.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "employed",
+        "employment_contract_registered_sgk"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-evde-bakim-yardimi",
+      "slug": "evde-bakim-yardimi",
+      "nom": "Evde Bakım Yardımı",
+      "description_en": "Home care allowance paid to family caregivers of severely disabled individuals (disability rate 50%+). 9,052 TRY/month in 2025. Paid to the caregiver, not the disabled person. Family income must be below 2/3 of net minimum wage per capita. Source: aile.gov.tr",
+      "categorie": "handicap",
+      "organisme": "Aile ve Sosyal Hizmetler Bakanlığı",
+      "montant_min_try": 905200,
+      "montant_max_try": 905200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.aile.gov.tr/engelli-ve-yasli-hizmetleri/evde-bakim-yardimi/",
+      "source_url": "https://www.aile.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "turkish_citizen",
+        "disabled_family_member_50_percent_plus",
+        "caregiver_role",
+        "income_below_two_thirds_minimum_wage_per_capita"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-egitim-yardimi",
+      "slug": "egitim-yardimi-meb",
+      "nom": "Eğitim Yardımı (MEB)",
+      "description_en": "Education support allowance for low-income families with school-age children. 750 TRY/month per child in primary school; 1,250 TRY/month per child in secondary school (2025). Applied via e-Devlet. Family income must be below poverty threshold. Source: meb.gov.tr",
+      "categorie": "famille",
+      "organisme": "Milli Eğitim Bakanlığı (MEB) / SYDGM",
+      "montant_min_try": 75000,
+      "montant_max_try": 125000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.aile.gov.tr/sosyal-yardimlar/egitim-yardimlari/",
+      "source_url": "https://www.aile.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "turkish_citizen",
+        "child_enrolled_school",
+        "income_below_threshold",
+        "child_age_6_to_18"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-dogum-yardimi",
+      "slug": "dogum-yardimi",
+      "nom": "Doğum Yardımı (Tek Seferlik)",
+      "description_en": "One-time birth grant for Turkish citizens. 5,000 TRY for the 1st child, 10,000 TRY for the 2nd child, 15,000 TRY for the 3rd and subsequent children (2025). Applied via e-Devlet within 180 days of birth. No income test. Source: aile.gov.tr",
+      "categorie": "famille",
+      "organisme": "Aile ve Sosyal Hizmetler Bakanlığı",
+      "montant_min_try": 500000,
+      "montant_max_try": 1500000,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.aile.gov.tr/aile-ve-toplum/dogum-yardimi/",
+      "source_url": "https://www.aile.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "turkish_citizen",
+        "newborn_child",
+        "application_within_180_days"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "tr-istihdam-tesviki",
+      "slug": "sgk-istihdam-tesviki",
+      "nom": "İstihdam Teşviği (SGK Prim Desteği)",
+      "description_en": "Employment incentive: 6-month employer SGK premium waiver for hiring unemployed individuals registered with ISKUR. Employer's share of SGK premiums (20.5%) covered by the Unemployment Insurance Fund for 6 months. Encourages formal employment. Source: sgk.gov.tr",
+      "categorie": "revenus_emploi",
+      "organisme": "Sosyal Güvenlik Kurumu (SGK) / Fon",
+      "montant_min_try": 0,
+      "montant_max_try": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sgk.gov.tr/wps/portal/sgk/tr/isverenler/tesvik",
+      "source_url": "https://www.sgk.gov.tr",
+      "eligibility_criteria": [
+        "residence_tr",
+        "unemployed",
+        "registered_iskur",
+        "hired_by_registered_employer",
+        "formal_employment_contract"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

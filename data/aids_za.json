@@ -1,0 +1,239 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-04-01T00:00:00Z",
+  "last_updated": "2025-04-01",
+  "country_code": "ZA",
+  "name": "South Africa",
+  "name_local": "South Africa / Suid-Afrika",
+  "language": "en",
+  "currency": "ZAR",
+  "welfare_model": "Means-tested grant system",
+  "sources": [
+    "https://www.sassa.gov.za",
+    "https://www.gov.za",
+    "https://www.labour.gov.za",
+    "https://www.nsfas.org.za"
+  ],
+  "aids": [
+    {
+      "id": "za-old-age-grant",
+      "slug": "old-age-grant-sassa",
+      "nom": "Old Age Grant (SASSA)",
+      "description_en": "Monthly grant for South Africans aged 60+. R2,190/month from April 2025 (R2,200 for ages 75+). Subject to means test: assets below R1,372,800 (single) and income below R9,600/month. Administered by SASSA. Source: sassa.gov.za",
+      "categorie": "retraite",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 219000,
+      "montant_max_zar": 220000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/older-person",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "age_60_plus",
+        "means_test_passed",
+        "income_below_threshold"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-disability-grant",
+      "slug": "disability-grant-sassa",
+      "nom": "Disability Grant (SASSA)",
+      "description_en": "Monthly grant for people with a permanent or temporary disability preventing them from working. R2,190/month (April 2025 rate). Requires medical assessment. Subject to means test. Temporary grants reviewed every 6-12 months. Source: sassa.gov.za",
+      "categorie": "handicap",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 219000,
+      "montant_max_zar": 219000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/disability",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "age_18_to_59",
+        "permanent_or_temporary_disability",
+        "means_test_passed"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-child-support-grant",
+      "slug": "child-support-grant-sassa",
+      "nom": "Child Support Grant (CSG)",
+      "description_en": "Monthly grant paid to the primary caregiver for each child under 18. R530/month per child from April 2025. Income tested: caregiver income below R4,500/month (urban) or R3,000/month (rural). Most widely claimed grant in South Africa with 13+ million recipients. Source: sassa.gov.za",
+      "categorie": "famille",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 53000,
+      "montant_max_zar": 53000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/child-support",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "child_under_18",
+        "primary_caregiver",
+        "income_below_threshold"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-foster-child-grant",
+      "slug": "foster-child-grant-sassa",
+      "nom": "Foster Child Grant",
+      "description_en": "Monthly grant for foster parents of children placed in their care by court order. R1,180/month per foster child (April 2025). Requires court order for foster care placement. Subject to annual review. Not means-tested for caregiver. Source: sassa.gov.za",
+      "categorie": "famille",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 118000,
+      "montant_max_zar": 118000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/foster-child",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "foster_care_court_order",
+        "child_under_18"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-care-dependency-grant",
+      "slug": "care-dependency-grant-sassa",
+      "nom": "Care Dependency Grant",
+      "description_en": "Monthly grant for caregivers of children with severe disabilities requiring full-time care. R2,190/month (April 2025). Child must be under 18 with a permanent, severe disability. Means-tested: household income below threshold. Requires medical assessment. Source: sassa.gov.za",
+      "categorie": "handicap",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 219000,
+      "montant_max_zar": 219000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/care-dependency",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "child_under_18_severe_disability",
+        "permanent_severe_disability",
+        "means_test_passed"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-social-relief-distress",
+      "slug": "social-relief-of-distress",
+      "nom": "Social Relief of Distress (SRD)",
+      "description_en": "Temporary financial assistance for people in dire need who do not receive any other social grant. R370/month for up to 3 months per application (2025). Includes food parcels or vouchers in some cases. Not an ongoing benefit. Source: sassa.gov.za",
+      "categorie": "minima_sociaux",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 37000,
+      "montant_max_zar": 37000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/social-relief-of-distress",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "no_other_social_grant",
+        "dire_need",
+        "income_below_threshold"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-srd-basic-income",
+      "slug": "srd-r350-basic-income",
+      "nom": "SRD Grant (Basic Income Support R370)",
+      "description_en": "COVID-19 Social Relief of Distress grant extended as basic income support. R370/month for unemployed adults aged 18-59 not receiving any other grant or UIF. Online application via sassa-online.sassa.gov.za. Income verification via SARS and bank records. Source: sassa.gov.za",
+      "categorie": "minima_sociaux",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 37000,
+      "montant_max_zar": 37000,
+      "periodicite": "mensuel",
+      "url_info": "https://sassa-online.sassa.gov.za/",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "age_18_to_59",
+        "unemployed",
+        "no_other_social_grant",
+        "income_below_threshold"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-war-veterans-grant",
+      "slug": "war-veterans-grant-sassa",
+      "nom": "War Veterans Grant",
+      "description_en": "Monthly grant for war veterans who served in the First or Second World War, Korean War or similar conflict, and are now 60+ years old or disabled. R2,240/month (April 2025), slightly higher than Old Age Grant. Means-tested. Source: sassa.gov.za",
+      "categorie": "retraite",
+      "organisme": "South African Social Security Agency (SASSA)",
+      "montant_min_zar": 224000,
+      "montant_max_zar": 224000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sassa.gov.za/social-grants/war-veterans",
+      "source_url": "https://www.sassa.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "war_veteran",
+        "age_60_plus_or_disabled",
+        "means_test_passed"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-uif",
+      "slug": "unemployment-insurance-fund",
+      "nom": "UIF (Unemployment Insurance Fund)",
+      "description_en": "Unemployment insurance for formally employed workers who lose their jobs. Benefits: 38-58% of last salary (higher replacement rate for lower earners). Maximum R17,712/month (2025 cap). Duration: 1 day benefit per 4 days worked, up to 12 months total. Applies also to illness, maternity, and parental leave. Source: labour.gov.za",
+      "categorie": "revenus_emploi",
+      "organisme": "Department of Employment and Labour — UIF",
+      "montant_min_zar": 0,
+      "montant_max_zar": 1771200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.labour.gov.za/unemployment-insurance-fund",
+      "source_url": "https://www.labour.gov.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "worked_contributing_period",
+        "involuntary_unemployment",
+        "uif_contributor",
+        "registered_unemployed"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "za-nsfas",
+      "slug": "nsfas-bursary",
+      "nom": "NSFAS (National Student Financial Aid Scheme)",
+      "description_en": "Federal bursary covering tuition, accommodation, meals, and learning materials for South African students at public universities and TVET colleges. Up to R87,000/year for university students (2025). Household income must be below R350,000/year. Does not need to be repaid for qualifying students. Source: nsfas.org.za",
+      "categorie": "jeunesse",
+      "organisme": "National Student Financial Aid Scheme (NSFAS)",
+      "montant_min_zar": 0,
+      "montant_max_zar": 8700000,
+      "periodicite": "annuel",
+      "url_info": "https://www.nsfas.org.za/content/application.html",
+      "source_url": "https://www.nsfas.org.za",
+      "eligibility_criteria": [
+        "residence_za",
+        "south_african_citizen_or_permanent_resident",
+        "enrolled_public_university_or_tvet",
+        "household_income_below_350000_zar",
+        "good_academic_standing"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    }
+  ]
+}
