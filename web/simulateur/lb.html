@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/theme-init.js"></script>
+  <title>Simulateur Aides Sociales Liban 2024 &mdash; NSSF, MOSA | Mes Aides</title>
+  <meta name="description" content="Simulateur d&#39;aides sociales Liban 2024 : NSSF fin de service, MOSA filet s&#233;curit&#233;. Crise mon&#233;taire : 1 USD &#8776; 89&#160;500 LBP. V&#233;rifiez votre &#233;ligibilit&#233;.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aides.macaron-software.com/simulateur/lb.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Simulateur Aides Liban 2024 &#8212; NSSF, MOSA | Mes Aides">
+  <meta property="og:description" content="Simulateur d&#39;aides sociales Liban 2024 : NSSF fin de service, MOSA filet s&#233;curit&#233;. V&#233;rification gratuite.">
+  <meta property="og:url" content="https://aides.macaron-software.com/simulateur/lb.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aides.macaron-software.com/img/og-default.svg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://aides.macaron-software.com/"},
+          {"@type":"ListItem","position":2,"name":"Monde","item":"https://aides.macaron-software.com/simulateur/monde.html"},
+          {"@type":"ListItem","position":3,"name":"Liban","item":"https://aides.macaron-software.com/simulateur/lb.html"}
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Lebanon Benefits Simulator 2024 — Mes Aides",
+        "url": "https://aides.macaron-software.com/simulateur/lb.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type":"Offer","price":"0","priceCurrency":"LBP"},
+        "description": "Lebanon Benefits Simulator 2024 — Mes Aides"
+      }
+    ]
+  }
+  </script>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="fr" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="ar" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="en" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="de" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="tr" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="zh" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="es" href="https://aides.macaron-software.com/simulateur/lb.html">
+  <link rel="alternate" hreflang="x-default" href="https://aides.macaron-software.com/simulateur/lb.html">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .sim-shell {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--c-bg);
+    }
+    .sim-header {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3, 12px);
+      padding: var(--sp-3, 12px) var(--sp-4, 16px);
+      background: var(--c-surface, #fff);
+      border-bottom: 1px solid var(--c-border, #e5e7eb);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .sim-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      text-decoration: none;
+      color: #3a6fa8;
+      font-weight: 700;
+      font-size: var(--fs-lg, 1.125rem);
+    }
+    .sim-country-badge { font-size: 1.25rem; line-height: 1; }
+    .sim-progress-bar {
+      flex: 1;
+      max-width: 320px;
+      height: 6px;
+      background: var(--c-border);
+      border-radius: var(--r-full, 9999px);
+      overflow: hidden;
+    }
+    .sim-progress-fill {
+      height: 100%;
+      background: #3a6fa8;
+      border-radius: var(--r-full, 9999px);
+      transition: width 400ms ease;
+      width: 16.67%;
+    }
+    .sim-step-label { font-size: var(--fs-sm, 0.875rem); color: var(--c-muted, #6b7280); white-space: nowrap; }
+    .sim-tools { display:flex; gap:var(--sp-2); margin-left:auto; align-items:center; }
+    .sim-body {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: var(--sp-10, 40px) var(--sp-4, 16px);
+    }
+    .sim-card {
+      background: var(--c-surface);
+      border-radius: var(--r-xl, 24px);
+      box-shadow: var(--sh-lg, 0 4px 24px rgba(0,0,0,.1));
+      padding: var(--sp-10, 40px) var(--sp-12, 48px);
+      width: 100%;
+      max-width: 600px;
+    }
+    @media (max-width: 640px) {
+      .sim-card { padding: var(--sp-6, 24px) var(--sp-5, 20px); }
+    }
+    .sim-step { display: none; }
+    .sim-step.active { display: block; }
+    .sim-step-heading { font-size: var(--fs-2xl, 1.5rem); font-weight: 700; color: var(--c-text); margin-bottom: var(--sp-2, 8px); }
+    .sim-step-sub { font-size: var(--fs-base, 1rem); color: var(--c-muted); margin-bottom: var(--sp-8, 32px); }
+    .question-group { margin-bottom: var(--sp-6, 24px); }
+    .question-label { display: block; font-size: var(--fs-base); font-weight: 600; color: var(--c-text); margin-bottom: var(--sp-3, 12px); }
+    .question-hint { font-size: var(--fs-sm); color: var(--c-muted); margin-top: var(--sp-1, 4px); }
+    .input-field {
+      width: 100%;
+      padding: var(--sp-3) var(--sp-4);
+      border: 2px solid var(--c-border);
+      border-radius: var(--r-lg, 16px);
+      background: var(--c-bg);
+      font-size: var(--fs-lg);
+      color: var(--c-text);
+      transition: border-color .2s;
+      box-sizing: border-box;
+    }
+    .input-field:focus { outline: none; border-color: #3a6fa8; }
+    .input-suffix { position: relative; display: flex; align-items: center; }
+    .input-suffix .input-field { padding-right: var(--sp-10); }
+    .input-suffix__label { position: absolute; right: var(--sp-4); color: var(--c-muted); font-size: var(--fs-base); pointer-events: none; }
+    .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3, 12px); }
+    @media (max-width: 480px) { .choice-grid { grid-template-columns: 1fr; } }
+    .choice-btn {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      padding: var(--sp-4);
+      border: 2px solid var(--c-border);
+      border-radius: var(--r-lg, 16px);
+      background: var(--c-surface);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      text-align: left;
+      font-size: var(--fs-base);
+      color: var(--c-text);
+      min-height: 44px;
+    }
+    .choice-btn:hover { border-color: #3a6fa8; background: var(--c-surface-alt, #f9fafb); }
+    .choice-btn.selected {
+      border-color: #3a6fa8;
+      background: color-mix(in srgb, #3a6fa8 8%, var(--c-surface));
+      font-weight: 600;
+    }
+    .choice-btn svg { flex-shrink: 0; color: #3a6fa8; }
+    .sim-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--sp-8, 32px);
+      gap: var(--sp-3);
+    }
+    .btn-back {
+      display: flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-4);
+      border: 2px solid var(--c-border); border-radius: var(--r-lg);
+      background: transparent; color: var(--c-muted); cursor: pointer;
+      font-size: var(--fs-base); min-height: 44px; transition: border-color .2s;
+    }
+    .btn-back:hover { border-color: var(--c-text); color: var(--c-text); }
+    .btn-back:disabled { opacity: .35; cursor: not-allowed; }
+    .btn-next {
+      display: flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-6);
+      border: none; border-radius: 24px 28px 26px 22px;
+      background: #3a6fa8; color: #fff; cursor: pointer;
+      font-size: var(--fs-base); font-weight: 600; min-height: 44px;
+      transition: opacity .2s, transform .15s; margin-left: auto;
+    }
+    .btn-next:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-next:active { transform: translateY(0); }
+    .results-header { margin-bottom: var(--sp-6); }
+    .results-count { font-size: var(--fs-sm); color: var(--c-muted); margin-top: var(--sp-1); }
+    .aid-card {
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-xl, 24px);
+      padding: var(--sp-5) var(--sp-6);
+      margin-bottom: var(--sp-4);
+      background: var(--c-surface);
+      position: relative;
+    }
+    .aid-card__amount { position: absolute; top: var(--sp-5); right: var(--sp-5); font-size: var(--fs-xl, 1.25rem); font-weight: 700; color: #3a6fa8; }
+    .aid-card__name { font-size: var(--fs-lg); font-weight: 700; color: var(--c-text); margin-bottom: var(--sp-1); padding-right: var(--sp-16, 64px); }
+    .aid-card__org { font-size: var(--fs-sm); color: var(--c-muted); margin-bottom: var(--sp-2); }
+    .aid-card__desc { font-size: var(--fs-base); color: var(--c-text); margin-bottom: var(--sp-3); }
+    .aid-card__period { display: inline-block; font-size: var(--fs-xs, 0.75rem); background: color-mix(in srgb, #3a6fa8 12%, transparent); color: #3a6fa8; border-radius: var(--r-full); padding: 2px var(--sp-3); font-weight: 600; margin-bottom: var(--sp-3); }
+    .aid-card__link { display: inline-flex; align-items: center; gap: var(--sp-1); font-size: var(--fs-sm); color: #3a6fa8; text-decoration: none; font-weight: 600; }
+    .aid-card__link:hover { text-decoration: underline; }
+    .results-actions { display: flex; gap: var(--sp-3); margin-top: var(--sp-6); flex-wrap: wrap; }
+    .btn-share {
+      display: flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-5); border: 2px solid #3a6fa8; border-radius: var(--r-lg);
+      background: transparent; color: #3a6fa8; cursor: pointer; font-size: var(--fs-base);
+      font-weight: 600; min-height: 44px; transition: background .2s;
+    }
+    .btn-share:hover { background: color-mix(in srgb, #3a6fa8 8%, transparent); }
+    .btn-restart {
+      display: flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-5); border: 2px solid var(--c-border); border-radius: var(--r-lg);
+      background: transparent; color: var(--c-muted); cursor: pointer; font-size: var(--fs-base); min-height: 44px;
+    }
+    .empty-results { text-align: center; padding: var(--sp-10) 0; color: var(--c-muted); }
+    .share-toast {
+      position: fixed; bottom: var(--sp-6); left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--c-text); color: var(--c-bg);
+      padding: var(--sp-3) var(--sp-5); border-radius: var(--r-lg);
+      font-size: var(--fs-sm); font-weight: 600; transition: transform .3s ease;
+      z-index: 500; pointer-events: none;
+    }
+    .share-toast.visible { transform: translateX(-50%) translateY(0); }
+    @media print {
+      .sim-header, .sim-nav, .results-actions, .share-toast { display: none !important; }
+      .sim-card { box-shadow: none; padding: 0; }
+      .aid-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sim-shell">
+    <!-- Header -->
+    <header class="sim-header" role="banner">
+      <a href="/" class="sim-logo" aria-label="Mes Aides — Accueil">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Mes Aides</span>
+      </a>
+      <span class="sim-country-badge" aria-hidden="true">&#127473;&#127463;</span>
+      <div class="sim-progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" aria-label="Progression du simulateur" id="simProgressBar">
+        <div class="sim-progress-fill" id="simProgressFill"></div>
+      </div>
+      <span class="sim-step-label" id="stepCounter" data-i18n="eu.step_of">&#201;tape 1 / 6</span>
+      <div class="sim-tools">
+        <button id="btnTheme" aria-label="Changer le th&#232;me" style="background:none;border:none;cursor:pointer;padding:var(--sp-2);border-radius:var(--r-md);min-height:44px;min-width:44px;color:var(--c-muted)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="sim-body" id="main-content">
+      <div class="sim-card">
+
+        <!-- Step 1: Income -->
+        <div class="sim-step active" id="step-1" role="group" aria-labelledby="step1-heading">
+          <h1 class="sim-step-heading" id="step1-heading">Votre revenu mensuel</h1>
+          <p class="sim-step-sub">Saisissez votre revenu mensuel net en LBP (livre libanaise (crise mon&#233;taire : 1 USD &#8776; 89&#160;500 LBP)).</p>
+          <div class="question-group">
+            <label class="question-label" for="inputIncome">Revenu mensuel net</label>
+            <div class="input-suffix">
+              <input
+                type="number"
+                id="inputIncome"
+                name="income"
+                min="0"
+                max="999999999"
+                step="1"
+                placeholder="ex. 2000000"
+                class="input-field"
+                inputmode="numeric"
+                autocomplete="off"
+                data-testid="simulator-step-income"
+                aria-describedby="incomeHint"
+              >
+              <span class="input-suffix__label" aria-hidden="true">LBP (LBP)</span>
+            </div>
+            <p class="question-hint" id="incomeHint">Revenu mensuel net en LBP. Montants en LBP (crise mon&#233;taire : 1 USD &asymp; 89&#160;500 LBP). Vos donn&#233;es restent dans votre navigateur.</p>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack1" disabled aria-label="&#201;tape pr&#233;c&#233;dente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Pr&#233;c&#233;dent</span>
+            </button>
+            <button class="btn-next" id="btnNext1" data-testid="simulator-btn-next">
+              <span>Suivant</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Region -->
+        <div class="sim-step" id="step-2" role="group" aria-labelledby="step2-heading">
+          <h2 class="sim-step-heading" id="step2-heading">R&#233;gion / Gouvernorat</h2>
+          <p class="sim-step-sub">Certaines aides varient selon la r&#233;gion de r&#233;sidence au Liban.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="R&#233;gion / Gouvernorat" id="stateGroup">
+              <button class="choice-btn" data-field="state" data-value="BEY" role="radio" aria-checked="false" data-testid="simulator-state-bey">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Beyrouth</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="TRI" role="radio" aria-checked="false" data-testid="simulator-state-tri">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Tripoli</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="SAI" role="radio" aria-checked="false" data-testid="simulator-state-sai">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Sa&#239;da</span>
+              </button>
+              <button class="choice-btn" data-field="state" data-value="Other" role="radio" aria-checked="false" data-testid="simulator-state-other">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Autres &#127473;&#127463;</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack2" aria-label="&#201;tape pr&#233;c&#233;dente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Pr&#233;c&#233;dent</span>
+            </button>
+            <button class="btn-next" id="btnNext2" data-testid="simulator-btn-next">
+              <span>Suivant</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Age -->
+        <div class="sim-step" id="step-3" role="group" aria-labelledby="step3-heading">
+          <h2 class="sim-step-heading" id="step3-heading">Votre &#226;ge</h2>
+          <p class="sim-step-sub">Certaines aides ont des seuils d&#39;&#226;ge (retraite, jeunesse).</p>
+          <div class="question-group">
+            <label class="question-label" for="inputAge">&#194;ge (ann&#233;es)</label>
+            <input
+              type="number"
+              id="inputAge"
+              name="age"
+              min="15"
+              max="99"
+              step="1"
+              placeholder="ex. 35"
+              class="input-field"
+              inputmode="numeric"
+              autocomplete="off"
+              data-testid="simulator-step-age"
+              style="max-width:160px"
+            >
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack3" aria-label="&#201;tape pr&#233;c&#233;dente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Pr&#233;c&#233;dent</span>
+            </button>
+            <button class="btn-next" id="btnNext3" data-testid="simulator-btn-next">
+              <span>Suivant</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Family situation -->
+        <div class="sim-step" id="step-4" role="group" aria-labelledby="step4-heading">
+          <h2 class="sim-step-heading" id="step4-heading">Situation familiale</h2>
+          <p class="sim-step-sub">S&#233;lectionnez l&#39;option qui d&#233;crit le mieux votre foyer.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="Situation familiale" id="situationGroup">
+              <button class="choice-btn" data-field="situation" data-value="single" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+                <span>C&#233;libataire</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="couple" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M3 20v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/></svg>
+                <span>Couple</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="family" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Famille avec enfants</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="single_parent" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4"/><circle cx="18" cy="17" r="3"/><path d="M18 14v3l1.5 1.5"/></svg>
+                <span>Parent seul</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="senior" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                <span>S&#233;nior (60+)</span>
+              </button>
+              <button class="choice-btn" data-field="situation" data-value="student" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>&#201;tudiant(e)</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack4" aria-label="&#201;tape pr&#233;c&#233;dente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Pr&#233;c&#233;dent</span>
+            </button>
+            <button class="btn-next" id="btnNext4" data-testid="simulator-btn-next">
+              <span>Suivant</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5: Employment -->
+        <div class="sim-step" id="step-5" role="group" aria-labelledby="step5-heading">
+          <h2 class="sim-step-heading" id="step5-heading">Situation professionnelle</h2>
+          <p class="sim-step-sub">Votre situation d&#233;termine vos droits aux aides au Liban.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="Situation professionnelle" id="employmentGroup">
+              <button class="choice-btn" data-field="employment" data-value="employed" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                <span>Employ&#233;(e) (formel)</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="unemployed" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                <span>Sans emploi</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="self_employed" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                <span>Travailleur ind&#233;pendant</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="student" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>&#201;tudiant(e)</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="disabled" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="2.5" r="1.5"/><path d="M9 9h6l-1 7-2-2-2 2-1-7z"/><path d="M7 20a5 5 0 0 0 5 1 5 5 0 0 0 5-1"/></svg>
+                <span>Situation de handicap</span>
+              </button>
+              <button class="choice-btn" data-field="employment" data-value="retired" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                <span>Retrait&#233;(e)</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack5" aria-label="&#201;tape pr&#233;c&#233;dente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Pr&#233;c&#233;dent</span>
+            </button>
+            <button class="btn-next" id="btnNext5" data-testid="simulator-btn-next">
+              <span>Suivant</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 6: Housing -->
+        <div class="sim-step" id="step-6" role="group" aria-labelledby="step6-heading">
+          <h2 class="sim-step-heading" id="step6-heading">Situation de logement</h2>
+          <p class="sim-step-sub">Derni&#232;re &#233;tape. Vos r&#233;sultats seront calcul&#233;s imm&#233;diatement.</p>
+          <div class="question-group">
+            <div class="choice-grid" role="radiogroup" aria-label="Situation de logement" id="housingGroup">
+              <button class="choice-btn" data-field="housing" data-value="rented" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Locataire</span>
+              </button>
+              <button class="choice-btn" data-field="housing" data-value="owned" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="18" cy="18" r="3"/><path d="M21 15l-3 3-1.5-1.5"/></svg>
+                <span>Propri&#233;taire</span>
+              </button>
+              <button class="choice-btn" data-field="housing" data-value="social" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="16" rx="2"/><path d="M12 2l-9 9h18L12 2z"/></svg>
+                <span>Logement social</span>
+              </button>
+              <button class="choice-btn" data-field="housing" data-value="homeless" role="radio" aria-checked="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                <span>Sans domicile fixe</span>
+              </button>
+            </div>
+          </div>
+          <div class="sim-nav">
+            <button class="btn-back" id="btnBack6" aria-label="&#201;tape pr&#233;c&#233;dente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Pr&#233;c&#233;dent</span>
+            </button>
+            <button class="btn-next" id="btnNext6" data-testid="simulator-btn-next">
+              <span>Voir les r&#233;sultats</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="sim-step" id="step-results" data-testid="simulator-results" role="region" aria-labelledby="resultsHeading" aria-live="polite">
+          <div class="results-header">
+            <h2 class="sim-step-heading" id="resultsHeading">Vos aides &#233;ligibles</h2>
+            <p class="results-count" id="resultsCount"></p>
+          </div>
+          <div id="aidsList" aria-label="Liste des aides"></div>
+          <div class="results-actions">
+            <button class="btn-share" id="btnShare" aria-label="Partager les r&#233;sultats">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              <span>Partager</span>
+            </button>
+            <button class="btn-restart" id="btnRestart">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+              <span>Recommencer</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /.sim-card -->
+    </main>
+  </div><!-- /.sim-shell -->
+
+  <div class="share-toast" id="shareToast" aria-live="polite">Lien copi&#233;&nbsp;!</div>
+
+  <script src="../js/theme-init.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/eu-simulator.js" defer></script>
+  <script>
+  (function() {
+    const CC = 'lb';
+    const TOTAL_STEPS = 6;
+    const SUBDIV_KEY = 'state';
+
+    const profile = { income: null, age: null, situation: null, employment: null, housing: null };
+    profile[SUBDIV_KEY] = null;
+    let currentStep = 1;
+    let sim = null;
+
+    const params = new URLSearchParams(location.search);
+    if (params.get('income'))     profile.income     = Number(params.get('income'));
+    if (params.get('age'))        profile.age        = Number(params.get('age'));
+    if (params.get('situation'))  profile.situation  = params.get('situation');
+    if (params.get('employment')) profile.employment = params.get('employment');
+    if (params.get('housing'))    profile.housing    = params.get('housing');
+    if (params.get(SUBDIV_KEY))   profile[SUBDIV_KEY] = params.get(SUBDIV_KEY);
+
+    if (profile.income) document.getElementById('inputIncome').value = profile.income;
+    if (profile.age)    document.getElementById('inputAge').value    = profile.age;
+
+    function showStep(n) {
+      document.querySelectorAll('.sim-step').forEach(el => el.classList.remove('active'));
+      const target = n === 'results' ? 'step-results' : 'step-' + n;
+      const el = document.getElementById(target);
+      if (el) el.classList.add('active');
+      currentStep = typeof n === 'number' ? n : TOTAL_STEPS + 1;
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateProgress() {
+      const n = Math.min(currentStep, TOTAL_STEPS);
+      const pct = ((n - 1) / TOTAL_STEPS) * 100;
+      document.getElementById('simProgressFill').style.width = pct + '%';
+      document.getElementById('stepCounter').textContent = n + ' / ' + TOTAL_STEPS;
+      const bar = document.getElementById('simProgressBar');
+      bar.setAttribute('aria-valuenow', n);
+    }
+
+    function selectChoice(groupId, value) {
+      const btns = document.querySelectorAll('#' + groupId + ' .choice-btn');
+      btns.forEach(b => {
+        const sel = b.dataset.value === value;
+        b.classList.toggle('selected', sel);
+        b.setAttribute('aria-checked', sel ? 'true' : 'false');
+      });
+    }
+
+    document.querySelectorAll('.choice-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const field = this.dataset.field;
+        const value = this.dataset.value;
+        profile[field] = value;
+        const groupId = this.closest('[role=radiogroup]')?.id;
+        if (groupId) selectChoice(groupId, value);
+      });
+    });
+
+    if (profile[SUBDIV_KEY]) selectChoice(SUBDIV_KEY + 'Group', profile[SUBDIV_KEY]);
+    if (profile.situation)   selectChoice('situationGroup',  profile.situation);
+    if (profile.employment)  selectChoice('employmentGroup', profile.employment);
+    if (profile.housing)     selectChoice('housingGroup',    profile.housing);
+
+    function nextStep(n) {
+      if (n === 1) profile.income = Number(document.getElementById('inputIncome').value) || 0;
+      if (n === 3) profile.age   = Number(document.getElementById('inputAge').value)    || 25;
+      showStep(n + 1 <= TOTAL_STEPS ? n + 1 : 'results');
+      if (n === TOTAL_STEPS) runSimulation();
+    }
+
+    for (let i = 1; i <= TOTAL_STEPS; i++) {
+      const btn = document.getElementById('btnNext' + i);
+      if (btn) btn.addEventListener('click', () => nextStep(i));
+      const back = document.getElementById('btnBack' + i);
+      if (back && i > 1) back.addEventListener('click', () => showStep(i - 1));
+    }
+
+    async function runSimulation() {
+      const aidsList = document.getElementById('aidsList');
+      aidsList.innerHTML = '<p style="color:var(--c-muted);text-align:center;padding:var(--sp-6)">Chargement...</p>';
+      try {
+        if (!sim) {
+          sim = new EUSimulator(CC);
+          await sim.init();
+        }
+        const results = sim.simulate(profile);
+        renderResults(results);
+      } catch (err) {
+        aidsList.innerHTML = '<p style="color:var(--c-danger,#dc2626);text-align:center">Erreur lors du chargement des donn&#233;es. Veuillez r&#233;essayer.</p>';
+        console.error(err);
+      }
+    }
+
+    function renderResults(results) {
+      const aidsList  = document.getElementById('aidsList');
+      const countEl   = document.getElementById('resultsCount');
+      const n = results.length;
+      if (countEl) countEl.textContent = n + ' aide' + (n !== 1 ? 's' : '') + ' trouv&#233;e' + (n !== 1 ? 's' : '') + ' pour votre profil';
+      if (!n) {
+        aidsList.innerHTML = '<div class="empty-results"><p>Aucune aide trouv&#233;e pour votre profil. Modifiez vos r&#233;ponses.</p></div>';
+        return;
+      }
+      aidsList.innerHTML = results.map(aid => {
+        const fmtAmt = aid._formatted?.amount;
+        const amountHtml = fmtAmt ? '<div class="aid-card__amount" aria-label="Montant">' + fmtAmt + '<small>/mois</small></div>' : '';
+        const orgHtml  = aid.organisme ? '<div class="aid-card__org">' + escHtml(aid.organisme) + '</div>' : '';
+        const descHtml = aid.description_en ? '<p class="aid-card__desc">' + escHtml(aid.description_en) + '</p>' : '';
+        const periodHtml = aid.periodicite ? '<span class="aid-card__period">' + escHtml(aid.periodicite) + '</span>' : '';
+        const linkHtml = aid.url_info
+          ? '<a class="aid-card__link" href="' + escHtml(aid.url_info) + '" target="_blank" rel="noopener">Information officielle</a>'
+          : '';
+        return '<article class="aid-card" data-testid="simulator-aid-item" data-aid-id="' + escHtml(aid.id) + '">'
+          + amountHtml + '<h3 class="aid-card__name">' + escHtml(aid.nom) + '</h3>'
+          + orgHtml + periodHtml + descHtml + linkHtml + '</article>';
+      }).join('');
+    }
+
+    function escHtml(s) {
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    document.getElementById('btnShare').addEventListener('click', function() {
+      const p = new URLSearchParams();
+      p.set('lang', (typeof I18n !== 'undefined' ? I18n.lang : 'fr'));
+      if (profile.income)       p.set('income',    profile.income);
+      if (profile.age)          p.set('age',       profile.age);
+      if (profile[SUBDIV_KEY])  p.set(SUBDIV_KEY,  profile[SUBDIV_KEY]);
+      if (profile.situation)    p.set('situation',  profile.situation);
+      if (profile.employment)   p.set('employment', profile.employment);
+      if (profile.housing)      p.set('housing',    profile.housing);
+      const url = location.origin + location.pathname + '?' + p.toString();
+      navigator.clipboard.writeText(url).catch(() => {});
+      const toast = document.getElementById('shareToast');
+      toast.classList.add('visible');
+      setTimeout(() => toast.classList.remove('visible'), 2200);
+    });
+
+    document.getElementById('btnRestart').addEventListener('click', function() {
+      Object.keys(profile).forEach(k => profile[k] = null);
+      document.getElementById('inputIncome').value = '';
+      document.getElementById('inputAge').value = '';
+      document.querySelectorAll('.choice-btn').forEach(b => {
+        b.classList.remove('selected');
+        b.setAttribute('aria-checked','false');
+      });
+      showStep(1);
+    });
+
+    document.getElementById('btnTheme').addEventListener('click', function() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('life-theme', next);
+    });
+
+    if (profile.income && profile.age && profile[SUBDIV_KEY] && profile.situation && profile.employment && profile.housing) {
+      showStep('results');
+      runSimulation();
+    }
+  })();
+  </script>
+</body>
+</html>

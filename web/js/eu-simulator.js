@@ -78,6 +78,15 @@ const EU_CURRENCIES = {
   et: { symbol: 'Br',  locale: 'am-ET', code: 'ETB', suffix: false },
   tz: { symbol: 'TSh', locale: 'sw-TZ', code: 'TZS', suffix: false },
   ug: { symbol: 'USh', locale: 'en-UG', code: 'UGX', suffix: false },
+  /* Middle East expansion */
+  ae: { symbol: 'AED', locale: 'ar-AE', code: 'AED', suffix: false },
+  sa: { symbol: '﷼',   locale: 'ar-SA', code: 'SAR', suffix: false },
+  qa: { symbol: 'QAR', locale: 'ar-QA', code: 'QAR', suffix: false },
+  kw: { symbol: 'KD',  locale: 'ar-KW', code: 'KWD', suffix: false },
+  om: { symbol: 'OMR', locale: 'ar-OM', code: 'OMR', suffix: false },
+  jo: { symbol: 'JD',  locale: 'ar-JO', code: 'JOD', suffix: false },
+  lb: { symbol: 'L£',  locale: 'ar-LB', code: 'LBP', suffix: false },
+  iq: { symbol: 'IQD', locale: 'ar-IQ', code: 'IQD', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -107,6 +116,8 @@ const CURRENCY_AMOUNT_FIELD = {
   pk: 'pkr', bd: 'bdt', lk: 'lkr', np: 'npr', ph: 'php', mm: 'mmk', kh: 'khr',
   /* Africa expansion */
   ng: 'ngn', eg: 'egp', ma: 'mad', dz: 'dzd', gh: 'ghs', tn: 'tnd', ke: 'kes', et: 'etb', tz: 'tzs', ug: 'ugx',
+  /* Middle East */
+  ae: 'aed', sa: 'sar', qa: 'qar', kw: 'kwd', om: 'omr', jo: 'jod', lb: 'lbp', iq: 'iqd',
 };
 
 /**
@@ -138,6 +149,8 @@ const INCOME_THRESHOLDS = {
   pk: 100000000, bd: 50000000, lk: 500000000, np: 400000000, ph: 5000000, mm: 60000000, kh: 40000000000,
   /* Africa expansion — monthly net, local currency */
   ng: 700000000, eg: 165000000, ma: 500000, dz: 2000000, gh: 100000, tn: 180000, ke: 200000, et: 58000, tz: 36000, ug: 25000,
+  /* Middle East */
+  ae: 500000, sa: 320000, qa: 300000, kw: 60000, om: 60000, jo: 185000, lb: 200000000, iq: 35000000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -166,6 +179,8 @@ const LOW_INCOME_THRESHOLDS = {
   pk: 200000000, bd: 100000000, lk: 1000000000, np: 800000000, ph: 10000000, mm: 120000000, kh: 80000000000,
   /* Africa expansion */
   ng: 1400000000, eg: 330000000, ma: 1000000, dz: 4000000, gh: 200000, tn: 360000, ke: 400000, et: 116000, tz: 72000, ug: 50000,
+  /* Middle East */
+  ae: 1000000, sa: 640000, qa: 600000, kw: 120000, om: 120000, jo: 370000, lb: 400000000, iq: 70000000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
