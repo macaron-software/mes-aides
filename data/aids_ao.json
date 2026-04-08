@@ -1,0 +1,192 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "AO",
+  "name": "Angola",
+  "name_local": "Angola",
+  "language": "pt",
+  "currency": "AOA",
+  "welfare_model": "INSS contributif + Protecção Social Básica non contributif",
+  "sources": [
+    "https://inss.gov.ao",
+    "https://masfamu.gov.ao"
+  ],
+  "aids": [
+    {
+      "id": "ao-pensao-velhice",
+      "slug": "pensao-velhice-inss",
+      "nom": "Pensão de Velhice INSS",
+      "description_en": "Old-age pension from INSS for workers who have reached age 60 and contributed to the scheme. Minimum 21,000 Kz per month (equivalent to the 2025 minimum wage).",
+      "categorie": "retraite",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_aoa": 2100000,
+      "montant_max_aoa": 2100000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.ao",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-pensao-invalidez",
+      "slug": "pensao-invalidez-inss",
+      "nom": "Pensão de Invalidez INSS",
+      "description_en": "Invalidity pension for workers with a recognised disability who have contributed to INSS. 50-75% of last salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_aoa": 1050000,
+      "montant_max_aoa": 3150000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.ao",
+      "eligibility_criteria": [
+        "disability_verified",
+        "formal_sector_employed",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-subsidio-desemprego",
+      "slug": "subsidio-desemprego",
+      "nom": "Subsídio de Desemprego",
+      "description_en": "Unemployment benefit equivalent to 3 months of salary for formal sector workers who lose their job involuntarily. Applied through INSS.",
+      "categorie": "emploi_formation",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_aoa": 0,
+      "montant_max_aoa": 2100000,
+      "periodicite": "unique",
+      "url_info": "https://inss.gov.ao",
+      "eligibility_criteria": [
+        "involuntary_unemployment",
+        "formal_sector_employed",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-protecao-basica",
+      "slug": "proteccao-social-basica",
+      "nom": "Protecção Social Básica",
+      "description_en": "Non-contributory basic social protection for the poorest households. Between 5,000 and 15,000 Kz per month managed by MASFAMU.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MASFAMU (Ministério da Acção Social, Família e Promoção da Mulher)",
+      "montant_min_aoa": 500000,
+      "montant_max_aoa": 1500000,
+      "periodicite": "mensuel",
+      "url_info": "https://masfamu.gov.ao",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-bolsa-familia",
+      "slug": "bolsa-familia-angola",
+      "nom": "Bolsa Família Angola",
+      "description_en": "Family cash transfer programme for households in extreme poverty with children. Managed by MASFAMU.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MASFAMU (Ministério da Acção Social, Família e Promoção da Mulher)",
+      "montant_min_aoa": 0,
+      "montant_max_aoa": 1000000,
+      "periodicite": "mensuel",
+      "url_info": "https://masfamu.gov.ao",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "family_with_children",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-maternidade",
+      "slug": "maternidade-inss-3-mois",
+      "nom": "Maternidade INSS (3 mois)",
+      "description_en": "Maternity benefit for employed women: 100% salary for 3 months of maternity leave, paid by INSS.",
+      "categorie": "famille",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_aoa": 2100000,
+      "montant_max_aoa": 2100000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.ao",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-cuidados-saude",
+      "slug": "cuidados-saude-sns",
+      "nom": "Cuidados de Saúde (SNS)",
+      "description_en": "Free healthcare for all residents through the National Health System (SNS). Public health centres provide basic and emergency care.",
+      "categorie": "sante",
+      "organisme": "SNS Angola / MASFAMU",
+      "montant_min_aoa": 0,
+      "montant_max_aoa": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://masfamu.gov.ao",
+      "eligibility_criteria": [
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-bolsa-estudo",
+      "slug": "bolsas-de-estudo",
+      "nom": "Bolsas de Estudo",
+      "description_en": "Study grants for students managed by MASFAMU. Variable amount depending on level of study and family income.",
+      "categorie": "education_jeunesse",
+      "organisme": "MASFAMU (Ministério da Acção Social, Família e Promoção da Mulher)",
+      "montant_min_aoa": 0,
+      "montant_max_aoa": 1500000,
+      "periodicite": "mensuel",
+      "url_info": "https://masfamu.gov.ao",
+      "eligibility_criteria": [
+        "education_student",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-subsidio-familiar",
+      "slug": "subsidio-familiar-sector-formal",
+      "nom": "Subsídio Familiar (secteur formel)",
+      "description_en": "Monthly family allowance for formal sector workers with dependent children. 2,000 Kz per child per month, paid by INSS.",
+      "categorie": "famille",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_aoa": 200000,
+      "montant_max_aoa": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.ao",
+      "eligibility_criteria": [
+        "family_with_children",
+        "formal_sector_employed",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ao-apoio-social",
+      "slug": "apoio-social-urgence-masfamu",
+      "nom": "Apoio Social d'urgence (MASFAMU)",
+      "description_en": "Emergency social support from MASFAMU for households in crisis situations. Variable one-time benefit.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MASFAMU (Ministério da Acção Social, Família e Promoção da Mulher)",
+      "montant_min_aoa": 0,
+      "montant_max_aoa": 500000,
+      "periodicite": "unique",
+      "url_info": "https://masfamu.gov.ao",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_ao"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

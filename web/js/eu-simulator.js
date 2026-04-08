@@ -78,6 +78,15 @@ const EU_CURRENCIES = {
   et: { symbol: 'Br',  locale: 'am-ET', code: 'ETB', suffix: false },
   tz: { symbol: 'TSh', locale: 'sw-TZ', code: 'TZS', suffix: false },
   ug: { symbol: 'USh', locale: 'en-UG', code: 'UGX', suffix: false },
+  /* Africa2 expansion — SN CI CM CD MZ ZM RW AO */
+  sn: { symbol: 'FCFA', locale: 'fr-SN', code: 'XOF', suffix: true  },
+  ci: { symbol: 'FCFA', locale: 'fr-CI', code: 'XOF', suffix: true  },
+  cm: { symbol: 'FCFA', locale: 'fr-CM', code: 'XAF', suffix: true  },
+  cd: { symbol: 'FC',   locale: 'fr-CD', code: 'CDF', suffix: true  },
+  mz: { symbol: 'MT',   locale: 'pt-MZ', code: 'MZN', suffix: true  },
+  zm: { symbol: 'ZMW',  locale: 'en-ZM', code: 'ZMW', suffix: true  },
+  rw: { symbol: 'RWF',  locale: 'rw-RW', code: 'RWF', suffix: true  },
+  ao: { symbol: 'Kz',   locale: 'pt-AO', code: 'AOA', suffix: true  },
   /* Balkans expansion */
   rs: { symbol: 'дин', locale: 'sr-RS', code: 'RSD', suffix: true  },
   ba: { symbol: 'KM',  locale: 'bs-BA', code: 'BAM', suffix: true  },
@@ -137,6 +146,8 @@ const CURRENCY_AMOUNT_FIELD = {
   pk: 'pkr', bd: 'bdt', lk: 'lkr', np: 'npr', ph: 'php', mm: 'mmk', kh: 'khr',
   /* Africa expansion */
   ng: 'ngn', eg: 'egp', ma: 'mad', dz: 'dzd', gh: 'ghs', tn: 'tnd', ke: 'kes', et: 'etb', tz: 'tzs', ug: 'ugx',
+  /* Africa2 expansion */
+  sn: 'xof', ci: 'xof', cm: 'xaf', cd: 'cdf', mz: 'mzn', zm: 'zmw', rw: 'rwf', ao: 'aoa',
   /* Balkans expansion */
   rs: 'rsd', ba: 'bam', mk: 'mkd', al: 'all',
   /* Montenegro reuses eur (no entry needed, fallback) */
@@ -177,6 +188,8 @@ const INCOME_THRESHOLDS = {
   pk: 100000000, bd: 50000000, lk: 500000000, np: 400000000, ph: 5000000, mm: 60000000, kh: 40000000000,
   /* Africa expansion — monthly net, local currency */
   ng: 700000000, eg: 165000000, ma: 500000, dz: 2000000, gh: 100000, tn: 180000, ke: 200000, et: 58000, tz: 36000, ug: 25000,
+  /* Africa2 expansion */
+  sn: 8000000, ci: 6000000, cm: 5000000, cd: 3000000, mz: 350000, zm: 40000, rw: 1000000, ao: 2100000,
   /* Balkans expansion — monthly net, local currency smallest unit */
   rs: 2754300, ba: 54000, mk: 1800000, al: 2266000, me: 40000,
   /* Middle East */
@@ -213,6 +226,8 @@ const LOW_INCOME_THRESHOLDS = {
   pk: 200000000, bd: 100000000, lk: 1000000000, np: 800000000, ph: 10000000, mm: 120000000, kh: 80000000000,
   /* Africa expansion */
   ng: 1400000000, eg: 330000000, ma: 1000000, dz: 4000000, gh: 200000, tn: 360000, ke: 400000, et: 116000, tz: 72000, ug: 50000,
+  /* Africa2 expansion */
+  sn: 16000000, ci: 12000000, cm: 10000000, cd: 6000000, mz: 700000, zm: 80000, rw: 2000000, ao: 4200000,
   /* Balkans expansion */
   rs: 5508600, ba: 108000, mk: 3600000, al: 4532000, me: 80000,
   /* Middle East */

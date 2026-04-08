@@ -1,0 +1,191 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "ZM",
+  "name": "Zambie",
+  "name_local": "Zambia",
+  "language": "en",
+  "currency": "ZMW",
+  "welfare_model": "NAPSA contributory + Social Cash Transfer (MCDSS) non-contributory",
+  "sources": [
+    "https://napsa.co.zm",
+    "https://mcdss.gov.zm"
+  ],
+  "aids": [
+    {
+      "id": "zm-napsa-pension",
+      "slug": "napsa-pension",
+      "nom": "NAPSA Pension (retraite)",
+      "description_en": "NAPSA retirement pension for formal sector workers who have reached age 55 and contributed to the scheme. Approximately 40% of average revalued earnings.",
+      "categorie": "retraite",
+      "organisme": "NAPSA (National Pension Scheme Authority)",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://napsa.co.zm",
+      "eligibility_criteria": [
+        "age_min_55",
+        "retirement_pension_recipient",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-sct",
+      "slug": "social-cash-transfer",
+      "nom": "Social Cash Transfer (SCT)",
+      "description_en": "Monthly cash transfer of ZMW 400 for the poorest and most vulnerable households, including those with elderly, chronically ill or disabled members. Managed by MCDSS.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MCDSS (Ministry of Community Development and Social Services)",
+      "montant_min_zmw": 40000,
+      "montant_max_zmw": 40000,
+      "periodicite": "mensuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-food-security",
+      "slug": "food-security-pack",
+      "nom": "Food Security Pack",
+      "description_en": "Annual provision of seeds and fertiliser (value approximately ZMW 200) for poor farming households to improve food security.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MCDSS (Ministry of Community Development and Social Services)",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 20000,
+      "periodicite": "annuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-disability-grant",
+      "slug": "disability-grant",
+      "nom": "Disability Grant",
+      "description_en": "Monthly grant of ZMW 300 for persons with verified disabilities who are in low-income households. Applications through MCDSS district offices.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MCDSS (Ministry of Community Development and Social Services)",
+      "montant_min_zmw": 30000,
+      "montant_max_zmw": 30000,
+      "periodicite": "mensuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "disability_verified",
+        "income_below_threshold",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-pspf-pension",
+      "slug": "pspf-pension-service-public",
+      "nom": "Pension service public (PSPF)",
+      "description_en": "Public Service Pension Fund pension for civil servants who have reached age 55. Approximately 40-50% of last salary.",
+      "categorie": "retraite",
+      "organisme": "PSPF (Public Service Pension Fund)",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 250000,
+      "periodicite": "mensuel",
+      "url_info": "https://napsa.co.zm",
+      "eligibility_criteria": [
+        "age_min_55",
+        "retirement_pension_recipient",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-healthcare",
+      "slug": "soins-sante-publics-gratuits",
+      "nom": "Soins de santé publics gratuits",
+      "description_en": "Free public healthcare for all residents in government health facilities. Covers primary care, maternal health, and essential medicines.",
+      "categorie": "sante",
+      "organisme": "Ministry of Health Zambia",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-child-grant",
+      "slug": "child-grant",
+      "nom": "Child Grant",
+      "description_en": "Monthly grant of ZMW 400 for vulnerable children in low-income households. Targets children under 5 and those with special needs.",
+      "categorie": "famille",
+      "organisme": "MCDSS (Ministry of Community Development and Social Services)",
+      "montant_min_zmw": 40000,
+      "montant_max_zmw": 40000,
+      "periodicite": "mensuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "family_with_children",
+        "income_below_threshold",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-scholar-allowance",
+      "slug": "scholar-allowance",
+      "nom": "Scholar Allowance",
+      "description_en": "Annual scholar allowance of ZMW 100 plus fee waivers for school-age children in low-income households. Supports school retention.",
+      "categorie": "education_jeunesse",
+      "organisme": "MCDSS (Ministry of Community Development and Social Services)",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 10000,
+      "periodicite": "annuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "family_with_children",
+        "child_enrolled_school",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-maternite",
+      "slug": "conge-maternite-secteur-formel",
+      "nom": "Congé maternité (secteur formel)",
+      "description_en": "Maternity leave benefit for employed women in the formal sector. 100% salary replacement for 14 weeks of maternity leave.",
+      "categorie": "famille",
+      "organisme": "NAPSA / Ministry of Labour Zambia",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://napsa.co.zm",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "zm-farmer-input",
+      "slug": "farmer-input-support-programme",
+      "nom": "Farmer Input Support Programme",
+      "description_en": "Annual subsidised agricultural inputs programme for smallholder farmers. Provides subsidised seeds and fertiliser to improve agricultural productivity.",
+      "categorie": "revenus_emploi",
+      "organisme": "MCDSS / Ministry of Agriculture Zambia",
+      "montant_min_zmw": 0,
+      "montant_max_zmw": 0,
+      "periodicite": "annuel",
+      "url_info": "https://mcdss.gov.zm",
+      "eligibility_criteria": [
+        "residence_zm"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

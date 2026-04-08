@@ -1,0 +1,190 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "CD",
+  "name": "RD Congo",
+  "name_local": "République Démocratique du Congo",
+  "language": "fr",
+  "currency": "CDF",
+  "welfare_model": "Protection sociale limitée; CNSS secteur formel + filets sociaux Banque mondiale",
+  "sources": [
+    "https://cnss.cd",
+    "https://ministere-sante.gouv.cd",
+    "https://unocha.org"
+  ],
+  "aids": [
+    {
+      "id": "cd-pension-cnss",
+      "slug": "pension-cnss",
+      "nom": "Pension CNSS",
+      "description_en": "CNSS retirement pension for formal sector workers who have reached age 60 and contributed to the scheme. Minimum 30,000 CDF per month.",
+      "categorie": "retraite",
+      "organisme": "CNSS (Caisse Nationale de Sécurité Sociale)",
+      "montant_min_cdf": 3000000,
+      "montant_max_cdf": 3000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.cd",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-alloc-familiale",
+      "slug": "allocation-familiale-cnss",
+      "nom": "Allocation familiale CNSS",
+      "description_en": "Monthly family allowance for formal sector workers with dependent children. Paid by CNSS at 2,000 CDF per child per month.",
+      "categorie": "famille",
+      "organisme": "CNSS (Caisse Nationale de Sécurité Sociale)",
+      "montant_min_cdf": 200000,
+      "montant_max_cdf": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.cd",
+      "eligibility_criteria": [
+        "family_with_children",
+        "formal_sector_employed",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-filets-sociaux",
+      "slug": "filets-sociaux-banque-mondiale",
+      "nom": "Filets sociaux (Banque Mondiale)",
+      "description_en": "World Bank and government-supported social safety net for extremely poor households. Monthly cash transfer of 50,000 to 100,000 CDF.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "Gouvernement RDC / Banque Mondiale",
+      "montant_min_cdf": 5000000,
+      "montant_max_cdf": 10000000,
+      "periodicite": "mensuel",
+      "url_info": "https://ministere-sante.gouv.cd",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-sante-primaire",
+      "slug": "soins-sante-primaires",
+      "nom": "Soins de santé primaires",
+      "description_en": "Subsidised primary healthcare in public health centres. The government guarantees access to basic health services for low-income populations.",
+      "categorie": "sante",
+      "organisme": "Ministère de la Santé Publique RDC",
+      "montant_min_cdf": 0,
+      "montant_max_cdf": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://ministere-sante.gouv.cd",
+      "eligibility_criteria": [
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-maternite",
+      "slug": "allocations-maternite",
+      "nom": "Allocations de maternité",
+      "description_en": "Maternity benefit for formal sector employed women. 100% salary replacement for 14 weeks of maternity leave, paid by CNSS.",
+      "categorie": "famille",
+      "organisme": "CNSS (Caisse Nationale de Sécurité Sociale)",
+      "montant_min_cdf": 3000000,
+      "montant_max_cdf": 3000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.cd",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-accident-travail",
+      "slug": "indemnite-accident-travail",
+      "nom": "Indemnité accident du travail",
+      "description_en": "Work accident benefit covering 70-100% of last salary for workers injured at work. Paid by CNSS.",
+      "categorie": "emploi_formation",
+      "organisme": "CNSS (Caisse Nationale de Sécurité Sociale)",
+      "montant_min_cdf": 2100000,
+      "montant_max_cdf": 3000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.cd",
+      "eligibility_criteria": [
+        "employed",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-pension-invalidite",
+      "slug": "pension-invalidite",
+      "nom": "Pension d'invalidité",
+      "description_en": "Invalidity pension for formal sector workers with a recognised disability who have contributed to CNSS. 25-50% of last salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "CNSS (Caisse Nationale de Sécurité Sociale)",
+      "montant_min_cdf": 750000,
+      "montant_max_cdf": 1500000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnss.cd",
+      "eligibility_criteria": [
+        "disability_verified",
+        "formal_sector_employed",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-bourse-scolaire",
+      "slug": "bourse-scolaire-provinciale",
+      "nom": "Bourse scolaire provinciale",
+      "description_en": "Provincial school scholarship for enrolled students. Amount varies by province. Managed by provincial government education departments.",
+      "categorie": "education_jeunesse",
+      "organisme": "Gouvernement Provincial RDC",
+      "montant_min_cdf": 0,
+      "montant_max_cdf": 2000000,
+      "periodicite": "mensuel",
+      "url_info": "https://ministere-sante.gouv.cd",
+      "eligibility_criteria": [
+        "education_student",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-aide-humanitaire",
+      "slug": "aide-humanitaire-onu-ong",
+      "nom": "Aide humanitaire (ONU/ONG)",
+      "description_en": "Humanitarian assistance from UN agencies and NGOs for households in crisis situations. Variable one-time support.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "ONU / ONG internationales",
+      "montant_min_cdf": 0,
+      "montant_max_cdf": 0,
+      "periodicite": "unique",
+      "url_info": "https://unocha.org",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cd-dev-local",
+      "slug": "programme-developpement-local",
+      "nom": "Programme de développement local",
+      "description_en": "Local development programme providing community support and livelihood assistance. Variable one-time or project-based support.",
+      "categorie": "revenus_emploi",
+      "organisme": "Gouvernement RDC",
+      "montant_min_cdf": 0,
+      "montant_max_cdf": 0,
+      "periodicite": "unique",
+      "url_info": "https://cnss.cd",
+      "eligibility_criteria": [
+        "residence_cd"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

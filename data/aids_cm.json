@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "CM",
+  "name": "Cameroun",
+  "name_local": "Cameroun",
+  "language": "fr",
+  "currency": "XAF",
+  "welfare_model": "Système bipartite CNPS (sécurité sociale contributive) + MINAS (assistance sociale)",
+  "sources": [
+    "https://cnps.cm",
+    "https://minas.cm",
+    "https://minesec.cm"
+  ],
+  "aids": [
+    {
+      "id": "cm-pension-vieillesse",
+      "slug": "pension-vieillesse-cnps",
+      "nom": "Pension vieillesse CNPS",
+      "description_en": "Old-age pension from the CNPS for workers who have reached age 60 and contributed to the scheme. Minimum 50,000 FCFA (XAF) per month.",
+      "categorie": "retraite",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 5000000,
+      "montant_max_xaf": 5000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-alloc-familiale",
+      "slug": "allocation-familiale-cnps",
+      "nom": "Allocation familiale CNPS",
+      "description_en": "Monthly family allowance for formal sector workers with dependent children. Paid by CNPS at 2,800 FCFA per child per month.",
+      "categorie": "famille",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 280000,
+      "montant_max_xaf": 280000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "family_with_children",
+        "formal_sector_employed",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-pension-invalidite",
+      "slug": "pension-invalidite-cnps",
+      "nom": "Pension d'invalidité CNPS",
+      "description_en": "Invalidity pension for workers with a recognised disability who have contributed to CNPS. Amount calculated as 30-50% of last salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 0,
+      "montant_max_xaf": 5000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "disability_verified",
+        "formal_sector_employed",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-assistance-invalidite",
+      "slug": "assistance-invalidite-minas",
+      "nom": "Assistance invalidité MINAS",
+      "description_en": "Non-contributory disability assistance from the Ministry of Social Affairs (MINAS) for persons with disabilities on low income. 20,000 to 40,000 FCFA per month.",
+      "categorie": "handicap_invalidite",
+      "organisme": "MINAS (Ministère des Affaires Sociales)",
+      "montant_min_xaf": 2000000,
+      "montant_max_xaf": 4000000,
+      "periodicite": "mensuel",
+      "url_info": "https://minas.cm",
+      "eligibility_criteria": [
+        "disability_verified",
+        "income_below_threshold",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-maternite",
+      "slug": "allocation-maternite-cnps",
+      "nom": "Allocation de maternité CNPS",
+      "description_en": "Maternity benefit for employed women: 100% salary replacement for 14 weeks of maternity leave, paid by CNPS.",
+      "categorie": "famille",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 5000000,
+      "montant_max_xaf": 5000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-accident-travail",
+      "slug": "indemnite-accidents-travail-cnps",
+      "nom": "Indemnité accidents du travail CNPS",
+      "description_en": "Work accident benefit covering 70-100% of last salary for workers injured at work. Paid by CNPS.",
+      "categorie": "emploi_formation",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 7000000,
+      "montant_max_xaf": 10000000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "employed",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-regime-medical",
+      "slug": "regime-medical-cnps",
+      "nom": "Régime médical CNPS",
+      "description_en": "Medical coverage scheme for formal sector workers and their families under CNPS. Covers health costs for insured workers.",
+      "categorie": "sante",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 0,
+      "montant_max_xaf": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "formal_sector_employed",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-bourse-scolaire",
+      "slug": "bourse-scolaire-minesec",
+      "nom": "Bourse scolaire MINESEC",
+      "description_en": "Annual school scholarship from the Ministry of Secondary Education. Between 50,000 and 100,000 FCFA per year based on academic and socioeconomic criteria.",
+      "categorie": "education_jeunesse",
+      "organisme": "MINESEC (Ministère des Enseignements Secondaires)",
+      "montant_min_xaf": 5000000,
+      "montant_max_xaf": 10000000,
+      "periodicite": "annuel",
+      "url_info": "https://minesec.cm",
+      "eligibility_criteria": [
+        "education_student",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-filets-sociaux",
+      "slug": "filets-sociaux-protection-sociale",
+      "nom": "Filets sociaux (protection sociale)",
+      "description_en": "Non-contributory social safety net for extremely poor households managed by MINAS. Variable monthly cash transfer up to 20,000 FCFA.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MINAS (Ministère des Affaires Sociales)",
+      "montant_min_xaf": 0,
+      "montant_max_xaf": 2000000,
+      "periodicite": "mensuel",
+      "url_info": "https://minas.cm",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cm-pension-survivants",
+      "slug": "pension-survivants-cnps",
+      "nom": "Pension de survivants CNPS",
+      "description_en": "Survivor pension for the spouse and dependants of a deceased CNPS pensioner. Approximately 30% of the deceased's pension.",
+      "categorie": "famille",
+      "organisme": "CNPS (Caisse Nationale de Prévoyance Sociale)",
+      "montant_min_xaf": 0,
+      "montant_max_xaf": 1500000,
+      "periodicite": "mensuel",
+      "url_info": "https://cnps.cm",
+      "eligibility_criteria": [
+        "retirement_pension_recipient",
+        "residence_cm"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

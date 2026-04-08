@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "MZ",
+  "name": "Mozambique",
+  "name_local": "Moçambique",
+  "language": "pt",
+  "currency": "MZN",
+  "welfare_model": "INSS contributif + PSSB/PSA non contributif pour les plus pauvres",
+  "sources": [
+    "https://inss.gov.mz",
+    "https://mmas.gov.mz"
+  ],
+  "aids": [
+    {
+      "id": "mz-pensao-velhice",
+      "slug": "pensao-velhice-inss",
+      "nom": "Pensão por Velhice INSS",
+      "description_en": "Old-age pension from INSS for workers who have contributed and reached age 55. Minimum 3,500 MZN per month.",
+      "categorie": "retraite",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_mzn": 350000,
+      "montant_max_mzn": 350000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.mz",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-subsidio-desemprego",
+      "slug": "subsidio-desemprego",
+      "nom": "Subsídio de Desemprego",
+      "description_en": "Unemployment benefit equivalent to 3 months of salary for formal sector workers who lose their job involuntarily. Paid as a lump sum by INSS.",
+      "categorie": "emploi_formation",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_mzn": 0,
+      "montant_max_mzn": 350000,
+      "periodicite": "unique",
+      "url_info": "https://inss.gov.mz",
+      "eligibility_criteria": [
+        "involuntary_unemployment",
+        "formal_sector_employed",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-pssb",
+      "slug": "pssb-subsidio-social-basico",
+      "nom": "PSSB – Subsídio Social Básico",
+      "description_en": "Basic Social Subsidy Programme paying 540 MZN per month to elderly and disabled persons in extreme poverty. Managed by the Ministry of Social Action.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MMAS (Ministério da Mulher e Acção Social)",
+      "montant_min_mzn": 54000,
+      "montant_max_mzn": 54000,
+      "periodicite": "mensuel",
+      "url_info": "https://mmas.gov.mz",
+      "eligibility_criteria": [
+        "age_min_60",
+        "income_below_threshold",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-psa",
+      "slug": "psa-programa-accao-social",
+      "nom": "PSA – Programa de Acção Social",
+      "description_en": "Social Action Programme providing 540 to 1,080 MZN per month to low-income households. Managed by the Ministry of Social Action.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MMAS (Ministério da Mulher e Acção Social)",
+      "montant_min_mzn": 54000,
+      "montant_max_mzn": 108000,
+      "periodicite": "mensuel",
+      "url_info": "https://mmas.gov.mz",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-pensao-invalidez",
+      "slug": "pensao-invalidez-inss",
+      "nom": "Pensão por Invalidez INSS",
+      "description_en": "Invalidity pension for workers with a recognised disability who have contributed to INSS. Approximately 50% of last salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_mzn": 0,
+      "montant_max_mzn": 350000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.mz",
+      "eligibility_criteria": [
+        "disability_verified",
+        "formal_sector_employed",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-assistencia-medica",
+      "slug": "assistencia-medica-sns",
+      "nom": "Assistência médica SNS",
+      "description_en": "Free medical assistance from the National Health Service (SNS) for all residents. Public health centres provide basic and emergency care.",
+      "categorie": "sante",
+      "organisme": "SNS / MMAS Moçambique",
+      "montant_min_mzn": 0,
+      "montant_max_mzn": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://mmas.gov.mz",
+      "eligibility_criteria": [
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-bolsa-estudo",
+      "slug": "bolsa-estudo-universitaria",
+      "nom": "Bolsa de Estudo universitária",
+      "description_en": "University study grant from the Ministry of Social Action ranging from 1,000 to 3,000 MZN per month for enrolled university students.",
+      "categorie": "education_jeunesse",
+      "organisme": "MMAS (Ministério da Mulher e Acção Social)",
+      "montant_min_mzn": 100000,
+      "montant_max_mzn": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://mmas.gov.mz",
+      "eligibility_criteria": [
+        "education_student",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-maternidade",
+      "slug": "maternidade-inss",
+      "nom": "Maternidade INSS",
+      "description_en": "Maternity benefit for employed women: 100% salary for 60 days of maternity leave, paid by INSS.",
+      "categorie": "famille",
+      "organisme": "INSS (Instituto Nacional de Segurança Social)",
+      "montant_min_mzn": 350000,
+      "montant_max_mzn": 350000,
+      "periodicite": "mensuel",
+      "url_info": "https://inss.gov.mz",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-assistencia-familiar",
+      "slug": "assistencia-familiar",
+      "nom": "Assistência familiar",
+      "description_en": "Family assistance for low-income households with children. Variable monthly benefit managed by the Ministry of Social Action.",
+      "categorie": "famille",
+      "organisme": "MMAS (Ministério da Mulher e Acção Social)",
+      "montant_min_mzn": 0,
+      "montant_max_mzn": 50000,
+      "periodicite": "mensuel",
+      "url_info": "https://mmas.gov.mz",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "family_with_children",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mz-habitacao-social",
+      "slug": "habitacao-social-fnhab",
+      "nom": "Habitação social FNHAB",
+      "description_en": "Subsidised social housing programme from the National Housing Fund (FNHAB) for low-income households not currently in public housing.",
+      "categorie": "logement",
+      "organisme": "FNHAB / MMAS Moçambique",
+      "montant_min_mzn": 0,
+      "montant_max_mzn": 0,
+      "periodicite": "unique",
+      "url_info": "https://mmas.gov.mz",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "not_in_public_housing",
+        "residence_mz"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

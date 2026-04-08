@@ -1,0 +1,192 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "SN",
+  "name": "Sénégal",
+  "name_local": "Sénégal",
+  "language": "fr",
+  "currency": "XOF",
+  "welfare_model": "Assurance sociale contributive + Protection non contributive",
+  "sources": [
+    "https://ipres.sn",
+    "https://securitesociale.sn",
+    "https://fss.sn"
+  ],
+  "aids": [
+    {
+      "id": "sn-ipres-retraite",
+      "slug": "pension-retraite-ipres",
+      "nom": "Pension de retraite IPRES",
+      "description_en": "Retirement pension from IPRES for workers who have reached age 60 and contributed to the scheme. Minimum guaranteed amount of 80,000 FCFA per month.",
+      "categorie": "retraite",
+      "organisme": "IPRES (Institution de Prévoyance Retraite du Sénégal)",
+      "montant_min_xof": 8000000,
+      "montant_max_xof": 8000000,
+      "periodicite": "mensuel",
+      "url_info": "https://ipres.sn",
+      "eligibility_criteria": [
+        "age_min_60",
+        "retirement_pension_recipient",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-alloc-familiale",
+      "slug": "allocation-familiale-css",
+      "nom": "Allocation familiale CSS",
+      "description_en": "Family allowance from the Caisse de Sécurité Sociale for formal sector workers with dependent children. Monthly benefit per child.",
+      "categorie": "famille",
+      "organisme": "CSS (Caisse de Sécurité Sociale du Sénégal)",
+      "montant_min_xof": 150000,
+      "montant_max_xof": 150000,
+      "periodicite": "mensuel",
+      "url_info": "https://securitesociale.sn",
+      "eligibility_criteria": [
+        "family_with_children",
+        "formal_sector_employed",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-bourse-securite",
+      "slug": "bourse-securite-familiale",
+      "nom": "Bourse de sécurité familiale",
+      "description_en": "Quarterly cash transfer of 25,000 FCFA for the poorest families registered in the national programme. Managed by the Fonds de Solidarité Sociale.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "FSS (Fonds de Solidarité Sociale)",
+      "montant_min_xof": 2500000,
+      "montant_max_xof": 2500000,
+      "periodicite": "trimestriel",
+      "url_info": "https://fss.sn",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-cmu",
+      "slug": "couverture-maladie-universelle",
+      "nom": "Couverture Maladie Universelle (CMU)",
+      "description_en": "Universal health coverage offering basic insurance for an annual family premium of 3,500 FCFA. Covers consultations, hospitalisations and essential medicines in public facilities.",
+      "categorie": "sante",
+      "organisme": "FSS / Ministère de la Santé",
+      "montant_min_xof": 350000,
+      "montant_max_xof": 350000,
+      "periodicite": "annuel",
+      "url_info": "https://fss.sn",
+      "eligibility_criteria": [
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-chomage-css",
+      "slug": "indemnite-chomage-css",
+      "nom": "Indemnité de chômage CSS",
+      "description_en": "Unemployment benefit for formal sector workers who lose their job involuntarily. Paid by the Caisse de Sécurité Sociale for a limited period.",
+      "categorie": "emploi_formation",
+      "organisme": "CSS (Caisse de Sécurité Sociale du Sénégal)",
+      "montant_min_xof": 0,
+      "montant_max_xof": 4000000,
+      "periodicite": "mensuel",
+      "url_info": "https://securitesociale.sn",
+      "eligibility_criteria": [
+        "involuntary_unemployment",
+        "formal_sector_employed",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-pension-invalidite",
+      "slug": "pension-invalidite",
+      "nom": "Pension d'invalidité",
+      "description_en": "Invalidity pension for workers with recognised disability who have contributed to the social security scheme. Amount based on last salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "CSS (Caisse de Sécurité Sociale du Sénégal)",
+      "montant_min_xof": 0,
+      "montant_max_xof": 5000000,
+      "periodicite": "mensuel",
+      "url_info": "https://securitesociale.sn",
+      "eligibility_criteria": [
+        "disability_verified",
+        "formal_sector_employed",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-pension-survivants",
+      "slug": "pension-survivants",
+      "nom": "Pension de survivants",
+      "description_en": "Survivor pension paid to the spouse and dependants of a deceased IPRES pensioner. Calculated as a percentage of the deceased's pension.",
+      "categorie": "famille",
+      "organisme": "IPRES (Institution de Prévoyance Retraite du Sénégal)",
+      "montant_min_xof": 0,
+      "montant_max_xof": 4000000,
+      "periodicite": "mensuel",
+      "url_info": "https://ipres.sn",
+      "eligibility_criteria": [
+        "retirement_pension_recipient",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-filets-sociaux",
+      "slug": "programme-filets-sociaux",
+      "nom": "Programme Filets Sociaux",
+      "description_en": "Quarterly cash transfer programme for poor households. Provides 25,000 FCFA every quarter to registered vulnerable families.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "FSS / Gouvernement du Sénégal",
+      "montant_min_xof": 2500000,
+      "montant_max_xof": 2500000,
+      "periodicite": "trimestriel",
+      "url_info": "https://fss.sn",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-gratuite-sante",
+      "slug": "gratuite-sante-femme-enfant",
+      "nom": "Gratuité santé femme et enfant",
+      "description_en": "Free healthcare for pregnant women and children under 5 in public health facilities. Covers antenatal care, deliveries, vaccinations and essential care.",
+      "categorie": "sante",
+      "organisme": "FSS / Ministère de la Santé",
+      "montant_min_xof": 0,
+      "montant_max_xof": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://fss.sn",
+      "eligibility_criteria": [
+        "family_with_children",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "sn-alloc-maternite",
+      "slug": "allocation-maternite",
+      "nom": "Allocation de maternité",
+      "description_en": "Maternity benefit for employed women. Provides 100% salary replacement for 14 weeks of maternity leave, paid by the CSS.",
+      "categorie": "famille",
+      "organisme": "CSS (Caisse de Sécurité Sociale du Sénégal)",
+      "montant_min_xof": 8000000,
+      "montant_max_xof": 8000000,
+      "periodicite": "mensuel",
+      "url_info": "https://securitesociale.sn",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_sn"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

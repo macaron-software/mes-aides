@@ -1,0 +1,191 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "RW",
+  "name": "Rwanda",
+  "name_local": "Rwanda",
+  "language": "fr",
+  "currency": "RWF",
+  "welfare_model": "RSSB contributif + VUP/Ubudehe communautaire très développé",
+  "sources": [
+    "https://rssb.rw",
+    "https://minaloc.gov.rw",
+    "https://vup.minaloc.gov.rw"
+  ],
+  "aids": [
+    {
+      "id": "rw-pension-rssb",
+      "slug": "pension-rssb",
+      "nom": "Pension RSSB",
+      "description_en": "RSSB retirement pension for workers who have contributed and reached age 55. Minimum 10,000 RWF per month.",
+      "categorie": "retraite",
+      "organisme": "RSSB (Rwanda Social Security Board)",
+      "montant_min_rwf": 1000000,
+      "montant_max_rwf": 1000000,
+      "periodicite": "mensuel",
+      "url_info": "https://rssb.rw",
+      "eligibility_criteria": [
+        "age_min_55",
+        "retirement_pension_recipient",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-vup-direct",
+      "slug": "vup-soutien-direct",
+      "nom": "VUP Soutien direct (Vision 2020 Umurenge)",
+      "description_en": "Direct support from the Vision 2020 Umurenge Programme: 3,000 to 6,000 RWF per month for the poorest registered households in umurenge sectors.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MINALOC (Ministère de l'Administration Locale)",
+      "montant_min_rwf": 300000,
+      "montant_max_rwf": 600000,
+      "periodicite": "mensuel",
+      "url_info": "https://vup.minaloc.gov.rw",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-vup-public-works",
+      "slug": "vup-travaux-publics",
+      "nom": "VUP Travaux publics",
+      "description_en": "Public works component of the VUP programme: 1,000 RWF per day for up to 7 days per month for unemployed persons in poor households.",
+      "categorie": "emploi_formation",
+      "organisme": "MINALOC (Ministère de l'Administration Locale)",
+      "montant_min_rwf": 0,
+      "montant_max_rwf": 700000,
+      "periodicite": "mensuel",
+      "url_info": "https://vup.minaloc.gov.rw",
+      "eligibility_criteria": [
+        "involuntary_unemployment",
+        "income_below_threshold",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-ubudehe",
+      "slug": "ubudehe-protection-sociale",
+      "nom": "Ubudehe – Protection sociale",
+      "description_en": "Community-based social protection system categorising households by poverty level to determine access to services and cash transfers. Categories 1-2 receive priority support up to 6,000 RWF/month.",
+      "categorie": "pauvrete_exclusion",
+      "organisme": "MINALOC (Ministère de l'Administration Locale)",
+      "montant_min_rwf": 0,
+      "montant_max_rwf": 600000,
+      "periodicite": "mensuel",
+      "url_info": "https://minaloc.gov.rw",
+      "eligibility_criteria": [
+        "income_below_threshold",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-mutuelle-sante",
+      "slug": "mutuelle-sante",
+      "nom": "Mutuelle de Santé",
+      "description_en": "Community-based health insurance scheme covering all residents for an annual family contribution of 3,000 RWF. One of the highest coverage rates in Africa.",
+      "categorie": "sante",
+      "organisme": "RSSB (Rwanda Social Security Board)",
+      "montant_min_rwf": 300000,
+      "montant_max_rwf": 300000,
+      "periodicite": "annuel",
+      "url_info": "https://rssb.rw",
+      "eligibility_criteria": [
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-pension-invalidite",
+      "slug": "pension-invalidite-rssb",
+      "nom": "Pension d'invalidité RSSB",
+      "description_en": "Invalidity pension for workers with a recognised disability who have contributed to RSSB. 30-50% of last salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "RSSB (Rwanda Social Security Board)",
+      "montant_min_rwf": 0,
+      "montant_max_rwf": 3000000,
+      "periodicite": "mensuel",
+      "url_info": "https://rssb.rw",
+      "eligibility_criteria": [
+        "disability_verified",
+        "formal_sector_employed",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-maternite",
+      "slug": "conge-maternite-12-semaines",
+      "nom": "Congé maternité (12 semaines)",
+      "description_en": "Maternity leave benefit for employed women: 100% salary for 12 weeks of maternity leave, paid by RSSB.",
+      "categorie": "famille",
+      "organisme": "RSSB (Rwanda Social Security Board)",
+      "montant_min_rwf": 0,
+      "montant_max_rwf": 5000000,
+      "periodicite": "mensuel",
+      "url_info": "https://rssb.rw",
+      "eligibility_criteria": [
+        "employed",
+        "family_with_children",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-child-benefit",
+      "slug": "allocation-enfant-pilote",
+      "nom": "Allocation enfant (pilote)",
+      "description_en": "Pilot child benefit programme of 3,000 RWF per month for children under 2 in poor households. Managed by MINALOC.",
+      "categorie": "famille",
+      "organisme": "MINALOC (Ministère de l'Administration Locale)",
+      "montant_min_rwf": 300000,
+      "montant_max_rwf": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://minaloc.gov.rw",
+      "eligibility_criteria": [
+        "family_with_children",
+        "income_below_threshold",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-umusanzu",
+      "slug": "umusanzu-micro-assurance",
+      "nom": "Umusanzu (micro-assurance)",
+      "description_en": "Micro-insurance scheme for the informal sector: 3,000 RWF per year covering basic health costs. Managed by RSSB.",
+      "categorie": "sante",
+      "organisme": "RSSB (Rwanda Social Security Board)",
+      "montant_min_rwf": 300000,
+      "montant_max_rwf": 300000,
+      "periodicite": "annuel",
+      "url_info": "https://rssb.rw",
+      "eligibility_criteria": [
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "rw-1000-days",
+      "slug": "programme-1000-premiers-jours",
+      "nom": "Programme 1000 Premiers Jours",
+      "description_en": "In-kind support programme for children aged 0 to 2 years. Provides nutritional supplements, counselling and development support to families with young children.",
+      "categorie": "famille",
+      "organisme": "MINALOC / Gouvernement du Rwanda",
+      "montant_min_rwf": 0,
+      "montant_max_rwf": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://minaloc.gov.rw",
+      "eligibility_criteria": [
+        "family_with_children",
+        "residence_rw"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}
