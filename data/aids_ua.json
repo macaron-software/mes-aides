@@ -1,0 +1,208 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "country_code": "UA",
+  "name": "Ukraine",
+  "name_local": "Україна",
+  "language": "uk",
+  "currency": "UAH",
+  "currency_smallest": "kopecks",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://msp.gov.ua",
+    "https://pfu.gov.ua",
+    "https://mlsp.gov.ua",
+    "https://minre.gov.ua"
+  ],
+  "aids": [
+    {
+      "id": "ua-pensiya-starist",
+      "slug": "pensiya-starist",
+      "nom": "Пенсія по старості (Pensiya po starosti)",
+      "description_en": "Old age pension. Minimum 4,462 UAH/month (2025). Amount depends on length of insurance record and contribution index. Retirement age: 60 (women) / 60 (men) with 35 years record.",
+      "categorie": "retraite",
+      "organisme": "Пенсійний фонд України (PFU) — pfu.gov.ua",
+      "montant_min_uah": 446200,
+      "montant_max_uah": 2000000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.pfu.gov.ua/category/pensiya/",
+      "eligibility_criteria": [
+        "residence_ua",
+        "age_60",
+        "insurance_record_35y"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-dopomoga-bezrobittya",
+      "slug": "dopomoga-bezrobittya",
+      "nom": "Допомога по безробіттю (Dopomoga po bezrobittyu)",
+      "description_en": "Unemployment benefit. Minimum 1,600 UAH/month to maximum 16,000 UAH/month (2025). Duration 90–360 days depending on work record. Paid by State Employment Service.",
+      "categorie": "revenus_emploi",
+      "organisme": "Державна служба зайнятості (DSZ) — dcz.gov.ua",
+      "montant_min_uah": 160000,
+      "montant_max_uah": 1600000,
+      "periodicite": "mensuel",
+      "url_info": "https://dcz.gov.ua/storinka/dopomoha-po-bezrobittyu",
+      "eligibility_criteria": [
+        "residence_ua",
+        "registered_unemployed",
+        "insurance_record_6m_min"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-subsidiya-zhkp",
+      "slug": "subsidiya-zhkp",
+      "nom": "Субсидія на оплату житлово-комунальних послуг (Subsidiya ZhKP)",
+      "description_en": "Utility subsidy for low-income households. Average 1,000–2,000 UAH/month for qualifying families (2025). Automatic assignment for qualifying households.",
+      "categorie": "logement",
+      "organisme": "Мінсоцполітики — msp.gov.ua",
+      "montant_min_uah": 0,
+      "montant_max_uah": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://subsidia.gov.ua",
+      "eligibility_criteria": [
+        "residence_ua",
+        "income_below_threshold",
+        "utility_costs_above_norms"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-vyplaty-vpo",
+      "slug": "vyplaty-vpo",
+      "nom": "Виплати внутрішньо переміщеним особам (VPO benefit)",
+      "description_en": "Monthly benefit for internally displaced persons (IDPs) forced to flee due to the armed conflict. 2,000–3,000 UAH/month depending on household composition (2025). Priority benefit.",
+      "categorie": "minima_sociaux",
+      "organisme": "Мінсоцполітики / Пенсійний фонд — msp.gov.ua",
+      "montant_min_uah": 200000,
+      "montant_max_uah": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://msp.gov.ua/news/pereselentsi.html",
+      "eligibility_criteria": [
+        "registered_idp_ua",
+        "displaced_from_conflict_zone",
+        "vpo_certificate"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-dopomoga-narodzhennya",
+      "slug": "dopomoga-narodzhennya",
+      "nom": "Допомога при народженні дитини (Dopomoga pry narodzhenni dytyny)",
+      "description_en": "Birth benefit. 41,280 UAH one-time lump sum for first child (2025). Paid in instalments: lump sum at birth + monthly for 3 years. Higher for subsequent children.",
+      "categorie": "famille",
+      "organisme": "Пенсійний фонд України (PFU) — pfu.gov.ua",
+      "montant_min_uah": 4128000,
+      "montant_max_uah": 8256000,
+      "periodicite": "unique",
+      "url_info": "https://www.pfu.gov.ua/category/dopomoha-pry-narodzhenni-dytyny/",
+      "eligibility_criteria": [
+        "residence_ua",
+        "ukrainian_citizenship",
+        "child_born_after_2014"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-dopomoga-dity-do3",
+      "slug": "dopomoga-dity-do3",
+      "nom": "Допомога на догляд за дитиною до 3 років (childcare benefit)",
+      "description_en": "Monthly childcare benefit for low-income families with child under 3 years. 1,600 UAH/month per child (2025). Income-tested.",
+      "categorie": "famille",
+      "organisme": "Органи соціального захисту — msp.gov.ua",
+      "montant_min_uah": 160000,
+      "montant_max_uah": 160000,
+      "periodicite": "mensuel",
+      "url_info": "https://msp.gov.ua/news/dopomoga-na-dytyny.html",
+      "eligibility_criteria": [
+        "residence_ua",
+        "child_under_3",
+        "income_below_subsistence_minimum"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-pensiya-invalidnist",
+      "slug": "pensiya-invalidnist",
+      "nom": "Пенсія по інвалідності (Pensiya po invalidnosti)",
+      "description_en": "Disability pension. Group I: ~7,500 UAH/month, Group II: ~5,500 UAH/month, Group III: ~3,481 UAH/month (2025). Amount depends on insurance record and disability group.",
+      "categorie": "handicap",
+      "organisme": "Пенсійний фонд України (PFU) — pfu.gov.ua",
+      "montant_min_uah": 348100,
+      "montant_max_uah": 750000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.pfu.gov.ua/category/pensiya-po-invalidnosti/",
+      "eligibility_criteria": [
+        "residence_ua",
+        "disability_group_1_2_3",
+        "ukrainian_citizenship"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-razova-materialna-dopomoga",
+      "slug": "razova-materialna-dopomoga",
+      "nom": "Разова матеріальна допомога (one-time hardship aid)",
+      "description_en": "One-time material assistance for people in extreme hardship. Up to 5,000 UAH. Available at local social protection centres based on individual assessment.",
+      "categorie": "minima_sociaux",
+      "organisme": "Органи соціального захисту — msp.gov.ua",
+      "montant_min_uah": 0,
+      "montant_max_uah": 500000,
+      "periodicite": "unique",
+      "url_info": "https://msp.gov.ua",
+      "eligibility_criteria": [
+        "residence_ua",
+        "exceptional_hardship",
+        "social_worker_assessment"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-dopomoga-vpo-zhytlo",
+      "slug": "dopomoga-vpo-zhytlo",
+      "nom": "Відшкодування витрат ВПО на оренду житла (IDP housing support)",
+      "description_en": "Housing rental reimbursement for internally displaced persons. Varies by region and programme. Up to 3,000 UAH/month for rent coverage for eligible IDP households.",
+      "categorie": "logement",
+      "organisme": "Мінсоцполітики / ПРООН — msp.gov.ua",
+      "montant_min_uah": 0,
+      "montant_max_uah": 300000,
+      "periodicite": "mensuel",
+      "url_info": "https://msp.gov.ua/news/vpo-zhytlo.html",
+      "eligibility_criteria": [
+        "registered_idp_ua",
+        "renting_outside_conflict_zone",
+        "income_below_threshold"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ua-dopomoga-zsu-family",
+      "slug": "dopomoga-zsu-family",
+      "nom": "Грошова допомога сім'ям військовослужбовців ЗСУ (military families support)",
+      "description_en": "Financial support for families of Armed Forces of Ukraine servicemembers. Monthly payments and one-time assistance vary by rank and programme. Expanded since 2022.",
+      "categorie": "revenus_emploi",
+      "organisme": "Міноборони / Міністерство соціальної політики — mil.gov.ua",
+      "montant_min_uah": 0,
+      "montant_max_uah": 1000000,
+      "periodicite": "variable",
+      "url_info": "https://mil.gov.ua/news/groshovij-zahist.html",
+      "eligibility_criteria": [
+        "residence_ua",
+        "family_member_of_zsu_servicemember"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

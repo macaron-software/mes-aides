@@ -1,0 +1,208 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "country_code": "RU",
+  "name": "Russia",
+  "name_local": "Россия",
+  "language": "ru",
+  "currency": "RUB",
+  "currency_smallest": "kopeks",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://pfr.gov.ru",
+    "https://mintrud.gov.ru",
+    "https://gosuslugi.ru",
+    "https://mos.ru"
+  ],
+  "aids": [
+    {
+      "id": "ru-pensiya-starost",
+      "slug": "pensiya-starost",
+      "nom": "Страховая пенсия по старости (Strakhovaya pensiya po starosti)",
+      "description_en": "Old age insurance pension. Minimum 22,165 RUB/month after +7.3% indexation in 2025. Amount depends on pension points accumulated.",
+      "categorie": "retraite",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 2216500,
+      "montant_max_rub": 6000000,
+      "periodicite": "mensuel",
+      "url_info": "https://sfr.gov.ru/grazhdanam/pensionery/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "age_60_65",
+        "insurance_record_15y_plus"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-posobie-bezrabotitsa",
+      "slug": "posobie-bezrabotitsa",
+      "nom": "Пособие по безработице (Posobie po bezrabotitse)",
+      "description_en": "Unemployment benefit. 1,500 RUB/month minimum to 12,792 RUB/month maximum (2025 rates). Paid for up to 12 months.",
+      "categorie": "revenus_emploi",
+      "organisme": "Служба занятости (Sluzhba zanyatosti) — trudvsem.ru",
+      "montant_min_rub": 150000,
+      "montant_max_rub": 1279200,
+      "periodicite": "mensuel",
+      "url_info": "https://trudvsem.ru/information-pages/unemployed",
+      "eligibility_criteria": [
+        "residence_ru",
+        "registered_unemployed",
+        "actively_seeking_work"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-materinskiy-kapital",
+      "slug": "materinskiy-kapital",
+      "nom": "Материнский капитал (Materinskiy kapital)",
+      "description_en": "Maternity (family) capital. One-time payment of 630,380 RUB for first child (2025). Indexed annually. Can be used for housing, education, or pension.",
+      "categorie": "famille",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 63038000,
+      "montant_max_rub": 83375000,
+      "periodicite": "unique",
+      "url_info": "https://sfr.gov.ru/grazhdanam/semya/msk/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "birth_first_child_after_2006",
+        "russian_citizenship"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-posobie-rebenok-do3",
+      "slug": "posobie-rebenok-do3",
+      "nom": "Ежемесячное пособие на ребёнка до 3 лет (Yezhemesyachnoe posobie na rebyonka do 3 let)",
+      "description_en": "Universal monthly child benefit for children under 3 years old. 14,168 RUB/month per child (2025). Introduced in 2023, no income testing.",
+      "categorie": "famille",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 1416800,
+      "montant_max_rub": 1416800,
+      "periodicite": "mensuel",
+      "url_info": "https://sfr.gov.ru/grazhdanam/semya/posobiya/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "child_under_3",
+        "russian_citizenship"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-edinoe-posobie",
+      "slug": "edinoe-posobie",
+      "nom": "Единое пособие для малообеспеченных семей (Yedinoe posobie)",
+      "description_en": "Unified benefit for low-income families with children. 13,189 to 66,013 RUB/month depending on family income. Replaces several previous benefits since 2023.",
+      "categorie": "minima_sociaux",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 1318900,
+      "montant_max_rub": 6601300,
+      "periodicite": "mensuel",
+      "url_info": "https://sfr.gov.ru/grazhdanam/semya/edinoe_posobie/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "family_with_children",
+        "income_below_subsistence_level",
+        "russian_citizenship"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-posobie-uhod-do18m",
+      "slug": "posobie-uhod-do18m",
+      "nom": "Пособие по уходу за ребёнком до 1,5 лет (Posobie po ukhodu za rebyonkom)",
+      "description_en": "Childcare benefit for child aged 0–18 months. 40% of average salary, minimum 9,227 RUB/month (2025). Maximum capped at 49,123 RUB/month.",
+      "categorie": "famille",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 922700,
+      "montant_max_rub": 4912300,
+      "periodicite": "mensuel",
+      "url_info": "https://sfr.gov.ru/grazhdanam/semya/posobiya/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "child_under_18_months",
+        "parental_leave"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-bolnichniy",
+      "slug": "bolnichniy",
+      "nom": "Пособие по временной нетрудоспособности (Bolnichniy list — sick pay)",
+      "description_en": "Sick pay. 60% of average salary (experience < 5 years), 80% (5–8 years), 100% (8+ years). Paid from day 1 by SFR. Maximum daily amount capped.",
+      "categorie": "sante",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 0,
+      "montant_max_rub": 10000000,
+      "periodicite": "variable",
+      "url_info": "https://sfr.gov.ru/grazhdanam/rabotayushchim_grazhdanam/bolnichniy/",
+      "eligibility_criteria": [
+        "employed_ru",
+        "sick_leave_certificate"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-oms",
+      "slug": "oms",
+      "nom": "Обязательное медицинское страхование (OMS)",
+      "description_en": "Universal compulsory health insurance. Free healthcare for all Russian citizens and residents including doctor visits, hospitalisation, emergency care, and essential medicines.",
+      "categorie": "sante",
+      "organisme": "ФФОМС (Federal FFOMS) — ffoms.gov.ru",
+      "montant_min_rub": 0,
+      "montant_max_rub": 0,
+      "periodicite": "permanent",
+      "url_info": "https://ffoms.gov.ru/sistema-oms/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "russian_citizenship_or_residence_permit"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-subsidiya-zhkh",
+      "slug": "subsidiya-zhkh",
+      "nom": "Субсидия на оплату ЖКХ (Subsidiya ZhKKh)",
+      "description_en": "Housing and utility subsidy when utility bills exceed 22% of household income. Average subsidy ~3,000–5,000 RUB/month. Applied for at social protection offices.",
+      "categorie": "logement",
+      "organisme": "МФЦ / Органы соцзащиты — gosuslugi.ru",
+      "montant_min_rub": 0,
+      "montant_max_rub": 500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gosuslugi.ru/600297",
+      "eligibility_criteria": [
+        "residence_ru",
+        "utilities_above_22_percent_income",
+        "registered_at_address"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ru-sotsialnaya-pensiya",
+      "slug": "sotsialnaya-pensiya",
+      "nom": "Социальная пенсия по инвалидности (Sotsialnaya pensiya po invalidnosti)",
+      "description_en": "Social disability pension for those without sufficient insurance record. 6,782 RUB/month (Group III) to 27,680 RUB/month (Group I, disabled from childhood). 2025 rates.",
+      "categorie": "handicap",
+      "organisme": "Социальный фонд России (SFR) — sfr.gov.ru",
+      "montant_min_rub": 678200,
+      "montant_max_rub": 2768000,
+      "periodicite": "mensuel",
+      "url_info": "https://sfr.gov.ru/grazhdanam/invalidy/",
+      "eligibility_criteria": [
+        "residence_ru",
+        "disability_group_1_2_3",
+        "russian_citizenship"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

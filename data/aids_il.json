@@ -1,0 +1,209 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "country_code": "IL",
+  "name": "Israel",
+  "name_local": "ישראל",
+  "language": "he",
+  "currency": "ILS",
+  "currency_smallest": "agorot",
+  "welfare_model": "bismarckian",
+  "sources": [
+    "https://www.btl.gov.il",
+    "https://www.health.gov.il",
+    "https://www.molsa.gov.il"
+  ],
+  "aids": [
+    {
+      "id": "il-kitzba-zikna",
+      "slug": "kitzba-zikna",
+      "nom": "קצבת זקנה (Kitzba Zikna — Old age pension)",
+      "description_en": "Old age pension from National Insurance Institute (Bituach Leumi). 1,859 ILS/month (single) to 2,788 ILS/month (couple) as of 2025. Paid from age 67 (men) / 62–67 (women, transitional).",
+      "categorie": "retraite",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 185900,
+      "montant_max_ils": 278800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.btl.gov.il/Benefits/Old%20Age/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "age_67_men_62_women",
+        "national_insurance_contributions"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-dmei-avtalah",
+      "slug": "dmei-avtalah",
+      "nom": "דמי אבטלה (Dmei Avtalah — Unemployment benefit)",
+      "description_en": "Unemployment insurance. 80% of average wage for first 50 days, 75% for next 55 days, 50% thereafter. Maximum daily rate 1,362 ILS/day (2025). Maximum total duration 138–175 days.",
+      "categorie": "revenus_emploi",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 0,
+      "montant_max_ils": 4086000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.btl.gov.il/Benefits/Unemployment/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "registered_unemployed",
+        "worked_12_months_last_18m",
+        "involuntary_unemployment"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-kitzba-yeladim",
+      "slug": "kitzba-yeladim",
+      "nom": "קצבת ילדים (Kitzba Yeladim — Child allowance)",
+      "description_en": "Universal child allowance. 188 ILS/month for 1st–5th child, 376 ILS/month for additional children (2025). No income test. Paid until child turns 18.",
+      "categorie": "famille",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 18800,
+      "montant_max_ils": 37600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.btl.gov.il/Benefits/Child%20Allowance/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "child_under_18"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-kitzba-nechut",
+      "slug": "kitzba-nechut",
+      "nom": "קצבת נכות (Kitzba Nechut — Disability benefit)",
+      "description_en": "Disability benefit from BTL. 2,788 ILS/month (partial disability) to 5,576 ILS/month (full disability with special care allowance) (2025). Means-tested with disability assessment.",
+      "categorie": "handicap",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 278800,
+      "montant_max_ils": 557600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.btl.gov.il/Benefits/Disability/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "disability_60_percent_plus",
+        "income_below_threshold",
+        "age_18_65"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-kitzba-imahut",
+      "slug": "kitzba-imahut",
+      "nom": "קצבת אמהות (Kitzba Imahut — Maternity benefit)",
+      "description_en": "Maternity benefit. 100% of average salary for up to 15 weeks (first child). Extended maternity leave up to 26 weeks available. Paid by BTL. Also includes paternity leave provisions.",
+      "categorie": "famille",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 0,
+      "montant_max_ils": 1764000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.btl.gov.il/Benefits/Maternity/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "employed_female",
+        "childbirth",
+        "worked_10_months_last_14m"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-bituach-briut",
+      "slug": "bituach-briut",
+      "nom": "ביטוח בריאות ממלכתי (Bituach Briut — National health insurance)",
+      "description_en": "Universal national health insurance. Free at point of care for all residents. Covers doctor visits, hospitalisation, specialist care, essential medicines. Four HMOs (Kupot Holim).",
+      "categorie": "sante",
+      "organisme": "משרד הבריאות / קופות החולים — health.gov.il",
+      "montant_min_ils": 0,
+      "montant_max_ils": 0,
+      "periodicite": "permanent",
+      "url_info": "https://www.health.gov.il/English/Topics/HealthInsurance/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "registered_resident"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-havtachat-hachnasa",
+      "slug": "havtachat-hachnasa",
+      "nom": "הבטחת הכנסה (Havtachat Hachnasa — Income support)",
+      "description_en": "Income support (minimum income guarantee). 2,386 ILS/month for a single person, 3,579 ILS/month for a couple (2025). Means-tested. For working-age adults unable to work.",
+      "categorie": "minima_sociaux",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 238600,
+      "montant_max_ils": 357900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.btl.gov.il/Benefits/Guaranteed%20Income/Pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "income_below_threshold",
+        "age_20_plus",
+        "actively_seeking_work"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-maanak-lida",
+      "slug": "maanak-lida",
+      "nom": "מענק לידה (Maanak Lida — Birth grant)",
+      "description_en": "One-time birth grant of 1,700 ILS per newborn (2025). Paid by BTL automatically after birth registration. No income test.",
+      "categorie": "famille",
+      "organisme": "המוסד לביטוח לאומי (BTL) — btl.gov.il",
+      "montant_min_ils": 170000,
+      "montant_max_ils": 170000,
+      "periodicite": "unique",
+      "url_info": "https://www.btl.gov.il/Benefits/Maternity/Pages/birthgrant.aspx",
+      "eligibility_criteria": [
+        "residence_il",
+        "newborn_registration"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-tmicha-schar-dira",
+      "slug": "tmicha-schar-dira",
+      "nom": "תמיכה בשכר דירה (Tmicha b'Schar Dira — Rent subsidy)",
+      "description_en": "Means-tested housing rent subsidy. Varies by region (higher in Tel Aviv/Jerusalem), family size and income. Managed by Ministry of Construction and Housing. Waiting lists apply.",
+      "categorie": "logement",
+      "organisme": "משרד הבינוי והשיכון — moch.gov.il",
+      "montant_min_ils": 0,
+      "montant_max_ils": 200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.moch.gov.il/rental_subsidy",
+      "eligibility_criteria": [
+        "residence_il",
+        "income_below_threshold",
+        "renter",
+        "no_owned_property"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "il-mashlim-schar-minimum",
+      "slug": "mashlim-schar-minimum",
+      "nom": "שכר מינימום (Schar Minimum — Minimum wage)",
+      "description_en": "National minimum wage of 5,880 ILS/month (2025). Legally binding for all employers. Enforced by Ministry of Labor. Complement paid if employer fails to comply.",
+      "categorie": "revenus_emploi",
+      "organisme": "משרד העבודה — moe.gov.il",
+      "montant_min_ils": 588000,
+      "montant_max_ils": 588000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.il/he/departments/policies/minimum_wage_policy",
+      "eligibility_criteria": [
+        "employed_il",
+        "employment_contract"
+      ],
+      "verified_year": 2025,
+      "amounts_baremes_year": 2025
+    }
+  ]
+}
