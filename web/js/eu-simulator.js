@@ -93,6 +93,14 @@ const EU_CURRENCIES = {
   jo: { symbol: 'JD',  locale: 'ar-JO', code: 'JOD', suffix: false },
   lb: { symbol: 'L£',  locale: 'ar-LB', code: 'LBP', suffix: false },
   iq: { symbol: 'IQD', locale: 'ar-IQ', code: 'IQD', suffix: false },
+  /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
+  mn: { symbol: '₮',   locale: 'mn-MN', code: 'MNT', suffix: false },
+  by: { symbol: 'Br',  locale: 'be-BY', code: 'BYN', suffix: true  },
+  md: { symbol: 'lei', locale: 'ro-MD', code: 'MDL', suffix: true  },
+  la: { symbol: '₭',   locale: 'lo-LA', code: 'LAK', suffix: false },
+  tw: { symbol: 'NT$', locale: 'zh-TW', code: 'TWD', suffix: false },
+  kg: { symbol: 'сом', locale: 'ky-KG', code: 'KGS', suffix: true  },
+  tj: { symbol: 'SM',  locale: 'tg-TJ', code: 'TJS', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -127,6 +135,8 @@ const CURRENCY_AMOUNT_FIELD = {
   /* Montenegro reuses eur (no entry needed, fallback) */
   /* Middle East */
   ae: 'aed', sa: 'sar', qa: 'qar', kw: 'kwd', om: 'omr', jo: 'jod', lb: 'lbp', iq: 'iqd',
+  /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
+  mn: 'mnt', by: 'byn', md: 'mdl', la: 'lak', tw: 'twd', kg: 'kgs', tj: 'tjs',
 };
 
 /**
@@ -162,6 +172,8 @@ const INCOME_THRESHOLDS = {
   rs: 2754300, ba: 54000, mk: 1800000, al: 2266000, me: 40000,
   /* Middle East */
   ae: 500000, sa: 320000, qa: 300000, kw: 60000, om: 60000, jo: 185000, lb: 200000000, iq: 35000000,
+  /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
+  mn: 42000000, by: 72300000, md: 250000, la: 70000000, tw: 177440000, kg: 500000, tj: 35000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -194,6 +206,8 @@ const LOW_INCOME_THRESHOLDS = {
   rs: 5508600, ba: 108000, mk: 3600000, al: 4532000, me: 80000,
   /* Middle East */
   ae: 1000000, sa: 640000, qa: 600000, kw: 120000, om: 120000, jo: 370000, lb: 400000000, iq: 70000000,
+  /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
+  mn: 84000000, by: 144600000, md: 500000, la: 140000000, tw: 354880000, kg: 1000000, tj: 70000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
