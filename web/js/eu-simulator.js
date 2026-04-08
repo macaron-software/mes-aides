@@ -78,6 +78,12 @@ const EU_CURRENCIES = {
   et: { symbol: 'Br',  locale: 'am-ET', code: 'ETB', suffix: false },
   tz: { symbol: 'TSh', locale: 'sw-TZ', code: 'TZS', suffix: false },
   ug: { symbol: 'USh', locale: 'en-UG', code: 'UGX', suffix: false },
+  /* Balkans expansion */
+  rs: { symbol: 'дин', locale: 'sr-RS', code: 'RSD', suffix: true  },
+  ba: { symbol: 'KM',  locale: 'bs-BA', code: 'BAM', suffix: true  },
+  mk: { symbol: 'ден', locale: 'mk-MK', code: 'MKD', suffix: true  },
+  al: { symbol: 'L',   locale: 'sq-AL', code: 'ALL', suffix: true  },
+  me: { symbol: '€',   locale: 'sr-ME', code: 'EUR', suffix: false },
   /* Middle East expansion */
   ae: { symbol: 'AED', locale: 'ar-AE', code: 'AED', suffix: false },
   sa: { symbol: '﷼',   locale: 'ar-SA', code: 'SAR', suffix: false },
@@ -116,6 +122,9 @@ const CURRENCY_AMOUNT_FIELD = {
   pk: 'pkr', bd: 'bdt', lk: 'lkr', np: 'npr', ph: 'php', mm: 'mmk', kh: 'khr',
   /* Africa expansion */
   ng: 'ngn', eg: 'egp', ma: 'mad', dz: 'dzd', gh: 'ghs', tn: 'tnd', ke: 'kes', et: 'etb', tz: 'tzs', ug: 'ugx',
+  /* Balkans expansion */
+  rs: 'rsd', ba: 'bam', mk: 'mkd', al: 'all',
+  /* Montenegro reuses eur (no entry needed, fallback) */
   /* Middle East */
   ae: 'aed', sa: 'sar', qa: 'qar', kw: 'kwd', om: 'omr', jo: 'jod', lb: 'lbp', iq: 'iqd',
 };
@@ -149,6 +158,8 @@ const INCOME_THRESHOLDS = {
   pk: 100000000, bd: 50000000, lk: 500000000, np: 400000000, ph: 5000000, mm: 60000000, kh: 40000000000,
   /* Africa expansion — monthly net, local currency */
   ng: 700000000, eg: 165000000, ma: 500000, dz: 2000000, gh: 100000, tn: 180000, ke: 200000, et: 58000, tz: 36000, ug: 25000,
+  /* Balkans expansion — monthly net, local currency smallest unit */
+  rs: 2754300, ba: 54000, mk: 1800000, al: 2266000, me: 40000,
   /* Middle East */
   ae: 500000, sa: 320000, qa: 300000, kw: 60000, om: 60000, jo: 185000, lb: 200000000, iq: 35000000,
 };
@@ -179,6 +190,8 @@ const LOW_INCOME_THRESHOLDS = {
   pk: 200000000, bd: 100000000, lk: 1000000000, np: 800000000, ph: 10000000, mm: 120000000, kh: 80000000000,
   /* Africa expansion */
   ng: 1400000000, eg: 330000000, ma: 1000000, dz: 4000000, gh: 200000, tn: 360000, ke: 400000, et: 116000, tz: 72000, ug: 50000,
+  /* Balkans expansion */
+  rs: 5508600, ba: 108000, mk: 3600000, al: 4532000, me: 80000,
   /* Middle East */
   ae: 1000000, sa: 640000, qa: 600000, kw: 120000, om: 120000, jo: 370000, lb: 400000000, iq: 70000000,
 };
