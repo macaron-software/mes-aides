@@ -256,3 +256,4 @@ rsync -avz web/dist/ debian@aides.macaron-software.com:/var/www/aides/
 - `test.skip()` / `test.fixme()`
 - Network calls for personal data
 - Unverified aid amounts (all from official sources)
+
