@@ -1,0 +1,209 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-01T00:00:00Z",
+  "last_updated": "2026-04-01",
+  "country_code": "JP",
+  "name": "Japan",
+  "name_local": "日本",
+  "language": "ja",
+  "currency": "JPY",
+  "welfare_model": "East Asian developmental",
+  "sources": [
+    "https://www.mhlw.go.jp",
+    "https://www.nenkin.go.jp"
+  ],
+  "aids": [
+    {
+      "id": "jp-kokumin-kenko-hoken",
+      "slug": "kokumin-kenko-hoken",
+      "nom": "国民健康保険 (Kokumin Kenko Hoken)",
+      "description_en": "National Health Insurance covering self-employed, unemployed, and those not covered by employer health insurance. Covers 70% of medical costs.",
+      "categorie": "sante",
+      "organisme": "市区町村 (Municipal governments) / 全国健康保険協会",
+      "montant_min_jpy": 0,
+      "montant_max_jpy": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/",
+      "source_url": "https://www.mhlw.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "not_covered_by_shakai_hoken",
+        "not_on_seikatsu_hogo"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-kosei-nenkin",
+      "slug": "kosei-nenkin",
+      "nom": "厚生年金 (Kosei Nenkin)",
+      "description_en": "Employees' pension insurance. Average monthly benefit approximately 148,000 JPY as of 2025. Benefit depends on contributions and years worked.",
+      "categorie": "retraite",
+      "organisme": "日本年金機構 (Japan Pension Service)",
+      "montant_min_jpy": 0,
+      "montant_max_jpy": 148000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nenkin.go.jp/service/jukyu/kourekinenkin/jukyu-yoken/20150401-01.html",
+      "source_url": "https://www.nenkin.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "age_65_plus",
+        "contribution_period_met",
+        "employed_in_covered_workplace"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-kokumin-nenkin",
+      "slug": "kokumin-nenkin",
+      "nom": "国民年金 (Kokumin Nenkin)",
+      "description_en": "Basic national pension for all residents aged 20-60. Full pension approx. 68,000 JPY/month (2025 rate: 816,000 JPY/year) after 40 years of contributions.",
+      "categorie": "retraite",
+      "organisme": "日本年金機構 (Japan Pension Service)",
+      "montant_min_jpy": 0,
+      "montant_max_jpy": 68000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nenkin.go.jp/service/jukyu/kourekinenkin/jukyu-yoken/20150401-02.html",
+      "source_url": "https://www.nenkin.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "age_65_plus",
+        "contribution_period_10yr_min"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-seikatsu-hogo",
+      "slug": "seikatsu-hogo",
+      "nom": "生活保護 (Seikatsu Hogo)",
+      "description_en": "Livelihood Protection (public assistance). Minimum living standard guarantee covering living, housing, education, medical and other expenses. Average single-person household approx. 120,000-130,000 JPY/month in urban areas.",
+      "categorie": "revenus_emploi",
+      "organisme": "福祉事務所 (Welfare Office) / 市区町村",
+      "montant_min_jpy": 80000,
+      "montant_max_jpy": 130000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatuhogo/",
+      "source_url": "https://www.mhlw.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "income_below_minimum_living_standard",
+        "assets_below_threshold",
+        "unable_to_support_self"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-jidou-teate",
+      "slug": "jidou-teate",
+      "nom": "児童手当 (Jidou Teate)",
+      "description_en": "Child allowance. From October 2024 reform: 15,000 JPY/month per child under 3; 10,000 JPY/month per child aged 3 to middle school. No income limit from 2024.",
+      "categorie": "famille",
+      "organisme": "市区町村 (Municipal governments)",
+      "montant_min_jpy": 10000,
+      "montant_max_jpy": 15000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/kodomo_kosodate/jidou_teate/",
+      "source_url": "https://www.mhlw.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "child_under_15",
+        "guardian_has_custody"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-kosodate-shien",
+      "slug": "kosodate-shien",
+      "nom": "子育て支援 (Kosodate Shien)",
+      "description_en": "Childcare subsidy program. Covers full cost of certified childcare (hoikuen/nintei-kodomoen) for households below income thresholds. Free for age 3-5 regardless of income since 2019.",
+      "categorie": "famille",
+      "organisme": "内閣府 子ども・子育て本部 / 市区町村",
+      "montant_min_jpy": 0,
+      "montant_max_jpy": 60000,
+      "periodicite": "mensuel",
+      "url_info": "https://www8.cao.go.jp/shoushi/shinseido/index.html",
+      "source_url": "https://www.mhlw.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "child_under_6",
+        "both_parents_working_or_single_parent"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-shugaku-enjosei",
+      "slug": "shugaku-enjosei",
+      "nom": "就学援助 (Shugaku Enjosei)",
+      "description_en": "School attendance assistance for low-income families. Covers school lunches, learning supplies, school trips, and uniforms for compulsory education (elementary and junior high school).",
+      "categorie": "jeunesse",
+      "organisme": "市区町村教育委員会 (Municipal Board of Education)",
+      "montant_min_jpy": 30000,
+      "montant_max_jpy": 200000,
+      "periodicite": "annuel",
+      "url_info": "https://www.mext.go.jp/a_menu/shotou/career/05010502/017.htm",
+      "source_url": "https://www.mhlw.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "child_in_compulsory_education",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-tokubetsu-shogaisha-teate",
+      "slug": "tokubetsu-shogaisha-teate",
+      "nom": "特別障害者手当 (Tokubetsu Shogaisha Teate)",
+      "description_en": "Special disability allowance for persons with severe disabilities living at home. Monthly amount 28,840 JPY (2025 rate).",
+      "categorie": "handicap",
+      "organisme": "市区町村 / 都道府県",
+      "montant_min_jpy": 28840,
+      "montant_max_jpy": 28840,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetu.html",
+      "source_url": "https://www.mhlw.go.jp",
+      "eligibility_criteria": [
+        "residence_jp",
+        "severe_disability_grade1",
+        "living_at_home_not_institutionalised",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-tokyo-jutaku-shien",
+      "slug": "tokyo-jutaku-shien",
+      "nom": "東京都住宅支援 (Tokyo Jutaku Shien)",
+      "description_en": "Tokyo Metropolitan housing assistance. Includes Tokyo Jutaku Kaihatsu Kodan rent subsidies and temporary housing assistance (緊急補助住宅) for low-income households.",
+      "categorie": "logement",
+      "organisme": "東京都 (Tokyo Metropolitan Government)",
+      "montant_min_jpy": 0,
+      "montant_max_jpy": 70000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2024/housing-support.html",
+      "source_url": "https://www.metro.tokyo.lg.jp",
+      "eligibility_criteria": [
+        "residence_tokyo",
+        "income_below_threshold",
+        "low_income_household"
+      ],
+      "amounts_baremes_year": 2026
+    },
+    {
+      "id": "jp-osaka-kodomo-iryohi",
+      "slug": "osaka-kodomo-iryohi",
+      "nom": "大阪府子ども医療費助成 (Osaka Kodomo Iryohi Josei)",
+      "description_en": "Osaka Prefecture child medical expense subsidy. Free medical care (zero copay) for children up to age 18 at Osaka Prefecture medical facilities.",
+      "categorie": "sante",
+      "organisme": "大阪府 / 市区町村",
+      "montant_min_jpy": 0,
+      "montant_max_jpy": 0,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.pref.osaka.lg.jp/kenkoiryo/kodomo_iryou/",
+      "source_url": "https://www.pref.osaka.lg.jp",
+      "eligibility_criteria": [
+        "residence_osaka_prefecture",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2026
+    }
+  ]
+}

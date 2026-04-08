@@ -1,0 +1,353 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-01T00:00:00Z",
+  "last_updated": "2026-04-01",
+  "country_code": "US",
+  "name": "United States",
+  "name_local": "United States of America",
+  "language": "en",
+  "currency": "USD",
+  "welfare_model": "Liberal",
+  "sources": [
+    "https://www.ssa.gov",
+    "https://www.benefits.gov",
+    "https://www.hud.gov",
+    "https://www.fns.usda.gov"
+  ],
+  "aids": [
+    {
+      "id": "us-social-security-retirement",
+      "slug": "social-security-retirement",
+      "nom": "Social Security Retirement Benefits",
+      "description_en": "Federal contributory retirement benefit. Average monthly retirement benefit $1,907 USD (January 2025). Maximum benefit for worker retiring at full retirement age: $3,822/month.",
+      "categorie": "retraite",
+      "organisme": "Social Security Administration (SSA)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 3822,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ssa.gov/benefits/retirement/",
+      "source_url": "https://www.ssa.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "age_62_plus",
+        "40_work_credits_minimum",
+        "ss_contributions_paid"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ssi",
+      "slug": "supplemental-security-income",
+      "nom": "Supplemental Security Income (SSI)",
+      "description_en": "Federal income supplement for aged, blind, and disabled individuals with limited income and resources. Federal benefit rate: $967/month for eligible individual, $1,450/month for eligible couple (2025).",
+      "categorie": "handicap",
+      "organisme": "Social Security Administration (SSA)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 967,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ssa.gov/ssi/",
+      "source_url": "https://www.ssa.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "age_65_plus_or_blind_or_disabled",
+        "income_below_threshold",
+        "resources_below_2000_usd"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-snap",
+      "slug": "snap-food-stamps",
+      "nom": "SNAP (Supplemental Nutrition Assistance Program)",
+      "description_en": "Federal food assistance program. Average benefit $189/month per person (FY2025). Maximum monthly benefit $292 for single person, $975 for household of 4.",
+      "categorie": "revenus_emploi",
+      "organisme": "USDA Food and Nutrition Service (FNS)",
+      "montant_min_usd": 23,
+      "montant_max_usd": 292,
+      "periodicite": "mensuel",
+      "url_info": "https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program",
+      "source_url": "https://www.fns.usda.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "income_at_or_below_130pct_poverty",
+        "resources_below_2750_usd",
+        "citizenship_or_eligible_noncitizen"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-medicaid",
+      "slug": "medicaid",
+      "nom": "Medicaid",
+      "description_en": "Joint federal-state health coverage for low-income individuals and families. Covers doctor visits, hospitalisation, long-term care, mental health at little or no cost. Eligibility varies by state.",
+      "categorie": "sante",
+      "organisme": "Centers for Medicare and Medicaid Services (CMS) / State agencies",
+      "montant_min_usd": 0,
+      "montant_max_usd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.medicaid.gov/medicaid/index.html",
+      "source_url": "https://www.medicaid.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "income_below_138pct_poverty_or_state_threshold",
+        "citizenship_or_eligible_noncitizen"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-medicare",
+      "slug": "medicare",
+      "nom": "Medicare",
+      "description_en": "Federal health insurance for adults 65+ and younger persons with disabilities or end-stage renal disease. Part A hospital: premium-free for most. Part B medical: standard premium $185/month (2025).",
+      "categorie": "sante",
+      "organisme": "Centers for Medicare and Medicaid Services (CMS)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.medicare.gov/basics/get-started-with-medicare",
+      "source_url": "https://www.medicare.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "age_65_plus_or_qualifying_disability",
+        "us_citizen_or_permanent_resident_5yr"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-section-8-hcv",
+      "slug": "section-8-housing-choice-voucher",
+      "nom": "Section 8 Housing Choice Voucher (HCV)",
+      "description_en": "Federal rental assistance for very low-income families, elderly and disabled. HUD pays difference between 30% of household income and local payment standard. Average subsidy approx. $900/month (2025).",
+      "categorie": "logement",
+      "organisme": "HUD / Public Housing Authorities (PHA)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.hud.gov/topics/housing_choice_voucher_program_section_8",
+      "source_url": "https://www.hud.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "income_below_50pct_area_median",
+        "us_citizen_or_eligible_immigration_status",
+        "waiting_list"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-eitc",
+      "slug": "earned-income-tax-credit",
+      "nom": "Earned Income Tax Credit (EITC)",
+      "description_en": "Federal refundable tax credit for working low-to-moderate income individuals and families. Maximum $7,830 with 3+ qualifying children; $5,213 with 2 children; $3,136 with 1 child; $632 no children (2025).",
+      "categorie": "revenus_emploi",
+      "organisme": "Internal Revenue Service (IRS)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 7830,
+      "periodicite": "annuel",
+      "url_info": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit",
+      "source_url": "https://www.irs.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "earned_income",
+        "income_below_threshold",
+        "valid_ssn"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-child-tax-credit",
+      "slug": "child-tax-credit",
+      "nom": "Child Tax Credit (CTC)",
+      "description_en": "Federal tax credit up to $2,000 per qualifying child under 17. Up to $1,700 may be refundable (Additional Child Tax Credit). Phased out above $200,000 income ($400,000 married filing jointly).",
+      "categorie": "famille",
+      "organisme": "Internal Revenue Service (IRS)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 2000,
+      "periodicite": "annuel",
+      "url_info": "https://www.irs.gov/credits-deductions/individuals/child-tax-credit",
+      "source_url": "https://www.irs.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "child_under_17",
+        "child_has_valid_ssn",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-tanf",
+      "slug": "tanf",
+      "nom": "Temporary Assistance for Needy Families (TANF)",
+      "description_en": "Federal block-grant providing time-limited cash assistance and work support for low-income families with children. Amounts vary by state; average monthly cash benefit approx. $429/family nationally.",
+      "categorie": "famille",
+      "organisme": "HHS / State agencies",
+      "montant_min_usd": 0,
+      "montant_max_usd": 1100,
+      "periodicite": "mensuel",
+      "url_info": "https://www.acf.hhs.gov/ofa/programs/tanf",
+      "source_url": "https://www.benefits.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "family_with_children",
+        "income_below_threshold",
+        "work_participation_required"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-liheap",
+      "slug": "liheap",
+      "nom": "Low Income Home Energy Assistance Program (LIHEAP)",
+      "description_en": "Federal program to help low-income households with home energy costs (heating/cooling and weatherization). Average benefit approx. $400-600/year. Administered by states.",
+      "categorie": "logement",
+      "organisme": "HHS / State energy agencies",
+      "montant_min_usd": 0,
+      "montant_max_usd": 600,
+      "periodicite": "annuel",
+      "url_info": "https://www.acf.hhs.gov/ocs/programs/liheap",
+      "source_url": "https://www.benefits.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "income_at_or_below_150pct_poverty",
+        "primary_residence"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-wic",
+      "slug": "wic",
+      "nom": "WIC (Women, Infants, and Children)",
+      "description_en": "Federal nutrition program for low-income pregnant women, new mothers, infants and children up to age 5. Provides food vouchers/EBT, nutritional education and breastfeeding support.",
+      "categorie": "famille",
+      "organisme": "USDA Food and Nutrition Service (FNS)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 100,
+      "periodicite": "mensuel",
+      "url_info": "https://www.fns.usda.gov/wic",
+      "source_url": "https://www.fns.usda.gov",
+      "eligibility_criteria": [
+        "residence_us",
+        "pregnant_postpartum_breastfeeding_or_infant_child_under_5",
+        "income_at_or_below_185pct_poverty",
+        "nutritional_risk"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ca-calworks",
+      "slug": "calworks-california",
+      "nom": "CalWORKs (California Work Opportunity and Responsibility to Kids)",
+      "description_en": "California TANF-funded cash aid and welfare-to-work program. Monthly cash aid: $785+ for single parent family of 3 (2025 Tier 2 rates). Includes childcare and employment services.",
+      "categorie": "famille",
+      "organisme": "California Department of Social Services (CDSS) / County welfare departments",
+      "montant_min_usd": 0,
+      "montant_max_usd": 1007,
+      "periodicite": "mensuel",
+      "url_info": "https://www.cdss.ca.gov/calworks",
+      "source_url": "https://www.cdss.ca.gov",
+      "eligibility_criteria": [
+        "residence_california",
+        "family_with_children",
+        "income_below_threshold",
+        "work_participation_required"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ca-calfresh",
+      "slug": "calfresh-california",
+      "nom": "CalFresh (California SNAP)",
+      "description_en": "California state-administered SNAP food assistance. Same federal eligibility rules with California-specific expansions (e.g. college students, mixed-status households). Benefits loaded onto EBT card.",
+      "categorie": "revenus_emploi",
+      "organisme": "California Department of Social Services (CDSS)",
+      "montant_min_usd": 23,
+      "montant_max_usd": 292,
+      "periodicite": "mensuel",
+      "url_info": "https://www.cdss.ca.gov/calfresh",
+      "source_url": "https://www.cdss.ca.gov",
+      "eligibility_criteria": [
+        "residence_california",
+        "income_at_or_below_200pct_poverty_ca",
+        "citizenship_or_eligible_noncitizen"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ca-medi-cal",
+      "slug": "medi-cal-california",
+      "nom": "Medi-Cal (California Medicaid)",
+      "description_en": "California Medicaid program providing free or low-cost health coverage. Expanded to all income-eligible adults regardless of immigration status (2024). Covers medical, dental, vision and mental health.",
+      "categorie": "sante",
+      "organisme": "California Department of Health Care Services (DHCS)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.dhcs.ca.gov/services/medi-cal/Pages/DoYouQualifyForMedi-Cal.aspx",
+      "source_url": "https://www.dhcs.ca.gov",
+      "eligibility_criteria": [
+        "residence_california",
+        "income_below_138pct_poverty",
+        "resident_of_california"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ca-ca-eitc",
+      "slug": "california-eitc",
+      "nom": "California Earned Income Tax Credit (CalEITC)",
+      "description_en": "State refundable tax credit for California low-income workers. Maximum $3,529 for families with 3+ children (2024 tax year). Stackable with federal EITC.",
+      "categorie": "revenus_emploi",
+      "organisme": "California Franchise Tax Board (FTB)",
+      "montant_min_usd": 0,
+      "montant_max_usd": 3529,
+      "periodicite": "annuel",
+      "url_info": "https://www.ftb.ca.gov/file/personal/credits/california-earned-income-tax-credit.html",
+      "source_url": "https://www.ftb.ca.gov",
+      "eligibility_criteria": [
+        "residence_california",
+        "earned_income",
+        "income_below_threshold",
+        "valid_ssn_or_itin"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ny-medicaid",
+      "slug": "new-york-medicaid",
+      "nom": "New York Medicaid",
+      "description_en": "New York State Medicaid program. One of the most comprehensive in the US; covers services beyond federal minimums including dental and vision. Income threshold up to 138% FPL for adults.",
+      "categorie": "sante",
+      "organisme": "NY State Department of Health",
+      "montant_min_usd": 0,
+      "montant_max_usd": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.health.ny.gov/health_care/medicaid/",
+      "source_url": "https://www.health.ny.gov",
+      "eligibility_criteria": [
+        "residence_new_york",
+        "income_below_138pct_poverty",
+        "citizenship_or_eligible_status"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "us-ny-ui",
+      "slug": "new-york-unemployment-insurance",
+      "nom": "New York State Unemployment Insurance",
+      "description_en": "State unemployment insurance for involuntarily unemployed New York workers. Maximum weekly benefit $504 USD (2025). Duration up to 26 weeks. Based on highest quarterly wages.",
+      "categorie": "revenus_emploi",
+      "organisme": "NY State Department of Labor",
+      "montant_min_usd": 0,
+      "montant_max_usd": 504,
+      "periodicite": "hebdomadaire",
+      "url_info": "https://www.labor.ny.gov/unemploymentinsurance/index.shtm",
+      "source_url": "https://www.labor.ny.gov",
+      "eligibility_criteria": [
+        "residence_new_york",
+        "involuntary_unemployment",
+        "sufficient_base_period_wages",
+        "available_for_work"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

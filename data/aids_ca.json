@@ -1,0 +1,313 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-01T00:00:00Z",
+  "last_updated": "2026-04-01",
+  "country_code": "CA",
+  "name": "Canada",
+  "name_local": "Canada / Canada",
+  "language": "en",
+  "currency": "CAD",
+  "welfare_model": "Liberal-federal",
+  "sources": [
+    "https://www.canada.ca",
+    "https://www.servicecanada.gc.ca"
+  ],
+  "aids": [
+    {
+      "id": "ca-oas",
+      "slug": "old-age-security",
+      "nom": "Old Age Security (OAS) / Sécurité de la vieillesse",
+      "description_en": "Federal pension for Canadians 65+. Maximum monthly payment $698.60 CAD (Q1 2025, age 65-74). Indexed quarterly to CPI.",
+      "categorie": "retraite",
+      "organisme": "Service Canada / ESDC",
+      "montant_min_cad": 0,
+      "montant_max_cad": 698,
+      "periodicite": "mensuel",
+      "url_info": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html",
+      "source_url": "https://www.canada.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "age_65_plus",
+        "canadian_citizen_or_legal_resident",
+        "10yr_residency_after_age_18"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-gis",
+      "slug": "guaranteed-income-supplement",
+      "nom": "Guaranteed Income Supplement (GIS) / Supplément de revenu garanti",
+      "description_en": "Non-taxable monthly benefit for low-income OAS recipients. Maximum $1,072.93 CAD/month for single seniors (2025). Reduced dollar-for-dollar above income threshold.",
+      "categorie": "retraite",
+      "organisme": "Service Canada / ESDC",
+      "montant_min_cad": 0,
+      "montant_max_cad": 1072,
+      "periodicite": "mensuel",
+      "url_info": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement.html",
+      "source_url": "https://www.canada.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "oas_recipient",
+        "age_65_plus",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-cpp",
+      "slug": "canada-pension-plan",
+      "nom": "Canada Pension Plan (CPP) / Régime de pensions du Canada",
+      "description_en": "Contributory earnings-related retirement pension. Average monthly retirement benefit approximately $758.32 CAD (2025). Maximum benefit $1,433.00 CAD/month for new recipients at 65.",
+      "categorie": "retraite",
+      "organisme": "Service Canada / ESDC",
+      "montant_min_cad": 0,
+      "montant_max_cad": 1433,
+      "periodicite": "mensuel",
+      "url_info": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
+      "source_url": "https://www.canada.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "age_60_plus",
+        "cpp_contributions_made"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-ei",
+      "slug": "employment-insurance",
+      "nom": "Employment Insurance (EI) / Assurance-emploi",
+      "description_en": "Temporary income support for unemployed workers. Benefit rate: 55% of insurable earnings. Maximum insurable earnings $63,200/year (2025); maximum weekly benefit $695 CAD/week for up to 45 weeks.",
+      "categorie": "revenus_emploi",
+      "organisme": "Service Canada / ESDC",
+      "montant_min_cad": 0,
+      "montant_max_cad": 695,
+      "periodicite": "hebdomadaire",
+      "url_info": "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit.html",
+      "source_url": "https://www.servicecanada.gc.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "involuntary_unemployment",
+        "insurable_hours_met",
+        "available_for_work"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-ccb",
+      "slug": "canada-child-benefit",
+      "nom": "Canada Child Benefit (CCB) / Allocation canadienne pour enfants",
+      "description_en": "Tax-free monthly payment for families raising children. Maximum $7,787 CAD/year ($648.91/month) per child under 6; $6,570/year per child aged 6-17. Reduced above net family income $36,502.",
+      "categorie": "famille",
+      "organisme": "Canada Revenue Agency (CRA)",
+      "montant_min_cad": 0,
+      "montant_max_cad": 648,
+      "periodicite": "mensuel",
+      "url_info": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
+      "source_url": "https://www.canada.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "child_under_18",
+        "primary_caregiver",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-gst-hst-credit",
+      "slug": "gst-hst-credit",
+      "nom": "GST/HST Credit / Crédit pour la TPS/TVH",
+      "description_en": "Quarterly tax-free payment to offset GST/HST paid by low-to-moderate income individuals. $519 CAD/year for a single person; $680/year for couples (2025 benefit year).",
+      "categorie": "revenus_emploi",
+      "organisme": "Canada Revenue Agency (CRA)",
+      "montant_min_cad": 0,
+      "montant_max_cad": 519,
+      "periodicite": "annuel",
+      "url_info": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/goods-services-tax-harmonized-sales-tax-gst-hst-credit.html",
+      "source_url": "https://www.canada.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "age_19_plus",
+        "income_below_threshold",
+        "tax_return_filed"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-cwb",
+      "slug": "canada-workers-benefit",
+      "nom": "Canada Workers Benefit (CWB) / Allocation canadienne pour les travailleurs",
+      "description_en": "Refundable tax credit for low-income workers. Maximum $1,518 CAD/year for single individuals; $2,616/year for families. Advance payments available quarterly.",
+      "categorie": "revenus_emploi",
+      "organisme": "Canada Revenue Agency (CRA)",
+      "montant_min_cad": 0,
+      "montant_max_cad": 1518,
+      "periodicite": "annuel",
+      "url_info": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-workers-benefit.html",
+      "source_url": "https://www.canada.ca",
+      "eligibility_criteria": [
+        "residence_ca",
+        "age_19_plus",
+        "working_income",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-on-odsp",
+      "slug": "ontario-disability-support-program",
+      "nom": "Ontario Disability Support Program (ODSP)",
+      "description_en": "Income and employment support for persons with disabilities in Ontario. Basic needs: up to $1,228 CAD/month for a single person (2025 rate).",
+      "categorie": "handicap",
+      "organisme": "Ontario Ministry of Children, Community and Social Services",
+      "montant_min_cad": 0,
+      "montant_max_cad": 1228,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ontario.ca/page/ontario-disability-support-program",
+      "source_url": "https://www.ontario.ca",
+      "eligibility_criteria": [
+        "residence_ontario",
+        "disability_verified",
+        "income_below_threshold",
+        "assets_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-on-ow",
+      "slug": "ontario-works",
+      "nom": "Ontario Works (OW)",
+      "description_en": "Temporary financial assistance and employment support for eligible low-income Ontario residents. Basic allowance: $733 CAD/month for a single person (2025).",
+      "categorie": "revenus_emploi",
+      "organisme": "Ontario Ministry of Children, Community and Social Services",
+      "montant_min_cad": 0,
+      "montant_max_cad": 733,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ontario.ca/page/ontario-works",
+      "source_url": "https://www.ontario.ca",
+      "eligibility_criteria": [
+        "residence_ontario",
+        "income_below_threshold",
+        "assets_below_threshold",
+        "participation_in_employment_activities"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-on-ocb",
+      "slug": "ontario-child-benefit",
+      "nom": "Ontario Child Benefit (OCB)",
+      "description_en": "Monthly benefit for low-to-moderate income Ontario families. Up to $122.50 CAD/child per month (2025). Combined with CCB payments.",
+      "categorie": "famille",
+      "organisme": "Ontario Ministry of Finance / CRA",
+      "montant_min_cad": 0,
+      "montant_max_cad": 122,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ontario.ca/page/ontario-child-benefit",
+      "source_url": "https://www.ontario.ca",
+      "eligibility_criteria": [
+        "residence_ontario",
+        "child_under_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-qc-aide-sociale",
+      "slug": "aide-sociale-quebec",
+      "nom": "Aide sociale / Allocation d'aide à l'emploi (Québec)",
+      "description_en": "Basic social assistance for Quebec residents without severely limited capacity for employment. Approx. $900 CAD/month for a single person (2025 base amount).",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministère du Travail, de l'Emploi et de la Solidarité sociale (MTESS)",
+      "montant_min_cad": 0,
+      "montant_max_cad": 900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.quebec.ca/famille-et-soutien-aux-personnes/aide-sociale-et-solidarite-sociale/aide-sociale",
+      "source_url": "https://www.quebec.ca",
+      "eligibility_criteria": [
+        "residence_quebec",
+        "income_below_threshold",
+        "assets_below_threshold",
+        "employable_but_without_work"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-qc-allocation-famille",
+      "slug": "allocation-famille-quebec",
+      "nom": "Allocation famille (Québec)",
+      "description_en": "Universal child benefit from the Quebec Family Allowance program. $2,782 CAD/year for the first child (2024-25). Additional amounts for single-parent families and children with disabilities.",
+      "categorie": "famille",
+      "organisme": "Retraite Québec",
+      "montant_min_cad": 0,
+      "montant_max_cad": 2782,
+      "periodicite": "annuel",
+      "url_info": "https://www.rrq.gouv.qc.ca/fr/enfants/Pages/allocation-famille.aspx",
+      "source_url": "https://www.rrq.gouv.qc.ca",
+      "eligibility_criteria": [
+        "residence_quebec",
+        "child_under_18",
+        "parent_or_guardian"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-qc-rqap",
+      "slug": "rqap-parental-leave",
+      "nom": "Régime québécois d'assurance parentale (RQAP)",
+      "description_en": "Quebec Parental Insurance Plan. Maternity, paternity and parental leave benefits. Basic plan: 70% of insurable income for maternity leave (18 weeks), 70% for parental leave. Maximum insurable income $94,000 CAD (2025).",
+      "categorie": "maternite",
+      "organisme": "Conseil de gestion de l'assurance parentale (CGAP)",
+      "montant_min_cad": 0,
+      "montant_max_cad": 1269,
+      "periodicite": "hebdomadaire",
+      "url_info": "https://www.rqap.gouv.qc.ca/fr/travailleurs",
+      "source_url": "https://www.rqap.gouv.qc.ca",
+      "eligibility_criteria": [
+        "residence_quebec",
+        "new_parent_or_expecting",
+        "insurable_income_met",
+        "stopped_working_for_birth_or_adoption"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-bc-income-assistance",
+      "slug": "bc-income-assistance",
+      "nom": "BC Income Assistance",
+      "description_en": "Financial assistance for BC residents who cannot meet basic needs. Support rate for a single person: $1,060 CAD/month (includes $500 shelter allowance, 2025). Includes medical services plan.",
+      "categorie": "revenus_emploi",
+      "organisme": "BC Ministry of Social Development and Poverty Reduction",
+      "montant_min_cad": 0,
+      "montant_max_cad": 1060,
+      "periodicite": "mensuel",
+      "url_info": "https://www2.gov.bc.ca/gov/content/family-social-supports/income-assistance",
+      "source_url": "https://www2.gov.bc.ca",
+      "eligibility_criteria": [
+        "residence_bc",
+        "income_below_threshold",
+        "assets_below_threshold",
+        "seeking_employment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "ca-bc-cob",
+      "slug": "bc-child-opportunity-benefit",
+      "nom": "BC Child Opportunity Benefit (BCCOB)",
+      "description_en": "Monthly tax-free payment for BC families with children under 18. Up to $166 CAD/month for first child, $117/month second child, $109/month third and each subsequent child.",
+      "categorie": "famille",
+      "organisme": "BC Ministry of Finance / CRA",
+      "montant_min_cad": 0,
+      "montant_max_cad": 166,
+      "periodicite": "mensuel",
+      "url_info": "https://www2.gov.bc.ca/gov/content/family-social-supports/family-benefits/bc-child-opportunity-benefit",
+      "source_url": "https://www2.gov.bc.ca",
+      "eligibility_criteria": [
+        "residence_bc",
+        "child_under_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

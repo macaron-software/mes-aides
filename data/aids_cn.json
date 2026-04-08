@@ -1,0 +1,252 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-01T00:00:00Z",
+  "last_updated": "2026-04-01",
+  "country_code": "CN",
+  "name": "China",
+  "name_local": "中国",
+  "language": "zh",
+  "currency": "CNY",
+  "welfare_model": "East Asian state-directed",
+  "sources": [
+    "https://www.mohrss.gov.cn",
+    "https://www.mca.gov.cn",
+    "https://www.nhsa.gov.cn"
+  ],
+  "aids": [
+    {
+      "id": "cn-dibao-urban",
+      "slug": "dibao-chengshi",
+      "nom": "城市最低生活保障 (Chengshi Dibao)",
+      "description_en": "Urban Minimum Living Guarantee (Dibao). Means-tested cash transfer ensuring households reach the local minimum living standard. National average approx. 800 CNY/month per person in urban areas (2025). Local thresholds vary significantly.",
+      "categorie": "revenus_emploi",
+      "organisme": "民政部 (Ministry of Civil Affairs) / 地方民政局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mca.gov.cn/article/gk/tjsj/201806/20180615008327.shtml",
+      "source_url": "https://www.mca.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn_urban",
+        "household_income_below_local_dibao_threshold",
+        "assets_below_threshold",
+        "legal_urban_household_registration_hukou"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-dibao-rural",
+      "slug": "dibao-nongcun",
+      "nom": "农村最低生活保障 (Nongcun Dibao)",
+      "description_en": "Rural Minimum Living Guarantee. Ensures rural households reach minimum living standard. National average approx. 600 CNY/month per person in rural areas (2025). Funded jointly by central and local governments.",
+      "categorie": "revenus_emploi",
+      "organisme": "民政部 (Ministry of Civil Affairs) / 县乡民政所",
+      "montant_min_cny": 0,
+      "montant_max_cny": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mca.gov.cn/article/gk/tjsj/201806/20180615008327.shtml",
+      "source_url": "https://www.mca.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn_rural",
+        "household_income_below_local_rural_dibao_threshold",
+        "rural_household_registration_hukou"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-wubao",
+      "slug": "wubao-gongyangzhi",
+      "nom": "农村五保供养 (Wubao Gongyangzhi)",
+      "description_en": "Five-Guarantee Support for rural elderly, disabled and minors without family support (no ability to work, no income, no legal supporter). Covers food, clothing, housing, medical care and funeral. Approx. 600-900 CNY/month.",
+      "categorie": "retraite",
+      "organisme": "民政部 / 乡镇人民政府",
+      "montant_min_cny": 600,
+      "montant_max_cny": 900,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mca.gov.cn/article/gk/bz/",
+      "source_url": "https://www.mca.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn_rural",
+        "elderly_disabled_or_minor",
+        "no_legal_family_support",
+        "no_income_or_labor_capacity"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-jiben-yanglao-urban",
+      "slug": "jiben-yanglao-baoxian",
+      "nom": "城镇职工基本养老保险 (Jiben Yanglao Baoxian)",
+      "description_en": "Urban employees basic pension insurance. Average monthly pension approximately 3,300 CNY/month for urban retirees (2025). Funded by employer (16%) and employee (8%) contributions. Benefits depend on contributions and local wage index.",
+      "categorie": "retraite",
+      "organisme": "人力资源和社会保障部 (MoHRSS) / 地方社保局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 3300,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mohrss.gov.cn/SYrlzyhshbzb/shehuibaozhang/zcwj/yanglao/",
+      "source_url": "https://www.mohrss.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn",
+        "age_60_male_or_55_female",
+        "contribution_period_15yr_minimum",
+        "urban_employment_registered"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-yiliao-baoxian",
+      "slug": "jiben-yiliao-baoxian",
+      "nom": "基本医疗保险 (Jiben Yiliao Baoxian)",
+      "description_en": "Basic Medical Insurance. Covers 50-80% of inpatient and outpatient medical expenses within designated hospitals. Urban employees scheme (UEBMI) and Urban-Rural Residents scheme (URRBMI). Employer contributes ~6%, employee ~2% of wage.",
+      "categorie": "sante",
+      "organisme": "国家医疗保障局 (NHSA) / 地方医保局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.nhsa.gov.cn/col/col10/index.html",
+      "source_url": "https://www.nhsa.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn",
+        "registered_in_local_medical_insurance_scheme",
+        "contributions_current"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-shiye-baoxian",
+      "slug": "shiye-baoxian",
+      "nom": "失业保险 (Shiye Baoxian)",
+      "description_en": "Unemployment Insurance. Benefit rate is 60% of local minimum wage for the first year. Duration: 12-24 months depending on contribution years. Available for involuntarily unemployed registered workers.",
+      "categorie": "revenus_emploi",
+      "organisme": "人力资源和社会保障部 (MoHRSS) / 地方社保局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 1800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mohrss.gov.cn/SYrlzyhshbzb/shehuibaozhang/zcwj/shiyebx/",
+      "source_url": "https://www.mohrss.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn",
+        "involuntary_unemployment",
+        "contribution_period_1yr_minimum",
+        "registered_with_employment_service"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-shengyu-baoxian",
+      "slug": "shengyu-baoxian",
+      "nom": "生育保险 (Shengyu Baoxian)",
+      "description_en": "Maternity Insurance. Covers maternity medical expenses and maternity allowance during leave. Allowance based on employer's average wage. Maternity leave minimum 98 days. Employer contribution approx. 0.5% payroll.",
+      "categorie": "maternite",
+      "organisme": "人力资源和社会保障部 / 国家医疗保障局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 15000,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.mohrss.gov.cn/SYrlzyhshbzb/shehuibaozhang/zcwj/shengyu/",
+      "source_url": "https://www.mohrss.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn",
+        "female_employee_registered_shengyu",
+        "employer_contributions_paid",
+        "pregnancy_or_childbirth"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-gongjijin",
+      "slug": "zhufang-gongjijin",
+      "nom": "住房公积金 (Zhufang Gongjijin)",
+      "description_en": "Housing Provident Fund. Mandatory savings scheme for urban employees to finance housing. Employer and employee each contribute 5-12% of salary. Funds used for mortgage loans, rent or home purchase at below-market interest rates.",
+      "categorie": "logement",
+      "organisme": "住房和城乡建设部 (MoHURD) / 地方住房公积金管理中心",
+      "montant_min_cny": 0,
+      "montant_max_cny": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mohurd.gov.cn/",
+      "source_url": "https://www.mohurd.gov.cn",
+      "eligibility_criteria": [
+        "residence_cn_urban",
+        "urban_formal_employment",
+        "employer_registered_in_scheme"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-beijing-dibao",
+      "slug": "beijing-dibao",
+      "nom": "北京市最低生活保障 (Beijing Dibao)",
+      "description_en": "Beijing Municipal Minimum Living Guarantee. Threshold set at 1,170 CNY/month per person (2025). Households with income below this receive the difference as a cash supplement.",
+      "categorie": "revenus_emploi",
+      "organisme": "北京市民政局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 1170,
+      "periodicite": "mensuel",
+      "url_info": "https://www.beijing.gov.cn/hudong/rd/mzj/",
+      "source_url": "https://www.beijing.gov.cn",
+      "eligibility_criteria": [
+        "residence_beijing",
+        "household_income_below_1170_cny",
+        "beijing_hukou"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-shanghai-dibao",
+      "slug": "shanghai-dibao",
+      "nom": "上海市最低生活保障 (Shanghai Dibao)",
+      "description_en": "Shanghai Municipal Minimum Living Guarantee. Threshold set at 1,420 CNY/month per person (2025). One of the highest Dibao thresholds in China.",
+      "categorie": "revenus_emploi",
+      "organisme": "上海市民政局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 1420,
+      "periodicite": "mensuel",
+      "url_info": "https://mzj.sh.gov.cn/",
+      "source_url": "https://mzj.sh.gov.cn",
+      "eligibility_criteria": [
+        "residence_shanghai",
+        "household_income_below_1420_cny",
+        "shanghai_hukou"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-shenzhen-dibao",
+      "slug": "shenzhen-dibao",
+      "nom": "深圳市最低生活保障 (Shenzhen Dibao)",
+      "description_en": "Shenzhen Municipal Minimum Living Guarantee. Threshold set at 1,600 CNY/month per person (2025). Highest Dibao level in Guangdong province.",
+      "categorie": "revenus_emploi",
+      "organisme": "深圳市民政局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 1600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sz.gov.cn/szzt2010/wgkzl/zdlyxx/mzsm/",
+      "source_url": "https://www.sz.gov.cn",
+      "eligibility_criteria": [
+        "residence_shenzhen",
+        "household_income_below_1600_cny",
+        "shenzhen_hukou"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "cn-shanghai-childcare",
+      "slug": "shanghai-youer-butiefei",
+      "nom": "上海市托育补贴 (Shanghai Youer Butiefei)",
+      "description_en": "Shanghai childcare subsidy. 3,000 CNY per child per year for families placing children in licensed nurseries (0-3 years). Additional subsidies for low-income families.",
+      "categorie": "famille",
+      "organisme": "上海市卫生健康委员会 / 上海市财政局",
+      "montant_min_cny": 0,
+      "montant_max_cny": 3000,
+      "periodicite": "annuel",
+      "url_info": "https://wsjkw.sh.gov.cn/tjgz/index.html",
+      "source_url": "https://wsjkw.sh.gov.cn",
+      "eligibility_criteria": [
+        "residence_shanghai",
+        "child_age_0_3",
+        "enrolled_licensed_childcare_center",
+        "shanghai_hukou_or_registered_residence"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

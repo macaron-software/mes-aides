@@ -8,7 +8,10 @@
       "language": "de",
       "currency": "EUR",
       "welfare_model": "bismarckian",
-      "sources": ["https://www.bundesregierung.de", "https://www.arbeitsagentur.de"],
+      "sources": [
+        "https://www.bundesregierung.de",
+        "https://www.arbeitsagentur.de"
+      ],
       "aids": [
         {
           "id": "de-buergergeld",
@@ -21,7 +24,11 @@
           "montant_max_eur": 563,
           "periodicite": "mensuel",
           "url_info": "https://www.arbeitsagentur.de/buergergeld",
-          "eligibility_criteria": ["residence_de", "age_15_65", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_de",
+            "age_15_65",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -35,7 +42,11 @@
           "montant_max_eur": 450,
           "periodicite": "mensuel",
           "url_info": "https://www.bmwsb.bund.de/wohngeld",
-          "eligibility_criteria": ["residence_de", "low_income", "renter_or_owner"],
+          "eligibility_criteria": [
+            "residence_de",
+            "low_income",
+            "renter_or_owner"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -49,7 +60,10 @@
           "montant_max_eur": 255,
           "periodicite": "mensuel",
           "url_info": "https://www.arbeitsagentur.de/familie-und-kinder/kindergeld",
-          "eligibility_criteria": ["residence_de", "child_under_18"],
+          "eligibility_criteria": [
+            "residence_de",
+            "child_under_18"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -63,7 +77,11 @@
           "montant_max_eur": 2800,
           "periodicite": "mensuel",
           "url_info": "https://www.arbeitsagentur.de/arbeitslos-und-arbeit-finden",
-          "eligibility_criteria": ["residence_de", "contribution_12mo", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_de",
+            "contribution_12mo",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -77,7 +95,11 @@
           "montant_max_eur": 812,
           "periodicite": "mensuel",
           "url_info": "https://www.bmbf.de/bmbf/de/bildung/ausbildungsfoerderung/bafoeg/bafoeg_node.html",
-          "eligibility_criteria": ["residence_de", "student", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_de",
+            "student",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -88,7 +110,10 @@
       "language": "es",
       "currency": "EUR",
       "welfare_model": "mediteranean",
-      "sources": ["https://www.seg-social.es", "https://www.sepe.es"],
+      "sources": [
+        "https://www.seg-social.es",
+        "https://www.sepe.es"
+      ],
       "aids": [
         {
           "id": "es-imv",
@@ -101,7 +126,11 @@
           "montant_max_eur": 1350,
           "periodicite": "mensuel",
           "url_info": "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensiones/imv",
-          "eligibility_criteria": ["residence_es", "income_below_threshold", "registration_padron"],
+          "eligibility_criteria": [
+            "residence_es",
+            "income_below_threshold",
+            "registration_padron"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -115,7 +144,11 @@
           "montant_max_eur": 2800,
           "periodicite": "mensuel",
           "url_info": "https://www.sepe.es/HomeSepe/prestaciones/que-puedes-cobrar.html",
-          "eligibility_criteria": ["residence_es", "contribution_360_days", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_es",
+            "contribution_360_days",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -129,7 +162,11 @@
           "montant_max_eur": 6000,
           "periodicite": "annuel",
           "url_info": "https://www.becaseducacion.gob.es",
-          "eligibility_criteria": ["residence_es", "student", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_es",
+            "student",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -143,7 +180,11 @@
           "montant_max_eur": 1200,
           "periodicite": "annuel",
           "url_info": "https://www.imserso.es",
-          "eligibility_criteria": ["residence_es", "child_under_18", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_es",
+            "child_under_18",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -154,7 +195,10 @@
       "language": "it",
       "currency": "EUR",
       "welfare_model": "mediteranean",
-      "sources": ["https://www.inps.it", "https://www.lavoro.gov.it"],
+      "sources": [
+        "https://www.inps.it",
+        "https://www.lavoro.gov.it"
+      ],
       "aids": [
         {
           "id": "it-adi",
@@ -167,7 +211,11 @@
           "montant_max_eur": 780,
           "periodicite": "mensuel",
           "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.assegno-di-inclusione-adi-.cat-schede-servizi.html",
-          "eligibility_criteria": ["residence_it", "income_below_threshold", "family_with_minors_or_disabled"],
+          "eligibility_criteria": [
+            "residence_it",
+            "income_below_threshold",
+            "family_with_minors_or_disabled"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -181,7 +229,11 @@
           "montant_max_eur": 1550,
           "periodicite": "mensuel",
           "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.naspi--nuova-assicurazione-sociale-per-l-impiego.cat-schede-servizi.html",
-          "eligibility_criteria": ["residence_it", "contribution_13_weeks", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_it",
+            "contribution_13_weeks",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -195,7 +247,11 @@
           "montant_max_eur": 189,
           "periodicite": "mensuel",
           "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico.cat-schede-servizi.html",
-          "eligibility_criteria": ["residence_it", "isee_below_threshold", "child_under_21"],
+          "eligibility_criteria": [
+            "residence_it",
+            "isee_below_threshold",
+            "child_under_21"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -206,7 +262,10 @@
       "language": "pt",
       "currency": "EUR",
       "welfare_model": "mediteranean",
-      "sources": ["https://www.seg-social.pt", "https://www.iefp.pt"],
+      "sources": [
+        "https://www.seg-social.pt",
+        "https://www.iefp.pt"
+      ],
       "aids": [
         {
           "id": "pt-rsi",
@@ -219,7 +278,11 @@
           "montant_max_eur": 750,
           "periodicite": "mensuel",
           "url_info": "https://www.seg-social.pt/rendimento-social-de-insercao",
-          "eligibility_criteria": ["residence_pt", "income_below_threshold", "active_job_search"],
+          "eligibility_criteria": [
+            "residence_pt",
+            "income_below_threshold",
+            "active_job_search"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -233,7 +296,11 @@
           "montant_max_eur": 1900,
           "periodicite": "mensuel",
           "url_info": "https://www.iefp.pt/subsidio-de-desemprego",
-          "eligibility_criteria": ["residence_pt", "contribution_450_days", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_pt",
+            "contribution_450_days",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -247,7 +314,11 @@
           "montant_max_eur": 200,
           "periodicite": "mensuel",
           "url_info": "https://www.seg-social.pt/abono-de-familia-para-criancas-e-jovens",
-          "eligibility_criteria": ["residence_pt", "child_under_16", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_pt",
+            "child_under_16",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -258,7 +329,10 @@
       "language": "fr",
       "currency": "EUR",
       "welfare_model": "bismarckian",
-      "sources": ["https://www.belgium.be", "https://www.onem.be"],
+      "sources": [
+        "https://www.belgium.be",
+        "https://www.onem.be"
+      ],
       "aids": [
         {
           "id": "be-revenu-integration",
@@ -271,7 +345,11 @@
           "montant_max_eur": 1174,
           "periodicite": "mensuel",
           "url_info": "https://www.belgium.be/fr/famille/aide_sociale_et_integration/cpas",
-          "eligibility_criteria": ["residence_be", "age_18", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_be",
+            "age_18",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -285,7 +363,11 @@
           "montant_max_eur": 2800,
           "periodicite": "mensuel",
           "url_info": "https://www.onem.be/fr/documentation/feuille-info/t2",
-          "eligibility_criteria": ["residence_be", "contribution_required", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_be",
+            "contribution_required",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -299,7 +381,10 @@
           "montant_max_eur": 500,
           "periodicite": "mensuel",
           "url_info": "https://www.belgium.be/fr/famille/allocation_familiale",
-          "eligibility_criteria": ["residence_be", "child_under_25"],
+          "eligibility_criteria": [
+            "residence_be",
+            "child_under_25"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -310,7 +395,10 @@
       "language": "nl",
       "currency": "EUR",
       "welfare_model": "bismarckian",
-      "sources": ["https://www.uwv.nl", "https://www.rijksoverheid.nl"],
+      "sources": [
+        "https://www.uwv.nl",
+        "https://www.rijksoverheid.nl"
+      ],
       "aids": [
         {
           "id": "nl-ww",
@@ -323,7 +411,11 @@
           "montant_max_eur": 3500,
           "periodicite": "mensuel",
           "url_info": "https://www.uwv.nl/nl/werkloos/ww-aanvragen",
-          "eligibility_criteria": ["residence_nl", "contribution_26_weeks", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_nl",
+            "contribution_26_weeks",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -337,7 +429,11 @@
           "montant_max_eur": 1137,
           "periodicite": "mensuel",
           "url_info": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
-          "eligibility_criteria": ["residence_nl", "age_18", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_nl",
+            "age_18",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -351,7 +447,10 @@
           "montant_max_eur": 275,
           "periodicite": "trimestriel",
           "url_info": "https://www.svb.nl/nl/kinderbijslag",
-          "eligibility_criteria": ["residence_nl", "child_under_18"],
+          "eligibility_criteria": [
+            "residence_nl",
+            "child_under_18"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -362,7 +461,10 @@
       "language": "de",
       "currency": "EUR",
       "welfare_model": "bismarckian",
-      "sources": ["https://www.ams.at", "https://www.oesterreich.gv.at"],
+      "sources": [
+        "https://www.ams.at",
+        "https://www.oesterreich.gv.at"
+      ],
       "aids": [
         {
           "id": "at-arbeitslosengeld",
@@ -375,7 +477,11 @@
           "montant_max_eur": 2200,
           "periodicite": "mensuel",
           "url_info": "https://www.ams.at/arbeitsuchende/arbeitslos-was-nun/ich-bekomme-arbeitslosengeld",
-          "eligibility_criteria": ["residence_at", "contribution_52_weeks", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_at",
+            "contribution_52_weeks",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -389,7 +495,11 @@
           "montant_max_eur": 1078,
           "periodicite": "mensuel",
           "url_info": "https://www.oesterreich.gv.at/themen/soziales/sozialhilfe.html",
-          "eligibility_criteria": ["residence_at", "income_below_threshold", "age_18"],
+          "eligibility_criteria": [
+            "residence_at",
+            "income_below_threshold",
+            "age_18"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -403,7 +513,10 @@
           "montant_max_eur": 165,
           "periodicite": "mensuel",
           "url_info": "https://www.bmf.gv.at/services/familienbeihilfe.html",
-          "eligibility_criteria": ["residence_at", "child_under_24"],
+          "eligibility_criteria": [
+            "residence_at",
+            "child_under_24"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -414,7 +527,10 @@
       "language": "pl",
       "currency": "PLN",
       "welfare_model": "post_communist",
-      "sources": ["https://psz.praca.gov.pl", "https://www.zus.pl"],
+      "sources": [
+        "https://psz.praca.gov.pl",
+        "https://www.zus.pl"
+      ],
       "aids": [
         {
           "id": "pl-zasilek-bezrobotnych",
@@ -427,7 +543,11 @@
           "montant_max_eur": 253,
           "periodicite": "mensuel",
           "url_info": "https://psz.praca.gov.pl/dla-bezrobotnych-i-poszukujacych-pracy/zasilek",
-          "eligibility_criteria": ["residence_pl", "contribution_365_days", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_pl",
+            "contribution_365_days",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -441,7 +561,10 @@
           "montant_max_eur": 188,
           "periodicite": "mensuel",
           "url_info": "https://www.zus.pl/swiadczenia/swiadczenia-rodzinne/swiadczenie-wychowawcze-500",
-          "eligibility_criteria": ["residence_pl", "child_under_18"],
+          "eligibility_criteria": [
+            "residence_pl",
+            "child_under_18"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -455,7 +578,11 @@
           "montant_max_eur": 300,
           "periodicite": "mensuel",
           "url_info": "https://www.gov.pl/web/gov/zasilek-mieszkaniowy",
-          "eligibility_criteria": ["residence_pl", "income_below_threshold", "renter"],
+          "eligibility_criteria": [
+            "residence_pl",
+            "income_below_threshold",
+            "renter"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -466,7 +593,10 @@
       "language": "sv",
       "currency": "SEK",
       "welfare_model": "nordic",
-      "sources": ["https://www.forsakringskassan.se", "https://www.socialstyrelsen.se"],
+      "sources": [
+        "https://www.forsakringskassan.se",
+        "https://www.socialstyrelsen.se"
+      ],
       "aids": [
         {
           "id": "se-a-kassa",
@@ -479,7 +609,11 @@
           "montant_max_eur": 2200,
           "periodicite": "mensuel",
           "url_info": "https://www.alfakassan.se",
-          "eligibility_criteria": ["residence_se", "union_member_a_kassa", "contribution_6mo"],
+          "eligibility_criteria": [
+            "residence_se",
+            "union_member_a_kassa",
+            "contribution_6mo"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -493,7 +627,11 @@
           "montant_max_eur": 410,
           "periodicite": "mensuel",
           "url_info": "https://www.socialstyrelsen.se/stod-i-olika-livssituationer/ekonomiskt-bistand/om-ekonomiskt-bistand",
-          "eligibility_criteria": ["residence_se", "income_below_threshold", "active_job_search"],
+          "eligibility_criteria": [
+            "residence_se",
+            "income_below_threshold",
+            "active_job_search"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -507,7 +645,10 @@
           "montant_max_eur": 111,
           "periodicite": "mensuel",
           "url_info": "https://www.forsakringskassan.se/privatperson/foralder/barnbidrag",
-          "eligibility_criteria": ["residence_se", "child_under_16"],
+          "eligibility_criteria": [
+            "residence_se",
+            "child_under_16"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -518,7 +659,10 @@
       "language": "da",
       "currency": "DKK",
       "welfare_model": "nordic",
-      "sources": ["https://www.borger.dk", "https://www.atp.dk"],
+      "sources": [
+        "https://www.borger.dk",
+        "https://www.atp.dk"
+      ],
       "aids": [
         {
           "id": "dk-dagpenge",
@@ -531,7 +675,12 @@
           "montant_max_eur": 2592,
           "periodicite": "mensuel",
           "url_info": "https://www.atp.dk/pensions-og-forsikringsordninger/dagpengesystemet",
-          "eligibility_criteria": ["residence_dk", "union_member_akasse", "contribution_12mo", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_dk",
+            "union_member_akasse",
+            "contribution_12mo",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -545,7 +694,11 @@
           "montant_max_eur": 1605,
           "periodicite": "mensuel",
           "url_info": "https://www.borger.dk/arbejde-dagpenge-orlov/kontanthjaelp-og-starthjae/kontanthjaelp",
-          "eligibility_criteria": ["residence_dk", "income_below_threshold", "age_30"],
+          "eligibility_criteria": [
+            "residence_dk",
+            "income_below_threshold",
+            "age_30"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -559,7 +712,11 @@
           "montant_max_eur": 600,
           "periodicite": "kvartal",
           "url_info": "https://www.borger.dk/familie-og-boern/bornepenge-og-tilskud/boernetilskud",
-          "eligibility_criteria": ["residence_dk", "child_under_18", "single_parent_or_low_income"],
+          "eligibility_criteria": [
+            "residence_dk",
+            "child_under_18",
+            "single_parent_or_low_income"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -570,7 +727,10 @@
       "language": "fi",
       "currency": "EUR",
       "welfare_model": "nordic",
-      "sources": ["https://www.kela.fi", "https://www.tyomarkkinatori.fi"],
+      "sources": [
+        "https://www.kela.fi",
+        "https://www.tyomarkkinatori.fi"
+      ],
       "aids": [
         {
           "id": "fi-peruspaivaraha",
@@ -583,7 +743,11 @@
           "montant_max_eur": 1800,
           "periodicite": "mensuel",
           "url_info": "https://www.kela.fi/tyottomyys",
-          "eligibility_criteria": ["residence_fi", "involuntary_unemployment", "labour_market_available"],
+          "eligibility_criteria": [
+            "residence_fi",
+            "involuntary_unemployment",
+            "labour_market_available"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -597,7 +761,11 @@
           "montant_max_eur": 504,
           "periodicite": "mensuel",
           "url_info": "https://www.kela.fi/toimeentulotuki",
-          "eligibility_criteria": ["residence_fi", "income_below_threshold", "all_other_benefits_exhausted"],
+          "eligibility_criteria": [
+            "residence_fi",
+            "income_below_threshold",
+            "all_other_benefits_exhausted"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -611,7 +779,10 @@
           "montant_max_eur": 173,
           "periodicite": "mensuel",
           "url_info": "https://www.kela.fi/lapsilisa",
-          "eligibility_criteria": ["residence_fi", "child_under_17"],
+          "eligibility_criteria": [
+            "residence_fi",
+            "child_under_17"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -622,7 +793,9 @@
       "language": "no",
       "currency": "NOK",
       "welfare_model": "nordic",
-      "sources": ["https://www.nav.no"],
+      "sources": [
+        "https://www.nav.no"
+      ],
       "aids": [
         {
           "id": "no-dagpenger",
@@ -635,7 +808,11 @@
           "montant_max_eur": 2100,
           "periodicite": "mensuel",
           "url_info": "https://www.nav.no/dagpenger",
-          "eligibility_criteria": ["residence_no", "income_above_threshold", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_no",
+            "income_above_threshold",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -649,7 +826,11 @@
           "montant_max_eur": 600,
           "periodicite": "mensuel",
           "url_info": "https://www.nav.no/sosialhjelp",
-          "eligibility_criteria": ["residence_no", "income_below_threshold", "all_other_options_exhausted"],
+          "eligibility_criteria": [
+            "residence_no",
+            "income_below_threshold",
+            "all_other_options_exhausted"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -663,7 +844,10 @@
           "montant_max_eur": 155,
           "periodicite": "mensuel",
           "url_info": "https://www.nav.no/barnetrygd",
-          "eligibility_criteria": ["residence_no", "child_under_18"],
+          "eligibility_criteria": [
+            "residence_no",
+            "child_under_18"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -674,7 +858,10 @@
       "language": "de",
       "currency": "CHF",
       "welfare_model": "bismarckian",
-      "sources": ["https://www.arbeit.swiss", "https://www.bsv.admin.ch"],
+      "sources": [
+        "https://www.arbeit.swiss",
+        "https://www.bsv.admin.ch"
+      ],
       "aids": [
         {
           "id": "ch-alv",
@@ -687,7 +874,11 @@
           "montant_max_eur": 14000,
           "periodicite": "mensuel",
           "url_info": "https://www.arbeit.swiss/secoalv/fr/home/menue/arbeitnehmer/arbeitslos.html",
-          "eligibility_criteria": ["residence_ch", "contribution_12mo", "involuntary_unemployment"],
+          "eligibility_criteria": [
+            "residence_ch",
+            "contribution_12mo",
+            "involuntary_unemployment"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -701,7 +892,11 @@
           "montant_max_eur": 4000,
           "periodicite": "mensuel",
           "url_info": "https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/ergaenzungsleistungen.html",
-          "eligibility_criteria": ["residence_ch", "receiving_ahv_or_iv", "income_below_existenzminimum"],
+          "eligibility_criteria": [
+            "residence_ch",
+            "receiving_ahv_or_iv",
+            "income_below_existenzminimum"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -715,7 +910,10 @@
           "montant_max_eur": 500,
           "periodicite": "mensuel",
           "url_info": "https://www.bag.admin.ch/bag/fr/home/versicherungen/krankenversicherung/krankenversicherung-versicherte-mit-wohnsitz-in-der-schweiz/pramienverbilligung.html",
-          "eligibility_criteria": ["residence_ch", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_ch",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -729,7 +927,11 @@
           "montant_max_eur": 350,
           "periodicite": "mensuel",
           "url_info": "https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/familienzulagen.html",
-          "eligibility_criteria": ["residence_ch", "employed_parent", "child_under_16"],
+          "eligibility_criteria": [
+            "residence_ch",
+            "employed_parent",
+            "child_under_16"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -740,7 +942,10 @@
       "language": "en",
       "currency": "GBP",
       "welfare_model": "liberal",
-      "sources": ["https://www.gov.uk/browse/benefits", "https://www.gov.uk/universal-credit"],
+      "sources": [
+        "https://www.gov.uk/browse/benefits",
+        "https://www.gov.uk/universal-credit"
+      ],
       "aids": [
         {
           "id": "gb-universal-credit",
@@ -753,7 +958,12 @@
           "montant_max_eur": 678,
           "periodicite": "mensuel",
           "url_info": "https://www.gov.uk/universal-credit",
-          "eligibility_criteria": ["residence_gb", "income_below_threshold", "age_18", "savings_below_16000"],
+          "eligibility_criteria": [
+            "residence_gb",
+            "income_below_threshold",
+            "age_18",
+            "savings_below_16000"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -767,7 +977,11 @@
           "montant_max_eur": 111,
           "periodicite": "mensuel",
           "url_info": "https://www.gov.uk/child-benefit",
-          "eligibility_criteria": ["residence_gb", "child_under_16", "not_in_full_time_education"],
+          "eligibility_criteria": [
+            "residence_gb",
+            "child_under_16",
+            "not_in_full_time_education"
+          ],
           "amounts_baremes_year": 2026
         },
         {
@@ -781,7 +995,11 @@
           "montant_max_eur": 800,
           "periodicite": "mensuel",
           "url_info": "https://www.gov.uk/housing-benefit",
-          "eligibility_criteria": ["residence_gb", "renter", "income_below_threshold"],
+          "eligibility_criteria": [
+            "residence_gb",
+            "renter",
+            "income_below_threshold"
+          ],
           "amounts_baremes_year": 2026
         }
       ]
@@ -792,7 +1010,9 @@
       "language": "fr",
       "currency": "EUR",
       "welfare_model": "napoleonic",
-      "sources": ["https://www.service-public.fr"],
+      "sources": [
+        "https://www.service-public.fr"
+      ],
       "aids": []
     },
     "RO": {
@@ -801,7 +1021,9 @@
       "language": "ro",
       "currency": "RON",
       "welfare_model": "transitional",
-      "sources": ["https://www.mmuncii.ro"],
+      "sources": [
+        "https://www.mmuncii.ro"
+      ],
       "aids": []
     },
     "CZ": {
@@ -810,7 +1032,9 @@
       "language": "cs",
       "currency": "CZK",
       "welfare_model": "post_communist",
-      "sources": ["https://www.mpsv.cz"],
+      "sources": [
+        "https://www.mpsv.cz"
+      ],
       "aids": []
     },
     "HU": {
@@ -819,7 +1043,9 @@
       "language": "hu",
       "currency": "HUF",
       "welfare_model": "post_communist",
-      "sources": ["https://www.kormany.hu"],
+      "sources": [
+        "https://www.kormany.hu"
+      ],
       "aids": []
     },
     "SK": {
@@ -828,7 +1054,9 @@
       "language": "sk",
       "currency": "EUR",
       "welfare_model": "post_communist",
-      "sources": ["https://www.employment.gov.sk"],
+      "sources": [
+        "https://www.employment.gov.sk"
+      ],
       "aids": []
     },
     "BG": {
@@ -837,7 +1065,9 @@
       "language": "bg",
       "currency": "BGN",
       "welfare_model": "transitional",
-      "sources": ["https://www.mlsp.government.bg"],
+      "sources": [
+        "https://www.mlsp.government.bg"
+      ],
       "aids": []
     },
     "HR": {
@@ -846,7 +1076,9 @@
       "language": "hr",
       "currency": "EUR",
       "welfare_model": "post_communist",
-      "sources": ["https://www.mrosp.gov.hr"],
+      "sources": [
+        "https://www.mrosp.gov.hr"
+      ],
       "aids": []
     },
     "SI": {
@@ -855,7 +1087,9 @@
       "language": "sl",
       "currency": "EUR",
       "welfare_model": "post_communist",
-      "sources": ["https://www.mddsz.gov.si"],
+      "sources": [
+        "https://www.mddsz.gov.si"
+      ],
       "aids": []
     },
     "EE": {
@@ -864,7 +1098,9 @@
       "language": "et",
       "currency": "EUR",
       "welfare_model": "liberal",
-      "sources": ["https://www.sotsiaalkindlustusamet.ee"],
+      "sources": [
+        "https://www.sotsiaalkindlustusamet.ee"
+      ],
       "aids": []
     },
     "LV": {
@@ -873,7 +1109,9 @@
       "language": "lv",
       "currency": "EUR",
       "welfare_model": "liberal",
-      "sources": ["https://www.lddk.lv"],
+      "sources": [
+        "https://www.lddk.lv"
+      ],
       "aids": []
     },
     "LT": {
@@ -882,7 +1120,9 @@
       "language": "lt",
       "currency": "EUR",
       "welfare_model": "liberal",
-      "sources": ["https://www.sodra.lt"],
+      "sources": [
+        "https://www.sodra.lt"
+      ],
       "aids": []
     },
     "MT": {
@@ -891,7 +1131,9 @@
       "language": "mt",
       "currency": "EUR",
       "welfare_model": "mediteranean",
-      "sources": ["https://socialsecurity.gov.mt"],
+      "sources": [
+        "https://socialsecurity.gov.mt"
+      ],
       "aids": []
     },
     "CY": {
@@ -900,7 +1142,9 @@
       "language": "el",
       "currency": "EUR",
       "welfare_model": "mediteranean",
-      "sources": ["https://www.mlsi.gov.cy"],
+      "sources": [
+        "https://www.mlsi.gov.cy"
+      ],
       "aids": []
     },
     "LU": {
@@ -909,7 +1153,9 @@
       "language": "lb",
       "currency": "EUR",
       "welfare_model": "continental",
-      "sources": ["https://www.guichet.lu"],
+      "sources": [
+        "https://www.guichet.lu"
+      ],
       "aids": []
     },
     "IE": {
@@ -918,7 +1164,9 @@
       "language": "ga",
       "currency": "EUR",
       "welfare_model": "liberal",
-      "sources": ["https://www.gov.ie/en/organisation/department-of-social-protection"],
+      "sources": [
+        "https://www.gov.ie/en/organisation/department-of-social-protection"
+      ],
       "aids": []
     },
     "GR": {
@@ -927,7 +1175,85 @@
       "language": "el",
       "currency": "EUR",
       "welfare_model": "mediteranean",
-      "sources": ["https://www.efka.gov.gr"],
+      "sources": [
+        "https://www.efka.gov.gr"
+      ],
+      "aids": []
+    },
+    "JP": {
+      "name": "Japan",
+      "name_local": "日本",
+      "language": "ja",
+      "currency": "JPY",
+      "welfare_model": "East Asian developmental",
+      "sources": [
+        "https://www.mhlw.go.jp",
+        "https://www.nenkin.go.jp"
+      ],
+      "aids": []
+    },
+    "CA": {
+      "name": "Canada",
+      "name_local": "Canada",
+      "language": "en",
+      "currency": "CAD",
+      "welfare_model": "Liberal-federal",
+      "sources": [
+        "https://www.canada.ca",
+        "https://www.servicecanada.gc.ca"
+      ],
+      "aids": []
+    },
+    "MX": {
+      "name": "Mexico",
+      "name_local": "México",
+      "language": "es",
+      "currency": "MXN",
+      "welfare_model": "Latin American",
+      "sources": [
+        "https://www.gob.mx",
+        "https://www.imss.gob.mx",
+        "https://www.bienestar.gob.mx"
+      ],
+      "aids": []
+    },
+    "US": {
+      "name": "United States",
+      "name_local": "United States of America",
+      "language": "en",
+      "currency": "USD",
+      "welfare_model": "Liberal",
+      "sources": [
+        "https://www.ssa.gov",
+        "https://www.benefits.gov",
+        "https://www.hud.gov",
+        "https://www.fns.usda.gov"
+      ],
+      "aids": []
+    },
+    "CN": {
+      "name": "China",
+      "name_local": "中国",
+      "language": "zh",
+      "currency": "CNY",
+      "welfare_model": "East Asian state-directed",
+      "sources": [
+        "https://www.mohrss.gov.cn",
+        "https://www.mca.gov.cn",
+        "https://www.nhsa.gov.cn"
+      ],
+      "aids": []
+    },
+    "AU": {
+      "name": "Australia",
+      "name_local": "Australia",
+      "language": "en",
+      "currency": "AUD",
+      "welfare_model": "Liberal-federal",
+      "sources": [
+        "https://www.servicesaustralia.gov.au",
+        "https://www.dss.gov.au"
+      ],
       "aids": []
     }
   }

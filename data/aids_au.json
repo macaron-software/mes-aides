@@ -1,0 +1,315 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-01T00:00:00Z",
+  "last_updated": "2026-04-01",
+  "country_code": "AU",
+  "name": "Australia",
+  "name_local": "Australia",
+  "language": "en",
+  "currency": "AUD",
+  "welfare_model": "Liberal-federal",
+  "sources": [
+    "https://www.servicesaustralia.gov.au",
+    "https://www.dss.gov.au"
+  ],
+  "aids": [
+    {
+      "id": "au-age-pension",
+      "slug": "age-pension",
+      "nom": "Age Pension",
+      "description_en": "Federal retirement income support. Maximum payment $1,116.30 AUD per fortnight for singles (September 2025 rate). Includes Energy Supplement. Subject to income and assets tests. Indexed twice yearly to CPI and wage benchmarks.",
+      "categorie": "retraite",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 1116,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/age-pension",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "age_67_plus",
+        "australian_resident_10yr",
+        "income_assets_tests_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-disability-support-pension",
+      "slug": "disability-support-pension",
+      "nom": "Disability Support Pension (DSP)",
+      "description_en": "Income support for people with a permanent physical, intellectual or psychiatric condition that prevents substantial work. Maximum $1,116.30 AUD per fortnight for singles (2025). Same rate as Age Pension.",
+      "categorie": "handicap",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 1116,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/disability-support-pension",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "age_16_to_66",
+        "permanent_disability",
+        "unable_to_work_15hr_per_week",
+        "income_assets_tests_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-carer-payment",
+      "slug": "carer-payment",
+      "nom": "Carer Payment",
+      "description_en": "Income support for people who provide full-time care for someone with disability, serious illness or frail aged condition. Maximum $1,116.30 AUD per fortnight for singles (2025). Subject to income and assets tests.",
+      "categorie": "handicap",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 1116,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/carer-payment",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "providing_constant_care",
+        "care_receiver_meets_disability_threshold",
+        "income_assets_tests_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-jobseeker",
+      "slug": "jobseeker-payment",
+      "nom": "JobSeeker Payment",
+      "description_en": "Unemployment and sickness benefit for working-age Australians. Maximum $762.70 AUD per fortnight for singles aged 22+ (2025). Recipients must meet mutual obligations (job search, activities). Subject to income test.",
+      "categorie": "revenus_emploi",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 762,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/jobseeker-payment",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "age_22_to_66",
+        "unemployed_or_temporarily_ill",
+        "mutual_obligations_met",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-youth-allowance",
+      "slug": "youth-allowance",
+      "nom": "Youth Allowance",
+      "description_en": "Income support for young Australians aged 16-24 who are studying, training, or looking for work. Maximum approx. $677.40 AUD per fortnight for independent singles. Includes parental income test for dependants.",
+      "categorie": "jeunesse",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 677,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/youth-allowance",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "age_16_24",
+        "studying_training_or_job_seeking",
+        "income_assets_tests_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-ftb-a",
+      "slug": "family-tax-benefit-a",
+      "nom": "Family Tax Benefit Part A (FTB A)",
+      "description_en": "Federal payment for families with children. Maximum $222.04 AUD per fortnight per child under 13; $288.82 per fortnight per child aged 13-19 (2025). Subject to income test above $60,000/year family income.",
+      "categorie": "famille",
+      "organisme": "Services Australia / ATO",
+      "montant_min_aud": 0,
+      "montant_max_aud": 222,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/family-tax-benefit",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "child_under_16_or_in_full_time_study",
+        "income_below_threshold",
+        "immunisation_requirements_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-childcare-subsidy",
+      "slug": "child-care-subsidy",
+      "nom": "Child Care Subsidy (CCS)",
+      "description_en": "Federal subsidy for approved childcare. Up to 90% of childcare fees subsidised for families with combined income below $80,000/year. Subsidy rate tapers to 0% above $530,000. Activity test applies.",
+      "categorie": "famille",
+      "organisme": "Services Australia / Department of Education",
+      "montant_min_aud": 0,
+      "montant_max_aud": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/child-care-subsidy",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "child_under_13",
+        "approved_childcare_provider",
+        "activity_test_met",
+        "immunisation_requirements_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-rent-assistance",
+      "slug": "rent-assistance",
+      "nom": "Rent Assistance",
+      "description_en": "Supplementary payment for eligible income-support recipients paying private rent. Maximum $211.20 AUD per fortnight for singles with no children (2025). Added to base payment automatically when rent threshold is met.",
+      "categorie": "logement",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 211,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/rent-assistance",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "receiving_qualifying_income_support_payment",
+        "paying_private_rent_above_threshold",
+        "not_in_public_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-ndis",
+      "slug": "ndis",
+      "nom": "NDIS (National Disability Insurance Scheme)",
+      "description_en": "Federal insurance scheme providing individualised support funding for people with permanent and significant disability. Funding packages average $60,000-$80,000 per year. Covers support, equipment, therapies and daily activities.",
+      "categorie": "handicap",
+      "organisme": "NDIS / National Disability Insurance Agency (NDIA)",
+      "montant_min_aud": 0,
+      "montant_max_aud": 80000,
+      "periodicite": "annuel",
+      "url_info": "https://www.ndis.gov.au/participants",
+      "source_url": "https://www.ndis.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "age_under_65_at_access",
+        "permanent_significant_disability",
+        "australian_citizen_or_permanent_resident"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-parenting-payment-single",
+      "slug": "parenting-payment-single",
+      "nom": "Parenting Payment Single",
+      "description_en": "Income support for single principal carers of children under 8. Maximum $972.10 AUD per fortnight (2025). Subject to income and assets tests. Recipients have participation requirements once youngest child turns 6.",
+      "categorie": "famille",
+      "organisme": "Services Australia",
+      "montant_min_aud": 0,
+      "montant_max_aud": 972,
+      "periodicite": "bimensuel",
+      "url_info": "https://www.servicesaustralia.gov.au/parenting-payment",
+      "source_url": "https://www.servicesaustralia.gov.au",
+      "eligibility_criteria": [
+        "residence_au",
+        "single_parent",
+        "youngest_child_under_8",
+        "income_assets_tests_met"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-nsw-rent-choice",
+      "slug": "nsw-rent-choice",
+      "nom": "NSW Rent Choice (Private Rental Subsidy)",
+      "description_en": "NSW state program providing private rental subsidies for eligible households (including Rent Choice Youth, Rent Choice Start Safely for DV survivors). Subsidies up to $600/month for up to 3 years.",
+      "categorie": "logement",
+      "organisme": "NSW Department of Communities and Justice / NSW Housing",
+      "montant_min_aud": 0,
+      "montant_max_aud": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.facs.nsw.gov.au/housing/help/renting-private/private-rental-assistance/rent-choice",
+      "source_url": "https://www.facs.nsw.gov.au",
+      "eligibility_criteria": [
+        "residence_nsw",
+        "income_below_threshold",
+        "eligible_priority_category",
+        "not_in_social_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-nsw-eapa",
+      "slug": "nsw-energy-accounts-payment-assistance",
+      "nom": "NSW Energy Accounts Payment Assistance (EAPA)",
+      "description_en": "NSW vouchers to help households in hardship pay energy bills. Vouchers of $50 each, up to $500/year, applied directly to electricity or gas accounts. Available through community service organisations.",
+      "categorie": "logement",
+      "organisme": "NSW Department of Climate Change, Energy, the Environment and Water",
+      "montant_min_aud": 0,
+      "montant_max_aud": 500,
+      "periodicite": "annuel",
+      "url_info": "https://www.energy.nsw.gov.au/households/rebates-grants-and-schemes/energy-accounts-payment-assistance-eapa",
+      "source_url": "https://www.energy.nsw.gov.au",
+      "eligibility_criteria": [
+        "residence_nsw",
+        "financial_hardship",
+        "energy_bill_overdue_or_at_risk"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-vic-utility-relief-grant",
+      "slug": "victoria-utility-relief-grant",
+      "nom": "Victoria Utility Relief Grant Scheme",
+      "description_en": "Victorian one-off grant for households in financial hardship facing large energy or water bills. Up to $650 for electricity, $650 for gas, $500 for water per application. Applications through retailers or community workers.",
+      "categorie": "logement",
+      "organisme": "Victorian Department of Families, Fairness and Housing",
+      "montant_min_aud": 0,
+      "montant_max_aud": 650,
+      "periodicite": "ponctuel",
+      "url_info": "https://services.dffh.vic.gov.au/utility-relief-grant-scheme",
+      "source_url": "https://www.dffh.vic.gov.au",
+      "eligibility_criteria": [
+        "residence_victoria",
+        "financial_hardship",
+        "hold_concession_card_or_income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-vic-housing-first",
+      "slug": "victoria-housing-first",
+      "nom": "Victoria Housing First Initiative",
+      "description_en": "Victorian program providing rapid-rehousing with support for people experiencing homelessness. Combines stable housing with wraparound services. Part of the Victorian Homelessness Strategy.",
+      "categorie": "logement",
+      "organisme": "Homes Victoria / Department of Families, Fairness and Housing",
+      "montant_min_aud": 0,
+      "montant_max_aud": 0,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.dffh.vic.gov.au/housing-support",
+      "source_url": "https://www.dffh.vic.gov.au",
+      "eligibility_criteria": [
+        "residence_victoria",
+        "experiencing_homelessness_or_at_risk",
+        "high_support_needs"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "au-qld-cost-of-living",
+      "slug": "queensland-cost-of-living-relief",
+      "nom": "Queensland Cost of Living Rebate",
+      "description_en": "Queensland $1,000 electricity bill rebate for all households (2024-25), plus additional $372 for eligible concession card holders. Applied automatically to electricity bills via Ergon/Energex.",
+      "categorie": "logement",
+      "organisme": "Queensland Department of Energy and Public Works",
+      "montant_min_aud": 1000,
+      "montant_max_aud": 1372,
+      "periodicite": "annuel",
+      "url_info": "https://www.qld.gov.au/housing/costs-and-bills/electricity-gas/qld-cost-of-living-rebate",
+      "source_url": "https://www.qld.gov.au",
+      "eligibility_criteria": [
+        "residence_queensland",
+        "residential_electricity_customer"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

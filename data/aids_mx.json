@@ -1,0 +1,175 @@
+{
+  "version": "1.0",
+  "last_scraped": "2026-04-01T00:00:00Z",
+  "last_updated": "2026-04-01",
+  "country_code": "MX",
+  "name": "Mexico",
+  "name_local": "México",
+  "language": "es",
+  "currency": "MXN",
+  "welfare_model": "Latin American",
+  "sources": [
+    "https://www.gob.mx",
+    "https://www.imss.gob.mx",
+    "https://www.bienestar.gob.mx"
+  ],
+  "aids": [
+    {
+      "id": "mx-pension-bienestar",
+      "slug": "pension-bienestar-adultos-mayores",
+      "nom": "Pensión para el Bienestar de las Personas Adultas Mayores",
+      "description_en": "Federal non-contributory pension for adults 65 and older (60+ for indigenous communities). 3,100 MXN paid every 2 months (1,550 MXN/month equivalent). Universal, no means-test for eligible age group.",
+      "categorie": "retraite",
+      "organisme": "Secretaría de Bienestar",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 3100,
+      "periodicite": "bimestriel",
+      "url_info": "https://www.gob.mx/bienestar/acciones-y-programas/pension-para-el-bienestar-de-las-personas-adultas-mayores",
+      "source_url": "https://www.bienestar.gob.mx",
+      "eligibility_criteria": [
+        "residence_mx",
+        "age_65_plus",
+        "not_receiving_imss_issste_pension_above_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-sembrando-vida",
+      "slug": "sembrando-vida",
+      "nom": "Sembrando Vida",
+      "description_en": "Program to support smallholder farmers in rural areas. Monthly support of 5,500 MXN for agricultural production and training. Targets subsistence farmers with land.",
+      "categorie": "revenus_emploi",
+      "organisme": "Secretaría de Bienestar",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 5500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gob.mx/bienestar/acciones-y-programas/sembrando-vida",
+      "source_url": "https://www.bienestar.gob.mx",
+      "eligibility_criteria": [
+        "residence_mx_rural",
+        "own_or_have_access_2_5_ha_land",
+        "subsistence_farmer",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-beca-benito-juarez",
+      "slug": "beca-benito-juarez",
+      "nom": "Beca Benito Juárez para Educación Básica y Media Superior",
+      "description_en": "Educational scholarship for students in basic and upper secondary education. 1,600 MXN/month for media superior (upper secondary) level. Aims to reduce school dropout in vulnerable communities.",
+      "categorie": "jeunesse",
+      "organisme": "Secretaría de Educación Pública (SEP) / Secretaría de Bienestar",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 1600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gob.mx/becasbenitojuarez",
+      "source_url": "https://www.gob.mx",
+      "eligibility_criteria": [
+        "residence_mx",
+        "enrolled_in_public_school",
+        "vulnerability_criteria_met",
+        "age_6_18"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-jovenes-construyendo",
+      "slug": "jovenes-construyendo-el-futuro",
+      "nom": "Jóvenes Construyendo el Futuro",
+      "description_en": "Youth training and employment program. 4,310 MXN/month stipend for youth aged 18-29 not in school and not employed. Placed with businesses for 12-month training.",
+      "categorie": "jeunesse",
+      "organisme": "Secretaría del Trabajo y Previsión Social (STPS)",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 4310,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gob.mx/jovenesconstruyendoelfuturo",
+      "source_url": "https://www.gob.mx",
+      "eligibility_criteria": [
+        "residence_mx",
+        "age_18_29",
+        "not_studying",
+        "not_employed",
+        "registered_in_program"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-imss-salud",
+      "slug": "imss-seguro-social-salud",
+      "nom": "IMSS — Seguro Social de Salud",
+      "description_en": "Social health insurance for formal-sector workers and their families. Covers medical consultations, hospitalisation, maternity, disability and work-accident care through IMSS clinics and hospitals.",
+      "categorie": "sante",
+      "organisme": "Instituto Mexicano del Seguro Social (IMSS)",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.imss.gob.mx/derechohabientes",
+      "source_url": "https://www.imss.gob.mx",
+      "eligibility_criteria": [
+        "residence_mx",
+        "formal_employment_registered_imss",
+        "contributions_current"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-credito-infonavit",
+      "slug": "credito-infonavit",
+      "nom": "Crédito INFONAVIT",
+      "description_en": "Housing credit for formal workers. Workers accumulate contributions (5% of salary by employer) in an individual housing sub-account. Eligible for low-interest mortgage to purchase, build or renovate a home.",
+      "categorie": "logement",
+      "organisme": "Instituto del Fondo Nacional de la Vivienda para los Trabajadores (INFONAVIT)",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 2200000,
+      "periodicite": "ponctuel",
+      "url_info": "https://portalmx.infonavit.org.mx/wps/portal/infonavit.web/trabajadores/para-tu-vida",
+      "source_url": "https://www.gob.mx",
+      "eligibility_criteria": [
+        "residence_mx",
+        "formal_employment_infonavit_registered",
+        "minimum_credit_score_116pts",
+        "first_time_use_preferred"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-cdmx-mi-beca",
+      "slug": "cdmx-mi-beca-para-empezar",
+      "nom": "Mi Beca para Empezar (CDMX)",
+      "description_en": "Mexico City scholarship for students in public preschool, primary and secondary schools. Monthly transfer of approx. 530 MXN/month (primary) to 680 MXN/month (secondary) to reduce school dropout.",
+      "categorie": "jeunesse",
+      "organisme": "Gobierno de la Ciudad de México / Secretaría de Educación CDMX",
+      "montant_min_mxn": 530,
+      "montant_max_mxn": 680,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mibecaraempezar.cdmx.gob.mx",
+      "source_url": "https://www.cdmx.gob.mx",
+      "eligibility_criteria": [
+        "residence_cdmx",
+        "enrolled_public_school_cdmx",
+        "age_3_15"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "mx-cdmx-pension-adultos",
+      "slug": "cdmx-pension-adultos-mayores",
+      "nom": "Pensión Alimentaria para Adultos Mayores CDMX",
+      "description_en": "Mexico City food pension for residents aged 60+ in CDMX. Monthly transfer to cover food needs. Complements federal Pensión Bienestar. Approx. 1,364 MXN/month (2025).",
+      "categorie": "retraite",
+      "organisme": "Gobierno de la Ciudad de México / SIBISO",
+      "montant_min_mxn": 0,
+      "montant_max_mxn": 1364,
+      "periodicite": "mensuel",
+      "url_info": "https://www.cdmx.gob.mx/programas-sociales/pension-alimentaria",
+      "source_url": "https://www.cdmx.gob.mx",
+      "eligibility_criteria": [
+        "residence_cdmx",
+        "age_60_plus",
+        "registered_in_padron_cdmx"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}
