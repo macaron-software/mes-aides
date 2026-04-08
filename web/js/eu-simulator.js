@@ -101,6 +101,13 @@ const EU_CURRENCIES = {
   tw: { symbol: 'NT$', locale: 'zh-TW', code: 'TWD', suffix: false },
   kg: { symbol: 'сом', locale: 'ky-KG', code: 'KGS', suffix: true  },
   tj: { symbol: 'SM',  locale: 'tg-TJ', code: 'TJS', suffix: false },
+  /* Caribbean & Central America */
+  ht: { symbol: 'G',   locale: 'fr-HT', code: 'HTG', suffix: false },
+  cu: { symbol: '$MN', locale: 'es-CU', code: 'CUP', suffix: false },
+  hn: { symbol: 'L',   locale: 'es-HN', code: 'HNL', suffix: false },
+  sv: { symbol: '$',   locale: 'es-SV', code: 'USD', suffix: false },
+  gt: { symbol: 'Q',   locale: 'es-GT', code: 'GTQ', suffix: false },
+  ni: { symbol: 'C$',  locale: 'es-NI', code: 'NIO', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -137,6 +144,8 @@ const CURRENCY_AMOUNT_FIELD = {
   ae: 'aed', sa: 'sar', qa: 'qar', kw: 'kwd', om: 'omr', jo: 'jod', lb: 'lbp', iq: 'iqd',
   /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
   mn: 'mnt', by: 'byn', md: 'mdl', la: 'lak', tw: 'twd', kg: 'kgs', tj: 'tjs',
+  /* Caribbean & Central America */
+  ht: 'htg', cu: 'cup', hn: 'hnl', sv: 'usd', gt: 'gtq', ni: 'nio',
 };
 
 /**
@@ -174,6 +183,8 @@ const INCOME_THRESHOLDS = {
   ae: 500000, sa: 320000, qa: 300000, kw: 60000, om: 60000, jo: 185000, lb: 200000000, iq: 35000000,
   /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
   mn: 42000000, by: 72300000, md: 250000, la: 70000000, tw: 177440000, kg: 500000, tj: 35000,
+  /* Caribbean & Central America */
+  ht: 150000, cu: 152800, hn: 368500, sv: 30000, gt: 110000, ni: 720000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -208,6 +219,8 @@ const LOW_INCOME_THRESHOLDS = {
   ae: 1000000, sa: 640000, qa: 600000, kw: 120000, om: 120000, jo: 370000, lb: 400000000, iq: 70000000,
   /* Mongolia + Belarus + Moldova + Laos + Taiwan + Kyrgyzstan + Tajikistan */
   mn: 84000000, by: 144600000, md: 500000, la: 140000000, tw: 354880000, kg: 1000000, tj: 70000,
+  /* Caribbean & Central America */
+  ht: 300000, cu: 305600, hn: 737000, sv: 60000, gt: 220000, ni: 1440000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
