@@ -1,0 +1,238 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "BR",
+  "name": "Brazil",
+  "name_local": "Brasil",
+  "language": "pt",
+  "currency": "BRL",
+  "welfare_model": "Social Insurance + Assistance",
+  "sources": [
+    "https://www.mds.gov.br",
+    "https://www.gov.br/previdencia",
+    "https://www.gov.br/trabalho-e-emprego",
+    "https://www.caixa.gov.br",
+    "https://www.prouni.mec.gov.br"
+  ],
+  "aids": [
+    {
+      "id": "br-bpc",
+      "slug": "beneficio-prestacao-continuada-bpc",
+      "nom": "Benefício de Prestação Continuada (BPC/LOAS)",
+      "description_en": "Non-contributory monthly cash benefit equal to one minimum wage (BRL 1,518 in 2025) for elderly people aged 65 or over, or persons with disabilities of any age, with per capita family income below 1/4 of the minimum wage. Administered by INSS, funded by federal budget.",
+      "categorie": "handicap_invalidite",
+      "organisme": "INSS / Ministério do Desenvolvimento Social",
+      "montant_min_brl": 0,
+      "montant_max_brl": 151800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios/beneficio-de-prestacao-continuada-bpc",
+      "source_url": "https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/cartilhas/cartilha_BPC.pdf",
+      "eligibility_criteria": [
+        "age_65_plus_or_disabled",
+        "income_low",
+        "residence_br",
+        "cpf_required"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-bolsa-familia",
+      "slug": "bolsa-familia",
+      "nom": "Bolsa Família",
+      "description_en": "Conditional cash transfer program for low-income families. Base benefit BRL 600/month per family plus BRL 150/month per child under 6 (First Childhood benefit) and BRL 50/month per child aged 7-18 in school. Maximum benefit around BRL 900+ depending on family composition. Families must meet health and education conditionalities.",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministério do Desenvolvimento e Assistência Social (MDS) / Caixa Econômica Federal",
+      "montant_min_brl": 60000,
+      "montant_max_brl": 90000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/mds/pt-br/acoes-e-programas/transferencia-de-renda/bolsa-familia",
+      "source_url": "https://www.mds.gov.br",
+      "eligibility_criteria": [
+        "residence_br",
+        "income_low",
+        "family_registered_cadUnico",
+        "conditionalities_health_education"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-seguro-desemprego",
+      "slug": "seguro-desemprego",
+      "nom": "Seguro-Desemprego",
+      "description_en": "Unemployment insurance for formal-sector workers dismissed without just cause. Paid for 3 to 5 months depending on the number of previous unemployment insurance claims. Amount ranges from BRL 1,518 (minimum wage) to BRL 2,286/month, based on the worker's average salary over the last 3 months of employment.",
+      "categorie": "chomage",
+      "organisme": "Ministério do Trabalho e Emprego / SINE",
+      "montant_min_brl": 151800,
+      "montant_max_brl": 228600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego",
+      "source_url": "https://www.gov.br/trabalho-e-emprego",
+      "eligibility_criteria": [
+        "residence_br",
+        "dismissal_without_just_cause",
+        "formal_employment_6_months_prior",
+        "not_receiving_other_unemployment_benefit"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-fgts",
+      "slug": "fundo-garantia-tempo-servico-fgts",
+      "nom": "FGTS — Fundo de Garantia do Tempo de Serviço",
+      "description_en": "Severance indemnity fund. Employers deposit 8% of the worker's monthly gross salary into an individual FGTS account. Workers can withdraw the full balance upon dismissal without just cause, retirement, terminal illness, or natural disaster affecting their home. Managed by Caixa Econômica Federal.",
+      "categorie": "revenus_emploi",
+      "organisme": "Caixa Econômica Federal",
+      "montant_min_brl": 0,
+      "montant_max_brl": 0,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
+      "source_url": "https://www.caixa.gov.br",
+      "eligibility_criteria": [
+        "residence_br",
+        "formal_employment_clt",
+        "dismissal_without_just_cause_or_retirement"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-aposentadoria-idade",
+      "slug": "aposentadoria-por-idade-inss",
+      "nom": "Aposentadoria por Idade (INSS)",
+      "description_en": "Contributory old-age pension from INSS. Minimum age 65 (men) or 62 (women) with at least 180 months of INSS contributions. Minimum pension equals one minimum wage (BRL 1,518/month in 2025). Average benefit approximately BRL 2,500/month. Amount depends on contribution history.",
+      "categorie": "retraite",
+      "organisme": "INSS — Instituto Nacional do Seguro Social",
+      "montant_min_brl": 151800,
+      "montant_max_brl": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/inss/pt-br/saiba-mais/aposentadorias/aposentadoria-por-idade-urbana",
+      "source_url": "https://www.gov.br/previdencia",
+      "eligibility_criteria": [
+        "residence_br",
+        "age_65_plus_male_or_62_female",
+        "inss_contributions_180_months"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-auxilio-doenca",
+      "slug": "auxilio-doenca-inss",
+      "nom": "Auxílio-Doença (INSS)",
+      "description_en": "Sick pay from INSS for workers temporarily unable to work due to illness or non-occupational injury. Payable from the 16th day of incapacity (first 15 days paid by employer). Amount equals 91% of the worker's salary reference (salário-de-benefício), subject to a floor of BRL 1,518 (minimum wage). Maximum benefit BRL 7,786.02/month in 2025.",
+      "categorie": "sante",
+      "organisme": "INSS — Instituto Nacional do Seguro Social",
+      "montant_min_brl": 151800,
+      "montant_max_brl": 778602,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios/auxilio-por-incapacidade-temporaria-auxilio-doenca",
+      "source_url": "https://www.gov.br/previdencia",
+      "eligibility_criteria": [
+        "residence_br",
+        "inss_contributions_12_months",
+        "medical_incapacity_certificate",
+        "incapacity_16_days_or_more"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-auxilio-acidente",
+      "slug": "auxilio-acidente-inss",
+      "nom": "Auxílio-Acidente (INSS)",
+      "description_en": "Partial permanent disability benefit from INSS for workers who suffered a work accident or occupational disease and retain partial working capacity. Benefit equals 50% of the worker's salary reference (salário-de-benefício). Paid monthly as long as the disability persists, alongside regular salary.",
+      "categorie": "handicap_invalidite",
+      "organisme": "INSS — Instituto Nacional do Seguro Social",
+      "montant_min_brl": 75900,
+      "montant_max_brl": 389301,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios/auxilio-acidente",
+      "source_url": "https://www.gov.br/previdencia",
+      "eligibility_criteria": [
+        "residence_br",
+        "work_accident_or_occupational_disease",
+        "partial_permanent_disability",
+        "inss_registered_employee"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-pensao-morte",
+      "slug": "pensao-por-morte-inss",
+      "nom": "Pensão por Morte (INSS)",
+      "description_en": "Survivors' pension paid to dependents of a deceased INSS contributor or retiree. For deaths occurring after 2019 reform (EC 103/2019), the pension equals 50% of the deceased's benefit plus 10% per dependent, up to 100%. Minimum pension equals the minimum wage (BRL 1,518/month). Paid to spouse, partner, minor children, or disabled dependents.",
+      "categorie": "famille",
+      "organisme": "INSS — Instituto Nacional do Seguro Social",
+      "montant_min_brl": 151800,
+      "montant_max_brl": 778602,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios/pensao-por-morte",
+      "source_url": "https://www.gov.br/previdencia",
+      "eligibility_criteria": [
+        "dependent_of_inss_contributor_or_retiree",
+        "death_registered_inss",
+        "spouse_partner_or_minor_child"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-prouni",
+      "slug": "prouni-bolsa-universidade",
+      "nom": "ProUni — Programa Universidade para Todos",
+      "description_en": "Full or partial university scholarship for low-income Brazilian students at private higher education institutions. Full scholarship for students with per capita family income up to 1.5 minimum wages (BRL 2,277/month in 2025). Partial scholarship (50%) for income up to 3 minimum wages (BRL 4,554). Requires ENEM score.",
+      "categorie": "jeunesse",
+      "organisme": "Ministério da Educação (MEC)",
+      "montant_min_brl": 0,
+      "montant_max_brl": 0,
+      "periodicite": "ponctuel",
+      "url_info": "https://prouni.mec.gov.br",
+      "source_url": "https://www.gov.br/mec",
+      "eligibility_criteria": [
+        "residence_br",
+        "income_low",
+        "enem_score_required",
+        "public_school_or_scholarship_private_school",
+        "not_higher_degree_holder"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-minha-casa-minha-vida",
+      "slug": "minha-casa-minha-vida-mcmv",
+      "nom": "Minha Casa Minha Vida (MCMV)",
+      "description_en": "Federal housing subsidy program for low-income families. Track 1 (income up to BRL 2,640/month): subsidy up to 95% of the property value, with instalments from BRL 80/month. Track 2 (income BRL 2,641–4,400): subsidies and subsidised FGTS financing. Track 3 (income BRL 4,401–8,000): FGTS financing with reduced interest rates. Families must not own another property.",
+      "categorie": "logement",
+      "organisme": "Ministério das Cidades / Caixa Econômica Federal",
+      "montant_min_brl": 0,
+      "montant_max_brl": 0,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/minha-casa-minha-vida",
+      "source_url": "https://www.caixa.gov.br",
+      "eligibility_criteria": [
+        "residence_br",
+        "income_below_8000_brl",
+        "no_property_ownership",
+        "not_received_prior_housing_subsidy"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "br-salario-maternidade",
+      "slug": "salario-maternidade-inss",
+      "nom": "Salário-Maternidade (INSS)",
+      "description_en": "Maternity benefit paid for 120 days (4 months) to insured women who give birth, adopt a child, or obtain legal guardianship. For employed workers, paid by the employer and reimbursed by INSS. Amount equals the worker's full salary (no deduction). Minimum BRL 1,518/month, maximum BRL 7,786.02/month (2025 ceiling).",
+      "categorie": "famille",
+      "organisme": "INSS — Instituto Nacional do Seguro Social",
+      "montant_min_brl": 151800,
+      "montant_max_brl": 778602,
+      "periodicite": "mensuel",
+      "url_info": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios/salario-maternidade",
+      "source_url": "https://www.gov.br/previdencia",
+      "eligibility_criteria": [
+        "residence_br",
+        "inss_contributions_required",
+        "childbirth_adoption_or_guardianship",
+        "female_or_adoptive_parent"
+      ],
+      "amounts_baremes_year": 2025
+    }
+  ]
+}

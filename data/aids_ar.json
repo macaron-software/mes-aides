@@ -1,0 +1,236 @@
+{
+  "version": "1.0",
+  "last_scraped": "2025-01-01T00:00:00Z",
+  "last_updated": "2025-01-01",
+  "country_code": "AR",
+  "name": "Argentina",
+  "name_local": "Argentina",
+  "language": "es",
+  "currency": "ARS",
+  "welfare_model": "Social Insurance + Non-contributory",
+  "inflation_note": "ARS amounts are indicative for Q1-2025. Argentina applies quarterly CPI adjustments (Ley 27.609). Verify current amounts at anses.gob.ar.",
+  "sources": [
+    "https://www.anses.gob.ar",
+    "https://www.argentina.gob.ar",
+    "https://www.sence.gob.ar"
+  ],
+  "aids": [
+    {
+      "id": "ar-auh",
+      "slug": "asignacion-universal-por-hijo-auh",
+      "nom": "AUH — Asignación Universal por Hijo para Protección Social",
+      "description_en": "Universal Child Allowance (AUH) — monthly cash transfer of approximately ARS 70,000 per child under 18 (or disabled child of any age) for unemployed, informal, or low-income workers. 80% paid monthly; 20% withheld and released annually upon proof of school attendance and vaccination. Amounts updated quarterly by ANSES.",
+      "categorie": "famille",
+      "organisme": "ANSES — Administración Nacional de la Seguridad Social",
+      "montant_min_ars": 0,
+      "montant_max_ars": 7000000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.anses.gob.ar/asignacion-universal-por-hijo",
+      "source_url": "https://www.argentina.gob.ar/servicio/cobrar-la-asignacion-universal-por-hijo",
+      "eligibility_criteria": [
+        "residence_ar",
+        "child_under_18_or_disabled",
+        "parent_unemployed_informal_or_low_income",
+        "not_receiving_contributory_family_allowance",
+        "school_attendance_conditionality",
+        "vaccination_conditionality"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-prestacion-desempleo",
+      "slug": "prestacion-por-desempleo-anses",
+      "nom": "Prestación por Desempleo (ANSES)",
+      "description_en": "Unemployment insurance managed by ANSES for formal-sector workers dismissed without just cause. Duration: 2 to 12 months depending on years of contribution. Amount: 70% of last salary for the first 4 months, then stepped down. Range approximately ARS 17,400–52,300/month in early 2025 (minimum/maximum). Requires minimum 6 months of contributions in last 3 years.",
+      "categorie": "chomage",
+      "organisme": "ANSES — Administración Nacional de la Seguridad Social",
+      "montant_min_ars": 1740000,
+      "montant_max_ars": 5230000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.anses.gob.ar/prestacion-por-desempleo",
+      "source_url": "https://www.argentina.gob.ar/trabajo/empleados/prestacion-por-desempleo",
+      "eligibility_criteria": [
+        "residence_ar",
+        "dismissal_without_just_cause",
+        "contributions_6_months_last_3_years",
+        "not_self_employed",
+        "registered_with_anses"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-jubilacion-minima",
+      "slug": "jubilacion-minima-anses",
+      "nom": "Jubilación mínima (SIPA/ANSES)",
+      "description_en": "Minimum contributory old-age pension (haber mínimo) under the SIPA system. Approximately ARS 302,000/month in early 2025 (subject to quarterly RIPTE-based adjustments). Requires minimum 30 years of contributions and age 65 (men) or 60 (women). Updated by ANSES four times per year.",
+      "categorie": "retraite",
+      "organisme": "ANSES — Administración Nacional de la Seguridad Social",
+      "montant_min_ars": 30200000,
+      "montant_max_ars": 30200000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.anses.gob.ar/jubilacion",
+      "source_url": "https://www.argentina.gob.ar/servicio/solicitar-jubilacion-ordinaria",
+      "eligibility_criteria": [
+        "residence_ar",
+        "age_65_male_or_60_female",
+        "contributions_30_years",
+        "cuit_cuil_required"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-pnc-invalidez",
+      "slug": "pension-no-contributiva-invalidez",
+      "nom": "PNC por Invalidez — Pensión No Contributiva",
+      "description_en": "Non-contributory disability pension (PNC por Invalidez) for Argentine nationals aged 18 or over with a disability of 76% or more, without sufficient income or assets, and without access to a contributory pension. Amount approximately ARS 226,500/month in early 2025 (75% of the minimum pension). Updated quarterly.",
+      "categorie": "handicap_invalidite",
+      "organisme": "ANSES / Ministerio de Capital Humano",
+      "montant_min_ars": 22650000,
+      "montant_max_ars": 22650000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.anses.gob.ar/pension-no-contributiva",
+      "source_url": "https://www.argentina.gob.ar/servicio/solicitar-una-pension-no-contributiva-por-invalidez",
+      "eligibility_criteria": [
+        "residence_ar",
+        "age_18_plus",
+        "disability_76_percent_or_more",
+        "income_low",
+        "no_contributory_pension",
+        "argentinian_nationality_or_10_years_residence"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-tarjeta-alimentar",
+      "slug": "tarjeta-alimentar",
+      "nom": "Tarjeta Alimentar",
+      "description_en": "Food card for families receiving AUH or Pregnancy Allowance (AUE) with children under 14. Approximately ARS 60,000–120,000/month depending on number of qualifying children. Can only be used to purchase food at authorized stores. Part of the Argentina Contra el Hambre program.",
+      "categorie": "famille",
+      "organisme": "Ministerio de Capital Humano / ANSES",
+      "montant_min_ars": 6000000,
+      "montant_max_ars": 12000000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.argentina.gob.ar/desarrollosocial/tarjetaalimentar",
+      "source_url": "https://www.argentina.gob.ar",
+      "eligibility_criteria": [
+        "residence_ar",
+        "receiving_auh_or_aue",
+        "child_under_14",
+        "income_low"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-progresar",
+      "slug": "progresar-becas-educacion",
+      "nom": "Progresar — Becas para Estudiantes",
+      "description_en": "Monthly educational stipend for students aged 18 to 24 (or any age for vocational/secondary education) from low-income households. Approximately ARS 15,000/month for higher education track in early 2025. Students must maintain academic progress and meet attendance requirements. Managed by Secretaría de Educación.",
+      "categorie": "jeunesse",
+      "organisme": "Secretaría de Educación / ANSES",
+      "montant_min_ars": 1500000,
+      "montant_max_ars": 1500000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.argentina.gob.ar/educacion/progresar",
+      "source_url": "https://www.argentina.gob.ar",
+      "eligibility_criteria": [
+        "residence_ar",
+        "age_18_24",
+        "income_low",
+        "enrolled_in_education",
+        "not_employed_formal_sector"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-potenciar-trabajo",
+      "slug": "potenciar-trabajo",
+      "nom": "Programa Potenciar Trabajo",
+      "description_en": "Employment and social inclusion program offering a monthly economic incentive equal to 50% of the minimum wage (approximately ARS 151,600/month in early 2025) to unemployed workers in vulnerable situations who participate in work integration or training activities. Aimed at strengthening family and community socio-economic units.",
+      "categorie": "revenus_emploi",
+      "organisme": "Ministerio de Capital Humano",
+      "montant_min_ars": 15160000,
+      "montant_max_ars": 15160000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.argentina.gob.ar/desarrollosocial/potenciartrabajo",
+      "source_url": "https://www.argentina.gob.ar",
+      "eligibility_criteria": [
+        "residence_ar",
+        "income_low",
+        "unemployed_or_informally_employed",
+        "participation_in_work_activity",
+        "vulnerable_social_situation"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-asignacion-maternidad",
+      "slug": "asignacion-por-maternidad",
+      "nom": "Asignación por Maternidad (ANSES)",
+      "description_en": "Maternity benefit for female workers in formal employment. Paid for 90 days (45 days before and 45 days after birth, or all 90 days post-birth). Amount equals the worker's full salary at time of leave. Paid by ANSES and then reimbursed by the employer. No ceiling for public-sector workers; private sector ceiling applies.",
+      "categorie": "famille",
+      "organisme": "ANSES — Administración Nacional de la Seguridad Social",
+      "montant_min_ars": 0,
+      "montant_max_ars": 0,
+      "periodicite": "mensuel",
+      "url_info": "https://www.anses.gob.ar/asignacion-por-maternidad",
+      "source_url": "https://www.argentina.gob.ar/servicio/cobrar-asignacion-por-maternidad",
+      "eligibility_criteria": [
+        "residence_ar",
+        "female_formal_worker",
+        "contributions_3_months_prior",
+        "pregnancy_or_recent_birth"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-suaf",
+      "slug": "suaf-asignaciones-familiares",
+      "nom": "SUAF — Asignaciones Familiares (por hijo)",
+      "description_en": "Contributory family allowance per child for formal-sector workers, paid through the SUAF (Sistema Único de Asignaciones Familiares). Amount varies by worker's salary bracket: approximately ARS 10,000–30,000 per child per month in early 2025. Inversely proportional to salary — lower salaries receive higher amounts. For children under 18 in school.",
+      "categorie": "famille",
+      "organisme": "ANSES — Administración Nacional de la Seguridad Social",
+      "montant_min_ars": 1000000,
+      "montant_max_ars": 3000000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.anses.gob.ar/asignaciones-familiares",
+      "source_url": "https://www.argentina.gob.ar/servicio/cobrar-asignacion-por-hijo",
+      "eligibility_criteria": [
+        "residence_ar",
+        "formal_employment",
+        "child_under_18_enrolled_school",
+        "salary_below_ceiling"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    },
+    {
+      "id": "ar-plan-vivienda",
+      "slug": "plan-nacional-vivienda",
+      "nom": "Plan Nacional de Vivienda (PROCREAR / FONAVI)",
+      "description_en": "Federal housing assistance program combining PROCREAR credit lines (subsidized mortgages through Banco Hipotecario) and FONAVI social housing construction. PROCREAR offers below-market-rate loans for first-time homebuyers with income below a variable threshold. The subsidy component varies by income bracket and property type. One-time benefit.",
+      "categorie": "logement",
+      "organisme": "Ministerio de Capital Humano / Banco Hipotecario",
+      "montant_min_ars": 0,
+      "montant_max_ars": 0,
+      "periodicite": "ponctuel",
+      "url_info": "https://www.argentina.gob.ar/habitat/procrear",
+      "source_url": "https://www.argentina.gob.ar",
+      "eligibility_criteria": [
+        "residence_ar",
+        "income_below_threshold",
+        "no_property_ownership",
+        "cuil_required"
+      ],
+      "amounts_baremes_year": 2025,
+      "verified_quarter": "Q1-2025"
+    }
+  ]
+}

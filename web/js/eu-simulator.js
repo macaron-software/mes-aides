@@ -22,6 +22,8 @@ const EU_CURRENCIES = {
   us: { symbol: '$',   locale: 'en-US', code: 'USD', suffix: false },
   cn: { symbol: '¥',   locale: 'zh-CN', code: 'CNY', suffix: false },
   au: { symbol: 'A$',  locale: 'en-AU', code: 'AUD', suffix: false },
+  br: { symbol: 'R$',  locale: 'pt-BR', code: 'BRL', suffix: false },
+  ar: { symbol: 'AR$', locale: 'es-AR', code: 'ARS', suffix: false },
 };
 
 /** Maps country code → data file basename when they differ */
@@ -33,7 +35,7 @@ const CC_TO_FILE = { gb: 'uk' };
  */
 const CURRENCY_AMOUNT_FIELD = {
   us: 'usd', ca: 'cad', au: 'aud',
-  jp: 'jpy', mx: 'mxn', cn: 'cny',
+  jp: 'jpy', mx: 'mxn', cn: 'cny', br: 'brl', ar: 'ars',
 };
 
 /**
@@ -47,7 +49,7 @@ const INCOME_THRESHOLDS = {
   /* FR: RSA eligibility threshold ~1200 EUR/month */
   fr: 1200,
   /* World (monthly net, local currency) */
-  jp: 150000, ca: 2000, mx: 6000, us: 1800, cn: 3000, au: 2500,
+  jp: 150000, ca: 2000, mx: 6000, us: 1800, cn: 3000, au: 2500, br: 1518, ar: 302000,
 };
 
 /** More lenient threshold for "low_income" criteria (housing benefits etc.) */
@@ -58,7 +60,7 @@ const LOW_INCOME_THRESHOLDS = {
   /* FR: APL / CSS / housing benefits up to ~2000 EUR/month */
   fr: 2000,
   /* World */
-  jp: 250000, ca: 3500, mx: 10000, us: 3000, cn: 5000, au: 4000,
+  jp: 250000, ca: 3500, mx: 10000, us: 3000, cn: 5000, au: 4000, br: 3036, ar: 604000,
 };
 
 /* ── Helpers ─────────────────────────────────────────────────────────────── */
