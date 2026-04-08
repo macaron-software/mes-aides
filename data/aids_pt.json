@@ -65,6 +65,133 @@
         "income_below_threshold"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "pt-subsidio-doenca",
+      "slug": "subsidio-doenca",
+      "nom": "Subsídio por Doença",
+      "description_en": "Sickness benefit: 65% of reference salary from day 4 of absence.",
+      "categorie": "sante",
+      "organisme": "Segurança Social",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.pt/subsidio-de-doenca",
+      "eligibility_criteria": [
+        "residence_pt",
+        "employed_or_insured",
+        "medical_certificate",
+        "contribution_6mo"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "pt-csi",
+      "slug": "complemento-solidario-idosos",
+      "nom": "Complemento Solidário para Idosos (CSI)",
+      "description_en": "Top-up for elderly on low pensions, up to 6059€/year (approx. 505€/mo).",
+      "categorie": "retraite",
+      "organisme": "Segurança Social",
+      "montant_min_eur": 0,
+      "montant_max_eur": 505,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.pt/complemento-solidario-para-idosos",
+      "eligibility_criteria": [
+        "residence_pt",
+        "age_66_plus",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "pt-psi",
+      "slug": "prestacao-social-inclusao",
+      "nom": "Prestação Social para a Inclusão (PSI)",
+      "description_en": "Social inclusion benefit for persons with disability, 264€/mo.",
+      "categorie": "handicap",
+      "organisme": "Segurança Social",
+      "montant_min_eur": 264,
+      "montant_max_eur": 264,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.pt/prestacao-social-para-a-inclusao",
+      "eligibility_criteria": [
+        "residence_pt",
+        "disability_degree_min60pct",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "pt-tarifa-social",
+      "slug": "tarifa-social-energia",
+      "nom": "Tarifa Social de Energia (gás e eletricidade)",
+      "description_en": "Social energy tariff: 33% discount on electricity and gas bills for eligible households.",
+      "categorie": "energie",
+      "organisme": "ERSE / DGEm",
+      "montant_min_eur": 0,
+      "montant_max_eur": 300,
+      "periodicite": "annuel",
+      "url_info": "https://www.erse.pt/consumidores/tarifas-e-precos/tarifa-social",
+      "eligibility_criteria": [
+        "residence_pt",
+        "income_below_threshold_or_recipient_rsi"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "pt-subsidio-habitacao",
+      "slug": "subsidio-habitacao-ihru",
+      "nom": "Apoio ao Arrendamento (IHRU / 1.º Direito)",
+      "description_en": "Housing support for low-income or homeless households; amount varies by case.",
+      "categorie": "logement",
+      "organisme": "IHRU",
+      "montant_min_eur": 0,
+      "montant_max_eur": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://www.ihru.pt/habitacao/programas-de-habitacao/1o-direito",
+      "eligibility_criteria": [
+        "residence_pt",
+        "income_below_threshold",
+        "inadequate_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "pt-subsidio-desemprego-eventual",
+      "slug": "subsidio-desemprego-eventual",
+      "nom": "Subsídio de Desemprego (2025 bareme)",
+      "description_en": "Updated 2025: 65% of reference salary capped at max 2036€/mo for up to 30 months.",
+      "categorie": "revenus_emploi",
+      "organisme": "IEFP",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2036,
+      "periodicite": "mensuel",
+      "url_info": "https://www.iefp.pt/subsidio-de-desemprego",
+      "eligibility_criteria": [
+        "residence_pt",
+        "contribution_450_days",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "pt-apoio-crianca",
+      "slug": "apoio-crianca-jovem",
+      "nom": "Apoio à Criança e Jovem em Risco",
+      "description_en": "Child protection allowance and family support for at-risk children; complements abono de família.",
+      "categorie": "famille",
+      "organisme": "Segurança Social / CPCJ",
+      "montant_min_eur": 42,
+      "montant_max_eur": 100,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.pt/abono-de-familia-para-criancas-e-jovens",
+      "eligibility_criteria": [
+        "residence_pt",
+        "child_at_risk",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

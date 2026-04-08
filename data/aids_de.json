@@ -100,6 +100,134 @@
         "income_below_threshold"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "de-grundsicherung-alter",
+      "slug": "grundsicherung-alter",
+      "nom": "Grundsicherung im Alter",
+      "description_en": "Pension top-up (means-tested) for elderly or permanently reduced earning capacity persons.",
+      "categorie": "retraite",
+      "organisme": "Sozialamt",
+      "montant_min_eur": 0,
+      "montant_max_eur": 813,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmas.de/DE/Soziales/Rente-und-Altersvorsorge/Alterssicherung/Grundsicherung/grundsicherung.html",
+      "eligibility_criteria": [
+        "residence_de",
+        "age_65_or_permanently_reduced_capacity",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "de-pflegegeld-pg2",
+      "slug": "pflegegeld-pflegegrad-2",
+      "nom": "Pflegegeld (Pflegegrad 2)",
+      "description_en": "Home care allowance for care level 2, paid to the care recipient to compensate informal carers.",
+      "categorie": "sante",
+      "organisme": "Pflegekasse",
+      "montant_min_eur": 332,
+      "montant_max_eur": 332,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bundesgesundheitsministerium.de/themen/pflege/pflegegeld.html",
+      "eligibility_criteria": [
+        "residence_de",
+        "care_level_2",
+        "home_care"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "de-elterngeld",
+      "slug": "elterngeld",
+      "nom": "Elterngeld",
+      "description_en": "Parental allowance, 65-67% of net income for up to 14 months after birth.",
+      "categorie": "famille",
+      "organisme": "Elterngeldstelle",
+      "montant_min_eur": 300,
+      "montant_max_eur": 1800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmfsfj.de/bmfsfj/themen/familie/familienleistungen/elterngeld/elterngeld-73752",
+      "eligibility_criteria": [
+        "residence_de",
+        "newborn_child_under_14mo",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "de-kinderzuschlag",
+      "slug": "kinderzuschlag",
+      "nom": "Kinderzuschlag",
+      "description_en": "Child supplement for low-income parents who cannot cover their children's needs.",
+      "categorie": "famille",
+      "organisme": "Familienkasse",
+      "montant_min_eur": 0,
+      "montant_max_eur": 292,
+      "periodicite": "mensuel",
+      "url_info": "https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag",
+      "eligibility_criteria": [
+        "residence_de",
+        "child_under_25",
+        "income_below_threshold",
+        "employed"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "de-unterhaltsvorschuss",
+      "slug": "unterhaltsvorschuss",
+      "nom": "Unterhaltsvorschuss",
+      "description_en": "Maintenance advance for single parents when the other parent does not pay child support.",
+      "categorie": "famille",
+      "organisme": "Jugendamt",
+      "montant_min_eur": 0,
+      "montant_max_eur": 272,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmfsfj.de/bmfsfj/themen/familie/familienleistungen/unterhaltsvorschuss/unterhaltsvorschuss-73756",
+      "eligibility_criteria": [
+        "residence_de",
+        "single_parent",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "de-bildungspaket",
+      "slug": "bildung-und-teilhabe",
+      "nom": "Bildungspaket (Bildung und Teilhabe)",
+      "description_en": "Education and participation package for children in low-income households: school meals, trips, activities.",
+      "categorie": "jeunesse",
+      "organisme": "Jobcenter / Sozialamt",
+      "montant_min_eur": 0,
+      "montant_max_eur": 15,
+      "periodicite": "mensuel",
+      "url_info": "https://www.bmas.de/DE/Soziales/Buergergeld-Grundsicherung/bildungspaket.html",
+      "eligibility_criteria": [
+        "residence_de",
+        "child_under_25",
+        "buergergeld_recipient_or_wohngeld"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "de-alg2-kosten-unterkunft",
+      "slug": "kosten-unterkunft-heizung",
+      "nom": "Kosten der Unterkunft (KdU)",
+      "description_en": "Housing and heating costs covered under Bürgergeld for those unable to pay rent.",
+      "categorie": "logement",
+      "organisme": "Jobcenter",
+      "montant_min_eur": 0,
+      "montant_max_eur": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.arbeitsagentur.de/buergergeld",
+      "eligibility_criteria": [
+        "residence_de",
+        "buergergeld_recipient",
+        "renter"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

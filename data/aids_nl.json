@@ -64,6 +64,133 @@
         "child_under_18"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "nl-kinderopvangtoeslag",
+      "slug": "kinderopvangtoeslag",
+      "nom": "Kinderopvangtoeslag",
+      "description_en": "Childcare allowance covering up to 96% of childcare costs for working parents.",
+      "categorie": "famille",
+      "organisme": "Belastingdienst Toeslagen",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.toeslagen.nl/onderwerpen/kinderopvangtoeslag",
+      "eligibility_criteria": [
+        "residence_nl",
+        "employed_or_studying",
+        "child_in_registered_childcare"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "nl-huurtoeslag",
+      "slug": "huurtoeslag",
+      "nom": "Huurtoeslag",
+      "description_en": "Rental allowance for low-income tenants in social housing, max 450€/mo.",
+      "categorie": "logement",
+      "organisme": "Belastingdienst Toeslagen",
+      "montant_min_eur": 0,
+      "montant_max_eur": 450,
+      "periodicite": "mensuel",
+      "url_info": "https://www.toeslagen.nl/onderwerpen/huurtoeslag",
+      "eligibility_criteria": [
+        "residence_nl",
+        "income_below_threshold",
+        "renter_social_housing"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "nl-zorgtoeslag",
+      "slug": "zorgtoeslag",
+      "nom": "Zorgtoeslag",
+      "description_en": "Health insurance premium subsidy, max 154€/mo for singles with low income.",
+      "categorie": "sante",
+      "organisme": "Belastingdienst Toeslagen",
+      "montant_min_eur": 0,
+      "montant_max_eur": 154,
+      "periodicite": "mensuel",
+      "url_info": "https://www.toeslagen.nl/onderwerpen/zorgtoeslag",
+      "eligibility_criteria": [
+        "residence_nl",
+        "income_below_threshold",
+        "health_insurance_subscriber"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "nl-wajong",
+      "slug": "wajong",
+      "nom": "Wajong (Werk en arbeidsondersteuning jonggehandicapten)",
+      "description_en": "Disability benefit for young persons with disability, 836€/mo.",
+      "categorie": "handicap",
+      "organisme": "UWV",
+      "montant_min_eur": 836,
+      "montant_max_eur": 836,
+      "periodicite": "mensuel",
+      "url_info": "https://www.uwv.nl/particulieren/ziek/ik-ben-ziek-en-heb-geen-werkgever/wajong",
+      "eligibility_criteria": [
+        "residence_nl",
+        "disability_before_age_18_or_study",
+        "incapacity_work"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "nl-aow",
+      "slug": "aow-ouderdomspensioen",
+      "nom": "AOW (Algemene Ouderdomswet)",
+      "description_en": "State pension: 1386€/mo for singles from age 67.",
+      "categorie": "retraite",
+      "organisme": "SVB",
+      "montant_min_eur": 1386,
+      "montant_max_eur": 1386,
+      "periodicite": "mensuel",
+      "url_info": "https://www.svb.nl/nl/aow",
+      "eligibility_criteria": [
+        "residence_nl",
+        "age_67",
+        "insured_period_nl"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "nl-ioaw",
+      "slug": "ioaw-ioaz",
+      "nom": "IOAW / IOAZ (oudere werklozen)",
+      "description_en": "Income supplement for older unemployed workers (50+) who exhausted WW, 1137€/mo.",
+      "categorie": "revenus_emploi",
+      "organisme": "UWV / Gemeente",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1137,
+      "periodicite": "mensuel",
+      "url_info": "https://www.uwv.nl/particulieren/werkloos/ik-heb-geen-werk/ioaw",
+      "eligibility_criteria": [
+        "residence_nl",
+        "age_50_plus",
+        "exhausted_ww"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "nl-kindgebonden-budget",
+      "slug": "kindgebonden-budget",
+      "nom": "Kindgebonden Budget",
+      "description_en": "Additional child-related income supplement for low-income families with children.",
+      "categorie": "famille",
+      "organisme": "Belastingdienst Toeslagen",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2700,
+      "periodicite": "annuel",
+      "url_info": "https://www.toeslagen.nl/onderwerpen/kindgebonden-budget",
+      "eligibility_criteria": [
+        "residence_nl",
+        "child_under_18",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

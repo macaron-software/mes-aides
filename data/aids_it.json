@@ -65,6 +65,134 @@
         "child_under_21"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "it-sfl",
+      "slug": "supporto-formazione-lavoro",
+      "nom": "Supporto per la Formazione e il Lavoro (SFL)",
+      "description_en": "Monthly allowance of 350€ for employable individuals participating in training programmes.",
+      "categorie": "revenus_emploi",
+      "organisme": "INPS",
+      "montant_min_eur": 350,
+      "montant_max_eur": 350,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.supporto-per-la-formazione-e-il-lavoro.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "age_18_59",
+        "income_below_threshold",
+        "training_participation"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "it-bonus-asilo-nido",
+      "slug": "bonus-asilo-nido",
+      "nom": "Bonus Asilo Nido",
+      "description_en": "Childcare voucher up to 3000€/year for nursery fees, income-tested.",
+      "categorie": "famille",
+      "organisme": "INPS",
+      "montant_min_eur": 1500,
+      "montant_max_eur": 3000,
+      "periodicite": "annuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.bonus-asilo-nido.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "child_under_3",
+        "isee_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "it-indennita-malattia",
+      "slug": "indennita-malattia",
+      "nom": "Indennità di Malattia INPS",
+      "description_en": "Sickness benefit: 50% of daily salary from day 4 to day 20, then 66% from day 21.",
+      "categorie": "sante",
+      "organisme": "INPS",
+      "montant_min_eur": 0,
+      "montant_max_eur": 1200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.indennita-di-malattia.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "employed_or_insured",
+        "medical_certificate"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "it-invalidita-civile",
+      "slug": "pensione-invalidita-civile",
+      "nom": "Pensione di Inabilità Civile",
+      "description_en": "Civil disability pension for total incapacity: 333€/mo for ages 18-67.",
+      "categorie": "handicap",
+      "organisme": "INPS",
+      "montant_min_eur": 333,
+      "montant_max_eur": 333,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.invalidita-civile.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "total_civil_disability_100pct",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "it-reddito-energetico",
+      "slug": "bonus-bollette-reddito-energetico",
+      "nom": "Bonus Bollette (Reddito Energetico)",
+      "description_en": "Energy bill discount approx. 150€/year for electricity and gas for low-income households.",
+      "categorie": "energie",
+      "organisme": "ARERA",
+      "montant_min_eur": 0,
+      "montant_max_eur": 150,
+      "periodicite": "annuel",
+      "url_info": "https://www.arera.it/consumatori/bonus-bollette",
+      "eligibility_criteria": [
+        "residence_it",
+        "isee_below_9530_eur",
+        "household_tariff"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "it-bonus-mamma",
+      "slug": "bonus-mamma",
+      "nom": "Bonus Mamme (Decontribuzione)",
+      "description_en": "One-time or annual contribution relief of up to 1000€ for working mothers with 2+ children.",
+      "categorie": "famille",
+      "organisme": "INPS / Datore di lavoro",
+      "montant_min_eur": 1000,
+      "montant_max_eur": 1000,
+      "periodicite": "annuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.bonus-mamma.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "employed_or_self_employed",
+        "mother_2plus_children"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "it-assegno-unico-maggiorazione",
+      "slug": "assegno-unico-maggiorazione",
+      "nom": "Assegno Unico – quota maggiorata",
+      "description_en": "Increased universal child benefit (maggiorazione): up to 175€/mo/child for low ISEE (under €25,000).",
+      "categorie": "famille",
+      "organisme": "INPS",
+      "montant_min_eur": 57,
+      "montant_max_eur": 175,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-e-strutture.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico.cat-schede-servizi.html",
+      "eligibility_criteria": [
+        "residence_it",
+        "child_under_21",
+        "isee_below_25000_eur"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

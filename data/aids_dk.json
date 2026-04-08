@@ -66,6 +66,132 @@
         "single_parent_or_low_income"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "dk-boligstoette",
+      "slug": "boligstoette",
+      "nom": "Boligstøtte",
+      "description_en": "Housing benefit for tenants and cooperative housing members, max 6500 DKK/mo.",
+      "categorie": "logement",
+      "organisme": "Udbetaling Danmark",
+      "montant_min_dkk": 0,
+      "montant_max_dkk": 6500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.borger.dk/bolig-og-flytning/boligstoette",
+      "eligibility_criteria": [
+        "residence_dk",
+        "income_below_threshold",
+        "renter_or_cooperative"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dk-barselsdagpenge",
+      "slug": "barselsdagpenge",
+      "nom": "Barselsdagpenge",
+      "description_en": "Parental leave benefit, max 4658 DKK/week (52 weeks shared between parents).",
+      "categorie": "famille",
+      "organisme": "Udbetaling Danmark",
+      "montant_min_dkk": 0,
+      "montant_max_dkk": 4658,
+      "periodicite": "mensuel",
+      "url_info": "https://www.borger.dk/familie-og-boern/barsel/dagpenge-under-barsel",
+      "eligibility_criteria": [
+        "residence_dk",
+        "employed_or_self_employed",
+        "newborn_or_adopted"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dk-foertidspension",
+      "slug": "foertidspension",
+      "nom": "Førtidspension",
+      "description_en": "Early disability pension for persons unable to work due to permanent impairment: 21484 DKK/mo.",
+      "categorie": "handicap",
+      "organisme": "Kommunen",
+      "montant_min_dkk": 21484,
+      "montant_max_dkk": 21484,
+      "periodicite": "mensuel",
+      "url_info": "https://www.borger.dk/pension-og-efterloen/foertidspension",
+      "eligibility_criteria": [
+        "residence_dk",
+        "permanent_reduced_work_capacity",
+        "age_18_65"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dk-su",
+      "slug": "su-studieydelse",
+      "nom": "SU (Statens Uddannelsesstøtte)",
+      "description_en": "State education grant: 6321 DKK/mo for higher education students living away from home.",
+      "categorie": "jeunesse",
+      "organisme": "Styrelsen for Institutioner og Uddannelsesstøtte",
+      "montant_min_dkk": 3335,
+      "montant_max_dkk": 6321,
+      "periodicite": "mensuel",
+      "url_info": "https://www.su.dk",
+      "eligibility_criteria": [
+        "residence_dk",
+        "student_higher_education",
+        "age_18_plus"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dk-folkepension",
+      "slug": "folkepension",
+      "nom": "Folkepension",
+      "description_en": "State retirement pension from age 67, max 17208 DKK/mo including supplements.",
+      "categorie": "retraite",
+      "organisme": "Udbetaling Danmark",
+      "montant_min_dkk": 6000,
+      "montant_max_dkk": 17208,
+      "periodicite": "mensuel",
+      "url_info": "https://www.borger.dk/pension-og-efterloen/folkepension",
+      "eligibility_criteria": [
+        "residence_dk",
+        "age_67",
+        "insured_period_dk"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dk-sygedagpenge",
+      "slug": "sygedagpenge",
+      "nom": "Sygedagpenge",
+      "description_en": "Sickness benefit: max 4658 DKK/week from employer or municipality.",
+      "categorie": "sante",
+      "organisme": "Kommunen / Employer",
+      "montant_min_dkk": 0,
+      "montant_max_dkk": 4658,
+      "periodicite": "mensuel",
+      "url_info": "https://www.borger.dk/arbejde-dagpenge-orlov/sygedagpenge",
+      "eligibility_criteria": [
+        "residence_dk",
+        "employed_or_insured",
+        "medical_certificate"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "dk-bornepenge",
+      "slug": "bornepenge",
+      "nom": "Børnepenge (Børne- og ungeydelse)",
+      "description_en": "Universal child benefit: 1001 DKK/quarter per child under 2 (lower for older children).",
+      "categorie": "famille",
+      "organisme": "Udbetaling Danmark",
+      "montant_min_dkk": 1001,
+      "montant_max_dkk": 1001,
+      "periodicite": "kvartal",
+      "url_info": "https://www.borger.dk/familie-og-boern/bornepenge-og-tilskud/boerne-og-ungeydelse",
+      "eligibility_criteria": [
+        "residence_dk",
+        "child_under_18"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

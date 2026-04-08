@@ -64,6 +64,132 @@
         "child_under_25"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "be-ris-isole",
+      "slug": "revenu-integration-sociale",
+      "nom": "Revenu d'Intégration Sociale (RIS) – catégorie isolé",
+      "description_en": "Social integration income for isolated persons: 993€/mo (category isolated) from CPAS.",
+      "categorie": "revenus_emploi",
+      "organisme": "CPAS/OCMW",
+      "montant_min_eur": 993,
+      "montant_max_eur": 993,
+      "periodicite": "mensuel",
+      "url_info": "https://www.spf.be/revenu-integration",
+      "eligibility_criteria": [
+        "residence_be",
+        "age_18",
+        "income_below_threshold",
+        "isolated_person"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "be-allocation-chomage-minimale",
+      "slug": "allocation-chomage-minimale",
+      "nom": "Allocation de Chômage minimale",
+      "description_en": "Minimum unemployment allocation: 891€/mo for isolated persons after 1 year unemployment.",
+      "categorie": "revenus_emploi",
+      "organisme": "ONEM/RVA",
+      "montant_min_eur": 891,
+      "montant_max_eur": 2800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.onem.be/fr/documentation/feuille-info/t2",
+      "eligibility_criteria": [
+        "residence_be",
+        "contribution_required",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "be-intervention-majoree",
+      "slug": "intervention-majoree-soins",
+      "nom": "Intervention Majorée (IM) – soins de santé",
+      "description_en": "Increased healthcare reimbursement reducing patient co-payment by up to 26% for eligible beneficiaries.",
+      "categorie": "sante",
+      "organisme": "INAMI/RIZIV",
+      "montant_min_eur": 0,
+      "montant_max_eur": 500,
+      "periodicite": "annuel",
+      "url_info": "https://www.inami.fgov.be/fr/themes/cout-remboursement/avec-assurance/intervention-majoree",
+      "eligibility_criteria": [
+        "residence_be",
+        "income_below_threshold_or_special_status"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "be-prime-energie",
+      "slug": "prime-energie",
+      "nom": "Prime Énergie (Wallonie/Bruxelles)",
+      "description_en": "Energy subsidy of 135-300€ for heating or insulation works for low-income households.",
+      "categorie": "energie",
+      "organisme": "SPW Énergie / Bruxelles Environnement",
+      "montant_min_eur": 135,
+      "montant_max_eur": 300,
+      "periodicite": "ponctuel",
+      "url_info": "https://energie.wallonie.be/fr/primes-et-aides.html",
+      "eligibility_criteria": [
+        "residence_be_wallonie_or_bruxelles",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "be-allocation-maternite",
+      "slug": "allocation-maternite",
+      "nom": "Allocation de Maternité (Indemnité de maternité)",
+      "description_en": "Maternity allowance: 82% of salary for first 30 days, then 75% for the remaining period (15 weeks total).",
+      "categorie": "famille",
+      "organisme": "INAMI/RIZIV",
+      "montant_min_eur": 0,
+      "montant_max_eur": 3000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inami.fgov.be/fr/themes/maternite/pages/default.aspx",
+      "eligibility_criteria": [
+        "residence_be",
+        "employed_or_insured",
+        "pregnancy_or_birth"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "be-allocation-invalidite",
+      "slug": "allocation-invalidite",
+      "nom": "Allocation d'Invalidité",
+      "description_en": "Disability/invalidity allowance: 55% of capped reference salary, min 1300€/mo after 1 year incapacity.",
+      "categorie": "handicap",
+      "organisme": "INAMI/RIZIV",
+      "montant_min_eur": 1300,
+      "montant_max_eur": 2600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.inami.fgov.be/fr/themes/invalidite",
+      "eligibility_criteria": [
+        "residence_be",
+        "incapacity_min1year",
+        "contribution_required"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "be-aide-logement",
+      "slug": "aide-loyer",
+      "nom": "Allocation de Loyer (Aide au Logement)",
+      "description_en": "Rental allowance for low-income tenants; amount varies by region (Wallonia, Flanders, Brussels).",
+      "categorie": "logement",
+      "organisme": "SPW / Wonen in Vlaanderen / Bruxelles Logement",
+      "montant_min_eur": 0,
+      "montant_max_eur": 400,
+      "periodicite": "mensuel",
+      "url_info": "https://www.wallonie.be/fr/demarches/allocations-et-primes-liees-au-logement",
+      "eligibility_criteria": [
+        "residence_be",
+        "income_below_threshold",
+        "renter"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

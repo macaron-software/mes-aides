@@ -64,6 +64,133 @@
         "child_under_16"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "se-bostadsbidrag",
+      "slug": "bostadsbidrag",
+      "nom": "Bostadsbidrag",
+      "description_en": "Housing allowance for families with children or young adults, max 3200 SEK/mo.",
+      "categorie": "logement",
+      "organisme": "Försäkringskassan",
+      "montant_min_sek": 0,
+      "montant_max_sek": 3200,
+      "periodicite": "mensuel",
+      "url_info": "https://www.forsakringskassan.se/privatperson/foralder/bostadsbidrag",
+      "eligibility_criteria": [
+        "residence_se",
+        "income_below_threshold",
+        "renter"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "se-foraldrapenning",
+      "slug": "foraldrapenning",
+      "nom": "Föräldrapenning",
+      "description_en": "Parental benefit at 80% of SGI (income basis), max 1034 SEK/day for up to 480 days.",
+      "categorie": "famille",
+      "organisme": "Försäkringskassan",
+      "montant_min_sek": 250,
+      "montant_max_sek": 31040,
+      "periodicite": "mensuel",
+      "url_info": "https://www.forsakringskassan.se/privatperson/foralder/foraldrapenning",
+      "eligibility_criteria": [
+        "residence_se",
+        "newborn_or_adopted_child",
+        "insured_se"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "se-sjukpenning",
+      "slug": "sjukpenning",
+      "nom": "Sjukpenning",
+      "description_en": "Sickness benefit: 80% of income-based SGI from day 2 (employer covers day 1).",
+      "categorie": "sante",
+      "organisme": "Försäkringskassan",
+      "montant_min_sek": 0,
+      "montant_max_sek": 26400,
+      "periodicite": "mensuel",
+      "url_info": "https://www.forsakringskassan.se/privatperson/sjuk/sjukpenning",
+      "eligibility_criteria": [
+        "residence_se",
+        "insured_se",
+        "medical_certificate"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "se-aktivitetsstod",
+      "slug": "aktivitetsstod",
+      "nom": "Aktivitetsstöd",
+      "description_en": "Activity support during labour market programme, same level as a-kassa up to 26400 SEK/mo.",
+      "categorie": "revenus_emploi",
+      "organisme": "Försäkringskassan / Arbetsförmedlingen",
+      "montant_min_sek": 0,
+      "montant_max_sek": 26400,
+      "periodicite": "mensuel",
+      "url_info": "https://www.forsakringskassan.se/arbetsgivare/aktivitetsstod",
+      "eligibility_criteria": [
+        "residence_se",
+        "unemployed",
+        "enrolled_labour_market_programme"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "se-handikappersattning",
+      "slug": "handikappersattning",
+      "nom": "Handikappersättning",
+      "description_en": "Disability allowance for adults with significant disability extra costs, up to 2717 SEK/mo.",
+      "categorie": "handicap",
+      "organisme": "Försäkringskassan",
+      "montant_min_sek": 0,
+      "montant_max_sek": 2717,
+      "periodicite": "mensuel",
+      "url_info": "https://www.forsakringskassan.se/privatperson/funktionsnedsattning/handikappersattning",
+      "eligibility_criteria": [
+        "residence_se",
+        "age_19_65",
+        "significant_disability"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "se-studiebidrag",
+      "slug": "studiebidrag-csn",
+      "nom": "Studiebidrag (CSN)",
+      "description_en": "Student grant of 1430 SEK/mo, universal for upper secondary education students.",
+      "categorie": "jeunesse",
+      "organisme": "CSN",
+      "montant_min_sek": 1430,
+      "montant_max_sek": 1430,
+      "periodicite": "mensuel",
+      "url_info": "https://www.csn.se/bidrag-och-lan/studiebidrag.html",
+      "eligibility_criteria": [
+        "residence_se",
+        "age_16_20",
+        "student_upper_secondary"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "se-etableringsersattning",
+      "slug": "etableringsersattning",
+      "nom": "Etableringsersättning",
+      "description_en": "Integration allowance for newly arrived immigrants in establishment programme.",
+      "categorie": "revenus_emploi",
+      "organisme": "Arbetsförmedlingen",
+      "montant_min_sek": 0,
+      "montant_max_sek": 4308,
+      "periodicite": "mensuel",
+      "url_info": "https://www.arbetsformedlingen.se/for-arbetssokande/etablering-i-sverige",
+      "eligibility_criteria": [
+        "residence_se",
+        "newly_arrived_immigrant",
+        "age_20_64"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

@@ -64,6 +64,133 @@
         "child_under_17"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "fi-asumistuki",
+      "slug": "yleinen-asumistuki",
+      "nom": "Yleinen asumistuki",
+      "description_en": "General housing allowance for low-income households, max 500€/mo.",
+      "categorie": "logement",
+      "organisme": "Kela",
+      "montant_min_eur": 0,
+      "montant_max_eur": 500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/asuminen-yleinen-asumistuki",
+      "eligibility_criteria": [
+        "residence_fi",
+        "income_below_threshold",
+        "renter"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "fi-vanhempainraha",
+      "slug": "vanhempainraha",
+      "nom": "Vanhempainraha",
+      "description_en": "Parental allowance at 70% of salary for 160 days per parent.",
+      "categorie": "famille",
+      "organisme": "Kela",
+      "montant_min_eur": 31,
+      "montant_max_eur": 3000,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/vanhempainraha",
+      "eligibility_criteria": [
+        "residence_fi",
+        "newborn_or_adopted_child",
+        "insured_fi"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "fi-sairauspaivaraha",
+      "slug": "sairauspaivaraha",
+      "nom": "Sairauspäiväraha",
+      "description_en": "Sickness daily allowance: 70% of annual income from day 2 of incapacity.",
+      "categorie": "sante",
+      "organisme": "Kela",
+      "montant_min_eur": 0,
+      "montant_max_eur": 2500,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/sairauspaivaraha",
+      "eligibility_criteria": [
+        "residence_fi",
+        "employed_or_self_employed",
+        "medical_certificate"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "fi-kansanelake",
+      "slug": "kansanelake",
+      "nom": "Kansaneläke",
+      "description_en": "National pension (basic pension) for those with no or low earnings-related pension, max 704€/mo.",
+      "categorie": "retraite",
+      "organisme": "Kela",
+      "montant_min_eur": 0,
+      "montant_max_eur": 704,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/kansanelake",
+      "eligibility_criteria": [
+        "residence_fi",
+        "age_65",
+        "low_earnings_pension"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "fi-opintoraha",
+      "slug": "opintoraha",
+      "nom": "Opintoraha",
+      "description_en": "Study grant: 268€/mo for higher education students living away from home.",
+      "categorie": "jeunesse",
+      "organisme": "Kela",
+      "montant_min_eur": 101,
+      "montant_max_eur": 268,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/opintoraha",
+      "eligibility_criteria": [
+        "residence_fi",
+        "student_higher_education",
+        "age_17_plus"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "fi-kotihoidontuki",
+      "slug": "lasten-kotihoidon-tuki",
+      "nom": "Lasten kotihoidon tuki",
+      "description_en": "Child home care allowance: 344€/mo for parents who care for children under 3 at home.",
+      "categorie": "famille",
+      "organisme": "Kela",
+      "montant_min_eur": 344,
+      "montant_max_eur": 344,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/kotihoidontuki",
+      "eligibility_criteria": [
+        "residence_fi",
+        "child_under_3",
+        "home_care_no_municipality_care"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "fi-tyottomyyspaivaraha",
+      "slug": "peruspaivaraha-tyottomyys",
+      "nom": "Peruspäiväraha (työtön)",
+      "description_en": "Basic unemployment daily allowance: 37.21€/day (approx. 800€/mo) for those not in union a-kassa.",
+      "categorie": "revenus_emploi",
+      "organisme": "Kela",
+      "montant_min_eur": 0,
+      "montant_max_eur": 800,
+      "periodicite": "mensuel",
+      "url_info": "https://www.kela.fi/peruspaivaraha",
+      "eligibility_criteria": [
+        "residence_fi",
+        "involuntary_unemployment",
+        "available_for_work"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }

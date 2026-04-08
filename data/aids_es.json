@@ -83,6 +83,113 @@
         "income_below_threshold"
       ],
       "amounts_baremes_year": 2026
+    },
+    {
+      "id": "es-prestacion-contributiva",
+      "slug": "prestacion-contributiva-desempleo",
+      "nom": "Prestación Contributiva por Desempleo",
+      "description_en": "Contributory unemployment benefit: 70% of regulatory base (first 6 months), then 60%, max 1575€/mo single.",
+      "categorie": "revenus_emploi",
+      "organisme": "SEPE",
+      "montant_min_eur": 570,
+      "montant_max_eur": 1575,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sepe.es/HomeSepe/prestaciones/que-puedes-cobrar/prestacion-contributiva.html",
+      "eligibility_criteria": [
+        "residence_es",
+        "contribution_360_days",
+        "involuntary_unemployment"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "es-subsidio-desempleo",
+      "slug": "subsidio-desempleo",
+      "nom": "Subsidio por Desempleo",
+      "description_en": "Non-contributory unemployment assistance at 80% IPREM (approx. 570€/mo) for those who exhausted contributory benefit.",
+      "categorie": "revenus_emploi",
+      "organisme": "SEPE",
+      "montant_min_eur": 570,
+      "montant_max_eur": 570,
+      "periodicite": "mensuel",
+      "url_info": "https://www.sepe.es/HomeSepe/prestaciones/que-puedes-cobrar/subsidios-de-desempleo.html",
+      "eligibility_criteria": [
+        "residence_es",
+        "exhausted_contributory_benefit_or_insufficient"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "es-bono-social-electrico",
+      "slug": "bono-social-electrico",
+      "nom": "Bono Social Eléctrico",
+      "description_en": "Electricity bill discount of 25-40% for vulnerable households.",
+      "categorie": "energie",
+      "organisme": "CNMC / Comercializadoras",
+      "montant_min_eur": 0,
+      "montant_max_eur": 300,
+      "periodicite": "annuel",
+      "url_info": "https://www.cnmc.es/ambitos-de-actuacion/energia/bono-social",
+      "eligibility_criteria": [
+        "residence_es",
+        "income_below_threshold_or_large_family"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "es-ayuda-habitacion",
+      "slug": "ayuda-habitacion-alquiler",
+      "nom": "Ayuda al Alquiler (Plan Estatal)",
+      "description_en": "State rental assistance for vulnerable households, varies by CCAA.",
+      "categorie": "logement",
+      "organisme": "MIVAU / CCAA",
+      "montant_min_eur": 0,
+      "montant_max_eur": 600,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mivau.gob.es/vivienda/ayudas-y-planes/plan-estatal-vivienda-2022-2025",
+      "eligibility_criteria": [
+        "residence_es",
+        "income_below_threshold",
+        "renter"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "es-renta-minima-ccaa",
+      "slug": "renta-minima-ccaa",
+      "nom": "Renta Mínima de Inserción (CCAA)",
+      "description_en": "Regional minimum income complementary to IMV, ranges 400-700€/mo depending on autonomous community.",
+      "categorie": "revenus_emploi",
+      "organisme": "Comunidades Autónomas",
+      "montant_min_eur": 400,
+      "montant_max_eur": 700,
+      "periodicite": "mensuel",
+      "url_info": "https://www.mdsocialesa2030.gob.es",
+      "eligibility_criteria": [
+        "residence_es",
+        "income_below_threshold",
+        "registered_padrón"
+      ],
+      "amounts_baremes_year": 2025
+    },
+    {
+      "id": "es-prestacion-familiar-hijo",
+      "slug": "prestacion-familiar-hijo-cargo",
+      "nom": "Prestación no Contributiva por Hijo a Cargo",
+      "description_en": "Non-contributory family benefit for each dependent child with disability.",
+      "categorie": "famille",
+      "organisme": "Seguridad Social",
+      "montant_min_eur": 28,
+      "montant_max_eur": 28,
+      "periodicite": "mensuel",
+      "url_info": "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensiones/10968",
+      "eligibility_criteria": [
+        "residence_es",
+        "child_under_18_or_disabled",
+        "income_below_threshold"
+      ],
+      "amounts_baremes_year": 2025
     }
-  ]
+  ],
+  "last_updated": "2026-04-01"
 }
