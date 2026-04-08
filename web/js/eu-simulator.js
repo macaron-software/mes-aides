@@ -28,6 +28,15 @@ const EU_CURRENCIES = {
 const CC_TO_FILE = { gb: 'uk' };
 
 /**
+ * Maps country code → local currency amount field suffix.
+ * Countries not listed here use 'eur' (stored as montant_max_eur).
+ */
+const CURRENCY_AMOUNT_FIELD = {
+  us: 'usd', ca: 'cad', au: 'aud',
+  jp: 'jpy', mx: 'mxn', cn: 'cny',
+};
+
+/**
  * Monthly income thresholds (local currency) used to assess income-tested aids.
  * Values approximate national poverty/minimum-income lines (2026 data).
  */
@@ -35,6 +44,8 @@ const INCOME_THRESHOLDS = {
   de: 1600, es: 1200, it: 1200, pt:  950, be: 1500,
   nl: 1400, se:18000, dk:20000, fi: 1600, at: 1400,
   ch: 3500, no:20000, gb: 1200, pl: 4000,
+  /* FR: RSA eligibility threshold ~1200 EUR/month */
+  fr: 1200,
   /* World (monthly net, local currency) */
   jp: 150000, ca: 2000, mx: 6000, us: 1800, cn: 3000, au: 2500,
 };
@@ -44,6 +55,8 @@ const LOW_INCOME_THRESHOLDS = {
   de: 2500, es: 2000, it: 2000, pt: 1500, be: 2500,
   nl: 2200, se:28000, dk:30000, fi: 2500, at: 2200,
   ch: 5500, no:32000, gb: 2000, pl: 6000,
+  /* FR: APL / CSS / housing benefits up to ~2000 EUR/month */
+  fr: 2000,
   /* World */
   jp: 250000, ca: 3500, mx: 10000, us: 3000, cn: 5000, au: 4000,
 };
@@ -98,9 +111,11 @@ class EUSimulator {
   /** @private */
   _emit(event, detail) {
     (this._listeners[event] || []).forEach(cb => cb(detail));
-    document.dispatchEvent(
-      new CustomEvent('eu-simulator:' + event, { detail, bubbles: true })
-    );
+    if (typeof document !== 'undefined') {
+      document.dispatchEvent(
+        new CustomEvent('eu-simulator:' + event, { detail, bubbles: true })
+      );
+    }
   }
 
   /**
@@ -113,10 +128,12 @@ class EUSimulator {
     const results = (this.data?.aids || [])
       .filter(aid => this._checkEligibility(aid, this.profile))
       .map(aid => ({ ...aid, _formatted: this._formatAid(aid) }))
-      .sort((a, b) =>
-        (b.montant_max_eur || b.montant_max || 0) -
-        (a.montant_max_eur || a.montant_min || 0)
-      );
+      .sort((a, b) => {
+        const suffix = CURRENCY_AMOUNT_FIELD[this.cc] || 'eur';
+        const bMax = b[`montant_max_${suffix}`] ?? b.montant_max_eur ?? b.montant_max ?? 0;
+        const aMax = a[`montant_max_${suffix}`] ?? a.montant_max_eur ?? a.montant_max ?? 0;
+        return bMax - aMax;
+      });
     this._emit('result', { results, profile: this.profile, country: this.data });
     return results;
   }
@@ -129,7 +146,9 @@ class EUSimulator {
   _checkEligibility(aid, profile) {
     const criteria  = aid.eligibility_criteria || [];
     const cc        = this.cc;
-    const income    = Number(profile.income)     || 0;
+    // income is provided in smallest currency unit (centimes/cents/øre etc.)
+    // thresholds are in main currency unit → divide by 100
+    const income    = (Number(profile.income)     || 0) / 100;
     const age       = Number(profile.age)        || 0;
     const situation = profile.situation          || 'single';
     const employment= profile.employment         || 'employed';
@@ -143,42 +162,214 @@ class EUSimulator {
     const isRetired    = employment === 'retired';
 
     return criteria.every(c => {
-      if (c.startsWith('residence_'))              return true;
+      // ── Residency (any prefix: residence_ or residency_) ────────────────
+      if (c.startsWith('residence_') || c.startsWith('residency_')) return true;
+
+      // ── Income ──────────────────────────────────────────────────────────
       if (c === 'income_below_threshold' ||
           c === 'isee_below_threshold')             return income <= threshold;
-      if (c === 'low_income')                       return income <= lowThreshold;
-      if (c === 'income_above_threshold')           return income > threshold;  // e.g. NO dagpenger
-      if (c === 'savings_below_16000')              return true;                // no savings input
+      if (c === 'low_income' ||
+          c === 'income_threshold' ||
+          c === 'income_below_threshold_rfr' ||
+          c === 'income_below_threshold_for_self_employed' ||
+          c === 'income_at_or_below_130pct_poverty' ||
+          c === 'income_below_138pct_poverty_or_state_threshold' ||
+          c === 'income_at_or_below_150pct_poverty' ||
+          c === 'income_at_or_below_185pct_poverty' ||
+          c === 'income_below_50pct_area_median' ||
+          c === 'income_assets_tests_met' ||
+          c === 'hold_concession_card_or_income_below_threshold') return income <= lowThreshold;
+      if (c === 'income_above_threshold')           return income > threshold;
+      if (c === 'savings_below_16000' ||
+          c === 'assets_below_threshold' ||
+          c === 'resources_below_2000_usd' ||
+          c === 'resources_below_2750_usd')         return true; // no savings input
+
+      // ── Age: fixed bounds ────────────────────────────────────────────────
       if (c === 'age_15_65')                        return age >= 15 && age <= 65;
-      if (c === 'age_18')                           return age >= 18;
+      if (c === 'age_18' || c === 'age_min_18')     return age >= 18;
+      if (c === 'age_19_plus')                      return age >= 19;
       if (c === 'age_30')                           return age >= 30;
-      if (c.startsWith('child_under_'))             return hasChildren;
-      if (c === 'involuntary_unemployment')         return isUnemployed;
-      if (c === 'active_job_search')                return isUnemployed;
-      if (c === 'labour_market_available')          return isUnemployed;
+      if (c === 'age_min_60' || c === 'age_60_plus')return age >= 60;
+      if (c === 'age_62_plus')                      return age >= 62;
+      if (c === 'age_min_65' || c === 'age_65_plus')return age >= 65;
+      if (c === 'age_67_plus')                      return age >= 67;
+      if (c === 'age_20_to_60')                     return age >= 20 && age <= 60;
+      if (c === 'age_22_to_66')                     return age >= 22 && age <= 66;
+      if (c === 'age_16_to_66')                     return age >= 16 && age <= 66;
+      if (c === 'age_16_24')                        return age >= 16 && age <= 24;
+      if (c === 'age_16_to_25')                     return age >= 16 && age <= 25;
+      if (c === 'age_18_to_25')                     return age >= 18 && age <= 25;
+      if (c === 'age_18_to_30')                     return age >= 18 && age <= 30;
+      if (c === 'age_4_to_26')                      return age >= 4  && age <= 26;
+      if (c === 'age_under_30_or_new_job')          return age < 30;
+      if (c === 'age_under_60')                     return age < 60;
+      if (c === 'age_under_65_at_access')           return age < 65;
+      if (c === 'age_under_67')                     return age < 67;
+      if (c === 'age_65_plus_or_blind_or_disabled' ||
+          c === 'age_65_plus_or_qualifying_disability') return age >= 65 || isDisabled;
+      if (c === 'age_min_70_or_disability')         return age >= 70 || isDisabled;
+
+      // ── Children / family ────────────────────────────────────────────────
+      if (c.startsWith('child_under_') ||
+          c.startsWith('child_age_') ||
+          c.startsWith('children_count_min_') ||
+          c.startsWith('children_age_under_') ||
+          c.startsWith('all_children_age_'))        return hasChildren;
+      if (c === 'family_with_children' ||
+          c === 'single_parent' ||
+          c === 'youngest_child_under_8' ||
+          c === 'no_alimony_received' ||
+          c === 'primary_caregiver' ||
+          c === 'parent_or_guardian' ||
+          c === 'new_parent_or_expecting' ||
+          c === 'stopped_working_for_birth_or_adoption' ||
+          c === 'child_enrolled_school' ||
+          c === 'immunisation_requirements_met' ||
+          c === 'pregnant_postpartum_breastfeeding_or_infant_child_under_5' ||
+          c === 'approved_childcare_provider' ||
+          c === 'activity_test_met')                return hasChildren;
+
+      // ── Employment / activity ────────────────────────────────────────────
+      if (c === 'involuntary_unemployment' ||
+          c === 'involuntary_job_loss' ||
+          c === 'active_job_search' ||
+          c === 'labour_market_available' ||
+          c === 'available_for_work' ||
+          c === 'mutual_obligations_met' ||
+          c === 'seeking_employment' ||
+          c === 'job_seeker' ||
+          c === 'employable_but_without_work' ||
+          c === 'participation_in_employment_activities') return isUnemployed;
+      if (c === 'unemployed_or_temporarily_ill')    return isUnemployed || isDisabled;
       if (c === 'all_other_benefits_exhausted' ||
           c === 'all_other_options_exhausted')      return isUnemployed && income <= threshold;
-      if (c === 'student')                          return isStudent;
+      if (c === 'are_exhausted' ||
+          c === 'worked_5_years_min' ||
+          c === 'worked_contributing_period')       return ['employed','unemployed','self_employed'].includes(employment);
+      if (c === 'student' ||
+          c === 'enrolled_higher_education')        return isStudent;
       if (c === 'not_in_full_time_education')       return !isStudent;
+      if (c === 'not_in_employment_or_training')    return !isStudent && employment !== 'employed';
       if (c === 'employed_parent')                  return employment === 'employed' && hasChildren;
+      if (c === 'employed_or_self_employed' ||
+          c === 'employed_or_via_ce' ||
+          c === 'working_income' ||
+          c === 'earned_income')                    return employment === 'employed';
+      if (c === 'rsa_or_job_seeker')                return income <= threshold || isUnemployed;
+      if (c === 'studying_training_or_job_seeking') return isStudent || isUnemployed;
+      if (c === 'apprentice' ||
+          c === 'apprentice_or_employer')           return true;
+
+      // ── Pension / disability ─────────────────────────────────────────────
       if (c === 'receiving_ahv_or_iv')              return isRetired || isDisabled;
-      if (c === 'renter')                           return housing === 'rented' || housing === 'social';
+      if (c === 'full_rate_pension' ||
+          c === 'retirement_pension_recipient')     return isRetired;
+      if (c === 'low_pension_amount')               return isRetired && income <= threshold;
+      if (c === 'invalidity_pension_recipient' ||
+          c === 'disability_verified' ||
+          c === 'permanent_disability' ||
+          c === 'permanent_significant_disability' ||
+          c === 'unable_to_work_15hr_per_week' ||
+          c === 'disability_significant_activity_limitation' ||
+          c === 'disability_rate_min_50pct' ||
+          c === 'work_capacity_reduced_2_3')        return isDisabled;
+      if (c === 'autonomy_loss_gir_1_to_4')         return isDisabled || age >= 60;
+      if (c === 'aah_recipient' ||
+          c === 'lives_alone' ||
+          c === 'autonomous_housing')               return isDisabled;
+
+      // ── Social aid recipient proxies (approximate by income) ─────────────
+      if (c === 'rsa_or_ass_recipient' ||
+          c === 'rsa_recipient' ||
+          c === 'rsa_or_aah_recipient' ||
+          c === 'rsa_or_aah_or_ass_recipient' ||
+          c === 'rsa_or_aah_or_minimum_social_recipient' ||
+          c === 'rsa_or_minimum_social_recipient')  return income <= threshold;
+      // OAS is the CA universal senior pension — proxy: age 65+
+      if (c === 'oas_recipient')                    return age >= 65;
+
+      // ── Housing ─────────────────────────────────────────────────────────
+      if (c === 'renter' ||
+          c === 'tenant' ||
+          c === 'tenant_or_roommate' ||
+          c === 'paying_private_rent_above_threshold') return housing === 'rented' || housing === 'social';
       if (c === 'renter_or_owner')                  return true;
+      if (c === 'owner_occupant' ||
+          c === 'owner_occupant_or_landlord')       return housing === 'owned';
+      if (c === 'not_in_public_housing' ||
+          c === 'not_in_social_housing' ||
+          c === 'eligible_priority_category')       return housing !== 'social';
       if (c === 'family_with_minors_or_disabled')   return hasChildren || isDisabled;
       if (c === 'single_parent_or_low_income')      return situation === 'single_parent' || income <= threshold;
-      if (c === 'registration_padron')              return true;
-      // contribution-based: assume eligible if previously/currently active
+      if (c === 'eligible_housing' ||
+          c === 'main_residence' ||
+          c === 'residential_electricity_customer') return true;
+      if (c === 'housing_difficulty' ||
+          c === 'housing_need' ||
+          c === 'homeless_or_housing_risk' ||
+          c === 'experiencing_homelessness_or_at_risk' ||
+          c === 'high_support_needs')               return true;
+      if (c === 'financial_hardship' ||
+          c === 'energy_bill_overdue_or_at_risk')   return income <= lowThreshold;
+
+      // ── Contribution-based ───────────────────────────────────────────────
       if (c.startsWith('contribution_'))            return ['employed','unemployed','self_employed'].includes(employment);
-      // union membership: assume eligible if worked
       if (c.startsWith('union_member_'))            return ['employed','unemployed'].includes(employment);
-      return true; // unknown criterion — open-world
+      if (c === 'cpp_contributions_made' ||
+          c === 'insurable_hours_met' ||
+          c === 'insurable_income_met' ||
+          c === 'ss_contributions_paid' ||
+          c === '40_work_credits_minimum')          return ['employed','unemployed','self_employed'].includes(employment);
+      if (c === 'receiving_qualifying_income_support_payment') return income <= threshold;
+
+      // ── Citizenship / identity ───────────────────────────────────────────
+      if (c === 'registration_padron' ||
+          c === 'canadian_citizen_or_legal_resident' ||
+          c === 'australian_citizen_or_permanent_resident' ||
+          c === 'citizenship_or_eligible_noncitizen' ||
+          c === 'citizenship_or_eligible_status' ||
+          c === 'us_citizen_or_permanent_resident_5yr' ||
+          c === 'french_nationality_or_eu' ||
+          c === '10yr_residency_after_age_18' ||
+          c === 'australian_resident_10yr' ||
+          c === 'resident_of_california' ||
+          c === 'tax_return_filed' ||
+          c === 'valid_ssn' ||
+          c === 'valid_ssn_or_itin' ||
+          c === 'child_has_valid_ssn')              return true;
+
+      // ── Admin / process ──────────────────────────────────────────────────
+      if (c === 'social_security_affiliation' ||
+          c === 'complementary_health_insurance' ||
+          c === 'waiting_list' ||
+          c === 'work_participation_required' ||
+          c === 'providing_constant_care' ||
+          c === 'care_receiver_meets_disability_threshold' ||
+          c === 'nutritional_risk' ||
+          c === 'legal_proceeding' ||
+          c === 'eligible_works' ||
+          c === 'recent_hospitalization' ||
+          c === 'return_home' ||
+          c === 'emergency_situation' ||
+          c === 'first_electric_vehicle' ||
+          c === 'business_creation_project' ||
+          c === 'viable_project' ||
+          c === 'business_creation_or_takeover' ||
+          c === 'excluded_from_bank_credit' ||
+          c === 'divorce_or_separation' ||
+          c === 'child_maintenance_order' ||
+          c === 'crous_scholarship_recipient')      return true;
+
+      return true; // unknown criterion — open-world assumption
     });
   }
 
   /** @private */
   _formatAid(aid) {
-    const maxAmt = aid.montant_max_eur || aid.montant_max || 0;
-    const minAmt = aid.montant_min_eur || aid.montant_min || 0;
+    const suffix = CURRENCY_AMOUNT_FIELD[this.cc] || 'eur';
+    const maxAmt = aid[`montant_max_${suffix}`] ?? aid.montant_max_eur ?? aid.montant_max ?? 0;
+    const minAmt = aid[`montant_min_${suffix}`] ?? aid.montant_min_eur ?? aid.montant_min ?? 0;
     const formatted =
       maxAmt > 0
         ? minAmt > 0 && minAmt < maxAmt
@@ -220,5 +411,10 @@ class EUSimulator {
   }
 }
 
-window.EUSimulator  = EUSimulator;
-window.formatAmount = formatAmount;
+if (typeof window !== 'undefined') {
+  window.EUSimulator  = EUSimulator;
+  window.formatAmount = formatAmount;
+}
+if (typeof module !== 'undefined') {
+  module.exports = { EUSimulator, formatAmount };
+}
