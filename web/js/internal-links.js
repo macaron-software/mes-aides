@@ -56,6 +56,53 @@
     au: ['gb', 'ca', 'us', 'jp', 'de'],
   };
 
+  /* ── French aid aliases (for keyword-based suggestions) ──────────────── */
+
+  /** Maps legacy/variant search terms to canonical aide IDs used in ?aide= param. */
+  const AIDE_ALIASES = {
+    rmi:                     'rsa',   // Revenu Minimum d'Insertion → RSA depuis 2009
+    'revenu minimum insertion': 'rsa',
+    'simulation rsa':        'rsa',
+    'simulateur rsa':        'rsa',
+    'montant rsa':           'rsa',
+    'simulateur aah':        'aah',
+    'simulation aah':        'aah',
+    'montant aah':           'aah',
+    'simulation apl':        'apl',
+    'simulateur apl':        'apl',
+    'allocations familiales': 'af',
+    'montant caf':           'af',
+    'montant paje':          'paje',
+    'allocation de base paje': 'paje',
+    'montant pch':           'pch',
+    'cheque energie':        'ce',
+    'chèque énergie':        'ce',
+    ancv:                    'ancv',
+    'cheques vacances':      'ancv',
+    'chèques vacances':      'ancv',
+    'prime activite':        'pa',
+    'prime activité':        'pa',
+    'prime d\'activité':     'pa',
+  };
+
+  /**
+   * Resolves a raw search/keyword string to a canonical aide ID.
+   * Returns the aide id string, or null if no match.
+   */
+  function resolveAideAlias(query) {
+    if (!query) return null;
+    const q = query.toLowerCase().trim();
+    for (const alias in AIDE_ALIASES) {
+      if (q.indexOf(alias) !== -1) return AIDE_ALIASES[alias];
+    }
+    return null;
+  }
+
+  /* Expose for use by keyword-routing.js if loaded in same page. */
+  if (typeof window !== 'undefined') {
+    window._mesAidesResolveAlias = resolveAideAlias;
+  }
+
   /* ── Detect current page context ─────────────────────────────────────── */
 
   const path = location.pathname;
